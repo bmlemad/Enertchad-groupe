@@ -153,6 +153,8 @@ body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
   radial-gradient(1px 1px at 40% 70%,rgba(255,255,255,0.25),transparent);
   animation:starTwinkle 8s ease-in-out infinite alternate}
 @keyframes starTwinkle{0%{opacity:0.6}50%{opacity:1}100%{opacity:0.7}}
+@keyframes livePulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(0.8)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 
 .hero-content{position:relative;z-index:2;max-width:900px}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:0.5rem;padding:0.4rem 1rem;border-radius:50px;
@@ -386,6 +388,30 @@ body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
 .et-kpi-val{font-family:var(--font-d);font-size:1.5rem;font-weight:700;color:var(--gold)}
 .et-kpi-lbl{font-size:0.72rem;color:var(--text-muted);margin-top:0.15rem}
 
+/* ═══ MEDIATHEQUE ═══ */
+.media-tabs{display:flex;gap:0.5rem;margin-bottom:2rem;flex-wrap:wrap}
+.media-tab{padding:0.5rem 1.25rem;border-radius:50px;font-size:0.8rem;font-weight:600;cursor:pointer;border:1px solid rgba(255,255,255,0.1);background:transparent;color:var(--text-sec);font-family:var(--font-b);transition:var(--tr)}
+.media-tab.active,.media-tab:hover{background:rgba(200,150,46,0.12);border-color:rgba(200,150,46,0.3);color:var(--gold)}
+.media-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.media-card{background:var(--bg-card);border:1px solid rgba(255,255,255,0.06);border-radius:var(--radius);padding:1.75rem;transition:var(--tr);position:relative;overflow:hidden;backdrop-filter:blur(8px)}
+.media-card:hover{transform:translateY(-4px);border-color:rgba(200,150,46,0.2);box-shadow:var(--shadow-m)}
+.media-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-light));opacity:0;transition:var(--tr)}
+.media-card:hover::before{opacity:1}
+.media-card-head{display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem}
+.media-card-icon{width:44px;height:44px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:1.15rem;flex-shrink:0}
+.media-card-icon.pdf{background:rgba(239,68,68,0.12);color:#EF4444}
+.media-card-icon.video{background:rgba(139,92,246,0.12);color:#8B5CF6}
+.media-card-icon.press{background:rgba(14,165,233,0.12);color:var(--midstream)}
+.media-card-icon.photo{background:rgba(16,185,129,0.12);color:#10B981}
+.media-card-icon.data{background:rgba(200,150,46,0.12);color:var(--gold)}
+.media-card h3{font-family:var(--font-d);font-size:1rem;color:var(--white)}
+.media-card h3 small{display:block;font-size:0.7rem;color:var(--text-muted);font-weight:400;margin-top:0.15rem}
+.media-card p{font-size:0.82rem;color:var(--text-sec);line-height:1.6;margin-bottom:0.75rem}
+.media-meta{display:flex;align-items:center;gap:1rem;font-size:0.7rem;color:var(--text-muted)}
+.media-meta span{display:flex;align-items:center;gap:0.3rem}
+.media-dl{display:inline-flex;align-items:center;gap:0.4rem;margin-top:0.75rem;font-size:0.78rem;font-weight:600;color:var(--gold);transition:var(--tr)}
+.media-dl:hover{gap:0.65rem;color:var(--gold-light)}
+
 /* ═══ COOKIE BANNER ═══ */
 .cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:10000;padding:1.25rem 2rem;
   background:rgba(15,26,46,0.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
@@ -450,8 +476,20 @@ body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
   backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
 
 /* ═══ ANIMATIONS ═══ */
-[data-r]{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease}
+[data-r]{opacity:0;transform:translateY(30px);transition:opacity 0.7s cubic-bezier(0.22,0.61,0.36,1),transform 0.7s cubic-bezier(0.22,0.61,0.36,1)}
 [data-r].visible{opacity:1;transform:translateY(0)}
+/* Staggered reveal for grid children */
+.kpi-grid [data-r].visible,.st-grid [data-r].visible,.et-pillars [data-r].visible,.media-grid [data-r].visible,.rse-grid [data-r].visible{animation:fadeUp 0.5s ease both}
+.kpi-grid>.kpi-card,.st-grid>.st-card,.et-pillars>.et-pillar,.media-grid>.media-card,.rse-grid>.rse-card,.esg-pillars>.esg-pillar,.ir-grid>.ir-card{opacity:0;animation:fadeUp 0.5s ease both}
+.visible .kpi-card:nth-child(1),.visible .st-card:nth-child(1),.visible .et-pillar:nth-child(1),.visible .media-card:nth-child(1),.visible .rse-card:nth-child(1),.visible .esg-pillar:nth-child(1),.visible .ir-card:nth-child(1){animation-delay:0s}
+.visible .kpi-card:nth-child(2),.visible .st-card:nth-child(2),.visible .et-pillar:nth-child(2),.visible .media-card:nth-child(2),.visible .rse-card:nth-child(2),.visible .esg-pillar:nth-child(2),.visible .ir-card:nth-child(2){animation-delay:0.08s}
+.visible .kpi-card:nth-child(3),.visible .st-card:nth-child(3),.visible .et-pillar:nth-child(3),.visible .media-card:nth-child(3),.visible .rse-card:nth-child(3),.visible .esg-pillar:nth-child(3),.visible .ir-card:nth-child(3){animation-delay:0.16s}
+.visible .kpi-card:nth-child(4),.visible .st-card:nth-child(4),.visible .media-card:nth-child(4),.visible .rse-card:nth-child(4),.visible .esg-pillar:nth-child(4),.visible .ir-card:nth-child(4){animation-delay:0.24s}
+.visible .kpi-card:nth-child(5),.visible .st-card:nth-child(5),.visible .media-card:nth-child(5),.visible .rse-card:nth-child(5){animation-delay:0.32s}
+.visible .kpi-card:nth-child(6),.visible .st-card:nth-child(6),.visible .media-card:nth-child(6){animation-delay:0.4s}
+.visible .st-card:nth-child(7),.visible .media-card:nth-child(7){animation-delay:0.48s}
+.visible .st-card:nth-child(8),.visible .media-card:nth-child(8){animation-delay:0.56s}
+.visible .st-card:nth-child(9){animation-delay:0.64s}
 
 /* ═══ HERO PARTICLE CANVAS ═══ */
 .hero-particles{position:absolute;inset:0;z-index:1;pointer-events:none}
@@ -695,6 +733,10 @@ body:hover .cursor-glow{opacity:1}
             <a href="#dashboard" class="mega-link" role="menuitem">
               <div class="mega-icon" style="background:rgba(14,165,233,0.1);color:var(--midstream)"><i class="fas fa-tachometer-alt"></i></div>
               <div class="mega-link-text"><h4>Opérations Live</h4><p>Dashboard temps réel consolidé</p></div>
+            </a>
+            <a href="#mediatheque" class="mega-link" role="menuitem">
+              <div class="mega-icon" style="background:rgba(139,92,246,0.1);color:#8B5CF6"><i class="fas fa-photo-video"></i></div>
+              <div class="mega-link-text"><h4>Médiathèque <span class="mega-badge mega-badge-gold">8</span></h4><p>Rapports, presse, vidéos, kit média</p></div>
             </a>
           </div>
           <!-- Quick links bar -->
@@ -1370,9 +1412,53 @@ body:hover .cursor-glow{opacity:1}
   <div class="ctn">
     <div class="parallax-bg" aria-hidden="true"><div class="orb orb-1"></div><div class="orb orb-2"></div></div>
     <div class="section-header" data-r>
-      <div class="section-eyebrow"><i class="fas fa-tachometer-alt"></i> <span data-i18n data-en="Live Dashboard">Tableau de bord</span></div>
+      <div class="section-eyebrow"><i class="fas fa-tachometer-alt"></i> <span data-i18n data-en="Live Dashboard">Tableau de bord</span> <span style="display:inline-flex;align-items:center;gap:0.35rem;margin-left:0.75rem;font-size:0.7rem;color:#10B981;font-weight:600"><span style="width:6px;height:6px;background:#10B981;border-radius:50%;animation:livePulse 2s infinite"></span>LIVE</span></div>
       <h2 class="section-title" id="dash-title" data-i18n data-en="Live Operations">Opérations en direct</h2>
     </div>
+
+    <!-- Filiale Tabs -->
+    <div style="display:flex;gap:0.5rem;margin-bottom:1.5rem;flex-wrap:wrap" data-r>
+      <button class="media-tab active" onclick="switchDashTab('all',this)" data-i18n data-en="Consolidated">Consolidé</button>
+      <button class="media-tab" onclick="switchDashTab('amont',this)" style="--accent:var(--amont)">Amont</button>
+      <button class="media-tab" onclick="switchDashTab('midstream',this)" style="--accent:var(--midstream)">Midstream</button>
+      <button class="media-tab" onclick="switchDashTab('aval',this)" style="--accent:var(--aval)">Aval</button>
+    </div>
+
+    <!-- KPI Counter Row -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin-bottom:2rem" data-r id="dashKpis">
+      <div style="background:var(--bg-card);border:1px solid rgba(255,255,255,0.06);border-radius:var(--radius);padding:1.25rem;text-align:center;backdrop-filter:blur(8px);position:relative;overflow:hidden">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--amont),var(--midstream))"></div>
+        <div style="font-size:0.72rem;color:var(--text-muted);margin-bottom:0.3rem" data-i18n data-en="Daily Production">Production journalière</div>
+        <div class="counter" data-target="102" style="font-family:var(--font-d);font-size:2.2rem;font-weight:700;background:linear-gradient(135deg,var(--white) 60%,var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent">0</div>
+        <div style="font-size:0.7rem;color:var(--gold)">kbbl/j</div>
+      </div>
+      <div style="background:var(--bg-card);border:1px solid rgba(255,255,255,0.06);border-radius:var(--radius);padding:1.25rem;text-align:center;backdrop-filter:blur(8px);position:relative;overflow:hidden">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--midstream),var(--midstream-teal))"></div>
+        <div style="font-size:0.72rem;color:var(--text-muted);margin-bottom:0.3rem" data-i18n data-en="Pipeline Throughput">Débit pipeline</div>
+        <div class="counter" data-target="100" style="font-family:var(--font-d);font-size:2.2rem;font-weight:700;background:linear-gradient(135deg,var(--white) 60%,var(--midstream));-webkit-background-clip:text;-webkit-text-fill-color:transparent">0</div>
+        <div style="font-size:0.7rem;color:var(--midstream)">kbbl/j</div>
+      </div>
+      <div style="background:var(--bg-card);border:1px solid rgba(255,255,255,0.06);border-radius:var(--radius);padding:1.25rem;text-align:center;backdrop-filter:blur(8px);position:relative;overflow:hidden">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--aval),#F59E0B)"></div>
+        <div style="font-size:0.72rem;color:var(--text-muted);margin-bottom:0.3rem" data-i18n data-en="Active Stations">Stations actives</div>
+        <div style="font-family:var(--font-d);font-size:2.2rem;font-weight:700;background:linear-gradient(135deg,var(--white) 60%,var(--aval));-webkit-background-clip:text;-webkit-text-fill-color:transparent"><span class="counter" data-target="85">0</span><span style="font-size:0.5em;-webkit-text-fill-color:var(--text-muted)">/85</span></div>
+        <div style="font-size:0.7rem;color:var(--aval)" data-i18n data-en="99.8% uptime">99.8% uptime</div>
+      </div>
+      <div style="background:var(--bg-card);border:1px solid rgba(255,255,255,0.06);border-radius:var(--radius);padding:1.25rem;text-align:center;backdrop-filter:blur(8px);position:relative;overflow:hidden">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#10B981,#34C759)"></div>
+        <div style="font-size:0.72rem;color:var(--text-muted);margin-bottom:0.3rem">HSE — TRIR</div>
+        <div class="counter" data-target="0.42" data-decimals="2" style="font-family:var(--font-d);font-size:2.2rem;font-weight:700;background:linear-gradient(135deg,var(--white) 60%,#10B981);-webkit-background-clip:text;-webkit-text-fill-color:transparent">0</div>
+        <div style="font-size:0.7rem;color:#10B981" data-i18n data-en="Zero major incidents">Zéro incident majeur</div>
+      </div>
+      <div style="background:var(--bg-card);border:1px solid rgba(255,255,255,0.06);border-radius:var(--radius);padding:1.25rem;text-align:center;backdrop-filter:blur(8px);position:relative;overflow:hidden">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-light))"></div>
+        <div style="font-size:0.72rem;color:var(--text-muted);margin-bottom:0.3rem" data-i18n data-en="Network Uptime">Disponibilité réseau</div>
+        <div style="font-family:var(--font-d);font-size:2.2rem;font-weight:700;background:linear-gradient(135deg,var(--white) 60%,var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent"><span class="counter" data-target="99.7" data-decimals="1">0</span><span style="font-size:0.5em">%</span></div>
+        <div style="font-size:0.7rem;color:var(--gold)">SCADA + IoT</div>
+      </div>
+    </div>
+
+    <!-- Chart + Sidebar -->
     <div class="dash-wrap" data-r>
       <div class="dash-chart">
         <div class="dash-chart-title" data-i18n data-en="Monthly Production (kbbl/d)">Production mensuelle (kbbl/j)</div>
@@ -1380,24 +1466,24 @@ body:hover .cursor-glow{opacity:1}
       </div>
       <div class="dash-sidebar">
         <div class="dash-mini">
-          <div class="dash-mini-label" data-i18n data-en="Pipeline Throughput">Débit pipeline</div>
-          <div class="dash-mini-value" id="dmThroughput">100<small>kbbl/j</small></div>
-          <div class="dash-mini-bar"><div class="dash-mini-fill" style="width:82%;background:linear-gradient(90deg,var(--midstream),var(--midstream-teal))"></div></div>
+          <div class="dash-mini-label" data-i18n data-en="Crude quality (API)">Qualité brut (API)</div>
+          <div class="dash-mini-value">24.5°<small>API</small></div>
+          <div class="dash-mini-bar"><div class="dash-mini-fill" style="width:70%;background:linear-gradient(90deg,var(--amont),#54A0FF)"></div></div>
         </div>
         <div class="dash-mini">
-          <div class="dash-mini-label" data-i18n data-en="Network Uptime">Disponibilité réseau</div>
-          <div class="dash-mini-value" id="dmUptime">99.7<small>%</small></div>
-          <div class="dash-mini-bar"><div class="dash-mini-fill" style="width:99.7%;background:linear-gradient(90deg,#10B981,#34C759)"></div></div>
+          <div class="dash-mini-label" data-i18n data-en="Water cut average">Water cut moyen</div>
+          <div class="dash-mini-value">32<small>%</small></div>
+          <div class="dash-mini-bar"><div class="dash-mini-fill" style="width:32%;background:linear-gradient(90deg,var(--midstream),var(--midstream-teal))"></div></div>
         </div>
         <div class="dash-mini">
-          <div class="dash-mini-label" data-i18n data-en="Active Stations">Stations actives</div>
-          <div class="dash-mini-value" id="dmStations">46<small>/48</small></div>
-          <div class="dash-mini-bar"><div class="dash-mini-fill" style="width:96%;background:linear-gradient(90deg,var(--aval),#F59E0B)"></div></div>
+          <div class="dash-mini-label" data-i18n data-en="Gas flaring rate">Taux de torchage</div>
+          <div class="dash-mini-value">4.2<small>%</small></div>
+          <div class="dash-mini-bar"><div class="dash-mini-fill" style="width:4.2%;background:linear-gradient(90deg,#10B981,#34C759)"></div></div>
         </div>
         <div class="dash-mini">
-          <div class="dash-mini-label">HSE — TRIR</div>
-          <div class="dash-mini-value" id="dmTRIR">0.42</div>
-          <div class="dash-mini-bar"><div class="dash-mini-fill" style="width:15%;background:linear-gradient(90deg,var(--amont),#54A0FF)"></div></div>
+          <div class="dash-mini-label" data-i18n data-en="Pipeline pressure">Pression pipeline</div>
+          <div class="dash-mini-value">82<small>bar</small></div>
+          <div class="dash-mini-bar"><div class="dash-mini-fill" style="width:68%;background:linear-gradient(90deg,var(--aval),#F59E0B)"></div></div>
         </div>
       </div>
     </div>
@@ -1631,6 +1717,133 @@ body:hover .cursor-glow{opacity:1}
         <div class="tl-title">Objectif 100 stations</div>
         <div class="tl-desc">Expansion du réseau aval sur l'ensemble du territoire national et lancement GPL ville.</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ MEDIATHEQUE ════════════════════ -->
+<section class="section" id="mediatheque" aria-labelledby="media-title">
+  <div class="ctn">
+    <div class="section-header" data-r>
+      <div class="section-eyebrow"><i class="fas fa-photo-video"></i> <span data-i18n data-en="Media Center">Centre Médias</span></div>
+      <h2 class="section-title" id="media-title" data-i18n data-en="Media Center">Médiathèque</h2>
+      <p class="section-desc" data-i18n data-en="Publications, technical documentation, press releases and media assets — all EnerTchad resources in one place.">Publications, documentation technique, communiqués de presse et ressources médias — toutes les ressources EnerTchad en un seul endroit.</p>
+    </div>
+
+    <div class="media-tabs" data-r>
+      <button class="media-tab active" data-filter="all" data-i18n data-en="All">Tout</button>
+      <button class="media-tab" data-filter="pdf" data-i18n data-en="Reports & PDFs">Rapports & PDF</button>
+      <button class="media-tab" data-filter="press" data-i18n data-en="Press">Presse</button>
+      <button class="media-tab" data-filter="data" data-i18n data-en="Technical">Technique</button>
+      <button class="media-tab" data-filter="video" data-i18n data-en="Videos">Vidéos</button>
+      <button class="media-tab" data-filter="photo" data-i18n data-en="Photos">Photos</button>
+    </div>
+
+    <div class="media-grid" data-r id="mediaGrid">
+
+      <div class="media-card" data-type="pdf">
+        <div class="media-card-head">
+          <div class="media-card-icon pdf"><i class="fas fa-file-pdf"></i></div>
+          <h3 data-i18n data-en="Annual Report 2026">Rapport Annuel 2026<small>PDF — 42 pages</small></h3>
+        </div>
+        <p data-i18n data-en="Consolidated financial results, operational highlights, ESG performance and strategic outlook for the EnerTchad group.">Résultats financiers consolidés, faits opérationnels marquants, performance ESG et perspectives stratégiques du groupe EnerTchad.</p>
+        <div class="media-meta">
+          <span><i class="fas fa-calendar"></i> Mars 2027</span>
+          <span><i class="fas fa-weight-hanging"></i> 8.2 MB</span>
+          <span><i class="fas fa-download"></i> FR / EN</span>
+        </div>
+        <a class="media-dl" href="#"><i class="fas fa-download"></i> <span data-i18n data-en="Download PDF">Télécharger PDF</span> →</a>
+      </div>
+
+      <div class="media-card" data-type="pdf">
+        <div class="media-card-head">
+          <div class="media-card-icon pdf"><i class="fas fa-file-pdf"></i></div>
+          <h3 data-i18n data-en="ESG Report 2026">Rapport ESG 2026<small>PDF — 28 pages</small></h3>
+        </div>
+        <p data-i18n data-en="Sustainability performance aligned with IFC Performance Standards and UN SDGs — environmental, social and governance indicators.">Performance durabilité alignée sur les Standards IFC et les ODD de l'ONU — indicateurs environnementaux, sociaux et de gouvernance.</p>
+        <div class="media-meta">
+          <span><i class="fas fa-calendar"></i> Avril 2027</span>
+          <span><i class="fas fa-weight-hanging"></i> 5.4 MB</span>
+        </div>
+        <a class="media-dl" href="#"><i class="fas fa-download"></i> <span data-i18n data-en="Download PDF">Télécharger PDF</span> →</a>
+      </div>
+
+      <div class="media-card" data-type="press">
+        <div class="media-card-head">
+          <div class="media-card-icon press"><i class="fas fa-newspaper"></i></div>
+          <h3 data-i18n data-en="Press Release — Launch">Communiqué — Lancement<small data-i18n data-en="Press Release">Communiqué de presse</small></h3>
+        </div>
+        <p data-i18n data-en="Official announcement of EnerTchad group creation — first Chadian integrated oil & gas operator with three subsidiaries.">Annonce officielle de la création du groupe EnerTchad — premier opérateur pétrolier tchadien intégré avec trois filiales.</p>
+        <div class="media-meta">
+          <span><i class="fas fa-calendar"></i> Janvier 2026</span>
+          <span><i class="fas fa-language"></i> FR / EN / AR</span>
+        </div>
+        <a class="media-dl" href="#"><i class="fas fa-eye"></i> <span data-i18n data-en="Read">Lire</span> →</a>
+      </div>
+
+      <div class="media-card" data-type="data">
+        <div class="media-card-head">
+          <div class="media-card-icon data"><i class="fas fa-database"></i></div>
+          <h3 data-i18n data-en="Pipeline Datasheets">Fiches Techniques Pipeline<small>API 5L / ASME B31.4</small></h3>
+        </div>
+        <p data-i18n data-en="Technical specifications for the Doba-Kribi pipeline: 1070 km, 762 mm diameter, X65 steel grade, 3 pump stations, design pressure 120 bar.">Spécifications techniques du pipeline Doba-Kribi : 1 070 km, 762 mm diamètre, acier X65, 3 stations de pompage, pression design 120 bar.</p>
+        <div class="media-meta">
+          <span><i class="fas fa-cog"></i> Rev. 3</span>
+          <span><i class="fas fa-weight-hanging"></i> 2.1 MB</span>
+        </div>
+        <a class="media-dl" href="#"><i class="fas fa-download"></i> <span data-i18n data-en="Download">Télécharger</span> →</a>
+      </div>
+
+      <div class="media-card" data-type="data">
+        <div class="media-card-head">
+          <div class="media-card-icon data"><i class="fas fa-certificate"></i></div>
+          <h3 data-i18n data-en="Certifications Portfolio">Portfolio Certifications<small>ISO / API / IFC</small></h3>
+        </div>
+        <p data-i18n data-en="Group certifications: ISO 45001, ISO 14001, API 1160, API 510/570, IEC 62443, IFC Performance Standards compliance documentation.">Certifications groupe : ISO 45001, ISO 14001, API 1160, API 510/570, IEC 62443, documentation de conformité Standards IFC.</p>
+        <div class="media-meta">
+          <span><i class="fas fa-shield-alt"></i> 12 certifications</span>
+        </div>
+        <a class="media-dl" href="#"><i class="fas fa-download"></i> <span data-i18n data-en="Download">Télécharger</span> →</a>
+      </div>
+
+      <div class="media-card" data-type="photo">
+        <div class="media-card-head">
+          <div class="media-card-icon photo"><i class="fas fa-images"></i></div>
+          <h3 data-i18n data-en="Media Kit & Brand Assets">Kit Média & Identité<small data-i18n data-en="Logos, photos, guidelines">Logos, photos, charte</small></h3>
+        </div>
+        <p data-i18n data-en="Official EnerTchad logos (SVG/PNG), brand guidelines, high-resolution operational photos, executive portraits and facility images.">Logos officiels EnerTchad (SVG/PNG), charte graphique, photos opérationnelles haute résolution, portraits dirigeants et images installations.</p>
+        <div class="media-meta">
+          <span><i class="fas fa-file-archive"></i> ZIP — 45 MB</span>
+          <span><i class="fas fa-palette"></i> Brand Book</span>
+        </div>
+        <a class="media-dl" href="#"><i class="fas fa-download"></i> <span data-i18n data-en="Download Kit">Télécharger Kit</span> →</a>
+      </div>
+
+      <div class="media-card" data-type="video">
+        <div class="media-card-head">
+          <div class="media-card-icon video"><i class="fas fa-play-circle"></i></div>
+          <h3 data-i18n data-en="Corporate Film 2026">Film Corporate 2026<small>4K — 3:45</small></h3>
+        </div>
+        <p data-i18n data-en="Discover the EnerTchad group — from reservoir to fuel pump, a sovereign Chadian energy operator building the future.">Découvrez le groupe EnerTchad — du réservoir à la pompe, un opérateur énergétique tchadien souverain qui construit l'avenir.</p>
+        <div class="media-meta">
+          <span><i class="fas fa-clock"></i> 3 min 45</span>
+          <span><i class="fas fa-closed-captioning"></i> FR / EN</span>
+        </div>
+        <a class="media-dl" href="#"><i class="fas fa-play"></i> <span data-i18n data-en="Watch">Regarder</span> →</a>
+      </div>
+
+      <div class="media-card" data-type="press">
+        <div class="media-card-head">
+          <div class="media-card-icon press"><i class="fas fa-microphone-alt"></i></div>
+          <h3 data-i18n data-en="Press Contacts">Contacts Presse<small data-i18n data-en="Media Relations">Relations Médias</small></h3>
+        </div>
+        <p data-i18n data-en="Media inquiries, interview requests, press accreditation and spokesperson availability for EnerTchad group communications.">Demandes médias, requêtes d'entretiens, accréditation presse et disponibilité des porte-parole pour les communications du groupe EnerTchad.</p>
+        <div class="media-meta">
+          <span><i class="fas fa-envelope"></i> presse@enertchad.td</span>
+        </div>
+        <a class="media-dl" href="mailto:presse@enertchad.td"><i class="fas fa-envelope"></i> <span data-i18n data-en="Contact">Contacter</span> →</a>
+      </div>
+
     </div>
   </div>
 </section>
@@ -1894,6 +2107,42 @@ window.addEventListener('pagehide',function(){ids.forEach(clearInterval);ids=[]}
   else window.addEventListener('load',init);
 })();
 
+/* ═══ ANIMATED COUNTERS ═══ */
+(function(){
+  var counters=document.querySelectorAll('.counter');
+  var animated=new Set();
+  function animateCounter(el){
+    if(animated.has(el)) return;
+    animated.add(el);
+    var target=parseFloat(el.dataset.target);
+    var decimals=parseInt(el.dataset.decimals)||0;
+    var duration=1800;
+    var start=performance.now();
+    function step(now){
+      var progress=Math.min((now-start)/duration,1);
+      var ease=1-Math.pow(1-progress,3);
+      el.textContent=(target*ease).toFixed(decimals);
+      if(progress<1) requestAnimationFrame(step);
+      else el.textContent=target.toFixed(decimals);
+    }
+    requestAnimationFrame(step);
+  }
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting) animateCounter(e.target)});
+  },{threshold:0.3});
+  counters.forEach(function(c){obs.observe(c)});
+})();
+
+/* ═══ DASHBOARD TAB SWITCH ═══ */
+function switchDashTab(tab,btn){
+  document.querySelectorAll('#dashboard .media-tab').forEach(function(t){t.classList.remove('active')});
+  btn.classList.add('active');
+  /* Future: fetch filiale-specific data. For now, visual feedback */
+  var kpis=document.getElementById('dashKpis');
+  if(kpis) kpis.style.animation='none';
+  requestAnimationFrame(function(){if(kpis) kpis.style.animation='fadeUp 0.5s ease forwards'});
+}
+
 /* ═══ MAP TOOLTIPS ═══ */
 (function(){
   var tooltip=document.getElementById('mapTooltip');
@@ -1930,6 +2179,23 @@ window.addEventListener('pagehide',function(){ids.forEach(clearInterval);ids=[]}
       } else if(lang==='fr'&&originals.has(el)){
         el.innerHTML=originals.get(el);
       }
+    });
+  });
+})();
+
+/* ═══ MEDIATHEQUE FILTER ═══ */
+(function(){
+  var tabs=document.querySelectorAll('.media-tab');
+  var cards=document.querySelectorAll('.media-card');
+  tabs.forEach(function(tab){
+    tab.addEventListener('click',function(){
+      tabs.forEach(function(t){t.classList.remove('active')});
+      tab.classList.add('active');
+      var f=tab.getAttribute('data-filter');
+      cards.forEach(function(c){
+        if(f==='all'||c.getAttribute('data-type')===f){c.style.display='';c.style.animation='fadeUp 0.4s ease forwards'}
+        else{c.style.display='none'}
+      });
     });
   });
 })();
