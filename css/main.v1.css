@@ -14,6 +14,7 @@
   --aval:#D97706;--aval-glow:rgba(217,119,6,0.2);--aval-text:#F59E0B;
   --tech:#8B5CF6;--tech-glow:rgba(139,92,246,0.25);--tech-text:#A78BFA;
   --energy:#10B981;--energy-glow:rgba(16,185,129,0.25);--energy-text:#6EE7B7;
+  --petro:#E11D48;--petro-glow:rgba(225,29,72,0.25);--petro-text:#FB7185;
   /* Shared */
   --font-d:'Space Grotesk',sans-serif;
   --font-b:'Inter',sans-serif;
@@ -210,6 +211,7 @@ body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
 .mega-badge-gold{background:rgba(200,150,46,0.12);color:var(--gold);border-color:rgba(200,150,46,0.2)}
 .mega-badge-tech{background:rgba(139,92,246,0.12);color:var(--tech);border-color:rgba(139,92,246,0.2)}
 .mega-badge-energy{background:rgba(16,185,129,0.12);color:var(--energy);border-color:rgba(16,185,129,0.2)}
+.mega-badge-petro{background:rgba(225,29,72,0.12);color:var(--petro);border-color:rgba(225,29,72,0.2)}
 
 /* ── Featured Spotlight Card ── */
 .mega-spotlight{margin-top:1rem;padding:1.25rem;border-radius:14px;
@@ -342,6 +344,11 @@ body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
 .vc-card[data-filiale="aval"]:hover{box-shadow:0 12px 40px var(--aval-glow)}
 .vc-card[data-filiale="aval"] .vc-icon{background:rgba(217,119,6,0.1);color:var(--aval)}
 .vc-card[data-filiale="aval"] .vc-arrow{color:var(--aval)}
+
+.vc-card[data-filiale="petro"]::before{background:linear-gradient(90deg,var(--petro),#F43F5E)}
+.vc-card[data-filiale="petro"]:hover{box-shadow:0 12px 40px var(--petro-glow)}
+.vc-card[data-filiale="petro"] .vc-icon{background:rgba(225,29,72,0.1);color:var(--petro)}
+.vc-card[data-filiale="petro"] .vc-arrow{color:var(--petro)}
 
 .vc-badge{position:absolute;top:1.2rem;right:1.2rem;font-size:0.65rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;
   padding:0.25rem 0.65rem;border-radius:50px;color:rgba(255,255,255,0.6);background:rgba(255,255,255,0.06)}
