@@ -95,10 +95,17 @@ html.light .logo-text{color:var(--white)}
 html.light .header-nav a{color:var(--text-sec)}
 html.light .header-nav a:hover{color:var(--white)}
 html.light .lang-btn{border-color:rgba(0,0,0,0.12);color:var(--text-sec)}
-html.light .mega-drop{background:rgba(255,255,255,0.98)}
-html.light .mega-link:hover{background:rgba(0,0,0,0.03)}
+html.light .mega-drop{background:rgba(255,255,255,0.98);box-shadow:0 40px 100px rgba(0,0,0,0.12),inset 0 1px 0 rgba(0,0,0,0.04)}
+html.light .mega-drop::before{background:linear-gradient(90deg,transparent 5%,rgba(200,150,46,0.2) 50%,transparent 95%)}
+html.light .mega-link:hover{background:rgba(0,0,0,0.03);border-color:rgba(0,0,0,0.04)}
 html.light .mega-link-text h4{color:var(--white)}
 html.light .mega-link-text p{color:var(--text-muted)}
+html.light .mega-close{background:rgba(0,0,0,0.03);border-color:rgba(0,0,0,0.1);color:rgba(0,0,0,0.5)}
+html.light .mega-close:hover{background:rgba(200,150,46,0.08);border-color:var(--gold);color:var(--gold)}
+html.light .mega-icon{border-color:rgba(0,0,0,0.06)}
+html.light .mega-icon::after{background:linear-gradient(135deg,rgba(255,255,255,0.5) 0%,transparent 60%)}
+html.light .mega-quick a{border-color:rgba(0,0,0,0.06);background:rgba(0,0,0,0.02)}
+html.light .mega-quick a:hover{border-color:rgba(200,150,46,0.25);background:rgba(200,150,46,0.06)}
 html.light .mobile-nav{background:rgba(245,245,240,0.98)}
 html.light .vc-card,.light .kpi-card,.light .gov-card,.light .rse-card,.light .ir-card,.light .esg-pillar,.light .st-card,.light .news-card,.light .career-card,.light .media-card,.light .et-pillar{background:var(--bg-card);border-color:rgba(0,0,0,0.06)}
 html.light .kpi-num,.light .esg-num,.light .rse-stat,.light .et-stat-num{background:linear-gradient(135deg,var(--white) 60%,var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
@@ -137,41 +144,59 @@ body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
 .lang-btn{font-size:0.8rem;padding:0.35rem 0.85rem;border:1px solid rgba(255,255,255,0.15);border-radius:var(--radius-xs);color:var(--text-sec);cursor:pointer;background:transparent;font-family:var(--font-b);transition:var(--tr)}
 .lang-btn:hover{border-color:var(--gold);color:var(--gold)}
 
-/* ═══ MEGA MENU — Full-Width Premium ═══ */
+/* ═══ MEGA MENU — Modern Full-Width ═══ */
 .header-nav .nav-item{position:relative;cursor:pointer}
 .header-nav .nav-item > a{display:inline-flex;align-items:center;gap:0.35rem;padding:0.5rem 0}
 .header-nav .nav-item > a::before{content:'';display:none}
-.nav-chevron{font-size:0.5rem;opacity:0.5;transition:transform 0.3s ease}
-.nav-item.open .nav-chevron{transform:rotate(180deg)}
-.mega-drop{position:fixed;top:0;left:0;right:0;padding:5rem 2rem 2.5rem;
-  background:rgba(8,14,26,0.98);backdrop-filter:blur(32px) saturate(1.5);-webkit-backdrop-filter:blur(32px) saturate(1.5);
-  border-bottom:1px solid rgba(200,150,46,0.12);box-shadow:0 30px 80px rgba(0,0,0,0.5);
-  opacity:0;pointer-events:none;transform:translateY(-8px);
-  transition:opacity 0.35s cubic-bezier(0.22,0.61,0.36,1),transform 0.35s cubic-bezier(0.22,0.61,0.36,1);z-index:999}
+.nav-chevron{font-size:0.5rem;opacity:0.5;transition:transform 0.3s ease,opacity 0.3s ease}
+.nav-item.open .nav-chevron,.nav-item:hover .nav-chevron{transform:rotate(180deg);opacity:0.9}
+/* Panel */
+.mega-drop{position:fixed;top:0;left:0;right:0;padding:5.5rem 2rem 2rem;
+  background:rgba(6,10,20,0.97);backdrop-filter:blur(40px) saturate(1.6);-webkit-backdrop-filter:blur(40px) saturate(1.6);
+  border-bottom:1px solid rgba(200,150,46,0.1);box-shadow:0 40px 100px rgba(0,0,0,0.6),inset 0 1px 0 rgba(255,255,255,0.04);
+  opacity:0;pointer-events:none;transform:translateY(-12px);
+  transition:opacity 0.4s cubic-bezier(0.16,1,0.3,1),transform 0.4s cubic-bezier(0.16,1,0.3,1);z-index:999}
+.mega-drop::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent 5%,rgba(200,150,46,0.3) 50%,transparent 95%)}
 .nav-item:hover .mega-drop,.nav-item.open .mega-drop{opacity:1;pointer-events:auto;transform:translateY(0)}
-.mega-close{position:absolute;top:1.5rem;right:2rem;background:none;border:1px solid rgba(255,255,255,0.15);border-radius:50%;width:36px;height:36px;color:var(--white);font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:var(--tr);opacity:0.7}
-.mega-close:hover{opacity:1;border-color:var(--gold);color:var(--gold)}
+/* Staggered children reveal */
+.nav-item:hover .mega-link,.nav-item.open .mega-link{animation:megaItemIn 0.35s cubic-bezier(0.16,1,0.3,1) both}
+.nav-item:hover .mega-link:nth-child(1),.nav-item.open .mega-link:nth-child(1){animation-delay:0.04s}
+.nav-item:hover .mega-link:nth-child(2),.nav-item.open .mega-link:nth-child(2){animation-delay:0.08s}
+.nav-item:hover .mega-link:nth-child(3),.nav-item.open .mega-link:nth-child(3){animation-delay:0.12s}
+.nav-item:hover .mega-link:nth-child(4),.nav-item.open .mega-link:nth-child(4){animation-delay:0.16s}
+@keyframes megaItemIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+/* Close button */
+.mega-close{position:absolute;top:1.25rem;right:2rem;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:50%;width:38px;height:38px;color:var(--white);font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.3s ease;opacity:0.7;backdrop-filter:blur(8px)}
+.mega-close:hover{opacity:1;border-color:var(--gold);color:var(--gold);background:rgba(200,150,46,0.08);transform:rotate(90deg)}
+/* Grid layout */
 .mega-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1px 1fr 1px 1fr;gap:2rem;align-items:start}
 .mega-inner--2col{grid-template-columns:1fr 1px 1fr}
-.mega-divider{background:linear-gradient(180deg,transparent,rgba(200,150,46,0.2),transparent);align-self:stretch}
+.mega-divider{background:linear-gradient(180deg,transparent,rgba(200,150,46,0.18),transparent);align-self:stretch;opacity:0.8}
+/* Column titles */
 .mega-col-title{font-family:var(--font-d);font-size:0.65rem;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:var(--gold);margin-bottom:1.25rem;display:flex;align-items:center;gap:0.5rem}
-.mega-col-title::after{content:'';flex:1;height:1px;background:rgba(200,150,46,0.15)}
-.mega-link{display:flex;align-items:center;gap:0.85rem;padding:0.7rem 0.85rem;border-radius:var(--radius-sm);transition:var(--tr);margin-bottom:0.25rem}
-.mega-link:hover{background:rgba(255,255,255,0.04);transform:translateX(4px)}
-.mega-icon{width:42px;height:42px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:1.05rem;flex-shrink:0;transition:var(--tr)}
-.mega-link:hover .mega-icon{transform:scale(1.08)}
-.mega-link-text h4{font-size:0.85rem;color:var(--white);margin-bottom:0.15rem;display:flex;align-items:center;gap:0.5rem}
-.mega-link-text p{font-size:0.7rem;color:var(--text-muted);line-height:1.4}
-.mega-badge{font-size:0.55rem;padding:0.15rem 0.45rem;border-radius:50px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase}
-.mega-badge-amont{background:rgba(46,134,222,0.15);color:var(--amont)}
-.mega-badge-mid{background:rgba(14,165,233,0.15);color:var(--midstream)}
-.mega-badge-aval{background:rgba(217,119,6,0.15);color:var(--aval)}
-.mega-badge-gold{background:rgba(200,150,46,0.15);color:var(--gold)}
-/* Quick-link row at bottom */
-.mega-quick{display:flex;gap:1.5rem;margin-top:1.5rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,0.06);grid-column:1/-1}
-.mega-quick a{font-size:0.75rem;color:var(--text-muted);transition:var(--tr);display:flex;align-items:center;gap:0.35rem}
-.mega-quick a:hover{color:var(--gold)}
-.mega-quick a i{font-size:0.65rem}
+.mega-col-title::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,rgba(200,150,46,0.2),transparent)}
+/* Link items */
+.mega-link{display:flex;align-items:center;gap:0.9rem;padding:0.65rem 0.85rem;border-radius:var(--radius-sm);transition:all 0.3s cubic-bezier(0.22,0.61,0.36,1);margin-bottom:0.2rem;border:1px solid transparent;position:relative}
+.mega-link:hover{background:rgba(255,255,255,0.04);border-color:rgba(255,255,255,0.06);transform:translateX(4px);box-shadow:0 4px 20px rgba(0,0,0,0.15)}
+/* Icons — glass morph */
+.mega-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.05rem;flex-shrink:0;transition:all 0.3s ease;border:1px solid rgba(255,255,255,0.06);position:relative;overflow:hidden}
+.mega-icon::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,0.08) 0%,transparent 60%);pointer-events:none}
+.mega-link:hover .mega-icon{transform:scale(1.1) rotate(-3deg);border-color:rgba(255,255,255,0.12);box-shadow:0 4px 16px rgba(0,0,0,0.2)}
+/* Text */
+.mega-link-text h4{font-size:0.85rem;color:var(--white);margin-bottom:0.15rem;display:flex;align-items:center;gap:0.5rem;font-weight:600}
+.mega-link-text p{font-size:0.7rem;color:var(--text-muted);line-height:1.45;transition:color 0.3s}
+.mega-link:hover .mega-link-text p{color:rgba(255,255,255,0.55)}
+/* Badges */
+.mega-badge{font-size:0.55rem;padding:0.18rem 0.5rem;border-radius:50px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;border:1px solid rgba(255,255,255,0.08)}
+.mega-badge-amont{background:rgba(46,134,222,0.12);color:var(--amont);border-color:rgba(46,134,222,0.2)}
+.mega-badge-mid{background:rgba(14,165,233,0.12);color:var(--midstream);border-color:rgba(14,165,233,0.2)}
+.mega-badge-aval{background:rgba(217,119,6,0.12);color:var(--aval);border-color:rgba(217,119,6,0.2)}
+.mega-badge-gold{background:rgba(200,150,46,0.12);color:var(--gold);border-color:rgba(200,150,46,0.2)}
+/* Quick links bar — pill style */
+.mega-quick{display:flex;gap:0.75rem;margin-top:1.5rem;padding-top:1.25rem;border-top:1px solid rgba(255,255,255,0.06);grid-column:1/-1;flex-wrap:wrap}
+.mega-quick a{font-size:0.72rem;color:var(--text-muted);transition:all 0.3s ease;display:inline-flex;align-items:center;gap:0.35rem;padding:0.4rem 0.85rem;border-radius:50px;border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.02)}
+.mega-quick a:hover{color:var(--gold);border-color:rgba(200,150,46,0.25);background:rgba(200,150,46,0.06);transform:translateY(-1px)}
+.mega-quick a i{font-size:0.62rem;opacity:0.7}
 
 /* Mobile menu */
 .mobile-toggle{display:none;background:none;border:none;cursor:pointer;padding:0.5rem;color:var(--white);font-size:1.3rem}
@@ -451,6 +476,8 @@ body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
 .media-meta span{display:flex;align-items:center;gap:0.3rem}
 .media-dl{display:inline-flex;align-items:center;gap:0.4rem;margin-top:0.75rem;font-size:0.78rem;font-weight:600;color:var(--gold);transition:var(--tr)}
 .media-dl:hover{gap:0.65rem;color:var(--gold-light)}
+.media-dl--soon{color:var(--text-muted);opacity:0.5;cursor:default;pointer-events:none}
+.media-dl--soon:hover{gap:0.4rem;color:var(--text-muted)}
 
 /* ═══ COOKIE BANNER ═══ */
 .cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:10000;padding:1.25rem 2rem;
@@ -593,11 +620,13 @@ body:hover .cursor-glow{opacity:1}
 @media(max-width:1024px){
   .esg-pillars{grid-template-columns:repeat(2,1fr)}
   .ir-grid{grid-template-columns:repeat(2,1fr)}
-  .nav-item:hover .mega-drop{opacity:0;pointer-events:none;transform:translateY(-8px)}
+  .nav-item:hover .mega-drop{opacity:0;pointer-events:none;transform:translateY(-12px)}
   .nav-item.open .mega-drop{opacity:1;pointer-events:auto;transform:translateY(0);display:block}
   .mega-inner,.mega-inner--2col{grid-template-columns:1fr!important}
   .mega-divider{display:none}
-  .mega-drop{padding:4.5rem 1.5rem 2rem}
+  .mega-drop{padding:5rem 1.5rem 2rem}
+  .mega-quick{justify-content:center}
+  .nav-item:hover .mega-link,.nav-item.open .mega-link{animation:none;opacity:1;transform:none}
 }
 @media(max-width:768px){
   .esg-pillars,.ir-grid{grid-template-columns:1fr}
@@ -2179,10 +2208,10 @@ html.light .basin-kpi-bar{background:var(--bg-mid);border-color:rgba(0,0,0,0.06)
 
     <!-- Filiale Tabs -->
     <div style="display:flex;gap:0.5rem;margin-bottom:1.5rem;flex-wrap:wrap" data-r>
-      <button class="media-tab active" onclick="switchDashTab('all',this)" data-i18n data-en="Consolidated">Consolidé</button>
-      <button class="media-tab" onclick="switchDashTab('amont',this)" style="--accent:var(--amont)">Amont</button>
-      <button class="media-tab" onclick="switchDashTab('midstream',this)" style="--accent:var(--midstream)">Midstream</button>
-      <button class="media-tab" onclick="switchDashTab('aval',this)" style="--accent:var(--aval)">Aval</button>
+      <button class="media-tab active" onclick="switchDashTab('all',this)" data-i18n data-en="Consolidated" aria-label="Dashboard consolidé">Consolidé</button>
+      <button class="media-tab" onclick="switchDashTab('amont',this)" style="--accent:var(--amont)" aria-label="Dashboard Amont">Amont</button>
+      <button class="media-tab" onclick="switchDashTab('midstream',this)" style="--accent:var(--midstream)" aria-label="Dashboard Midstream">Midstream</button>
+      <button class="media-tab" onclick="switchDashTab('aval',this)" style="--accent:var(--aval)" aria-label="Dashboard Aval">Aval</button>
     </div>
 
     <!-- KPI Counter Row -->
@@ -2518,12 +2547,12 @@ html.light .basin-kpi-bar{background:var(--bg-mid);border-color:rgba(0,0,0,0.06)
     </div>
 
     <div class="media-tabs" data-r>
-      <button class="media-tab active" data-filter="all" data-i18n data-en="All">Tout</button>
-      <button class="media-tab" data-filter="pdf" data-i18n data-en="Reports & PDFs">Rapports & PDF</button>
-      <button class="media-tab" data-filter="press" data-i18n data-en="Press">Presse</button>
-      <button class="media-tab" data-filter="data" data-i18n data-en="Technical">Technique</button>
-      <button class="media-tab" data-filter="video" data-i18n data-en="Videos">Vidéos</button>
-      <button class="media-tab" data-filter="photo" data-i18n data-en="Photos">Photos</button>
+      <button class="media-tab active" data-filter="all" data-i18n data-en="All" aria-label="Afficher tout">Tout</button>
+      <button class="media-tab" data-filter="pdf" data-i18n data-en="Reports & PDFs" aria-label="Filtrer rapports PDF">Rapports & PDF</button>
+      <button class="media-tab" data-filter="press" data-i18n data-en="Press" aria-label="Filtrer presse">Presse</button>
+      <button class="media-tab" data-filter="data" data-i18n data-en="Technical" aria-label="Filtrer technique">Technique</button>
+      <button class="media-tab" data-filter="video" data-i18n data-en="Videos" aria-label="Filtrer vidéos">Vidéos</button>
+      <button class="media-tab" data-filter="photo" data-i18n data-en="Photos" aria-label="Filtrer photos">Photos</button>
     </div>
 
     <div class="media-grid" data-r id="mediaGrid">
@@ -2539,7 +2568,7 @@ html.light .basin-kpi-bar{background:var(--bg-mid);border-color:rgba(0,0,0,0.06)
           <span><i class="fas fa-weight-hanging"></i> 8.2 MB</span>
           <span><i class="fas fa-download"></i> FR / EN</span>
         </div>
-        <a class="media-dl" href="#"><i class="fas fa-download"></i> <span data-i18n data-en="Download PDF">Télécharger PDF</span> →</a>
+        <a class="media-dl" href="rapport-annuel-2026.pdf" target="_blank"><i class="fas fa-download"></i> <span data-i18n data-en="Download PDF">Télécharger PDF</span> →</a>
       </div>
 
       <div class="media-card" data-type="pdf">
@@ -2552,7 +2581,7 @@ html.light .basin-kpi-bar{background:var(--bg-mid);border-color:rgba(0,0,0,0.06)
           <span><i class="fas fa-calendar"></i> Avril 2027</span>
           <span><i class="fas fa-weight-hanging"></i> 5.4 MB</span>
         </div>
-        <a class="media-dl" href="#"><i class="fas fa-download"></i> <span data-i18n data-en="Download PDF">Télécharger PDF</span> →</a>
+        <a class="media-dl media-dl--soon" href="javascript:void(0)" aria-disabled="true"><i class="fas fa-clock"></i> <span data-i18n data-en="Coming soon">Bientôt disponible</span></a>
       </div>
 
       <div class="media-card" data-type="press">
@@ -2565,7 +2594,7 @@ html.light .basin-kpi-bar{background:var(--bg-mid);border-color:rgba(0,0,0,0.06)
           <span><i class="fas fa-calendar"></i> Janvier 2026</span>
           <span><i class="fas fa-language"></i> FR / EN / AR</span>
         </div>
-        <a class="media-dl" href="#"><i class="fas fa-eye"></i> <span data-i18n data-en="Read">Lire</span> →</a>
+        <a class="media-dl media-dl--soon" href="javascript:void(0)" aria-disabled="true"><i class="fas fa-clock"></i> <span data-i18n data-en="Coming soon">Bientôt disponible</span></a>
       </div>
 
       <div class="media-card" data-type="data">
@@ -2578,7 +2607,7 @@ html.light .basin-kpi-bar{background:var(--bg-mid);border-color:rgba(0,0,0,0.06)
           <span><i class="fas fa-cog"></i> Rev. 3</span>
           <span><i class="fas fa-weight-hanging"></i> 2.1 MB</span>
         </div>
-        <a class="media-dl" href="#"><i class="fas fa-download"></i> <span data-i18n data-en="Download">Télécharger</span> →</a>
+        <a class="media-dl media-dl--soon" href="javascript:void(0)" aria-disabled="true"><i class="fas fa-clock"></i> <span data-i18n data-en="Coming soon">Bientôt disponible</span></a>
       </div>
 
       <div class="media-card" data-type="data">
@@ -2590,7 +2619,7 @@ html.light .basin-kpi-bar{background:var(--bg-mid);border-color:rgba(0,0,0,0.06)
         <div class="media-meta">
           <span><i class="fas fa-shield-alt"></i> 12 certifications</span>
         </div>
-        <a class="media-dl" href="#"><i class="fas fa-download"></i> <span data-i18n data-en="Download">Télécharger</span> →</a>
+        <a class="media-dl media-dl--soon" href="javascript:void(0)" aria-disabled="true"><i class="fas fa-clock"></i> <span data-i18n data-en="Coming soon">Bientôt disponible</span></a>
       </div>
 
       <div class="media-card" data-type="photo">
@@ -2603,7 +2632,7 @@ html.light .basin-kpi-bar{background:var(--bg-mid);border-color:rgba(0,0,0,0.06)
           <span><i class="fas fa-file-archive"></i> ZIP — 45 MB</span>
           <span><i class="fas fa-palette"></i> Brand Book</span>
         </div>
-        <a class="media-dl" href="#"><i class="fas fa-download"></i> <span data-i18n data-en="Download Kit">Télécharger Kit</span> →</a>
+        <a class="media-dl media-dl--soon" href="javascript:void(0)" aria-disabled="true"><i class="fas fa-clock"></i> <span data-i18n data-en="Coming soon">Bientôt disponible</span></a>
       </div>
 
       <div class="media-card" data-type="video">
@@ -2616,7 +2645,7 @@ html.light .basin-kpi-bar{background:var(--bg-mid);border-color:rgba(0,0,0,0.06)
           <span><i class="fas fa-clock"></i> 3 min 45</span>
           <span><i class="fas fa-closed-captioning"></i> FR / EN</span>
         </div>
-        <a class="media-dl" href="#"><i class="fas fa-play"></i> <span data-i18n data-en="Watch">Regarder</span> →</a>
+        <a class="media-dl media-dl--soon" href="javascript:void(0)" aria-disabled="true"><i class="fas fa-clock"></i> <span data-i18n data-en="Coming soon">Bientôt disponible</span></a>
       </div>
 
       <div class="media-card" data-type="press">
@@ -2722,9 +2751,9 @@ html.light .basin-kpi-bar{background:var(--bg-mid);border-color:rgba(0,0,0,0.06)
         <p>EnerTchad — Accès aux Énergies. Unité · Innovation · Durabilité. De l'exploration à la pompe, une vision souveraine au cœur de l'Afrique Centrale.</p>
         <div class="footer-social">
           <a href="https://linkedin.com/company/enertchad" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" aria-label="Twitter / X"><i class="fab fa-x-twitter"></i></a>
-          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="https://x.com/EnerTchad" target="_blank" rel="noopener" aria-label="Twitter / X"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://facebook.com/EnerTchad" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://youtube.com/@EnerTchad" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
         </div>
         <div class="footer-certs">
           <span class="footer-cert">ISO 14001</span>
