@@ -145,6 +145,7 @@ body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
   transition:opacity 0.35s cubic-bezier(0.22,0.61,0.36,1),transform 0.35s cubic-bezier(0.22,0.61,0.36,1);z-index:999}
 .nav-item:hover .mega-drop{opacity:1;pointer-events:auto;transform:translateY(0)}
 .mega-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1px 1fr 1px 1fr;gap:2rem;align-items:start}
+.mega-inner--2col{grid-template-columns:1fr 1px 1fr}
 .mega-divider{background:linear-gradient(180deg,transparent,rgba(200,150,46,0.2),transparent);align-self:stretch}
 .mega-col-title{font-family:var(--font-d);font-size:0.65rem;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:var(--gold);margin-bottom:1.25rem;display:flex;align-items:center;gap:0.5rem}
 .mega-col-title::after{content:'';flex:1;height:1px;background:rgba(200,150,46,0.15)}
@@ -887,7 +888,7 @@ html.light .basin-kpi-bar{background:var(--bg-mid);border-color:rgba(0,0,0,0.06)
     <div class="nav-item" data-mega="solutions">
       <a href="#solutions" data-i18n data-en="Solutions">Solutions</a>
       <div class="mega-drop" role="menu" aria-label="Solutions">
-        <div class="mega-inner">
+        <div class="mega-inner mega-inner--2col">
           <!-- Col 1: Services Groupe -->
           <div>
             <div class="mega-col-title">Services Groupe</div>
@@ -932,7 +933,7 @@ html.light .basin-kpi-bar{background:var(--bg-mid);border-color:rgba(0,0,0,0.06)
     <div class="nav-item" data-mega="innovation">
       <a href="#innovation" data-i18n data-en="Innovation">Innovation</a>
       <div class="mega-drop" role="menu" aria-label="Innovation">
-        <div class="mega-inner">
+        <div class="mega-inner mega-inner--2col">
           <!-- Col 1: Technologie -->
           <div>
             <div class="mega-col-title">Technologie</div>
@@ -977,7 +978,7 @@ html.light .basin-kpi-bar{background:var(--bg-mid);border-color:rgba(0,0,0,0.06)
     <div class="nav-item" data-mega="durabilite">
       <a href="#esg" data-i18n data-en="Sustainability">Durabilité</a>
       <div class="mega-drop" role="menu" aria-label="Durabilité">
-        <div class="mega-inner">
+        <div class="mega-inner mega-inner--2col">
           <!-- Col 1: ESG -->
           <div>
             <div class="mega-col-title">ESG</div>
@@ -1018,7 +1019,7 @@ html.light .basin-kpi-bar{background:var(--bg-mid);border-color:rgba(0,0,0,0.06)
     <div class="nav-item" data-mega="entreprise">
       <a href="#gouvernance" data-i18n data-en="Company">Entreprise</a>
       <div class="mega-drop" role="menu" aria-label="Entreprise">
-        <div class="mega-inner">
+        <div class="mega-inner mega-inner--2col">
           <!-- Col 1: Gouvernance -->
           <div>
             <div class="mega-col-title">Gouvernance</div>
