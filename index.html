@@ -75,6 +75,30 @@
   /* spacing */
   --space-xs:0.5rem;--space-sm:1rem;--space-md:1.5rem;--space-lg:2.5rem;--space-xl:4rem;--space-2xl:6rem;
 }
+/* ═══ LIGHT THEME ═══ */
+html.light{--bg:#F5F5F0;--bg-mid:#EDEEE8;--bg-card:#FFFFFF;--surface:#F0F0EB;--surface-alt:#E8E8E3;
+  --white:#1A1A2E;--text:#2D2D3A;--text-sec:#555566;--text-muted:#888899;
+  --shadow-l:0 20px 60px rgba(0,0,0,0.08);--shadow-m:0 8px 30px rgba(0,0,0,0.06)}
+html.light body{color:var(--text);background:var(--bg)}
+html.light body::before{opacity:0.01}
+html.light .header{background:rgba(245,245,240,0.92);border-bottom-color:rgba(0,0,0,0.06)}
+html.light .header.scrolled{background:rgba(245,245,240,0.97)}
+html.light .logo-text{color:var(--white)}
+html.light .header-nav a{color:var(--text-sec)}
+html.light .header-nav a:hover{color:var(--white)}
+html.light .lang-btn{border-color:rgba(0,0,0,0.12);color:var(--text-sec)}
+html.light .mega-drop{background:rgba(255,255,255,0.98)}
+html.light .mega-link:hover{background:rgba(0,0,0,0.03)}
+html.light .mega-link-text h4{color:var(--white)}
+html.light .mega-link-text p{color:var(--text-muted)}
+html.light .mobile-nav{background:rgba(245,245,240,0.98)}
+html.light .vc-card,.light .kpi-card,.light .gov-card,.light .rse-card,.light .ir-card,.light .esg-pillar,.light .st-card,.light .news-card,.light .career-card,.light .media-card,.light .et-pillar{background:var(--bg-card);border-color:rgba(0,0,0,0.06)}
+html.light .kpi-num,.light .esg-num,.light .rse-stat,.light .et-stat-num{background:linear-gradient(135deg,var(--white) 60%,var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+html.light .footer{background:var(--bg-mid);border-top-color:rgba(0,0,0,0.06)}
+html.light .cookie-banner{background:rgba(255,255,255,0.97);border-top-color:rgba(0,0,0,0.06)}
+html.light ::selection{background:var(--gold);color:#fff}
+html.light #themeToggle i::before{content:"\\f186"}
+
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;font-size:16px}
 body{font-family:var(--font-b);color:var(--text);background:var(--bg);overflow-x:hidden;line-height:1.7;-webkit-font-smoothing:antialiased}
 img,svg{display:block;max-width:100%}
@@ -755,6 +779,7 @@ body:hover .cursor-glow{opacity:1}
     <a href="#carrieres" data-i18n data-en="Careers">Carrières</a>
     <a href="#contact" data-i18n data-en="Contact">Contact</a>
     <button class="lang-btn" id="langToggle" aria-label="Changer la langue">FR / EN</button>
+    <button class="lang-btn" id="themeToggle" aria-label="Basculer thème clair/sombre"><i class="fas fa-sun"></i></button>
   </nav>
   <button class="mobile-toggle" id="mobileToggle" aria-label="Ouvrir le menu" aria-expanded="false">
     <i class="fas fa-bars"></i>
@@ -1403,6 +1428,128 @@ body:hover .cursor-glow{opacity:1}
         <div class="ir-label" data-i18n data-en="CAPEX (3-year plan)">CAPEX (plan triennal)</div>
         <span class="ir-trend up"><i class="fas fa-arrow-up"></i> Croissance</span>
       </div>
+      <div class="ir-card">
+        <div class="ir-icon"><i class="fas fa-percentage"></i></div>
+        <div class="ir-value">20.2<small style="font-size:0.5em;color:var(--gold)">%</small></div>
+        <div class="ir-label" data-i18n data-en="EBITDA Margin">Marge EBITDA</div>
+        <span class="ir-trend up"><i class="fas fa-arrow-up"></i> +2.4 pts</span>
+      </div>
+      <div class="ir-card">
+        <div class="ir-icon"><i class="fas fa-oil-can"></i></div>
+        <div class="ir-value">102<small style="font-size:0.5em;color:var(--gold)">kbbl/j</small></div>
+        <div class="ir-label" data-i18n data-en="Production (avg.)">Production (moy.)</div>
+        <span class="ir-trend up"><i class="fas fa-arrow-up"></i> +8%</span>
+      </div>
+      <div class="ir-card">
+        <div class="ir-icon"><i class="fas fa-users"></i></div>
+        <div class="ir-value">1 240</div>
+        <div class="ir-label" data-i18n data-en="Employees (group)">Effectifs (groupe)</div>
+        <span class="ir-trend up"><i class="fas fa-arrow-up"></i> +15%</span>
+      </div>
+    </div>
+
+    <!-- Financial Calendar + Downloads -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2.5rem" data-r>
+      <!-- Calendar -->
+      <div style="background:var(--bg-card);border:1px solid rgba(255,255,255,0.06);border-radius:var(--radius);padding:1.75rem;backdrop-filter:blur(8px)">
+        <h3 style="font-family:var(--font-d);font-size:1.1rem;color:var(--white);margin-bottom:1.25rem;display:flex;align-items:center;gap:0.5rem"><i class="fas fa-calendar-alt" style="color:var(--gold)"></i> <span data-i18n data-en="Financial Calendar">Calendrier financier</span></h3>
+        <div style="display:flex;flex-direction:column;gap:0.75rem">
+          <div style="display:flex;align-items:center;gap:1rem;padding:0.6rem 0;border-bottom:1px solid rgba(255,255,255,0.04)">
+            <div style="width:48px;height:48px;border-radius:10px;background:rgba(200,150,46,0.1);display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0">
+              <span style="font-family:var(--font-d);font-size:0.85rem;font-weight:700;color:var(--gold)">T1</span>
+              <span style="font-size:0.55rem;color:var(--text-muted)">2027</span>
+            </div>
+            <div>
+              <div style="font-size:0.88rem;color:var(--white);font-weight:500" data-i18n data-en="Annual Results Publication">Publication résultats annuels</div>
+              <div style="font-size:0.72rem;color:var(--text-muted)" data-i18n data-en="March 2027 — Audited financials + ESG report">Mars 2027 — Comptes audités + rapport ESG</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:1rem;padding:0.6rem 0;border-bottom:1px solid rgba(255,255,255,0.04)">
+            <div style="width:48px;height:48px;border-radius:10px;background:rgba(46,134,222,0.1);display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0">
+              <span style="font-family:var(--font-d);font-size:0.85rem;font-weight:700;color:var(--amont)">T2</span>
+              <span style="font-size:0.55rem;color:var(--text-muted)">2027</span>
+            </div>
+            <div>
+              <div style="font-size:0.88rem;color:var(--white);font-weight:500" data-i18n data-en="Investor Day">Journée Investisseurs</div>
+              <div style="font-size:0.72rem;color:var(--text-muted)" data-i18n data-en="May 2027 — Strategy update & site visits">Mai 2027 — Mise à jour stratégique & visites terrain</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:1rem;padding:0.6rem 0;border-bottom:1px solid rgba(255,255,255,0.04)">
+            <div style="width:48px;height:48px;border-radius:10px;background:rgba(14,165,233,0.1);display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0">
+              <span style="font-family:var(--font-d);font-size:0.85rem;font-weight:700;color:var(--midstream)">T3</span>
+              <span style="font-size:0.55rem;color:var(--text-muted)">2027</span>
+            </div>
+            <div>
+              <div style="font-size:0.88rem;color:var(--white);font-weight:500" data-i18n data-en="Half-Year Results">Résultats semestriels</div>
+              <div style="font-size:0.72rem;color:var(--text-muted)" data-i18n data-en="September 2027 — H1 performance + outlook">Septembre 2027 — Performance S1 + perspectives</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:1rem;padding:0.6rem 0">
+            <div style="width:48px;height:48px;border-radius:10px;background:rgba(217,119,6,0.1);display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0">
+              <span style="font-family:var(--font-d);font-size:0.85rem;font-weight:700;color:var(--aval)">T4</span>
+              <span style="font-size:0.55rem;color:var(--text-muted)">2027</span>
+            </div>
+            <div>
+              <div style="font-size:0.88rem;color:var(--white);font-weight:500" data-i18n data-en="Production Update">Mise à jour production</div>
+              <div style="font-size:0.72rem;color:var(--text-muted)" data-i18n data-en="December 2027 — Q3 operations + 2028 guidance">Décembre 2027 — Opérations Q3 + guidance 2028</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Downloads -->
+      <div style="background:var(--bg-card);border:1px solid rgba(255,255,255,0.06);border-radius:var(--radius);padding:1.75rem;backdrop-filter:blur(8px)">
+        <h3 style="font-family:var(--font-d);font-size:1.1rem;color:var(--white);margin-bottom:1.25rem;display:flex;align-items:center;gap:0.5rem"><i class="fas fa-file-download" style="color:var(--gold)"></i> <span data-i18n data-en="Key Documents">Documents clés</span></h3>
+        <div style="display:flex;flex-direction:column;gap:0.6rem">
+          <a href="#mediatheque" style="display:flex;align-items:center;gap:0.85rem;padding:0.75rem;border-radius:var(--radius-sm);border:1px solid rgba(255,255,255,0.06);transition:var(--tr)">
+            <div style="width:40px;height:40px;border-radius:8px;background:rgba(239,68,68,0.12);display:flex;align-items:center;justify-content:center;color:#EF4444;flex-shrink:0"><i class="fas fa-file-pdf"></i></div>
+            <div style="flex:1">
+              <div style="font-size:0.85rem;color:var(--white);font-weight:500" data-i18n data-en="Annual Report 2026">Rapport Annuel 2026</div>
+              <div style="font-size:0.68rem;color:var(--text-muted)">PDF — 42 pages — 8.2 MB</div>
+            </div>
+            <i class="fas fa-download" style="color:var(--gold);font-size:0.85rem"></i>
+          </a>
+          <a href="#mediatheque" style="display:flex;align-items:center;gap:0.85rem;padding:0.75rem;border-radius:var(--radius-sm);border:1px solid rgba(255,255,255,0.06);transition:var(--tr)">
+            <div style="width:40px;height:40px;border-radius:8px;background:rgba(16,185,129,0.12);display:flex;align-items:center;justify-content:center;color:#10B981;flex-shrink:0"><i class="fas fa-leaf"></i></div>
+            <div style="flex:1">
+              <div style="font-size:0.85rem;color:var(--white);font-weight:500" data-i18n data-en="ESG Report 2026">Rapport ESG 2026</div>
+              <div style="font-size:0.68rem;color:var(--text-muted)">PDF — 28 pages — 5.4 MB</div>
+            </div>
+            <i class="fas fa-download" style="color:var(--gold);font-size:0.85rem"></i>
+          </a>
+          <a href="#mediatheque" style="display:flex;align-items:center;gap:0.85rem;padding:0.75rem;border-radius:var(--radius-sm);border:1px solid rgba(255,255,255,0.06);transition:var(--tr)">
+            <div style="width:40px;height:40px;border-radius:8px;background:rgba(139,92,246,0.12);display:flex;align-items:center;justify-content:center;color:#8B5CF6;flex-shrink:0"><i class="fas fa-chart-line"></i></div>
+            <div style="flex:1">
+              <div style="font-size:0.85rem;color:var(--white);font-weight:500" data-i18n data-en="Investor Presentation">Présentation Investisseurs</div>
+              <div style="font-size:0.68rem;color:var(--text-muted)">PDF — 24 slides — 6.1 MB</div>
+            </div>
+            <i class="fas fa-download" style="color:var(--gold);font-size:0.85rem"></i>
+          </a>
+          <a href="#mediatheque" style="display:flex;align-items:center;gap:0.85rem;padding:0.75rem;border-radius:var(--radius-sm);border:1px solid rgba(255,255,255,0.06);transition:var(--tr)">
+            <div style="width:40px;height:40px;border-radius:8px;background:rgba(200,150,46,0.12);display:flex;align-items:center;justify-content:center;color:var(--gold);flex-shrink:0"><i class="fas fa-certificate"></i></div>
+            <div style="flex:1">
+              <div style="font-size:0.85rem;color:var(--white);font-weight:500" data-i18n data-en="Certifications Portfolio">Portfolio Certifications</div>
+              <div style="font-size:0.68rem;color:var(--text-muted)">ZIP — 12 certs — 3.8 MB</div>
+            </div>
+            <i class="fas fa-download" style="color:var(--gold);font-size:0.85rem"></i>
+          </a>
+        </div>
+        <div style="margin-top:1.25rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,0.06);text-align:center">
+          <a href="#mediatheque" style="font-size:0.82rem;color:var(--gold);font-weight:600;transition:var(--tr)" data-i18n data-en="View all documents →">Voir tous les documents →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact IR -->
+    <div style="margin-top:2rem;padding:1.25rem;background:rgba(200,150,46,0.05);border:1px solid rgba(200,150,46,0.12);border-radius:var(--radius);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem" data-r>
+      <div style="display:flex;align-items:center;gap:0.75rem">
+        <i class="fas fa-headset" style="font-size:1.25rem;color:var(--gold)"></i>
+        <div>
+          <div style="font-size:0.9rem;color:var(--white);font-weight:600" data-i18n data-en="Investor Relations Contact">Contact Relations Investisseurs</div>
+          <div style="font-size:0.78rem;color:var(--text-sec)">investisseurs@enertchad.td · +235 99 29 86 96</div>
+        </div>
+      </div>
+      <a href="mailto:investisseurs@enertchad.td" class="btn-gold" style="padding:0.6rem 1.5rem;font-size:0.82rem" data-i18n data-en="Contact IR Team">Contacter l'équipe IR</a>
     </div>
   </div>
 </section>
@@ -1671,7 +1818,7 @@ body:hover .cursor-glow{opacity:1}
       <h2 class="section-title" data-i18n data-en="Stay informed">Restez informé</h2>
       <p class="section-desc" data-i18n data-en="Monthly updates on group news, operations and career opportunities.">Actualités du groupe, opérations et opportunités de carrière — une fois par mois.</p>
     </div>
-    <form class="nl-bar" data-r action="https://formspree.io/f/NEWSLETTER_ID" method="POST" aria-label="Inscription newsletter">
+    <form class="nl-bar" data-r action="https://formspree.io/f/YOUR_NEWSLETTER_FORM_ID" method="POST" aria-label="Inscription newsletter">
       <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off"/>
       <input type="email" name="email" required placeholder="votre@email.com" aria-label="Adresse e-mail"/>
       <button type="submit" data-i18n data-en="Subscribe"><i class="fas fa-paper-plane" style="margin-right:0.4rem"></i>S'inscrire</button>
@@ -1887,7 +2034,7 @@ body:hover .cursor-glow{opacity:1}
           </div>
         </div>
       </div>
-      <form class="contact-form" action="https://formspree.io/f/FORM_ID" method="POST" aria-label="Formulaire de contact">
+      <form class="contact-form" action="https://formspree.io/f/YOUR_CONTACT_FORM_ID" method="POST" aria-label="Formulaire de contact">
         <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off"/>
         <div class="form-row">
           <div class="form-group">
@@ -2197,6 +2344,19 @@ function switchDashTab(tab,btn){
         else{c.style.display='none'}
       });
     });
+  });
+})();
+
+/* ═══ THEME TOGGLE ═══ */
+(function(){
+  var btn=document.getElementById('themeToggle');
+  if(!btn) return;
+  var icon=btn.querySelector('i');
+  try{if(localStorage.getItem('theme')==='light'){document.documentElement.classList.add('light');icon.className='fas fa-moon'}}catch(e){}
+  btn.addEventListener('click',function(){
+    var isLight=document.documentElement.classList.toggle('light');
+    icon.className=isLight?'fas fa-moon':'fas fa-sun';
+    try{localStorage.setItem('theme',isLight?'light':'dark')}catch(e){}
   });
 })();
 
