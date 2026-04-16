@@ -69,6 +69,7 @@
   --midstream:#0EA5E9;--midstream-teal:#14B8A6;--midstream-glow:rgba(14,165,233,0.2);--midstream-text:#38BDF8;
   --aval:#D97706;--aval-glow:rgba(217,119,6,0.2);--aval-text:#F59E0B;
   --tech:#8B5CF6;--tech-glow:rgba(139,92,246,0.25);--tech-text:#A78BFA;
+  --energy:#10B981;--energy-glow:rgba(16,185,129,0.25);--energy-text:#6EE7B7;
   /* Shared */
   --font-d:'Space Grotesk',system-ui,sans-serif;
   --font-b:'Inter',system-ui,sans-serif;
@@ -194,6 +195,7 @@ body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
 .mega-badge-aval{background:rgba(217,119,6,0.12);color:var(--aval);border-color:rgba(217,119,6,0.2)}
 .mega-badge-gold{background:rgba(200,150,46,0.12);color:var(--gold);border-color:rgba(200,150,46,0.2)}
 .mega-badge-tech{background:rgba(139,92,246,0.12);color:var(--tech);border-color:rgba(139,92,246,0.2)}
+.mega-badge-energy{background:rgba(16,185,129,0.12);color:var(--energy);border-color:rgba(16,185,129,0.2)}
 /* Quick links bar — pill style */
 .mega-quick{display:flex;gap:0.75rem;margin-top:1.5rem;padding-top:1.25rem;border-top:1px solid rgba(255,255,255,0.06);grid-column:1/-1;flex-wrap:wrap}
 .mega-quick a{font-size:0.72rem;color:var(--text-muted);transition:all 0.3s ease;display:inline-flex;align-items:center;gap:0.35rem;padding:0.4rem 0.85rem;border-radius:50px;border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.02)}
@@ -926,6 +928,10 @@ html.light .basin-kpi-bar{background:var(--bg-mid);border-color:rgba(0,0,0,0.06)
               <div class="mega-icon" style="background:rgba(139,92,246,0.1);color:var(--tech)"><i class="fas fa-microchip"></i></div>
               <div class="mega-link-text"><h4>Technologies <span class="mega-badge mega-badge-tech">EnerTech</span></h4><p>Digital Twin, SCADA, IA prédictive, cybersécurité IoT</p></div>
             </a>
+            <a href="https://enertchad-energies.vercel.app" target="_blank" rel="noopener" class="mega-link" role="menuitem">
+              <div class="mega-icon" style="background:rgba(16,185,129,0.1);color:var(--energy)"><i class="fas fa-bolt"></i></div>
+              <div class="mega-link-text"><h4>Énergies <span class="mega-badge mega-badge-energy">Électricité</span></h4><p>Centrales gaz, solaire hybride, micro-grids, BESS</p></div>
+            </a>
           </div>
           <div class="mega-divider"></div>
           <!-- Col 2: Chaîne de Valeur -->
@@ -1186,6 +1192,7 @@ html.light .basin-kpi-bar{background:var(--bg-mid);border-color:rgba(0,0,0,0.06)
     <a href="https://enertchad-midstream-vercel-app.vercel.app" target="_blank" rel="noopener" class="mn-link"><i class="fas fa-pipe-section" style="color:var(--midstream);width:20px"></i> Midstream · Transport</a>
     <a href="https://enertchad-aval-vercel-app.vercel.app" target="_blank" rel="noopener" class="mn-link"><i class="fas fa-gas-pump" style="color:var(--aval);width:20px"></i> Aval · Distribution</a>
     <a href="https://enertchad-technologies.vercel.app" target="_blank" rel="noopener" class="mn-link"><i class="fas fa-microchip" style="color:var(--tech);width:20px"></i> Technologies · EnerTech</a>
+    <a href="https://enertchad-energies.vercel.app" target="_blank" rel="noopener" class="mn-link"><i class="fas fa-bolt" style="color:var(--energy);width:20px"></i> Énergies · Électricité</a>
   </div>
 
   <!-- Nos Activités -->
@@ -2852,7 +2859,8 @@ var ENERTCHAD={
   amont:'https://enertchad-amont-vercel-app.vercel.app',
   midstream:'https://enertchad-midstream-vercel-app.vercel.app',
   aval:'https://enertchad-aval-vercel-app.vercel.app',
-  tech:'https://enertchad-technologies.vercel.app'
+  tech:'https://enertchad-technologies.vercel.app',
+  energies:'https://enertchad-energies.vercel.app'
 };
 
 /* ═══ INTERVAL CLEANUP PROXY ═══ */
