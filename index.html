@@ -163,14 +163,16 @@ body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
 /* CTA group */
 .hero-ctas{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}
 .btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.85rem 2rem;border-radius:var(--radius-sm);font-family:var(--font-d);font-size:0.95rem;font-weight:600;cursor:pointer;transition:var(--tr);border:none;text-decoration:none}
-.btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--bg);box-shadow:0 4px 20px rgba(200,150,46,0.3)}
+.btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--bg);box-shadow:0 4px 20px rgba(200,150,46,0.3);position:relative;overflow:hidden}
+.btn-gold::after{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:linear-gradient(45deg,transparent 40%,rgba(255,255,255,0.15) 50%,transparent 60%);transform:translateX(-100%);transition:none}
 .btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(200,150,46,0.4)}
+.btn-gold:hover::after{transform:translateX(100%);transition:transform 0.6s ease}
 .btn-outline{background:transparent;border:1px solid rgba(255,255,255,0.2);color:var(--white)}
 .btn-outline:hover{border-color:var(--white);background:rgba(255,255,255,0.05);transform:translateY(-2px)}
 
 /* Scroll chevron */
 .hero-scroll{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);z-index:3;animation:floatChevron 2.5s ease-in-out infinite}
-.hero-scroll svg{width:24px;height:24px;stroke:rgba(255,255,255,0.35);stroke-width:2;fill:none}
+.hero-scroll svg{width:24px;height:24px;stroke:rgba(255,255,255,0.55);stroke-width:2;fill:none}
 @keyframes floatChevron{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
 
 /* ═══ SECTION SHARED ═══ */
@@ -180,7 +182,8 @@ body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
 .section-eyebrow{display:inline-flex;align-items:center;gap:0.5rem;padding:0.3rem 0.9rem;border-radius:50px;
   background:rgba(200,150,46,0.08);border:1px solid rgba(200,150,46,0.2);
   font-size:0.7rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);margin-bottom:var(--space-sm)}
-.section-title{font-size:clamp(1.8rem,4vw,2.8rem);color:var(--white);margin-bottom:var(--space-sm);letter-spacing:-0.02em}
+.section-title{font-size:clamp(1.8rem,4vw,2.8rem);color:var(--white);margin-bottom:var(--space-sm);letter-spacing:-0.02em;position:relative;display:inline-block}
+.section-header .section-title::after{content:'';display:block;width:48px;height:3px;margin:0.75rem auto 0;border-radius:2px;background:linear-gradient(90deg,var(--gold),var(--gold-light))}
 .section-desc{color:var(--text-sec);font-size:1.05rem;line-height:1.7}
 
 /* ═══ CHAÎNE DE VALEUR (Value Chain) ═══ */
@@ -227,7 +230,8 @@ body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
 .kpi-card:hover{border-color:rgba(200,150,46,0.2);transform:translateY(-3px)}
 .kpi-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin:0 auto var(--space-sm);
   background:rgba(200,150,46,0.08);color:var(--gold);font-size:1.2rem}
-.kpi-num{font-family:var(--font-d);font-size:2.2rem;font-weight:700;color:var(--white);line-height:1}
+.kpi-num{font-family:var(--font-d);font-size:2.2rem;font-weight:700;line-height:1;
+  background:linear-gradient(135deg,var(--white) 60%,var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .kpi-unit{font-size:0.65em;color:var(--gold);margin-left:0.15em}
 .kpi-label{font-size:0.8rem;color:var(--text-muted);margin-top:0.4rem}
 
@@ -279,7 +283,7 @@ body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
 .btn-submit{width:100%;justify-content:center}
 
 /* ═══ FOOTER ═══ */
-.footer{padding:3rem 2rem 1.5rem;border-top:1px solid rgba(255,255,255,0.06);background:rgba(8,14,26,0.95)}
+.footer{padding:3rem 2rem 1.5rem;border-top:2px solid transparent;border-image:linear-gradient(90deg,transparent,var(--gold),transparent) 1;background:rgba(8,14,26,0.95)}
 .footer-top{display:flex;justify-content:space-between;align-items:flex-start;gap:2rem;margin-bottom:2rem;flex-wrap:wrap}
 .footer-brand{display:flex;flex-direction:column;gap:0.75rem;max-width:320px}
 .footer-brand img{width:36px;height:36px}
@@ -357,6 +361,10 @@ body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
   .hero-ctas{flex-direction:column;align-items:center}
   .btn{width:100%;justify-content:center}
 }
+
+/* ═══ PREMIUM GLASS UPGRADE ═══ */
+.vc-card,.kpi-card,.gov-card,.rse-card,.ir-card,.esg-pillar,.st-card,.news-card,.career-card{
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
 
 /* ═══ ANIMATIONS ═══ */
 [data-r]{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease}
@@ -639,7 +647,7 @@ body:hover .cursor-glow{opacity:1}
   <div class="ctn">
     <div class="section-header" data-r>
       <div class="section-eyebrow"><i class="fas fa-sitemap"></i> <span data-i18n data-en="Our Ecosystem">Notre Écosystème</span></div>
-      <h2 class="section-title" id="chaine-title" data-i18n data-en="Three pillars, one vision">Trois pôles, une vision</h2>
+      <h2 class="section-title" id="chaine-title" data-i18n data-en="What We Do">Ce que nous faisons</h2>
       <p class="section-desc" data-i18n data-en="Each subsidiary operates autonomously while sharing the same ambition: building a sovereign, competitive and sustainable energy player in the heart of Central Africa.">Chaque filiale opère de manière autonome tout en partageant la même ambition : bâtir un acteur énergétique souverain, compétitif et durable au cœur de l'Afrique Centrale.</p>
     </div>
     <div class="value-chain" role="list">
@@ -714,7 +722,7 @@ body:hover .cursor-glow{opacity:1}
   <div class="ctn">
     <div class="section-header" data-r>
       <div class="section-eyebrow"><i class="fas fa-chart-line"></i> <span data-i18n data-en="Performance">Performance</span></div>
-      <h2 class="section-title" id="chiffres-title" data-i18n data-en="The Group in numbers">Le groupe en chiffres</h2>
+      <h2 class="section-title" id="chiffres-title" data-i18n data-en="Key Figures">Chiffres clés</h2>
       <p class="section-desc" data-i18n data-en="Consolidated indicators reflecting our operational capacity and societal commitment.">Des indicateurs consolidés qui reflètent notre capacité opérationnelle et notre engagement sociétal.</p>
     </div>
     <div class="kpi-grid" data-r>
@@ -766,8 +774,8 @@ body:hover .cursor-glow{opacity:1}
 <section class="section" id="gouvernance" aria-labelledby="gov-title">
   <div class="ctn">
     <div class="section-header" data-r>
-      <div class="section-eyebrow"><i class="fas fa-landmark"></i> Leadership</div>
-      <h2 class="section-title" id="gov-title">Gouvernance du Groupe</h2>
+      <div class="section-eyebrow"><i class="fas fa-landmark"></i> <span data-i18n data-en="Governance">Gouvernance</span></div>
+      <h2 class="section-title" id="gov-title" data-i18n data-en="Leadership">Leadership</h2>
       <p class="section-desc">Une équipe dirigeante expérimentée, ancrée dans le terrain et guidée par une vision de souveraineté énergétique.</p>
     </div>
     <div class="gov-grid" data-r>
@@ -797,8 +805,8 @@ body:hover .cursor-glow{opacity:1}
 <section class="section" id="rse" aria-labelledby="rse-title" style="background:var(--bg-mid)">
   <div class="ctn">
     <div class="section-header" data-r>
-      <div class="section-eyebrow"><i class="fas fa-seedling"></i> Engagement</div>
-      <h2 class="section-title" id="rse-title">Notre responsabilité</h2>
+      <div class="section-eyebrow"><i class="fas fa-seedling"></i> <span data-i18n data-en="Sustainability">Durabilité</span></div>
+      <h2 class="section-title" id="rse-title" data-i18n data-en="Sustainability">Durabilité</h2>
       <p class="section-desc">Au-delà de la performance industrielle, EnerTchad s'engage pour un développement durable et inclusif au Tchad.</p>
     </div>
     <div class="rse-grid" data-r>
@@ -829,7 +837,7 @@ body:hover .cursor-glow{opacity:1}
   <div class="ctn">
     <div class="section-header" data-r>
       <div class="section-eyebrow"><i class="fas fa-cubes"></i> <span data-i18n data-en="Group Services">Services Groupe</span></div>
-      <h2 class="section-title" id="services-title" data-i18n data-en="Transversal Services">Services transversaux</h2>
+      <h2 class="section-title" id="services-title" data-i18n data-en="Enabling Functions">Fonctions support</h2>
       <p class="section-desc" data-i18n data-en="Centralized functions shared across all three subsidiaries — ensuring consistency, compliance and operational excellence.">Fonctions centralisées partagées entre les trois filiales — garantissant cohérence, conformité et excellence opérationnelle.</p>
     </div>
     <div class="st-grid" data-r>
@@ -950,7 +958,7 @@ body:hover .cursor-glow{opacity:1}
     <div class="parallax-bg" aria-hidden="true"><div class="orb orb-3"></div></div>
     <div class="section-header" data-r>
       <div class="section-eyebrow"><i class="fas fa-leaf"></i> <span data-i18n data-en="ESG Strategy">Stratégie ESG</span></div>
-      <h2 class="section-title" id="esg-title" data-i18n data-en="Environmental, Social & Governance">Environnement, Social & Gouvernance</h2>
+      <h2 class="section-title" id="esg-title" data-i18n data-en="ESG Performance">Performance ESG</h2>
       <p class="section-desc" data-i18n data-en="Aligned with the UN Sustainable Development Goals, EnerTchad measures and publishes its ESG performance transparently.">Aligné sur les Objectifs de Développement Durable de l'ONU, EnerTchad mesure et publie sa performance ESG en toute transparence.</p>
     </div>
     <div class="esg-pillars" data-r>
@@ -994,7 +1002,7 @@ body:hover .cursor-glow{opacity:1}
   <div class="ctn">
     <div class="section-header" data-r>
       <div class="section-eyebrow"><i class="fas fa-chart-bar"></i> <span data-i18n data-en="Investor Relations">Relations Investisseurs</span></div>
-      <h2 class="section-title" id="ir-title" data-i18n data-en="Financial Performance">Performance Financière</h2>
+      <h2 class="section-title" id="ir-title" data-i18n data-en="Investors">Investisseurs</h2>
       <p class="section-desc" data-i18n data-en="Key consolidated indicators demonstrating the group's financial trajectory and operational strength.">Indicateurs consolidés clés illustrant la trajectoire financière et la solidité opérationnelle du groupe.</p>
     </div>
     <div class="ir-grid" data-r>
@@ -1026,7 +1034,7 @@ body:hover .cursor-glow{opacity:1}
     <div class="parallax-bg" aria-hidden="true"><div class="orb orb-1"></div><div class="orb orb-2"></div></div>
     <div class="section-header" data-r>
       <div class="section-eyebrow"><i class="fas fa-tachometer-alt"></i> <span data-i18n data-en="Live Dashboard">Tableau de bord</span></div>
-      <h2 class="section-title" id="dash-title" data-i18n data-en="Consolidated Operations">Opérations consolidées</h2>
+      <h2 class="section-title" id="dash-title" data-i18n data-en="Live Operations">Opérations en direct</h2>
     </div>
     <div class="dash-wrap" data-r>
       <div class="dash-chart">
@@ -1064,7 +1072,7 @@ body:hover .cursor-glow{opacity:1}
   <div class="ctn">
     <div class="section-header" data-r>
       <div class="section-eyebrow"><i class="fas fa-map-marked-alt"></i> <span data-i18n data-en="Network">Réseau</span></div>
-      <h2 class="section-title" id="reseau-title" data-i18n data-en="National Presence">Présence nationale</h2>
+      <h2 class="section-title" id="reseau-title" data-i18n data-en="Where We Operate">Où nous opérons</h2>
       <p class="section-desc" data-i18n data-en="From the Doba and Bongor production basins to N'Djamena distribution — 1,070 km of integrated infrastructure.">Des bassins producteurs de Doba et Bongor à la distribution à N'Djamena — 1 070 km d'infrastructure intégrée.</p>
     </div>
     <div class="map-container" data-r>
@@ -1117,7 +1125,7 @@ body:hover .cursor-glow{opacity:1}
   <div class="ctn">
     <div class="section-header" data-r>
       <div class="section-eyebrow"><i class="fas fa-handshake"></i> <span data-i18n data-en="Partners">Partenaires</span></div>
-      <h2 class="section-title" id="part-title" data-i18n data-en="They trust us">Ils nous font confiance</h2>
+      <h2 class="section-title" id="part-title" data-i18n data-en="Strategic Partners">Partenaires stratégiques</h2>
     </div>
     <div class="partners-track" data-r aria-label="Logos partenaires">
       <div class="partners-row" id="partnersRow">
@@ -1149,7 +1157,7 @@ body:hover .cursor-glow{opacity:1}
   <div class="ctn">
     <div class="section-header" data-r>
       <div class="section-eyebrow"><i class="fas fa-newspaper"></i> <span data-i18n data-en="News">Actualités</span></div>
-      <h2 class="section-title" id="news-title" data-i18n data-en="Latest from the Group">Dernières nouvelles</h2>
+      <h2 class="section-title" id="news-title" data-i18n data-en="News & Insights">Actualités & Perspectives</h2>
     </div>
     <div class="news-grid" data-r>
       <article class="news-card">
@@ -1194,7 +1202,7 @@ body:hover .cursor-glow{opacity:1}
   <div class="ctn">
     <div class="section-header" data-r>
       <div class="section-eyebrow"><i class="fas fa-briefcase"></i> <span data-i18n data-en="Careers">Carrières</span></div>
-      <h2 class="section-title" id="career-title" data-i18n data-en="Join the team">Rejoignez l'équipe</h2>
+      <h2 class="section-title" id="career-title" data-i18n data-en="Join Us">Rejoignez-nous</h2>
       <p class="section-desc" data-i18n data-en="We're building the future of Chadian energy. Explore our open positions.">Nous construisons l'avenir de l'énergie tchadienne. Découvrez nos postes ouverts.</p>
     </div>
     <div class="careers-grid" data-r>
@@ -1252,8 +1260,8 @@ body:hover .cursor-glow{opacity:1}
 <section class="section" id="jalons" aria-labelledby="jalons-title">
   <div class="ctn">
     <div class="section-header" data-r>
-      <div class="section-eyebrow"><i class="fas fa-flag"></i> Parcours</div>
-      <h2 class="section-title" id="jalons-title">Nos jalons</h2>
+      <div class="section-eyebrow"><i class="fas fa-flag"></i> <span data-i18n data-en="Milestones">Jalons</span></div>
+      <h2 class="section-title" id="jalons-title" data-i18n data-en="Our Journey">Notre parcours</h2>
     </div>
     <div class="timeline" data-r>
       <div class="tl-item">
@@ -1294,8 +1302,8 @@ body:hover .cursor-glow{opacity:1}
 <section class="section" id="contact" aria-labelledby="contact-title" style="background:var(--bg-mid)">
   <div class="ctn">
     <div class="section-header" data-r>
-      <div class="section-eyebrow"><i class="fas fa-envelope"></i> Échangeons</div>
-      <h2 class="section-title" id="contact-title">Contactez le Groupe</h2>
+      <div class="section-eyebrow"><i class="fas fa-envelope"></i> <span data-i18n data-en="Get in Touch">Échangeons</span></div>
+      <h2 class="section-title" id="contact-title" data-i18n data-en="Contact Us">Nous contacter</h2>
       <p class="section-desc">Pour toute demande institutionnelle, partenariat ou information, notre équipe est à votre écoute.</p>
     </div>
     <div class="contact-grid" data-r>
