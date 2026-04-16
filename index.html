@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
+  <title>EnerTchad — Groupe Pétrolier & Gazier Souverain du Tchad</title>
+  <meta content="EnerTchad : groupe tchadien intégré couvrant l'amont pétrolier, le transport midstream et la distribution aval. Unité · Innovation · Durabilité." name="description"/>
+  <meta content="EnerTchad, groupe, pétrole, gaz, Tchad, amont, midstream, aval, énergie, Afrique Centrale" name="keywords"/>
+  <meta content="EnerTchad S.A." name="author"/>
+  <meta content="index,follow,max-snippet:-1,max-image-preview:large" name="robots"/>
+  <meta content="strict-origin-when-cross-origin" name="referrer"/>
+  <link href="https://enertchad-groupe.vercel.app" rel="canonical"/>
+  <!-- OG -->
+  <meta content="EnerTchad — Groupe Pétrolier & Gazier Souverain" property="og:title"/>
+  <meta content="De l'exploration à la pompe : un acteur tchadien intégré." property="og:description"/>
+  <meta content="website" property="og:type"/>
+  <meta content="https://enertchad-groupe.vercel.app" property="og:url"/>
+  <meta content="https://enertchad-groupe.vercel.app/og-image.png" property="og:image"/>
+  <meta content="1200" property="og:image:width"/>
+  <meta content="630" property="og:image:height"/>
+  <meta content="fr_TD" property="og:locale"/>
+  <meta content="EnerTchad Groupe" property="og:site_name"/>
+  <!-- Twitter -->
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="EnerTchad — Groupe Pétrolier & Gazier Souverain" name="twitter:title"/>
+  <meta content="De l'exploration à la pompe — un acteur tchadien intégré." name="twitter:description"/>
+  <meta content="@EnerTchad" name="twitter:site"/>
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","name":"EnerTchad","url":"https://enertchad-groupe.vercel.app","description":"Groupe pétrolier et gazier tchadien intégré — amont, midstream et aval.","address":{"@type":"PostalAddress","streetAddress":"Radisson, Block D, Bureau 23, Sabangali","addressLocality":"N'Djamena","addressCountry":"TD"},"telephone":"+235-99-29-86-96","email":"contact@enertchad.td","sameAs":["https://www.linkedin.com/company/enertchad"],"areaServed":{"@type":"Country","name":"Tchad"},"foundingDate":"2026","subOrganization":[{"@type":"Organization","name":"EnerTchad Amont","url":"https://enertchad-amont.vercel.app"},{"@type":"Organization","name":"EnerTchad Midstream","url":"https://enertchad-midstream.vercel.app"},{"@type":"Organization","name":"EnerTchad Aval","url":"https://enertchad-aval-vercel-app.vercel.app"}]}
+  </script>
+  <!-- Favicon -->
+  <link href="logo.svg" rel="icon" type="image/svg+xml"/>
+  <link href="logo.svg" rel="apple-touch-icon"/>
+  <meta content="#080E1A" name="theme-color"/>
+  <!-- PWA -->
+  <meta content="yes" name="apple-mobile-web-app-capable"/>
+  <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
+  <meta content="EnerTchad Groupe" name="apple-mobile-web-app-title"/>
+  <link href="/manifest.json" rel="manifest"/>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link crossorigin href="https://cdnjs.cloudflare.com" rel="preconnect"/>
+  <link as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Space+Grotesk:wght@400..700&display=swap" rel="preload"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Space+Grotesk:wght@400..700&display=swap" media="print" onload="this.media='all'" rel="stylesheet"/>
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Space+Grotesk:wght@400..700&display=swap" rel="stylesheet"/></noscript>
+  <link as="style" crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="preload"/>
+  <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+  <noscript><link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/></noscript>
+<style>
+/* ═══════════════════════════════════════════════════════════════
+   EnerTchad Groupe — Corporate Landing Page
+   Palette: Deep charcoal + 3 accent gradients per filiale
+   ═══════════════════════════════════════════════════════════════ */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#080E1A;--bg-mid:#0C1426;--bg-card:#0F1A2E;
+  --surface:#141D30;--surface-alt:#1A2540;
+  --white:#FFFFFF;--text:#E2E8F0;--text-sec:#94A3B8;--text-muted:#64748B;
+  --gold:#C8962E;--gold-light:#D4A840;
+  /* Filiale accents */
+  --amont:#2E86DE;--amont-glow:rgba(46,134,222,0.25);
+  --midstream:#0EA5E9;--midstream-teal:#14B8A6;--midstream-glow:rgba(14,165,233,0.2);
+  --aval:#D97706;--aval-glow:rgba(217,119,6,0.2);
+  /* Shared */
+  --font-d:'Space Grotesk',system-ui,sans-serif;
+  --font-b:'Inter',system-ui,sans-serif;
+  --radius:16px;--radius-sm:10px;--radius-xs:6px;
+  --tr:0.45s cubic-bezier(0.22,0.61,0.36,1);
+  --shadow-l:0 20px 60px rgba(0,0,0,0.4);
+  --shadow-m:0 8px 30px rgba(0,0,0,0.3);
+  /* spacing */
+  --space-xs:0.5rem;--space-sm:1rem;--space-md:1.5rem;--space-lg:2.5rem;--space-xl:4rem;--space-2xl:6rem;
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;font-size:16px}
+body{font-family:var(--font-b);color:var(--text);background:var(--bg);overflow-x:hidden;line-height:1.7;-webkit-font-smoothing:antialiased}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{font-family:var(--font-d);line-height:1.2;font-weight:700}
+::selection{background:var(--gold);color:var(--bg)}
+
+/* ═══ NOISE GRAIN OVERLAY ═══ */
+body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:0.025;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ═══ HEADER ═══ */
+.header{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;
+  background:rgba(8,14,26,0.85);backdrop-filter:blur(20px) saturate(1.4);-webkit-backdrop-filter:blur(20px) saturate(1.4);
+  border-bottom:1px solid rgba(255,255,255,0.06);transition:var(--tr)}
+.header.scrolled{padding:0.6rem 2rem;background:rgba(8,14,26,0.95)}
+.logo-wrap{display:flex;align-items:center;gap:0.75rem}
+.logo-wrap img{width:42px;height:42px}
+.logo-text{font-family:var(--font-d);font-size:1.25rem;font-weight:700;color:var(--white);letter-spacing:-0.02em}
+.logo-text span{color:var(--gold);font-weight:400;font-size:0.75em;margin-left:0.25rem;opacity:0.8}
+.header-nav{display:flex;align-items:center;gap:2rem}
+.header-nav a{font-size:0.875rem;font-weight:500;color:var(--text-sec);transition:var(--tr);position:relative}
+.header-nav a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--gold);transition:var(--tr)}
+.header-nav a:hover{color:var(--white)}
+.header-nav a:hover::after{width:100%}
+.lang-btn{font-size:0.8rem;padding:0.35rem 0.85rem;border:1px solid rgba(255,255,255,0.15);border-radius:var(--radius-xs);color:var(--text-sec);cursor:pointer;background:transparent;font-family:var(--font-b);transition:var(--tr)}
+.lang-btn:hover{border-color:var(--gold);color:var(--gold)}
+
+/* Mobile menu */
+.mobile-toggle{display:none;background:none;border:none;cursor:pointer;padding:0.5rem;color:var(--white);font-size:1.3rem}
+
+/* ═══ HERO ═══ */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;padding:8rem 2rem 6rem}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg::before{content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 45%,rgba(46,134,222,0.08) 0%,transparent 70%),
+    radial-gradient(ellipse 60% 40% at 25% 60%,rgba(14,165,233,0.06) 0%,transparent 60%),
+    radial-gradient(ellipse 60% 40% at 75% 60%,rgba(217,119,6,0.05) 0%,transparent 60%),
+    linear-gradient(180deg,var(--bg) 0%,var(--bg-mid) 100%);
+}
+.hero-bg::after{content:'';position:absolute;inset:0;
+  background:radial-gradient(1px 1px at 20% 30%,rgba(255,255,255,0.4),transparent),
+  radial-gradient(1px 1px at 60% 15%,rgba(255,255,255,0.3),transparent),
+  radial-gradient(1.5px 1.5px at 80% 40%,rgba(255,255,255,0.2),transparent),
+  radial-gradient(1px 1px at 40% 70%,rgba(255,255,255,0.25),transparent);
+  animation:starTwinkle 8s ease-in-out infinite alternate}
+@keyframes starTwinkle{0%{opacity:0.6}50%{opacity:1}100%{opacity:0.7}}
+
+.hero-content{position:relative;z-index:2;max-width:900px}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:0.5rem;padding:0.4rem 1rem;border-radius:50px;
+  background:rgba(200,150,46,0.1);border:1px solid rgba(200,150,46,0.25);
+  font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);margin-bottom:var(--space-md)}
+.hero-eyebrow i{font-size:0.65rem}
+.hero h1{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:700;color:var(--white);margin-bottom:var(--space-md);letter-spacing:-0.03em;line-height:1.05}
+.hero h1 em{font-style:normal;
+  background:linear-gradient(135deg,var(--amont),var(--midstream),var(--aval));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:clamp(1rem,2.5vw,1.25rem);color:var(--text-sec);max-width:640px;margin:0 auto var(--space-lg);line-height:1.7}
+
+/* Hero KPI strip */
+.hero-kpis{display:flex;justify-content:center;gap:3rem;margin-bottom:var(--space-xl);flex-wrap:wrap}
+.hero-kpi{text-align:center}
+.hero-kpi-value{font-family:var(--font-d);font-size:2.5rem;font-weight:700;color:var(--white);line-height:1}
+.hero-kpi-value span{font-size:0.5em;color:var(--gold);margin-left:0.1em}
+.hero-kpi-label{font-size:0.75rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-top:0.3rem}
+
+/* CTA group */
+.hero-ctas{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.85rem 2rem;border-radius:var(--radius-sm);font-family:var(--font-d);font-size:0.95rem;font-weight:600;cursor:pointer;transition:var(--tr);border:none;text-decoration:none}
+.btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--bg);box-shadow:0 4px 20px rgba(200,150,46,0.3)}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(200,150,46,0.4)}
+.btn-outline{background:transparent;border:1px solid rgba(255,255,255,0.2);color:var(--white)}
+.btn-outline:hover{border-color:var(--white);background:rgba(255,255,255,0.05);transform:translateY(-2px)}
+
+/* Scroll chevron */
+.hero-scroll{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);z-index:3;animation:floatChevron 2.5s ease-in-out infinite}
+.hero-scroll svg{width:24px;height:24px;stroke:rgba(255,255,255,0.35);stroke-width:2;fill:none}
+@keyframes floatChevron{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+
+/* ═══ SECTION SHARED ═══ */
+.section{padding:var(--space-2xl) 2rem;position:relative}
+.ctn{max-width:1200px;margin:0 auto}
+.section-header{text-align:center;max-width:700px;margin:0 auto var(--space-xl)}
+.section-eyebrow{display:inline-flex;align-items:center;gap:0.5rem;padding:0.3rem 0.9rem;border-radius:50px;
+  background:rgba(200,150,46,0.08);border:1px solid rgba(200,150,46,0.2);
+  font-size:0.7rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);margin-bottom:var(--space-sm)}
+.section-title{font-size:clamp(1.8rem,4vw,2.8rem);color:var(--white);margin-bottom:var(--space-sm);letter-spacing:-0.02em}
+.section-desc{color:var(--text-sec);font-size:1.05rem;line-height:1.7}
+
+/* ═══ CHAÎNE DE VALEUR (Value Chain) ═══ */
+.value-chain{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:var(--space-lg)}
+
+.vc-card{position:relative;border-radius:var(--radius);overflow:hidden;
+  background:var(--bg-card);border:1px solid rgba(255,255,255,0.06);
+  padding:2.5rem 2rem 2rem;transition:var(--tr);cursor:pointer;display:flex;flex-direction:column;min-height:460px}
+.vc-card:hover{transform:translateY(-6px);border-color:rgba(255,255,255,0.12)}
+.vc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;transition:var(--tr)}
+
+/* Per-filiale accents */
+.vc-card[data-filiale="amont"]::before{background:linear-gradient(90deg,var(--amont),#54A0FF)}
+.vc-card[data-filiale="amont"]:hover{box-shadow:0 12px 40px var(--amont-glow)}
+.vc-card[data-filiale="amont"] .vc-icon{background:rgba(46,134,222,0.1);color:var(--amont)}
+.vc-card[data-filiale="amont"] .vc-arrow{color:var(--amont)}
+
+.vc-card[data-filiale="midstream"]::before{background:linear-gradient(90deg,var(--midstream),var(--midstream-teal))}
+.vc-card[data-filiale="midstream"]:hover{box-shadow:0 12px 40px var(--midstream-glow)}
+.vc-card[data-filiale="midstream"] .vc-icon{background:rgba(14,165,233,0.1);color:var(--midstream)}
+.vc-card[data-filiale="midstream"] .vc-arrow{color:var(--midstream)}
+
+.vc-card[data-filiale="aval"]::before{background:linear-gradient(90deg,var(--aval),#F59E0B)}
+.vc-card[data-filiale="aval"]:hover{box-shadow:0 12px 40px var(--aval-glow)}
+.vc-card[data-filiale="aval"] .vc-icon{background:rgba(217,119,6,0.1);color:var(--aval)}
+.vc-card[data-filiale="aval"] .vc-arrow{color:var(--aval)}
+
+.vc-badge{position:absolute;top:1.2rem;right:1.2rem;font-size:0.65rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;
+  padding:0.25rem 0.65rem;border-radius:50px;color:rgba(255,255,255,0.6);background:rgba(255,255,255,0.06)}
+.vc-icon{width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:var(--space-md)}
+.vc-title{font-size:1.4rem;color:var(--white);margin-bottom:0.5rem}
+.vc-subtitle{font-size:0.85rem;color:var(--text-muted);margin-bottom:var(--space-md);font-weight:500}
+.vc-desc{color:var(--text-sec);font-size:0.92rem;line-height:1.7;flex:1}
+.vc-services{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:var(--space-md)}
+.vc-tag{font-size:0.7rem;padding:0.2rem 0.6rem;border-radius:50px;background:rgba(255,255,255,0.05);color:var(--text-muted);border:1px solid rgba(255,255,255,0.06)}
+.vc-footer{display:flex;align-items:center;justify-content:space-between;margin-top:var(--space-md);padding-top:var(--space-sm);border-top:1px solid rgba(255,255,255,0.06)}
+.vc-link{font-size:0.85rem;font-weight:600;color:var(--white);display:flex;align-items:center;gap:0.4rem;transition:var(--tr)}
+.vc-link:hover{gap:0.7rem}
+.vc-arrow{font-size:0.75rem;transition:var(--tr)}
+
+/* ═══ CHIFFRES CLÉS (Key Figures) ═══ */
+.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
+.kpi-card{text-align:center;padding:2rem 1.5rem;border-radius:var(--radius);background:var(--bg-card);border:1px solid rgba(255,255,255,0.06);transition:var(--tr)}
+.kpi-card:hover{border-color:rgba(200,150,46,0.2);transform:translateY(-3px)}
+.kpi-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin:0 auto var(--space-sm);
+  background:rgba(200,150,46,0.08);color:var(--gold);font-size:1.2rem}
+.kpi-num{font-family:var(--font-d);font-size:2.2rem;font-weight:700;color:var(--white);line-height:1}
+.kpi-unit{font-size:0.65em;color:var(--gold);margin-left:0.15em}
+.kpi-label{font-size:0.8rem;color:var(--text-muted);margin-top:0.4rem}
+
+/* ═══ GOUVERNANCE ═══ */
+.gov-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.gov-card{padding:2rem;border-radius:var(--radius);background:var(--bg-card);border:1px solid rgba(255,255,255,0.06);text-align:center;transition:var(--tr)}
+.gov-card:hover{border-color:rgba(200,150,46,0.15);transform:translateY(-3px)}
+.gov-avatar{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,var(--surface),var(--surface-alt));
+  display:flex;align-items:center;justify-content:center;margin:0 auto var(--space-sm);font-size:1.8rem;color:var(--gold);border:2px solid rgba(200,150,46,0.2)}
+.gov-name{font-size:1.1rem;color:var(--white);margin-bottom:0.25rem}
+.gov-role{font-size:0.8rem;color:var(--gold);font-weight:500;margin-bottom:0.75rem}
+.gov-desc{font-size:0.85rem;color:var(--text-sec);line-height:1.6}
+
+/* ═══ VISION RSE ═══ */
+.rse-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.rse-card{padding:2rem;border-radius:var(--radius);background:var(--bg-card);border:1px solid rgba(255,255,255,0.06);transition:var(--tr)}
+.rse-card:hover{transform:translateY(-3px);border-color:rgba(255,255,255,0.12)}
+.rse-icon{font-size:2rem;margin-bottom:var(--space-sm)}
+.rse-card h3{font-size:1.1rem;color:var(--white);margin-bottom:0.5rem}
+.rse-card p{font-size:0.9rem;color:var(--text-sec);line-height:1.6}
+.rse-stat{margin-top:var(--space-sm);font-family:var(--font-d);font-size:1.6rem;font-weight:700;color:var(--gold)}
+.rse-stat small{font-size:0.55em;color:var(--text-muted);font-weight:400;margin-left:0.3em}
+
+/* ═══ TIMELINE ═══ */
+.timeline{position:relative;max-width:800px;margin:0 auto;padding-left:3rem}
+.timeline::before{content:'';position:absolute;left:0.75rem;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--amont),var(--midstream),var(--aval))}
+.tl-item{position:relative;margin-bottom:2.5rem;padding-left:2rem}
+.tl-dot{position:absolute;left:-2.55rem;top:0.3rem;width:14px;height:14px;border-radius:50%;border:3px solid var(--gold);background:var(--bg)}
+.tl-year{font-family:var(--font-d);font-size:0.8rem;font-weight:600;color:var(--gold);letter-spacing:0.06em;margin-bottom:0.3rem}
+.tl-title{font-size:1.05rem;color:var(--white);margin-bottom:0.3rem}
+.tl-desc{font-size:0.85rem;color:var(--text-sec);line-height:1.6}
+
+/* ═══ CONTACT ═══ */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.contact-info{display:flex;flex-direction:column;gap:1.5rem}
+.ci-item{display:flex;align-items:flex-start;gap:1rem}
+.ci-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;
+  background:rgba(200,150,46,0.08);color:var(--gold);font-size:1rem;flex-shrink:0}
+.ci-label{font-size:0.75rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em}
+.ci-value{font-size:0.95rem;color:var(--white);margin-top:0.15rem}
+.contact-form{display:flex;flex-direction:column;gap:1rem}
+.form-group{display:flex;flex-direction:column;gap:0.3rem}
+.form-group label{font-size:0.75rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em}
+.form-group input,.form-group textarea,.form-group select{padding:0.75rem 1rem;border-radius:var(--radius-sm);border:1px solid rgba(255,255,255,0.1);
+  background:var(--bg-card);color:var(--white);font-family:var(--font-b);font-size:0.9rem;transition:var(--tr);outline:none}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(200,150,46,0.1)}
+.form-group textarea{min-height:120px;resize:vertical}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.btn-submit{width:100%;justify-content:center}
+
+/* ═══ FOOTER ═══ */
+.footer{padding:3rem 2rem 1.5rem;border-top:1px solid rgba(255,255,255,0.06);background:rgba(8,14,26,0.95)}
+.footer-top{display:flex;justify-content:space-between;align-items:flex-start;gap:2rem;margin-bottom:2rem;flex-wrap:wrap}
+.footer-brand{display:flex;flex-direction:column;gap:0.75rem;max-width:320px}
+.footer-brand img{width:36px;height:36px}
+.footer-brand p{font-size:0.8rem;color:var(--text-muted);line-height:1.6}
+.footer-links{display:flex;gap:3rem}
+.footer-col h4{font-size:0.7rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.75rem}
+.footer-col a{display:block;font-size:0.85rem;color:var(--text-sec);margin-bottom:0.4rem;transition:var(--tr)}
+.footer-col a:hover{color:var(--white)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.06);flex-wrap:wrap;gap:1rem}
+.footer-copy{font-size:0.75rem;color:var(--text-muted)}
+.footer-legal{display:flex;gap:1.5rem}
+.footer-legal a{font-size:0.75rem;color:var(--text-muted);transition:var(--tr)}
+.footer-legal a:hover{color:var(--white)}
+
+/* ═══ COOKIE BANNER ═══ */
+.cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:10000;padding:1.25rem 2rem;
+  background:rgba(15,26,46,0.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border-top:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:space-between;gap:1.5rem;
+  transform:translateY(100%);transition:transform 0.5s cubic-bezier(0.22,0.61,0.36,1)}
+.cookie-banner.visible{transform:translateY(0)}
+.cookie-text{font-size:0.85rem;color:var(--text-sec);flex:1}
+.cookie-text a{color:var(--gold);text-decoration:underline}
+.cookie-btns{display:flex;gap:0.75rem;flex-shrink:0}
+.cookie-btn{padding:0.5rem 1.25rem;border-radius:var(--radius-xs);font-size:0.8rem;font-weight:600;cursor:pointer;transition:var(--tr);border:none;font-family:var(--font-b)}
+.cookie-accept{background:var(--gold);color:var(--bg)}
+.cookie-decline{background:rgba(255,255,255,0.08);color:var(--text-sec)}
+.cookie-btn:hover{transform:translateY(-1px)}
+
+/* ═══ RESPONSIVE ═══ */
+@media(max-width:1024px){
+  .value-chain,.kpi-grid{grid-template-columns:repeat(2,1fr)}
+  .gov-grid,.rse-grid{grid-template-columns:repeat(2,1fr)}
+  .contact-grid{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  .header{padding:0.8rem 1.25rem}
+  .header-nav{display:none}
+  .mobile-toggle{display:block}
+  /* Mobile nav */
+  .mobile-nav{position:fixed;inset:0;z-index:999;background:rgba(8,14,26,0.98);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2rem;opacity:0;pointer-events:none;transition:var(--tr)}
+  .mobile-nav.open{opacity:1;pointer-events:auto}
+  .mobile-nav a{font-size:1.3rem;color:var(--white);font-family:var(--font-d);font-weight:600}
+  .mobile-nav .close-btn{position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:var(--white);font-size:1.5rem;cursor:pointer}
+
+  .hero{min-height:100svh;padding:6rem 1.25rem 4rem}
+  .hero h1{font-size:2.2rem}
+  .hero-kpis{gap:1.5rem}
+  .hero-kpi-value{font-size:2rem}
+  .section{padding:var(--space-xl) 1.25rem}
+  .value-chain,.kpi-grid,.gov-grid,.rse-grid{grid-template-columns:1fr}
+  .vc-card{min-height:auto}
+  .contact-grid{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  .footer-top{flex-direction:column}
+  .footer-links{flex-direction:column;gap:1.5rem}
+  .footer-bottom{flex-direction:column;text-align:center}
+  .cookie-banner{flex-direction:column;text-align:center}
+}
+@media(max-width:480px){
+  .hero h1{font-size:1.8rem}
+  .hero-kpis{gap:1rem}
+  .hero-ctas{flex-direction:column;align-items:center}
+  .btn{width:100%;justify-content:center}
+}
+
+/* ═══ ANIMATIONS ═══ */
+[data-r]{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease}
+[data-r].visible{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<!-- ════════════════════ HEADER ════════════════════ -->
+<header class="header" role="banner">
+  <a class="logo-wrap" href="/" aria-label="EnerTchad Groupe — Accueil">
+    <img src="logo.svg" alt="EnerTchad" width="42" height="42"/>
+    <div class="logo-text">EnerTchad<span>Groupe</span></div>
+  </a>
+  <nav class="header-nav" aria-label="Navigation principale">
+    <a href="#chaine">Chaîne de valeur</a>
+    <a href="#chiffres">Chiffres clés</a>
+    <a href="#gouvernance">Gouvernance</a>
+    <a href="#rse">RSE</a>
+    <a href="#contact">Contact</a>
+    <button class="lang-btn" id="langToggle" aria-label="Changer la langue">FR / EN</button>
+  </nav>
+  <button class="mobile-toggle" id="mobileToggle" aria-label="Ouvrir le menu" aria-expanded="false">
+    <i class="fas fa-bars"></i>
+  </button>
+</header>
+
+<!-- Mobile nav -->
+<div class="mobile-nav" id="mobileNav" role="dialog" aria-label="Menu mobile">
+  <button class="close-btn" id="mobileClose" aria-label="Fermer le menu"><i class="fas fa-times"></i></button>
+  <a href="#chaine" class="mn-link">Chaîne de valeur</a>
+  <a href="#chiffres" class="mn-link">Chiffres clés</a>
+  <a href="#gouvernance" class="mn-link">Gouvernance</a>
+  <a href="#rse" class="mn-link">RSE</a>
+  <a href="#contact" class="mn-link">Contact</a>
+</div>
+
+<!-- ════════════════════ HERO ════════════════════ -->
+<section class="hero" id="hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-content" data-r>
+    <div class="hero-eyebrow"><i class="fas fa-bolt"></i> Opérateur Intégré · Tchad</div>
+    <h1>De l'exploration<br/>à la <em>pompe</em></h1>
+    <p class="hero-sub">EnerTchad est le premier groupe tchadien intégré couvrant l'ensemble de la chaîne de valeur pétrolière et gazière — de l'amont à la distribution.</p>
+    <div class="hero-kpis" role="list" aria-label="Indicateurs clés du groupe">
+      <div class="hero-kpi" role="listitem">
+        <div class="hero-kpi-value">3<span>filiales</span></div>
+        <div class="hero-kpi-label">Pôles d'activité</div>
+      </div>
+      <div class="hero-kpi" role="listitem">
+        <div class="hero-kpi-value">750<span>+</span></div>
+        <div class="hero-kpi-label">Collaborateurs</div>
+      </div>
+      <div class="hero-kpi" role="listitem">
+        <div class="hero-kpi-value">1 070<span>km</span></div>
+        <div class="hero-kpi-label">Réseau pipeline</div>
+      </div>
+      <div class="hero-kpi" role="listitem">
+        <div class="hero-kpi-value">24<span>/7</span></div>
+        <div class="hero-kpi-label">Opérations continues</div>
+      </div>
+    </div>
+    <div class="hero-ctas">
+      <a href="#chaine" class="btn btn-gold"><i class="fas fa-layer-group"></i> Nos Filiales</a>
+      <a href="#contact" class="btn btn-outline"><i class="fas fa-envelope"></i> Nous contacter</a>
+    </div>
+  </div>
+  <a href="#chaine" class="hero-scroll" aria-label="Défiler vers le bas">
+    <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+  </a>
+</section>
+
+<!-- ════════════════════ CHAÎNE DE VALEUR ════════════════════ -->
+<section class="section" id="chaine" aria-labelledby="chaine-title">
+  <div class="ctn">
+    <div class="section-header" data-r>
+      <div class="section-eyebrow"><i class="fas fa-sitemap"></i> Notre Écosystème</div>
+      <h2 class="section-title" id="chaine-title">Trois pôles, une vision</h2>
+      <p class="section-desc">Chaque filiale opère de manière autonome tout en partageant la même ambition : bâtir un acteur énergétique souverain, compétitif et durable au cœur de l'Afrique Centrale.</p>
+    </div>
+    <div class="value-chain" role="list">
+
+      <!-- AMONT -->
+      <a href="https://enertchad-amont.vercel.app" target="_blank" rel="noopener" class="vc-card" data-filiale="amont" data-r role="listitem">
+        <span class="vc-badge">Upstream</span>
+        <div class="vc-icon"><i class="fas fa-oil-well"></i></div>
+        <h3 class="vc-title">EnerTchad Amont</h3>
+        <div class="vc-subtitle">Exploration & Production</div>
+        <p class="vc-desc">Services parapétroliers intégrés pour les champs de Doba et Bongor — forage, complétion, chimie pétrolière, EOR, SCADA, HSE et transition énergétique.</p>
+        <div class="vc-services">
+          <span class="vc-tag">Forage</span>
+          <span class="vc-tag">EOR</span>
+          <span class="vc-tag">Géosciences</span>
+          <span class="vc-tag">SCADA</span>
+          <span class="vc-tag">HSE</span>
+          <span class="vc-tag">Chimie</span>
+          <span class="vc-tag">ENR</span>
+        </div>
+        <div class="vc-footer">
+          <span class="vc-link">Découvrir <i class="fas fa-arrow-right vc-arrow"></i></span>
+        </div>
+      </a>
+
+      <!-- MIDSTREAM -->
+      <a href="https://enertchad-midstream.vercel.app" target="_blank" rel="noopener" class="vc-card" data-filiale="midstream" data-r role="listitem">
+        <span class="vc-badge">Midstream</span>
+        <div class="vc-icon"><i class="fas fa-pipe-section"></i></div>
+        <h3 class="vc-title">EnerTchad Midstream</h3>
+        <div class="vc-subtitle">Transport & Logistique</div>
+        <p class="vc-desc">Opérations pipeline, stockage, terminaux et comptage fiscal — 1 070 km de réseau reliant les bassins producteurs aux zones de consommation et d'export.</p>
+        <div class="vc-services">
+          <span class="vc-tag">Pipeline</span>
+          <span class="vc-tag">Stockage</span>
+          <span class="vc-tag">Terminaux</span>
+          <span class="vc-tag">Metering</span>
+          <span class="vc-tag">SCADA</span>
+          <span class="vc-tag">Intégrité</span>
+        </div>
+        <div class="vc-footer">
+          <span class="vc-link">Découvrir <i class="fas fa-arrow-right vc-arrow"></i></span>
+        </div>
+      </a>
+
+      <!-- AVAL -->
+      <a href="https://enertchad-aval-vercel-app.vercel.app" target="_blank" rel="noopener" class="vc-card" data-filiale="aval" data-r role="listitem">
+        <span class="vc-badge">Downstream</span>
+        <div class="vc-icon"><i class="fas fa-gas-pump"></i></div>
+        <h3 class="vc-title">EnerTchad Aval</h3>
+        <div class="vc-subtitle">Distribution & Services</div>
+        <p class="vc-desc">Réseau national de distribution de carburants, GPL et lubrifiants — stations-service nouvelle génération, logistique dernière mile et programme fidélité.</p>
+        <div class="vc-services">
+          <span class="vc-tag">Stations</span>
+          <span class="vc-tag">GPL</span>
+          <span class="vc-tag">Lubrifiants</span>
+          <span class="vc-tag">Logistique</span>
+          <span class="vc-tag">Fidélité</span>
+          <span class="vc-tag">Digital</span>
+        </div>
+        <div class="vc-footer">
+          <span class="vc-link">Découvrir <i class="fas fa-arrow-right vc-arrow"></i></span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ CHIFFRES CLÉS ════════════════════ -->
+<section class="section" id="chiffres" aria-labelledby="chiffres-title" style="background:var(--bg-mid)">
+  <div class="ctn">
+    <div class="section-header" data-r>
+      <div class="section-eyebrow"><i class="fas fa-chart-line"></i> Performance</div>
+      <h2 class="section-title" id="chiffres-title">Le groupe en chiffres</h2>
+      <p class="section-desc">Des indicateurs consolidés qui reflètent notre capacité opérationnelle et notre engagement sociétal.</p>
+    </div>
+    <div class="kpi-grid" data-r>
+      <div class="kpi-card">
+        <div class="kpi-icon"><i class="fas fa-building"></i></div>
+        <div class="kpi-num">3<span class="kpi-unit">filiales</span></div>
+        <div class="kpi-label">Pôles d'activité</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-icon"><i class="fas fa-users"></i></div>
+        <div class="kpi-num">750<span class="kpi-unit">+</span></div>
+        <div class="kpi-label">Collaborateurs</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-icon"><i class="fas fa-route"></i></div>
+        <div class="kpi-num">1 070<span class="kpi-unit">km</span></div>
+        <div class="kpi-label">Réseau pipeline</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-icon"><i class="fas fa-gas-pump"></i></div>
+        <div class="kpi-num">48<span class="kpi-unit">stations</span></div>
+        <div class="kpi-label">Réseau aval</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-icon"><i class="fas fa-hard-hat"></i></div>
+        <div class="kpi-num">2.4<span class="kpi-unit">M hrs</span></div>
+        <div class="kpi-label">Heures sans accident</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-icon"><i class="fas fa-leaf"></i></div>
+        <div class="kpi-num">−18<span class="kpi-unit">%</span></div>
+        <div class="kpi-label">Émissions CO₂ (vs 2024)</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-icon"><i class="fas fa-graduation-cap"></i></div>
+        <div class="kpi-num">96<span class="kpi-unit">%</span></div>
+        <div class="kpi-label">Effectifs locaux</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-icon"><i class="fas fa-solar-panel"></i></div>
+        <div class="kpi-num">12<span class="kpi-unit">MW</span></div>
+        <div class="kpi-label">Capacité solaire installée</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ GOUVERNANCE ════════════════════ -->
+<section class="section" id="gouvernance" aria-labelledby="gov-title">
+  <div class="ctn">
+    <div class="section-header" data-r>
+      <div class="section-eyebrow"><i class="fas fa-landmark"></i> Leadership</div>
+      <h2 class="section-title" id="gov-title">Gouvernance du Groupe</h2>
+      <p class="section-desc">Une équipe dirigeante expérimentée, ancrée dans le terrain et guidée par une vision de souveraineté énergétique.</p>
+    </div>
+    <div class="gov-grid" data-r>
+      <div class="gov-card">
+        <div class="gov-avatar"><i class="fas fa-user-tie"></i></div>
+        <h3 class="gov-name">Directeur Général</h3>
+        <div class="gov-role">Président du Comité Exécutif</div>
+        <p class="gov-desc">Pilotage stratégique du groupe, relations institutionnelles et développement des partenariats internationaux.</p>
+      </div>
+      <div class="gov-card">
+        <div class="gov-avatar"><i class="fas fa-chart-pie"></i></div>
+        <h3 class="gov-name">Directeur Financier</h3>
+        <div class="gov-role">CFO Groupe</div>
+        <p class="gov-desc">Consolidation financière, contrôle de gestion, relations investisseurs et conformité réglementaire.</p>
+      </div>
+      <div class="gov-card">
+        <div class="gov-avatar"><i class="fas fa-cogs"></i></div>
+        <h3 class="gov-name">Directeur des Opérations</h3>
+        <div class="gov-role">COO Groupe</div>
+        <p class="gov-desc">Coordination opérationnelle inter-filiales, excellence industrielle, HSE et transformation digitale.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ RSE ════════════════════ -->
+<section class="section" id="rse" aria-labelledby="rse-title" style="background:var(--bg-mid)">
+  <div class="ctn">
+    <div class="section-header" data-r>
+      <div class="section-eyebrow"><i class="fas fa-seedling"></i> Engagement</div>
+      <h2 class="section-title" id="rse-title">Notre responsabilité</h2>
+      <p class="section-desc">Au-delà de la performance industrielle, EnerTchad s'engage pour un développement durable et inclusif au Tchad.</p>
+    </div>
+    <div class="rse-grid" data-r>
+      <div class="rse-card">
+        <div class="rse-icon">🌱</div>
+        <h3>Décarbonation</h3>
+        <p>Centrales solaires hybrides, valorisation du gaz associé, LDAR et pilotes CCUS sur nos installations.</p>
+        <div class="rse-stat">−18%<small>émissions</small></div>
+      </div>
+      <div class="rse-card">
+        <div class="rse-icon">🎓</div>
+        <h3>Formation & Emploi</h3>
+        <p>Académie EnerTchad, certifications IWCF/IADC, bourses d'études et partenariats avec les universités tchadiennes.</p>
+        <div class="rse-stat">96%<small>emploi local</small></div>
+      </div>
+      <div class="rse-card">
+        <div class="rse-icon">🤝</div>
+        <h3>Communautés</h3>
+        <p>Programmes d'accès à l'énergie, infrastructures sociales, santé et éducation dans les régions d'opération.</p>
+        <div class="rse-stat">15K+<small>bénéficiaires</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ JALONS ════════════════════ -->
+<section class="section" id="jalons" aria-labelledby="jalons-title">
+  <div class="ctn">
+    <div class="section-header" data-r>
+      <div class="section-eyebrow"><i class="fas fa-flag"></i> Parcours</div>
+      <h2 class="section-title" id="jalons-title">Nos jalons</h2>
+    </div>
+    <div class="timeline" data-r>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">2026</div>
+        <div class="tl-title">Création d'EnerTchad</div>
+        <div class="tl-desc">Fondation du groupe avec la mission de construire un opérateur pétrolier souverain au Tchad.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">2026 T2</div>
+        <div class="tl-title">Lancement EnerTchad Amont</div>
+        <div class="tl-desc">Premiers contrats de services sur les champs de Doba — forage, chimie, HSE.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">2026 T3</div>
+        <div class="tl-title">EnerTchad Midstream opérationnel</div>
+        <div class="tl-desc">Prise en charge des opérations pipeline Doba–Kribi et réseau de collecte interne.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">2026 T4</div>
+        <div class="tl-title">Réseau Aval inauguré</div>
+        <div class="tl-desc">Ouverture des premières stations-service EnerTchad et lancement de la carte fidélité NRJ+.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">2027</div>
+        <div class="tl-title">Objectif 100 stations</div>
+        <div class="tl-desc">Expansion du réseau aval sur l'ensemble du territoire national et lancement GPL ville.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ CONTACT ════════════════════ -->
+<section class="section" id="contact" aria-labelledby="contact-title" style="background:var(--bg-mid)">
+  <div class="ctn">
+    <div class="section-header" data-r>
+      <div class="section-eyebrow"><i class="fas fa-envelope"></i> Échangeons</div>
+      <h2 class="section-title" id="contact-title">Contactez le Groupe</h2>
+      <p class="section-desc">Pour toute demande institutionnelle, partenariat ou information, notre équipe est à votre écoute.</p>
+    </div>
+    <div class="contact-grid" data-r>
+      <div class="contact-info">
+        <div class="ci-item">
+          <div class="ci-icon"><i class="fas fa-building"></i></div>
+          <div>
+            <div class="ci-label">Siège social</div>
+            <div class="ci-value">Radisson, Block D, Bureau 23<br/>Sabangali · N'Djamena, Tchad</div>
+          </div>
+        </div>
+        <div class="ci-item">
+          <div class="ci-icon"><i class="fas fa-phone"></i></div>
+          <div>
+            <div class="ci-label">Téléphone</div>
+            <div class="ci-value"><a href="tel:+23599298696">+235 99 29 86 96</a></div>
+          </div>
+        </div>
+        <div class="ci-item">
+          <div class="ci-icon"><i class="fas fa-envelope"></i></div>
+          <div>
+            <div class="ci-label">E-mail</div>
+            <div class="ci-value"><a href="mailto:contact@enertchad.td">contact@enertchad.td</a></div>
+          </div>
+        </div>
+        <div class="ci-item">
+          <div class="ci-icon"><i class="fab fa-linkedin"></i></div>
+          <div>
+            <div class="ci-label">LinkedIn</div>
+            <div class="ci-value"><a href="https://linkedin.com/company/enertchad" target="_blank" rel="noopener">EnerTchad</a></div>
+          </div>
+        </div>
+      </div>
+      <form class="contact-form" action="https://formspree.io/f/FORM_ID" method="POST" aria-label="Formulaire de contact">
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off"/>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="cf-name">Nom complet</label>
+            <input type="text" id="cf-name" name="name" required placeholder="Votre nom"/>
+          </div>
+          <div class="form-group">
+            <label for="cf-company">Organisation</label>
+            <input type="text" id="cf-company" name="company" placeholder="Votre entreprise"/>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="cf-email">E-mail</label>
+            <input type="email" id="cf-email" name="email" required placeholder="vous@example.com"/>
+          </div>
+          <div class="form-group">
+            <label for="cf-subject">Objet</label>
+            <select id="cf-subject" name="subject">
+              <option value="general">Demande générale</option>
+              <option value="partenariat">Partenariat</option>
+              <option value="investisseur">Investisseur</option>
+              <option value="media">Presse / Médias</option>
+              <option value="emploi">Carrières</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="cf-msg">Message</label>
+          <textarea id="cf-msg" name="message" required placeholder="Votre message…"></textarea>
+        </div>
+        <button type="submit" class="btn btn-gold btn-submit"><i class="fas fa-paper-plane"></i> Envoyer</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ FOOTER ════════════════════ -->
+<footer class="footer" role="contentinfo">
+  <div class="ctn">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="logo.svg" alt="EnerTchad" width="36" height="36"/>
+        <p>EnerTchad — Groupe pétrolier et gazier tchadien intégré. De l'exploration à la pompe, une vision souveraine de l'énergie au cœur de l'Afrique Centrale.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Filiales</h4>
+          <a href="https://enertchad-amont.vercel.app" target="_blank" rel="noopener">Amont — E&P</a>
+          <a href="https://enertchad-midstream.vercel.app" target="_blank" rel="noopener">Midstream — Transport</a>
+          <a href="https://enertchad-aval-vercel-app.vercel.app" target="_blank" rel="noopener">Aval — Distribution</a>
+        </div>
+        <div class="footer-col">
+          <h4>Groupe</h4>
+          <a href="#gouvernance">Gouvernance</a>
+          <a href="#rse">RSE</a>
+          <a href="#jalons">Jalons</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Légal</h4>
+          <a href="privacy.html">Confidentialité</a>
+          <a href="terms.html">Mentions légales</a>
+          <a href="cookies.html">Cookies</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 EnerTchad S.A. — Tous droits réservés</div>
+      <div class="footer-legal">
+        <a href="privacy.html">Politique de confidentialité</a>
+        <a href="terms.html">Conditions</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ════════════════════ COOKIE BANNER ════════════════════ -->
+<div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Consentement cookies">
+  <p class="cookie-text">Ce site utilise des cookies pour améliorer votre expérience. <a href="cookies.html">En savoir plus</a>.</p>
+  <div class="cookie-btns">
+    <button class="cookie-btn cookie-accept" id="cookieAccept">Accepter</button>
+    <button class="cookie-btn cookie-decline" id="cookieDecline">Refuser</button>
+  </div>
+</div>
+
+<script>
+/* ═══ HEADER SCROLL ═══ */
+(function(){
+  var h=document.querySelector('.header');
+  var last=0;
+  window.addEventListener('scroll',function(){
+    var y=window.scrollY;
+    if(y>60) h.classList.add('scrolled'); else h.classList.remove('scrolled');
+    last=y;
+  },{passive:true});
+})();
+
+/* ═══ MOBILE NAV ═══ */
+(function(){
+  var toggle=document.getElementById('mobileToggle');
+  var nav=document.getElementById('mobileNav');
+  var close=document.getElementById('mobileClose');
+  var links=nav.querySelectorAll('.mn-link');
+  function open(){nav.classList.add('open');toggle.setAttribute('aria-expanded','true');document.body.style.overflow='hidden'}
+  function shut(){nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');document.body.style.overflow=''}
+  toggle.addEventListener('click',open);
+  close.addEventListener('click',shut);
+  links.forEach(function(l){l.addEventListener('click',shut)});
+})();
+
+/* ═══ SCROLL REVEAL ═══ */
+(function(){
+  var els=document.querySelectorAll('[data-r]');
+  if(!els.length) return;
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}
+    });
+  },{threshold:0.15,rootMargin:'0px 0px -40px 0px'});
+  els.forEach(function(el){io.observe(el)});
+})();
+
+/* ═══ COOKIE CONSENT ═══ */
+(function(){
+  var banner=document.getElementById('cookieBanner');
+  var accept=document.getElementById('cookieAccept');
+  var decline=document.getElementById('cookieDecline');
+  try{
+    if(!localStorage.getItem('cookie-consent')){
+      setTimeout(function(){banner.classList.add('visible')},1500);
+    }
+  }catch(e){setTimeout(function(){banner.classList.add('visible')},1500)}
+  function dismiss(v){
+    banner.classList.remove('visible');
+    try{localStorage.setItem('cookie-consent',v)}catch(e){}
+  }
+  accept.addEventListener('click',function(){dismiss('accepted')});
+  decline.addEventListener('click',function(){dismiss('declined')});
+})();
+
+/* ═══ LANG TOGGLE (FR/EN stub) ═══ */
+(function(){
+  var btn=document.getElementById('langToggle');
+  var lang='fr';
+  btn.addEventListener('click',function(){
+    lang=lang==='fr'?'en':'fr';
+    btn.textContent=lang==='fr'?'FR / EN':'EN / FR';
+    /* Full i18n not implemented — placeholder */
+  });
+})();
+
+/* ═══ FORM ASYNC SUBMIT ═══ */
+(function(){
+  var form=document.querySelector('.contact-form');
+  if(!form) return;
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var btn=form.querySelector('.btn-submit');
+    var origHTML=btn.innerHTML;
+    btn.innerHTML='<i class="fas fa-spinner fa-spin"></i> Envoi…';
+    btn.disabled=true;
+    fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}})
+    .then(function(r){
+      if(r.ok){
+        btn.innerHTML='<i class="fas fa-check"></i> Envoyé !';
+        btn.style.background='#10B981';
+        form.reset();
+        setTimeout(function(){btn.innerHTML=origHTML;btn.style.background='';btn.disabled=false},3000);
+      } else {
+        btn.innerHTML='<i class="fas fa-exclamation-triangle"></i> Erreur';
+        btn.style.background='#EF4444';
+        setTimeout(function(){btn.innerHTML=origHTML;btn.style.background='';btn.disabled=false},3000);
+      }
+    }).catch(function(){
+      btn.innerHTML='<i class="fas fa-exclamation-triangle"></i> Erreur réseau';
+      btn.style.background='#EF4444';
+      setTimeout(function(){btn.innerHTML=origHTML;btn.style.background='';btn.disabled=false},3000);
+    });
+  });
+})();
+
+/* ═══ SW REGISTRATION ═══ */
+if('serviceWorker' in navigator){
+  window.addEventListener('load',function(){
+    navigator.serviceWorker.register('/sw.js').catch(function(){});
+  });
+}
+</script>
+</body>
+</html>

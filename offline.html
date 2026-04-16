@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Hors connexion — EnerTchad Groupe</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{min-height:100vh;display:flex;align-items:center;justify-content:center;font-family:'Inter',system-ui,sans-serif;
+background:#080E1A;color:#E2E8F0;text-align:center;padding:2rem}
+.wrap{max-width:420px}
+.icon{font-size:4rem;margin-bottom:1.5rem;opacity:0.4}
+h1{font-family:'Space Grotesk',system-ui,sans-serif;font-size:1.8rem;margin-bottom:0.75rem;color:#fff}
+p{font-size:1rem;color:#94A3B8;line-height:1.6;margin-bottom:2rem}
+.btn{display:inline-block;padding:0.75rem 2rem;border-radius:10px;background:linear-gradient(135deg,#C8962E,#D4A840);
+color:#080E1A;font-weight:600;text-decoration:none;font-size:0.95rem;transition:0.3s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(200,150,46,0.3)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="icon">📡</div>
+  <h1>Pas de connexion</h1>
+  <p>Vous êtes actuellement hors ligne. Vérifiez votre connexion internet et réessayez.</p>
+  <a href="/" class="btn" onclick="location.reload();return false">Réessayer</a>
+</div>
+</body>
+</html>

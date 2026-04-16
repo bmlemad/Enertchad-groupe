@@ -1,0 +1,12 @@
+{
+  "name": "EnerTchad Groupe",
+  "short_name": "EnerTchad",
+  "description": "Groupe pétrolier et gazier tchadien intégré",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#080E1A",
+  "theme_color": "#080E1A",
+  "icons": [
+    { "src": "/logo.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2E86DE"/>
+      <stop offset="50%" stop-color="#0EA5E9"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C8962E"/>
+      <stop offset="100%" stop-color="#D4A840"/>
+    </linearGradient>
+  </defs>
+  <!-- Shield -->
+  <path d="M60 8 L108 30 L108 65 C108 90 85 108 60 116 C35 108 12 90 12 65 L12 30 Z" fill="#0C1426" stroke="url(#g1)" stroke-width="2.5"/>
+  <!-- Inner glow -->
+  <path d="M60 18 L98 36 L98 63 C98 84 79 99 60 106 C41 99 22 84 22 63 L22 36 Z" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <!-- E monogram -->
+  <text x="60" y="72" text-anchor="middle" font-family="'Space Grotesk',system-ui,sans-serif" font-size="48" font-weight="700" fill="url(#g2)">E</text>
+  <!-- Three dots representing 3 filiales -->
+  <circle cx="42" cy="88" r="4" fill="#2E86DE" opacity="0.8"/>
+  <circle cx="60" cy="88" r="4" fill="#0EA5E9" opacity="0.8"/>
+  <circle cx="78" cy="88" r="4" fill="#D97706" opacity="0.8"/>
+</svg>
