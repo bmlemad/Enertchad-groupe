@@ -38,6 +38,8 @@
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
   <meta content="EnerTchad Groupe" name="apple-mobile-web-app-title"/>
   <link href="/manifest.json" rel="manifest"/>
+  <!-- Chart.js -->
+  <script crossorigin="anonymous" defer src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect"/>
   <link crossorigin href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -330,6 +332,113 @@ body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
 /* ═══ ANIMATIONS ═══ */
 [data-r]{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease}
 [data-r].visible{opacity:1;transform:translateY(0)}
+
+/* ═══ TIME-OF-DAY HERO ═══ */
+.hero-tod-layer{position:absolute;inset:0;z-index:1;transition:opacity 1.5s ease;pointer-events:none}
+.hero[data-tod="dawn"] .hero-tod-layer{background:radial-gradient(ellipse 80% 60% at 50% 80%,rgba(255,140,50,0.12) 0%,transparent 60%),radial-gradient(ellipse 60% 40% at 30% 90%,rgba(255,100,50,0.08) 0%,transparent 50%)}
+.hero[data-tod="day"] .hero-tod-layer{background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(46,134,222,0.1) 0%,transparent 60%)}
+.hero[data-tod="dusk"] .hero-tod-layer{background:radial-gradient(ellipse 80% 60% at 50% 80%,rgba(220,120,40,0.15) 0%,transparent 60%),radial-gradient(ellipse 60% 40% at 70% 90%,rgba(180,60,80,0.08) 0%,transparent 50%)}
+.hero[data-tod="night"] .hero-tod-layer{background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(80,100,180,0.12) 0%,transparent 60%),radial-gradient(1px 1px at 15% 25%,rgba(255,255,255,0.45),transparent),radial-gradient(1px 1px at 55% 15%,rgba(255,255,255,0.3),transparent),radial-gradient(1.5px 1.5px at 80% 35%,rgba(255,255,255,0.35),transparent)}
+
+/* Hero greeting */
+.hero-greeting{font-size:0.85rem;color:var(--text-muted);margin-bottom:0.5rem;min-height:1.2em}
+.hero-greeting i{margin-right:0.4rem;color:var(--gold)}
+
+/* Hero time pill */
+.hero-ctx{position:absolute;top:5.5rem;right:2rem;z-index:5;display:flex;align-items:center;gap:0.6rem;
+  padding:0.45rem 1rem;border-radius:50px;background:rgba(255,255,255,0.05);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,0.08);font-size:0.75rem;color:var(--text-sec)}
+.hero-ctx i{color:var(--gold);font-size:0.7rem}
+.hero-ctx .ctx-sep{width:1px;height:14px;background:rgba(255,255,255,0.12)}
+
+/* ═══ KPI COUNTER ANIMATION ═══ */
+@keyframes kpiFlash{0%{box-shadow:none}50%{box-shadow:0 0 20px rgba(200,150,46,0.15)}100%{box-shadow:none}}
+.kpi-card.flash{animation:kpiFlash 0.6s ease}
+.kpi-num .counter{display:inline}
+
+/* ═══ PARALLAX SECTIONS ═══ */
+.parallax-bg{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.parallax-bg .orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:0.06;will-change:transform}
+.orb-1{width:500px;height:500px;background:var(--amont);top:-10%;left:-10%}
+.orb-2{width:400px;height:400px;background:var(--midstream);bottom:-10%;right:-5%}
+.orb-3{width:350px;height:350px;background:var(--aval);top:30%;right:-15%}
+
+/* ═══ DASHBOARD ═══ */
+.dash-wrap{display:grid;grid-template-columns:2fr 1fr;gap:2rem;margin-top:var(--space-lg)}
+.dash-chart{background:var(--bg-card);border:1px solid rgba(255,255,255,0.06);border-radius:var(--radius);padding:1.5rem;position:relative}
+.dash-chart canvas{width:100%!important;height:280px!important}
+.dash-chart-title{font-size:0.8rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:1rem}
+.dash-sidebar{display:flex;flex-direction:column;gap:1rem}
+.dash-mini{background:var(--bg-card);border:1px solid rgba(255,255,255,0.06);border-radius:var(--radius);padding:1.25rem;text-align:center}
+.dash-mini-label{font-size:0.7rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.5rem}
+.dash-mini-value{font-family:var(--font-d);font-size:1.8rem;font-weight:700;color:var(--white)}
+.dash-mini-value small{font-size:0.5em;color:var(--gold);margin-left:0.15em}
+.dash-mini-bar{height:4px;border-radius:2px;background:rgba(255,255,255,0.06);margin-top:0.75rem;overflow:hidden}
+.dash-mini-fill{height:100%;border-radius:2px;transition:width 1.5s ease}
+
+/* ═══ MAP SECTION ═══ */
+.map-container{position:relative;max-width:700px;margin:0 auto;background:var(--bg-card);border:1px solid rgba(255,255,255,0.06);border-radius:var(--radius);padding:2rem;overflow:hidden}
+.map-container svg{width:100%;height:auto}
+.map-pin{cursor:pointer;transition:var(--tr)}
+.map-pin:hover{transform:scale(1.3)}
+.map-tooltip{position:absolute;padding:0.5rem 0.8rem;border-radius:var(--radius-xs);background:rgba(15,26,46,0.95);border:1px solid rgba(255,255,255,0.1);
+  font-size:0.75rem;color:var(--white);pointer-events:none;opacity:0;transition:opacity 0.3s;z-index:10;white-space:nowrap}
+.map-tooltip.visible{opacity:1}
+
+/* ═══ PARTNERS ═══ */
+.partners-track{overflow:hidden;position:relative;padding:1rem 0}
+.partners-track::before,.partners-track::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none}
+.partners-track::before{left:0;background:linear-gradient(90deg,var(--bg),transparent)}
+.partners-track::after{right:0;background:linear-gradient(270deg,var(--bg),transparent)}
+.partners-row{display:flex;gap:3rem;animation:marquee 25s linear infinite;width:max-content}
+.partners-row:hover{animation-play-state:paused}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.partner-logo{height:36px;opacity:0.35;filter:grayscale(1) brightness(2);transition:var(--tr);flex-shrink:0}
+.partner-logo:hover{opacity:0.8;filter:grayscale(0) brightness(1)}
+
+/* ═══ NEWS ═══ */
+.news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.news-card{background:var(--bg-card);border:1px solid rgba(255,255,255,0.06);border-radius:var(--radius);overflow:hidden;transition:var(--tr)}
+.news-card:hover{transform:translateY(-4px);border-color:rgba(255,255,255,0.12)}
+.news-img{height:180px;background:var(--surface);position:relative;overflow:hidden}
+.news-img .news-icon{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:3rem;color:rgba(255,255,255,0.08)}
+.news-cat{position:absolute;top:0.75rem;left:0.75rem;font-size:0.65rem;padding:0.2rem 0.6rem;border-radius:50px;
+  background:rgba(200,150,46,0.2);color:var(--gold);font-weight:600;letter-spacing:0.04em;text-transform:uppercase}
+.news-body{padding:1.5rem}
+.news-date{font-size:0.7rem;color:var(--text-muted);margin-bottom:0.4rem}
+.news-title{font-size:1.05rem;color:var(--white);margin-bottom:0.5rem;line-height:1.4}
+.news-excerpt{font-size:0.85rem;color:var(--text-sec);line-height:1.6}
+
+/* ═══ NEWSLETTER ═══ */
+.nl-bar{display:flex;gap:0.75rem;max-width:500px;margin:1.5rem auto 0}
+.nl-bar input{flex:1;padding:0.75rem 1rem;border-radius:var(--radius-sm);border:1px solid rgba(255,255,255,0.1);background:var(--bg-card);color:var(--white);font-family:var(--font-b);font-size:0.9rem;outline:none;transition:var(--tr)}
+.nl-bar input:focus{border-color:var(--gold)}
+.nl-bar button{padding:0.75rem 1.5rem;border:none;border-radius:var(--radius-sm);background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--bg);font-family:var(--font-d);font-weight:600;font-size:0.85rem;cursor:pointer;transition:var(--tr);white-space:nowrap}
+.nl-bar button:hover{transform:translateY(-2px)}
+
+/* ═══ CAREERS ═══ */
+.careers-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.career-card{padding:1.5rem;border-radius:var(--radius);background:var(--bg-card);border:1px solid rgba(255,255,255,0.06);transition:var(--tr)}
+.career-card:hover{border-color:rgba(200,150,46,0.2);transform:translateY(-3px)}
+.career-dept{font-size:0.65rem;color:var(--gold);text-transform:uppercase;letter-spacing:0.06em;font-weight:600;margin-bottom:0.5rem}
+.career-title{font-size:1rem;color:var(--white);margin-bottom:0.3rem}
+.career-loc{font-size:0.8rem;color:var(--text-muted);margin-bottom:0.75rem}
+.career-tags{display:flex;flex-wrap:wrap;gap:0.3rem}
+.career-tag{font-size:0.65rem;padding:0.15rem 0.5rem;border-radius:50px;background:rgba(255,255,255,0.05);color:var(--text-muted);border:1px solid rgba(255,255,255,0.06)}
+
+/* Responsive additions */
+@media(max-width:1024px){
+  .dash-wrap{grid-template-columns:1fr}
+  .news-grid,.careers-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:768px){
+  .hero-ctx{display:none}
+  .dash-wrap{grid-template-columns:1fr}
+  .dash-sidebar{flex-direction:row;flex-wrap:wrap}
+  .dash-mini{flex:1;min-width:140px}
+  .news-grid,.careers-grid{grid-template-columns:1fr}
+  .nl-bar{flex-direction:column}
+}
 </style>
 </head>
 <body>
@@ -341,11 +450,12 @@ body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
     <div class="logo-text">EnerTchad<span>Groupe</span></div>
   </a>
   <nav class="header-nav" aria-label="Navigation principale">
-    <a href="#chaine">Chaîne de valeur</a>
-    <a href="#chiffres">Chiffres clés</a>
-    <a href="#gouvernance">Gouvernance</a>
-    <a href="#rse">RSE</a>
-    <a href="#contact">Contact</a>
+    <a href="#chaine" data-i18n data-en="Value Chain">Chaîne de valeur</a>
+    <a href="#dashboard" data-i18n data-en="Dashboard">Tableau de bord</a>
+    <a href="#reseau" data-i18n data-en="Network">Réseau</a>
+    <a href="#gouvernance" data-i18n data-en="Governance">Gouvernance</a>
+    <a href="#carrieres" data-i18n data-en="Careers">Carrières</a>
+    <a href="#contact" data-i18n data-en="Contact">Contact</a>
     <button class="lang-btn" id="langToggle" aria-label="Changer la langue">FR / EN</button>
   </nav>
   <button class="mobile-toggle" id="mobileToggle" aria-label="Ouvrir le menu" aria-expanded="false">
@@ -357,35 +467,43 @@ body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
 <div class="mobile-nav" id="mobileNav" role="dialog" aria-label="Menu mobile">
   <button class="close-btn" id="mobileClose" aria-label="Fermer le menu"><i class="fas fa-times"></i></button>
   <a href="#chaine" class="mn-link">Chaîne de valeur</a>
-  <a href="#chiffres" class="mn-link">Chiffres clés</a>
+  <a href="#dashboard" class="mn-link">Tableau de bord</a>
+  <a href="#reseau" class="mn-link">Réseau</a>
   <a href="#gouvernance" class="mn-link">Gouvernance</a>
-  <a href="#rse" class="mn-link">RSE</a>
+  <a href="#carrieres" class="mn-link">Carrières</a>
   <a href="#contact" class="mn-link">Contact</a>
 </div>
 
 <!-- ════════════════════ HERO ════════════════════ -->
-<section class="hero" id="hero">
+<section class="hero" id="hero" data-tod="day">
   <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-tod-layer" aria-hidden="true"></div>
+  <div class="hero-ctx" aria-hidden="true">
+    <i class="fas fa-clock"></i><span id="heroTime">--:--</span>
+    <span class="ctx-sep"></span>
+    <i class="fas fa-map-marker-alt"></i><span>N'Djamena</span>
+  </div>
   <div class="hero-content" data-r>
-    <div class="hero-eyebrow"><i class="fas fa-bolt"></i> Opérateur Intégré · Tchad</div>
-    <h1>De l'exploration<br/>à la <em>pompe</em></h1>
-    <p class="hero-sub">EnerTchad est le premier groupe tchadien intégré couvrant l'ensemble de la chaîne de valeur pétrolière et gazière — de l'amont à la distribution.</p>
+    <div class="hero-greeting" id="heroGreeting"></div>
+    <div class="hero-eyebrow"><i class="fas fa-bolt"></i> <span data-i18n data-en="Integrated Operator · Chad">Opérateur Intégré · Tchad</span></div>
+    <h1><span data-i18n data-en="From exploration<br/>to the <em>pump</em>">De l'exploration<br/>à la <em>pompe</em></span></h1>
+    <p class="hero-sub" data-i18n data-en="EnerTchad is the first integrated Chadian group covering the entire oil & gas value chain — from upstream to distribution.">EnerTchad est le premier groupe tchadien intégré couvrant l'ensemble de la chaîne de valeur pétrolière et gazière — de l'amont à la distribution.</p>
     <div class="hero-kpis" role="list" aria-label="Indicateurs clés du groupe">
       <div class="hero-kpi" role="listitem">
-        <div class="hero-kpi-value">3<span>filiales</span></div>
-        <div class="hero-kpi-label">Pôles d'activité</div>
+        <div class="hero-kpi-value"><span class="counter" data-target="3">0</span><span data-i18n data-en="subsidiaries">filiales</span></div>
+        <div class="hero-kpi-label" data-i18n data-en="Business Units">Pôles d'activité</div>
       </div>
       <div class="hero-kpi" role="listitem">
-        <div class="hero-kpi-value">750<span>+</span></div>
-        <div class="hero-kpi-label">Collaborateurs</div>
+        <div class="hero-kpi-value"><span class="counter" data-target="750">0</span><span>+</span></div>
+        <div class="hero-kpi-label" data-i18n data-en="Employees">Collaborateurs</div>
       </div>
       <div class="hero-kpi" role="listitem">
-        <div class="hero-kpi-value">1 070<span>km</span></div>
-        <div class="hero-kpi-label">Réseau pipeline</div>
+        <div class="hero-kpi-value"><span class="counter" data-target="1070">0</span><span>km</span></div>
+        <div class="hero-kpi-label" data-i18n data-en="Pipeline Network">Réseau pipeline</div>
       </div>
       <div class="hero-kpi" role="listitem">
         <div class="hero-kpi-value">24<span>/7</span></div>
-        <div class="hero-kpi-label">Opérations continues</div>
+        <div class="hero-kpi-label" data-i18n data-en="Continuous Operations">Opérations continues</div>
       </div>
     </div>
     <div class="hero-ctas">
@@ -402,9 +520,9 @@ body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
 <section class="section" id="chaine" aria-labelledby="chaine-title">
   <div class="ctn">
     <div class="section-header" data-r>
-      <div class="section-eyebrow"><i class="fas fa-sitemap"></i> Notre Écosystème</div>
-      <h2 class="section-title" id="chaine-title">Trois pôles, une vision</h2>
-      <p class="section-desc">Chaque filiale opère de manière autonome tout en partageant la même ambition : bâtir un acteur énergétique souverain, compétitif et durable au cœur de l'Afrique Centrale.</p>
+      <div class="section-eyebrow"><i class="fas fa-sitemap"></i> <span data-i18n data-en="Our Ecosystem">Notre Écosystème</span></div>
+      <h2 class="section-title" id="chaine-title" data-i18n data-en="Three pillars, one vision">Trois pôles, une vision</h2>
+      <p class="section-desc" data-i18n data-en="Each subsidiary operates autonomously while sharing the same ambition: building a sovereign, competitive and sustainable energy player in the heart of Central Africa.">Chaque filiale opère de manière autonome tout en partageant la même ambition : bâtir un acteur énergétique souverain, compétitif et durable au cœur de l'Afrique Centrale.</p>
     </div>
     <div class="value-chain" role="list">
 
@@ -477,9 +595,9 @@ body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
 <section class="section" id="chiffres" aria-labelledby="chiffres-title" style="background:var(--bg-mid)">
   <div class="ctn">
     <div class="section-header" data-r>
-      <div class="section-eyebrow"><i class="fas fa-chart-line"></i> Performance</div>
-      <h2 class="section-title" id="chiffres-title">Le groupe en chiffres</h2>
-      <p class="section-desc">Des indicateurs consolidés qui reflètent notre capacité opérationnelle et notre engagement sociétal.</p>
+      <div class="section-eyebrow"><i class="fas fa-chart-line"></i> <span data-i18n data-en="Performance">Performance</span></div>
+      <h2 class="section-title" id="chiffres-title" data-i18n data-en="The Group in numbers">Le groupe en chiffres</h2>
+      <p class="section-desc" data-i18n data-en="Consolidated indicators reflecting our operational capacity and societal commitment.">Des indicateurs consolidés qui reflètent notre capacité opérationnelle et notre engagement sociétal.</p>
     </div>
     <div class="kpi-grid" data-r>
       <div class="kpi-card">
@@ -585,6 +703,234 @@ body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
         <div class="rse-stat">15K+<small>bénéficiaires</small></div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ════════════════════ DASHBOARD CONSOLIDÉ ════════════════════ -->
+<section class="section" id="dashboard" aria-labelledby="dash-title">
+  <div class="ctn">
+    <div class="parallax-bg" aria-hidden="true"><div class="orb orb-1"></div><div class="orb orb-2"></div></div>
+    <div class="section-header" data-r>
+      <div class="section-eyebrow"><i class="fas fa-tachometer-alt"></i> <span data-i18n data-en="Live Dashboard">Tableau de bord</span></div>
+      <h2 class="section-title" id="dash-title" data-i18n data-en="Consolidated Operations">Opérations consolidées</h2>
+    </div>
+    <div class="dash-wrap" data-r>
+      <div class="dash-chart">
+        <div class="dash-chart-title" data-i18n data-en="Monthly Production (kbbl/d)">Production mensuelle (kbbl/j)</div>
+        <canvas id="dashChart"></canvas>
+      </div>
+      <div class="dash-sidebar">
+        <div class="dash-mini">
+          <div class="dash-mini-label" data-i18n data-en="Pipeline Throughput">Débit pipeline</div>
+          <div class="dash-mini-value" id="dmThroughput">128<small>kbbl/j</small></div>
+          <div class="dash-mini-bar"><div class="dash-mini-fill" style="width:82%;background:linear-gradient(90deg,var(--midstream),var(--midstream-teal))"></div></div>
+        </div>
+        <div class="dash-mini">
+          <div class="dash-mini-label" data-i18n data-en="Network Uptime">Disponibilité réseau</div>
+          <div class="dash-mini-value" id="dmUptime">99.7<small>%</small></div>
+          <div class="dash-mini-bar"><div class="dash-mini-fill" style="width:99.7%;background:linear-gradient(90deg,#10B981,#34C759)"></div></div>
+        </div>
+        <div class="dash-mini">
+          <div class="dash-mini-label" data-i18n data-en="Active Stations">Stations actives</div>
+          <div class="dash-mini-value" id="dmStations">46<small>/48</small></div>
+          <div class="dash-mini-bar"><div class="dash-mini-fill" style="width:96%;background:linear-gradient(90deg,var(--aval),#F59E0B)"></div></div>
+        </div>
+        <div class="dash-mini">
+          <div class="dash-mini-label">HSE — TRIR</div>
+          <div class="dash-mini-value" id="dmTRIR">0.42</div>
+          <div class="dash-mini-bar"><div class="dash-mini-fill" style="width:15%;background:linear-gradient(90deg,var(--amont),#54A0FF)"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ CARTE RÉSEAU ════════════════════ -->
+<section class="section" id="reseau" aria-labelledby="reseau-title" style="background:var(--bg-mid)">
+  <div class="ctn">
+    <div class="section-header" data-r>
+      <div class="section-eyebrow"><i class="fas fa-map-marked-alt"></i> <span data-i18n data-en="Network">Réseau</span></div>
+      <h2 class="section-title" id="reseau-title" data-i18n data-en="National Presence">Présence nationale</h2>
+      <p class="section-desc" data-i18n data-en="From the Doba and Bongor production basins to N'Djamena distribution — 1,070 km of integrated infrastructure.">Des bassins producteurs de Doba et Bongor à la distribution à N'Djamena — 1 070 km d'infrastructure intégrée.</p>
+    </div>
+    <div class="map-container" data-r>
+      <div class="map-tooltip" id="mapTooltip"></div>
+      <svg viewBox="0 0 600 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Carte du réseau EnerTchad au Tchad">
+        <!-- Chad outline simplified -->
+        <path d="M180 40 L420 40 L450 100 L480 180 L460 260 L440 320 L400 380 L350 430 L280 460 L220 440 L160 400 L130 340 L120 260 L140 180 L160 100 Z" fill="var(--surface)" stroke="rgba(255,255,255,0.1)" stroke-width="1.5"/>
+        <!-- Pipeline Doba → Kribi (south) -->
+        <line x1="340" y1="370" x2="340" y2="280" stroke="var(--midstream)" stroke-width="2.5" stroke-dasharray="6 3" opacity="0.6"/>
+        <line x1="340" y1="280" x2="290" y2="200" stroke="var(--midstream)" stroke-width="2.5" stroke-dasharray="6 3" opacity="0.6"/>
+        <!-- Collecte interne -->
+        <line x1="340" y1="370" x2="380" y2="350" stroke="var(--amont)" stroke-width="1.5" opacity="0.4"/>
+        <line x1="340" y1="370" x2="310" y2="390" stroke="var(--amont)" stroke-width="1.5" opacity="0.4"/>
+        <!-- Pins -->
+        <g class="map-pin" data-name="N'Djamena — Siège" data-type="hq" transform="translate(290,200)">
+          <circle r="8" fill="var(--gold)" opacity="0.9"/><circle r="4" fill="var(--bg)"/><circle r="2" fill="var(--gold)"/>
+        </g>
+        <g class="map-pin" data-name="Doba — Production" data-type="amont" transform="translate(340,370)">
+          <circle r="7" fill="var(--amont)" opacity="0.9"/><circle r="3" fill="var(--bg)"/>
+        </g>
+        <g class="map-pin" data-name="Bongor — Production" data-type="amont" transform="translate(310,310)">
+          <circle r="6" fill="var(--amont)" opacity="0.8"/><circle r="3" fill="var(--bg)"/>
+        </g>
+        <g class="map-pin" data-name="Komé — Terminal" data-type="midstream" transform="translate(360,355)">
+          <circle r="5" fill="var(--midstream)" opacity="0.8"/><circle r="2.5" fill="var(--bg)"/>
+        </g>
+        <g class="map-pin" data-name="Moundou — Station" data-type="aval" transform="translate(280,380)">
+          <circle r="5" fill="var(--aval)" opacity="0.8"/><circle r="2.5" fill="var(--bg)"/>
+        </g>
+        <g class="map-pin" data-name="Sarh — Station" data-type="aval" transform="translate(380,340)">
+          <circle r="5" fill="var(--aval)" opacity="0.8"/><circle r="2.5" fill="var(--bg)"/>
+        </g>
+        <g class="map-pin" data-name="Abéché — Station" data-type="aval" transform="translate(420,220)">
+          <circle r="5" fill="var(--aval)" opacity="0.8"/><circle r="2.5" fill="var(--bg)"/>
+        </g>
+        <!-- Legend -->
+        <g transform="translate(140,420)" font-size="10" font-family="Inter,sans-serif" fill="var(--text-muted)">
+          <circle cx="0" cy="0" r="4" fill="var(--gold)"/><text x="10" y="4">Siège</text>
+          <circle cx="80" cy="0" r="4" fill="var(--amont)"/><text x="90" y="4">Amont</text>
+          <circle cx="155" cy="0" r="4" fill="var(--midstream)"/><text x="165" y="4">Midstream</text>
+          <circle cx="250" cy="0" r="4" fill="var(--aval)"/><text x="260" y="4">Aval</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ PARTENAIRES ════════════════════ -->
+<section class="section" id="partenaires" aria-labelledby="part-title">
+  <div class="ctn">
+    <div class="section-header" data-r>
+      <div class="section-eyebrow"><i class="fas fa-handshake"></i> <span data-i18n data-en="Partners">Partenaires</span></div>
+      <h2 class="section-title" id="part-title" data-i18n data-en="They trust us">Ils nous font confiance</h2>
+    </div>
+    <div class="partners-track" data-r aria-label="Logos partenaires">
+      <div class="partners-row" id="partnersRow">
+        <!-- Partner logos as text placeholders (replaced by SVGs in production) -->
+        <svg class="partner-logo" viewBox="0 0 160 40" width="160" height="40"><text x="80" y="26" text-anchor="middle" fill="#fff" font-family="Space Grotesk" font-size="14" font-weight="600">SHT</text></svg>
+        <svg class="partner-logo" viewBox="0 0 160 40" width="160" height="40"><text x="80" y="26" text-anchor="middle" fill="#fff" font-family="Space Grotesk" font-size="14" font-weight="600">CNPC</text></svg>
+        <svg class="partner-logo" viewBox="0 0 160 40" width="160" height="40"><text x="80" y="26" text-anchor="middle" fill="#fff" font-family="Space Grotesk" font-size="14" font-weight="600">Exxon</text></svg>
+        <svg class="partner-logo" viewBox="0 0 160 40" width="160" height="40"><text x="80" y="26" text-anchor="middle" fill="#fff" font-family="Space Grotesk" font-size="14" font-weight="600">Schlumberger</text></svg>
+        <svg class="partner-logo" viewBox="0 0 160 40" width="160" height="40"><text x="80" y="26" text-anchor="middle" fill="#fff" font-family="Space Grotesk" font-size="14" font-weight="600">Halliburton</text></svg>
+        <svg class="partner-logo" viewBox="0 0 160 40" width="160" height="40"><text x="80" y="26" text-anchor="middle" fill="#fff" font-family="Space Grotesk" font-size="14" font-weight="600">Baker Hughes</text></svg>
+        <svg class="partner-logo" viewBox="0 0 160 40" width="160" height="40"><text x="80" y="26" text-anchor="middle" fill="#fff" font-family="Space Grotesk" font-size="14" font-weight="600">TotalEnergies</text></svg>
+        <svg class="partner-logo" viewBox="0 0 160 40" width="160" height="40"><text x="80" y="26" text-anchor="middle" fill="#fff" font-family="Space Grotesk" font-size="14" font-weight="600">Savannah</text></svg>
+        <!-- Duplicate for seamless loop -->
+        <svg class="partner-logo" viewBox="0 0 160 40" width="160" height="40"><text x="80" y="26" text-anchor="middle" fill="#fff" font-family="Space Grotesk" font-size="14" font-weight="600">SHT</text></svg>
+        <svg class="partner-logo" viewBox="0 0 160 40" width="160" height="40"><text x="80" y="26" text-anchor="middle" fill="#fff" font-family="Space Grotesk" font-size="14" font-weight="600">CNPC</text></svg>
+        <svg class="partner-logo" viewBox="0 0 160 40" width="160" height="40"><text x="80" y="26" text-anchor="middle" fill="#fff" font-family="Space Grotesk" font-size="14" font-weight="600">Exxon</text></svg>
+        <svg class="partner-logo" viewBox="0 0 160 40" width="160" height="40"><text x="80" y="26" text-anchor="middle" fill="#fff" font-family="Space Grotesk" font-size="14" font-weight="600">Schlumberger</text></svg>
+        <svg class="partner-logo" viewBox="0 0 160 40" width="160" height="40"><text x="80" y="26" text-anchor="middle" fill="#fff" font-family="Space Grotesk" font-size="14" font-weight="600">Halliburton</text></svg>
+        <svg class="partner-logo" viewBox="0 0 160 40" width="160" height="40"><text x="80" y="26" text-anchor="middle" fill="#fff" font-family="Space Grotesk" font-size="14" font-weight="600">Baker Hughes</text></svg>
+        <svg class="partner-logo" viewBox="0 0 160 40" width="160" height="40"><text x="80" y="26" text-anchor="middle" fill="#fff" font-family="Space Grotesk" font-size="14" font-weight="600">TotalEnergies</text></svg>
+        <svg class="partner-logo" viewBox="0 0 160 40" width="160" height="40"><text x="80" y="26" text-anchor="middle" fill="#fff" font-family="Space Grotesk" font-size="14" font-weight="600">Savannah</text></svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ ACTUALITÉS ════════════════════ -->
+<section class="section" id="actualites" aria-labelledby="news-title" style="background:var(--bg-mid)">
+  <div class="ctn">
+    <div class="section-header" data-r>
+      <div class="section-eyebrow"><i class="fas fa-newspaper"></i> <span data-i18n data-en="News">Actualités</span></div>
+      <h2 class="section-title" id="news-title" data-i18n data-en="Latest from the Group">Dernières nouvelles</h2>
+    </div>
+    <div class="news-grid" data-r>
+      <article class="news-card">
+        <div class="news-img" style="background:linear-gradient(135deg,rgba(46,134,222,0.15),rgba(14,165,233,0.1))">
+          <div class="news-icon"><i class="fas fa-oil-well"></i></div>
+          <span class="news-cat" data-i18n data-en="Upstream">Amont</span>
+        </div>
+        <div class="news-body">
+          <div class="news-date">12 avril 2026</div>
+          <h3 class="news-title" data-i18n data-en="Doba field: new EOR pilot exceeds expectations">Champ de Doba : nouveau pilote EOR dépasse les attentes</h3>
+          <p class="news-excerpt" data-i18n data-en="The polymer injection pilot on block H demonstrates a 15% increase in recovery rate over 6 months.">Le pilote d'injection polymère sur le bloc H démontre une hausse de 15 % du taux de récupération sur 6 mois.</p>
+        </div>
+      </article>
+      <article class="news-card">
+        <div class="news-img" style="background:linear-gradient(135deg,rgba(14,165,233,0.15),rgba(20,184,166,0.1))">
+          <div class="news-icon"><i class="fas fa-pipe-section"></i></div>
+          <span class="news-cat">Midstream</span>
+        </div>
+        <div class="news-body">
+          <div class="news-date">5 avril 2026</div>
+          <h3 class="news-title" data-i18n data-en="1,070 km pipeline: 99.7% annual uptime achieved">Pipeline 1 070 km : 99,7 % de disponibilité annuelle atteint</h3>
+          <p class="news-excerpt" data-i18n data-en="An industry-best record for the Doba-Kribi corridor, with zero critical incident over the period.">Un record de référence pour le corridor Doba–Kribi, avec zéro incident critique sur la période.</p>
+        </div>
+      </article>
+      <article class="news-card">
+        <div class="news-img" style="background:linear-gradient(135deg,rgba(217,119,6,0.15),rgba(245,158,11,0.1))">
+          <div class="news-icon"><i class="fas fa-gas-pump"></i></div>
+          <span class="news-cat" data-i18n data-en="Downstream">Aval</span>
+        </div>
+        <div class="news-body">
+          <div class="news-date">28 mars 2026</div>
+          <h3 class="news-title" data-i18n data-en="10 new-generation stations open in Q1">10 nouvelles stations nouvelle génération ouvertes au T1</h3>
+          <p class="news-excerpt" data-i18n data-en="EnerTchad accelerates its Aval network with connected stations featuring solar canopies and NRJ+ loyalty.">EnerTchad accélère son réseau Aval avec des stations connectées, auvents solaires et fidélité NRJ+.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ CARRIÈRES ════════════════════ -->
+<section class="section" id="carrieres" aria-labelledby="career-title">
+  <div class="ctn">
+    <div class="section-header" data-r>
+      <div class="section-eyebrow"><i class="fas fa-briefcase"></i> <span data-i18n data-en="Careers">Carrières</span></div>
+      <h2 class="section-title" id="career-title" data-i18n data-en="Join the team">Rejoignez l'équipe</h2>
+      <p class="section-desc" data-i18n data-en="We're building the future of Chadian energy. Explore our open positions.">Nous construisons l'avenir de l'énergie tchadienne. Découvrez nos postes ouverts.</p>
+    </div>
+    <div class="careers-grid" data-r>
+      <div class="career-card">
+        <div class="career-dept" data-i18n data-en="Engineering — Upstream">Ingénierie — Amont</div>
+        <h3 class="career-title" data-i18n data-en="Drilling Engineer">Ingénieur Forage</h3>
+        <div class="career-loc"><i class="fas fa-map-marker-alt" style="margin-right:0.3rem;color:var(--amont)"></i> <span data-i18n data-en="Doba, Chad">Doba, Tchad</span></div>
+        <div class="career-tags">
+          <span class="career-tag">CDI</span>
+          <span class="career-tag">5+ ans</span>
+          <span class="career-tag">IWCF</span>
+        </div>
+      </div>
+      <div class="career-card">
+        <div class="career-dept" data-i18n data-en="Operations — Midstream">Opérations — Midstream</div>
+        <h3 class="career-title" data-i18n data-en="SCADA Supervisor">Superviseur SCADA</h3>
+        <div class="career-loc"><i class="fas fa-map-marker-alt" style="margin-right:0.3rem;color:var(--midstream)"></i> N'Djamena</div>
+        <div class="career-tags">
+          <span class="career-tag">CDI</span>
+          <span class="career-tag">3+ ans</span>
+          <span class="career-tag">PLC/RTU</span>
+        </div>
+      </div>
+      <div class="career-card">
+        <div class="career-dept" data-i18n data-en="Network — Downstream">Réseau — Aval</div>
+        <h3 class="career-title" data-i18n data-en="Station Manager">Chef de Station</h3>
+        <div class="career-loc"><i class="fas fa-map-marker-alt" style="margin-right:0.3rem;color:var(--aval)"></i> <span data-i18n data-en="Moundou, Chad">Moundou, Tchad</span></div>
+        <div class="career-tags">
+          <span class="career-tag">CDI</span>
+          <span class="career-tag">2+ ans</span>
+          <span class="career-tag">HSE</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ NEWSLETTER ════════════════════ -->
+<section class="section" id="newsletter" style="background:var(--bg-mid)">
+  <div class="ctn">
+    <div class="section-header" data-r>
+      <div class="section-eyebrow"><i class="fas fa-bell"></i> <span data-i18n data-en="Newsletter">Newsletter</span></div>
+      <h2 class="section-title" data-i18n data-en="Stay informed">Restez informé</h2>
+      <p class="section-desc" data-i18n data-en="Monthly updates on group news, operations and career opportunities.">Actualités du groupe, opérations et opportunités de carrière — une fois par mois.</p>
+    </div>
+    <form class="nl-bar" data-r action="https://formspree.io/f/NEWSLETTER_ID" method="POST" aria-label="Inscription newsletter">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off"/>
+      <input type="email" name="email" required placeholder="votre@email.com" aria-label="Adresse e-mail"/>
+      <button type="submit" data-i18n data-en="Subscribe"><i class="fas fa-paper-plane" style="margin-right:0.4rem"></i>S'inscrire</button>
+    </form>
   </div>
 </section>
 
@@ -757,14 +1103,15 @@ body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
 </div>
 
 <script>
+/* ═══ INTERVAL CLEANUP PROXY ═══ */
+(function(){var ids=[];var _si=window.setInterval;window.setInterval=function(){var id=_si.apply(window,arguments);ids.push(id);return id};
+window.addEventListener('pagehide',function(){ids.forEach(clearInterval);ids=[]})})();
+
 /* ═══ HEADER SCROLL ═══ */
 (function(){
   var h=document.querySelector('.header');
-  var last=0;
   window.addEventListener('scroll',function(){
-    var y=window.scrollY;
-    if(y>60) h.classList.add('scrolled'); else h.classList.remove('scrolled');
-    last=y;
+    if(window.scrollY>60) h.classList.add('scrolled'); else h.classList.remove('scrolled');
   },{passive:true});
 })();
 
@@ -781,6 +1128,26 @@ body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
   links.forEach(function(l){l.addEventListener('click',shut)});
 })();
 
+/* ═══ TIME-OF-DAY HERO ═══ */
+(function(){
+  var hero=document.getElementById('hero');
+  var greetEl=document.getElementById('heroGreeting');
+  var timeEl=document.getElementById('heroTime');
+  function update(){
+    var h=new Date().getHours(),m=new Date().getMinutes();
+    var tod=h>=5&&h<7?'dawn':h>=7&&h<18?'day':h>=18&&h<20?'dusk':'night';
+    hero.setAttribute('data-tod',tod);
+    timeEl.textContent=String(h).padStart(2,'0')+':'+String(m).padStart(2,'0');
+    var icon,greeting;
+    if(tod==='dawn'){icon='fa-sun';greeting='Bonjour';}
+    else if(tod==='day'){icon='fa-sun';greeting='Bonjour';}
+    else if(tod==='dusk'){icon='fa-cloud-sun';greeting='Bonsoir';}
+    else{icon='fa-moon';greeting='Bonsoir';}
+    greetEl.innerHTML='<i class="fas '+icon+'"></i> '+greeting+' — N\'Djamena, Tchad';
+  }
+  update();setInterval(update,60000);
+})();
+
 /* ═══ SCROLL REVEAL ═══ */
 (function(){
   var els=document.querySelectorAll('[data-r]');
@@ -789,8 +1156,111 @@ body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
     entries.forEach(function(e){
       if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}
     });
-  },{threshold:0.15,rootMargin:'0px 0px -40px 0px'});
+  },{threshold:0.12,rootMargin:'0px 0px -50px 0px'});
   els.forEach(function(el){io.observe(el)});
+})();
+
+/* ═══ KPI COUNTER ANIMATION ═══ */
+(function(){
+  var counters=document.querySelectorAll('.counter[data-target]');
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting) return;
+      var el=e.target,target=parseInt(el.dataset.target),duration=1800,start=performance.now();
+      function tick(now){
+        var p=Math.min((now-start)/duration,1);
+        var ease=1-Math.pow(1-p,3);
+        var val=Math.round(ease*target);
+        el.textContent=val>=1000?val.toLocaleString('fr-FR'):val;
+        if(p<1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+      io.unobserve(el);
+    });
+  },{threshold:0.5});
+  counters.forEach(function(c){io.observe(c)});
+})();
+
+/* ═══ PSEUDO REAL-TIME KPI TICKERS ═══ */
+(function(){
+  function jitter(base,range){return(base+((Math.random()-0.5)*range)).toFixed(1)}
+  setInterval(function(){
+    var t=document.getElementById('dmThroughput');
+    var u=document.getElementById('dmUptime');
+    if(t) t.innerHTML=jitter(128,4)+'<small>kbbl/j</small>';
+    if(u) u.innerHTML=jitter(99.7,0.3)+'<small>%</small>';
+  },8000);
+})();
+
+/* ═══ CONSOLIDATED DASHBOARD (Chart.js) ═══ */
+(function(){
+  function init(){
+    var ctx=document.getElementById('dashChart');
+    if(!ctx||typeof Chart==='undefined') return;
+    var months=['Jan','Fév','Mar','Avr','Mai','Jun','Jul','Aoû','Sep','Oct','Nov','Déc'];
+    new Chart(ctx,{
+      type:'line',
+      data:{
+        labels:months,
+        datasets:[
+          {label:'Amont (kbbl/j)',data:[118,120,122,125,123,128,130,132,129,134,136,138],borderColor:'#2E86DE',backgroundColor:'rgba(46,134,222,0.08)',fill:true,tension:0.4,pointRadius:3,pointHoverRadius:6},
+          {label:'Midstream (kbbl/j)',data:[115,117,119,122,120,125,127,129,126,131,133,135],borderColor:'#0EA5E9',backgroundColor:'rgba(14,165,233,0.06)',fill:true,tension:0.4,pointRadius:3,pointHoverRadius:6},
+          {label:'Aval (M litres)',data:[42,44,43,46,48,50,52,51,54,56,58,60],borderColor:'#D97706',backgroundColor:'rgba(217,119,6,0.06)',fill:true,tension:0.4,pointRadius:3,pointHoverRadius:6}
+        ]
+      },
+      options:{
+        responsive:true,maintainAspectRatio:false,
+        plugins:{legend:{labels:{color:'#94A3B8',font:{size:11,family:'Inter'}},position:'bottom'}},
+        scales:{
+          x:{grid:{color:'rgba(255,255,255,0.04)'},ticks:{color:'#64748B',font:{size:10}}},
+          y:{grid:{color:'rgba(255,255,255,0.04)'},ticks:{color:'#64748B',font:{size:10}}}
+        },
+        interaction:{intersect:false,mode:'index'}
+      }
+    });
+  }
+  if(document.readyState==='complete') init();
+  else window.addEventListener('load',init);
+})();
+
+/* ═══ MAP TOOLTIPS ═══ */
+(function(){
+  var tooltip=document.getElementById('mapTooltip');
+  var pins=document.querySelectorAll('.map-pin');
+  pins.forEach(function(pin){
+    pin.addEventListener('mouseenter',function(e){
+      tooltip.textContent=pin.dataset.name;
+      tooltip.classList.add('visible');
+      var r=pin.closest('.map-container').getBoundingClientRect();
+      var pr=pin.getBoundingClientRect();
+      tooltip.style.left=(pr.left-r.left+pr.width/2)+'px';
+      tooltip.style.top=(pr.top-r.top-30)+'px';
+      tooltip.style.transform='translateX(-50%)';
+    });
+    pin.addEventListener('mouseleave',function(){tooltip.classList.remove('visible')});
+  });
+})();
+
+/* ═══ i18n FR/EN ═══ */
+(function(){
+  var btn=document.getElementById('langToggle');
+  var lang='fr';
+  var originals=new Map();
+  document.querySelectorAll('[data-i18n]').forEach(function(el){
+    originals.set(el,el.innerHTML);
+  });
+  btn.addEventListener('click',function(){
+    lang=lang==='fr'?'en':'fr';
+    btn.textContent=lang==='fr'?'FR / EN':'EN / FR';
+    document.documentElement.lang=lang;
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      if(lang==='en'&&el.dataset.en){
+        el.innerHTML=el.dataset.en;
+      } else if(lang==='fr'&&originals.has(el)){
+        el.innerHTML=originals.get(el);
+      }
+    });
+  });
 })();
 
 /* ═══ COOKIE CONSENT ═══ */
@@ -798,65 +1268,71 @@ body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
   var banner=document.getElementById('cookieBanner');
   var accept=document.getElementById('cookieAccept');
   var decline=document.getElementById('cookieDecline');
-  try{
-    if(!localStorage.getItem('cookie-consent')){
-      setTimeout(function(){banner.classList.add('visible')},1500);
-    }
-  }catch(e){setTimeout(function(){banner.classList.add('visible')},1500)}
-  function dismiss(v){
-    banner.classList.remove('visible');
-    try{localStorage.setItem('cookie-consent',v)}catch(e){}
-  }
+  try{if(!localStorage.getItem('cookie-consent')){setTimeout(function(){banner.classList.add('visible')},1500)}}
+  catch(e){setTimeout(function(){banner.classList.add('visible')},1500)}
+  function dismiss(v){banner.classList.remove('visible');try{localStorage.setItem('cookie-consent',v)}catch(e){}}
   accept.addEventListener('click',function(){dismiss('accepted')});
   decline.addEventListener('click',function(){dismiss('declined')});
 })();
 
-/* ═══ LANG TOGGLE (FR/EN stub) ═══ */
+/* ═══ FORM ASYNC SUBMIT (all forms) ═══ */
 (function(){
-  var btn=document.getElementById('langToggle');
-  var lang='fr';
-  btn.addEventListener('click',function(){
-    lang=lang==='fr'?'en':'fr';
-    btn.textContent=lang==='fr'?'FR / EN':'EN / FR';
-    /* Full i18n not implemented — placeholder */
+  document.querySelectorAll('form[action*="formspree"]').forEach(function(form){
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      var btn=form.querySelector('button[type="submit"]');
+      var orig=btn.innerHTML;
+      btn.innerHTML='<i class="fas fa-spinner fa-spin"></i> Envoi…';btn.disabled=true;
+      fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}})
+      .then(function(r){
+        if(r.ok){btn.innerHTML='<i class="fas fa-check"></i> Envoyé !';btn.style.background='#10B981';form.reset()}
+        else{btn.innerHTML='<i class="fas fa-exclamation-triangle"></i> Erreur';btn.style.background='#EF4444'}
+        setTimeout(function(){btn.innerHTML=orig;btn.style.background='';btn.disabled=false},3000);
+      }).catch(function(){
+        btn.innerHTML='<i class="fas fa-exclamation-triangle"></i> Erreur';btn.style.background='#EF4444';
+        setTimeout(function(){btn.innerHTML=orig;btn.style.background='';btn.disabled=false},3000);
+      });
+    });
   });
 })();
 
-/* ═══ FORM ASYNC SUBMIT ═══ */
+/* ═══ PARALLAX ORBS ═══ */
 (function(){
-  var form=document.querySelector('.contact-form');
-  if(!form) return;
-  form.addEventListener('submit',function(e){
+  var orbs=document.querySelectorAll('.orb');
+  if(!orbs.length) return;
+  window.addEventListener('scroll',function(){
+    var y=window.scrollY;
+    orbs.forEach(function(o,i){
+      var speed=(i+1)*0.03;
+      o.style.transform='translateY('+(-y*speed)+'px)';
+    });
+  },{passive:true});
+})();
+
+/* ═══ NEWSLETTER FORM ═══ */
+(function(){
+  var nlForm=document.querySelector('.nl-bar');
+  if(!nlForm) return;
+  nlForm.addEventListener('submit',function(e){
     e.preventDefault();
-    var btn=form.querySelector('.btn-submit');
-    var origHTML=btn.innerHTML;
-    btn.innerHTML='<i class="fas fa-spinner fa-spin"></i> Envoi…';
-    btn.disabled=true;
-    fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}})
+    var btn=nlForm.querySelector('button');
+    var orig=btn.innerHTML;
+    btn.innerHTML='<i class="fas fa-spinner fa-spin"></i>';btn.disabled=true;
+    fetch(nlForm.action,{method:'POST',body:new FormData(nlForm),headers:{'Accept':'application/json'}})
     .then(function(r){
-      if(r.ok){
-        btn.innerHTML='<i class="fas fa-check"></i> Envoyé !';
-        btn.style.background='#10B981';
-        form.reset();
-        setTimeout(function(){btn.innerHTML=origHTML;btn.style.background='';btn.disabled=false},3000);
-      } else {
-        btn.innerHTML='<i class="fas fa-exclamation-triangle"></i> Erreur';
-        btn.style.background='#EF4444';
-        setTimeout(function(){btn.innerHTML=origHTML;btn.style.background='';btn.disabled=false},3000);
-      }
+      btn.innerHTML=r.ok?'<i class="fas fa-check"></i> Inscrit !':'<i class="fas fa-times"></i> Erreur';
+      if(r.ok){btn.style.background='#10B981';nlForm.reset()}else{btn.style.background='#EF4444'}
+      setTimeout(function(){btn.innerHTML=orig;btn.style.background='';btn.disabled=false},3000);
     }).catch(function(){
-      btn.innerHTML='<i class="fas fa-exclamation-triangle"></i> Erreur réseau';
-      btn.style.background='#EF4444';
-      setTimeout(function(){btn.innerHTML=origHTML;btn.style.background='';btn.disabled=false},3000);
+      btn.innerHTML='<i class="fas fa-times"></i>';btn.style.background='#EF4444';
+      setTimeout(function(){btn.innerHTML=orig;btn.style.background='';btn.disabled=false},3000);
     });
   });
 })();
 
 /* ═══ SW REGISTRATION ═══ */
 if('serviceWorker' in navigator){
-  window.addEventListener('load',function(){
-    navigator.serviceWorker.register('/sw.js').catch(function(){});
-  });
+  window.addEventListener('load',function(){navigator.serviceWorker.register('/sw.js').catch(function(){})});
 }
 </script>
 </body>
