@@ -294,6 +294,18 @@ body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
 .footer-legal a{font-size:0.75rem;color:var(--text-muted);transition:var(--tr)}
 .footer-legal a:hover{color:var(--white)}
 
+/* ═══ SERVICES TRANSVERSAUX ═══ */
+.st-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-top:2rem}
+.st-card{background:var(--bg-card);border:1px solid rgba(255,255,255,0.06);border-radius:var(--radius);padding:2rem;transition:var(--tr);position:relative;overflow:hidden}
+.st-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-light));opacity:0;transition:var(--tr)}
+.st-card:hover{transform:translateY(-4px);border-color:rgba(200,150,46,0.2);box-shadow:var(--shadow-m)}
+.st-card:hover::before{opacity:1}
+.st-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.25rem;margin-bottom:1rem;background:rgba(200,150,46,0.1);color:var(--gold)}
+.st-card h3{font-family:var(--font-d);font-size:1.1rem;color:var(--white);margin-bottom:0.5rem}
+.st-card p{font-size:0.88rem;color:var(--text-sec);line-height:1.65}
+.st-tags{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:0.75rem}
+.st-tag{font-size:0.7rem;padding:0.2rem 0.6rem;border-radius:20px;background:rgba(200,150,46,0.08);color:var(--gold-light);border:1px solid rgba(200,150,46,0.15)}
+
 /* ═══ COOKIE BANNER ═══ */
 .cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:10000;padding:1.25rem 2rem;
   background:rgba(15,26,46,0.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
@@ -525,7 +537,7 @@ body:hover .cursor-glow{opacity:1}
 <header class="header" role="banner">
   <a class="logo-wrap" href="/" aria-label="EnerTchad Groupe — Accueil">
     <img src="logo.svg" alt="EnerTchad" width="42" height="42"/>
-    <div class="logo-text">EnerTchad<span>Groupe</span></div>
+    <div class="logo-text">EnerTchad<span>Accès aux Énergies</span></div>
   </a>
   <nav class="header-nav" aria-label="Navigation principale">
     <div class="nav-item">
@@ -544,9 +556,9 @@ body:hover .cursor-glow{opacity:1}
             <div class="mega-icon" style="background:rgba(217,119,6,0.1);color:var(--aval)"><i class="fas fa-gas-pump"></i></div>
             <div class="mega-link-text"><h4>Aval — Distribution</h4><p>Stations, GPL, lubrifiants</p></div>
           </a>
-          <a href="#dashboard" class="mega-link" role="menuitem">
-            <div class="mega-icon" style="background:rgba(200,150,46,0.1);color:var(--gold)"><i class="fas fa-tachometer-alt"></i></div>
-            <div class="mega-link-text"><h4>Dashboard Consolidé</h4><p>Opérations en temps réel</p></div>
+          <a href="#services" class="mega-link" role="menuitem">
+            <div class="mega-icon" style="background:rgba(200,150,46,0.1);color:var(--gold)"><i class="fas fa-cubes"></i></div>
+            <div class="mega-link-text"><h4>Services Transversaux</h4><p>HSE, Formation, Digital, RH</p></div>
           </a>
         </div>
       </div>
@@ -569,6 +581,7 @@ body:hover .cursor-glow{opacity:1}
   <a href="#chaine" class="mn-link">Chaîne de valeur</a>
   <a href="#dashboard" class="mn-link">Tableau de bord</a>
   <a href="#reseau" class="mn-link">Réseau</a>
+  <a href="#services" class="mn-link">Services</a>
   <a href="#gouvernance" class="mn-link">Gouvernance</a>
   <a href="#carrieres" class="mn-link">Carrières</a>
   <a href="#contact" class="mn-link">Contact</a>
@@ -586,7 +599,7 @@ body:hover .cursor-glow{opacity:1}
   </div>
   <div class="hero-content" data-r>
     <div class="hero-greeting" id="heroGreeting"></div>
-    <div class="hero-eyebrow"><i class="fas fa-bolt"></i> <span data-i18n data-en="Integrated Operator · Chad">Opérateur Intégré · Tchad</span></div>
+    <div class="hero-eyebrow"><i class="fas fa-bolt"></i> <span data-i18n data-en="Access to Energy · Unity · Innovation · Sustainability">Accès aux Énergies · Unité · Innovation · Durabilité</span></div>
     <h1><span data-i18n data-en="From exploration<br/>to the <em>pump</em>">De l'exploration<br/>à la <em>pompe</em></span></h1>
     <div class="hero-carousel hero-sub" aria-live="polite">
       <p class="hc-slide active" data-i18n data-en="The first integrated Chadian group covering the entire oil & gas value chain.">Le premier groupe tchadien intégré couvrant l'ensemble de la chaîne de valeur pétrolière et gazière.</p>
@@ -807,6 +820,126 @@ body:hover .cursor-glow{opacity:1}
         <p>Programmes d'accès à l'énergie, infrastructures sociales, santé et éducation dans les régions d'opération.</p>
         <div class="rse-stat">15K+<small>bénéficiaires</small></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ SERVICES TRANSVERSAUX ════════════════════ -->
+<section class="section" id="services" aria-labelledby="services-title">
+  <div class="ctn">
+    <div class="section-header" data-r>
+      <div class="section-eyebrow"><i class="fas fa-cubes"></i> <span data-i18n data-en="Group Services">Services Groupe</span></div>
+      <h2 class="section-title" id="services-title" data-i18n data-en="Transversal Services">Services transversaux</h2>
+      <p class="section-desc" data-i18n data-en="Centralized functions shared across all three subsidiaries — ensuring consistency, compliance and operational excellence.">Fonctions centralisées partagées entre les trois filiales — garantissant cohérence, conformité et excellence opérationnelle.</p>
+    </div>
+    <div class="st-grid" data-r>
+
+      <div class="st-card">
+        <div class="st-icon"><i class="fas fa-hard-hat"></i></div>
+        <h3 data-i18n data-en="HSE & Quality">HSE & Qualité</h3>
+        <p data-i18n data-en="Integrated HSE management, ISO 45001 & 14001 certifications, safety culture, emergency response and field training across all sites.">Management HSE intégré, certifications ISO 45001 & 14001, culture sécurité, réponse d'urgence et formations terrain sur tous les sites.</p>
+        <div class="st-tags">
+          <span class="st-tag">ISO 45001</span>
+          <span class="st-tag">ISO 14001</span>
+          <span class="st-tag">TRIR</span>
+          <span class="st-tag">BOSIET</span>
+          <span class="st-tag">H₂S</span>
+        </div>
+      </div>
+
+      <div class="st-card">
+        <div class="st-icon"><i class="fas fa-graduation-cap"></i></div>
+        <h3 data-i18n data-en="EnerAcademy — Training">EnerAcademy — Formation</h3>
+        <p data-i18n data-en="Corporate university with IWCF, API, NACE and ASME certification tracks. 20-30 young engineers in alternance each year, university partnerships.">Université d'entreprise avec parcours certifiants IWCF, API, NACE et ASME. 20-30 jeunes ingénieurs en alternance par an, partenariats universitaires.</p>
+        <div class="st-tags">
+          <span class="st-tag">IWCF</span>
+          <span class="st-tag">API</span>
+          <span class="st-tag">NACE</span>
+          <span class="st-tag">Alternance</span>
+        </div>
+      </div>
+
+      <div class="st-card">
+        <div class="st-icon"><i class="fas fa-shield-alt"></i></div>
+        <h3 data-i18n data-en="Digital & Cybersecurity">Digital & Cybersécurité</h3>
+        <p data-i18n data-en="IT/OT infrastructure, IEC 62443 Level 3 compliance, SOC 24/7, SCADA integration, predictive analytics and disaster recovery.">Infrastructure IT/OT, conformité IEC 62443 Niveau 3, SOC 24/7, intégration SCADA, analytics prédictifs et reprise après sinistre.</p>
+        <div class="st-tags">
+          <span class="st-tag">SCADA</span>
+          <span class="st-tag">IEC 62443</span>
+          <span class="st-tag">SOC 24/7</span>
+          <span class="st-tag">IA/ML</span>
+        </div>
+      </div>
+
+      <div class="st-card">
+        <div class="st-icon"><i class="fas fa-gavel"></i></div>
+        <h3 data-i18n data-en="Compliance & Governance">Conformité & Gouvernance</h3>
+        <p data-i18n data-en="Regulatory compliance (EITI, ARSAT), anti-corruption programs, audit committees, ethics hotline and risk management framework.">Conformité réglementaire (EITI, ARSAT), programmes anti-corruption, comités d'audit, ligne éthique et gestion des risques.</p>
+        <div class="st-tags">
+          <span class="st-tag">EITI</span>
+          <span class="st-tag">ARSAT</span>
+          <span class="st-tag">Audit</span>
+          <span class="st-tag">Éthique</span>
+        </div>
+      </div>
+
+      <div class="st-card">
+        <div class="st-icon"><i class="fas fa-users-cog"></i></div>
+        <h3 data-i18n data-en="Human Resources">Ressources Humaines</h3>
+        <p data-i18n data-en="Talent acquisition, career development, performance management, 96% local employment target, compensation and social benefits.">Recrutement, développement de carrière, gestion de la performance, objectif 96 % d'emploi local, rémunération et avantages sociaux.</p>
+        <div class="st-tags">
+          <span class="st-tag">Recrutement</span>
+          <span class="st-tag">Carrières</span>
+          <span class="st-tag">96% local</span>
+        </div>
+      </div>
+
+      <div class="st-card">
+        <div class="st-icon"><i class="fas fa-truck-loading"></i></div>
+        <h3 data-i18n data-en="Logistics & Supply Chain">Logistique & Supply Chain</h3>
+        <p data-i18n data-en="Integrated logistics, fleet management with 24/7 geolocation, international sourcing, customs clearance and warehouse management at Doba depot.">Logistique intégrée, gestion de flotte avec géolocalisation 24/7, sourcing international, dédouanement et gestion d'entrepôt au dépôt de Doba.</p>
+        <div class="st-tags">
+          <span class="st-tag">Flotte</span>
+          <span class="st-tag">Sourcing</span>
+          <span class="st-tag">Douanes</span>
+          <span class="st-tag">Entrepôt</span>
+        </div>
+      </div>
+
+      <div class="st-card">
+        <div class="st-icon"><i class="fas fa-leaf"></i></div>
+        <h3 data-i18n data-en="ESG & Sustainability">ESG & Durabilité</h3>
+        <p data-i18n data-en="Net-zero trajectory, IFC Performance Standards, GRI reporting, community health programs, education partnerships and biodiversity monitoring.">Trajectoire net-zéro, Standards IFC, reporting GRI, programmes santé communautaire, partenariats éducation et suivi biodiversité.</p>
+        <div class="st-tags">
+          <span class="st-tag">IFC PS</span>
+          <span class="st-tag">GRI</span>
+          <span class="st-tag">Net-Zero</span>
+          <span class="st-tag">ODD</span>
+        </div>
+      </div>
+
+      <div class="st-card">
+        <div class="st-icon"><i class="fas fa-flask"></i></div>
+        <h3 data-i18n data-en="Engineering & R&D">Ingénierie & R&D</h3>
+        <p data-i18n data-en="Pipeline engineering, reservoir simulation, mobile field labs, flow assurance, pressure equipment inspection (API 510/570) and digital twin modeling.">Ingénierie pipeline, simulation réservoir, laboratoires mobiles, flow assurance, inspection équipements sous pression (API 510/570) et jumeaux numériques.</p>
+        <div class="st-tags">
+          <span class="st-tag">API 510/570</span>
+          <span class="st-tag">Digital Twin</span>
+          <span class="st-tag">R&D</span>
+        </div>
+      </div>
+
+      <div class="st-card">
+        <div class="st-icon"><i class="fas fa-bullhorn"></i></div>
+        <h3 data-i18n data-en="Communications & Stakeholders">Communication & Parties Prenantes</h3>
+        <p data-i18n data-en="Corporate communications, media relations, bilingual publications (FR/EN), stakeholder engagement and community consultation programs.">Communications corporate, relations médias, publications bilingues (FR/EN), engagement des parties prenantes et programmes de consultation communautaire.</p>
+        <div class="st-tags">
+          <span class="st-tag">Médias</span>
+          <span class="st-tag">FR/EN</span>
+          <span class="st-tag">Stakeholders</span>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -1240,7 +1373,7 @@ body:hover .cursor-glow{opacity:1}
     <div class="footer-top">
       <div class="footer-brand">
         <img src="logo.svg" alt="EnerTchad" width="36" height="36"/>
-        <p>EnerTchad — Groupe pétrolier et gazier tchadien intégré. De l'exploration à la pompe, une vision souveraine de l'énergie au cœur de l'Afrique Centrale.</p>
+        <p>EnerTchad — Accès aux Énergies. Unité · Innovation · Durabilité. De l'exploration à la pompe, une vision souveraine au cœur de l'Afrique Centrale.</p>
         <div class="footer-social">
           <a href="https://linkedin.com/company/enertchad" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
           <a href="#" aria-label="Twitter / X"><i class="fab fa-x-twitter"></i></a>
