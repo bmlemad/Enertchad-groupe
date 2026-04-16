@@ -530,12 +530,57 @@ body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
   .footer-links{flex-direction:column;gap:1.5rem}
   .footer-bottom{flex-direction:column;text-align:center}
   .cookie-banner{flex-direction:column;text-align:center}
+  /* ═══ MOBILE MODERNIZATION ═══ */
+  /* Safe-area inset for notched devices */
+  body{padding-bottom:env(safe-area-inset-bottom)}
+  .header{padding-left:max(1.25rem,env(safe-area-inset-left));padding-right:max(1.25rem,env(safe-area-inset-right))}
+  /* Mobile nav staggered animation */
+  .mobile-nav.open a{animation:mobileNavSlide 0.4s cubic-bezier(0.16,1,0.3,1) both}
+  .mobile-nav.open a:nth-child(1){animation-delay:0.03s}
+  .mobile-nav.open a:nth-child(2){animation-delay:0.06s}
+  .mobile-nav.open a:nth-child(3){animation-delay:0.09s}
+  .mobile-nav.open a:nth-child(4){animation-delay:0.12s}
+  .mobile-nav.open a:nth-child(5){animation-delay:0.15s}
+  .mobile-nav.open a:nth-child(6){animation-delay:0.18s}
+  .mobile-nav.open a:nth-child(7){animation-delay:0.21s}
+  /* Card tap feedback */
+  .vc-card:active,.kpi-card:active,.gov-card:active,.rse-card:active,.ir-card:active,
+  .esg-pillar:active,.st-card:active,.news-card:active,.career-card:active,.media-card:active,
+  .et-pillar:active{transform:scale(0.985)!important;box-shadow:none!important;transition:transform 0.1s ease}
+  /* Touch optimization */
+  a,button{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+  /* Hero context pill responsive */
+  .hero-ctx{top:auto;bottom:clamp(80px,12vh,120px);right:12px;padding:8px 14px;font-size:0.72rem}
+  /* Section padding mobile */
+  .section{padding:3rem 1.25rem}
+  .section-title{font-size:clamp(1.6rem,4.5vw,2rem)}
+  .section-desc{font-size:0.88rem}
+  /* Card padding reduction */
+  .vc-card,.media-card,.news-card,.career-card{padding:1.25rem}
 }
+@keyframes mobileNavSlide{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+/* ═══ SCROLL-TO-TOP BUTTON ═══ */
+.scroll-top{position:fixed;bottom:24px;right:24px;width:48px;height:48px;border-radius:50%;
+  background:rgba(200,150,46,0.9);color:#080E1A;border:none;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;font-size:1.1rem;
+  box-shadow:0 4px 20px rgba(200,150,46,0.3);z-index:90;
+  opacity:0;pointer-events:none;transform:translateY(12px);
+  transition:all 0.4s cubic-bezier(0.22,0.61,0.36,1)}
+.scroll-top.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
+.scroll-top:hover{background:var(--gold);transform:translateY(-2px);box-shadow:0 8px 30px rgba(200,150,46,0.4)}
+.scroll-top:active{transform:scale(0.92)}
 @media(max-width:480px){
   .hero h1{font-size:1.8rem}
   .hero-kpis{gap:1rem}
   .hero-ctas{flex-direction:column;align-items:center}
   .btn{width:100%;justify-content:center}
+  .hero-ctx{bottom:100px;right:10px;padding:6px 12px;font-size:0.68rem}
+  .section{padding:2.5rem 1rem}
+  .vc-card,.media-card,.news-card,.career-card{padding:1rem}
+  .kpi-grid{grid-template-columns:1fr}
+  .scroll-top{bottom:16px;right:16px;width:44px;height:44px}
+  .ind-grid{grid-template-columns:1fr!important}
+  .mobile-nav a{font-size:1.15rem}
 }
 
 /* ═══ PREMIUM GLASS UPGRADE ═══ */
@@ -2794,6 +2839,9 @@ html.light .basin-kpi-bar{background:var(--bg-mid);border-color:rgba(0,0,0,0.06)
   </div>
 </footer>
 
+<!-- ═══ SCROLL-TO-TOP ═══ -->
+<button class="scroll-top" id="scrollTop" aria-label="Retour en haut"><i class="fas fa-arrow-up"></i></button>
+
 <!-- ════════════════════ COOKIE BANNER ════════════════════ -->
 <div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Consentement cookies">
   <p class="cookie-text">Ce site utilise des cookies pour améliorer votre expérience. <a href="cookies.html">En savoir plus</a>.</p>
@@ -2808,12 +2856,16 @@ html.light .basin-kpi-bar{background:var(--bg-mid);border-color:rgba(0,0,0,0.06)
 (function(){var ids=[];var _si=window.setInterval;window.setInterval=function(){var id=_si.apply(window,arguments);ids.push(id);return id};
 window.addEventListener('pagehide',function(){ids.forEach(clearInterval);ids=[]})})();
 
-/* ═══ HEADER SCROLL ═══ */
+/* ═══ HEADER SCROLL + SCROLL-TO-TOP ═══ */
 (function(){
   var h=document.querySelector('.header');
+  var st=document.getElementById('scrollTop');
   window.addEventListener('scroll',function(){
-    if(window.scrollY>60) h.classList.add('scrolled'); else h.classList.remove('scrolled');
+    var y=window.scrollY;
+    if(y>60) h.classList.add('scrolled'); else h.classList.remove('scrolled');
+    if(st){if(y>500) st.classList.add('visible'); else st.classList.remove('visible')}
   },{passive:true});
+  if(st){st.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})})}
 })();
 
 /* ═══ MEGA MENU CLICK TOGGLE ═══ */
