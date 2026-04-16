@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- Accueil -->
   <url>
     <loc>https://enertchad-groupe.vercel.app</loc>
     <lastmod>2026-04-17</lastmod>
@@ -9,20 +10,60 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://enertchad-groupe.vercel.app"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://enertchad-groupe.vercel.app?lang=en"/>
   </url>
+  <!-- Amont (Upstream) -->
   <url>
-    <loc>https://enertchad-groupe.vercel.app#chaine</loc>
+    <loc>https://enertchad-groupe.vercel.app/amont</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://enertchad-groupe.vercel.app/amont"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://enertchad-groupe.vercel.app/amont?lang=en"/>
+  </url>
+  <!-- Intermédiaire (Midstream) -->
+  <url>
+    <loc>https://enertchad-groupe.vercel.app/intermediaire</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://enertchad-groupe.vercel.app/intermediaire"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://enertchad-groupe.vercel.app/intermediaire?lang=en"/>
+  </url>
+  <!-- Aval (Downstream) -->
+  <url>
+    <loc>https://enertchad-groupe.vercel.app/aval</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://enertchad-groupe.vercel.app/aval"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://enertchad-groupe.vercel.app/aval?lang=en"/>
+  </url>
+  <!-- Technologies -->
+  <url>
+    <loc>https://enertchad-groupe.vercel.app/technologies</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://enertchad-groupe.vercel.app/technologies"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://enertchad-groupe.vercel.app/technologies?lang=en"/>
+  </url>
+  <!-- Énergies -->
+  <url>
+    <loc>https://enertchad-groupe.vercel.app/energies</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://enertchad-groupe.vercel.app/energies"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://enertchad-groupe.vercel.app/energies?lang=en"/>
+  </url>
+  <!-- Sections Groupe -->
+  <url>
+    <loc>https://enertchad-groupe.vercel.app/#petrochimie</loc>
     <lastmod>2026-04-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://enertchad-groupe.vercel.app#services</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://enertchad-groupe.vercel.app#contact</loc>
+    <loc>https://enertchad-groupe.vercel.app/#contact</loc>
     <lastmod>2026-04-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
