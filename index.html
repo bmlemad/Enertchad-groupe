@@ -4,12 +4,15 @@
   <meta charset="utf-8"/>
   <meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
   <title>EnerTchad — Groupe Pétrolier & Gazier Souverain du Tchad</title>
-  <meta content="EnerTchad : groupe tchadien intégré couvrant l'amont pétrolier, le transport intermédiaire et la distribution aval. Unité · Innovation · Durabilité." name="description"/>
+  <meta content="EnerTchad : groupe pétrolier & gazier tchadien intégré, de l'exploration à la distribution. Innovation, durabilité et souveraineté énergétique." name="description"/>
   <meta content="EnerTchad, groupe, pétrole, gaz, Tchad, amont, intermédiaire, aval, énergie, Afrique Centrale" name="keywords"/>
   <meta content="EnerTchad S.A." name="author"/>
   <meta content="index,follow,max-snippet:-1,max-image-preview:large" name="robots"/>
   <meta content="strict-origin-when-cross-origin" name="referrer"/>
   <link href="https://enertchad-groupe.vercel.app" rel="canonical"/>
+  <link rel="alternate" hreflang="fr" href="https://enertchad-groupe.vercel.app"/>
+  <link rel="alternate" hreflang="en" href="https://enertchad-groupe.vercel.app?lang=en"/>
+  <link rel="alternate" hreflang="x-default" href="https://enertchad-groupe.vercel.app"/>
   <!-- OG -->
   <meta content="EnerTchad — Groupe Pétrolier & Gazier Souverain" property="og:title"/>
   <meta content="De l'exploration à la pompe : un acteur tchadien intégré." property="og:description"/>
@@ -28,6 +31,12 @@
   <!-- JSON-LD -->
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","name":"EnerTchad","url":"https://enertchad-groupe.vercel.app","description":"Groupe pétrolier et gazier tchadien intégré — amont, intermédiaire et aval.","address":{"@type":"PostalAddress","streetAddress":"Radisson, Block D, Bureau 23, Sabangali","addressLocality":"N'Djamena","addressCountry":"TD"},"telephone":"+235-99-29-86-96","email":"contact@enertchad.td","sameAs":["https://www.linkedin.com/company/enertchad"],"areaServed":{"@type":"Country","name":"Tchad"},"foundingDate":"2026","subOrganization":[{"@type":"Organization","name":"EnerTchad Amont","url":"https://enertchad-amont-vercel-app.vercel.app"},{"@type":"Organization","name":"EnerTchad Intermédiaire","url":"https://enertchad-midstream-vercel-app.vercel.app"},{"@type":"Organization","name":"EnerTchad Aval","url":"https://enertchad-aval-vercel-app.vercel.app"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"EnerTchad Groupe","item":"https://enertchad-groupe.vercel.app"},{"@type":"ListItem","position":2,"name":"Nos Activités","item":"https://enertchad-groupe.vercel.app#activites"},{"@type":"ListItem","position":3,"name":"Filiales","item":"https://enertchad-groupe.vercel.app#filiales"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Qu'est-ce qu'EnerTchad ?","acceptedAnswer":{"@type":"Answer","text":"EnerTchad est un groupe pétrolier et gazier tchadien intégré couvrant la chaîne de valeur complète : exploration et production (amont), transport et stockage (intermédiaire), et distribution de produits pétroliers (aval). Fondé en 2026, le groupe œuvre pour assurer la souveraineté énergétique du Tchad."}},{"@type":"Question","name":"Combien de filiales EnerTchad possède-t-elle ?","acceptedAnswer":{"@type":"Answer","text":"EnerTchad compte 6 filiales : EnerTchad Amont (exploration et production), EnerTchad Intermédiaire (transport et stockage), EnerTchad Aval (distribution), EnerTchad Technologies (solutions digitales), EnerTchad Énergies (production électrique) et EnerTchad Groupe (holding)."}},{"@type":"Question","name":"Quelle est la mission d'EnerTchad ?","acceptedAnswer":{"@type":"Answer","text":"La mission d'EnerTchad est de contribuer à la souveraineté énergétique du Tchad par une intégration verticale complète, l'innovation technologique, et la durabilité environnementale. Le groupe s'engage à électrifier le Tchad, créer de l'emploi et développer une industrie pétrolière responsable."}},{"@type":"Question","name":"Où EnerTchad opère-t-elle ?","acceptedAnswer":{"@type":"Answer","text":"EnerTchad opère principalement au Tchad, avec présence en Afrique Centrale. Les principaux bassins d'exploitation sont Doba et Bongor. La distribution s'étend au-delà du Tchad avec un réseau de partenariats régionaux."}},{"@type":"Question","name":"Quels sont les piliers stratégiques d'EnerTchad ?","acceptedAnswer":{"@type":"Answer","text":"Les trois piliers stratégiques sont : Unité (intégration verticale de la chaîne de valeur), Innovation (Digital Twin, IA, SCADA, énergies renouvelables) et Durabilité (réduction des émissions, électrification, gestion responsable des ressources)."}}]}
   </script>
   <!-- Favicon -->
   <link href="logo.svg" rel="icon" type="image/svg+xml"/>
@@ -2861,26 +2870,7 @@ function switchDashTab(tab,btn){
   decline.addEventListener('click',function(){dismiss('declined')});
 })();
 
-/* ═══ FORM ASYNC SUBMIT (all forms) ═══ */
-(function(){
-  document.querySelectorAll('form[action*="formspree"]').forEach(function(form){
-    form.addEventListener('submit',function(e){
-      e.preventDefault();
-      var btn=form.querySelector('button[type="submit"]');
-      var orig=btn.innerHTML;
-      btn.innerHTML='<i class="fas fa-spinner fa-spin"></i> Envoi…';btn.disabled=true;
-      fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}})
-      .then(function(r){
-        if(r.ok){btn.innerHTML='<i class="fas fa-check"></i> Envoyé !';btn.style.background='#10B981';form.reset()}
-        else{btn.innerHTML='<i class="fas fa-exclamation-triangle"></i> Erreur';btn.style.background='#EF4444'}
-        setTimeout(function(){btn.innerHTML=orig;btn.style.background='';btn.disabled=false},3000);
-      }).catch(function(){
-        btn.innerHTML='<i class="fas fa-exclamation-triangle"></i> Erreur';btn.style.background='#EF4444';
-        setTimeout(function(){btn.innerHTML=orig;btn.style.background='';btn.disabled=false},3000);
-      });
-    });
-  });
-})();
+/* Form submit handled by premium engine below */
 
 /* ═══ PARALLAX ORBS ═══ */
 (function(){
@@ -3046,8 +3036,7 @@ window.showToast=function(msg,type,ms){
 /* ═══ ENHANCED FORM SUBMIT WITH TOAST ═══ */
 (function(){
   document.querySelectorAll('form[action*="formspree"]').forEach(function(form){
-    form.removeEventListener('submit',form._handler);
-    form._premiumHandler=function(e){
+    form.addEventListener('submit',function(e){
       e.preventDefault();
       var btn=form.querySelector('button[type="submit"]');
       if(!btn) return;
@@ -3060,8 +3049,7 @@ window.showToast=function(msg,type,ms){
       })
       .catch(function(){showToast('Erreur réseau','error')})
       .finally(function(){btn.innerHTML=orig;btn.disabled=false});
-    };
-    form.addEventListener('submit',form._premiumHandler);
+    });
   });
 })();
 
