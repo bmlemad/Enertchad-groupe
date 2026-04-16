@@ -68,6 +68,7 @@
   --amont:#2E86DE;--amont-glow:rgba(46,134,222,0.25);--amont-text:#5BA3E9;
   --midstream:#0EA5E9;--midstream-teal:#14B8A6;--midstream-glow:rgba(14,165,233,0.2);--midstream-text:#38BDF8;
   --aval:#D97706;--aval-glow:rgba(217,119,6,0.2);--aval-text:#F59E0B;
+  --tech:#8B5CF6;--tech-glow:rgba(139,92,246,0.25);--tech-text:#A78BFA;
   /* Shared */
   --font-d:'Space Grotesk',system-ui,sans-serif;
   --font-b:'Inter',system-ui,sans-serif;
@@ -192,6 +193,7 @@ body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
 .mega-badge-mid{background:rgba(14,165,233,0.12);color:var(--midstream);border-color:rgba(14,165,233,0.2)}
 .mega-badge-aval{background:rgba(217,119,6,0.12);color:var(--aval);border-color:rgba(217,119,6,0.2)}
 .mega-badge-gold{background:rgba(200,150,46,0.12);color:var(--gold);border-color:rgba(200,150,46,0.2)}
+.mega-badge-tech{background:rgba(139,92,246,0.12);color:var(--tech);border-color:rgba(139,92,246,0.2)}
 /* Quick links bar — pill style */
 .mega-quick{display:flex;gap:0.75rem;margin-top:1.5rem;padding-top:1.25rem;border-top:1px solid rgba(255,255,255,0.06);grid-column:1/-1;flex-wrap:wrap}
 .mega-quick a{font-size:0.72rem;color:var(--text-muted);transition:all 0.3s ease;display:inline-flex;align-items:center;gap:0.35rem;padding:0.4rem 0.85rem;border-radius:50px;border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.02)}
@@ -920,6 +922,10 @@ html.light .basin-kpi-bar{background:var(--bg-mid);border-color:rgba(0,0,0,0.06)
               <div class="mega-icon" style="background:rgba(217,119,6,0.1);color:var(--aval)"><i class="fas fa-gas-pump"></i></div>
               <div class="mega-link-text"><h4>Aval <span class="mega-badge mega-badge-aval">Distribution</span></h4><p>Stations-service, GPL, lubrifiants, carte NRJ+</p></div>
             </a>
+            <a href="https://enertchad-technologies.vercel.app" target="_blank" rel="noopener" class="mega-link" role="menuitem">
+              <div class="mega-icon" style="background:rgba(139,92,246,0.1);color:var(--tech)"><i class="fas fa-microchip"></i></div>
+              <div class="mega-link-text"><h4>Technologies <span class="mega-badge mega-badge-tech">EnerTech</span></h4><p>Digital Twin, SCADA, IA prédictive, cybersécurité IoT</p></div>
+            </a>
           </div>
           <div class="mega-divider"></div>
           <!-- Col 2: Chaîne de Valeur -->
@@ -1022,41 +1028,44 @@ html.light .basin-kpi-bar{background:var(--bg-mid);border-color:rgba(0,0,0,0.06)
       <div class="mega-drop" role="menu" aria-label="Innovation">
         <button class="mega-close" aria-label="Fermer"><i class="fas fa-times"></i></button>
         <div class="mega-inner mega-inner--2col">
-          <!-- Col 1: Technologie -->
+          <!-- Col 1: Site Technologies -->
           <div>
-            <div class="mega-col-title">Technologie</div>
+            <div class="mega-col-title">EnerTech · Technologies</div>
+            <a href="https://enertchad-technologies.vercel.app" target="_blank" rel="noopener" class="mega-link" role="menuitem">
+              <div class="mega-icon" style="background:rgba(139,92,246,0.1);color:var(--tech)"><i class="fas fa-microchip"></i></div>
+              <div class="mega-link-text"><h4>Site Technologies <span class="mega-badge mega-badge-tech">Filiale</span></h4><p>Hub technologique — 18 solutions digitales</p></div>
+            </a>
             <a href="#enertech" class="mega-link" role="menuitem">
-              <div class="mega-icon" style="background:rgba(200,150,46,0.1);color:var(--gold)"><i class="fas fa-microchip"></i></div>
-              <div class="mega-link-text"><h4>EnerTech <span class="mega-badge mega-badge-gold">18</span></h4><p>Technologie & ingénierie transversale</p></div>
+              <div class="mega-icon" style="background:rgba(200,150,46,0.1);color:var(--gold)"><i class="fas fa-cubes"></i></div>
+              <div class="mega-link-text"><h4>EnerTech sur Groupe</h4><p>Vue consolidée technologie & ingénierie</p></div>
             </a>
             <a href="#dashboard" class="mega-link" role="menuitem">
-              <div class="mega-icon" style="background:rgba(14,165,233,0.1);color:var(--midstream)"><i class="fas fa-laptop"></i></div>
-              <div class="mega-link-text"><h4>Plateforme Digitale</h4><p>Dashboard consolidé, données temps réel</p></div>
+              <div class="mega-icon" style="background:rgba(14,165,233,0.1);color:var(--midstream)"><i class="fas fa-tachometer-alt"></i></div>
+              <div class="mega-link-text"><h4>Dashboard Live</h4><p>Opérations temps réel consolidées</p></div>
             </a>
           </div>
           <div class="mega-divider"></div>
-          <!-- Col 2: R&D Filiales -->
+          <!-- Col 2: Solutions clés -->
           <div>
-            <div class="mega-col-title">R&D par Filiale</div>
-            <a href="https://enertchad-amont-vercel-app.vercel.app#geosciences" target="_blank" rel="noopener" class="mega-link" role="menuitem">
-              <div class="mega-icon" style="background:rgba(46,134,222,0.1);color:var(--amont)"><i class="fas fa-cube"></i></div>
-              <div class="mega-link-text"><h4>Digital Twin <span class="mega-badge mega-badge-amont">Amont</span></h4><p>Modélisation réservoir, jumeau numérique</p></div>
+            <div class="mega-col-title">Solutions Clés</div>
+            <a href="https://enertchad-technologies.vercel.app" target="_blank" rel="noopener" class="mega-link" role="menuitem">
+              <div class="mega-icon" style="background:rgba(139,92,246,0.1);color:var(--tech)"><i class="fas fa-cube"></i></div>
+              <div class="mega-link-text"><h4>Digital Twin</h4><p>Modélisation réservoir & pipeline temps réel</p></div>
             </a>
-            <a href="https://enertchad-midstream-vercel-app.vercel.app#dashboard" target="_blank" rel="noopener" class="mega-link" role="menuitem">
-              <div class="mega-icon" style="background:rgba(14,165,233,0.1);color:var(--midstream)"><i class="fas fa-satellite-dish"></i></div>
-              <div class="mega-link-text"><h4>SCADA <span class="mega-badge mega-badge-mid">Midstream</span></h4><p>Monitoring pipeline temps réel</p></div>
+            <a href="https://enertchad-technologies.vercel.app" target="_blank" rel="noopener" class="mega-link" role="menuitem">
+              <div class="mega-icon" style="background:rgba(139,92,246,0.1);color:var(--tech)"><i class="fas fa-satellite-dish"></i></div>
+              <div class="mega-link-text"><h4>SCADA & IoT</h4><p>Monitoring, contrôle et cybersécurité</p></div>
             </a>
-            <a href="https://enertchad-aval-vercel-app.vercel.app#dashboard" target="_blank" rel="noopener" class="mega-link" role="menuitem">
-              <div class="mega-icon" style="background:rgba(217,119,6,0.1);color:var(--aval)"><i class="fas fa-brain"></i></div>
-              <div class="mega-link-text"><h4>IA Prédictive <span class="mega-badge mega-badge-aval">Aval</span></h4><p>Prévision demande, optimisation stocks</p></div>
+            <a href="https://enertchad-technologies.vercel.app" target="_blank" rel="noopener" class="mega-link" role="menuitem">
+              <div class="mega-icon" style="background:rgba(139,92,246,0.1);color:var(--tech)"><i class="fas fa-brain"></i></div>
+              <div class="mega-link-text"><h4>IA Prédictive</h4><p>Machine learning, maintenance prédictive</p></div>
             </a>
           </div>
           <!-- Quick links bar -->
           <div class="mega-quick">
-            <a href="#enertech"><i class="fas fa-microchip"></i> EnerTech</a>
+            <a href="https://enertchad-technologies.vercel.app" target="_blank"><i class="fas fa-microchip"></i> Technologies</a>
+            <a href="#enertech"><i class="fas fa-cubes"></i> EnerTech</a>
             <a href="#dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
-            <a href="https://enertchad-amont-vercel-app.vercel.app#geosciences" target="_blank"><i class="fas fa-cube"></i> Digital Twin</a>
-            <a href="https://enertchad-midstream-vercel-app.vercel.app#dashboard" target="_blank"><i class="fas fa-satellite-dish"></i> SCADA</a>
           </div>
         </div>
       </div>
@@ -1170,58 +1179,43 @@ html.light .basin-kpi-bar{background:var(--bg-mid);border-color:rgba(0,0,0,0.06)
 <div class="mobile-nav" id="mobileNav" role="dialog" aria-label="Menu mobile">
   <button class="close-btn" id="mobileClose" aria-label="Fermer le menu"><i class="fas fa-times"></i></button>
 
+  <!-- Filiales -->
+  <div class="mn-section">
+    <h3 class="mn-title">Filiales</h3>
+    <a href="https://enertchad-amont-vercel-app.vercel.app" target="_blank" rel="noopener" class="mn-link"><i class="fas fa-oil-well" style="color:var(--amont);width:20px"></i> Amont · E&P</a>
+    <a href="https://enertchad-midstream-vercel-app.vercel.app" target="_blank" rel="noopener" class="mn-link"><i class="fas fa-pipe-section" style="color:var(--midstream);width:20px"></i> Midstream · Transport</a>
+    <a href="https://enertchad-aval-vercel-app.vercel.app" target="_blank" rel="noopener" class="mn-link"><i class="fas fa-gas-pump" style="color:var(--aval);width:20px"></i> Aval · Distribution</a>
+    <a href="https://enertchad-technologies.vercel.app" target="_blank" rel="noopener" class="mn-link"><i class="fas fa-microchip" style="color:var(--tech);width:20px"></i> Technologies · EnerTech</a>
+  </div>
+
   <!-- Nos Activités -->
   <div class="mn-section">
     <h3 class="mn-title">Nos Activités</h3>
-    <a href="https://enertchad-amont-vercel-app.vercel.app" target="_blank" rel="noopener" class="mn-link">Amont E&P</a>
-    <a href="https://enertchad-midstream-vercel-app.vercel.app" target="_blank" rel="noopener" class="mn-link">Midstream Transport</a>
-    <a href="https://enertchad-aval-vercel-app.vercel.app" target="_blank" rel="noopener" class="mn-link">Aval Distribution</a>
     <a href="#chaine" class="mn-link">Chaîne intégrée</a>
     <a href="#chiffres" class="mn-link">Chiffres clés</a>
     <a href="#dashboard" class="mn-link">Dashboard Live</a>
     <a href="#reseau" class="mn-link">Réseau & Présence</a>
     <a href="#bassins" class="mn-link">Bassins Producteurs</a>
-    <a href="#industries" class="mn-link">Secteurs d'Activité</a>
-    <a href="#partenaires" class="mn-link">Partenaires</a>
+    <a href="#industries" class="mn-link">Secteurs</a>
   </div>
 
   <!-- Solutions -->
   <div class="mn-section">
     <h3 class="mn-title">Solutions</h3>
     <a href="#services" class="mn-link">Fonctions Support</a>
-    <a href="#services" class="mn-link">HSE & Sécurité</a>
     <a href="#academy" class="mn-link">Formation Academy</a>
     <a href="#etudes" class="mn-link">Études de Cas</a>
     <a href="#mediatheque" class="mn-link">Médiathèque</a>
   </div>
 
-  <!-- Innovation -->
-  <div class="mn-section">
-    <h3 class="mn-title">Innovation</h3>
-    <a href="#enertech" class="mn-link">EnerTech</a>
-    <a href="#enertech" class="mn-link">Tech Stack</a>
-    <a href="#enertech" class="mn-link">Digital Twin</a>
-    <a href="#enertech" class="mn-link">SCADA</a>
-    <a href="#enertech" class="mn-link">IA Prédictive</a>
-  </div>
-
-  <!-- Durabilité -->
-  <div class="mn-section">
-    <h3 class="mn-title">Durabilité</h3>
-    <a href="#esg" class="mn-link">Performance ESG</a>
-    <a href="#rse" class="mn-link">RSE & Communautés</a>
-    <a href="#newsletter" class="mn-link">Newsletter</a>
-    <a href="#jalons" class="mn-link">Jalons</a>
-  </div>
-
-  <!-- Entreprise -->
+  <!-- Durabilité & Entreprise -->
   <div class="mn-section">
     <h3 class="mn-title">Entreprise</h3>
+    <a href="#esg" class="mn-link">ESG & Durabilité</a>
+    <a href="#rse" class="mn-link">RSE & Communautés</a>
     <a href="#gouvernance" class="mn-link">Leadership</a>
     <a href="#jalons" class="mn-link">Notre Parcours</a>
-    <a href="#investisseurs" class="mn-link">Investisseurs</a>
     <a href="#carrieres" class="mn-link">Carrières</a>
-    <a href="#actualites" class="mn-link">Actualités</a>
     <a href="#contact" class="mn-link">Contact</a>
   </div>
 </div>
@@ -2857,7 +2851,8 @@ var ENERTCHAD={
   groupe:'https://enertchad-groupe.vercel.app',
   amont:'https://enertchad-amont-vercel-app.vercel.app',
   midstream:'https://enertchad-midstream-vercel-app.vercel.app',
-  aval:'https://enertchad-aval-vercel-app.vercel.app'
+  aval:'https://enertchad-aval-vercel-app.vercel.app',
+  tech:'https://enertchad-technologies.vercel.app'
 };
 
 /* ═══ INTERVAL CLEANUP PROXY ═══ */
