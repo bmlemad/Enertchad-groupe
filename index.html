@@ -309,6 +309,8 @@ body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
 
 /* ═══ HERO ═══ */
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;padding:8rem 2rem 6rem}
+.hero::before{content:'';position:absolute;inset:0;background:linear-gradient(160deg,rgba(8,14,26,0.95) 0%,rgba(8,14,26,0.7) 35%,rgba(8,14,26,0.4) 60%,rgba(200,150,46,0.08) 100%);z-index:1}
+.hero::after{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:0.03;z-index:2;pointer-events:none;mix-blend-mode:overlay}
 .hero-bg{position:absolute;inset:0;z-index:0}
 .hero-bg::before{content:'';position:absolute;inset:0;
   background:
@@ -327,12 +329,13 @@ body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
 @keyframes livePulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(0.8)}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 
-.hero-content{position:relative;z-index:2;max-width:900px}
+.hero-content{position:relative;z-index:3;max-width:900px}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:0.5rem;padding:0.4rem 1rem;border-radius:50px;
   background:rgba(200,150,46,0.1);border:1px solid rgba(200,150,46,0.25);
-  font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);margin-bottom:var(--space-md)}
+  font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);margin-bottom:var(--space-md);position:relative}
+.hero-eyebrow::before{content:'';position:absolute;top:-12px;left:50%;transform:translateX(-50%);width:40px;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
 .hero-eyebrow i{font-size:0.65rem}
-.hero h1{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:700;color:var(--white);margin-bottom:var(--space-md);letter-spacing:-0.03em;line-height:1.05}
+.hero h1{font-size:clamp(2.8rem,5.5vw,4.2rem);font-weight:700;color:var(--white);margin-bottom:var(--space-md);letter-spacing:-0.03em;line-height:1.05}
 .hero h1 em{font-style:normal;
   background:linear-gradient(135deg,var(--amont),var(--midstream),var(--aval));
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
@@ -1647,8 +1650,6 @@ html.light .basin-kpi-bar{background:var(--bg-mid);border-color:rgba(0,0,0,0.06)
   <div class="hero-particles" aria-hidden="true"><canvas id="particleCanvas" aria-hidden="true" role="presentation"></canvas></div>
   <div class="hero-tod-layer" aria-hidden="true"></div>
   <div class="hero-ctx" aria-hidden="true">
-    <i class="fas fa-clock"></i><span id="heroTime">--:--</span>
-    <span class="ctx-sep"></span>
     <i class="fas fa-map-marker-alt"></i><span>N'Djamena</span>
   </div>
   <div class="hero-content" data-r>
@@ -1704,7 +1705,7 @@ html.light .basin-kpi-bar{background:var(--bg-mid);border-color:rgba(0,0,0,0.06)
         <div class="vc-icon"><i class="fas fa-oil-well"></i></div>
         <h3 class="vc-title">EnerTchad Amont</h3>
         <div class="vc-subtitle">Exploration & Production</div>
-        <p class="vc-desc">Services parapétroliers intégrés sur les bassins de Doba (~68 000 bbl/j national) et Bongor — forage, complétion, chimie pétrolière, EOR, SCADA, HSE et transition énergétique.</p>
+        <p class="vc-desc">Services parapétroliers intégrés sur les bassins de Doba (68 000 bbl/j) et Bongor — forage, complétion, chimie pétrolière, EOR, SCADA, HSE et transition énergétique.</p>
         <div class="vc-services">
           <span class="vc-tag">Forage</span>
           <span class="vc-tag">EOR</span>
@@ -3691,12 +3692,10 @@ window.addEventListener('pagehide',function(){ids.forEach(clearInterval);ids=[]}
 (function(){
   var hero=document.getElementById('hero');
   var greetEl=document.getElementById('heroGreeting');
-  var timeEl=document.getElementById('heroTime');
   function update(){
     var h=new Date().getHours(),m=new Date().getMinutes();
     var tod=h>=5&&h<7?'dawn':h>=7&&h<18?'day':h>=18&&h<20?'dusk':'night';
     hero.setAttribute('data-tod',tod);
-    timeEl.textContent=String(h).padStart(2,'0')+':'+String(m).padStart(2,'0');
     var icon,greeting;
     if(tod==='dawn'){icon='fa-sun';greeting='Bonjour';}
     else if(tod==='day'){icon='fa-sun';greeting='Bonjour';}
