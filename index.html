@@ -139,13 +139,18 @@ body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
 
 /* ═══ MEGA MENU — Full-Width Premium ═══ */
 .header-nav .nav-item{position:relative;cursor:pointer}
-.header-nav .nav-item > a{display:inline-block;padding:0.5rem 0}
+.header-nav .nav-item > a{display:inline-flex;align-items:center;gap:0.35rem;padding:0.5rem 0}
+.header-nav .nav-item > a::before{content:'';display:none}
+.nav-chevron{font-size:0.5rem;opacity:0.5;transition:transform 0.3s ease}
+.nav-item.open .nav-chevron{transform:rotate(180deg)}
 .mega-drop{position:fixed;top:0;left:0;right:0;padding:5rem 2rem 2.5rem;
   background:rgba(8,14,26,0.98);backdrop-filter:blur(32px) saturate(1.5);-webkit-backdrop-filter:blur(32px) saturate(1.5);
   border-bottom:1px solid rgba(200,150,46,0.12);box-shadow:0 30px 80px rgba(0,0,0,0.5);
   opacity:0;pointer-events:none;transform:translateY(-8px);
   transition:opacity 0.35s cubic-bezier(0.22,0.61,0.36,1),transform 0.35s cubic-bezier(0.22,0.61,0.36,1);z-index:999}
-.nav-item:hover .mega-drop{opacity:1;pointer-events:auto;transform:translateY(0)}
+.nav-item:hover .mega-drop,.nav-item.open .mega-drop{opacity:1;pointer-events:auto;transform:translateY(0)}
+.mega-close{position:absolute;top:1.5rem;right:2rem;background:none;border:1px solid rgba(255,255,255,0.15);border-radius:50%;width:36px;height:36px;color:var(--white);font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:var(--tr);opacity:0.7}
+.mega-close:hover{opacity:1;border-color:var(--gold);color:var(--gold)}
 .mega-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1px 1fr 1px 1fr;gap:2rem;align-items:start}
 .mega-inner--2col{grid-template-columns:1fr 1px 1fr}
 .mega-divider{background:linear-gradient(180deg,transparent,rgba(200,150,46,0.2),transparent);align-self:stretch}
@@ -588,7 +593,11 @@ body:hover .cursor-glow{opacity:1}
 @media(max-width:1024px){
   .esg-pillars{grid-template-columns:repeat(2,1fr)}
   .ir-grid{grid-template-columns:repeat(2,1fr)}
-  .mega-drop{display:none}
+  .nav-item:hover .mega-drop{opacity:0;pointer-events:none;transform:translateY(-8px)}
+  .nav-item.open .mega-drop{opacity:1;pointer-events:auto;transform:translateY(0);display:block}
+  .mega-inner,.mega-inner--2col{grid-template-columns:1fr!important}
+  .mega-divider{display:none}
+  .mega-drop{padding:4.5rem 1.5rem 2rem}
 }
 @media(max-width:768px){
   .esg-pillars,.ir-grid{grid-template-columns:1fr}
@@ -818,8 +827,9 @@ html.light .basin-kpi-bar{background:var(--bg-mid);border-color:rgba(0,0,0,0.06)
   <nav class="header-nav" aria-label="Navigation principale">
     <!-- 1. Nos Activités Mega Menu -->
     <div class="nav-item" data-mega="nos-activites">
-      <a href="#chaine" data-i18n data-en="What We Do">Nos Activités</a>
+      <a href="#chaine" data-i18n data-en="What We Do">Nos Activités <i class="fas fa-chevron-down nav-chevron"></i></a>
       <div class="mega-drop" role="menu" aria-label="Nos Activités">
+        <button class="mega-close" aria-label="Fermer"><i class="fas fa-times"></i></button>
         <div class="mega-inner">
           <!-- Col 1: Filiales -->
           <div>
@@ -888,8 +898,9 @@ html.light .basin-kpi-bar{background:var(--bg-mid);border-color:rgba(0,0,0,0.06)
 
     <!-- 2. Solutions Mega Menu -->
     <div class="nav-item" data-mega="solutions">
-      <a href="#solutions" data-i18n data-en="Solutions">Solutions</a>
+      <a href="#services" data-i18n data-en="Solutions">Solutions <i class="fas fa-chevron-down nav-chevron"></i></a>
       <div class="mega-drop" role="menu" aria-label="Solutions">
+        <button class="mega-close" aria-label="Fermer"><i class="fas fa-times"></i></button>
         <div class="mega-inner mega-inner--2col">
           <!-- Col 1: Services Groupe -->
           <div>
@@ -933,8 +944,9 @@ html.light .basin-kpi-bar{background:var(--bg-mid);border-color:rgba(0,0,0,0.06)
 
     <!-- 3. Innovation Mega Menu -->
     <div class="nav-item" data-mega="innovation">
-      <a href="#innovation" data-i18n data-en="Innovation">Innovation</a>
+      <a href="#enertech" data-i18n data-en="Innovation">Innovation <i class="fas fa-chevron-down nav-chevron"></i></a>
       <div class="mega-drop" role="menu" aria-label="Innovation">
+        <button class="mega-close" aria-label="Fermer"><i class="fas fa-times"></i></button>
         <div class="mega-inner mega-inner--2col">
           <!-- Col 1: Technologie -->
           <div>
@@ -978,8 +990,9 @@ html.light .basin-kpi-bar{background:var(--bg-mid);border-color:rgba(0,0,0,0.06)
 
     <!-- 4. Durabilité Mega Menu -->
     <div class="nav-item" data-mega="durabilite">
-      <a href="#esg" data-i18n data-en="Sustainability">Durabilité</a>
+      <a href="#esg" data-i18n data-en="Sustainability">Durabilité <i class="fas fa-chevron-down nav-chevron"></i></a>
       <div class="mega-drop" role="menu" aria-label="Durabilité">
+        <button class="mega-close" aria-label="Fermer"><i class="fas fa-times"></i></button>
         <div class="mega-inner mega-inner--2col">
           <!-- Col 1: ESG -->
           <div>
@@ -1019,8 +1032,9 @@ html.light .basin-kpi-bar{background:var(--bg-mid);border-color:rgba(0,0,0,0.06)
 
     <!-- 5. Entreprise Mega Menu -->
     <div class="nav-item" data-mega="entreprise">
-      <a href="#gouvernance" data-i18n data-en="Company">Entreprise</a>
+      <a href="#gouvernance" data-i18n data-en="Company">Entreprise <i class="fas fa-chevron-down nav-chevron"></i></a>
       <div class="mega-drop" role="menu" aria-label="Entreprise">
+        <button class="mega-close" aria-label="Fermer"><i class="fas fa-times"></i></button>
         <div class="mega-inner mega-inner--2col">
           <!-- Col 1: Gouvernance -->
           <div>
@@ -2771,6 +2785,45 @@ window.addEventListener('pagehide',function(){ids.forEach(clearInterval);ids=[]}
   window.addEventListener('scroll',function(){
     if(window.scrollY>60) h.classList.add('scrolled'); else h.classList.remove('scrolled');
   },{passive:true});
+})();
+
+/* ═══ MEGA MENU CLICK TOGGLE ═══ */
+(function(){
+  var navItems=document.querySelectorAll('.nav-item[data-mega]');
+  function closeAll(){
+    navItems.forEach(function(ni){ni.classList.remove('open')});
+  }
+  navItems.forEach(function(ni){
+    var trigger=ni.querySelector(':scope > a');
+    var drop=ni.querySelector('.mega-drop');
+    var closeBtn=ni.querySelector('.mega-close');
+    if(!trigger||!drop) return;
+    trigger.addEventListener('click',function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      var wasOpen=ni.classList.contains('open');
+      closeAll();
+      if(!wasOpen) ni.classList.add('open');
+    });
+    if(closeBtn){
+      closeBtn.addEventListener('click',function(e){
+        e.stopPropagation();
+        ni.classList.remove('open');
+      });
+    }
+    /* Close on link click inside mega */
+    drop.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click',function(){closeAll()});
+    });
+  });
+  /* Close on outside click */
+  document.addEventListener('click',function(e){
+    if(!e.target.closest('.nav-item[data-mega]')) closeAll();
+  });
+  /* Close on Escape */
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape') closeAll();
+  });
 })();
 
 /* ═══ LEAFLET BASIN MAP (Cadastre Minier) ═══ */
