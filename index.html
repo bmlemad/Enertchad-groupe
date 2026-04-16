@@ -617,19 +617,33 @@ body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
   .mobile-toggle{display:block}
   /* Mobile nav — modern bottom-sheet style */
   .mobile-nav{position:fixed;inset:0;z-index:9999;background:rgba(8,14,26,0.98);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
-    display:flex;flex-direction:column;opacity:0;pointer-events:none;transition:opacity 0.35s ease;overflow-y:auto;-webkit-overflow-scrolling:touch}
+    display:flex;flex-direction:column;opacity:0;pointer-events:none;transition:opacity 0.35s ease;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
   .mobile-nav.open{opacity:1;pointer-events:auto}
-  .mobile-nav .close-btn{position:sticky;top:0;right:0;align-self:flex-end;margin:1rem 1rem 0;
-    background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);border-radius:10px;width:42px;height:42px;
-    color:var(--white);font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10;flex-shrink:0}
-  .mobile-nav .close-btn:hover{border-color:var(--gold);color:var(--gold)}
-  .mn-section{padding:0 1.5rem;margin-bottom:1.5rem}
-  .mn-title{font-family:var(--font-d);font-size:0.65rem;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:var(--gold);
-    padding:0.5rem 0;margin-bottom:0.5rem;border-bottom:1px solid rgba(200,150,46,0.12)}
-  .mn-link{display:flex;align-items:center;gap:0.75rem;padding:0.7rem 0.5rem;border-radius:10px;font-family:var(--font-d);
-    font-size:1rem;font-weight:600;color:var(--white);text-decoration:none;transition:all 0.25s ease;border:1px solid transparent}
-  .mn-link:hover,.mn-link:active{background:rgba(255,255,255,0.04);border-color:rgba(255,255,255,0.06)}
-  .mn-link i{width:20px;text-align:center;font-size:0.85rem}
+  .mn-header{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid rgba(255,255,255,0.06);position:sticky;top:0;background:rgba(8,14,26,0.95);backdrop-filter:blur(20px);z-index:2}
+  .mn-close{width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);color:var(--white);font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.3s ease;-webkit-tap-highlight-color:transparent}
+  .mn-close:active{transform:rotate(90deg) scale(0.95);background:rgba(255,255,255,0.1)}
+  .mn-body{flex:1;padding:12px 16px 100px;display:flex;flex-direction:column;gap:4px}
+  .mn-section{border-radius:14px;overflow:hidden;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.04);margin-bottom:6px;transition:all 0.3s ease}
+  .mn-section.open{background:rgba(200,150,46,0.03);border-color:rgba(200,150,46,0.08)}
+  .mn-section-header{display:flex;align-items:center;gap:12px;padding:14px 16px;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:all 0.3s ease}
+  .mn-section-header:active{background:rgba(255,255,255,0.04)}
+  .mn-section-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:0.9rem;flex-shrink:0;transition:all 0.3s ease}
+  .mn-section.open .mn-section-icon{transform:scale(1.05);box-shadow:0 4px 16px rgba(0,0,0,0.2)}
+  .mn-section-text{flex:1;display:flex;flex-direction:column;gap:1px}
+  .mn-section-title{font-family:var(--font-d);font-size:0.95rem;font-weight:600;color:rgba(255,255,255,0.85)}
+  .mn-section-sub{font-size:0.7rem;color:rgba(255,255,255,0.55)}
+  .mn-section.open .mn-section-title{color:var(--white)}
+  .mn-chevron{font-size:0.6rem;color:rgba(255,255,255,0.55);transition:transform 0.3s ease}
+  .mn-section.open .mn-chevron{transform:rotate(180deg);color:var(--gold)}
+  .mn-section-body{max-height:0;overflow:hidden;transition:max-height 0.4s cubic-bezier(0.22,0.61,0.36,1)}
+  .mn-section.open .mn-section-body{max-height:600px}
+  .mn-section-inner{padding:4px 12px 14px;display:flex;flex-direction:column;gap:2px}
+  .mn-link{display:flex;align-items:center;gap:12px;padding:11px 14px;border-radius:10px;text-decoration:none;color:rgba(255,255,255,0.65);transition:all 0.25s ease;-webkit-tap-highlight-color:transparent}
+  .mn-link:active,.mn-link:hover{background:rgba(200,150,46,0.06);color:var(--white)}
+  .mn-link-ic{width:32px;height:32px;border-radius:8px;background:rgba(255,255,255,0.04);display:flex;align-items:center;justify-content:center;font-size:0.75rem;flex-shrink:0;color:var(--gold)}
+  .mn-link-text{display:flex;flex-direction:column;gap:1px}
+  .mn-link-name{font-family:var(--font-d);font-size:0.85rem;font-weight:500}
+  .mn-link-desc{font-size:0.66rem;color:rgba(255,255,255,0.55);line-height:1.3}
 
   .hero{min-height:100svh;padding:6rem 1.25rem 4rem}
   .hero h1{font-size:2.2rem}
@@ -679,6 +693,11 @@ body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
 }
 @keyframes mobileNavSlide{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 /* ═══ SCROLL-TO-TOP BUTTON ═══ */
+/* ═══ SCROLL PROGRESS BAR ═══ */
+.scroll-progress{position:fixed;top:0;left:0;width:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-light));z-index:10000;pointer-events:none;transition:none;box-shadow:0 0 8px rgba(217,168,79,0.4)}
+html.light .scroll-progress{box-shadow:0 0 6px rgba(200,150,46,0.25)}
+
+/* ═══ SCROLL-TO-TOP BUTTON ═══ */
 .scroll-top{position:fixed;bottom:24px;right:24px;width:48px;height:48px;border-radius:50%;
   background:rgba(200,150,46,0.9);color:#080E1A;border:none;cursor:pointer;
   display:flex;align-items:center;justify-content:center;font-size:1.1rem;
@@ -688,6 +707,73 @@ body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
 .scroll-top.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
 .scroll-top:hover{background:var(--gold);transform:translateY(-2px);box-shadow:0 8px 30px rgba(200,150,46,0.4)}
 .scroll-top:active{transform:scale(0.92)}
+
+/* ═══ BREADCRUMB BAR ═══ */
+.breadcrumb-bar{position:fixed;top:0;left:0;right:0;z-index:997;padding:0.4rem 2rem;
+  background:rgba(8,14,26,0.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(255,255,255,0.04);
+  display:flex;align-items:center;gap:0.5rem;font-size:0.72rem;font-family:var(--font-b);
+  transform:translateY(-100%);transition:transform 0.35s cubic-bezier(0.22,0.61,0.36,1);
+  overflow:hidden;white-space:nowrap}
+.breadcrumb-bar.visible{transform:translateY(0)}
+html.light .breadcrumb-bar{background:rgba(245,245,240,0.95);border-bottom-color:rgba(0,0,0,0.06)}
+.bc-home{color:var(--gold);text-decoration:none;display:flex;align-items:center;gap:0.3rem;flex-shrink:0}
+.bc-home:hover{color:var(--gold-light)}
+.bc-sep{color:var(--text-muted);font-size:0.6rem;flex-shrink:0}
+.bc-current{color:var(--white);font-weight:600;text-overflow:ellipsis;overflow:hidden}
+html.light .bc-current{color:var(--white)}
+.bc-sections{display:flex;align-items:center;gap:0.25rem;margin-left:auto;flex-shrink:0}
+.bc-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.15);transition:all 0.3s ease;cursor:pointer;position:relative}
+.bc-dot.active{background:var(--gold);box-shadow:0 0 6px rgba(200,150,46,0.4);transform:scale(1.3)}
+.bc-dot:hover{background:rgba(255,255,255,0.35)}
+html.light .bc-dot{background:rgba(0,0,0,0.1)}
+html.light .bc-dot.active{background:var(--gold)}
+html.light .bc-dot:hover{background:rgba(0,0,0,0.25)}
+/* Tooltip on dot hover */
+.bc-dot::after{content:attr(data-label);position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);
+  background:rgba(8,14,26,0.95);color:var(--white);padding:3px 8px;border-radius:4px;font-size:0.62rem;
+  white-space:nowrap;pointer-events:none;opacity:0;transition:opacity 0.2s ease}
+.bc-dot:hover::after{opacity:1}
+
+/* ═══ GLOBAL SEARCH OVERLAY (Cmd+K) ═══ */
+.search-overlay{position:fixed;inset:0;z-index:10001;background:rgba(0,0,0,0.6);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  display:flex;align-items:flex-start;justify-content:center;padding-top:min(20vh,160px);
+  opacity:0;pointer-events:none;transition:opacity 0.25s ease}
+.search-overlay.active{opacity:1;pointer-events:auto}
+html.light .search-overlay{background:rgba(0,0,0,0.25)}
+.search-modal{width:min(640px,90vw);background:rgba(12,18,34,0.98);backdrop-filter:blur(40px);-webkit-backdrop-filter:blur(40px);
+  border:1px solid rgba(200,150,46,0.12);border-radius:16px;box-shadow:0 40px 120px rgba(0,0,0,0.6);
+  transform:translateY(-10px) scale(0.98);transition:transform 0.3s cubic-bezier(0.16,1,0.3,1);overflow:hidden}
+.search-overlay.active .search-modal{transform:translateY(0) scale(1)}
+html.light .search-modal{background:rgba(255,255,255,0.98);border-color:rgba(200,150,46,0.15);box-shadow:0 40px 120px rgba(0,0,0,0.15)}
+.search-input-wrap{display:flex;align-items:center;gap:0.75rem;padding:1rem 1.25rem;border-bottom:1px solid rgba(255,255,255,0.06)}
+html.light .search-input-wrap{border-bottom-color:rgba(0,0,0,0.06)}
+.search-input-wrap i{color:var(--gold);font-size:1rem;flex-shrink:0}
+.search-input{flex:1;background:none;border:none;outline:none;color:var(--white);font-family:var(--font-b);font-size:1rem;caret-color:var(--gold)}
+.search-input::placeholder{color:var(--text-muted)}
+html.light .search-input{color:#1A1A2E}
+html.light .search-input::placeholder{color:#888}
+.search-kbd{font-size:0.65rem;padding:0.2rem 0.5rem;border:1px solid rgba(255,255,255,0.12);border-radius:4px;
+  color:var(--text-muted);font-family:var(--font-b);flex-shrink:0;background:rgba(255,255,255,0.04)}
+html.light .search-kbd{border-color:rgba(0,0,0,0.1);background:rgba(0,0,0,0.03);color:#888}
+.search-results{max-height:min(50vh,400px);overflow-y:auto;padding:0.5rem}
+.search-results:empty::after{content:'Tapez pour rechercher…';display:block;padding:2rem;text-align:center;color:var(--text-muted);font-size:0.85rem}
+.sr-group-title{font-size:0.65rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--gold);padding:0.5rem 0.75rem;font-family:var(--font-d)}
+.sr-item{display:flex;align-items:center;gap:0.75rem;padding:0.65rem 0.75rem;border-radius:10px;cursor:pointer;transition:all 0.2s ease;text-decoration:none;color:var(--text)}
+.sr-item:hover,.sr-item.focused{background:rgba(200,150,46,0.08);color:var(--white)}
+html.light .sr-item:hover,html.light .sr-item.focused{background:rgba(200,150,46,0.06);color:#1A1A2E}
+.sr-item-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:0.85rem;flex-shrink:0;
+  background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06)}
+html.light .sr-item-icon{background:rgba(0,0,0,0.03);border-color:rgba(0,0,0,0.06)}
+.sr-item-text{flex:1;min-width:0}
+.sr-item-title{font-size:0.85rem;font-weight:600;font-family:var(--font-d);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sr-item-desc{font-size:0.7rem;color:var(--text-muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sr-item-arrow{font-size:0.7rem;color:var(--text-muted);opacity:0;transition:opacity 0.2s}
+.sr-item:hover .sr-item-arrow,.sr-item.focused .sr-item-arrow{opacity:1}
+.search-footer{display:flex;align-items:center;justify-content:space-between;padding:0.6rem 1rem;border-top:1px solid rgba(255,255,255,0.06);font-size:0.65rem;color:var(--text-muted)}
+html.light .search-footer{border-top-color:rgba(0,0,0,0.06)}
+.search-footer kbd{font-size:0.6rem;padding:0.15rem 0.35rem;border:1px solid rgba(255,255,255,0.12);border-radius:3px;background:rgba(255,255,255,0.04);margin:0 2px}
+html.light .search-footer kbd{border-color:rgba(0,0,0,0.1);background:rgba(0,0,0,0.03)}
 @media(max-width:480px){
   .hero h1{font-size:1.8rem}
   .hero-kpis{gap:1rem}
@@ -1477,47 +1563,80 @@ html.light .basin-kpi-bar{background:var(--bg-mid);border-color:rgba(0,0,0,0.06)
 
 <!-- Mobile nav -->
 <div class="mobile-nav" id="mobileNav" role="dialog" aria-label="Menu mobile">
-  <button class="close-btn" id="mobileClose" aria-label="Fermer le menu"><i class="fas fa-times"></i></button>
-
-  <!-- Filiales -->
-  <div class="mn-section">
-    <h3 class="mn-title">Filiales</h3>
-    <a href="https://enertchad-amont-vercel-app.vercel.app" target="_blank" rel="noopener" class="mn-link"><i class="fas fa-oil-well" style="color:var(--amont);width:20px"></i> Amont · E&P</a>
-    <a href="https://enertchad-midstream-vercel-app.vercel.app" target="_blank" rel="noopener" class="mn-link"><i class="fas fa-pipe-section" style="color:var(--midstream);width:20px"></i> Midstream · Transport</a>
-    <a href="https://enertchad-aval-vercel-app.vercel.app" target="_blank" rel="noopener" class="mn-link"><i class="fas fa-gas-pump" style="color:var(--aval);width:20px"></i> Aval · Distribution</a>
-    <a href="https://enertchad-technologies.vercel.app" target="_blank" rel="noopener" class="mn-link"><i class="fas fa-microchip" style="color:var(--tech);width:20px"></i> Technologies · EnerTech</a>
-    <a href="https://enertchad-energies.vercel.app" target="_blank" rel="noopener" class="mn-link"><i class="fas fa-bolt" style="color:var(--energy);width:20px"></i> Énergies · Électricité</a>
+  <div class="mn-header">
+    <a href="#hero" class="logo" style="text-decoration:none"><span class="logo-text" style="font-size:1rem">EnerTchad <span style="color:var(--gold);font-size:0.65rem">GROUPE</span></span></a>
+    <button class="mn-close" id="mobileClose" aria-label="Fermer le menu"><i class="fas fa-times"></i></button>
   </div>
+  <div class="mn-body">
+    <!-- Search shortcut -->
+    <button class="mn-search-btn" id="mnSearchBtn" style="display:flex;align-items:center;gap:0.75rem;width:100%;padding:0.75rem 1rem;margin-bottom:0.5rem;background:rgba(200,150,46,0.06);border:1px solid rgba(200,150,46,0.12);border-radius:10px;color:var(--text-sec);font-size:0.85rem;cursor:pointer;font-family:var(--font-b)">
+      <i class="fas fa-search" style="color:var(--gold)"></i> Rechercher… <span style="margin-left:auto;font-size:0.65rem;opacity:0.5">Ctrl+K</span>
+    </button>
 
-  <!-- Nos Activités -->
-  <div class="mn-section">
-    <h3 class="mn-title">Nos Activités</h3>
-    <a href="#chaine" class="mn-link">Chaîne intégrée</a>
-    <a href="#chiffres" class="mn-link">Chiffres clés</a>
-    <a href="#dashboard" class="mn-link">Dashboard Live</a>
-    <a href="#reseau" class="mn-link">Réseau & Présence</a>
-    <a href="#bassins" class="mn-link">Bassins Producteurs</a>
-    <a href="#industries" class="mn-link">Secteurs</a>
-  </div>
+    <!-- Filiales -->
+    <div class="mn-section">
+      <div class="mn-section-header" role="button" tabindex="0" aria-expanded="false">
+        <div class="mn-section-icon" style="background:rgba(200,150,46,0.1);color:var(--gold)"><i class="fas fa-building"></i></div>
+        <div class="mn-section-text"><span class="mn-section-title">Filiales</span><span class="mn-section-sub">5 entités opérationnelles</span></div>
+        <i class="fas fa-chevron-down mn-chevron"></i>
+      </div>
+      <div class="mn-section-body"><div class="mn-section-inner">
+        <a href="https://enertchad-amont-vercel-app.vercel.app" target="_blank" rel="noopener" class="mn-link"><div class="mn-link-ic" style="color:var(--amont)"><i class="fas fa-oil-well"></i></div><div class="mn-link-text"><span class="mn-link-name">Amont · E&P</span><span class="mn-link-desc">Exploration & Production</span></div></a>
+        <a href="https://enertchad-midstream-vercel-app.vercel.app" target="_blank" rel="noopener" class="mn-link"><div class="mn-link-ic" style="color:var(--midstream)"><i class="fas fa-pipe-section"></i></div><div class="mn-link-text"><span class="mn-link-name">Midstream · Transport</span><span class="mn-link-desc">Pipeline 1 070 km</span></div></a>
+        <a href="https://enertchad-aval-vercel-app.vercel.app" target="_blank" rel="noopener" class="mn-link"><div class="mn-link-ic" style="color:var(--aval)"><i class="fas fa-gas-pump"></i></div><div class="mn-link-text"><span class="mn-link-name">Aval · Distribution</span><span class="mn-link-desc">45 stations · 6 villes</span></div></a>
+        <a href="https://enertchad-technologies.vercel.app" target="_blank" rel="noopener" class="mn-link"><div class="mn-link-ic" style="color:var(--tech)"><i class="fas fa-microchip"></i></div><div class="mn-link-text"><span class="mn-link-name">Technologies · EnerTech</span><span class="mn-link-desc">Digital Twin · SCADA · IA</span></div></a>
+        <a href="https://enertchad-energies.vercel.app" target="_blank" rel="noopener" class="mn-link"><div class="mn-link-ic" style="color:var(--energy)"><i class="fas fa-bolt"></i></div><div class="mn-link-text"><span class="mn-link-name">Énergies · Électricité</span><span class="mn-link-desc">125 MW · Solaire · Micro-grids</span></div></a>
+      </div></div>
+    </div>
 
-  <!-- Solutions -->
-  <div class="mn-section">
-    <h3 class="mn-title">Solutions</h3>
-    <a href="#services" class="mn-link">Fonctions Support</a>
-    <a href="#academy" class="mn-link">Formation Academy</a>
-    <a href="#etudes" class="mn-link">Études de Cas</a>
-    <a href="#mediatheque" class="mn-link">Médiathèque</a>
-  </div>
+    <!-- Nos Activités -->
+    <div class="mn-section">
+      <div class="mn-section-header" role="button" tabindex="0" aria-expanded="false">
+        <div class="mn-section-icon" style="background:rgba(46,134,222,0.1);color:var(--amont)"><i class="fas fa-industry"></i></div>
+        <div class="mn-section-text"><span class="mn-section-title">Nos Activités</span><span class="mn-section-sub">Chaîne de valeur intégrée</span></div>
+        <i class="fas fa-chevron-down mn-chevron"></i>
+      </div>
+      <div class="mn-section-body"><div class="mn-section-inner">
+        <a href="#chaine" class="mn-link"><div class="mn-link-ic"><i class="fas fa-link"></i></div><div class="mn-link-text"><span class="mn-link-name">Chaîne intégrée</span></div></a>
+        <a href="#chiffres" class="mn-link"><div class="mn-link-ic"><i class="fas fa-chart-line"></i></div><div class="mn-link-text"><span class="mn-link-name">Chiffres clés</span></div></a>
+        <a href="#dashboard" class="mn-link"><div class="mn-link-ic"><i class="fas fa-tachometer-alt"></i></div><div class="mn-link-text"><span class="mn-link-name">Dashboard Live</span></div></a>
+        <a href="#reseau" class="mn-link"><div class="mn-link-ic"><i class="fas fa-map-marked-alt"></i></div><div class="mn-link-text"><span class="mn-link-name">Réseau & Présence</span></div></a>
+        <a href="#bassins" class="mn-link"><div class="mn-link-ic"><i class="fas fa-globe-africa"></i></div><div class="mn-link-text"><span class="mn-link-name">Bassins Producteurs</span></div></a>
+        <a href="#industries" class="mn-link"><div class="mn-link-ic"><i class="fas fa-cogs"></i></div><div class="mn-link-text"><span class="mn-link-name">Secteurs</span></div></a>
+      </div></div>
+    </div>
 
-  <!-- Durabilité & Entreprise -->
-  <div class="mn-section">
-    <h3 class="mn-title">Entreprise</h3>
-    <a href="#esg" class="mn-link">ESG & Durabilité</a>
-    <a href="#rse" class="mn-link">RSE & Communautés</a>
-    <a href="#gouvernance" class="mn-link">Leadership</a>
-    <a href="#jalons" class="mn-link">Notre Parcours</a>
-    <a href="#carrieres" class="mn-link">Carrières</a>
-    <a href="#contact" class="mn-link">Contact</a>
+    <!-- Solutions -->
+    <div class="mn-section">
+      <div class="mn-section-header" role="button" tabindex="0" aria-expanded="false">
+        <div class="mn-section-icon" style="background:rgba(139,92,246,0.1);color:var(--tech)"><i class="fas fa-lightbulb"></i></div>
+        <div class="mn-section-text"><span class="mn-section-title">Solutions</span><span class="mn-section-sub">Services & Innovation</span></div>
+        <i class="fas fa-chevron-down mn-chevron"></i>
+      </div>
+      <div class="mn-section-body"><div class="mn-section-inner">
+        <a href="#services" class="mn-link"><div class="mn-link-ic"><i class="fas fa-hands-helping"></i></div><div class="mn-link-text"><span class="mn-link-name">Fonctions Support</span></div></a>
+        <a href="#academy" class="mn-link"><div class="mn-link-ic"><i class="fas fa-graduation-cap"></i></div><div class="mn-link-text"><span class="mn-link-name">Formation Academy</span></div></a>
+        <a href="#etudes" class="mn-link"><div class="mn-link-ic"><i class="fas fa-file-alt"></i></div><div class="mn-link-text"><span class="mn-link-name">Études de Cas</span></div></a>
+        <a href="#mediatheque" class="mn-link"><div class="mn-link-ic"><i class="fas fa-photo-video"></i></div><div class="mn-link-text"><span class="mn-link-name">Médiathèque</span></div></a>
+      </div></div>
+    </div>
+
+    <!-- Entreprise -->
+    <div class="mn-section">
+      <div class="mn-section-header" role="button" tabindex="0" aria-expanded="false">
+        <div class="mn-section-icon" style="background:rgba(16,185,129,0.1);color:var(--energy)"><i class="fas fa-leaf"></i></div>
+        <div class="mn-section-text"><span class="mn-section-title">Entreprise</span><span class="mn-section-sub">ESG · Gouvernance · Carrières</span></div>
+        <i class="fas fa-chevron-down mn-chevron"></i>
+      </div>
+      <div class="mn-section-body"><div class="mn-section-inner">
+        <a href="#esg" class="mn-link"><div class="mn-link-ic"><i class="fas fa-seedling"></i></div><div class="mn-link-text"><span class="mn-link-name">ESG & Durabilité</span></div></a>
+        <a href="#rse" class="mn-link"><div class="mn-link-ic"><i class="fas fa-hand-holding-heart"></i></div><div class="mn-link-text"><span class="mn-link-name">RSE & Communautés</span></div></a>
+        <a href="#gouvernance" class="mn-link"><div class="mn-link-ic"><i class="fas fa-users-cog"></i></div><div class="mn-link-text"><span class="mn-link-name">Leadership</span></div></a>
+        <a href="#jalons" class="mn-link"><div class="mn-link-ic"><i class="fas fa-flag"></i></div><div class="mn-link-text"><span class="mn-link-name">Notre Parcours</span></div></a>
+        <a href="#carrieres" class="mn-link"><div class="mn-link-ic"><i class="fas fa-briefcase"></i></div><div class="mn-link-text"><span class="mn-link-name">Carrières</span></div></a>
+        <a href="#contact" class="mn-link"><div class="mn-link-ic"><i class="fas fa-envelope"></i></div><div class="mn-link-text"><span class="mn-link-name">Contact</span></div></a>
+      </div></div>
+    </div>
   </div>
 </div>
 
@@ -3134,8 +3253,36 @@ html.light .basin-kpi-bar{background:var(--bg-mid);border-color:rgba(0,0,0,0.06)
   </div>
 </footer>
 
+<!-- ═══ SCROLL PROGRESS BAR ═══ -->
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+<!-- ═══ BREADCRUMB BAR ═══ -->
+<nav class="breadcrumb-bar" id="breadcrumbBar" aria-label="Fil d'Ariane">
+  <a href="#hero" class="bc-home"><i class="fas fa-home"></i> <span data-i18n data-en="Home">Accueil</span></a>
+  <i class="fas fa-chevron-right bc-sep"></i>
+  <span class="bc-current" id="bcCurrent">—</span>
+  <div class="bc-sections" id="bcDots"></div>
+</nav>
+
 <!-- ═══ SCROLL-TO-TOP ═══ -->
 <button class="scroll-top" id="scrollTop" aria-label="Retour en haut"><i class="fas fa-arrow-up"></i></button>
+
+<!-- ═══ GLOBAL SEARCH OVERLAY ═══ -->
+<div class="search-overlay" id="searchOverlay" role="dialog" aria-label="Recherche globale">
+  <div class="search-modal">
+    <div class="search-input-wrap">
+      <i class="fas fa-search"></i>
+      <input class="search-input" id="searchInput" type="text" placeholder="Rechercher sur EnerTchad…" autocomplete="off" spellcheck="false"/>
+      <span class="search-kbd">ESC</span>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+    <div class="search-footer">
+      <span><kbd>↑</kbd><kbd>↓</kbd> naviguer</span>
+      <span><kbd>↵</kbd> ouvrir</span>
+      <span><kbd>Ctrl</kbd>+<kbd>K</kbd> recherche</span>
+    </div>
+  </div>
+</div>
 
 <!-- ════════════════════ COOKIE BANNER ════════════════════ -->
 <div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Consentement cookies">
@@ -3161,16 +3308,138 @@ var ENERTCHAD={
 (function(){var ids=[];var _si=window.setInterval;window.setInterval=function(){var id=_si.apply(window,arguments);ids.push(id);return id};
 window.addEventListener('pagehide',function(){ids.forEach(clearInterval);ids=[]})})();
 
-/* ═══ HEADER SCROLL + SCROLL-TO-TOP ═══ */
+/* ═══ HEADER SCROLL + SCROLL-TO-TOP + PROGRESS BAR + BREADCRUMBS ═══ */
 (function(){
   var h=document.querySelector('.header');
   var st=document.getElementById('scrollTop');
+  var sp=document.getElementById('scrollProgress');
+  var bb=document.getElementById('breadcrumbBar');
+  var bcCur=document.getElementById('bcCurrent');
+  var bcDots=document.getElementById('bcDots');
+
+  /* — Build tracked sections for breadcrumbs — */
+  var sections=[];
+  document.querySelectorAll('section[id]').forEach(function(s){
+    var title=s.querySelector('.section-title,h1,h2');
+    if(title){
+      var label=title.textContent.trim().substring(0,30);
+      sections.push({el:s,id:s.id,label:label});
+      var dot=document.createElement('span');
+      dot.className='bc-dot';
+      dot.setAttribute('data-label',label);
+      dot.setAttribute('title',label);
+      dot.addEventListener('click',function(){s.scrollIntoView({behavior:'smooth',block:'start'})});
+      bcDots.appendChild(dot);
+    }
+  });
+  var dots=bcDots?bcDots.querySelectorAll('.bc-dot'):[];
+
   window.addEventListener('scroll',function(){
     var y=window.scrollY;
+    var docH=document.documentElement.scrollHeight-window.innerHeight;
+    /* Header */
     if(y>60) h.classList.add('scrolled'); else h.classList.remove('scrolled');
+    /* Scroll-to-top */
     if(st){if(y>500) st.classList.add('visible'); else st.classList.remove('visible')}
+    /* Progress bar */
+    if(sp&&docH>0){sp.style.width=(y/docH*100)+'%'}
+    /* Breadcrumb bar — show after scrolling past hero */
+    if(bb){if(y>400) bb.classList.add('visible'); else bb.classList.remove('visible')}
+    /* Active section detection */
+    var active=-1;
+    for(var i=sections.length-1;i>=0;i--){
+      if(sections[i].el.getBoundingClientRect().top<200){active=i;break}
+    }
+    if(bcCur&&active>=0){bcCur.textContent=sections[active].label}
+    else if(bcCur){bcCur.textContent='—'}
+    dots.forEach(function(d,i){if(i===active)d.classList.add('active');else d.classList.remove('active')});
   },{passive:true});
   if(st){st.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})})}
+})();
+
+/* ═══ GLOBAL SEARCH (Ctrl+K / Cmd+K) ═══ */
+(function(){
+  var overlay=document.getElementById('searchOverlay');
+  var input=document.getElementById('searchInput');
+  var results=document.getElementById('searchResults');
+  if(!overlay||!input||!results) return;
+
+  /* — Search index: sections + cross-site links — */
+  var index=[];
+  /* Local sections */
+  document.querySelectorAll('section[id]').forEach(function(s){
+    var title=s.querySelector('.section-title,h1,h2');
+    var desc=s.querySelector('.section-desc,p');
+    if(title) index.push({
+      type:'section',icon:'fas fa-bookmark',
+      title:title.textContent.trim(),
+      desc:desc?desc.textContent.trim().substring(0,80):'',
+      url:'#'+s.id,group:'Cette page'
+    });
+  });
+  /* Cross-site filiales */
+  var sites=[
+    {title:'EnerTchad Amont',desc:'Exploration & Production · Doba & Bongor',icon:'fas fa-oil-well',url:ENERTCHAD.amont,color:'var(--amont)'},
+    {title:'EnerTchad Midstream',desc:'Transport · Pipeline 1 070 km',icon:'fas fa-pipe-section',url:ENERTCHAD.midstream,color:'var(--midstream)'},
+    {title:'EnerTchad Aval',desc:'Distribution · 45 stations-service',icon:'fas fa-gas-pump',url:ENERTCHAD.aval,color:'var(--aval)'},
+    {title:'EnerTchad Technologies',desc:'Digital Twin · SCADA · IA prédictive',icon:'fas fa-microchip',url:ENERTCHAD.tech,color:'var(--tech)'},
+    {title:'EnerTchad Énergies',desc:'Électricité · Solaire · Micro-grids',icon:'fas fa-bolt',url:ENERTCHAD.energies,color:'var(--energy)'}
+  ];
+  sites.forEach(function(s){index.push({type:'filiale',icon:s.icon,title:s.title,desc:s.desc,url:s.url,group:'Filiales',color:s.color})});
+  /* Quick actions */
+  index.push({type:'action',icon:'fas fa-envelope',title:'Contact',desc:'Formulaire de contact',url:'#contact',group:'Actions rapides'});
+  index.push({type:'action',icon:'fas fa-briefcase',title:'Carrières',desc:'Rejoignez EnerTchad',url:'#carrieres',group:'Actions rapides'});
+  index.push({type:'action',icon:'fas fa-leaf',title:'ESG & Durabilité',desc:'Nos engagements environnementaux',url:'#esg',group:'Actions rapides'});
+
+  var focusIdx=-1;
+  function open(){overlay.classList.add('active');input.value='';input.focus();render('');focusIdx=-1}
+  function close(){overlay.classList.remove('active');input.blur()}
+  function render(q){
+    results.innerHTML='';focusIdx=-1;
+    var q2=q.toLowerCase().trim();
+    var filtered=q2?index.filter(function(it){return it.title.toLowerCase().indexOf(q2)>-1||it.desc.toLowerCase().indexOf(q2)>-1}):index;
+    var groups={};
+    filtered.forEach(function(it){if(!groups[it.group])groups[it.group]=[];groups[it.group].push(it)});
+    Object.keys(groups).forEach(function(g){
+      var gh=document.createElement('div');gh.className='sr-group-title';gh.textContent=g;results.appendChild(gh);
+      groups[g].forEach(function(it){
+        var a=document.createElement('a');a.className='sr-item';a.href=it.url;
+        if(it.type==='filiale')a.target='_blank';
+        a.innerHTML='<div class="sr-item-icon" style="color:'+(it.color||'var(--gold)')+'"><i class="'+it.icon+'"></i></div>'
+          +'<div class="sr-item-text"><div class="sr-item-title">'+it.title+'</div><div class="sr-item-desc">'+it.desc+'</div></div>'
+          +'<i class="fas fa-arrow-right sr-item-arrow"></i>';
+        a.addEventListener('click',function(){close()});
+        results.appendChild(a);
+      });
+    });
+  }
+
+  /* Keyboard: open, close, navigate */
+  document.addEventListener('keydown',function(e){
+    if((e.ctrlKey||e.metaKey)&&e.key==='k'){e.preventDefault();if(overlay.classList.contains('active'))close();else open();return}
+    if(!overlay.classList.contains('active'))return;
+    if(e.key==='Escape'){close();return}
+    var items=results.querySelectorAll('.sr-item');
+    if(e.key==='ArrowDown'){e.preventDefault();focusIdx=Math.min(focusIdx+1,items.length-1);updateFocus(items)}
+    else if(e.key==='ArrowUp'){e.preventDefault();focusIdx=Math.max(focusIdx-1,0);updateFocus(items)}
+    else if(e.key==='Enter'&&focusIdx>=0&&items[focusIdx]){e.preventDefault();items[focusIdx].click()}
+  });
+  function updateFocus(items){items.forEach(function(it,i){if(i===focusIdx){it.classList.add('focused');it.scrollIntoView({block:'nearest'})}else it.classList.remove('focused')})}
+
+  input.addEventListener('input',function(){render(this.value)});
+  overlay.addEventListener('click',function(e){if(e.target===overlay)close()});
+
+  /* Search button in header (if exists) or add keyboard hint */
+  var headerNav=document.querySelector('.header-nav');
+  if(headerNav){
+    var searchBtn=document.createElement('button');
+    searchBtn.className='lang-btn';
+    searchBtn.setAttribute('aria-label','Recherche (Ctrl+K)');
+    searchBtn.innerHTML='<i class="fas fa-search" style="margin-right:4px"></i><span style="font-size:0.65rem;opacity:0.6">Ctrl+K</span>';
+    searchBtn.style.cssText='cursor:pointer;display:inline-flex;align-items:center;gap:4px';
+    searchBtn.addEventListener('click',open);
+    headerNav.insertBefore(searchBtn,headerNav.querySelector('.lang-btn'));
+  }
 })();
 
 /* ═══ MEGA MENU — Premium Tabbed System ═══ */
@@ -3387,17 +3656,35 @@ window.addEventListener('pagehide',function(){ids.forEach(clearInterval);ids=[]}
   pipelineRoute.bindPopup('<strong>Réseau Pipeline</strong><br/>1 070 km',{maxWidth:200});
 })();
 
-/* ═══ MOBILE NAV ═══ */
+/* ═══ MOBILE NAV — Accordion System ═══ */
 (function(){
   var toggle=document.getElementById('mobileToggle');
   var nav=document.getElementById('mobileNav');
   var close=document.getElementById('mobileClose');
   var links=nav.querySelectorAll('.mn-link');
+  var sections=nav.querySelectorAll('.mn-section');
+  var mnSearch=document.getElementById('mnSearchBtn');
   function open(){nav.classList.add('open');toggle.setAttribute('aria-expanded','true');document.body.style.overflow='hidden'}
-  function shut(){nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');document.body.style.overflow=''}
+  function shut(){nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');document.body.style.overflow='';
+    sections.forEach(function(s){s.classList.remove('open');s.querySelector('.mn-section-header').setAttribute('aria-expanded','false')})}
   toggle.addEventListener('click',open);
   close.addEventListener('click',shut);
   links.forEach(function(l){l.addEventListener('click',shut)});
+  /* Accordion toggle */
+  sections.forEach(function(sec){
+    var header=sec.querySelector('.mn-section-header');
+    if(!header) return;
+    header.addEventListener('click',function(){
+      var wasOpen=sec.classList.contains('open');
+      sections.forEach(function(s){s.classList.remove('open');s.querySelector('.mn-section-header').setAttribute('aria-expanded','false')});
+      if(!wasOpen){sec.classList.add('open');header.setAttribute('aria-expanded','true')}
+    });
+    header.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();header.click()}});
+  });
+  /* Mobile search button → opens global search */
+  if(mnSearch){mnSearch.addEventListener('click',function(){shut();setTimeout(function(){
+    var so=document.getElementById('searchOverlay');if(so){so.classList.add('active');var si=document.getElementById('searchInput');if(si)si.focus()}
+  },200)})}
 })();
 
 /* ═══ TIME-OF-DAY HERO ═══ */
