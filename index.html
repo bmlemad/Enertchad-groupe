@@ -104,6 +104,23 @@ body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
 .lang-btn{font-size:0.8rem;padding:0.35rem 0.85rem;border:1px solid rgba(255,255,255,0.15);border-radius:var(--radius-xs);color:var(--text-sec);cursor:pointer;background:transparent;font-family:var(--font-b);transition:var(--tr)}
 .lang-btn:hover{border-color:var(--gold);color:var(--gold)}
 
+/* ═══ MEGA MENU ═══ */
+.header-nav .nav-item{position:relative}
+.mega-drop{position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%) translateY(8px);opacity:0;pointer-events:none;
+  min-width:380px;padding:1.5rem;border-radius:var(--radius);
+  background:rgba(12,20,38,0.97);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
+  border:1px solid rgba(255,255,255,0.08);box-shadow:var(--shadow-l);
+  transition:opacity 0.3s ease,transform 0.3s ease;z-index:1001}
+.mega-drop::before{content:'';position:absolute;top:-8px;left:50%;transform:translateX(-50%);
+  border:8px solid transparent;border-bottom-color:rgba(12,20,38,0.97)}
+.nav-item:hover .mega-drop{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0)}
+.mega-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem}
+.mega-link{display:flex;align-items:flex-start;gap:0.75rem;padding:0.75rem;border-radius:var(--radius-sm);transition:var(--tr)}
+.mega-link:hover{background:rgba(255,255,255,0.04)}
+.mega-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.mega-link-text h4{font-size:0.85rem;color:var(--white);margin-bottom:0.15rem}
+.mega-link-text p{font-size:0.7rem;color:var(--text-muted);line-height:1.4}
+
 /* Mobile menu */
 .mobile-toggle{display:none;background:none;border:none;cursor:pointer;padding:0.5rem;color:var(--white);font-size:1.3rem}
 
@@ -333,6 +350,67 @@ body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
 [data-r]{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease}
 [data-r].visible{opacity:1;transform:translateY(0)}
 
+/* ═══ HERO PARTICLE CANVAS ═══ */
+.hero-particles{position:absolute;inset:0;z-index:1;pointer-events:none}
+
+/* Hero subtitle carousel */
+.hero-carousel{position:relative;height:1.6em;overflow:hidden}
+.hero-carousel .hc-slide{position:absolute;inset:0;opacity:0;transform:translateY(10px);transition:opacity 0.6s ease,transform 0.6s ease}
+.hero-carousel .hc-slide.active{opacity:1;transform:translateY(0)}
+
+/* ═══ ESG HUB ═══ */
+.esg-pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:var(--space-lg)}
+.esg-pillar{padding:2rem 1.5rem;border-radius:var(--radius);background:var(--bg-card);border:1px solid rgba(255,255,255,0.06);text-align:center;transition:var(--tr);position:relative;overflow:hidden}
+.esg-pillar:hover{transform:translateY(-4px);border-color:rgba(255,255,255,0.12)}
+.esg-pillar::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px}
+.esg-pillar[data-color="green"]::after{background:linear-gradient(90deg,#10B981,#34C759)}
+.esg-pillar[data-color="blue"]::after{background:linear-gradient(90deg,var(--amont),var(--midstream))}
+.esg-pillar[data-color="amber"]::after{background:linear-gradient(90deg,var(--aval),#F59E0B)}
+.esg-pillar[data-color="purple"]::after{background:linear-gradient(90deg,#8B5CF6,#A78BFA)}
+.esg-num{font-family:var(--font-d);font-size:2.5rem;font-weight:700;color:var(--white);line-height:1;margin-bottom:0.3rem}
+.esg-num small{font-size:0.45em;color:var(--gold);margin-left:0.15em}
+.esg-label{font-size:0.85rem;color:var(--text-sec);margin-bottom:0.5rem}
+.esg-icon{font-size:1.8rem;margin-bottom:var(--space-sm);opacity:0.6}
+.odd-badges{display:flex;justify-content:center;gap:0.5rem;margin-top:var(--space-lg);flex-wrap:wrap}
+.odd-badge{width:48px;height:48px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:700;color:var(--white);transition:var(--tr)}
+.odd-badge:hover{transform:scale(1.15)}
+
+/* ═══ INVESTOR RELATIONS ═══ */
+.ir-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.ir-card{padding:2rem;border-radius:var(--radius);background:var(--bg-card);border:1px solid rgba(255,255,255,0.06);transition:var(--tr);text-align:center}
+.ir-card:hover{transform:translateY(-3px);border-color:rgba(200,150,46,0.2)}
+.ir-icon{width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin:0 auto var(--space-sm);background:rgba(200,150,46,0.08);color:var(--gold)}
+.ir-value{font-family:var(--font-d);font-size:2rem;font-weight:700;color:var(--white);margin-bottom:0.25rem}
+.ir-label{font-size:0.85rem;color:var(--text-sec);margin-bottom:0.75rem}
+.ir-trend{display:inline-flex;align-items:center;gap:0.3rem;font-size:0.75rem;font-weight:600;padding:0.2rem 0.6rem;border-radius:50px}
+.ir-trend.up{background:rgba(16,185,129,0.1);color:#10B981}
+.ir-trend.down{background:rgba(239,68,68,0.1);color:#EF4444}
+
+/* ═══ CURSOR GLOW (desktop) ═══ */
+.cursor-glow{position:fixed;width:300px;height:300px;border-radius:50%;pointer-events:none;z-index:9998;
+  background:radial-gradient(circle,rgba(200,150,46,0.04) 0%,transparent 70%);
+  transform:translate(-50%,-50%);transition:opacity 0.3s;opacity:0}
+body:hover .cursor-glow{opacity:1}
+
+/* ═══ FOOTER ENHANCED ═══ */
+.footer-social{display:flex;gap:0.75rem;margin-top:0.75rem}
+.footer-social a{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;
+  background:rgba(255,255,255,0.05);color:var(--text-muted);font-size:0.9rem;transition:var(--tr);border:1px solid rgba(255,255,255,0.06)}
+.footer-social a:hover{color:var(--gold);border-color:rgba(200,150,46,0.3);transform:translateY(-2px)}
+.footer-certs{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;margin-top:1rem}
+.footer-cert{font-size:0.65rem;padding:0.25rem 0.7rem;border-radius:50px;background:rgba(255,255,255,0.04);color:var(--text-muted);border:1px solid rgba(255,255,255,0.06)}
+
+/* Responsive additions */
+@media(max-width:1024px){
+  .esg-pillars{grid-template-columns:repeat(2,1fr)}
+  .ir-grid{grid-template-columns:repeat(2,1fr)}
+  .mega-drop{display:none}
+}
+@media(max-width:768px){
+  .esg-pillars,.ir-grid{grid-template-columns:1fr}
+  .hero-carousel{height:auto}
+}
+
 /* ═══ TIME-OF-DAY HERO ═══ */
 .hero-tod-layer{position:absolute;inset:0;z-index:1;transition:opacity 1.5s ease;pointer-events:none}
 .hero[data-tod="dawn"] .hero-tod-layer{background:radial-gradient(ellipse 80% 60% at 50% 80%,rgba(255,140,50,0.12) 0%,transparent 60%),radial-gradient(ellipse 60% 40% at 30% 90%,rgba(255,100,50,0.08) 0%,transparent 50%)}
@@ -450,10 +528,32 @@ body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
     <div class="logo-text">EnerTchad<span>Groupe</span></div>
   </a>
   <nav class="header-nav" aria-label="Navigation principale">
-    <a href="#chaine" data-i18n data-en="Value Chain">Chaîne de valeur</a>
-    <a href="#dashboard" data-i18n data-en="Dashboard">Tableau de bord</a>
+    <div class="nav-item">
+      <a href="#chaine" data-i18n data-en="Subsidiaries">Nos Filiales</a>
+      <div class="mega-drop" role="menu" aria-label="Menu filiales">
+        <div class="mega-grid">
+          <a href="https://enertchad-amont.vercel.app" target="_blank" rel="noopener" class="mega-link" role="menuitem">
+            <div class="mega-icon" style="background:rgba(46,134,222,0.1);color:var(--amont)"><i class="fas fa-oil-well"></i></div>
+            <div class="mega-link-text"><h4>Amont — E&P</h4><p>Forage, chimie, EOR, HSE</p></div>
+          </a>
+          <a href="https://enertchad-midstream.vercel.app" target="_blank" rel="noopener" class="mega-link" role="menuitem">
+            <div class="mega-icon" style="background:rgba(14,165,233,0.1);color:var(--midstream)"><i class="fas fa-pipe-section"></i></div>
+            <div class="mega-link-text"><h4>Midstream — Transport</h4><p>Pipeline, stockage, metering</p></div>
+          </a>
+          <a href="https://enertchad-aval-vercel-app.vercel.app" target="_blank" rel="noopener" class="mega-link" role="menuitem">
+            <div class="mega-icon" style="background:rgba(217,119,6,0.1);color:var(--aval)"><i class="fas fa-gas-pump"></i></div>
+            <div class="mega-link-text"><h4>Aval — Distribution</h4><p>Stations, GPL, lubrifiants</p></div>
+          </a>
+          <a href="#dashboard" class="mega-link" role="menuitem">
+            <div class="mega-icon" style="background:rgba(200,150,46,0.1);color:var(--gold)"><i class="fas fa-tachometer-alt"></i></div>
+            <div class="mega-link-text"><h4>Dashboard Consolidé</h4><p>Opérations en temps réel</p></div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <a href="#esg" data-i18n data-en="ESG">ESG</a>
+    <a href="#investisseurs" data-i18n data-en="Investors">Investisseurs</a>
     <a href="#reseau" data-i18n data-en="Network">Réseau</a>
-    <a href="#gouvernance" data-i18n data-en="Governance">Gouvernance</a>
     <a href="#carrieres" data-i18n data-en="Careers">Carrières</a>
     <a href="#contact" data-i18n data-en="Contact">Contact</a>
     <button class="lang-btn" id="langToggle" aria-label="Changer la langue">FR / EN</button>
@@ -477,6 +577,7 @@ body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
 <!-- ════════════════════ HERO ════════════════════ -->
 <section class="hero" id="hero" data-tod="day">
   <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-particles" aria-hidden="true"><canvas id="particleCanvas"></canvas></div>
   <div class="hero-tod-layer" aria-hidden="true"></div>
   <div class="hero-ctx" aria-hidden="true">
     <i class="fas fa-clock"></i><span id="heroTime">--:--</span>
@@ -487,7 +588,11 @@ body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
     <div class="hero-greeting" id="heroGreeting"></div>
     <div class="hero-eyebrow"><i class="fas fa-bolt"></i> <span data-i18n data-en="Integrated Operator · Chad">Opérateur Intégré · Tchad</span></div>
     <h1><span data-i18n data-en="From exploration<br/>to the <em>pump</em>">De l'exploration<br/>à la <em>pompe</em></span></h1>
-    <p class="hero-sub" data-i18n data-en="EnerTchad is the first integrated Chadian group covering the entire oil & gas value chain — from upstream to distribution.">EnerTchad est le premier groupe tchadien intégré couvrant l'ensemble de la chaîne de valeur pétrolière et gazière — de l'amont à la distribution.</p>
+    <div class="hero-carousel hero-sub" aria-live="polite">
+      <p class="hc-slide active" data-i18n data-en="The first integrated Chadian group covering the entire oil & gas value chain.">Le premier groupe tchadien intégré couvrant l'ensemble de la chaîne de valeur pétrolière et gazière.</p>
+      <p class="hc-slide" data-i18n data-en="From exploration to distribution — unity, innovation, sustainability.">De l'exploration à la distribution — unité, innovation, durabilité.</p>
+      <p class="hc-slide" data-i18n data-en="750+ employees, 1,070 km of pipeline, 48 stations across Chad.">750+ collaborateurs, 1 070 km de pipeline, 48 stations à travers le Tchad.</p>
+    </div>
     <div class="hero-kpis" role="list" aria-label="Indicateurs clés du groupe">
       <div class="hero-kpi" role="listitem">
         <div class="hero-kpi-value"><span class="counter" data-target="3">0</span><span data-i18n data-en="subsidiaries">filiales</span></div>
@@ -701,6 +806,82 @@ body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
         <h3>Communautés</h3>
         <p>Programmes d'accès à l'énergie, infrastructures sociales, santé et éducation dans les régions d'opération.</p>
         <div class="rse-stat">15K+<small>bénéficiaires</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ ESG HUB ════════════════════ -->
+<section class="section" id="esg" aria-labelledby="esg-title">
+  <div class="ctn">
+    <div class="parallax-bg" aria-hidden="true"><div class="orb orb-3"></div></div>
+    <div class="section-header" data-r>
+      <div class="section-eyebrow"><i class="fas fa-leaf"></i> <span data-i18n data-en="ESG Strategy">Stratégie ESG</span></div>
+      <h2 class="section-title" id="esg-title" data-i18n data-en="Environmental, Social & Governance">Environnement, Social & Gouvernance</h2>
+      <p class="section-desc" data-i18n data-en="Aligned with the UN Sustainable Development Goals, EnerTchad measures and publishes its ESG performance transparently.">Aligné sur les Objectifs de Développement Durable de l'ONU, EnerTchad mesure et publie sa performance ESG en toute transparence.</p>
+    </div>
+    <div class="esg-pillars" data-r>
+      <div class="esg-pillar" data-color="green">
+        <div class="esg-icon">🌍</div>
+        <div class="esg-num">−18<small>%</small></div>
+        <div class="esg-label" data-i18n data-en="CO₂ emissions (vs 2024)">Émissions CO₂ (vs 2024)</div>
+      </div>
+      <div class="esg-pillar" data-color="blue">
+        <div class="esg-icon">💧</div>
+        <div class="esg-num">94<small>%</small></div>
+        <div class="esg-label" data-i18n data-en="Water recycled on operations">Eau recyclée sur opérations</div>
+      </div>
+      <div class="esg-pillar" data-color="amber">
+        <div class="esg-icon">👥</div>
+        <div class="esg-num">96<small>%</small></div>
+        <div class="esg-label" data-i18n data-en="Local employment rate">Taux d'emploi local</div>
+      </div>
+      <div class="esg-pillar" data-color="purple">
+        <div class="esg-icon">🎓</div>
+        <div class="esg-num">2 400<small>h</small></div>
+        <div class="esg-label" data-i18n data-en="Training hours / year">Heures de formation / an</div>
+      </div>
+    </div>
+    <div class="odd-badges" data-r aria-label="Objectifs de Développement Durable">
+      <span class="odd-badge" style="background:#E5243B" title="ODD 1 — Pas de pauvreté">1</span>
+      <span class="odd-badge" style="background:#DDA63A" title="ODD 4 — Éducation de qualité">4</span>
+      <span class="odd-badge" style="background:#FD6925" title="ODD 7 — Énergie propre">7</span>
+      <span class="odd-badge" style="background:#A21942" title="ODD 8 — Travail décent">8</span>
+      <span class="odd-badge" style="background:#FD9D24" title="ODD 9 — Industrie & Innovation">9</span>
+      <span class="odd-badge" style="background:#3F7E44" title="ODD 12 — Consommation responsable">12</span>
+      <span class="odd-badge" style="background:#56C02B" title="ODD 13 — Action pour le climat">13</span>
+      <span class="odd-badge" style="background:#00689D" title="ODD 14 — Vie aquatique">14</span>
+      <span class="odd-badge" style="background:#19486A" title="ODD 17 — Partenariats">17</span>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ INVESTISSEURS ════════════════════ -->
+<section class="section" id="investisseurs" aria-labelledby="ir-title" style="background:var(--bg-mid)">
+  <div class="ctn">
+    <div class="section-header" data-r>
+      <div class="section-eyebrow"><i class="fas fa-chart-bar"></i> <span data-i18n data-en="Investor Relations">Relations Investisseurs</span></div>
+      <h2 class="section-title" id="ir-title" data-i18n data-en="Financial Performance">Performance Financière</h2>
+      <p class="section-desc" data-i18n data-en="Key consolidated indicators demonstrating the group's financial trajectory and operational strength.">Indicateurs consolidés clés illustrant la trajectoire financière et la solidité opérationnelle du groupe.</p>
+    </div>
+    <div class="ir-grid" data-r>
+      <div class="ir-card">
+        <div class="ir-icon"><i class="fas fa-dollar-sign"></i></div>
+        <div class="ir-value">$420<small style="font-size:0.5em;color:var(--gold)">M</small></div>
+        <div class="ir-label" data-i18n data-en="Annual Revenue (est.)">Chiffre d'affaires annuel (est.)</div>
+        <span class="ir-trend up"><i class="fas fa-arrow-up"></i> +23%</span>
+      </div>
+      <div class="ir-card">
+        <div class="ir-icon"><i class="fas fa-piggy-bank"></i></div>
+        <div class="ir-value">$85<small style="font-size:0.5em;color:var(--gold)">M</small></div>
+        <div class="ir-label">EBITDA</div>
+        <span class="ir-trend up"><i class="fas fa-arrow-up"></i> +18%</span>
+      </div>
+      <div class="ir-card">
+        <div class="ir-icon"><i class="fas fa-hand-holding-usd"></i></div>
+        <div class="ir-value">$210<small style="font-size:0.5em;color:var(--gold)">M</small></div>
+        <div class="ir-label" data-i18n data-en="CAPEX (3-year plan)">CAPEX (plan triennal)</div>
+        <span class="ir-trend up"><i class="fas fa-arrow-up"></i> Croissance</span>
       </div>
     </div>
   </div>
@@ -1060,6 +1241,18 @@ body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
       <div class="footer-brand">
         <img src="logo.svg" alt="EnerTchad" width="36" height="36"/>
         <p>EnerTchad — Groupe pétrolier et gazier tchadien intégré. De l'exploration à la pompe, une vision souveraine de l'énergie au cœur de l'Afrique Centrale.</p>
+        <div class="footer-social">
+          <a href="https://linkedin.com/company/enertchad" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Twitter / X"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+        <div class="footer-certs">
+          <span class="footer-cert">ISO 14001</span>
+          <span class="footer-cert">ISO 45001</span>
+          <span class="footer-cert">API Q1</span>
+          <span class="footer-cert">OHSAS</span>
+        </div>
       </div>
       <div class="footer-links">
         <div class="footer-col">
@@ -1328,6 +1521,60 @@ window.addEventListener('pagehide',function(){ids.forEach(clearInterval);ids=[]}
       setTimeout(function(){btn.innerHTML=orig;btn.style.background='';btn.disabled=false},3000);
     });
   });
+})();
+
+/* ═══ HERO PARTICLE SYSTEM ═══ */
+(function(){
+  var canvas=document.getElementById('particleCanvas');
+  if(!canvas) return;
+  var ctx=canvas.getContext('2d');
+  var particles=[];
+  var w,h;
+  function resize(){w=canvas.width=canvas.offsetWidth;h=canvas.height=canvas.offsetHeight}
+  resize();window.addEventListener('resize',resize);
+  for(var i=0;i<40;i++){
+    particles.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-0.5)*0.3,vy:(Math.random()-0.5)*0.3,r:Math.random()*1.5+0.5,a:Math.random()*0.3+0.05});
+  }
+  function draw(){
+    ctx.clearRect(0,0,w,h);
+    particles.forEach(function(p){
+      p.x+=p.vx;p.y+=p.vy;
+      if(p.x<0)p.x=w;if(p.x>w)p.x=0;if(p.y<0)p.y=h;if(p.y>h)p.y=0;
+      ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle='rgba(200,150,46,'+p.a+')';ctx.fill();
+    });
+    /* Connection lines */
+    for(var i=0;i<particles.length;i++){
+      for(var j=i+1;j<particles.length;j++){
+        var dx=particles[i].x-particles[j].x,dy=particles[i].y-particles[j].y;
+        var dist=Math.sqrt(dx*dx+dy*dy);
+        if(dist<120){
+          ctx.beginPath();ctx.moveTo(particles[i].x,particles[i].y);ctx.lineTo(particles[j].x,particles[j].y);
+          ctx.strokeStyle='rgba(200,150,46,'+(0.04*(1-dist/120))+')';ctx.stroke();
+        }
+      }
+    }
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+/* ═══ HERO SUBTITLE CAROUSEL ═══ */
+(function(){
+  var slides=document.querySelectorAll('.hero-carousel .hc-slide');
+  if(slides.length<2) return;
+  var idx=0;
+  setInterval(function(){
+    slides[idx].classList.remove('active');
+    idx=(idx+1)%slides.length;
+    slides[idx].classList.add('active');
+  },4500);
+})();
+
+/* ═══ CURSOR GLOW (desktop only) ═══ */
+(function(){
+  if(window.matchMedia('(pointer:coarse)').matches) return;
+  var glow=document.createElement('div');glow.className='cursor-glow';document.body.appendChild(glow);
+  document.addEventListener('mousemove',function(e){glow.style.left=e.clientX+'px';glow.style.top=e.clientY+'px'});
 })();
 
 /* ═══ SW REGISTRATION ═══ */
