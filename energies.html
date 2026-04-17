@@ -458,6 +458,7 @@ html{scrollbar-width:thin;scrollbar-color:#10B981 #080E1A}
     <script defer data-domain="enertchad-groupe.vercel.app" src="https://plausible.io/js/script.js"></script>
 </head>
 <body>
+<div class="reading-progress" id="readingProgress" aria-hidden="true"></div>
 <a href="#main-content" class="skip-link">Aller au contenu principal</a>
 <a class="skip-nav" href="#solutions">Aller au contenu principal</a>
 <div class="scroll-prog" id="scrollProg"></div>
@@ -592,6 +593,17 @@ html{scrollbar-width:thin;scrollbar-color:#10B981 #080E1A}
     <button class="mob-tog" aria-label="Menu mobile" aria-expanded="false"><i class="fas fa-bars"></i></button>
   </div>
 </header>
+
+<!-- ═══ BREADCRUMB ═══ -->
+<nav class="breadcrumb" aria-label="Fil d'Ariane">
+  <div class="ctn">
+    <a href="/" class="bc-link" data-i18n data-en="Home">Accueil</a>
+    <span class="bc-sep" aria-hidden="true">›</span>
+    <a href="/" class="bc-link" data-i18n data-en="Subsidiaries">Filiales</a>
+    <span class="bc-sep" aria-hidden="true">›</span>
+    <span class="bc-current" aria-current="page" data-i18n data-en="Renewable Energies">Énergies Renouvelables</span>
+  </div>
+</nav>
 
 <!-- Mega menu overlay -->
 <div class="mega-overlay" id="megaOverlay"></div>
@@ -817,6 +829,12 @@ html{scrollbar-width:thin;scrollbar-color:#10B981 #080E1A}
 </section>
 </main>
 
+<!-- ═══ FILIALE NAVIGATION ═══ -->
+<nav class="filiale-nav" aria-label="Navigation entre filiales">
+  <a href="/technologies" class="prev"><i class="fas fa-arrow-left"></i> Technologies — EnerTech</a>
+  <a href="/#petrochimie"><i class="fas fa-arrow-right"></i> Pétrochimie — Chimie</a>
+</nav>
+
 <!-- ═══ FOOTER ═══ -->
 <footer class="footer">
   <div class="footer-grid">
@@ -846,7 +864,10 @@ html{scrollbar-width:thin;scrollbar-color:#10B981 #080E1A}
       <h4>Contact</h4>
       <a href="mailto:energies@enertchad.td">energies@enertchad.td</a>
       <a href="tel:+23599298696">+235 99 29 86 96</a>
-      <a href="https://www.linkedin.com/company/enertchad" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="social-icon" href="https://www.linkedin.com/company/enertchad" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="social-icon" href="https://twitter.com/EnerTchad" target="_blank" rel="noopener">Twitter/X</a>
+      <a class="social-icon" href="https://www.facebook.com/EnerTchad" target="_blank" rel="noopener">Facebook</a>
+      <a class="social-icon" href="https://www.youtube.com/@EnerTchad" target="_blank" rel="noopener">YouTube</a>
     </div>
   </div>
   <div class="footer-bottom"><p>© 2026 EnerTchad Énergies — Filiale du Groupe EnerTchad S.A. | N'Djamena, Tchad</p></div>
@@ -985,6 +1006,13 @@ var f=document.getElementById('contactForm');if(f)f.addEventListener('submit',fu
   els.forEach(function(el){obs.observe(el)});
 })();
 })();
+</script>
+<button class="scroll-top" id="scrollTop" aria-label="Retour en haut"><i class="fas fa-chevron-up"></i></button>
+<script>
+// Reading progress bar
+(function(){const bar=document.getElementById('readingProgress');if(!bar)return;window.addEventListener('scroll',function(){const h=document.documentElement.scrollHeight-window.innerHeight;bar.style.width=(window.scrollY/h*100)+'%'},{passive:true})})();
+// Scroll to top
+(function(){const btn=document.getElementById('scrollTop');if(!btn)return;window.addEventListener('scroll',function(){btn.classList.toggle('visible',window.scrollY>600)},{passive:true});btn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})})})();
 </script>
     <script>if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js').catch(function(){})}</script>
 </body>

@@ -156,6 +156,7 @@
   </script>
  </head>
  <body class="preloader-active">
+<div class="reading-progress" id="readingProgress" aria-hidden="true"></div>
   <a href="#main-content" class="skip-link">Aller au contenu principal</a>
   <div class="scroll-progress" id="scrollProgress">
   </div>
@@ -3686,6 +3687,11 @@ var ENERTCHAD={groupe:'/',amont:'/amont',midstream:'/intermediaire',aval:'/aval'
     </div>
    </div>
   </div>
+  <!-- ═══ FILIALE NAVIGATION ═══ -->
+  <nav class="filiale-nav" aria-label="Navigation entre filiales">
+    <a href="/amont" class="prev"><i class="fas fa-arrow-left"></i> Amont — E&P</a>
+    <a href="/aval"><i class="fas fa-arrow-right"></i> Aval — Distribution</a>
+  </nav>
   <!-- ═══ FOOTER ═══ -->
   <footer class="ftr">
    <div class="ctn">
@@ -5674,5 +5680,12 @@ window.showToast=function(msg,type,ms){
   });
 })();
   </script>
+<button class="scroll-top" id="scrollTop" aria-label="Retour en haut"><i class="fas fa-chevron-up"></i></button>
+<script>
+// Reading progress bar
+(function(){const bar=document.getElementById('readingProgress');if(!bar)return;window.addEventListener('scroll',function(){const h=document.documentElement.scrollHeight-window.innerHeight;bar.style.width=(window.scrollY/h*100)+'%'},{passive:true})})();
+// Scroll to top
+(function(){const btn=document.getElementById('scrollTop');if(!btn)return;window.addEventListener('scroll',function(){btn.classList.toggle('visible',window.scrollY>600)},{passive:true});btn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})})})();
+</script>
  </body>
 </html>

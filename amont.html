@@ -99,6 +99,7 @@
   </script>
  </head>
  <body class="preloader-active">
+<div class="reading-progress" id="readingProgress" aria-hidden="true"></div>
   <a class="skip-link" href="#main-content">
    Aller au contenu principal
   </a>
@@ -427,7 +428,7 @@ if(conn&&(conn.effectiveType==='2g'||conn.effectiveType==='slow-2g'||conn.saveDa
   <!-- ═══ HEADER ═══ -->
   <header class="header" id="top">
    <div class="ctn">
-    <a aria-label="Accueil — EnerTchad Amont" class="logo" href="#top">
+    <a aria-label="Accueil — EnerTchad Amont" aria-current="page" class="logo" href="#top">
      <img alt="EnerTchad" height="40" loading="lazy" src="logo.svg" width="40"/>
      <div class="logo-text">
       EnerTchad
@@ -672,6 +673,16 @@ if(conn&&(conn.effectiveType==='2g'||conn.effectiveType==='slow-2g'||conn.saveDa
     </button>
    </div>
   </header>
+  <!-- ═══ VISIBLE BREADCRUMB ═══ -->
+  <nav class="breadcrumb" aria-label="Fil d'Ariane">
+    <div class="ctn">
+      <a href="/" class="bc-link" data-i18n data-en="Home">Accueil</a>
+      <span class="bc-sep" aria-hidden="true">›</span>
+      <a href="/" class="bc-link" data-i18n data-en="Subsidiaries">Filiales</a>
+      <span class="bc-sep" aria-hidden="true">›</span>
+      <span class="bc-current" aria-current="page" data-i18n data-en="Upstream — E&P">Amont — E&P</span>
+    </div>
+  </nav>
   <!-- ═══ SCROLL PROGRESS BAR ═══ -->
   <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
   <!-- ═══ BREADCRUMB BAR ═══ -->
@@ -1825,6 +1836,11 @@ if(conn&&(conn.effectiveType==='2g'||conn.effectiveType==='slow-2g'||conn.saveDa
   </section>
 
   </main><!-- /main-content -->
+  <!-- ═══ FILIALE NAVIGATION ═══ -->
+  <nav class="filiale-nav" aria-label="Navigation entre filiales">
+    <a href="/" class="prev"><i class="fas fa-arrow-left"></i> Groupe EnerTchad</a>
+    <a href="/intermediaire"><i class="fas fa-arrow-right"></i> Intermédiaire — Transport</a>
+  </nav>
   <!-- ═══ FOOTER ═══ -->
   <footer style="background:#060c17;color:var(--white-60);padding:48px 0 24px;border-top:1px solid var(--white-06)">
    <div class="ctn">
@@ -1864,8 +1880,16 @@ if(conn&&(conn.effectiveType==='2g'||conn.effectiveType==='slow-2g'||conn.saveDa
      </div>
     </div>
     <div style="border-top:1px solid var(--white-06);padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
-     <p style="font-size:0.75rem;color:var(--white-40)">&copy; 2026 EnerTchad S.A. — <span data-i18n data-en="All rights reserved">Tous droits réservés</span></p>
-     <p style="font-size:0.75rem;color:var(--white-40)">N'Djamena, Tchad &middot; amont@enertchad.td &middot; +235 99 29 86 96</p>
+     <div>
+      <p style="font-size:0.75rem;color:var(--white-40)">&copy; 2026 EnerTchad S.A. — <span data-i18n data-en="All rights reserved">Tous droits réservés</span></p>
+      <p style="font-size:0.75rem;color:var(--white-40)">N'Djamena, Tchad &middot; amont@enertchad.td &middot; +235 99 29 86 96</p>
+      <div style="display:flex;gap:1rem;margin-top:1rem">
+        <a href="https://linkedin.com/company/enertchad" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-icon" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:50%;border:1px solid rgba(255,255,255,0.1);color:var(--text-sec,#94A3B8);transition:all 0.3s"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://x.com/EnerTchad" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" class="social-icon" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:50%;border:1px solid rgba(255,255,255,0.1);color:var(--text-sec,#94A3B8);transition:all 0.3s"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://facebook.com/EnerTchad" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="social-icon" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:50%;border:1px solid rgba(255,255,255,0.1);color:var(--text-sec,#94A3B8);transition:all 0.3s"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://youtube.com/@EnerTchad" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="social-icon" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:50%;border:1px solid rgba(255,255,255,0.1);color:var(--text-sec,#94A3B8);transition:all 0.3s"><i class="fab fa-youtube"></i></a>
+      </div>
+     </div>
     </div>
    </div>
   </footer>
@@ -2506,5 +2530,12 @@ window.showToast=function(msg,type,ms){
   setTimeout(function(){t.classList.add('hide');setTimeout(function(){t.remove()},400)},ms);
 };
   </script>
+<button class="scroll-top" id="scrollTop" aria-label="Retour en haut"><i class="fas fa-chevron-up"></i></button>
+<script>
+// Reading progress bar
+(function(){const bar=document.getElementById('readingProgress');if(!bar)return;window.addEventListener('scroll',function(){const h=document.documentElement.scrollHeight-window.innerHeight;bar.style.width=(window.scrollY/h*100)+'%'},{passive:true})})();
+// Scroll to top
+(function(){const btn=document.getElementById('scrollTop');if(!btn)return;window.addEventListener('scroll',function(){btn.classList.toggle('visible',window.scrollY>600)},{passive:true});btn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})})})();
+</script>
  </body>
 </html>
