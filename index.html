@@ -733,35 +733,6 @@
   </button>
 </header>
 
-<!-- ════════════════════ STOCK TICKER BAR ════════════════════ -->
-<div class="ticker-bar" aria-label="Cours de bourse" role="marquee">
-  <div class="ticker-track">
-    <div class="ticker-item"><span class="ticker-symbol">ENRT</span> <span class="ticker-price">2 450 XAF</span> <span class="ticker-change positive">+1.8%</span></div>
-    <div class="ticker-sep">•</div>
-    <div class="ticker-item"><span class="ticker-symbol">BRENT</span> <span class="ticker-price">$82.34</span> <span class="ticker-change positive">+0.6%</span></div>
-    <div class="ticker-sep">•</div>
-    <div class="ticker-item"><span class="ticker-symbol">WTI</span> <span class="ticker-price">$78.12</span> <span class="ticker-change negative">-0.3%</span></div>
-    <div class="ticker-sep">•</div>
-    <div class="ticker-item"><span class="ticker-symbol">USD/XAF</span> <span class="ticker-price">605.2</span> <span class="ticker-change neutral">0.0%</span></div>
-    <div class="ticker-sep">•</div>
-    <div class="ticker-item"><span class="ticker-symbol">EUR/XAF</span> <span class="ticker-price">655.96</span> <span class="ticker-change positive">+0.1%</span></div>
-    <div class="ticker-sep">•</div>
-    <div class="ticker-item"><span class="ticker-symbol">GAZ NAT</span> <span class="ticker-price">$2.18/MMBtu</span> <span class="ticker-change negative">-1.2%</span></div>
-    <div class="ticker-sep">•</div>
-    <!-- Duplicate for seamless scroll -->
-    <div class="ticker-item"><span class="ticker-symbol">ENRT</span> <span class="ticker-price">2 450 XAF</span> <span class="ticker-change positive">+1.8%</span></div>
-    <div class="ticker-sep">•</div>
-    <div class="ticker-item"><span class="ticker-symbol">BRENT</span> <span class="ticker-price">$82.34</span> <span class="ticker-change positive">+0.6%</span></div>
-    <div class="ticker-sep">•</div>
-    <div class="ticker-item"><span class="ticker-symbol">WTI</span> <span class="ticker-price">$78.12</span> <span class="ticker-change negative">-0.3%</span></div>
-    <div class="ticker-sep">•</div>
-    <div class="ticker-item"><span class="ticker-symbol">USD/XAF</span> <span class="ticker-price">605.2</span> <span class="ticker-change neutral">0.0%</span></div>
-    <div class="ticker-sep">•</div>
-    <div class="ticker-item"><span class="ticker-symbol">EUR/XAF</span> <span class="ticker-price">655.96</span> <span class="ticker-change positive">+0.1%</span></div>
-    <div class="ticker-sep">•</div>
-    <div class="ticker-item"><span class="ticker-symbol">GAZ NAT</span> <span class="ticker-price">$2.18/MMBtu</span> <span class="ticker-change negative">-1.2%</span></div>
-  </div>
-</div>
 
 <!-- ═══ BREADCRUMB NAVIGATION ═══ -->
 <nav class="breadcrumb" aria-label="Fil d'Ariane">
@@ -3948,11 +3919,7 @@ window.showToast=function(msg,type,ms){
     });
   });
 
-  /* Ticker bar entrance */
-  var ticker=document.querySelector('.ticker-bar');
-  if(ticker){
-    gsap.from(ticker,{y:-30,opacity:0,duration:0.6,ease:'power2.out',delay:0.2});
-  }
+  /* Ticker removed */
 
   /* Footer reveal */
   var footer=document.querySelector('.footer');
