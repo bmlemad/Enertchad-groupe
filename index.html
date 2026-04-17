@@ -57,6 +57,10 @@
   <link href="https://fonts.googleapis.com" rel="preconnect"/>
   <link crossorigin href="https://fonts.gstatic.com" rel="preconnect"/>
   <link crossorigin href="https://cdnjs.cloudflare.com" rel="preconnect"/>
+  <!-- Resource Hints -->
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com"/>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
+  <link rel="preload" as="image" href="logo.svg"/>
   <link as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Space+Grotesk:wght@400..700&display=swap" rel="preload"/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Space+Grotesk:wght@400..700&display=swap" media="print" onload="this.media='all'" rel="stylesheet"/>
   <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Space+Grotesk:wght@400..700&display=swap" rel="stylesheet"/></noscript>
@@ -73,6 +77,14 @@
 </head>
 <body>
 <div class="reading-progress" id="readingProgress" aria-hidden="true"></div>
+
+<!-- ═══ PAGE TRANSITION ═══ -->
+<div class="page-transition" id="pageTransition" aria-hidden="true">
+  <div class="pt-logo">
+    <img src="logo.svg" alt="" width="48" height="48" decoding="async"/>
+    <div class="pt-bar"><div class="pt-fill"></div></div>
+  </div>
+</div>
 
 <!-- SKIP TO MAIN CONTENT LINK (WCAG 2.4.1) -->
 <a href="#main" class="skip-link">Sauter vers le contenu principal</a>
@@ -1938,32 +1950,32 @@
     </div>
 
     <div class="investor-grid" style="margin-top:2.5rem" data-reveal>
-      <a href="#" class="investor-card" aria-label="Rapport annuel 2025">
+      <a href="#investisseurs" class="investor-card" role="button" aria-label="Rapport annuel 2025">
         <i class="fas fa-file-pdf"></i>
         <h4 data-i18n data-en="Annual Report 2025">Rapport Annuel 2025</h4>
         <p data-i18n data-en="Complete financial and operational report">Rapport financier et opérationnel complet</p>
       </a>
-      <a href="#" class="investor-card" aria-label="Résultats T1 2026">
+      <a href="#investisseurs" class="investor-card" role="button" aria-label="Résultats T1 2026">
         <i class="fas fa-chart-line"></i>
         <h4 data-i18n data-en="Q1 2026 Results">Résultats T1 2026</h4>
         <p data-i18n data-en="Quarterly earnings and performance">Résultats trimestriels et performance</p>
       </a>
-      <a href="#" class="investor-card" aria-label="Gouvernance d'entreprise">
+      <a href="#investisseurs" class="investor-card" role="button" aria-label="Gouvernance d'entreprise">
         <i class="fas fa-balance-scale"></i>
         <h4 data-i18n data-en="Corporate Governance">Gouvernance d'Entreprise</h4>
         <p data-i18n data-en="Board composition and policies">Composition du conseil et politiques</p>
       </a>
-      <a href="#" class="investor-card" aria-label="Calendrier investisseur">
+      <a href="#investisseurs" class="investor-card" role="button" aria-label="Calendrier investisseur">
         <i class="fas fa-calendar-alt"></i>
         <h4 data-i18n data-en="Investor Calendar">Calendrier Investisseur</h4>
         <p data-i18n data-en="Upcoming events and earnings dates">Événements à venir et dates financières</p>
       </a>
-      <a href="#" class="investor-card" aria-label="Présentations">
+      <a href="#investisseurs" class="investor-card" role="button" aria-label="Présentations">
         <i class="fas fa-presentation-screen"></i>
         <h4 data-i18n data-en="Presentations">Présentations</h4>
         <p data-i18n data-en="Roadshow and investor day slides">Slides roadshow et journée investisseurs</p>
       </a>
-      <a href="#" class="investor-card" aria-label="ESG & Durabilité">
+      <a href="#investisseurs" class="investor-card" role="button" aria-label="ESG & Durabilité">
         <i class="fas fa-leaf"></i>
         <h4 data-i18n data-en="ESG & Sustainability">ESG & Durabilité</h4>
         <p data-i18n data-en="Environmental, social and governance reports">Rapports environnement, social et gouvernance</p>
@@ -2272,7 +2284,7 @@
           <button type="button" class="segment-btn" data-seg="durabilite" style="background:transparent;color:var(--text-sec);border:1px solid rgba(255,255,255,0.12);border-radius:20px;padding:0.4rem 1rem;font-size:0.78rem;cursor:pointer;transition:all 0.2s;font-family:var(--font-b)">Durabilité</button>
           <button type="button" class="segment-btn" data-seg="finance" style="background:transparent;color:var(--text-sec);border:1px solid rgba(255,255,255,0.12);border-radius:20px;padding:0.4rem 1rem;font-size:0.78rem;cursor:pointer;transition:all 0.2s;font-family:var(--font-b)">Finance</button>
         </div>
-        <input type="hidden" name="segment" id="newsletterSegment" value="all"/>
+        <input type="hidden" name="segment" id="newsletterSegment" value="all" aria-hidden="true"/>
       <input type="email" name="email" required placeholder="votre@email.com" aria-label="Adresse e-mail"/>
       <button type="submit" data-i18n data-en="Subscribe"><i class="fas fa-paper-plane" style="margin-right:0.4rem"></i>S'inscrire</button>
     </form>
@@ -2709,6 +2721,30 @@
   </div>
 </footer>
 
+<!-- ═══ MOBILE BOTTOM NAV ═══ -->
+<nav class="mobile-bottom-nav" aria-label="Navigation mobile" role="navigation">
+  <a href="#hero" class="mbn-item active" data-section="hero">
+    <i class="fas fa-home"></i>
+    <span>Accueil</span>
+  </a>
+  <a href="#chaine" class="mbn-item" data-section="chaine">
+    <i class="fas fa-sitemap"></i>
+    <span>Filiales</span>
+  </a>
+  <a href="#chiffres" class="mbn-item" data-section="chiffres">
+    <i class="fas fa-chart-line"></i>
+    <span>Chiffres</span>
+  </a>
+  <a href="#carrieres" class="mbn-item" data-section="carrieres">
+    <i class="fas fa-briefcase"></i>
+    <span>Carrières</span>
+  </a>
+  <a href="#contact" class="mbn-item" data-section="contact">
+    <i class="fas fa-envelope"></i>
+    <span>Contact</span>
+  </a>
+</nav>
+
 <!-- ═══ SCROLL PROGRESS BAR ═══ -->
 <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
@@ -2728,7 +2764,7 @@
   <div class="search-modal">
     <div class="search-input-wrap">
       <i class="fas fa-search"></i>
-      <input class="search-input" id="searchInput" type="text" placeholder="Rechercher sur EnerTchad…" autocomplete="off" spellcheck="false"/>
+      <input class="search-input" id="searchInput" type="text" placeholder="Rechercher sur EnerTchad…" autocomplete="off" spellcheck="false" aria-label="Rechercher sur le site"/>
       <span class="search-kbd">ESC</span>
     </div>
     <div class="search-results" id="searchResults"></div>
@@ -3198,10 +3234,11 @@ window.addEventListener('pagehide',function(){ids.forEach(clearInterval);ids=[]}
 
 /* ═══ PSEUDO REAL-TIME KPI TICKERS ═══ */
 (function(){
+  var t=document.getElementById('dmThroughput');
+  var u=document.getElementById('dmUptime');
+  if(!t||!u) return; /* Elements don't exist, skip ticker */
   function jitter(base,range){return(base+((Math.random()-0.5)*range)).toFixed(1)}
   setInterval(function(){
-    var t=document.getElementById('dmThroughput');
-    var u=document.getElementById('dmUptime');
     if(t) t.innerHTML=jitter(100,6)+'<small>kbbl/j</small>';
     if(u) u.innerHTML=jitter(99.5,0.5)+'<small>%</small>';
   },8000);
@@ -3539,6 +3576,20 @@ window.showToast=function(msg,type,ms){
   });
 })();
 
+/* ═══ NEWSLETTER SEGMENTS ═══ */
+(function(){
+  var segs=document.querySelectorAll('.segment-btn');
+  var hidden=document.getElementById('newsletterSegment');
+  if(!segs.length||!hidden)return;
+  segs.forEach(function(btn){
+    btn.addEventListener('click',function(){
+      segs.forEach(function(b){b.style.background='transparent';b.style.color='var(--text-sec)';b.style.borderColor='rgba(255,255,255,0.12)';b.classList.remove('active')});
+      btn.style.background='var(--gold)';btn.style.color='var(--bg)';btn.style.borderColor='var(--gold)';btn.classList.add('active');
+      hidden.value=btn.getAttribute('data-seg');
+    });
+  });
+})();
+
 
 
 /* ═══ COUNTRY SELECTOR ═══ */
@@ -3628,7 +3679,7 @@ window.showToast=function(msg,type,ms){
   gsap.registerPlugin(ScrollTrigger);
 
   /* Stagger section titles */
-  gsap.utils.toArray('.pole-title, .section h2').forEach(function(el){
+  gsap.utils.toArray('.section-title, .section h2').forEach(function(el){
     gsap.from(el,{
       y:40,opacity:0,duration:0.8,ease:'power3.out',
       scrollTrigger:{trigger:el,start:'top 85%',toggleActions:'play none none none'}
@@ -3646,11 +3697,11 @@ window.showToast=function(msg,type,ms){
   });
 
   /* Hero text reveal */
-  var heroTitle=document.querySelector('.hero-title');
+  var heroTitle=document.querySelector('.hero-content h1');
   if(heroTitle){
     gsap.from(heroTitle,{y:80,opacity:0,duration:1.2,ease:'power4.out',delay:0.3});
   }
-  var heroSub=document.querySelector('.hero-subtitle');
+  var heroSub=document.querySelector('.hero-sub');
   if(heroSub){
     gsap.from(heroSub,{y:40,opacity:0,duration:1,ease:'power3.out',delay:0.6});
   }
@@ -3678,12 +3729,57 @@ window.showToast=function(msg,type,ms){
   }
 })();
 
+/* ═══ MOBILE BOTTOM NAV — Active Section Tracking ═══ */
+(function(){
+  var items=document.querySelectorAll('.mbn-item');
+  if(!items.length)return;
+  var sections=[];
+  items.forEach(function(item){
+    var id=item.getAttribute('data-section');
+    var el=document.getElementById(id);
+    if(el)sections.push({id:id,el:el,nav:item});
+  });
+  function updateActive(){
+    var scrollY=window.scrollY+window.innerHeight/2;
+    var current='hero';
+    sections.forEach(function(s){if(s.el.offsetTop<=scrollY)current=s.id});
+    items.forEach(function(item){
+      item.classList.toggle('active',item.getAttribute('data-section')===current);
+    });
+  }
+  var ticking=false;
+  window.addEventListener('scroll',function(){
+    if(!ticking){requestAnimationFrame(function(){updateActive();ticking=false});ticking=true}
+  });
+  updateActive();
+})();
+
+/* ═══ PAGE TRANSITION ═══ */
+(function(){
+  var pt=document.getElementById('pageTransition');
+  if(!pt)return;
+  window.addEventListener('load',function(){
+    setTimeout(function(){pt.style.opacity='0';pt.style.pointerEvents='none';
+      setTimeout(function(){pt.style.display='none'},500);
+    },300);
+  });
+  document.querySelectorAll('a[href^="/"]').forEach(function(link){
+    link.addEventListener('click',function(e){
+      var href=link.getAttribute('href');
+      if(href&&href.startsWith('/')&&!href.startsWith('/#')){
+        e.preventDefault();
+        pt.style.display='flex';pt.style.opacity='1';pt.style.pointerEvents='auto';
+        setTimeout(function(){window.location.href=href},400);
+      }
+    });
+  });
+})();
+
 /* ═══ SW REGISTRATION ═══ */
 if('serviceWorker' in navigator){
   window.addEventListener('load',function(){navigator.serviceWorker.register('/sw.js').catch(function(){})});
 }
 </script>
-<button class="scroll-top" id="scrollTop" aria-label="Retour en haut"><i class="fas fa-chevron-up"></i></button>
 <!-- ════════════════════ CHATBOT ENERASSIST ════════════════════ -->
 <button class="chatbot-fab" id="chatbotFab" aria-label="Ouvrir EnerAssist" title="EnerAssist — Assistant IA">
   <span class="fab-pulse"></span>
@@ -3706,7 +3802,7 @@ if('serviceWorker' in navigator){
     </div>
   </div>
   <div class="chatbot-input">
-    <input type="text" id="chatbotInput" placeholder="Écrivez votre message…" data-i18n-placeholder data-en-placeholder="Type your message…" aria-label="Message"/>
+    <input type="text" id="chatbotInput" placeholder="Écrivez votre message…" data-i18n-placeholder data-en-placeholder="Type your message…" aria-label="Votre message"/>
     <button id="chatbotSend" aria-label="Envoyer"><i class="fas fa-paper-plane"></i></button>
   </div>
 </div>

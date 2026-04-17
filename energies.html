@@ -457,8 +457,16 @@ html{scrollbar-width:thin;scrollbar-color:#10B981 #080E1A}
 </style>
     <script defer data-domain="enertchad-groupe.vercel.app" src="https://plausible.io/js/script.js"></script>
     <script defer src="/js/shared.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 </head>
 <body>
+<div class="page-transition" id="pageTransition" aria-hidden="true">
+  <div class="pt-logo">
+    <img src="/logo.svg" alt="" width="48" height="48"/>
+    <div class="pt-bar"><div class="pt-fill"></div></div>
+  </div>
+</div>
 <div class="reading-progress" id="readingProgress" aria-hidden="true"></div>
 <a href="#main-content" class="skip-link">Aller au contenu principal</a>
 <a class="skip-nav" href="#solutions">Aller au contenu principal</a>
@@ -1007,6 +1015,10 @@ var f=document.getElementById('contactForm');if(f)f.addEventListener('submit',fu
   els.forEach(function(el){obs.observe(el)});
 })();
 })();
+/* Page transition */
+(function(){var pt=document.getElementById('pageTransition');if(!pt)return;window.addEventListener('load',function(){setTimeout(function(){pt.style.opacity='0';pt.style.pointerEvents='none';setTimeout(function(){pt.style.display='none'},500)},300)});document.querySelectorAll('a[href^="/"]').forEach(function(l){l.addEventListener('click',function(e){var h=l.getAttribute('href');if(h&&h.startsWith('/')&&!h.startsWith('/#')){e.preventDefault();pt.style.display='flex';pt.style.opacity='1';pt.style.pointerEvents='auto';setTimeout(function(){window.location.href=h},400)}})})})();
+/* GSAP animations */
+(function(){if(typeof gsap==='undefined'||typeof ScrollTrigger==='undefined')return;if(window.matchMedia('(prefers-reduced-motion:reduce)').matches)return;gsap.registerPlugin(ScrollTrigger);gsap.utils.toArray('h2,.card,[data-r]').forEach(function(el){gsap.from(el,{y:40,opacity:0,duration:0.8,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 85%',toggleActions:'play none none none'}})})})();
 </script>
 <button class="scroll-top" id="scrollTop" aria-label="Retour en haut"><i class="fas fa-chevron-up"></i></button>
     <script>if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js').catch(function(){})}</script>
