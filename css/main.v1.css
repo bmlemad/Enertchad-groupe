@@ -127,7 +127,7 @@ h1,h2,h3,h4{font-family:var(--font-d);line-height:1.2;font-weight:700}
 ::selection{background:var(--gold);color:var(--bg)}
 
 /* ═══ NOISE GRAIN OVERLAY ═══ */
-body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:0.025;
+body::before{content:'';position:fixed;inset:0;z-index:9990;pointer-events:none;opacity:0.025;
   background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
@@ -298,12 +298,8 @@ body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
 .mobile-toggle{display:none;background:none;border:none;cursor:pointer;padding:0.5rem;color:var(--white);font-size:1.3rem}
 
 /* ═══ MEGA MENU — Enhanced UX ═══ */
-
-/* Smooth panel height transition */
-.mega-drop{max-height:0;clip-path:none;
-  transition:max-height 0.5s cubic-bezier(0.16,1,0.3,1),opacity 0.4s ease,transform 0.4s cubic-bezier(0.16,1,0.3,1);
-  opacity:0;transform:translateY(-8px)}
-.nav-item.open .mega-drop{max-height:85vh;opacity:1;transform:translateY(0);clip-path:none}
+/* NOTE: Primary mega-drop uses clip-path animation defined above (line ~165).
+   Do NOT override clip-path here — it breaks the reveal animation. */
 
 /* Active tab left border glow */
 .mega-tab.active::after{content:'';position:absolute;left:-2px;top:15%;bottom:15%;width:6px;border-radius:4px;
@@ -825,7 +821,7 @@ body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
 @keyframes mobileNavSlide{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 /* ═══ SCROLL-TO-TOP BUTTON ═══ */
 /* ═══ SCROLL PROGRESS BAR ═══ */
-.scroll-progress{position:fixed;top:0;left:0;width:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-light));z-index:10000;pointer-events:none;transition:none;box-shadow:0 0 8px rgba(217,168,79,0.4)}
+.scroll-progress{position:fixed;top:0;left:0;width:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-light));z-index:1001;pointer-events:none;transition:none;box-shadow:0 0 8px rgba(217,168,79,0.4)}
 html.light .scroll-progress{box-shadow:0 0 6px rgba(200,150,46,0.25)}
 
 /* ═══ SCROLL-TO-TOP BUTTON ═══ */
@@ -1747,7 +1743,9 @@ html.light .mbn-item.active{color:var(--gold)}
 /* ═══ PAGE TRANSITION OVERLAY ═══ */
 .page-transition{position:fixed;inset:0;z-index:10000;background:var(--bg);
   display:flex;align-items:center;justify-content:center;
-  transition:opacity 0.4s cubic-bezier(0.22,0.61,0.36,1)}
+  transition:opacity 0.4s cubic-bezier(0.22,0.61,0.36,1);
+  pointer-events:none;opacity:0}
+.page-transition.active{pointer-events:auto;opacity:1}
 .pt-logo{display:flex;flex-direction:column;align-items:center;gap:1.25rem}
 .pt-logo img{animation:ptPulse 1.2s ease-in-out infinite}
 @keyframes ptPulse{0%,100%{opacity:0.6;transform:scale(1)}50%{opacity:1;transform:scale(1.05)}}
