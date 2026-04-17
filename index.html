@@ -80,213 +80,179 @@
     <img src="logo.svg" alt="EnerTchad" width="42" height="42" loading="lazy"/>
     <div class="logo-text">EnerTchad<span>Accès aux Énergies</span></div>
   </a>
-  <nav class="header-nav" aria-label="Navigation principale">
-    <!-- ══ UNIFIED MEGA MENU (TotalEnergies/Shell/Stripe inspired) ══ -->
-    <!-- Nav triggers -->
-    <div class="nav-item" data-mega="nos-activites">
-      <a href="#chaine" data-i18n data-en="What We Do">Nos Activités <i class="fas fa-chevron-down nav-chevron"></i></a>
-      <div class="mega-drop" role="menu" aria-label="Nos Activités">
-        <!-- Header bar -->
+  <nav class="header-nav" role="navigation" aria-label="Navigation principale">
+    <!-- ══════════════════════════════════════════════════════════════════ -->
+    <!-- NAV POLE 1: OPÉRATIONS (4 Tabs: Amont, Intermédiaire, Aval, Pétrochimie) -->
+    <!-- ══════════════════════════════════════════════════════════════════ -->
+    <div class="nav-item" data-mega="operations">
+      <a href="/amont" data-i18n data-en="Operations">Opérations <i class="fas fa-chevron-down nav-chevron"></i></a>
+      <div class="mega-drop" role="menu" aria-label="Opérations">
         <div class="mega-header">
           <div class="mega-header-left">
-            <span class="mega-panel-title" data-i18n data-en="What We Do">Nos Activités</span>
+            <span class="mega-panel-title" data-i18n data-en="Operations">Opérations</span>
             <div class="mega-search"><i class="fas fa-search"></i><input type="text" placeholder="Rechercher..." data-i18n-placeholder data-en-placeholder="Search..." aria-label="Rechercher"/></div>
           </div>
           <button class="mega-close" aria-label="Fermer"><i class="fas fa-times"></i></button>
         </div>
-        <!-- Body: Tabs + Content -->
         <div class="mega-body">
-          <!-- Left tabs -->
           <div class="mega-tabs" role="tablist">
-            <div class="mega-tab active" role="tab" data-tab="filiales" aria-selected="true">
-              <div class="mega-tab-icon" style="background:rgba(200,150,46,0.1);color:var(--gold)"><i class="fas fa-sitemap"></i></div>
-              <div><div class="mega-tab-label">Filiales</div><div class="mega-tab-sub">Nos 6 entités</div></div>
+            <div class="mega-tab active" role="tab" data-tab="amont" aria-selected="true">
+              <div class="mega-tab-icon" style="background:rgba(46,134,222,0.1);color:var(--amont)"><i class="fas fa-oil-well"></i></div>
+              <div><div class="mega-tab-label">Amont</div><div class="mega-tab-sub">Exploration & Production</div></div>
             </div>
-            <div class="mega-tab" role="tab" data-tab="chaine" aria-selected="false">
-              <div class="mega-tab-icon" style="background:rgba(200,150,46,0.1);color:var(--gold)"><i class="fas fa-link"></i></div>
-              <div><div class="mega-tab-label">Chaîne de Valeur</div><div class="mega-tab-sub">Intégration verticale</div></div>
+            <div class="mega-tab" role="tab" data-tab="intermediaire" aria-selected="false">
+              <div class="mega-tab-icon" style="background:rgba(14,165,233,0.1);color:var(--midstream)"><i class="fas fa-pipe-section"></i></div>
+              <div><div class="mega-tab-label">Intermédiaire</div><div class="mega-tab-sub">Transport & Logistique</div></div>
             </div>
-            <div class="mega-tab" role="tab" data-tab="secteurs" aria-selected="false">
-              <div class="mega-tab-icon" style="background:rgba(46,134,222,0.1);color:var(--amont)"><i class="fas fa-industry"></i></div>
-              <div><div class="mega-tab-label">Secteurs</div><div class="mega-tab-sub">Marchés & présence</div></div>
+            <div class="mega-tab" role="tab" data-tab="aval" aria-selected="false">
+              <div class="mega-tab-icon" style="background:rgba(217,119,6,0.1);color:var(--aval)"><i class="fas fa-gas-pump"></i></div>
+              <div><div class="mega-tab-label">Aval</div><div class="mega-tab-sub">Distribution & Vente</div></div>
+            </div>
+            <div class="mega-tab" role="tab" data-tab="petrochimie" aria-selected="false">
+              <div class="mega-tab-icon" style="background:rgba(225,29,72,0.1);color:var(--petro)"><i class="fas fa-flask-vial"></i></div>
+              <div><div class="mega-tab-label">Pétrochimie</div><div class="mega-tab-sub">Chimie & Polymères</div></div>
             </div>
           </div>
           <div class="mega-vdivider"></div>
-          <!-- Right content -->
           <div class="mega-content">
-            <!-- Panel: Filiales -->
-            <div class="mega-tab-panel active" data-panel="filiales" role="tabpanel">
-              <div class="mega-grid mega-grid--3">
+            <!-- Tab Panel: Amont -->
+            <div class="mega-tab-panel active" data-panel="amont" role="tabpanel">
+              <div class="mega-grid">
                 <div>
-                  <div class="mega-col-title">Upstream & Intermédiaire</div>
+                  <div class="mega-col-title">Exploration & Forage</div>
                   <a href="/amont" class="mega-link" role="menuitem">
-                    <div class="mega-icon" style="background:rgba(46,134,222,0.1);color:var(--amont)"><i class="fas fa-oil-well"></i></div>
-                    <div class="mega-link-text"><h4>Amont <span class="mega-badge mega-badge-amont">E&P</span></h4><p>Forage, chimie, EOR, HSE</p></div>
+                    <div class="mega-icon" style="background:rgba(46,134,222,0.1);color:var(--amont)"><i class="fas fa-compass"></i></div>
+                    <div class="mega-link-text"><h4 data-i18n data-en="Exploration">Exploration</h4><p data-i18n data-en="Survey & assessment">Reconnaissance & évaluation</p></div>
                   </a>
+                  <a href="/amont" class="mega-link" role="menuitem">
+                    <div class="mega-icon" style="background:rgba(46,134,222,0.1);color:var(--amont)"><i class="fas fa-drill"></i></div>
+                    <div class="mega-link-text"><h4 data-i18n data-en="Drilling & Completion">Forage & Complétion</h4><p data-i18n data-en="Well engineering">Ingénierie des puits</p></div>
+                  </a>
+                </div>
+                <div>
+                  <div class="mega-col-title">Production & Réserves</div>
+                  <a href="/amont" class="mega-link" role="menuitem">
+                    <div class="mega-icon" style="background:rgba(46,134,222,0.1);color:var(--amont)"><i class="fas fa-water"></i></div>
+                    <div class="mega-link-text"><h4 data-i18n data-en="Production & Lifting">Production & Levage</h4><p data-i18n data-en="Recovery systems">Systèmes de récupération</p></div>
+                  </a>
+                  <a href="/amont" class="mega-link" role="menuitem">
+                    <div class="mega-icon" style="background:rgba(46,134,222,0.1);color:var(--amont)"><i class="fas fa-map"></i></div>
+                    <div class="mega-link-text"><h4 data-i18n data-en="Basins: Doba & Bongor">Bassins (Doba & Bongor)</h4><p data-i18n data-en="Primary producing fields">Champs producteurs principaux</p></div>
+                  </a>
+                </div>
+                <div>
+                  <div class="mega-col-title">Géologie & Données</div>
+                  <a href="/amont" class="mega-link" role="menuitem">
+                    <div class="mega-icon" style="background:rgba(46,134,222,0.1);color:var(--amont)"><i class="fas fa-database"></i></div>
+                    <div class="mega-link-text"><h4 data-i18n data-en="Reserves & Resources">Réserves & Ressources</h4><p data-i18n data-en="Volumetric assessment">Évaluation volumétrique</p></div>
+                  </a>
+                  <a href="/amont" class="mega-link" role="menuitem">
+                    <div class="mega-icon" style="background:rgba(46,134,222,0.1);color:var(--amont)"><i class="fas fa-microscope"></i></div>
+                    <div class="mega-link-text"><h4 data-i18n data-en="Geosciences">Géosciences</h4><p data-i18n data-en="Seismic & subsurface">Sismique & sous-sol</p></div>
+                  </a>
+                  <div class="mega-spotlight">
+                    <div class="mega-spotlight-title"><i class="fas fa-link"></i> Chaîne de valeur intégrée</div>
+                    <div class="mega-spotlight-body" data-i18n data-en="From subsurface to end consumer">Du sous-sol au consommateur final</div>
+                    <a href="/amont" class="mega-spotlight-cta" data-i18n data-en="Explore Upstream"><span>Découvrir l'Amont</span> <i class="fas fa-arrow-right"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Tab Panel: Intermédiaire -->
+            <div class="mega-tab-panel" data-panel="intermediaire" role="tabpanel">
+              <div class="mega-grid">
+                <div>
+                  <div class="mega-col-title">Infrastructure & Pipeline</div>
                   <a href="/intermediaire" class="mega-link" role="menuitem">
                     <div class="mega-icon" style="background:rgba(14,165,233,0.1);color:var(--midstream)"><i class="fas fa-pipe-section"></i></div>
-                    <div class="mega-link-text"><h4>Intermédiaire <span class="mega-badge mega-badge-mid">Transport</span></h4><p>Pipeline 1 070 km, SCADA</p></div>
+                    <div class="mega-link-text"><h4 data-i18n data-en="Pipeline (1,070 km)">Pipeline (1 070 km)</h4><p data-i18n data-en="Integrated transport network">Réseau de transport intégré</p></div>
+                  </a>
+                  <a href="/intermediaire" class="mega-link" role="menuitem">
+                    <div class="mega-icon" style="background:rgba(14,165,233,0.1);color:var(--midstream)"><i class="fas fa-truck"></i></div>
+                    <div class="mega-link-text"><h4 data-i18n data-en="Transport & Logistics">Transport & Logistique</h4><p data-i18n data-en="Distribution & supply chain">Chaîne d'approvisionnement</p></div>
                   </a>
                 </div>
                 <div>
-                  <div class="mega-col-title">Downstream & Énergie</div>
+                  <div class="mega-col-title">Opérations & Flotte</div>
+                  <a href="/intermediaire" class="mega-link" role="menuitem">
+                    <div class="mega-icon" style="background:rgba(14,165,233,0.1);color:var(--midstream)"><i class="fas fa-ship"></i></div>
+                    <div class="mega-link-text"><h4 data-i18n data-en="Fleet Management">Fleet Management</h4><p data-i18n data-en="Vessel & asset tracking">Suivi des actifs</p></div>
+                  </a>
+                  <a href="/intermediaire" class="mega-link" role="menuitem">
+                    <div class="mega-icon" style="background:rgba(14,165,233,0.1);color:var(--midstream)"><i class="fas fa-sitemap"></i></div>
+                    <div class="mega-link-text"><h4 data-i18n data-en="Basins & Producers">Bassins & Producteurs</h4><p data-i18n data-en="Integrated sourcing">Approvisionnement intégré</p></div>
+                  </a>
+                </div>
+                <div>
+                  <div class="mega-col-title">Contrôle Opérationnel</div>
+                  <a href="/intermediaire" class="mega-link" role="menuitem">
+                    <div class="mega-icon" style="background:rgba(14,165,233,0.1);color:var(--midstream)"><i class="fas fa-flow-chart"></i></div>
+                    <div class="mega-link-text"><h4 data-i18n data-en="Process Flow">Process Flow</h4><p data-i18n data-en="SCADA & automation">SCADA & automatisation</p></div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- Tab Panel: Aval -->
+            <div class="mega-tab-panel" data-panel="aval" role="tabpanel">
+              <div class="mega-grid">
+                <div>
+                  <div class="mega-col-title">Distribution Retail</div>
                   <a href="/aval" class="mega-link" role="menuitem">
                     <div class="mega-icon" style="background:rgba(217,119,6,0.1);color:var(--aval)"><i class="fas fa-gas-pump"></i></div>
-                    <div class="mega-link-text"><h4>Aval <span class="mega-badge mega-badge-aval">Distribution</span></h4><p>Stations-service, GPL, NRJ+</p></div>
+                    <div class="mega-link-text"><h4 data-i18n data-en="Gas Stations">Stations-Service</h4><p data-i18n data-en="45 locations nationwide">45 points de vente</p></div>
+                  </a>
+                  <a href="/aval" class="mega-link" role="menuitem">
+                    <div class="mega-icon" style="background:rgba(217,119,6,0.1);color:var(--aval)"><i class="fas fa-oil-can"></i></div>
+                    <div class="mega-link-text"><h4 data-i18n data-en="Petroleum Products">Produits Pétroliers</h4><p data-i18n data-en="Essence, diesel, fuel oil">Essence, diesel, fuel</p></div>
+                  </a>
+                </div>
+                <div>
+                  <div class="mega-col-title">Électromobilité & Services</div>
+                  <a href="/aval" class="mega-link" role="menuitem">
+                    <div class="mega-icon" style="background:rgba(217,119,6,0.1);color:var(--aval)"><i class="fas fa-charging-station"></i></div>
+                    <div class="mega-link-text"><h4 data-i18n data-en="EV Charging (IRVE)">IRVE (Bornes électriques)</h4><p data-i18n data-en="EV infrastructure">Infrastructure électrique</p></div>
+                  </a>
+                  <a href="/aval" class="mega-link" role="menuitem">
+                    <div class="mega-icon" style="background:rgba(217,119,6,0.1);color:var(--aval)"><i class="fas fa-gift"></i></div>
+                    <div class="mega-link-text"><h4 data-i18n data-en="Loyalty Program">Programme Fidélité</h4><p data-i18n data-en="Rewards & benefits">Récompenses et avantages</p></div>
+                  </a>
+                </div>
+                <div>
+                  <div class="mega-col-title">Digital & Commerce</div>
+                  <a href="/aval" class="mega-link" role="menuitem">
+                    <div class="mega-icon" style="background:rgba(217,119,6,0.1);color:var(--aval)"><i class="fas fa-shopping-cart"></i></div>
+                    <div class="mega-link-text"><h4 data-i18n data-en="e-Shop">e-Boutique</h4><p data-i18n data-en="Online shopping">Commerce électronique</p></div>
+                  </a>
+                  <a href="/aval" class="mega-link" role="menuitem">
+                    <div class="mega-icon" style="background:rgba(217,119,6,0.1);color:var(--aval)"><i class="fas fa-user-circle"></i></div>
+                    <div class="mega-link-text"><h4 data-i18n data-en="My Account">Mon Espace Client</h4><p data-i18n data-en="Personalized portal">Portail personnalisé</p></div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- Tab Panel: Pétrochimie -->
+            <div class="mega-tab-panel" data-panel="petrochimie" role="tabpanel">
+              <div class="mega-grid">
+                <div>
+                  <div class="mega-col-title">Produits & Solutions</div>
+                  <a href="/#petrochimie" class="mega-link" role="menuitem">
+                    <div class="mega-icon" style="background:rgba(225,29,72,0.1);color:var(--petro)"><i class="fas fa-cube"></i></div>
+                    <div class="mega-link-text"><h4 data-i18n data-en="Polymers & Plastics">Polymères & Plastiques</h4><p data-i18n data-en="Advanced materials">Matériaux avancés</p></div>
                   </a>
                   <a href="/#petrochimie" class="mega-link" role="menuitem">
-                    <div class="mega-icon" style="background:rgba(225,29,72,0.1);color:var(--petro)"><i class="fas fa-flask-vial"></i></div>
-                    <div class="mega-link-text"><h4>Pétrochimie <span class="mega-badge mega-badge-petro">Chimie</span></h4><p>Polymères, engrais, chimie de base</p></div>
+                    <div class="mega-icon" style="background:rgba(225,29,72,0.1);color:var(--petro)"><i class="fas fa-leaf"></i></div>
+                    <div class="mega-link-text"><h4 data-i18n data-en="Fertilizers & Agrochemicals">Engrais & Agrochimie</h4><p data-i18n data-en="Agricultural inputs">Intrants agricoles</p></div>
                   </a>
                 </div>
                 <div>
-                  <div class="mega-col-title">Électricité</div>
-                  <a href="/energies" class="mega-link" role="menuitem">
-                    <div class="mega-icon" style="background:rgba(16,185,129,0.1);color:var(--energy)"><i class="fas fa-bolt"></i></div>
-                    <div class="mega-link-text"><h4>Énergies <span class="mega-badge mega-badge-energy">Électricité</span></h4><p>Gaz, solaire, micro-grids, BESS</p></div>
+                  <div class="mega-col-title">Chimie de Base</div>
+                  <a href="/#petrochimie" class="mega-link" role="menuitem">
+                    <div class="mega-icon" style="background:rgba(225,29,72,0.1);color:var(--petro)"><i class="fas fa-flask"></i></div>
+                    <div class="mega-link-text"><h4 data-i18n data-en="Basic Chemicals">Chimie de Base</h4><p data-i18n data-en="Industrial feedstock">Matières premières</p></div>
                   </a>
-                </div>
-                <div>
-                  <div class="mega-col-title">Technologies</div>
-                  <a href="/technologies" class="mega-link" role="menuitem">
-                    <div class="mega-icon" style="background:rgba(139,92,246,0.1);color:var(--tech)"><i class="fas fa-microchip"></i></div>
-                    <div class="mega-link-text"><h4>Technologies <span class="mega-badge mega-badge-tech">EnerTech</span></h4><p>Digital Twin, IA, cybersécurité</p></div>
-                  </a>
-                  <!-- Spotlight card -->
-                  <div class="mega-spotlight">
-                    <div class="mega-spotlight-title"><i class="fas fa-star"></i> En vedette</div>
-                    <div class="mega-spotlight-body" data-i18n data-en="First Chadian group covering the entire value chain — from well to pump.">Premier groupe tchadien couvrant l'ensemble de la chaîne — du puits à la pompe.</div>
-                    <a href="#chaine" class="mega-spotlight-cta" data-i18n data-en="Discover the value chain"><span>Découvrir la chaîne</span> <i class="fas fa-arrow-right"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Panel: Chaîne de Valeur -->
-            <div class="mega-tab-panel" data-panel="chaine" role="tabpanel">
-              <div class="mega-grid">
-                <div>
-                  <div class="mega-col-title">Vue d'ensemble</div>
-                  <a href="#chaine" class="mega-link" role="menuitem">
-                    <div class="mega-icon" style="background:rgba(200,150,46,0.1);color:var(--gold)"><i class="fas fa-link"></i></div>
-                    <div class="mega-link-text"><h4>Chaîne intégrée</h4><p>Amont → Intermédiaire → Aval — 100% tchadien</p></div>
-                  </a>
-                  <a href="#chiffres" class="mega-link" role="menuitem">
-                    <div class="mega-icon" style="background:rgba(200,150,46,0.1);color:var(--gold)"><i class="fas fa-chart-line"></i></div>
-                    <div class="mega-link-text"><h4>Chiffres Clés</h4><p>Capacités, volumes, EBITDA, capex</p></div>
-                  </a>
-                </div>
-                <div>
-                  <div class="mega-col-title">Opérations en temps réel</div>
-                  <a href="#dashboard" class="mega-link" role="menuitem">
-                    <div class="mega-icon" style="background:rgba(14,165,233,0.1);color:var(--midstream)"><i class="fas fa-tachometer-alt"></i></div>
-                    <div class="mega-link-text"><h4>Dashboard Live</h4><p>Monitoring consolidé temps réel</p></div>
-                  </a>
-                  <a href="#reseau" class="mega-link" role="menuitem">
-                    <div class="mega-icon" style="background:rgba(46,134,222,0.1);color:var(--amont)"><i class="fas fa-map-marked-alt"></i></div>
-                    <div class="mega-link-text"><h4>Réseau & Présence</h4><p>Cartographie des opérations</p></div>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <!-- Panel: Secteurs -->
-            <div class="mega-tab-panel" data-panel="secteurs" role="tabpanel">
-              <div class="mega-grid">
-                <div>
-                  <div class="mega-col-title">Marchés</div>
-                  <a href="#bassins" class="mega-link" role="menuitem">
-                    <div class="mega-icon" style="background:rgba(46,134,222,0.1);color:var(--amont)"><i class="fas fa-map"></i></div>
-                    <div class="mega-link-text"><h4>Bassins Producteurs</h4><p>5 bassins — Doba, Bongor, Salamat…</p></div>
-                  </a>
-                  <a href="#industries" class="mega-link" role="menuitem">
-                    <div class="mega-icon" style="background:rgba(200,150,46,0.1);color:var(--gold)"><i class="fas fa-industry"></i></div>
-                    <div class="mega-link-text"><h4>Secteurs d'Activité</h4><p>6 industries servies par le groupe</p></div>
-                  </a>
-                </div>
-                <div>
-                  <div class="mega-col-title">Écosystème</div>
-                  <a href="#partenaires" class="mega-link" role="menuitem">
-                    <div class="mega-icon" style="background:rgba(139,92,246,0.1);color:#8B5CF6"><i class="fas fa-handshake"></i></div>
-                    <div class="mega-link-text"><h4>Partenaires</h4><p>Réseau collaboratif international</p></div>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Footer -->
-        <div class="mega-footer">
-          <div class="mega-quick">
-            <a href="#chaine"><i class="fas fa-link"></i> Chaîne intégrée</a>
-            <a href="#chiffres"><i class="fas fa-chart-line"></i> Chiffres clés</a>
-            <a href="#dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
-          </div>
-          <a href="#reseau" class="mega-footer-cta" data-i18n data-en="View all operations">Voir toutes les opérations <i class="fas fa-arrow-right"></i></a>
-        </div>
-      </div>
-    </div>
-
-    <div class="nav-item" data-mega="solutions">
-      <a href="#services" data-i18n data-en="Solutions">Solutions <i class="fas fa-chevron-down nav-chevron"></i></a>
-      <div class="mega-drop" role="menu" aria-label="Solutions">
-        <div class="mega-header">
-          <div class="mega-header-left">
-            <span class="mega-panel-title" data-i18n data-en="Solutions">Solutions</span>
-            <div class="mega-search"><i class="fas fa-search"></i><input type="text" placeholder="Rechercher..." data-i18n-placeholder data-en-placeholder="Search..." aria-label="Rechercher"/></div>
-          </div>
-          <button class="mega-close" aria-label="Fermer"><i class="fas fa-times"></i></button>
-        </div>
-        <div class="mega-body">
-          <div class="mega-tabs" role="tablist">
-            <div class="mega-tab active" role="tab" data-tab="services" aria-selected="true">
-              <div class="mega-tab-icon" style="background:rgba(200,150,46,0.1);color:var(--gold)"><i class="fas fa-cubes"></i></div>
-              <div><div class="mega-tab-label">Services Groupe</div><div class="mega-tab-sub">Fonctions transverses</div></div>
-            </div>
-            <div class="mega-tab" role="tab" data-tab="references" aria-selected="false">
-              <div class="mega-tab-icon" style="background:rgba(14,165,233,0.1);color:var(--midstream)"><i class="fas fa-microscope"></i></div>
-              <div><div class="mega-tab-label">Références</div><div class="mega-tab-sub">Études & médias</div></div>
-            </div>
-          </div>
-          <div class="mega-vdivider"></div>
-          <div class="mega-content">
-            <div class="mega-tab-panel active" data-panel="services" role="tabpanel">
-              <div class="mega-grid">
-                <div>
-                  <div class="mega-col-title">Fonctions Support</div>
-                  <a href="#services" class="mega-link" role="menuitem">
-                    <div class="mega-icon" style="background:rgba(200,150,46,0.1);color:var(--gold)"><i class="fas fa-cubes"></i></div>
-                    <div class="mega-link-text"><h4>Fonctions Support</h4><p>Digital, RH, Supply Chain, Juridique</p></div>
-                  </a>
-                  <a href="#esg" class="mega-link" role="menuitem">
-                    <div class="mega-icon" style="background:rgba(16,185,129,0.1);color:#10B981"><i class="fas fa-shield-alt"></i></div>
-                    <div class="mega-link-text"><h4>HSE & Sécurité</h4><p>Excellence opérationnelle, conformité</p></div>
-                  </a>
-                </div>
-                <div>
-                  <div class="mega-col-title">Talents & Formation</div>
-                  <a href="#academy" class="mega-link" role="menuitem">
-                    <div class="mega-icon" style="background:rgba(200,150,46,0.1);color:var(--gold)"><i class="fas fa-graduation-cap"></i></div>
-                    <div class="mega-link-text"><h4>Formation Academy <span class="mega-badge mega-badge-gold">40+</span></h4><p>Certifications, développement des talents</p></div>
-                  </a>
-                  <!-- Spotlight -->
-                  <div class="mega-spotlight">
-                    <div class="mega-spotlight-title"><i class="fas fa-graduation-cap"></i> EnerTchad Academy</div>
-                    <div class="mega-spotlight-body">40+ certifications, 1 200 heures de formation — bâtir les compétences de demain pour le secteur énergétique tchadien.</div>
-                    <a href="#academy" class="mega-spotlight-cta"><span>Explorer l'Academy</span> <i class="fas fa-arrow-right"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="mega-tab-panel" data-panel="references" role="tabpanel">
-              <div class="mega-grid">
-                <div>
-                  <div class="mega-col-title">Références</div>
-                  <a href="#etudes" class="mega-link" role="menuitem">
-                    <div class="mega-icon" style="background:rgba(14,165,233,0.1);color:var(--midstream)"><i class="fas fa-microscope"></i></div>
-                    <div class="mega-link-text"><h4>Études de Cas</h4><p>Succès opérationnels & témoignages</p></div>
-                  </a>
-                  <a href="#mediatheque" class="mega-link" role="menuitem">
-                    <div class="mega-icon" style="background:rgba(139,92,246,0.1);color:#8B5CF6"><i class="fas fa-photo-video"></i></div>
-                    <div class="mega-link-text"><h4>Médiathèque <span class="mega-badge mega-badge-gold">8</span></h4><p>Rapports, presse, vidéos, kit média</p></div>
+                  <a href="/#petrochimie" class="mega-link" role="menuitem">
+                    <div class="mega-icon" style="background:rgba(225,29,72,0.1);color:var(--petro)"><i class="fas fa-chart-line"></i></div>
+                    <div class="mega-link-text"><h4 data-i18n data-en="Industrial Roadmap">Roadmap Industriel</h4><p data-i18n data-en="Strategic development">Développement stratégique</p></div>
                   </a>
                 </div>
               </div>
@@ -295,148 +261,173 @@
         </div>
         <div class="mega-footer">
           <div class="mega-quick">
-            <a href="#services"><i class="fas fa-cubes"></i> Services</a>
-            <a href="#academy"><i class="fas fa-graduation-cap"></i> Academy</a>
-            <a href="#etudes"><i class="fas fa-microscope"></i> Études</a>
+            <a href="/amont"><i class="fas fa-oil-well"></i> Amont</a>
+            <a href="/intermediaire"><i class="fas fa-pipe-section"></i> Intermédiaire</a>
+            <a href="/aval"><i class="fas fa-gas-pump"></i> Aval</a>
           </div>
-          <a href="#mediatheque" class="mega-footer-cta">Médiathèque complète <i class="fas fa-arrow-right"></i></a>
+          <a href="/amont" class="mega-footer-cta" data-i18n data-en="Explore Operations"><span>Explorer les Opérations</span> <i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
     </div>
 
+    <!-- ══════════════════════════════════════════════════════════════════ -->
+    <!-- NAV POLE 2: INNOVATION (Single Panel - No Tabs) -->
+    <!-- ══════════════════════════════════════════════════════════════════ -->
     <div class="nav-item" data-mega="innovation">
-      <a href="#enertech" data-i18n data-en="Innovation">Innovation <i class="fas fa-chevron-down nav-chevron"></i></a>
+      <a href="/technologies" data-i18n data-en="Innovation">Innovation <i class="fas fa-chevron-down nav-chevron"></i></a>
       <div class="mega-drop" role="menu" aria-label="Innovation">
         <div class="mega-header">
           <div class="mega-header-left">
-            <span class="mega-panel-title" data-i18n data-en="Innovation & Technology">Innovation & Technologie</span>
-            <div class="mega-search"><i class="fas fa-search"></i><input type="text" placeholder="Rechercher..." aria-label="Rechercher"/></div>
+            <span class="mega-panel-title" data-i18n data-en="Innovation">Innovation</span>
+            <div class="mega-search"><i class="fas fa-search"></i><input type="text" placeholder="Rechercher..." data-i18n-placeholder data-en-placeholder="Search..." aria-label="Rechercher"/></div>
           </div>
           <button class="mega-close" aria-label="Fermer"><i class="fas fa-times"></i></button>
         </div>
         <div class="mega-body">
-          <div class="mega-tabs" role="tablist">
-            <div class="mega-tab active" role="tab" data-tab="techsite" aria-selected="true">
-              <div class="mega-tab-icon" style="background:rgba(139,92,246,0.1);color:var(--tech)"><i class="fas fa-microchip"></i></div>
-              <div><div class="mega-tab-label">EnerTech</div><div class="mega-tab-sub">Hub technologique</div></div>
-            </div>
-            <div class="mega-tab" role="tab" data-tab="solutions-cles" aria-selected="false">
-              <div class="mega-tab-icon" style="background:rgba(139,92,246,0.1);color:var(--tech)"><i class="fas fa-brain"></i></div>
-              <div><div class="mega-tab-label">Solutions Clés</div><div class="mega-tab-sub">IA, IoT, Digital Twin</div></div>
-            </div>
-          </div>
-          <div class="mega-vdivider"></div>
           <div class="mega-content">
-            <div class="mega-tab-panel active" data-panel="techsite" role="tabpanel">
-              <div class="mega-grid">
-                <div>
-                  <div class="mega-col-title">Plateforme Technologique</div>
-                  <a href="/technologies" class="mega-link" role="menuitem">
-                    <div class="mega-icon" style="background:rgba(139,92,246,0.1);color:var(--tech)"><i class="fas fa-microchip"></i></div>
-                    <div class="mega-link-text"><h4>Site Technologies <span class="mega-badge mega-badge-tech">Filiale</span></h4><p>Hub technologique — 18 solutions digitales</p></div>
-                  </a>
-                  <a href="#enertech" class="mega-link" role="menuitem">
-                    <div class="mega-icon" style="background:rgba(200,150,46,0.1);color:var(--gold)"><i class="fas fa-cubes"></i></div>
-                    <div class="mega-link-text"><h4>EnerTech sur Groupe</h4><p>Vue consolidée technologie & ingénierie</p></div>
-                  </a>
-                </div>
-                <div>
-                  <div class="mega-col-title">Intelligence Opérationnelle</div>
-                  <a href="#dashboard" class="mega-link" role="menuitem">
-                    <div class="mega-icon" style="background:rgba(14,165,233,0.1);color:var(--midstream)"><i class="fas fa-tachometer-alt"></i></div>
-                    <div class="mega-link-text"><h4>Dashboard Live</h4><p>Opérations temps réel consolidées</p></div>
-                  </a>
-                  <div class="mega-spotlight">
-                    <div class="mega-spotlight-title"><i class="fas fa-rocket"></i> Innovation Lab</div>
-                    <div class="mega-spotlight-body">18 solutions digitales déployées. IA prédictive, Digital Twin, SCADA nouvelle génération — la technologie au service de l'énergie.</div>
-                    <a href="/technologies" class="mega-spotlight-cta"><span>Explorer EnerTech</span> <i class="fas fa-arrow-right"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="mega-tab-panel" data-panel="solutions-cles" role="tabpanel">
-              <div class="mega-grid mega-grid--3">
+            <div class="mega-grid">
+              <div>
+                <div class="mega-col-title">Plateforme Technologique</div>
                 <a href="/technologies" class="mega-link" role="menuitem">
-                  <div class="mega-icon" style="background:rgba(139,92,246,0.1);color:var(--tech)"><i class="fas fa-cube"></i></div>
-                  <div class="mega-link-text"><h4>Digital Twin</h4><p>Modélisation réservoir & pipeline temps réel</p></div>
+                  <div class="mega-icon" style="background:rgba(139,92,246,0.1);color:var(--tech)"><i class="fas fa-microchip"></i></div>
+                  <div class="mega-link-text"><h4 data-i18n data-en="EnerTech Platform">Plateforme EnerTech</h4><p data-i18n data-en="Integrated tech ecosystem">Écosystème technologique</p></div>
                 </a>
                 <a href="/technologies" class="mega-link" role="menuitem">
+                  <div class="mega-icon" style="background:rgba(139,92,246,0.1);color:var(--tech)"><i class="fas fa-cube"></i></div>
+                  <div class="mega-link-text"><h4 data-i18n data-en="Digital Twin & IoT">Digital Twin & IoT</h4><p data-i18n data-en="Real-time modeling">Modélisation temps réel</p></div>
+                </a>
+              </div>
+              <div>
+                <div class="mega-col-title">Systèmes Intelligents</div>
+                <a href="/technologies" class="mega-link" role="menuitem">
                   <div class="mega-icon" style="background:rgba(139,92,246,0.1);color:var(--tech)"><i class="fas fa-satellite-dish"></i></div>
-                  <div class="mega-link-text"><h4>SCADA & IoT</h4><p>Monitoring, contrôle et cybersécurité</p></div>
+                  <div class="mega-link-text"><h4 data-i18n data-en="SCADA & Smart Field">SCADA & Champ Numérique</h4><p data-i18n data-en="Process control & monitoring">Contrôle & monitoring</p></div>
                 </a>
                 <a href="/technologies" class="mega-link" role="menuitem">
                   <div class="mega-icon" style="background:rgba(139,92,246,0.1);color:var(--tech)"><i class="fas fa-brain"></i></div>
-                  <div class="mega-link-text"><h4>IA Prédictive</h4><p>Machine learning, maintenance prédictive</p></div>
+                  <div class="mega-link-text"><h4 data-i18n data-en="Artificial Intelligence">Intelligence Artificielle</h4><p data-i18n data-en="Predictive analytics">Analytique prédictive</p></div>
                 </a>
+              </div>
+              <div>
+                <div class="mega-col-title">Opérations en Temps Réel</div>
+                <a href="/technologies" class="mega-link" role="menuitem">
+                  <div class="mega-icon" style="background:rgba(139,92,246,0.1);color:var(--tech)"><i class="fas fa-tachometer-alt"></i></div>
+                  <div class="mega-link-text"><h4 data-i18n data-en="Real-Time Dashboard">Dashboard Temps Réel</h4><p data-i18n data-en="Consolidated operations view">Vue consolidée des opérations</p></div>
+                </a>
+                <a href="/technologies" class="mega-link" role="menuitem">
+                  <div class="mega-icon" style="background:rgba(139,92,246,0.1);color:var(--tech)"><i class="fas fa-lightbulb"></i></div>
+                  <div class="mega-link-text"><h4 data-i18n data-en="Use Cases">Cas d'Usage</h4><p data-i18n data-en="Proven implementations">Implémentations éprouvées</p></div>
+                </a>
+                <div class="mega-spotlight">
+                  <div class="mega-spotlight-title"><i class="fas fa-rocket"></i> EnerTech</div>
+                  <div class="mega-spotlight-body" data-i18n data-en="The technology platform connecting our 7 divisions">La plateforme technologique qui connecte nos 7 filiales</div>
+                  <a href="/technologies" class="mega-spotlight-cta" data-i18n data-en="Explore EnerTech"><span>Découvrir EnerTech</span> <i class="fas fa-arrow-right"></i></a>
+                </div>
               </div>
             </div>
           </div>
         </div>
         <div class="mega-footer">
           <div class="mega-quick">
-            <a href="/technologies"><i class="fas fa-microchip"></i> Technologies</a>
-            <a href="#enertech"><i class="fas fa-cubes"></i> EnerTech</a>
-            <a href="#dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+            <a href="/technologies"><i class="fas fa-microchip"></i> EnerTech</a>
+            <a href="/technologies"><i class="fas fa-cube"></i> Digital Twin</a>
+            <a href="/technologies"><i class="fas fa-brain"></i> IA</a>
           </div>
+          <a href="/technologies" class="mega-footer-cta" data-i18n data-en="Explore All Technologies"><span>Explorer toutes les technologies</span> <i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
     </div>
 
+    <!-- ══════════════════════════════════════════════════════════════════ -->
+    <!-- NAV POLE 3: DURABILITÉ (2 Tabs: Énergies Renouvelables, ESG & RSE) -->
+    <!-- ══════════════════════════════════════════════════════════════════ -->
     <div class="nav-item" data-mega="durabilite">
-      <a href="#esg" data-i18n data-en="Sustainability">Durabilité <i class="fas fa-chevron-down nav-chevron"></i></a>
+      <a href="/energies" data-i18n data-en="Sustainability">Durabilité <i class="fas fa-chevron-down nav-chevron"></i></a>
       <div class="mega-drop" role="menu" aria-label="Durabilité">
         <div class="mega-header">
           <div class="mega-header-left">
             <span class="mega-panel-title" data-i18n data-en="Sustainability">Durabilité</span>
+            <div class="mega-search"><i class="fas fa-search"></i><input type="text" placeholder="Rechercher..." data-i18n-placeholder data-en-placeholder="Search..." aria-label="Rechercher"/></div>
           </div>
           <button class="mega-close" aria-label="Fermer"><i class="fas fa-times"></i></button>
         </div>
         <div class="mega-body">
           <div class="mega-tabs" role="tablist">
-            <div class="mega-tab active" role="tab" data-tab="esg" aria-selected="true">
-              <div class="mega-tab-icon" style="background:rgba(16,185,129,0.1);color:#10B981"><i class="fas fa-leaf"></i></div>
-              <div><div class="mega-tab-label">ESG</div><div class="mega-tab-sub">Performance & impact</div></div>
+            <div class="mega-tab active" role="tab" data-tab="energies-renouvelables" aria-selected="true">
+              <div class="mega-tab-icon" style="background:rgba(16,185,129,0.1);color:var(--energy)"><i class="fas fa-solar-panel"></i></div>
+              <div><div class="mega-tab-label">Énergies Renouvelables</div><div class="mega-tab-sub">Électricité & décarbonation</div></div>
             </div>
-            <div class="mega-tab" role="tab" data-tab="engagement" aria-selected="false">
-              <div class="mega-tab-icon" style="background:rgba(16,185,129,0.1);color:#10B981"><i class="fas fa-hands-helping"></i></div>
-              <div><div class="mega-tab-label">Engagement</div><div class="mega-tab-sub">Communautés & climat</div></div>
+            <div class="mega-tab" role="tab" data-tab="esg-rse" aria-selected="false">
+              <div class="mega-tab-icon" style="background:rgba(16,185,129,0.1);color:var(--energy)"><i class="fas fa-leaf"></i></div>
+              <div><div class="mega-tab-label">ESG & RSE</div><div class="mega-tab-sub">Gouvernance & impact</div></div>
             </div>
           </div>
           <div class="mega-vdivider"></div>
           <div class="mega-content">
-            <div class="mega-tab-panel active" data-panel="esg" role="tabpanel">
+            <!-- Tab Panel: Énergies Renouvelables -->
+            <div class="mega-tab-panel active" data-panel="energies-renouvelables" role="tabpanel">
               <div class="mega-grid">
                 <div>
-                  <div class="mega-col-title">Performance ESG</div>
-                  <a href="#esg" class="mega-link" role="menuitem">
-                    <div class="mega-icon" style="background:rgba(16,185,129,0.1);color:#10B981"><i class="fas fa-leaf"></i></div>
-                    <div class="mega-link-text"><h4>Performance ESG</h4><p>ODD, climat, emploi local, formation</p></div>
+                  <div class="mega-col-title">Mix Énergétique</div>
+                  <a href="/energies" class="mega-link" role="menuitem">
+                    <div class="mega-icon" style="background:rgba(16,185,129,0.1);color:var(--energy)"><i class="fas fa-chart-pie"></i></div>
+                    <div class="mega-link-text"><h4 data-i18n data-en="Energy Mix">Mix Énergétique</h4><p data-i18n data-en="Portfolio & composition">Portefeuille énergétique</p></div>
                   </a>
-                  <a href="#rse" class="mega-link" role="menuitem">
-                    <div class="mega-icon" style="background:rgba(16,185,129,0.1);color:#10B981"><i class="fas fa-people-carry"></i></div>
-                    <div class="mega-link-text"><h4>RSE & Communautés</h4><p>Impact social et environnemental</p></div>
+                  <a href="/energies" class="mega-link" role="menuitem">
+                    <div class="mega-icon" style="background:rgba(16,185,129,0.1);color:var(--energy)"><i class="fas fa-solar-panel"></i></div>
+                    <div class="mega-link-text"><h4 data-i18n data-en="Hybrid Solar">Solaire Hybride</h4><p data-i18n data-en="PV + thermal systems">Systèmes hybrides</p></div>
                   </a>
                 </div>
                 <div>
-                  <div class="mega-spotlight">
-                    <div class="mega-spotlight-title"><i class="fas fa-seedling"></i> Objectif 2030</div>
-                    <div class="mega-spotlight-body">−40% d'émissions GES, 92% contenu local, 500+ emplois formés — notre feuille de route développement durable.</div>
-                    <a href="#esg" class="mega-spotlight-cta"><span>Voir nos engagements</span> <i class="fas fa-arrow-right"></i></a>
-                  </div>
+                  <div class="mega-col-title">Production Électrique</div>
+                  <a href="/energies" class="mega-link" role="menuitem">
+                    <div class="mega-icon" style="background:rgba(16,185,129,0.1);color:var(--energy)"><i class="fas fa-wind"></i></div>
+                    <div class="mega-link-text"><h4 data-i18n data-en="Wind Energy">Éolien</h4><p data-i18n data-en="Wind generation">Génération éolienne</p></div>
+                  </a>
+                  <a href="/energies" class="mega-link" role="menuitem">
+                    <div class="mega-icon" style="background:rgba(16,185,129,0.1);color:var(--energy)"><i class="fas fa-handshake"></i></div>
+                    <div class="mega-link-text"><h4 data-i18n data-en="Community Impact">Impact Communautaire</h4><p data-i18n data-en="Local development">Développement local</p></div>
+                  </a>
+                </div>
+                <div>
+                  <div class="mega-col-title">Décarbonation</div>
+                  <a href="/energies" class="mega-link" role="menuitem">
+                    <div class="mega-icon" style="background:rgba(16,185,129,0.1);color:var(--energy)"><i class="fas fa-tree"></i></div>
+                    <div class="mega-link-text"><h4 data-i18n data-en="Decarbonation">Décarbonation</h4><p data-i18n data-en="Emission reduction targets">Réduction des émissions</p></div>
+                  </a>
                 </div>
               </div>
             </div>
-            <div class="mega-tab-panel" data-panel="engagement" role="tabpanel">
+            <!-- Tab Panel: ESG & RSE -->
+            <div class="mega-tab-panel" data-panel="esg-rse" role="tabpanel">
               <div class="mega-grid">
                 <div>
-                  <div class="mega-col-title">Engagement</div>
-                  <a href="#newsletter" class="mega-link" role="menuitem">
-                    <div class="mega-icon" style="background:rgba(16,185,129,0.1);color:#10B981"><i class="fas fa-envelope-open"></i></div>
-                    <div class="mega-link-text"><h4>Newsletter</h4><p>Dernières actualités durabilité</p></div>
+                  <div class="mega-col-title">Gouvernance ESG</div>
+                  <a href="/#esg" class="mega-link" role="menuitem">
+                    <div class="mega-icon" style="background:rgba(16,185,129,0.1);color:var(--energy)"><i class="fas fa-chart-bar"></i></div>
+                    <div class="mega-link-text"><h4 data-i18n data-en="ESG Strategy">Stratégie ESG</h4><p data-i18n data-en="Environmental, social, governance">Cadre stratégique complet</p></div>
                   </a>
-                  <a href="#chiffres" class="mega-link" role="menuitem">
-                    <div class="mega-icon" style="background:rgba(16,185,129,0.1);color:#10B981"><i class="fas fa-chart-pie"></i></div>
-                    <div class="mega-link-text"><h4>Objectifs Climat</h4><p>Réduction GES, contenu local, ODD</p></div>
+                  <a href="/#esg" class="mega-link" role="menuitem">
+                    <div class="mega-icon" style="background:rgba(16,185,129,0.1);color:var(--energy)"><i class="fas fa-people-carry"></i></div>
+                    <div class="mega-link-text"><h4 data-i18n data-en="Social Responsibility">Responsabilité Sociétale</h4><p data-i18n data-en="Community & employee programs">Programmes sociaux</p></div>
+                  </a>
+                </div>
+                <div>
+                  <div class="mega-col-title">Climat & Environnement</div>
+                  <a href="/#esg" class="mega-link" role="menuitem">
+                    <div class="mega-icon" style="background:rgba(16,185,129,0.1);color:var(--energy)"><i class="fas fa-cloud"></i></div>
+                    <div class="mega-link-text"><h4 data-i18n data-en="Climate & CCUS">Climat & CCUS</h4><p data-i18n data-en="Carbon capture & storage">Capture & stockage du carbone</p></div>
+                  </a>
+                  <a href="/#esg" class="mega-link" role="menuitem">
+                    <div class="mega-icon" style="background:rgba(16,185,129,0.1);color:var(--energy)"><i class="fas fa-leaf"></i></div>
+                    <div class="mega-link-text"><h4 data-i18n data-en="Biodiversity">Biodiversité</h4><p data-i18n data-en="Ecosystem protection">Protection des écosystèmes</p></div>
+                  </a>
+                </div>
+                <div>
+                  <div class="mega-col-title">Rapports & Transparence</div>
+                  <a href="/#esg" class="mega-link" role="menuitem">
+                    <div class="mega-icon" style="background:rgba(16,185,129,0.1);color:var(--energy)"><i class="fas fa-file-pdf"></i></div>
+                    <div class="mega-link-text"><h4 data-i18n data-en="ESG Reports">Rapports ESG</h4><p data-i18n data-en="Annual sustainability reports">Rapports de durabilité</p></div>
                   </a>
                 </div>
               </div>
@@ -445,74 +436,105 @@
         </div>
         <div class="mega-footer">
           <div class="mega-quick">
-            <a href="#esg"><i class="fas fa-leaf"></i> ESG</a>
-            <a href="#rse"><i class="fas fa-people-carry"></i> RSE</a>
-            <a href="#chiffres"><i class="fas fa-chart-pie"></i> Objectifs</a>
+            <a href="/energies"><i class="fas fa-solar-panel"></i> Énergies</a>
+            <a href="/#esg"><i class="fas fa-leaf"></i> ESG</a>
+            <a href="/#esg"><i class="fas fa-chart-bar"></i> Rapports</a>
           </div>
-          <a href="#newsletter" class="mega-footer-cta">S'abonner à la newsletter <i class="fas fa-arrow-right"></i></a>
+          <a href="/energies" class="mega-footer-cta" data-i18n data-en="Learn About Sustainability"><span>En savoir plus sur la durabilité</span> <i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
     </div>
 
-    <div class="nav-item" data-mega="entreprise">
-      <a href="#gouvernance" data-i18n data-en="Company">Entreprise <i class="fas fa-chevron-down nav-chevron"></i></a>
-      <div class="mega-drop" role="menu" aria-label="Entreprise">
+    <!-- ══════════════════════════════════════════════════════════════════ -->
+    <!-- NAV POLE 4: GROUPE (2 Tabs: Gouvernance, Finance & Investisseurs) -->
+    <!-- ══════════════════════════════════════════════════════════════════ -->
+    <div class="nav-item" data-mega="groupe">
+      <a href="/#gouvernance" data-i18n data-en="Group">Groupe <i class="fas fa-chevron-down nav-chevron"></i></a>
+      <div class="mega-drop" role="menu" aria-label="Groupe">
         <div class="mega-header">
           <div class="mega-header-left">
-            <span class="mega-panel-title" data-i18n data-en="Company">Entreprise</span>
+            <span class="mega-panel-title" data-i18n data-en="Group">Groupe</span>
+            <div class="mega-search"><i class="fas fa-search"></i><input type="text" placeholder="Rechercher..." data-i18n-placeholder data-en-placeholder="Search..." aria-label="Rechercher"/></div>
           </div>
           <button class="mega-close" aria-label="Fermer"><i class="fas fa-times"></i></button>
         </div>
         <div class="mega-body">
           <div class="mega-tabs" role="tablist">
             <div class="mega-tab active" role="tab" data-tab="gouvernance" aria-selected="true">
-              <div class="mega-tab-icon" style="background:rgba(200,150,46,0.1);color:var(--gold)"><i class="fas fa-landmark"></i></div>
-              <div><div class="mega-tab-label">Gouvernance</div><div class="mega-tab-sub">Leadership & histoire</div></div>
+              <div class="mega-tab-icon" style="background:rgba(200,150,46,0.1);color:var(--gold)"><i class="fas fa-building-columns"></i></div>
+              <div><div class="mega-tab-label">Gouvernance</div><div class="mega-tab-sub">Leadership & structure</div></div>
             </div>
-            <div class="mega-tab" role="tab" data-tab="rejoindre" aria-selected="false">
-              <div class="mega-tab-icon" style="background:rgba(200,150,46,0.1);color:var(--gold)"><i class="fas fa-briefcase"></i></div>
-              <div><div class="mega-tab-label">Rejoignez-nous</div><div class="mega-tab-sub">Carrières & actualités</div></div>
+            <div class="mega-tab" role="tab" data-tab="finance-investisseurs" aria-selected="false">
+              <div class="mega-tab-icon" style="background:rgba(200,150,46,0.1);color:var(--gold)"><i class="fas fa-chart-line"></i></div>
+              <div><div class="mega-tab-label">Finance & Investisseurs</div><div class="mega-tab-sub">Performances financières</div></div>
             </div>
           </div>
           <div class="mega-vdivider"></div>
           <div class="mega-content">
+            <!-- Tab Panel: Gouvernance -->
             <div class="mega-tab-panel active" data-panel="gouvernance" role="tabpanel">
               <div class="mega-grid">
                 <div>
-                  <div class="mega-col-title">Gouvernance</div>
-                  <a href="#gouvernance" class="mega-link" role="menuitem">
-                    <div class="mega-icon" style="background:rgba(200,150,46,0.1);color:var(--gold)"><i class="fas fa-landmark"></i></div>
-                    <div class="mega-link-text"><h4>Leadership</h4><p>Comité exécutif & gouvernance</p></div>
+                  <div class="mega-col-title">Leadership & Stratégie</div>
+                  <a href="/#gouvernance" class="mega-link" role="menuitem">
+                    <div class="mega-icon" style="background:rgba(200,150,46,0.1);color:var(--gold)"><i class="fas fa-users"></i></div>
+                    <div class="mega-link-text"><h4 data-i18n data-en="General Direction">Direction Générale</h4><p data-i18n data-en="Executive leadership">Leadership exécutif</p></div>
                   </a>
-                  <a href="#jalons" class="mega-link" role="menuitem">
-                    <div class="mega-icon" style="background:rgba(200,150,46,0.1);color:var(--gold)"><i class="fas fa-history"></i></div>
-                    <div class="mega-link-text"><h4>Notre Parcours</h4><p>Jalons clés depuis la création</p></div>
+                  <a href="/#gouvernance" class="mega-link" role="menuitem">
+                    <div class="mega-icon" style="background:rgba(200,150,46,0.1);color:var(--gold)"><i class="fas fa-landmark"></i></div>
+                    <div class="mega-link-text"><h4 data-i18n data-en="Board of Directors">Conseil d'Administration</h4><p data-i18n data-en="Governance structure">Structure de gouvernance</p></div>
                   </a>
                 </div>
                 <div>
-                  <div class="mega-col-title">Finance</div>
-                  <a href="#investisseurs" class="mega-link" role="menuitem">
-                    <div class="mega-icon" style="background:rgba(200,150,46,0.1);color:var(--gold)"><i class="fas fa-chart-bar"></i></div>
-                    <div class="mega-link-text"><h4>Investisseurs</h4><p>Revenus, EBITDA, CAPEX</p></div>
+                  <div class="mega-col-title">Organisation & Valeurs</div>
+                  <a href="/#gouvernance" class="mega-link" role="menuitem">
+                    <div class="mega-icon" style="background:rgba(200,150,46,0.1);color:var(--gold)"><i class="fas fa-sitemap"></i></div>
+                    <div class="mega-link-text"><h4 data-i18n data-en="Committees">Comités</h4><p data-i18n data-en="Board committees">Comités spécialisés</p></div>
+                  </a>
+                  <a href="/#gouvernance" class="mega-link" role="menuitem">
+                    <div class="mega-icon" style="background:rgba(200,150,46,0.1);color:var(--gold)"><i class="fas fa-diagram-project"></i></div>
+                    <div class="mega-link-text"><h4 data-i18n data-en="Organization Chart">Organigramme</h4><p data-i18n data-en="Structure overview">Vue d'ensemble structurelle</p></div>
+                  </a>
+                </div>
+                <div>
+                  <div class="mega-col-title">Principes & Vision</div>
+                  <a href="/#gouvernance" class="mega-link" role="menuitem">
+                    <div class="mega-icon" style="background:rgba(200,150,46,0.1);color:var(--gold)"><i class="fas fa-compass"></i></div>
+                    <div class="mega-link-text"><h4 data-i18n data-en="Values & Vision">Valeurs & Vision</h4><p data-i18n data-en="Mission & strategic pillars">Missions stratégiques</p></div>
                   </a>
                 </div>
               </div>
             </div>
-            <div class="mega-tab-panel" data-panel="rejoindre" role="tabpanel">
+            <!-- Tab Panel: Finance & Investisseurs -->
+            <div class="mega-tab-panel" data-panel="finance-investisseurs" role="tabpanel">
               <div class="mega-grid">
                 <div>
-                  <div class="mega-col-title">Carrières & News</div>
-                  <a href="#carrieres" class="mega-link" role="menuitem">
-                    <div class="mega-icon" style="background:rgba(200,150,46,0.1);color:var(--gold)"><i class="fas fa-briefcase"></i></div>
-                    <div class="mega-link-text"><h4>Carrières</h4><p>Opportunités, culture, développement</p></div>
+                  <div class="mega-col-title">Performance Financière</div>
+                  <a href="/#chiffres" class="mega-link" role="menuitem">
+                    <div class="mega-icon" style="background:rgba(200,150,46,0.1);color:var(--gold)"><i class="fas fa-chart-bar"></i></div>
+                    <div class="mega-link-text"><h4 data-i18n data-en="Key Figures">Chiffres Clés</h4><p data-i18n data-en="Revenue, EBITDA, capex">Revenus, EBITDA, capex</p></div>
                   </a>
-                  <a href="#actualites" class="mega-link" role="menuitem">
-                    <div class="mega-icon" style="background:rgba(200,150,46,0.1);color:var(--gold)"><i class="fas fa-newspaper"></i></div>
-                    <div class="mega-link-text"><h4>Actualités</h4><p>Dernières nouvelles du groupe</p></div>
+                  <a href="/#chiffres" class="mega-link" role="menuitem">
+                    <div class="mega-icon" style="background:rgba(200,150,46,0.1);color:var(--gold)"><i class="fas fa-tachometer-alt"></i></div>
+                    <div class="mega-link-text"><h4 data-i18n data-en="Financial Dashboard">Dashboard Financier</h4><p data-i18n data-en="Real-time financial metrics">Indicateurs financiers temps réel</p></div>
                   </a>
-                  <a href="#contact" class="mega-link" role="menuitem">
-                    <div class="mega-icon" style="background:rgba(200,150,46,0.1);color:var(--gold)"><i class="fas fa-envelope"></i></div>
-                    <div class="mega-link-text"><h4>Contact</h4><p>Nous contacter directement</p></div>
+                </div>
+                <div>
+                  <div class="mega-col-title">Relations Investisseurs</div>
+                  <a href="/#chiffres" class="mega-link" role="menuitem">
+                    <div class="mega-icon" style="background:rgba(200,150,46,0.1);color:var(--gold)"><i class="fas fa-file-pdf"></i></div>
+                    <div class="mega-link-text"><h4 data-i18n data-en="Annual Reports">Rapports Annuels</h4><p data-i18n data-en="Financial statements">États financiers complets</p></div>
+                  </a>
+                  <a href="/#chiffres" class="mega-link" role="menuitem">
+                    <div class="mega-icon" style="background:rgba(200,150,46,0.1);color:var(--gold)"><i class="fas fa-handshake"></i></div>
+                    <div class="mega-link-text"><h4 data-i18n data-en="Investor Relations">Relations Investisseurs</h4><p data-i18n data-en="Shareholder information">Information aux actionnaires</p></div>
+                  </a>
+                </div>
+                <div>
+                  <div class="mega-col-title">Timeline & Historique</div>
+                  <a href="/#chiffres" class="mega-link" role="menuitem">
+                    <div class="mega-icon" style="background:rgba(200,150,46,0.1);color:var(--gold)"><i class="fas fa-history"></i></div>
+                    <div class="mega-link-text"><h4 data-i18n data-en="Timeline">Timeline</h4><p data-i18n data-en="Historical milestones">Jalons historiques</p></div>
                   </a>
                 </div>
               </div>
@@ -521,21 +543,84 @@
         </div>
         <div class="mega-footer">
           <div class="mega-quick">
-            <a href="#gouvernance"><i class="fas fa-landmark"></i> Leadership</a>
-            <a href="#jalons"><i class="fas fa-history"></i> Parcours</a>
-            <a href="#investisseurs"><i class="fas fa-chart-bar"></i> Investisseurs</a>
+            <a href="/#gouvernance"><i class="fas fa-building-columns"></i> Gouvernance</a>
+            <a href="/#chiffres"><i class="fas fa-chart-line"></i> Finances</a>
+            <a href="/#chiffres"><i class="fas fa-handshake"></i> Investisseurs</a>
           </div>
-          <a href="#carrieres" class="mega-footer-cta">Voir les offres <i class="fas fa-arrow-right"></i></a>
+          <a href="/#gouvernance" class="mega-footer-cta" data-i18n data-en="Discover the Group"><span>Découvrir le Groupe</span> <i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
     </div>
 
-    <!-- Contact Simple Link -->
-    <a href="#contact" data-i18n data-en="Contact">Contact</a>
+    <!-- ══════════════════════════════════════════════════════════════════ -->
+    <!-- NAV POLE 5: TALENTS (Single Panel - No Tabs) -->
+    <!-- ══════════════════════════════════════════════════════════════════ -->
+    <div class="nav-item" data-mega="talents">
+      <a href="/#carrieres" data-i18n data-en="Talents">Talents <i class="fas fa-chevron-down nav-chevron"></i></a>
+      <div class="mega-drop" role="menu" aria-label="Talents">
+        <div class="mega-header">
+          <div class="mega-header-left">
+            <span class="mega-panel-title" data-i18n data-en="Talents">Talents</span>
+            <div class="mega-search"><i class="fas fa-search"></i><input type="text" placeholder="Rechercher..." data-i18n-placeholder data-en-placeholder="Search..." aria-label="Rechercher"/></div>
+          </div>
+          <button class="mega-close" aria-label="Fermer"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="mega-body">
+          <div class="mega-content">
+            <div class="mega-grid">
+              <div>
+                <div class="mega-col-title">Recrutement & Carrière</div>
+                <a href="/#carrieres" class="mega-link" role="menuitem">
+                  <div class="mega-icon" style="background:rgba(200,150,46,0.1);color:var(--gold)"><i class="fas fa-briefcase"></i></div>
+                  <div class="mega-link-text"><h4 data-i18n data-en="Careers & Recruitment">Carrières & Recrutement</h4><p data-i18n data-en="Job opportunities & benefits">Opportunités et avantages</p></div>
+                </a>
+                <a href="/#carrieres" class="mega-link" role="menuitem">
+                  <div class="mega-icon" style="background:rgba(200,150,46,0.1);color:var(--gold)"><i class="fas fa-graduation-cap"></i></div>
+                  <div class="mega-link-text"><h4 data-i18n data-en="Academy & Training">Academy & Formations</h4><p data-i18n data-en="40+ certifications & development">40+ certifications</p></div>
+                </a>
+              </div>
+              <div>
+                <div class="mega-col-title">Sécurité & Développement</div>
+                <a href="/#carrieres" class="mega-link" role="menuitem">
+                  <div class="mega-icon" style="background:rgba(200,150,46,0.1);color:var(--gold)"><i class="fas fa-shield-alt"></i></div>
+                  <div class="mega-link-text"><h4 data-i18n data-en="HSE Program">Programme HSE</h4><p data-i18n data-en="Safety, health, environment">Sécurité et santé au travail</p></div>
+                </a>
+                <a href="/#carrieres" class="mega-link" role="menuitem">
+                  <div class="mega-icon" style="background:rgba(200,150,46,0.1);color:var(--gold)"><i class="fas fa-users"></i></div>
+                  <div class="mega-link-text"><h4 data-i18n data-en="Internships & Alternance">Stages & Alternance</h4><p data-i18n data-en="Student programs & apprenticeships">Programmes étudiants</p></div>
+                </a>
+              </div>
+              <div>
+                <div class="mega-col-title">Nos Équipes & Actu</div>
+                <a href="/#carrieres" class="mega-link" role="menuitem">
+                  <div class="mega-icon" style="background:rgba(200,150,46,0.1);color:var(--gold)"><i class="fas fa-people-group"></i></div>
+                  <div class="mega-link-text"><h4 data-i18n data-en="Our Teams">Nos Équipes</h4><p data-i18n data-en="Meet our people & culture">Culture d'entreprise</p></div>
+                </a>
+                <a href="/#carrieres" class="mega-link" role="menuitem">
+                  <div class="mega-icon" style="background:rgba(200,150,46,0.1);color:var(--gold)"><i class="fas fa-newspaper"></i></div>
+                  <div class="mega-link-text"><h4 data-i18n data-en="News & Events">Actualités</h4><p data-i18n data-en="Latest company updates">Dernières actualités du groupe</p></div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mega-footer">
+          <div class="mega-quick">
+            <a href="/#carrieres"><i class="fas fa-briefcase"></i> Carrières</a>
+            <a href="/#carrieres"><i class="fas fa-graduation-cap"></i> Academy</a>
+            <a href="/#carrieres"><i class="fas fa-newspaper"></i> News</a>
+          </div>
+          <a href="/#carrieres" class="mega-footer-cta" data-i18n data-en="Explore Talent Opportunities"><span>Rejoindre EnerTchad</span> <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
 
     <!-- Language and Theme Toggles -->
     <button class="lang-btn" id="langToggle" aria-label="Changer la langue">FR / EN</button>
     <button class="lang-btn" id="themeToggle" aria-label="Basculer thème clair/sombre"><i class="fas fa-sun"></i></button>
+
+    <!-- Contact CTA Button -->
+    <a href="/#contact" class="mega-cta-btn" data-i18n data-en="Contact">Contact</a>
   </nav>
   <button class="mobile-toggle" id="mobileToggle" aria-label="Ouvrir le menu" aria-expanded="false">
     <i class="fas fa-bars"></i>
