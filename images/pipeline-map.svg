@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="cyanGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0EA5E9;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#0EA5E9;stop-opacity:0.3" />
+    </linearGradient>
+    <linearGradient id="flowGradient" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" style="stop-color:#0EA5E9;stop-opacity:0" />
+      <stop offset="50%" style="stop-color:#0EA5E9;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0EA5E9;stop-opacity:0" />
+    </linearGradient>
+    <radialGradient id="nodeGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#0EA5E9;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0EA5E9;stop-opacity:0.4" />
+    </radialGradient>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#0EA5E9"/>
+    </marker>
+    <filter id="pipelineGlow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="600" fill="#080E1A"/>
+
+  <g opacity="0.06">
+    <rect x="50" y="50" width="700" height="500" fill="url(#cyanGradient)"/>
+    <g stroke="#0EA5E9" stroke-width="0.5" opacity="0.3">
+      <line x1="150" y1="50" x2="150" y2="550"/>
+      <line x1="250" y1="50" x2="250" y2="550"/>
+      <line x1="350" y1="50" x2="350" y2="550"/>
+      <line x1="450" y1="50" x2="450" y2="550"/>
+      <line x1="550" y1="50" x2="550" y2="550"/>
+      <line x1="650" y1="50" x2="650" y2="550"/>
+      <line x1="50" y1="150" x2="750" y2="150"/>
+      <line x1="50" y1="250" x2="750" y2="250"/>
+      <line x1="50" y1="350" x2="750" y2="350"/>
+      <line x1="50" y1="450" x2="750" y2="450"/>
+    </g>
+  </g>
+
+  <g filter="url(#pipelineGlow)">
+    <path d="M 150 150 L 300 200 L 450 180 L 600 250" fill="none" stroke="#0EA5E9" stroke-width="5" opacity="0.7" stroke-linecap="round"/>
+    <path d="M 150 400 L 280 380 L 420 420 L 600 350" fill="none" stroke="#0EA5E9" stroke-width="4" opacity="0.6" stroke-linecap="round"/>
+    <path d="M 200 150 L 200 400" fill="none" stroke="#0EA5E9" stroke-width="3.5" opacity="0.5" stroke-linecap="round"/>
+    <path d="M 600 250 L 600 350 L 700 300" fill="none" stroke="#0EA5E9" stroke-width="4" opacity="0.65" stroke-linecap="round"/>
+  </g>
+
+  <g filter="url(#pipelineGlow)" opacity="0.8">
+    <path d="M 150 150 L 300 200 L 450 180 L 600 250" fill="none" stroke="url(#flowGradient)" stroke-width="6" stroke-linecap="round">
+      <animate attributeName="stroke-dashoffset" from="0" to="-30" dur="6s" repeatCount="indefinite"/>
+    </path>
+    <path d="M 150 400 L 280 380 L 420 420 L 600 350" fill="none" stroke="url(#flowGradient)" stroke-width="5" stroke-linecap="round">
+      <animate attributeName="stroke-dashoffset" from="0" to="-30" dur="7s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <g filter="url(#pipelineGlow)">
+    <circle cx="150" cy="150" r="12" fill="url(#nodeGlow)"/>
+    <circle cx="300" cy="200" r="11" fill="url(#nodeGlow)" opacity="0.85"/>
+    <circle cx="450" cy="180" r="11" fill="url(#nodeGlow)" opacity="0.85"/>
+    <circle cx="600" cy="250" r="12" fill="url(#nodeGlow)"/>
+    <circle cx="150" cy="400" r="11" fill="url(#nodeGlow)" opacity="0.8"/>
+    <circle cx="280" cy="380" r="10" fill="url(#nodeGlow)" opacity="0.75"/>
+    <circle cx="420" cy="420" r="10" fill="url(#nodeGlow)" opacity="0.75"/>
+    <circle cx="600" cy="350" r="12" fill="url(#nodeGlow)"/>
+    <circle cx="700" cy="300" r="11" fill="url(#nodeGlow)" opacity="0.85"/>
+    <circle cx="200" cy="275" r="9" fill="url(#nodeGlow)" opacity="0.7"/>
+  </g>
+
+  <g opacity="0.6" stroke="#0EA5E9" stroke-width="2" fill="none" stroke-linecap="round">
+    <path d="M 295 200 L 305 210" marker-end="url(#arrowhead)"/>
+    <path d="M 445 180 L 455 190" marker-end="url(#arrowhead)"/>
+    <path d="M 595 250 L 605 260" marker-end="url(#arrowhead)"/>
+    <path d="M 275 380 L 285 390" marker-end="url(#arrowhead)"/>
+    <path d="M 415 420 L 425 425" marker-end="url(#arrowhead)"/>
+    <path d="M 595 350 L 605 360" marker-end="url(#arrowhead)"/>
+    <path d="M 695 300 L 705 310" marker-end="url(#arrowhead)"/>
+  </g>
+
+  <g opacity="0.4">
+    <text x="150" y="140" font-size="10" fill="#0EA5E9" text-anchor="middle">NODE</text>
+    <text x="600" y="240" font-size="10" fill="#0EA5E9" text-anchor="middle">HUB</text>
+    <text x="700" y="290" font-size="10" fill="#0EA5E9" text-anchor="middle">TERMINUS</text>
+  </g>
+
+  <g opacity="0.3">
+    <circle cx="250" cy="100" r="3" fill="#D9A84F"/>
+    <circle cx="500" cy="500" r="3" fill="#D9A84F"/>
+    <circle cx="100" cy="350" r="2" fill="#D9A84F"/>
+    <circle cx="750" cy="450" r="2" fill="#D9A84F"/>
+  </g>
+</svg>

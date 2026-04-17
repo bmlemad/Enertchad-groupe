@@ -56,6 +56,9 @@
   .vc-grid{grid-template-columns:1fr}
   .gov-grid{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr !important}
+  .footer-top{grid-template-columns:1fr !important;gap:1.5rem !important}
+  .footer-top .footer-brand{text-align:center}
+  .footer-top .footer-col{text-align:center}
   .rse-grid,.esg-grid,.et-grid{grid-template-columns:1fr}
   .career-grid,.news-grid{grid-template-columns:1fr}
 }

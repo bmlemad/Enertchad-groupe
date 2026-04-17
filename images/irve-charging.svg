@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="greenGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#10B981;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#10B981;stop-opacity:0.4" />
+    </linearGradient>
+    <radialGradient id="greenGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#10B981;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#10B981;stop-opacity:0.2" />
+    </radialGradient>
+    <linearGradient id="boltGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#D9A84F" />
+      <stop offset="100%" style="stop-color:#10B981" />
+    </linearGradient>
+    <filter id="stationGlow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="networkGlow">
+      <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="600" fill="#080E1A"/>
+
+  <g opacity="0.08">
+    <circle cx="150" cy="150" r="80" fill="#10B981"/>
+    <circle cx="650" cy="450" r="100" fill="#10B981"/>
+    <circle cx="400" cy="300" r="120" fill="#10B981"/>
+  </g>
+
+  <g filter="url(#networkGlow)" opacity="0.3">
+    <line x1="200" y1="150" x2="600" y2="150" stroke="#10B981" stroke-width="1"/>
+    <line x1="200" y1="450" x2="600" y2="450" stroke="#10B981" stroke-width="1"/>
+    <line x1="200" y1="150" x2="200" y2="450" stroke="#10B981" stroke-width="1"/>
+    <line x1="600" y1="150" x2="600" y2="450" stroke="#10B981" stroke-width="1"/>
+    <line x1="200" y1="150" x2="600" y2="450" stroke="#10B981" stroke-width="0.8"/>
+    <line x1="600" y1="150" x2="200" y2="450" stroke="#10B981" stroke-width="0.8"/>
+  </g>
+
+  <g filter="url(#stationGlow)">
+    <rect x="280" y="220" width="240" height="160" fill="url(#greenGradient)" rx="12"/>
+
+    <rect x="320" y="240" width="30" height="100" fill="#10B981" opacity="0.8" rx="4"/>
+    <rect x="450" y="240" width="30" height="100" fill="#10B981" opacity="0.8" rx="4"/>
+
+    <circle cx="310" cy="320" r="12" fill="#10B981" opacity="0.7"/>
+    <circle cx="490" cy="320" r="12" fill="#10B981" opacity="0.7"/>
+
+    <path d="M 360 360 L 360 390" stroke="#10B981" stroke-width="8" stroke-linecap="round" opacity="0.6"/>
+    <path d="M 440 360 L 440 390" stroke="#10B981" stroke-width="8" stroke-linecap="round" opacity="0.6"/>
+  </g>
+
+  <g filter="url(#networkGlow)">
+    <polygon points="400,140 420,160 380,160" fill="url(#boltGradient)" opacity="0.9"/>
+    <polygon points="400,160 390,180 410,180" fill="url(#boltGradient)" opacity="0.8"/>
+    <polygon points="400,180 385,210 415,210" fill="url(#boltGradient)" opacity="0.7"/>
+    <path d="M 390 210 L 410 220" stroke="#D9A84F" stroke-width="2" opacity="0.6"/>
+  </g>
+
+  <g filter="url(#networkGlow)" opacity="0.5">
+    <circle cx="200" cy="150" r="8" fill="#10B981"/>
+    <circle cx="600" cy="150" r="8" fill="#10B981"/>
+    <circle cx="200" cy="450" r="8" fill="#10B981"/>
+    <circle cx="600" cy="450" r="8" fill="#10B981"/>
+    <circle cx="150" cy="300" r="6" fill="#10B981" opacity="0.7"/>
+    <circle cx="650" cy="300" r="6" fill="#10B981" opacity="0.7"/>
+  </g>
+
+  <g opacity="0.25">
+    <line x1="200" y1="140" x2="200" y2="160" stroke="#D9A84F" stroke-width="1.5"/>
+    <line x1="600" y1="140" x2="600" y2="160" stroke="#D9A84F" stroke-width="1.5"/>
+    <line x1="190" y1="150" x2="210" y2="150" stroke="#D9A84F" stroke-width="1.5"/>
+    <line x1="590" y1="150" x2="610" y2="150" stroke="#D9A84F" stroke-width="1.5"/>
+  </g>
+
+  <g filter="url(#networkGlow)" opacity="0.4">
+    <path d="M 200 150 Q 300 100 600 150" fill="none" stroke="#10B981" stroke-width="1.5" stroke-dasharray="5,5"/>
+    <path d="M 200 450 Q 300 500 600 450" fill="none" stroke="#10B981" stroke-width="1.5" stroke-dasharray="5,5"/>
+  </g>
+</svg>

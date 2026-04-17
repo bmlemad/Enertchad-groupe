@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="goldGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#D9A84F;stop-opacity:0.3" />
+      <stop offset="50%" style="stop-color:#D9A84F;stop-opacity:0.1" />
+      <stop offset="100%" style="stop-color:#D9A84F;stop-opacity:0" />
+    </linearGradient>
+    <radialGradient id="hexGradientBlue" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#2E86DE;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#2E86DE;stop-opacity:0.4" />
+    </radialGradient>
+    <radialGradient id="hexGradientCyan" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#0EA5E9;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#0EA5E9;stop-opacity:0.4" />
+    </radialGradient>
+    <radialGradient id="hexGradientAmber" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#D97706;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#D97706;stop-opacity:0.4" />
+    </radialGradient>
+    <radialGradient id="hexGradientPurple" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#8B5CF6;stop-opacity:0.4" />
+    </radialGradient>
+    <radialGradient id="hexGradientGreen" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#10B981;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#10B981;stop-opacity:0.4" />
+    </radialGradient>
+    <radialGradient id="hexGradientRose" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#E11D48;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#E11D48;stop-opacity:0.4" />
+    </radialGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="600" fill="#080E1A"/>
+
+  <rect x="150" y="100" width="500" height="400" fill="url(#goldGlow)" rx="20"/>
+
+  <g filter="url(#glow)">
+    <line x1="250" y1="200" x2="550" y2="200" stroke="#D9A84F" stroke-width="1.5" opacity="0.4"/>
+    <line x1="400" y1="100" x2="400" y2="500" stroke="#D9A84F" stroke-width="1.5" opacity="0.4"/>
+    <line x1="250" y1="350" x2="550" y2="350" stroke="#D9A84F" stroke-width="1.5" opacity="0.3"/>
+    <line x1="300" y1="120" x2="500" y2="480" stroke="#D9A84F" stroke-width="1" opacity="0.25"/>
+  </g>
+
+  <g filter="url(#glow)">
+    <polygon points="400,80 430,95 430,125 400,140 370,125 370,95" fill="url(#hexGradientBlue)" stroke="#D9A84F" stroke-width="2"/>
+    <polygon points="250,200 280,215 280,245 250,260 220,245 220,215" fill="url(#hexGradientCyan)" stroke="#D9A84F" stroke-width="2"/>
+    <polygon points="550,200 580,215 580,245 550,260 520,245 520,215" fill="url(#hexGradientAmber)" stroke="#D9A84F" stroke-width="2"/>
+    <polygon points="250,350 280,365 280,395 250,410 220,395 220,365" fill="url(#hexGradientPurple)" stroke="#D9A84F" stroke-width="2"/>
+    <polygon points="550,350 580,365 580,395 550,410 520,395 520,365" fill="url(#hexGradientGreen)" stroke="#D9A84F" stroke-width="2"/>
+    <polygon points="400,470 430,485 430,515 400,530 370,515 370,485" fill="url(#hexGradientRose)" stroke="#D9A84F" stroke-width="2"/>
+  </g>
+
+  <line x1="400" y1="120" x2="250" y2="220" stroke="#D9A84F" stroke-width="1" opacity="0.5"/>
+  <line x1="400" y1="120" x2="550" y2="220" stroke="#D9A84F" stroke-width="1" opacity="0.5"/>
+  <line x1="250" y1="260" x2="250" y2="330" stroke="#D9A84F" stroke-width="1" opacity="0.4"/>
+  <line x1="550" y1="260" x2="550" y2="330" stroke="#D9A84F" stroke-width="1" opacity="0.4"/>
+  <line x1="250" y1="410" x2="400" y2="470" stroke="#D9A84F" stroke-width="1" opacity="0.5"/>
+  <line x1="550" y1="410" x2="400" y2="470" stroke="#D9A84F" stroke-width="1" opacity="0.5"/>
+</svg>
