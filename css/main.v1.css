@@ -297,6 +297,105 @@ body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
 .mobile-nav{display:none}
 .mobile-toggle{display:none;background:none;border:none;cursor:pointer;padding:0.5rem;color:var(--white);font-size:1.3rem}
 
+/* ═══ MEGA MENU — Enhanced UX ═══ */
+
+/* Smooth panel height transition */
+.mega-drop{max-height:0;clip-path:none;
+  transition:max-height 0.5s cubic-bezier(0.16,1,0.3,1),opacity 0.4s ease,transform 0.4s cubic-bezier(0.16,1,0.3,1);
+  opacity:0;transform:translateY(-8px)}
+.nav-item.open .mega-drop{max-height:85vh;opacity:1;transform:translateY(0);clip-path:none}
+
+/* Active tab left border glow */
+.mega-tab.active::after{content:'';position:absolute;left:-2px;top:15%;bottom:15%;width:6px;border-radius:4px;
+  background:var(--gold);filter:blur(6px);opacity:0.5;animation:tabGlow 2s ease-in-out infinite alternate}
+@keyframes tabGlow{from{opacity:0.3;filter:blur(4px)}to{opacity:0.6;filter:blur(8px)}}
+
+/* Tab icon color per filiale */
+.mega-tab[data-filiale="groupe"] .mega-tab-icon{background:rgba(200,150,46,0.1);color:var(--gold)}
+.mega-tab[data-filiale="amont"] .mega-tab-icon{background:rgba(46,134,222,0.1);color:var(--amont)}
+.mega-tab[data-filiale="midstream"] .mega-tab-icon{background:rgba(14,165,233,0.1);color:var(--midstream)}
+.mega-tab[data-filiale="aval"] .mega-tab-icon{background:rgba(217,119,6,0.1);color:var(--aval)}
+.mega-tab[data-filiale="tech"] .mega-tab-icon{background:rgba(139,92,246,0.1);color:var(--tech)}
+.mega-tab[data-filiale="energies"] .mega-tab-icon{background:rgba(16,185,129,0.1);color:var(--energy)}
+.mega-tab[data-filiale="petro"] .mega-tab-icon{background:rgba(225,29,72,0.1);color:var(--petro)}
+
+/* Active tab icon glow per filiale */
+.mega-tab.active[data-filiale="amont"] .mega-tab-icon{box-shadow:0 4px 20px rgba(46,134,222,0.3);border-color:rgba(46,134,222,0.3)}
+.mega-tab.active[data-filiale="midstream"] .mega-tab-icon{box-shadow:0 4px 20px rgba(14,165,233,0.3);border-color:rgba(14,165,233,0.3)}
+.mega-tab.active[data-filiale="aval"] .mega-tab-icon{box-shadow:0 4px 20px rgba(217,119,6,0.3);border-color:rgba(217,119,6,0.3)}
+.mega-tab.active[data-filiale="tech"] .mega-tab-icon{box-shadow:0 4px 20px rgba(139,92,246,0.3);border-color:rgba(139,92,246,0.3)}
+.mega-tab.active[data-filiale="energies"] .mega-tab-icon{box-shadow:0 4px 20px rgba(16,185,129,0.3);border-color:rgba(16,185,129,0.3)}
+.mega-tab.active[data-filiale="petro"] .mega-tab-icon{box-shadow:0 4px 20px rgba(225,29,72,0.3);border-color:rgba(225,29,72,0.3)}
+
+/* Link card hover lift with colored border */
+.mega-link{border-radius:12px;padding:0.7rem 0.85rem}
+.mega-link:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.2)}
+
+/* Link hover colored accent per filiale */
+.mega-tab-panel[data-filiale="amont"] .mega-link:hover{border-color:rgba(46,134,222,0.2);background:rgba(46,134,222,0.04)}
+.mega-tab-panel[data-filiale="midstream"] .mega-link:hover{border-color:rgba(14,165,233,0.2);background:rgba(14,165,233,0.04)}
+.mega-tab-panel[data-filiale="aval"] .mega-link:hover{border-color:rgba(217,119,6,0.2);background:rgba(217,119,6,0.04)}
+.mega-tab-panel[data-filiale="tech"] .mega-link:hover{border-color:rgba(139,92,246,0.2);background:rgba(139,92,246,0.04)}
+.mega-tab-panel[data-filiale="energies"] .mega-link:hover{border-color:rgba(16,185,129,0.2);background:rgba(16,185,129,0.04)}
+.mega-tab-panel[data-filiale="petro"] .mega-link:hover{border-color:rgba(225,29,72,0.2);background:rgba(225,29,72,0.04)}
+
+/* Icon scale bounce on link hover */
+.mega-link:hover .mega-icon{transform:scale(1.1) rotate(-2deg);transition:transform 0.3s cubic-bezier(0.34,1.56,0.64,1)}
+
+/* Spotlight card shimmer effect */
+.mega-spotlight::after{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(200,150,46,0.04),transparent);
+  animation:spotlightShimmer 4s ease-in-out infinite}
+@keyframes spotlightShimmer{0%{left:-100%}50%{left:100%}100%{left:100%}}
+
+/* Quick link pills hover scale */
+.mega-quick a:hover{transform:translateY(-2px) scale(1.03)}
+.mega-quick a:active{transform:translateY(0) scale(0.98)}
+
+/* Keyboard focus styles for mega items */
+.mega-tab:focus-visible{outline:2px solid var(--gold);outline-offset:2px;border-radius:10px}
+.mega-link:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
+/* Panel content stagger — more dramatic */
+.nav-item.open .mega-link:nth-child(1){animation-delay:0.02s}
+.nav-item.open .mega-link:nth-child(2){animation-delay:0.05s}
+.nav-item.open .mega-link:nth-child(3){animation-delay:0.08s}
+.nav-item.open .mega-link:nth-child(4){animation-delay:0.11s}
+.nav-item.open .mega-link:nth-child(5){animation-delay:0.14s}
+.nav-item.open .mega-link:nth-child(6){animation-delay:0.17s}
+.nav-item.open .mega-link:nth-child(7){animation-delay:0.20s}
+.nav-item.open .mega-link:nth-child(8){animation-delay:0.23s}
+
+/* Close button rotation on hover */
+.mega-close:hover{transform:rotate(90deg)}
+
+/* Search input glow animation on focus */
+.mega-search input:focus{box-shadow:0 0 0 3px rgba(200,150,46,0.12),0 0 20px rgba(200,150,46,0.06)}
+
+/* Mobile mega improvements */
+@media(max-width:1024px){
+  .mega-drop{position:fixed;top:0;left:0;right:0;bottom:0;overflow-y:auto;max-height:100vh}
+  .mega-body{grid-template-columns:1fr;min-height:auto}
+  .mega-tabs{flex-direction:row;overflow-x:auto;gap:0.5rem;padding:0.75rem 1rem;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .mega-tabs::-webkit-scrollbar{display:none}
+  .mega-tab{flex-shrink:0;padding:0.5rem 0.75rem}
+  .mega-vdivider{display:none}
+  .mega-content{padding:1rem}
+  .mega-grid{grid-template-columns:1fr}
+  .mega-grid--3{grid-template-columns:1fr}
+  .mega-header{padding:0.75rem 1rem}
+  .mega-footer{flex-direction:column;gap:0.75rem;padding:0.75rem 1rem}
+}
+
+/* Reduced motion */
+@media(prefers-reduced-motion:reduce){
+  .mega-drop{transition:opacity 0.2s ease}
+  .mega-tab::after{animation:none}
+  .mega-spotlight::after{animation:none}
+  .mega-link:hover{transform:none}
+  .mega-link:hover .mega-icon{transform:none}
+}
+
 /* ═══ HERO ═══ */
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;padding:8rem 2rem 6rem}
 .hero::before{content:'';position:absolute;inset:0;background:linear-gradient(160deg,rgba(8,14,26,0.95) 0%,rgba(8,14,26,0.7) 35%,rgba(8,14,26,0.4) 60%,rgba(200,150,46,0.08) 100%);z-index:1}
