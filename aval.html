@@ -758,6 +758,8 @@
       Lubrifiants
      </span>
     </div>
+    <div class="search-results" id="searchResults">
+    </div>
    </div>
   </div>
   <!-- ═══ MOBILE NAV ═══ -->
@@ -4979,7 +4981,7 @@
   </div>
   <!-- ═══ SCROLL-TO-TOP ═══ -->
   <button aria-label="Retour en haut de page" class="scroll-top" id="scrollTop" title="Retour en haut" type="button">
-   <img alt="" aria-hidden="true" decoding="async" height="30" loading="lazy" src="logo.svg" width="30"/>
+   <i class="fas fa-chevron-up"></i>
   </button>
   <!-- ═══ FILIALE NAVIGATION ═══ -->
   <nav class="filiale-nav" aria-label="Navigation entre filiales">
@@ -5165,9 +5167,6 @@
     </div>
    </div>
   </footer>
-  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
-  <nav class="breadcrumb-bar" id="breadcrumbBar" aria-label="Fil d'Ariane"><a href="#hero" class="bc-home"><i class="fas fa-home"></i> Accueil</a><i class="fas fa-chevron-right bc-sep"></i><span class="bc-current" id="bcCurrent">—</span><div class="bc-sections" id="bcDots"></div></nav>
-  <div class="search-overlay" id="searchOverlay" role="dialog" aria-label="Recherche globale"><div class="search-modal"><div class="search-input-wrap"><i class="fas fa-search"></i><input class="search-input" id="searchInput" type="text" placeholder="Rechercher sur EnerTchad Aval…" autocomplete="off" spellcheck="false"/><span class="search-kbd">ESC</span></div><div class="search-results" id="searchResults"></div><div class="search-footer"><span><kbd>↑</kbd><kbd>↓</kbd> naviguer</span><span><kbd>↵</kbd> ouvrir</span><span><kbd>Ctrl</kbd>+<kbd>K</kbd> recherche</span></div></div></div>
   <!-- ═══ CHAT WIDGET ═══ -->
   <button aria-label="Ouvrir le chat en direct" class="chat-btn" id="chatToggle">
    <i class="fas fa-comment-dots">
@@ -6931,6 +6930,5 @@ window.showToast=function(msg,type,ms){
 /* GSAP animations */
 (function(){if(typeof gsap==='undefined'||typeof ScrollTrigger==='undefined')return;if(window.matchMedia('(prefers-reduced-motion:reduce)').matches)return;gsap.registerPlugin(ScrollTrigger);gsap.utils.toArray('h2,.card,[data-r]').forEach(function(el){gsap.from(el,{y:40,opacity:0,duration:0.8,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 85%',toggleActions:'play none none none'}})})})();
   </script>
-<button class="scroll-top" id="scrollTop" aria-label="Retour en haut"><i class="fas fa-chevron-up"></i></button>
  </body>
 </html>

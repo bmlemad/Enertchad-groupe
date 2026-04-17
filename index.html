@@ -668,6 +668,7 @@
     <div class="ticker-item"><span class="ticker-symbol">EUR/XAF</span> <span class="ticker-price">655.96</span> <span class="ticker-change positive">+0.1%</span></div>
     <div class="ticker-sep">•</div>
     <div class="ticker-item"><span class="ticker-symbol">GAZ NAT</span> <span class="ticker-price">$2.18/MMBtu</span> <span class="ticker-change negative">-1.2%</span></div>
+    <div class="ticker-sep">•</div>
     <!-- Duplicate for seamless scroll -->
     <div class="ticker-item"><span class="ticker-symbol">ENRT</span> <span class="ticker-price">2 450 XAF</span> <span class="ticker-change positive">+1.8%</span></div>
     <div class="ticker-sep">•</div>
@@ -2945,6 +2946,8 @@ window.addEventListener('pagehide',function(){ids.forEach(clearInterval);ids=[]}
     navItems.forEach(function(ni){ni.classList.remove('open')});
     if(overlay) overlay.classList.remove('active');
     document.body.style.overflow='';
+    document.querySelectorAll('.mega-search input').forEach(function(i){i.value=''});
+    document.querySelectorAll('.mega-link').forEach(function(l){l.style.display=''});
   }
 
   navItems.forEach(function(ni){
@@ -2980,6 +2983,7 @@ window.addEventListener('pagehide',function(){ids.forEach(clearInterval);ids=[]}
 
     /* Tab switching on hover (desktop) and click */
     var tabs=drop.querySelectorAll('.mega-tab');
+    var hoverTimer=null;
     tabs.forEach(function(tab){
       function activate(){
         var target=tab.getAttribute('data-tab');
@@ -2990,7 +2994,8 @@ window.addEventListener('pagehide',function(){ids.forEach(clearInterval);ids=[]}
           p.classList.toggle('active',p.getAttribute('data-panel')===target);
         });
       }
-      tab.addEventListener('mouseenter',activate);
+      tab.addEventListener('mouseenter',function(){clearTimeout(hoverTimer);hoverTimer=setTimeout(activate,200)});
+      tab.addEventListener('mouseleave',function(){clearTimeout(hoverTimer)});
       tab.addEventListener('click',activate);
       /* Keyboard: Enter/Space */
       tab.addEventListener('keydown',function(e){
@@ -3020,10 +3025,18 @@ window.addEventListener('pagehide',function(){ids.forEach(clearInterval);ids=[]}
     if(searchInput){
       searchInput.addEventListener('input',function(){
         var q=this.value.toLowerCase().trim();
-        drop.querySelectorAll('.mega-link').forEach(function(link){
+        var links=drop.querySelectorAll('.mega-link');
+        links.forEach(function(link){
           var text=(link.textContent||'').toLowerCase();
           link.style.display=(!q||text.indexOf(q)!==-1)?'':'none';
         });
+        var visible=0;
+        links.forEach(function(l){if(l.style.display!=='none')visible++});
+        var noRes=drop.querySelector('.mega-no-results');
+        if(!visible){
+          if(!noRes){noRes=document.createElement('p');noRes.className='mega-no-results';noRes.style.cssText='text-align:center;color:var(--text-muted);font-size:0.82rem;padding:2rem 1rem';noRes.textContent='Aucun résultat';var gridContainer=drop.querySelector('.mega-grid,.mega-grid--3,.mega-grid--1');if(gridContainer)gridContainer.appendChild(noRes)}
+          if(noRes)noRes.style.display='block';
+        } else if(noRes){noRes.style.display='none'}
       });
     }
   });

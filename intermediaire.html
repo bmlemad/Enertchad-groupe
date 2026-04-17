@@ -3881,9 +3881,6 @@ var ENERTCHAD={groupe:'/',amont:'/amont',midstream:'/intermediaire',aval:'/aval'
     </div>
    </div>
   </footer>
-  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
-  <nav class="breadcrumb-bar" id="breadcrumbBar" aria-label="Fil d'Ariane"><a href="#hero" class="bc-home"><i class="fas fa-home"></i> Accueil</a><i class="fas fa-chevron-right bc-sep"></i><span class="bc-current" id="bcCurrent">—</span><div class="bc-sections" id="bcDots"></div></nav>
-  <div class="search-overlay" id="searchOverlay" role="dialog" aria-label="Recherche globale"><div class="search-modal"><div class="search-input-wrap"><i class="fas fa-search"></i><input class="search-input" id="searchInput" type="text" placeholder="Rechercher sur EnerTchad Midstream…" autocomplete="off" spellcheck="false"/><span class="search-kbd">ESC</span></div><div class="search-results" id="searchResults"></div><div class="search-footer"><span><kbd>↑</kbd><kbd>↓</kbd> naviguer</span><span><kbd>↵</kbd> ouvrir</span><span><kbd>Ctrl</kbd>+<kbd>K</kbd> recherche</span></div></div></div>
   <!-- ═══ DOT NAV ═══ -->
   <nav aria-label="Navigation rapide par section" class="dot-nav" id="dotNav">
    <div class="dot-nav-progress" id="dotNavProgress">
@@ -5693,6 +5690,5 @@ window.showToast=function(msg,type,ms){
 /* GSAP animations */
 (function(){if(typeof gsap==='undefined'||typeof ScrollTrigger==='undefined')return;if(window.matchMedia('(prefers-reduced-motion:reduce)').matches)return;gsap.registerPlugin(ScrollTrigger);gsap.utils.toArray('h2,.card,[data-r]').forEach(function(el){gsap.from(el,{y:40,opacity:0,duration:0.8,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 85%',toggleActions:'play none none none'}})})})();
   </script>
-<button class="scroll-top" id="scrollTop" aria-label="Retour en haut"><i class="fas fa-chevron-up"></i></button>
  </body>
 </html>
