@@ -1136,6 +1136,33 @@ html{scrollbar-width:thin;scrollbar-color:var(--gold) var(--bg)}
 .toast.error{background:linear-gradient(135deg,#DC2626,#EF4444)}
 .toast.hide{animation:toastOut 0.3s ease forwards}
 
+/* ═══ WCAG 2.1 AA — Touch Targets 44px ═══ */
+button, .btn, .btn-premium, .nav-cta, .mn-cta,
+a.social-icon, .mega-link, .mega-spotlight-cta,
+.tab-btn, .filter-btn, .card-3d a,
+input[type="submit"], input[type="button"],
+.footer-bottom a, .skip-link {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Touch-friendly spacing for inline links in lists */
+nav a, .footer-links a, .mega-nav a {
+  padding-block: 8px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Social icons — ensure 44px circle */
+.social-icon {
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* ═══ SMOOTH SCROLL BEHAVIOR ═══ */
 @media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
 @media(prefers-reduced-motion:reduce){.reveal,.reveal-left,.reveal-right,.reveal-scale{opacity:1;transform:none;transition:none}

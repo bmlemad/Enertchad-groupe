@@ -62,10 +62,10 @@
   <noscript>
    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&amp;family=Space+Grotesk:wght@400..700&amp;display=swap" rel="stylesheet"/>
   </noscript>
-  <link as="style" crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="preload"/>
-  <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+  <link as="style" crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" rel="preload"/>
+  <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" media="print" onload="this.media='all'" rel="stylesheet"/>
   <noscript>
-   <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
+   <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" rel="stylesheet"/>
   </noscript>
   <link as="style" href="/css/main.v1.css" rel="preload"/>
   <link href="/css/main.v1.css" rel="stylesheet"/>
@@ -141,16 +141,8 @@
 (function(){try{var t=localStorage.getItem('enertchad-theme');var p=window.matchMedia&&window.matchMedia('(prefers-color-scheme:light)').matches;if(t==='light'||(t!=='dark'&&p))document.documentElement.classList.add('light-theme')}catch(e){}})()
   </script>
   <!-- ═══ ANALYTICS — Add your tracking IDs ═══ -->
-  <!-- Google Analytics 4 (uncomment + replace G-XXXXXX):
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXX"></script>
-<script>
-  window.dataLayer=window.dataLayer||[];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js',new Date());gtag('config','G-XXXXXX',{anonymize_ip:true});
-</script>
--->
   <!-- Plausible (uncomment + replace domain):
-<script defer data-domain="enertchad-midstream-vercel-app.vercel.app" src="https://plausible.io/js/script.outbound-links.js"></script>
+<script defer data-domain="enertchad-groupe.vercel.app" src="https://plausible.io/js/script.js"></script>
 -->
   <script>
    window.addEventListener('cookie-consent',function(e){
@@ -160,10 +152,11 @@
   }
 });
   </script>
-  <script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js">
+  <script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" integrity="sha512-dLxUelApnYxpLt6K2iomGngnHO83iUvZytA3YjDUCjT0HDOHKXnVYdf3hU4JjM8uEhxf9nD1/ey98U3t2vZ0qQ==" crossorigin="anonymous">
   </script>
  </head>
  <body class="preloader-active">
+  <a href="#main-content" class="skip-link">Aller au contenu principal</a>
   <div class="scroll-progress" id="scrollProgress">
   </div>
   <!-- ═══ PRELOADER / SPLASH ═══ -->
@@ -182,7 +175,7 @@ var ENERTCHAD={groupe:'/',amont:'/amont',midstream:'/intermediaire',aval:'/aval'
     </div>
     <div aria-hidden="true" class="preloader-ring">
     </div>
-    <img alt="EnerTchad" class="preloader-logo" decoding="async" fetchpriority="high" height="380" src="logo.svg" width="380"/>
+    <img alt="EnerTchad" class="preloader-logo" decoding="async" fetchpriority="high" height="380" src="logo.svg" width="380" loading="lazy"/>
     <div aria-hidden="true" class="preloader-sheen">
     </div>
    </div>
@@ -404,7 +397,7 @@ var ENERTCHAD={groupe:'/',amont:'/amont',midstream:'/intermediaire',aval:'/aval'
   <header class="header" id="siteHeader">
    <div class="ctn">
     <a aria-label="EnerTchad Intermédiaire — Accueil" class="logo" href="#hero">
-     <img alt="EnerTchad" height="40" src="logo.svg" width="40"/>
+     <img alt="EnerTchad" height="40" src="logo.svg" width="40" loading="lazy"/>
      <div class="logo-text">
       EnerTchad
       <span>
@@ -738,15 +731,11 @@ var ENERTCHAD={groupe:'/',amont:'/amont',midstream:'/intermediaire',aval:'/aval'
     </ol>
    </div>
   </nav>
-  <!-- ═══ BREADCRUMB JSON-LD ═══ -->
-  <script type="application/ld+json">
-   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Groupe EnerTchad","item":"https://enertchad-groupe.vercel.app"},{"@type":"ListItem","position":2,"name":"EnerTchad Midstream","item":"https://enertchad-groupe.vercel.app/intermediaire"}]}
-  </script>
   <!-- ═══ MOBILE NAV ═══ -->
   <nav aria-hidden="true" aria-label="Menu mobile" class="mobile-nav" id="mobileNav">
    <div class="mobile-nav-header">
     <a class="logo" href="#hero">
-     <img alt="EnerTchad" height="40" src="logo.svg" width="40"/>
+     <img alt="EnerTchad" height="40" src="logo.svg" width="40" loading="lazy"/>
      <div class="logo-text">
       EnerTchad
       <span>
@@ -3539,8 +3528,7 @@ var ENERTCHAD={groupe:'/',amont:'/amont',midstream:'/intermediaire',aval:'/aval'
         </div>
        </div>
       </div>
-      <!-- Replace MIDSTREAM_FORM_ID with real Formspree ID from formspree.io -->
-      <form action="https://formspree.io/f/MIDSTREAM_FORM_ID" class="contact-form" data-r="" id="contactForm" method="POST">
+      <form action="https://formspree.io/f/xanwkpqz" class="contact-form" data-r="" id="contactForm" method="POST">
        <input autocomplete="off" name="_gotcha" style="display:none" tabindex="-1" type="text"/>
        <input name="_subject" type="hidden" value="EnerTchad Intermédiaire — Nouvelle demande"/>
        <p class="form-required-help">
@@ -3706,7 +3694,7 @@ var ENERTCHAD={groupe:'/',amont:'/amont',midstream:'/intermediaire',aval:'/aval'
      <!-- Column 1: Logo + Brand -->
      <div>
       <div class="flex-center-sm-mb">
-       <img alt="EnerTchad" class="rounded-full" height="40" src="logo.svg" width="40"/>
+       <img alt="EnerTchad" class="rounded-full" height="40" src="logo.svg" width="40" loading="lazy"/>
        <strong class="util-52">
         EnerTchad
         <br/>
@@ -3838,8 +3826,8 @@ var ENERTCHAD={groupe:'/',amont:'/amont',midstream:'/intermediaire',aval:'/aval'
        Recevez les dernières actualités d'EnerTchad Intermédiaire.
       </p>
      </div>
-     <!-- Replace MIDSTREAM_NEWSLETTER_ID with real Formspree ID from formspree.io -->
-     <form action="https://formspree.io/f/MIDSTREAM_NEWSLETTER_ID" class="ftr-newsletter-form" id="newsletterForm" method="POST">
+     <!-- TODO: Replace NEWSLETTER_FORM_ID with real Formspree ID -->
+     <form action="https://formspree.io/f/NEWSLETTER_FORM_ID" class="ftr-newsletter-form" id="newsletterForm" method="POST">
       <input autocomplete="off" name="_gotcha" style="display:none" tabindex="-1" type="text"/>
       <input name="_subject" type="hidden" value="Newsletter signup — EnerTchad Intermédiaire"/>
       <input aria-label="Adresse email pour newsletter" class="ftr-nl-input" name="email" placeholder="votre@email.com" required="" type="email"/>

@@ -28,6 +28,7 @@
   <meta content="EnerTchad Énergies — Électrifier le Tchad" name="twitter:title"/>
   <meta content="Centrales gaz, solaire hybride, micro-grids — énergie souveraine." name="twitter:description"/>
   <meta content="@EnerTchad" name="twitter:site"/>
+  <meta name="twitter:image" content="https://enertchad-groupe.vercel.app/images/og-energies.jpg">
   <!-- JSON-LD -->
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","name":"EnerTchad Énergies","url":"https://enertchad-groupe.vercel.app/energies","description":"Filiale énergie du groupe EnerTchad — production électrique, solaire hybride, micro-grids, stockage.","address":{"@type":"PostalAddress","streetAddress":"Radisson, Block D, Bureau 23, Sabangali","addressLocality":"N'Djamena","addressCountry":"TD"},"telephone":"+235-99-29-86-96","email":"energies@enertchad.td","sameAs":["https://www.linkedin.com/company/enertchad"],"areaServed":{"@type":"Country","name":"Tchad"},"foundingDate":"2026","parentOrganization":{"@type":"Organization","name":"EnerTchad","url":"https://enertchad-groupe.vercel.app"},"hasOfferCatalog":{"@type":"OfferCatalog","name":"Solutions Énergétiques","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Centrales Gaz & Cogénération"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Solaire Hybride & PV"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Micro-Grids & Électrification Rurale"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Stockage Batterie (BESS)"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Bornes IRVE & E-Mobilité"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Distribution Électrique B2B"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Smart Grid & Gestion de Réseau"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Hydrogène Vert"}}]}}
@@ -55,9 +56,10 @@
   <link as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Space+Grotesk:wght@400..700&display=swap" rel="preload"/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Space+Grotesk:wght@400..700&display=swap" media="print" onload="this.media='all'" rel="stylesheet"/>
   <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Space+Grotesk:wght@400..700&display=swap" rel="stylesheet"/></noscript>
-  <link as="style" crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="preload"/>
-  <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'" rel="stylesheet"/>
-  <noscript><link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/></noscript>
+  <link as="style" crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" rel="preload"/>
+  <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" media="print" onload="this.media='all'" rel="stylesheet"/>
+  <noscript><link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" rel="stylesheet"/></noscript>
+  <link rel="stylesheet" href="/css/main.v1.css">
 <style>
 /* ═══════════════════════════════════════════════════════════════
    EnerTchad Énergies — Production & Distribution Électrique
@@ -453,9 +455,10 @@ html{scrollbar-width:thin;scrollbar-color:#10B981 #080E1A}
 .social-icon:hover{transform:translateY(-3px) scale(1.15);filter:drop-shadow(0 4px 12px rgba(16,185,129,0.3))}
 @media(prefers-reduced-motion:reduce){.reveal,.reveal-left,.reveal-scale{opacity:1;transform:none;transition:none}}
 </style>
-    <script defer data-domain="enertchad-energies.vercel.app" src="https://plausible.io/js/script.js"></script>
+    <script defer data-domain="enertchad-groupe.vercel.app" src="https://plausible.io/js/script.js"></script>
 </head>
 <body>
+<a href="#main-content" class="skip-link">Aller au contenu principal</a>
 <a class="skip-nav" href="#solutions">Aller au contenu principal</a>
 <div class="scroll-prog" id="scrollProg"></div>
 
@@ -637,6 +640,7 @@ html{scrollbar-width:thin;scrollbar-color:#10B981 #080E1A}
 </div>
 
 <!-- ═══ HERO ═══ -->
+<main id="main-content">
 <section class="hero" id="hero">
   <canvas id="heroCanvas" aria-hidden="true" role="presentation"></canvas>
   <div class="hero-content">
@@ -811,6 +815,7 @@ html{scrollbar-width:thin;scrollbar-color:#10B981 #080E1A}
     </form>
   </div>
 </section>
+</main>
 
 <!-- ═══ FOOTER ═══ -->
 <footer class="footer">

@@ -27,6 +27,7 @@
   <meta content="summary_large_image" name="twitter:card"/>
   <meta content="EnerTchad — Groupe Pétrolier & Gazier Souverain" name="twitter:title"/>
   <meta content="De l'exploration à la pompe — un acteur tchadien intégré." name="twitter:description"/>
+  <meta name="twitter:image" content="https://enertchad-groupe.vercel.app/images/og-enertchad.jpg"/>
   <meta content="@EnerTchad" name="twitter:site"/>
   <!-- JSON-LD -->
   <script type="application/ld+json">
@@ -59,9 +60,9 @@
   <link as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Space+Grotesk:wght@400..700&display=swap" rel="preload"/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Space+Grotesk:wght@400..700&display=swap" media="print" onload="this.media='all'" rel="stylesheet"/>
   <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Space+Grotesk:wght@400..700&display=swap" rel="stylesheet"/></noscript>
-  <link as="style" crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="preload"/>
-  <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'" rel="stylesheet"/>
-  <noscript><link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/></noscript>
+  <link as="style" crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" rel="preload"/>
+  <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" media="print" onload="this.media='all'" rel="stylesheet"/>
+  <noscript><link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" rel="stylesheet"/></noscript>
   <link as="style" href="/css/main.v1.css" rel="preload"/>
   <link href="/css/main.v1.css" rel="stylesheet"/>
   <script defer data-domain="enertchad-groupe.vercel.app" src="https://plausible.io/js/script.js"></script>
@@ -74,7 +75,7 @@
 <!-- ════════════════════ HEADER ════════════════════ -->
 <header class="header" role="banner">
   <a class="logo-wrap" href="/" aria-label="EnerTchad Groupe — Accueil">
-    <img src="logo.svg" alt="EnerTchad" width="42" height="42"/>
+    <img src="logo.svg" alt="EnerTchad" width="42" height="42" loading="lazy"/>
     <div class="logo-text">EnerTchad<span>Accès aux Énergies</span></div>
   </a>
   <nav class="header-nav" aria-label="Navigation principale">
@@ -346,7 +347,7 @@
                   <div class="mega-spotlight">
                     <div class="mega-spotlight-title"><i class="fas fa-rocket"></i> Innovation Lab</div>
                     <div class="mega-spotlight-body">18 solutions digitales déployées. IA prédictive, Digital Twin, SCADA nouvelle génération — la technologie au service de l'énergie.</div>
-                    <a href="/technologies" target="_blank" rel="noopener" class="mega-spotlight-cta"><span>Explorer EnerTech</span> <i class="fas fa-arrow-right"></i></a>
+                    <a href="/technologies" class="mega-spotlight-cta"><span>Explorer EnerTech</span> <i class="fas fa-arrow-right"></i></a>
                   </div>
                 </div>
               </div>
@@ -371,7 +372,7 @@
         </div>
         <div class="mega-footer">
           <div class="mega-quick">
-            <a href="/technologies" target="_blank"><i class="fas fa-microchip"></i> Technologies</a>
+            <a href="/technologies"><i class="fas fa-microchip"></i> Technologies</a>
             <a href="#enertech"><i class="fas fa-cubes"></i> EnerTech</a>
             <a href="#dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
           </div>
@@ -1273,7 +1274,7 @@
           <li><i class="fas fa-chevron-right"></i> <span data-i18n data-en="Geoscience — seismic processing & interpretation">Géosciences — traitement & interprétation sismique</span></li>
           <li><i class="fas fa-chevron-right"></i> <span data-i18n data-en="Digital oilfield & real-time surveillance">Champ numérique & surveillance temps réel</span></li>
         </ul>
-        <a class="et-pillar-link" href="/amont#enertech" target="_blank" data-i18n data-en="Explore Amont EnerTech →">Explorer EnerTech Amont →</a>
+        <a class="et-pillar-link" href="/amont#enertech" data-i18n data-en="Explore Amont EnerTech →">Explorer EnerTech Amont →</a>
       </div>
 
       <!-- MIDSTREAM -->
@@ -1290,7 +1291,7 @@
           <li><i class="fas fa-chevron-right"></i> <span data-i18n data-en="Fiber optic sensing & leak detection">Détection fuites & capteurs fibre optique</span></li>
           <li><i class="fas fa-chevron-right"></i> <span data-i18n data-en="Digital twin modeling & predictive maintenance">Jumeaux numériques & maintenance prédictive</span></li>
         </ul>
-        <a class="et-pillar-link" href="/intermediaire#enertech" target="_blank" data-i18n data-en="Explore Midstream EnerTech →">Explorer EnerTech Intermédiaire →</a>
+        <a class="et-pillar-link" href="/intermediaire#enertech" data-i18n data-en="Explore Midstream EnerTech →">Explorer EnerTech Intermédiaire →</a>
       </div>
 
       <!-- AVAL -->
@@ -1307,7 +1308,7 @@
           <li><i class="fas fa-chevron-right"></i> <span data-i18n data-en="Data analytics — 50K+ client insights">Data analytics — 50K+ insights clients</span></li>
           <li><i class="fas fa-chevron-right"></i> <span data-i18n data-en="Energy transition — 8 solar hybrid stations">Transition énergétique — 8 stations solaires hybrides</span></li>
         </ul>
-        <a class="et-pillar-link" href="/aval#enertech" target="_blank" data-i18n data-en="Explore Aval EnerTech →">Explorer EnerTech Aval →</a>
+        <a class="et-pillar-link" href="/aval#enertech" data-i18n data-en="Explore Aval EnerTech →">Explorer EnerTech Aval →</a>
       </div>
     </div>
 
@@ -2075,7 +2076,8 @@
       <h2 class="section-title" data-i18n data-en="Stay informed">Restez informé</h2>
       <p class="section-desc" data-i18n data-en="Monthly updates on group news, operations and career opportunities.">Actualités du groupe, opérations et opportunités de carrière — une fois par mois.</p>
     </div>
-    <form class="nl-bar" data-r action="https://formspree.io/f/YOUR_NEWSLETTER_FORM_ID" method="POST" aria-label="Inscription newsletter">
+    <!-- TODO: Replace NEWSLETTER_FORM_ID with real Formspree ID -->
+    <form class="nl-bar" data-r action="https://formspree.io/f/NEWSLETTER_FORM_ID" method="POST" aria-label="Inscription newsletter">
       <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off"/>
       <input type="email" name="email" required placeholder="votre@email.com" aria-label="Adresse e-mail"/>
       <button type="submit" data-i18n data-en="Subscribe"><i class="fas fa-paper-plane" style="margin-right:0.4rem"></i>S'inscrire</button>
@@ -2156,7 +2158,7 @@
           <span><i class="fas fa-weight-hanging"></i> 8.2 MB</span>
           <span><i class="fas fa-download"></i> FR / EN</span>
         </div>
-        <a class="media-dl" href="rapport-annuel-2026.pdf" target="_blank"><i class="fas fa-download"></i> <span data-i18n data-en="Download PDF">Télécharger PDF</span> →</a>
+        <a class="media-dl" href="rapport-annuel-2026.pdf" target="_blank" rel="noopener noreferrer"><i class="fas fa-download"></i> <span data-i18n data-en="Download PDF">Télécharger PDF</span> →</a>
       </div>
 
       <div class="media-card" data-type="pdf">
@@ -2291,7 +2293,7 @@
           </div>
         </div>
       </div>
-      <form class="contact-form" action="https://formspree.io/f/YOUR_CONTACT_FORM_ID" method="POST" aria-label="Formulaire de contact">
+      <form class="contact-form" action="https://formspree.io/f/xanwkpqz" method="POST" aria-label="Formulaire de contact">
         <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off"/>
         <div class="form-row">
           <div class="form-group">
@@ -2335,7 +2337,7 @@
   <div class="ctn">
     <div class="footer-top">
       <div class="footer-brand">
-        <img src="logo.svg" alt="EnerTchad" width="36" height="36"/>
+        <img src="logo.svg" alt="EnerTchad" width="36" height="36" loading="lazy"/>
         <p>EnerTchad — Accès aux Énergies. Unité · Innovation · Durabilité. De l'exploration à la pompe, une vision souveraine au cœur de l'Afrique Centrale.</p>
         <div class="footer-social">
           <a href="https://linkedin.com/company/enertchad" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
@@ -2353,10 +2355,10 @@
       <div class="footer-links">
         <div class="footer-col">
           <h4>Filiales</h4>
-          <a href="/amont" target="_blank" rel="noopener">Amont — E&P</a>
-          <a href="/intermediaire" target="_blank" rel="noopener">Intermédiaire — Transport</a>
-          <a href="/aval" target="_blank" rel="noopener">Aval — Distribution</a>
-          <a href="/#petrochimie" target="_blank" rel="noopener">Pétrochimie — Chimie</a>
+          <a href="/amont">Amont — E&P</a>
+          <a href="/intermediaire">Intermédiaire — Transport</a>
+          <a href="/aval">Aval — Distribution</a>
+          <a href="/#petrochimie">Pétrochimie — Chimie</a>
         </div>
         <div class="footer-col">
           <h4>Groupe</h4>
