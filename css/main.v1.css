@@ -190,6 +190,8 @@ body::before{content:'';position:fixed;inset:0;z-index:9990;pointer-events:none;
 
 /* ── Body: Tabs left + Content right ── */
 .mega-body{display:grid;grid-template-columns:240px 1px 1fr;max-width:1320px;margin:0 auto;min-height:380px}
+/* Single-panel menus (no tabs): content spans full width */
+.mega-body > .mega-content:only-child{grid-column:1/-1}
 .mega-tabs{padding:1.25rem 0.75rem;display:flex;flex-direction:column;gap:0.25rem}
 .mega-tab{display:flex;align-items:center;gap:0.75rem;padding:0.7rem 1rem;border-radius:10px;cursor:pointer;
   transition:all 0.25s cubic-bezier(0.22,0.61,0.36,1);border:1px solid transparent;position:relative}
