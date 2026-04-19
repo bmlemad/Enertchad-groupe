@@ -912,8 +912,13 @@ var ENERTCHAD = {
 
     // Intercept internal links for smooth transitions
     document.addEventListener('click', function (e) {
+      // Skip if mega menu handler already handled this click
+      if (e.defaultPrevented) return;
+      // Skip links inside mega-drop panels (they have their own navigation)
       var link = e.target.closest('a[href]');
       if (!link) return;
+      // Skip if this link is inside a [data-mega] nav-item (mega menu trigger)
+      if (link.closest('[data-mega]') && !link.closest('.mega-drop')) return;
       var href = link.getAttribute('href');
       if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') ||
           href.startsWith('http') || link.hasAttribute('download') || link.target === '_blank') return;
