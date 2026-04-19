@@ -144,6 +144,9 @@
     if (path.match(/\/(services|operations|groupe|distribution)\//)) depth = 1;
     var prefix = depth ? '../' : '';
 
+    // Skip if enhance.js already created a search overlay
+    if (document.querySelector('.search-overlay .search-modal')) return;
+
     // Build overlay HTML
     var overlay = document.createElement('div');
     overlay.className = 'search-overlay';
