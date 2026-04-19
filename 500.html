@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr" class="no-js">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>500 — Erreur serveur | EnerTchad Groupe</title>
+  <meta name="theme-color" content="#080E1A"/>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+  <style>
+    :root{--bg:#080E1A;--gold:#D9A84F;--white:#E2E8F0;--text-sec:#94A3B8;--red:#E11D48;--font-d:'Space Grotesk',system-ui,sans-serif;--font-b:'Inter',system-ui,sans-serif}
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--bg);color:var(--white);font-family:var(--font-b);text-align:center;padding:2rem}
+    .error-code{font-family:var(--font-d);font-size:clamp(6rem,15vw,12rem);font-weight:800;color:rgba(225,29,72,0.12);line-height:1;letter-spacing:-0.04em;position:relative}
+    .error-code::after{content:'500';position:absolute;inset:0;background:linear-gradient(180deg,var(--red) 0%,rgba(225,29,72,0.3) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    h1{font-family:var(--font-d);font-size:1.5rem;font-weight:600;margin:1.5rem 0 0.75rem;color:var(--white)}
+    p{color:var(--text-sec);max-width:420px;line-height:1.7;margin-bottom:2rem;font-size:0.95rem}
+    .actions{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
+    a{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:999px;font-size:0.88rem;font-weight:600;text-decoration:none;transition:all 0.35s cubic-bezier(0.22,0.61,0.36,1)}
+    .btn-primary{background:var(--gold);color:var(--bg)}
+    .btn-primary:hover{background:#e8c36a;transform:translateY(-2px);box-shadow:0 8px 30px rgba(217,168,79,0.25)}
+    .btn-secondary{background:rgba(255,255,255,0.06);color:var(--white);border:1px solid rgba(255,255,255,0.1)}
+    .btn-secondary:hover{background:rgba(255,255,255,0.1);transform:translateY(-2px)}
+    .logo{width:140px;margin-bottom:2rem;opacity:0.7}
+    .gauge{margin:2rem 0}
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;800&family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
+<link rel="canonical" href="https://www.enertchad.td/500"/>
+</head>
+<body>
+  <img src="/logo-enertchad.svg" alt="EnerTchad" class="logo" loading="eager" decoding="async"/>
+  <svg class="gauge" width="100" height="80" viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <!-- Pressure gauge showing critical -->
+    <path d="M15 65 A40 40 0 0 1 85 65" stroke="rgba(225,29,72,0.2)" stroke-width="6" stroke-linecap="round" fill="none"/>
+    <path d="M15 65 A40 40 0 0 1 50 25" stroke="rgba(225,29,72,0.15)" stroke-width="6" stroke-linecap="round" fill="none"/>
+    <path d="M50 25 A40 40 0 0 1 85 65" stroke="#E11D48" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.6">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="1.5s" repeatCount="indefinite"/>
+    </path>
+    <!-- Needle pointing to danger zone -->
+    <line x1="50" y1="65" x2="75" y2="35" stroke="#E11D48" stroke-width="2.5" stroke-linecap="round">
+      <animateTransform attributeName="transform" type="rotate" values="-5 50 65;5 50 65;-5 50 65" dur="2s" repeatCount="indefinite"/>
+    </line>
+    <circle cx="50" cy="65" r="4" fill="#E11D48" opacity="0.4"/>
+    <circle cx="50" cy="65" r="2" fill="#E11D48"/>
+    <!-- Warning marks -->
+    <text x="18" y="75" font-size="7" fill="rgba(225,29,72,0.4)" font-family="monospace">MIN</text>
+    <text x="72" y="75" font-size="7" fill="rgba(225,29,72,0.6)" font-family="monospace">MAX</text>
+  </svg>
+  <div class="error-code">500</div>
+  <h1>Surpression — erreur serveur</h1>
+  <p>Nos équipes techniques ont été alertées. La pression est trop forte sur nos serveurs — nous travaillons à rétablir le service.</p>
+  <div class="actions">
+    <a href="/" class="btn-primary"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1L1 7h3v7h3v-4h2v4h3V7h3L8 1z"/></svg> Retour à l'accueil</a>
+    <a href="contact.html" class="btn-secondary">Signaler le problème</a>
+  </div>
+</body>
+</html>

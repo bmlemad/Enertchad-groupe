@@ -1,29 +1,19 @@
 {
-  "version": 2,
-  "name": "enertchad-groupe",
-  "public": true,
   "cleanUrls": true,
+  "trailingSlash": false,
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
         { "key": "X-Content-Type-Options", "value": "nosniff" },
         { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "X-XSS-Protection", "value": "1; mode=block" },
         { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" },
-        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()" },
-        { "key": "Content-Security-Policy", "value": "default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com https://plausible.io https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://unpkg.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data:; img-src 'self' data: https:; media-src 'self' https:; connect-src 'self' https://formspree.io https://plausible.io; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://formspree.io" }
+        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" }
       ]
     },
     {
-      "source": "/sw.js",
-      "headers": [
-        { "key": "Cache-Control", "value": "no-cache" },
-        { "key": "Service-Worker-Allowed", "value": "/" }
-      ]
-    },
-    {
-      "source": "/(.*\\.svg)",
+      "source": "/images/(.*)",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
       ]
@@ -33,7 +23,67 @@
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
       ]
+    },
+    {
+      "source": "/js/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/(.*).svg",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" },
+        { "key": "Content-Type", "value": "image/svg+xml" }
+      ]
+    },
+    {
+      "source": "/(.*).pdf",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=86400" },
+        { "key": "Content-Disposition", "value": "inline" }
+      ]
+    },
+    {
+      "source": "/sw.js",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" },
+        { "key": "Service-Worker-Allowed", "value": "/" }
+      ]
+    },
+    {
+      "source": "/manifest.json",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=86400" },
+        { "key": "Content-Type", "value": "application/manifest+json" }
+      ]
     }
   ],
-  "trailingSlash": false
+  "redirects": [
+    { "source": "/home", "destination": "/", "statusCode": 301 },
+    { "source": "/accueil", "destination": "/", "statusCode": 301 },
+    { "source": "/a-propos", "destination": "/groupe/", "statusCode": 301 },
+    { "source": "/about", "destination": "/groupe/", "statusCode": 301 },
+    { "source": "/news", "destination": "/actualites", "statusCode": 301 },
+    { "source": "/careers", "destination": "/talents", "statusCode": 301 },
+    { "source": "/sustainability", "destination": "/durabilite", "statusCode": 301 },
+    { "source": "/upstream", "destination": "/operations/amont", "statusCode": 301 },
+    { "source": "/midstream", "destination": "/operations/intermediaire", "statusCode": 301 },
+    { "source": "/downstream", "destination": "/operations/aval", "statusCode": 301 },
+    { "source": "/well-services", "destination": "/services/well-services", "statusCode": 301 },
+    { "source": "/drilling", "destination": "/services/drilling", "statusCode": 301 },
+    { "source": "/digital", "destination": "/services/digital", "statusCode": 301 },
+    { "source": "/consulting", "destination": "/services/consulting", "statusCode": 301 },
+    { "source": "/negoce", "destination": "/distribution/", "statusCode": 301 },
+    { "source": "/trading", "destination": "/distribution/", "statusCode": 301 },
+    { "source": "/investors", "destination": "/investisseurs", "statusCode": 301 }
+  ],
+  "rewrites": [
+    { "source": "/groupe", "destination": "/groupe/index.html" },
+    { "source": "/distribution", "destination": "/distribution/index.html" }
+  ],
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "status": 404, "dest": "/404.html" }
+  ]
 }

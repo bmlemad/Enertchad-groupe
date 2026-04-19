@@ -1,0 +1,72 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Géosciences et réservoir - Geological layers">
+  <defs>
+    <linearGradient id="grad_op10" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0F2240;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0A1628;stop-opacity:1" />
+    </linearGradient>
+    <pattern id="dots_op10" width="50" height="50" patternUnits="userSpaceOnUse">
+      <circle cx="25" cy="25" r="1" fill="#2E86DE" opacity="0.1"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="450" fill="url(#grad_op10)"/>
+  <rect width="800" height="450" fill="url(#dots_op10)"/>
+  
+  <!-- Geological layers left side -->
+  <g transform="translate(60, 80)">
+    <!-- Layer 1: Surface -->
+    <path d="M 0 0 L 150 0 L 150 35 L 0 35 Z" fill="none" stroke="#C8962E" stroke-width="2" opacity="0.8"/>
+    <line x1="30" y1="0" x2="30" y2="35" stroke="#C8962E" stroke-width="1" opacity="0.4"/>
+    <line x1="60" y1="0" x2="60" y2="35" stroke="#C8962E" stroke-width="1" opacity="0.4"/>
+    <line x1="90" y1="0" x2="90" y2="35" stroke="#C8962E" stroke-width="1" opacity="0.4"/>
+    <line x1="120" y1="0" x2="120" y2="35" stroke="#C8962E" stroke-width="1" opacity="0.4"/>
+    
+    <!-- Layer 2: Shale -->
+    <path d="M 0 40 L 150 40 L 145 75 L 5 75 Z" fill="none" stroke="#2E86DE" stroke-width="2" opacity="0.8"/>
+    <line x1="25" y1="40" x2="20" y2="75" stroke="#2E86DE" stroke-width="1" opacity="0.4"/>
+    <line x1="75" y1="40" x2="70" y2="75" stroke="#2E86DE" stroke-width="1" opacity="0.4"/>
+    <line x1="125" y1="40" x2="120" y2="75" stroke="#2E86DE" stroke-width="1" opacity="0.4"/>
+    
+    <!-- Layer 3: Reservoir -->
+    <path d="M 0 80 L 150 80 L 140 115 L 10 115 Z" fill="none" stroke="#C8962E" stroke-width="2.5" opacity="0.85"/>
+    <line x1="30" y1="80" x2="20" y2="115" stroke="#C8962E" stroke-width="1.5" opacity="0.6"/>
+    <line x1="75" y1="80" x2="65" y2="115" stroke="#C8962E" stroke-width="1.5" opacity="0.6"/>
+    <line x1="120" y1="80" x2="110" y2="115" stroke="#C8962E" stroke-width="1.5" opacity="0.6"/>
+    
+    <!-- Layer 4: Basement -->
+    <path d="M 0 120 L 150 120 L 135 155 L 15 155 Z" fill="none" stroke="#2E86DE" stroke-width="2" opacity="0.7"/>
+  </g>
+  
+  <!-- Seismic waves center -->
+  <g transform="translate(320, 120)">
+    <!-- Source point -->
+    <circle cx="0" cy="0" r="4" fill="#C8962E" opacity="0.9"/>
+    
+    <!-- Wave propagation -->
+    <path d="M 0 0 Q 30 -20 60 0" fill="none" stroke="#2E86DE" stroke-width="2" opacity="0.6"/>
+    <path d="M 0 0 Q 30 20 60 0" fill="none" stroke="#2E86DE" stroke-width="2" opacity="0.6"/>
+    
+    <path d="M 0 0 Q 50 -35 100 0" fill="none" stroke="#C8962E" stroke-width="1.5" opacity="0.5"/>
+    <path d="M 0 0 Q 50 35 100 0" fill="none" stroke="#C8962E" stroke-width="1.5" opacity="0.5"/>
+    
+    <path d="M 0 0 Q 70 -50 140 0" fill="none" stroke="#2E86DE" stroke-width="1" opacity="0.4"/>
+    <path d="M 0 0 Q 70 50 140 0" fill="none" stroke="#2E86DE" stroke-width="1" opacity="0.4"/>
+  </g>
+  
+  <!-- Subsurface cross-section right -->
+  <g transform="translate(550, 100)">
+    <!-- Boundary -->
+    <rect x="0" y="0" width="200" height="150" fill="none" stroke="#2E86DE" stroke-width="2.5" opacity="0.7"/>
+    
+    <!-- Horizons -->
+    <path d="M 0 30 Q 100 20 200 30" fill="none" stroke="#C8962E" stroke-width="1.5" opacity="0.6"/>
+    <path d="M 0 60 Q 100 55 200 60" fill="none" stroke="#2E86DE" stroke-width="1.5" opacity="0.6"/>
+    <path d="M 0 90 Q 100 85 200 90" fill="none" stroke="#C8962E" stroke-width="1.5" opacity="0.5"/>
+    <path d="M 0 120 Q 100 110 200 120" fill="none" stroke="#2E86DE" stroke-width="1.5" opacity="0.5"/>
+    
+    <!-- Fault plane -->
+    <line x1="120" y1="10" x2="90" y2="140" stroke="#C8962E" stroke-width="2" opacity="0.7" stroke-dasharray="4,4"/>
+    
+    <!-- Well -->
+    <line x1="50" y1="0" x2="50" y2="150" stroke="#2E86DE" stroke-width="2" opacity="0.6" stroke-dasharray="3,3"/>
+  </g>
+</svg>

@@ -1,0 +1,62 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Optimisation de la Production - Dashboard">
+  <defs>
+    <radialGradient id="grad_pil1" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" style="stop-color:#112844;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0A1628;stop-opacity:1" />
+    </radialGradient>
+    <pattern id="circles_pil1" width="80" height="80" patternUnits="userSpaceOnUse">
+      <circle cx="40" cy="40" r="38" fill="none" stroke="#C8962E" stroke-width="0.4" opacity="0.06"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="450" fill="url(#grad_pil1)"/>
+  <rect width="800" height="450" fill="url(#circles_pil1)"/>
+
+  <!-- Large production curve chart — center -->
+  <g transform="translate(100, 60)">
+    <!-- Chart frame -->
+    <line x1="0" y1="280" x2="600" y2="280" stroke="#C8962E" stroke-width="2" opacity="0.6"/>
+    <line x1="0" y1="0" x2="0" y2="280" stroke="#C8962E" stroke-width="2" opacity="0.6"/>
+
+    <!-- Y-axis ticks -->
+    <line x1="-8" y1="56" x2="0" y2="56" stroke="#C8962E" stroke-width="1.5" opacity="0.5"/>
+    <line x1="-8" y1="112" x2="0" y2="112" stroke="#C8962E" stroke-width="1.5" opacity="0.5"/>
+    <line x1="-8" y1="168" x2="0" y2="168" stroke="#C8962E" stroke-width="1.5" opacity="0.5"/>
+    <line x1="-8" y1="224" x2="0" y2="224" stroke="#C8962E" stroke-width="1.5" opacity="0.5"/>
+
+    <!-- Horizontal grid -->
+    <line x1="0" y1="56" x2="600" y2="56" stroke="#2E86DE" stroke-width="0.5" opacity="0.15"/>
+    <line x1="0" y1="112" x2="600" y2="112" stroke="#2E86DE" stroke-width="0.5" opacity="0.15"/>
+    <line x1="0" y1="168" x2="600" y2="168" stroke="#2E86DE" stroke-width="0.5" opacity="0.15"/>
+    <line x1="0" y1="224" x2="600" y2="224" stroke="#2E86DE" stroke-width="0.5" opacity="0.15"/>
+
+    <!-- Production decline curve (thick gold) -->
+    <path d="M 0 40 C 80 42 120 60 180 90 C 240 120 300 155 360 185 C 420 210 480 235 540 255 L 600 270"
+          stroke="#C8962E" stroke-width="4" fill="none" opacity="0.85" stroke-linecap="round"/>
+
+    <!-- Optimized recovery curve (blue, above decline) -->
+    <path d="M 0 40 C 80 38 120 45 180 60 C 240 78 300 100 360 130 C 420 160 480 195 540 225 L 600 248"
+          stroke="#2E86DE" stroke-width="3.5" fill="none" opacity="0.8" stroke-linecap="round" stroke-dasharray="8,4"/>
+
+    <!-- Shaded area between curves (gain) -->
+    <path d="M 180 90 C 240 120 300 155 360 185 C 420 210 480 235 540 255 L 600 270
+             L 600 248 L 540 225 C 480 195 420 160 360 130 C 300 100 240 78 180 60 Z"
+          fill="#28A745" opacity="0.08"/>
+
+    <!-- Bar chart overlay — monthly production -->
+    <rect x="30" y="200" width="35" height="80" fill="#C8962E" opacity="0.25"/>
+    <rect x="90" y="175" width="35" height="105" fill="#C8962E" opacity="0.25"/>
+    <rect x="150" y="155" width="35" height="125" fill="#C8962E" opacity="0.3"/>
+    <rect x="210" y="140" width="35" height="140" fill="#2E86DE" opacity="0.25"/>
+    <rect x="270" y="125" width="35" height="155" fill="#2E86DE" opacity="0.3"/>
+    <rect x="330" y="115" width="35" height="165" fill="#2E86DE" opacity="0.3"/>
+    <rect x="390" y="108" width="35" height="172" fill="#28A745" opacity="0.2"/>
+    <rect x="450" y="100" width="35" height="180" fill="#28A745" opacity="0.25"/>
+    <rect x="510" y="95" width="35" height="185" fill="#28A745" opacity="0.3"/>
+  </g>
+
+  <!-- KPI gauges top-right -->
+  <g transform="translate(620, 380)">
+    <text x="0" y="0" font-family="monospace" font-size="11" fill="#28A745" opacity="0.7">+18% EOR</text>
+    <text x="100" y="0" font-family="monospace" font-size="11" fill="#C8962E" opacity="0.7">92% uptime</text>
+  </g>
+</svg>

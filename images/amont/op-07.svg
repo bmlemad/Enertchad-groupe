@@ -1,0 +1,107 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Personnel et détachement - Org chart network">
+  <defs>
+    <linearGradient id="grad_op07" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0A1628;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0F2240;stop-opacity:1" />
+    </linearGradient>
+    <pattern id="dots_op07" width="30" height="30" patternUnits="userSpaceOnUse">
+      <circle cx="15" cy="15" r="1" fill="#C8962E" opacity="0.06"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="450" fill="url(#grad_op07)"/>
+  <rect width="800" height="450" fill="url(#dots_op07)"/>
+
+  <!-- Org chart tree structure — large and centered -->
+
+  <!-- Level 0: Top manager -->
+  <g transform="translate(400, 50)">
+    <circle cx="0" cy="0" r="22" fill="none" stroke="#C8962E" stroke-width="3" opacity="0.85"/>
+    <circle cx="0" cy="-5" r="7" fill="none" stroke="#C8962E" stroke-width="2" opacity="0.7"/>
+    <path d="M -10 10 Q -12 20 0 22 Q 12 20 10 10" fill="none" stroke="#C8962E" stroke-width="2" opacity="0.6"/>
+  </g>
+
+  <!-- Lines from level 0 to level 1 -->
+  <line x1="400" y1="72" x2="400" y2="100" stroke="#C8962E" stroke-width="2" opacity="0.5"/>
+  <line x1="200" y1="100" x2="600" y2="100" stroke="#C8962E" stroke-width="2" opacity="0.5"/>
+  <line x1="200" y1="100" x2="200" y2="120" stroke="#C8962E" stroke-width="2" opacity="0.5"/>
+  <line x1="400" y1="100" x2="400" y2="120" stroke="#C8962E" stroke-width="2" opacity="0.5"/>
+  <line x1="600" y1="100" x2="600" y2="120" stroke="#C8962E" stroke-width="2" opacity="0.5"/>
+
+  <!-- Level 1: 3 managers -->
+  <g transform="translate(200, 140)">
+    <circle cx="0" cy="0" r="18" fill="none" stroke="#2E86DE" stroke-width="2.5" opacity="0.8"/>
+    <circle cx="0" cy="-4" r="6" fill="none" stroke="#2E86DE" stroke-width="1.5" opacity="0.6"/>
+    <path d="M -8 8 Q -10 16 0 18 Q 10 16 8 8" fill="none" stroke="#2E86DE" stroke-width="1.5" opacity="0.5"/>
+  </g>
+  <g transform="translate(400, 140)">
+    <circle cx="0" cy="0" r="18" fill="none" stroke="#2E86DE" stroke-width="2.5" opacity="0.8"/>
+    <circle cx="0" cy="-4" r="6" fill="none" stroke="#2E86DE" stroke-width="1.5" opacity="0.6"/>
+    <path d="M -8 8 Q -10 16 0 18 Q 10 16 8 8" fill="none" stroke="#2E86DE" stroke-width="1.5" opacity="0.5"/>
+  </g>
+  <g transform="translate(600, 140)">
+    <circle cx="0" cy="0" r="18" fill="none" stroke="#2E86DE" stroke-width="2.5" opacity="0.8"/>
+    <circle cx="0" cy="-4" r="6" fill="none" stroke="#2E86DE" stroke-width="1.5" opacity="0.6"/>
+    <path d="M -8 8 Q -10 16 0 18 Q 10 16 8 8" fill="none" stroke="#2E86DE" stroke-width="1.5" opacity="0.5"/>
+  </g>
+
+  <!-- Lines from level 1 to level 2 -->
+  <!-- Left branch -->
+  <line x1="200" y1="158" x2="200" y2="185" stroke="#2E86DE" stroke-width="1.5" opacity="0.4"/>
+  <line x1="120" y1="185" x2="280" y2="185" stroke="#2E86DE" stroke-width="1.5" opacity="0.4"/>
+  <line x1="120" y1="185" x2="120" y2="205" stroke="#2E86DE" stroke-width="1.5" opacity="0.4"/>
+  <line x1="200" y1="185" x2="200" y2="205" stroke="#2E86DE" stroke-width="1.5" opacity="0.4"/>
+  <line x1="280" y1="185" x2="280" y2="205" stroke="#2E86DE" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- Middle branch -->
+  <line x1="400" y1="158" x2="400" y2="185" stroke="#2E86DE" stroke-width="1.5" opacity="0.4"/>
+  <line x1="350" y1="185" x2="450" y2="185" stroke="#2E86DE" stroke-width="1.5" opacity="0.4"/>
+  <line x1="350" y1="185" x2="350" y2="205" stroke="#2E86DE" stroke-width="1.5" opacity="0.4"/>
+  <line x1="450" y1="185" x2="450" y2="205" stroke="#2E86DE" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- Right branch -->
+  <line x1="600" y1="158" x2="600" y2="185" stroke="#2E86DE" stroke-width="1.5" opacity="0.4"/>
+  <line x1="520" y1="185" x2="680" y2="185" stroke="#2E86DE" stroke-width="1.5" opacity="0.4"/>
+  <line x1="520" y1="185" x2="520" y2="205" stroke="#2E86DE" stroke-width="1.5" opacity="0.4"/>
+  <line x1="600" y1="185" x2="600" y2="205" stroke="#2E86DE" stroke-width="1.5" opacity="0.4"/>
+  <line x1="680" y1="185" x2="680" y2="205" stroke="#2E86DE" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- Level 2: team members (small circles) -->
+  <circle cx="120" cy="218" r="12" fill="none" stroke="#C8962E" stroke-width="1.5" opacity="0.6"/>
+  <circle cx="200" cy="218" r="12" fill="none" stroke="#C8962E" stroke-width="1.5" opacity="0.6"/>
+  <circle cx="280" cy="218" r="12" fill="none" stroke="#C8962E" stroke-width="1.5" opacity="0.6"/>
+  <circle cx="350" cy="218" r="12" fill="none" stroke="#C8962E" stroke-width="1.5" opacity="0.6"/>
+  <circle cx="450" cy="218" r="12" fill="none" stroke="#C8962E" stroke-width="1.5" opacity="0.6"/>
+  <circle cx="520" cy="218" r="12" fill="none" stroke="#C8962E" stroke-width="1.5" opacity="0.6"/>
+  <circle cx="600" cy="218" r="12" fill="none" stroke="#C8962E" stroke-width="1.5" opacity="0.6"/>
+  <circle cx="680" cy="218" r="12" fill="none" stroke="#C8962E" stroke-width="1.5" opacity="0.6"/>
+
+  <!-- Deployment arrows — bottom zone -->
+  <defs>
+    <marker id="arr07" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#28A745" opacity="0.7"/>
+    </marker>
+  </defs>
+
+  <!-- World map dots — deployment locations -->
+  <g transform="translate(100, 300)">
+    <text x="0" y="0" font-family="monospace" font-size="11" fill="#C8962E" opacity="0.5">DÉPLOIEMENT</text>
+
+    <!-- Location dots with connecting arcs -->
+    <circle cx="80" cy="60" r="6" fill="#28A745" opacity="0.5"/>
+    <text x="80" y="85" font-family="monospace" font-size="8" fill="#28A745" text-anchor="middle" opacity="0.4">DOBA</text>
+
+    <circle cx="230" cy="50" r="6" fill="#28A745" opacity="0.5"/>
+    <text x="230" y="75" font-family="monospace" font-size="8" fill="#28A745" text-anchor="middle" opacity="0.4">BONGOR</text>
+
+    <circle cx="380" cy="55" r="6" fill="#28A745" opacity="0.5"/>
+    <text x="380" y="80" font-family="monospace" font-size="8" fill="#28A745" text-anchor="middle" opacity="0.4">LARGEAU</text>
+
+    <circle cx="530" cy="45" r="6" fill="#28A745" opacity="0.5"/>
+    <text x="530" y="70" font-family="monospace" font-size="8" fill="#28A745" text-anchor="middle" opacity="0.4">N'DJAMENA</text>
+
+    <!-- Arcs between deployment sites -->
+    <path d="M 86 60 Q 155 30 224 50" stroke="#28A745" stroke-width="1.5" fill="none" opacity="0.3" marker-end="url(#arr07)"/>
+    <path d="M 236 50 Q 305 25 374 55" stroke="#28A745" stroke-width="1.5" fill="none" opacity="0.3" marker-end="url(#arr07)"/>
+    <path d="M 386 55 Q 455 20 524 45" stroke="#28A745" stroke-width="1.5" fill="none" opacity="0.3" marker-end="url(#arr07)"/>
+  </g>
+</svg>

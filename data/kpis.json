@@ -1,0 +1,188 @@
+{
+  "$schema": "https://enertchad.td/schemas/kpis.schema.json",
+  "version": "2026.04.17",
+  "updated_at": "2026-04-17",
+  "source_of_truth": "EnerTchad-Plan-Action-Consolide-2026.docx",
+  "note": "Centralized KPI reference — all pages should read from this file or duplicate with the same values.",
+
+  "production": {
+    "national_2024": {
+      "value": 144,
+      "unit": "kb/j",
+      "label_fr": "Production nationale 2024",
+      "label_en": "National production 2024"
+    },
+    "target_2030": {
+      "value": 250,
+      "unit": "kb/j",
+      "label_fr": "Objectif 2030 (Plan Connexion Tchad)",
+      "label_en": "2030 target (Connexion Tchad Plan)"
+    },
+    "reserves_proven": {
+      "value": 1.5,
+      "unit": "Gbl",
+      "label_fr": "Réserves prouvées (2P)",
+      "label_en": "Proven reserves (2P)"
+    },
+    "record_mt_2023": {
+      "value": 7.4,
+      "unit": "Mt",
+      "label_fr": "Production record 2023 (15 ans)",
+      "label_en": "2023 production record (15-year high)"
+    }
+  },
+
+  "basins": {
+    "count_active": 5,
+    "count_total": 7,
+    "status": "producteurs",
+    "list_active": ["Doba", "Bongor", "Doseo", "Salamat", "Termit"],
+    "list_exploration": ["Erdis", "Largeau"],
+    "label_fr": "5 bassins producteurs",
+    "label_en": "5 producing basins",
+    "note": "Doba = bassin phare (SHT/TPC + Perenco + CGIP), Bongor = CNPCIC (60%)/SHT (40%), Doseo = ERHC Energy (Bloc H), Salamat = SHT/Delonex, Termit = Delonex (100%), Erdis/Lac Tchad = Simba/United Hydro., Largeau = Delonex"
+  },
+
+  "operators": {
+    "count": 8,
+    "status": "majeurs",
+    "list": [
+      "CNPCIC — CNPC International Chad (Chine, 60 % Bongor JV)",
+      "SHT — Société des Hydrocarbures du Tchad (État, 40 % JV + ex-Esso nationalisé)",
+      "TPC — Tchad Petroleum Company (Tchad, ex-Savannah Energy / ex-ExxonMobil consortium Doba)",
+      "Perenco / PetroChad Mangara (France, Badila-Mangara-Krim)",
+      "ERHC Energy (Nigeria/US, Doseo Bloc H)",
+      "Delonex Energy (UK, Termit-Salamat-Largeau, $65M engagés)",
+      "CGIP Energy (Canada, Doba DOC-DOD, farm-in 50 %)",
+      "Simba Energy / United Hydrocarbon (Erdis / Lac Tchad, reconnaissance)"
+    ],
+    "label_fr": "7 opérateurs majeurs",
+    "label_en": "7 major operators",
+    "note": "Liste mise à jour avril 2026. Esso/ExxonMobil cédé (nationalisation SHT + Savannah → TPC). Glencore/PetroChad repris par Perenco. Griffiths Energy absorbé par CNPC (2013). OPIC Africa non renouvelé."
+  },
+
+  "finance": {
+    "revenue_2023_usd": {
+      "value": 1.7,
+      "unit": "Md USD",
+      "yoy_growth_pct": 70,
+      "label_fr": "Revenus pétroliers 2023",
+      "label_en": "Oil revenues 2023"
+    },
+    "ebitda_usd_m": {
+      "value": 240,
+      "margin_pct": 20.2,
+      "label_fr": "EBITDA (marge 20,2 %)",
+      "label_en": "EBITDA (20.2% margin)"
+    },
+    "capex_usd_m": {
+      "value": 180,
+      "year": 2026,
+      "label_fr": "CAPEX 2026",
+      "label_en": "CAPEX 2026"
+    },
+    "revenue_split": {
+      "upstream_pct": 58,
+      "midstream_pct": 22,
+      "downstream_pct": 20
+    }
+  },
+
+  "group": {
+    "subsidiaries_count": 6,
+    "employees": 1240,
+    "headquarters": "N'Djaména, Tchad",
+    "legal_form": "SA/CA (droit OHADA)",
+    "founding_year": 2026,
+    "address": "Cité du 1er Décembre, Radisson Blu, Bloc D, Bureau 23, Quartier Sabangali"
+  },
+
+  "downstream": {
+    "stations_service": 85,
+    "cities_served": 8,
+    "city_names": ["N'Djaména", "Moundou", "Sarh", "Abéché", "Bongor", "Doba", "Pala", "Mongo"],
+    "refinery_djarmaya_kbj": 20,
+    "refinery_djarmaya_kt_per_year": 700,
+    "products": ["Essence", "Gasoil", "Kérosène", "GPL", "Fuel"]
+  },
+
+  "midstream": {
+    "pipeline_doba_kribi_km": 1070,
+    "pipeline_bongor_djermaya_km": 311,
+    "cotco_barrels_m_2024": 33,
+    "cotco_liftings_2024": 29,
+    "depots": 12
+  },
+
+  "esg": {
+    "co2_reduction_pct": 12,
+    "gas_capture_pct": 94,
+    "water_recycled_pct": 94,
+    "local_workforce_pct": 85,
+    "training_hours_yr": 2400,
+    "community_beneficiaries": 15000,
+    "schools_connected": 42,
+    "solar_stations": 8,
+    "hse_consecutive_days": 842,
+    "trir": 0.42,
+    "eiti_member_since": 2007,
+    "contracts_published": 53,
+    "target_netzero": 2050
+  },
+
+  "macro": {
+    "gdp_growth_2024_pct": 3.5,
+    "export_share_pct": 60,
+    "electricity_access_pct": 12,
+    "renewable_target_pct": 30,
+    "electricity_target_pct": 90,
+    "oil_market_size_2025_usd_b": 1.26,
+    "oil_market_size_2032_usd_b": 1.66,
+    "oil_market_cagr_pct": 4.80,
+    "oil_revenue_budget_share_pct": 80,
+    "oil_gdp_share_pct": 40,
+    "recettes_2025_fcfa_mds": 1000,
+    "recettes_2026_fcfa_mds": 780,
+    "recettes_2026_variation_pct": -22
+  },
+
+  "pipeline": {
+    "doba_kribi_km": 1070,
+    "doba_kribi_capacity_kbd": 225,
+    "doba_kribi_diameter_mm": 762,
+    "doba_kribi_commissioned": "2003-07",
+    "doba_kribi_investment_usd_b": 3.7,
+    "doba_kribi_cumulated_barrels_m": 680,
+    "bongor_djermaya_km": 311,
+    "fso_name": "Komé Kribi 1",
+    "fso_dwt": 357000,
+    "fso_storage_bbl_m": 2.4,
+    "fso_offshore_km": 12,
+    "totco_operator": "TOTCO (Tchad)",
+    "cotco_operator": "COTCO (Cameroun)"
+  },
+
+  "refinery": {
+    "name": "SRN Djarmaya",
+    "capacity_kbd": 20,
+    "capacity_target_kbd": 60,
+    "commissioned": "2011-06",
+    "ownership": "CNPC 60% / SHT 40%",
+    "financing_usd_m": 330,
+    "financing_source": "China Eximbank",
+    "output_gasoline_lt_m": 240,
+    "output_diesel_lt_m": 300,
+    "output_lpg_kt": 60,
+    "output_polypropylene_kt": 25,
+    "output_fuel_oil_kt": 40,
+    "kerosene_kt": 20
+  },
+
+  "regulator": {
+    "name": "ARSAT",
+    "full_name": "Autorité de Régulation du Secteur Pétrolier Aval du Tchad",
+    "scope": ["Prix", "Qualité", "Sécurité", "Conformité environnementale"],
+    "latest_directive": "Circulaire n°001/ARSAT/DG/DT/2024 — sécurité et conformité distribution",
+    "diesel_limit_generators_lt": 60
+  }
+}

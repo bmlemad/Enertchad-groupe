@@ -1,0 +1,72 @@
+<svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-3px); } }
+      .float { animation: float 2s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="200" height="150" fill="#080E1A"/>
+
+  <!-- Pipeline crossing landscape -->
+  <g class="float">
+    <!-- Main pipeline -->
+    <line x1="20" y1="70" x2="180" y2="70" stroke="#0EA5E9" stroke-width="4" opacity="0.8" stroke-linecap="round"/>
+
+    <!-- Pipeline inner shading -->
+    <line x1="20" y1="69" x2="180" y2="69" stroke="#0EA5E9" stroke-width="2" opacity="0.4"/>
+
+    <!-- Pipe sections -->
+    <g opacity="0.5">
+      <circle cx="50" cy="70" r="4" fill="#0EA5E9" opacity="0.6"/>
+      <circle cx="100" cy="70" r="4" fill="#0EA5E9" opacity="0.6"/>
+      <circle cx="150" cy="70" r="4" fill="#0EA5E9" opacity="0.6"/>
+    </g>
+  </g>
+
+  <!-- Pipeline brackets/supports -->
+  <g opacity="0.6">
+    <line x1="30" y1="70" x2="30" y2="95" stroke="#0EA5E9" stroke-width="1.5"/>
+    <rect x="25" y="95" width="10" height="4" fill="#0EA5E9" opacity="0.6"/>
+
+    <line x1="100" y1="70" x2="100" y2="95" stroke="#0EA5E9" stroke-width="1.5"/>
+    <rect x="95" y="95" width="10" height="4" fill="#0EA5E9" opacity="0.6"/>
+
+    <line x1="170" y1="70" x2="170" y2="95" stroke="#0EA5E9" stroke-width="1.5"/>
+    <rect x="165" y="95" width="10" height="4" fill="#0EA5E9" opacity="0.6"/>
+  </g>
+
+  <!-- Storage Tanks -->
+  <!-- Tank 1 -->
+  <g opacity="0.7">
+    <circle cx="60" cy="115" r="18" fill="none" stroke="#0EA5E9" stroke-width="1.5"/>
+    <rect x="50" y="130" width="20" height="8" fill="rgba(14, 165, 233, 0.2)" stroke="#0EA5E9" stroke-width="1"/>
+
+    <!-- Liquid level indicator -->
+    <rect x="53" y="120" width="14" height="6" fill="rgba(14, 165, 233, 0.3)"/>
+  </g>
+
+  <!-- Tank 2 -->
+  <g opacity="0.6">
+    <circle cx="140" cy="120" r="16" fill="none" stroke="#0EA5E9" stroke-width="1.5"/>
+    <rect x="132" y="133" width="16" height="6" fill="rgba(14, 165, 233, 0.15)" stroke="#0EA5E9" stroke-width="1"/>
+
+    <!-- Liquid level indicator -->
+    <rect x="135" y="126" width="10" height="5" fill="rgba(14, 165, 233, 0.25)"/>
+  </g>
+
+  <!-- Landscape terrain -->
+  <g opacity="0.3">
+    <ellipse cx="100" cy="130" rx="80" ry="15" fill="rgba(14, 165, 233, 0.1)"/>
+  </g>
+
+  <!-- Flow indicator arrows -->
+  <g opacity="0.5">
+    <polygon points="110,65 115,70 110,75" fill="#0EA5E9"/>
+    <polygon points="140,65 145,70 140,75" fill="#0EA5E9"/>
+  </g>
+
+  <!-- Connection line -->
+  <line x1="60" y1="115" x2="140" y2="120" stroke="#0EA5E9" stroke-width="1" opacity="0.4"/>
+</svg>

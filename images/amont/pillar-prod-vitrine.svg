@@ -1,0 +1,168 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Opérateur EnerTchad-Amont inspectant une tête de puits équipée ESP sur un site de production">
+  <defs>
+    <linearGradient id="skyP" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0F2240"/>
+      <stop offset="0.4" stop-color="#1A3460"/>
+      <stop offset="0.75" stop-color="#8A6518"/>
+      <stop offset="1" stop-color="#D8A73A"/>
+    </linearGradient>
+    <linearGradient id="groundP" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2B1F10"/>
+      <stop offset="1" stop-color="#0f0806"/>
+    </linearGradient>
+    <linearGradient id="metalP" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3a4560"/>
+      <stop offset="0.5" stop-color="#5e6a80"/>
+      <stop offset="1" stop-color="#1A2030"/>
+    </linearGradient>
+    <linearGradient id="pipeP" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8a5a1a"/>
+      <stop offset="0.5" stop-color="#A06820"/>
+      <stop offset="1" stop-color="#6a3a0a"/>
+    </linearGradient>
+    <radialGradient id="sunP" cx="0.15" cy="0.35" r="0.25">
+      <stop offset="0" stop-color="#F0DC82" stop-opacity="0.9"/>
+      <stop offset="0.5" stop-color="#F2C354" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#F2C354" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glowP"><feGaussianBlur stdDeviation="20"/></filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#skyP)"/>
+  <circle cx="240" cy="310" r="260" fill="url(#sunP)" filter="url(#glowP)"/>
+
+  <!-- Distant horizon with tanks silhouette -->
+  <path d="M0,640 L220,640 L220,590 L290,590 L290,640 L420,640 L420,600 L490,600 L490,640 L620,640 L620,615 L700,615 L700,640 L1600,640 L1600,720 L0,720 Z" fill="#0F2240" opacity="0.85"/>
+  <!-- Tank tops highlights -->
+  <ellipse cx="255" cy="590" rx="35" ry="4" fill="#2A3240"/>
+  <ellipse cx="455" cy="600" rx="35" ry="4" fill="#2A3240"/>
+  <ellipse cx="660" cy="615" rx="40" ry="4" fill="#2A3240"/>
+  <!-- Distant flare -->
+  <rect x="1100" y="500" width="6" height="140" fill="#0a0604"/>
+  <path d="M1103,498 q-6,-14 2,-24 q6,10 2,24 z" fill="#ff8a2a" opacity="0.85"/>
+  <path d="M1103,492 q-3,-8 1,-14 q3,6 1,14 z" fill="#F0DC82" opacity="0.9"/>
+
+  <!-- Ground plane -->
+  <rect x="0" y="720" width="1600" height="180" fill="url(#groundP)"/>
+  <!-- Ground texture lines -->
+  <g stroke="#1A1208" stroke-width="1" opacity="0.5">
+    <line x1="0" y1="760" x2="1600" y2="760"/>
+    <line x1="0" y1="800" x2="1600" y2="800"/>
+    <line x1="0" y1="840" x2="1600" y2="840"/>
+  </g>
+
+  <!-- Pipe manifold background -->
+  <g transform="translate(1250,680)">
+    <rect x="0" y="0" width="300" height="18" fill="url(#pipeP)"/>
+    <rect x="20" y="-30" width="18" height="30" fill="url(#pipeP)"/>
+    <rect x="100" y="-50" width="18" height="50" fill="url(#pipeP)"/>
+    <rect x="180" y="-35" width="18" height="35" fill="url(#pipeP)"/>
+    <rect x="260" y="-45" width="18" height="45" fill="url(#pipeP)"/>
+    <circle cx="29" cy="-30" r="8" fill="#4a3a1a"/>
+    <circle cx="109" cy="-50" r="8" fill="#4a3a1a"/>
+    <circle cx="189" cy="-35" r="8" fill="#4a3a1a"/>
+  </g>
+
+  <!-- MAIN Wellhead xmas tree (large foreground-center) -->
+  <g transform="translate(900,720)">
+    <!-- Concrete pad -->
+    <rect x="-150" y="0" width="300" height="30" fill="#1a120a"/>
+    <rect x="-130" y="-5" width="260" height="8" fill="#2a1f15"/>
+    <!-- Flange base -->
+    <rect x="-60" y="-30" width="120" height="30" fill="url(#metalP)"/>
+    <rect x="-55" y="-25" width="110" height="4" fill="#1A2030"/>
+    <!-- Production casing head -->
+    <rect x="-45" y="-80" width="90" height="50" fill="url(#metalP)"/>
+    <circle cx="-55" cy="-55" r="16" fill="#3a4560"/>
+    <circle cx="-55" cy="-55" r="10" fill="#1A2030"/>
+    <circle cx="55" cy="-55" r="16" fill="#3a4560"/>
+    <circle cx="55" cy="-55" r="10" fill="#1A2030"/>
+    <!-- Valve wheels (red, signature) -->
+    <circle cx="-58" cy="-55" r="20" fill="none" stroke="#c23a1a" stroke-width="4"/>
+    <circle cx="58" cy="-55" r="20" fill="none" stroke="#c23a1a" stroke-width="4"/>
+    <line x1="-78" y1="-55" x2="-38" y2="-55" stroke="#c23a1a" stroke-width="3"/>
+    <line x1="-58" y1="-75" x2="-58" y2="-35" stroke="#c23a1a" stroke-width="3"/>
+    <line x1="38" y1="-55" x2="78" y2="-55" stroke="#c23a1a" stroke-width="3"/>
+    <line x1="58" y1="-75" x2="58" y2="-35" stroke="#c23a1a" stroke-width="3"/>
+    <!-- Tubing head spool -->
+    <rect x="-35" y="-130" width="70" height="50" fill="url(#metalP)"/>
+    <!-- Middle gauge -->
+    <circle cx="0" cy="-105" r="14" fill="#ededed"/>
+    <circle cx="0" cy="-105" r="11" fill="#f4f4f4"/>
+    <line x1="0" y1="-105" x2="6" y2="-112" stroke="#c23a1a" stroke-width="2"/>
+    <circle cx="0" cy="-105" r="2" fill="#0a0a0a"/>
+    <!-- Top master valve -->
+    <rect x="-28" y="-170" width="56" height="40" fill="url(#metalP)"/>
+    <circle cx="-40" cy="-150" r="12" fill="none" stroke="#c23a1a" stroke-width="3"/>
+    <circle cx="40" cy="-150" r="12" fill="none" stroke="#c23a1a" stroke-width="3"/>
+    <!-- Swab valve + crown -->
+    <rect x="-20" y="-210" width="40" height="40" fill="url(#metalP)"/>
+    <rect x="-25" y="-216" width="50" height="8" fill="#1A2030"/>
+    <!-- Top cap + antenna -->
+    <rect x="-6" y="-240" width="12" height="24" fill="#0a0604"/>
+    <circle cx="0" cy="-245" r="4" fill="#ff6b1a"/>
+    <!-- Flow line going right -->
+    <rect x="60" y="-50" width="200" height="12" fill="url(#pipeP)"/>
+    <rect x="258" y="-55" width="12" height="22" fill="#4a3a1a"/>
+  </g>
+
+  <!-- OPERATOR silhouette (left, inspecting) -->
+  <g transform="translate(680,720)">
+    <!-- Shadow -->
+    <ellipse cx="0" cy="4" rx="45" ry="6" fill="#000" opacity="0.5"/>
+    <!-- Legs (coverall) -->
+    <path d="M-18,-5 L-22,-105 L-8,-105 L-6,-5 Z" fill="#A06820"/>
+    <path d="M18,-5 L22,-105 L8,-105 L6,-105 L8,-5 Z" fill="#A06820"/>
+    <!-- Boots -->
+    <rect x="-24" y="-8" width="16" height="10" fill="#1A1208"/>
+    <rect x="8" y="-8" width="16" height="10" fill="#1A1208"/>
+    <!-- Torso (orange coverall with reflective bands) -->
+    <path d="M-28,-105 L-32,-195 L32,-195 L28,-105 Z" fill="#D8A73A"/>
+    <!-- Reflective bands -->
+    <rect x="-32" y="-155" width="64" height="4" fill="#F0DC82" opacity="0.9"/>
+    <rect x="-32" y="-165" width="64" height="2" fill="#A06820"/>
+    <!-- Arms -->
+    <path d="M-32,-190 L-58,-140 L-52,-135 L-26,-180 Z" fill="#D8A73A"/>
+    <path d="M32,-190 L48,-120 L56,-118 L38,-180 Z" fill="#D8A73A"/>
+    <!-- Reflective band left arm -->
+    <rect x="-55" y="-145" width="12" height="3" fill="#F0DC82" opacity="0.9" transform="rotate(-55,-49,-143)"/>
+    <!-- Glove (pointing at wellhead) -->
+    <circle cx="-58" cy="-138" r="6" fill="#1A1208"/>
+    <circle cx="52" cy="-119" r="6" fill="#1A1208"/>
+    <!-- Neck -->
+    <rect x="-8" y="-205" width="16" height="12" fill="#8a5a3a"/>
+    <!-- Head silhouette -->
+    <circle cx="0" cy="-220" r="18" fill="#8a5a3a"/>
+    <!-- Hard hat (white) -->
+    <path d="M-22,-225 Q-22,-248 0,-250 Q22,-248 22,-225 L22,-218 L-22,-218 Z" fill="#f4f4f4"/>
+    <rect x="-24" y="-220" width="48" height="5" fill="#e0e0e0"/>
+    <!-- Hard hat brim -->
+    <ellipse cx="0" cy="-218" rx="24" ry="3" fill="#d0d0d0"/>
+    <!-- Safety goggles -->
+    <rect x="-16" y="-215" width="32" height="5" fill="#1a1a1a"/>
+    <!-- Tablet in other hand (hinted) -->
+    <rect x="46" y="-125" width="18" height="14" fill="#1a1f28"/>
+    <rect x="48" y="-123" width="14" height="10" fill="#28a745" opacity="0.6"/>
+  </g>
+
+  <!-- Tool box foreground -->
+  <g transform="translate(500,720)">
+    <rect x="0" y="-28" width="60" height="28" fill="#c23a1a"/>
+    <rect x="0" y="-28" width="60" height="4" fill="#8a2010"/>
+    <rect x="24" y="-35" width="12" height="8" fill="#8a2010"/>
+  </g>
+
+  <!-- Vignette -->
+  <radialGradient id="vignP" cx="0.5" cy="0.5" r="0.8">
+    <stop offset="0.55" stop-color="#000" stop-opacity="0"/>
+    <stop offset="1" stop-color="#000" stop-opacity="0.5"/>
+  </radialGradient>
+  <rect width="1600" height="900" fill="url(#vignP)"/>
+
+  <!-- Label pill -->
+  <g transform="translate(60,820)">
+    <rect x="0" y="0" width="360" height="42" rx="21" fill="rgba(6,26,14,0.85)" stroke="#F2C354" stroke-width="1.5"/>
+    <circle cx="24" cy="21" r="6" fill="#F2C354"/>
+    <text x="42" y="27" font-family="Georgia, serif" font-size="15" fill="#F2C354" font-weight="700" letter-spacing="0.08em">OPTIMISATION DE LA PRODUCTION</text>
+  </g>
+</svg>

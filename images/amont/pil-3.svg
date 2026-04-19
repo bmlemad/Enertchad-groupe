@@ -1,0 +1,83 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Digital et innovation - Digital twin">
+  <defs>
+    <linearGradient id="grad_pil3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0A1628;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0F2240;stop-opacity:1" />
+    </linearGradient>
+    <pattern id="circuit_pil3" width="30" height="30" patternUnits="userSpaceOnUse">
+      <rect x="0" y="0" width="30" height="30" fill="none" stroke="#2E86DE" stroke-width="0.5" opacity="0.12"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="450" fill="url(#grad_pil3)"/>
+  <rect width="800" height="450" fill="url(#circuit_pil3)"/>
+  
+  <!-- Digital twin representation left -->
+  <g transform="translate(120, 100)">
+    <!-- Physical asset (rig) -->
+    <line x1="40" y1="0" x2="40" y2="100" stroke="#C8962E" stroke-width="3" opacity="0.7"/>
+    <line x1="20" y1="30" x2="60" y2="30" stroke="#C8962E" stroke-width="2" opacity="0.6"/>
+    <circle cx="40" cy="80" r="5" fill="#C8962E" opacity="0.6"/>
+    <text x="40" y="125" font-family="monospace" font-size="10" fill="#C8962E" text-anchor="middle" opacity="0.7" font-weight="bold">PHYSICAL</text>
+    
+    <!-- Connection/sync link -->
+    <path d="M 80 50 Q 100 50 120 50" stroke="#2E86DE" stroke-width="2" fill="none" marker-end="url(#arrow_pil3)" opacity="0.6" stroke-dasharray="5,5"/>
+    <defs>
+      <marker id="arrow_pil3" markerWidth="10" markerHeight="10" refX="5" refY="3" orient="auto">
+        <polygon points="0 0, 10 3, 0 6" fill="#2E86DE"/>
+      </marker>
+    </defs>
+  </g>
+  
+  <!-- Digital twin holographic display center -->
+  <g transform="translate(380, 100)">
+    <!-- Outer hologram frame -->
+    <rect x="0" y="0" width="100" height="120" fill="none" stroke="#2E86DE" stroke-width="2.5" opacity="0.85"/>
+    
+    <!-- Inner holographic content -->
+    <path d="M 10 10 L 90 10 L 90 110 L 10 110 Z" fill="none" stroke="#C8962E" stroke-width="1.5" opacity="0.6" stroke-dasharray="3,3"/>
+    
+    <!-- 3D wireframe representation -->
+    <line x1="30" y1="30" x2="70" y2="30" stroke="#2E86DE" stroke-width="1" opacity="0.6"/>
+    <line x1="30" y1="50" x2="70" y2="50" stroke="#C8962E" stroke-width="1" opacity="0.6"/>
+    <line x1="30" y1="70" x2="70" y2="70" stroke="#2E86DE" stroke-width="1" opacity="0.6"/>
+    <line x1="30" y1="90" x2="70" y2="90" stroke="#C8962E" stroke-width="1" opacity="0.6"/>
+    
+    <!-- Vertical connections -->
+    <line x1="30" y1="30" x2="30" y2="90" stroke="#2E86DE" stroke-width="0.8" opacity="0.5"/>
+    <line x1="70" y1="30" x2="70" y2="90" stroke="#C8962E" stroke-width="0.8" opacity="0.5"/>
+    <line x1="50" y1="20" x2="50" y2="100" stroke="#2E86DE" stroke-width="0.8" opacity="0.5"/>
+    
+    <!-- Data nodes -->
+    <circle cx="35" cy="50" r="2" fill="#C8962E" opacity="0.8"/>
+    <circle cx="50" cy="60" r="2" fill="#2E86DE" opacity="0.8"/>
+    <circle cx="65" cy="40" r="2" fill="#C8962E" opacity="0.8"/>
+    
+    <!-- Glow effect (light rays) -->
+    <line x1="5" y1="5" x2="15" y2="15" stroke="#C8962E" stroke-width="0.8" opacity="0.4"/>
+    <line x1="95" y1="5" x2="85" y2="15" stroke="#2E86DE" stroke-width="0.8" opacity="0.4"/>
+    
+    <text x="50" y="135" font-family="monospace" font-size="10" fill="#2E86DE" text-anchor="middle" opacity="0.7" font-weight="bold">DIGITAL TWIN</text>
+  </g>
+  
+  <!-- IoT sensors network right -->
+  <g transform="translate(600, 110)">
+    <!-- Sensor cloud -->
+    <circle cx="30" cy="20" r="3" fill="#C8962E" opacity="0.8"/>
+    <circle cx="60" cy="20" r="3" fill="#2E86DE" opacity="0.8"/>
+    <circle cx="20" cy="50" r="3" fill="#C8962E" opacity="0.8"/>
+    <circle cx="70" cy="50" r="3" fill="#2E86DE" opacity="0.8"/>
+    <circle cx="45" cy="70" r="4" fill="#C8962E" opacity="0.85"/>
+    
+    <!-- Network connections -->
+    <line x1="30" y1="20" x2="45" y2="70" stroke="#2E86DE" stroke-width="1" opacity="0.5"/>
+    <line x1="60" y1="20" x2="45" y2="70" stroke="#C8962E" stroke-width="1" opacity="0.5"/>
+    <line x1="20" y1="50" x2="45" y2="70" stroke="#2E86DE" stroke-width="1" opacity="0.5"/>
+    <line x1="70" y1="50" x2="45" y2="70" stroke="#C8962E" stroke-width="1" opacity="0.5"/>
+    
+    <!-- Cross network links -->
+    <line x1="30" y1="20" x2="60" y2="20" stroke="#2E86DE" stroke-width="0.8" opacity="0.4" stroke-dasharray="2,2"/>
+    <line x1="20" y1="50" x2="70" y2="50" stroke="#C8962E" stroke-width="0.8" opacity="0.4" stroke-dasharray="2,2"/>
+    
+    <text x="45" y="100" font-family="monospace" font-size="10" fill="#2E86DE" text-anchor="middle" opacity="0.7" font-weight="bold">IoT SENSORS</text>
+  </g>
+</svg>

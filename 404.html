@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr" class="no-js">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>404 — Page introuvable | EnerTchad Groupe</title>
+  <meta name="theme-color" content="#080E1A"/>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+  <style>
+    :root{--bg:#080E1A;--gold:#D9A84F;--white:#E2E8F0;--text-sec:#94A3B8;--font-d:'Space Grotesk',system-ui,sans-serif;--font-b:'Inter',system-ui,sans-serif}
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--bg);color:var(--white);font-family:var(--font-b);text-align:center;padding:2rem}
+    .error-code{font-family:var(--font-d);font-size:clamp(6rem,15vw,12rem);font-weight:800;color:rgba(217,168,79,0.12);line-height:1;letter-spacing:-0.04em;position:relative}
+    .error-code::after{content:'404';position:absolute;inset:0;background:linear-gradient(180deg,var(--gold) 0%,rgba(217,168,79,0.3) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    h1{font-family:var(--font-d);font-size:1.5rem;font-weight:600;margin:1.5rem 0 0.75rem;color:var(--white)}
+    p{color:var(--text-sec);max-width:420px;line-height:1.7;margin-bottom:2rem;font-size:0.95rem}
+    .actions{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
+    a{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:999px;font-size:0.88rem;font-weight:600;text-decoration:none;transition:all 0.35s cubic-bezier(0.22,0.61,0.36,1)}
+    .btn-primary{background:var(--gold);color:var(--bg)}
+    .btn-primary:hover{background:#e8c36a;transform:translateY(-2px);box-shadow:0 8px 30px rgba(217,168,79,0.25)}
+    .btn-secondary{background:rgba(255,255,255,0.06);color:var(--white);border:1px solid rgba(255,255,255,0.1)}
+    .btn-secondary:hover{background:rgba(255,255,255,0.1);transform:translateY(-2px)}
+    .logo{width:140px;margin-bottom:2rem;opacity:0.7}
+    .derrick{margin:2rem 0}
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;800&family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
+<link rel="canonical" href="https://www.enertchad.td/404"/>
+</head>
+<body>
+  <img src="/logo-enertchad.svg" alt="EnerTchad" class="logo" loading="eager" decoding="async"/>
+  <svg class="derrick" width="80" height="100" viewBox="0 0 80 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M40 5 L55 85 M40 5 L25 85" stroke="#D9A84F" stroke-width="2" opacity="0.4"/>
+    <path d="M30 30 L50 30 M28 50 L52 50 M26 70 L54 70" stroke="#D9A84F" stroke-width="1.5" opacity="0.25"/>
+    <rect x="35" y="0" width="10" height="8" rx="2" fill="rgba(217,168,79,0.3)"/>
+    <line x1="15" y1="85" x2="65" y2="85" stroke="#D9A84F" stroke-width="2" opacity="0.3"/>
+    <circle cx="40" cy="40" r="3" fill="#D9A84F" opacity="0.15">
+      <animate attributeName="opacity" values="0.15;0.4;0.15" dur="2s" repeatCount="indefinite"/>
+    </circle>
+  </svg>
+  <div class="error-code">404</div>
+  <h1>Puits sec — page introuvable</h1>
+  <p>Le forage n'a rien donné ici. La page que vous cherchez a peut-être été déplacée, renommée ou n'existe plus.</p>
+  <div class="actions">
+    <a href="/" class="btn-primary"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1L1 7h3v7h3v-4h2v4h3V7h3L8 1z"/></svg> Retour à l'accueil</a>
+    <a href="contact.html" class="btn-secondary">Nous contacter</a>
+  </div>
+</body>
+</html>

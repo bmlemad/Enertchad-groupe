@@ -1,0 +1,63 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Metering station - Flow meter">
+  <defs>
+    <linearGradient id="grad_mid3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0A1628;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0F2240;stop-opacity:1" />
+    </linearGradient>
+    <pattern id="grid_mid3" width="50" height="50" patternUnits="userSpaceOnUse">
+      <path d="M 50 0 L 0 0 0 50" fill="none" stroke="#2E86DE" stroke-width="0.5" opacity="0.08"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="450" fill="url(#grad_mid3)"/>
+  <rect width="800" height="450" fill="url(#grid_mid3)"/>
+  
+  <!-- Main meter station structure center -->
+  <g transform="translate(250, 100)">
+    <!-- Inlet pipe -->
+    <rect x="0" y="40" width="60" height="30" rx="5" fill="none" stroke="#C8962E" stroke-width="2" opacity="0.8"/>
+    <text x="30" y="63" font-family="monospace" font-size="9" fill="#2E86DE" text-anchor="middle" opacity="0.6">INLET</text>
+    
+    <!-- Flow meter (central) -->
+    <rect x="75" y="30" width="80" height="50" fill="none" stroke="#2E86DE" stroke-width="2.5" opacity="0.85"/>
+    <circle cx="115" cy="55" r="15" fill="none" stroke="#C8962E" stroke-width="2" opacity="0.7"/>
+    <line x1="115" y1="45" x2="115" y2="30" stroke="#C8962E" stroke-width="1.5" opacity="0.6"/>
+    <text x="115" y="70" font-family="monospace" font-size="9" fill="#2E86DE" text-anchor="middle" opacity="0.7">METER</text>
+    
+    <!-- Outlet pipe -->
+    <rect x="170" y="40" width="60" height="30" rx="5" fill="none" stroke="#C8962E" stroke-width="2" opacity="0.8"/>
+    <text x="200" y="63" font-family="monospace" font-size="9" fill="#2E86DE" text-anchor="middle" opacity="0.6">OUTLET</text>
+  </g>
+  
+  <!-- Digital display -->
+  <g transform="translate(320, 220)">
+    <!-- Display panel -->
+    <rect x="0" y="0" width="100" height="60" fill="none" stroke="#2E86DE" stroke-width="2" opacity="0.8"/>
+    <rect x="5" y="5" width="90" height="25" fill="none" stroke="#C8962E" stroke-width="1" opacity="0.6"/>
+    <!-- Digital numbers -->
+    <text x="50" y="25" font-family="monospace" font-size="14" fill="#C8962E" text-anchor="middle" opacity="0.8" font-weight="bold">47,250</text>
+    <text x="50" y="50" font-family="monospace" font-size="10" fill="#2E86DE" text-anchor="middle" opacity="0.7">bbl/day</text>
+  </g>
+  
+  <!-- Pressure and temperature gauges -->
+  <g transform="translate(100, 280)">
+    <!-- Pressure gauge -->
+    <circle cx="0" cy="0" r="25" fill="none" stroke="#2E86DE" stroke-width="2" opacity="0.7"/>
+    <line x1="0" y1="-25" x2="0" y2="-30" stroke="#C8962E" stroke-width="1.5" opacity="0.6"/>
+    <line x1="17" y1="-17" x2="20" y2="-22" stroke="#2E86DE" stroke-width="1" opacity="0.5"/>
+    <circle cx="0" cy="0" r="2" fill="#C8962E" opacity="0.7"/>
+    <!-- Needle -->
+    <line x1="0" y1="0" x2="10" y2="-15" stroke="#C8962E" stroke-width="1.5" opacity="0.7"/>
+    <text x="0" y="45" font-family="monospace" font-size="9" fill="#2E86DE" text-anchor="middle" opacity="0.6">Pressure</text>
+  </g>
+  
+  <g transform="translate(550, 280)">
+    <!-- Temperature gauge -->
+    <circle cx="0" cy="0" r="25" fill="none" stroke="#C8962E" stroke-width="2" opacity="0.7"/>
+    <line x1="0" y1="-25" x2="0" y2="-30" stroke="#2E86DE" stroke-width="1.5" opacity="0.6"/>
+    <line x1="-17" y1="-17" x2="-20" y2="-22" stroke="#C8962E" stroke-width="1" opacity="0.5"/>
+    <circle cx="0" cy="0" r="2" fill="#2E86DE" opacity="0.7"/>
+    <!-- Needle -->
+    <line x1="0" y1="0" x2="-8" y2="-18" stroke="#2E86DE" stroke-width="1.5" opacity="0.7"/>
+    <text x="0" y="45" font-family="monospace" font-size="9" fill="#C8962E" text-anchor="middle" opacity="0.6">Temperature</text>
+  </g>
+</svg>

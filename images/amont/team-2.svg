@@ -1,0 +1,68 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="COO - Directeur Opérations">
+  <defs>
+    <linearGradient id="grad_team2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0F2240;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0A1628;stop-opacity:1" />
+    </linearGradient>
+    <pattern id="dots_team2" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="20" cy="20" r="1.5" fill="#2E86DE" opacity="0.1"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="450" fill="url(#grad_team2)"/>
+  <rect width="800" height="450" fill="url(#dots_team2)"/>
+  
+  <!-- Rig silhouette left -->
+  <g transform="translate(100, 100)">
+    <line x1="40" y1="0" x2="40" y2="100" stroke="#C8962E" stroke-width="3" opacity="0.8"/>
+    <line x1="20" y1="20" x2="60" y2="20" stroke="#C8962E" stroke-width="2" opacity="0.7"/>
+    <line x1="15" y1="50" x2="65" y2="50" stroke="#2E86DE" stroke-width="1.5" opacity="0.6"/>
+    <circle cx="40" cy="80" r="6" fill="#C8962E" opacity="0.7"/>
+    <path d="M 35 100 L 30 130 M 40 100 L 40 130 M 45 100 L 50 130" stroke="#2E86DE" stroke-width="2" opacity="0.6" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Operations dashboard center -->
+  <g transform="translate(320, 110)">
+    <!-- Main panel -->
+    <rect x="0" y="0" width="140" height="100" fill="none" stroke="#2E86DE" stroke-width="2.5" opacity="0.8"/>
+    
+    <!-- Gauge 1 -->
+    <circle cx="25" cy="25" r="15" fill="none" stroke="#C8962E" stroke-width="1.5" opacity="0.7"/>
+    <line x1="25" y1="15" x2="25" y2="10" stroke="#C8962E" stroke-width="1" opacity="0.6"/>
+    <line x1="35" y1="25" x2="38" y2="25" stroke="#C8962E" stroke-width="1" opacity="0.6"/>
+    
+    <!-- Gauge 2 -->
+    <circle cx="25" cy="70" r="15" fill="none" stroke="#2E86DE" stroke-width="1.5" opacity="0.7"/>
+    <line x1="25" y1="60" x2="25" y2="55" stroke="#2E86DE" stroke-width="1" opacity="0.6"/>
+    
+    <!-- Status bars -->
+    <rect x="50" y="10" width="80" height="12" fill="none" stroke="#2E86DE" stroke-width="1.5" opacity="0.6"/>
+    <rect x="50" y="10" width="60" height="12" fill="#2E86DE" opacity="0.5"/>
+    
+    <rect x="50" y="30" width="80" height="12" fill="none" stroke="#C8962E" stroke-width="1.5" opacity="0.6"/>
+    <rect x="50" y="30" width="70" height="12" fill="#C8962E" opacity="0.5"/>
+    
+    <rect x="50" y="50" width="80" height="12" fill="none" stroke="#2E86DE" stroke-width="1.5" opacity="0.6"/>
+    <rect x="50" y="50" width="75" height="12" fill="#2E86DE" opacity="0.5"/>
+    
+    <rect x="50" y="70" width="80" height="12" fill="none" stroke="#C8962E" stroke-width="1.5" opacity="0.6"/>
+    <rect x="50" y="70" width="55" height="12" fill="#C8962E" opacity="0.5"/>
+  </g>
+  
+  <!-- Field operations right -->
+  <g transform="translate(550, 120)">
+    <!-- Multiple operation zones -->
+    <rect x="0" y="0" width="50" height="40" fill="none" stroke="#2E86DE" stroke-width="2" opacity="0.7"/>
+    <circle cx="25" cy="20" r="5" fill="#C8962E" opacity="0.7"/>
+    
+    <rect x="60" y="0" width="50" height="40" fill="none" stroke="#C8962E" stroke-width="2" opacity="0.7"/>
+    <circle cx="85" cy="20" r="5" fill="#2E86DE" opacity="0.7"/>
+    
+    <rect x="30" y="50" width="50" height="40" fill="none" stroke="#2E86DE" stroke-width="2" opacity="0.7"/>
+    <circle cx="55" cy="70" r="5" fill="#C8962E" opacity="0.7"/>
+    
+    <!-- Interconnection lines -->
+    <line x1="50" y1="20" x2="60" y2="20" stroke="#C8962E" stroke-width="1.5" opacity="0.5"/>
+    <line x1="55" y1="40" x2="55" y2="50" stroke="#2E86DE" stroke-width="1.5" opacity="0.5"/>
+    <line x1="85" y1="40" x2="80" y2="50" stroke="#C8962E" stroke-width="1.5" opacity="0.5"/>
+  </g>
+</svg>

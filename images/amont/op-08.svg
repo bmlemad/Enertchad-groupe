@@ -1,0 +1,68 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="HSE et formation - Safety triangle">
+  <defs>
+    <linearGradient id="grad_op08" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" style="stop-color:#0F2240;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0A1628;stop-opacity:1" />
+    </linearGradient>
+    <pattern id="chevron_op08" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 0 20 L 20 10 L 40 20" fill="none" stroke="#28A745" stroke-width="0.5" opacity="0.06"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="450" fill="url(#grad_op08)"/>
+  <rect width="800" height="450" fill="url(#chevron_op08)"/>
+
+  <!-- LARGE warning triangle — centered dominant element -->
+  <g transform="translate(400, 40)">
+    <!-- Outer triangle -->
+    <polygon points="0,0 -180,310 180,310" fill="none" stroke="#C8962E" stroke-width="4" opacity="0.8"/>
+    <!-- Inner triangle -->
+    <polygon points="0,30 -155,290 155,290" fill="none" stroke="#C8962E" stroke-width="2" opacity="0.4"/>
+
+    <!-- Exclamation mark in triangle -->
+    <rect x="-6" y="100" width="12" height="120" fill="#C8962E" opacity="0.6" rx="3"/>
+    <circle cx="0" cy="255" r="10" fill="#C8962E" opacity="0.6"/>
+  </g>
+
+  <!-- H - Health icon (top left of triangle) -->
+  <g transform="translate(120, 120)">
+    <circle cx="35" cy="35" r="35" fill="none" stroke="#28A745" stroke-width="2.5" opacity="0.7"/>
+    <!-- Cross/health symbol -->
+    <rect x="25" y="15" width="20" height="40" fill="none" stroke="#28A745" stroke-width="2.5" opacity="0.7" rx="2"/>
+    <rect x="15" y="25" width="40" height="20" fill="none" stroke="#28A745" stroke-width="2.5" opacity="0.7" rx="2"/>
+    <text x="35" y="95" font-family="monospace" font-size="14" fill="#28A745" text-anchor="middle" opacity="0.7" font-weight="bold">HEALTH</text>
+  </g>
+
+  <!-- S - Safety icon (top right of triangle) -->
+  <g transform="translate(610, 120)">
+    <circle cx="35" cy="35" r="35" fill="none" stroke="#C8962E" stroke-width="2.5" opacity="0.7"/>
+    <!-- Hard hat silhouette -->
+    <path d="M 15 40 Q 15 15 35 15 Q 55 15 55 40" fill="none" stroke="#C8962E" stroke-width="2.5" opacity="0.7"/>
+    <line x1="10" y1="40" x2="60" y2="40" stroke="#C8962E" stroke-width="2.5" opacity="0.7"/>
+    <text x="35" y="95" font-family="monospace" font-size="14" fill="#C8962E" text-anchor="middle" opacity="0.7" font-weight="bold">SAFETY</text>
+  </g>
+
+  <!-- E - Environment icon (bottom center) -->
+  <g transform="translate(365, 370)">
+    <circle cx="35" cy="20" r="25" fill="none" stroke="#2E86DE" stroke-width="2.5" opacity="0.7"/>
+    <!-- Leaf inside -->
+    <path d="M 25 20 Q 35 5 45 20 Q 35 30 25 20" fill="none" stroke="#28A745" stroke-width="2" opacity="0.6"/>
+    <line x1="35" y1="12" x2="35" y2="28" stroke="#28A745" stroke-width="1.5" opacity="0.5"/>
+    <text x="35" y="60" font-family="monospace" font-size="14" fill="#2E86DE" text-anchor="middle" opacity="0.7" font-weight="bold">ENVIRO</text>
+  </g>
+
+  <!-- Training progress bars — bottom left -->
+  <g transform="translate(40, 360)">
+    <text x="0" y="0" font-family="monospace" font-size="9" fill="#28A745" opacity="0.5">FORMATION</text>
+    <rect x="0" y="10" width="140" height="6" fill="#28A745" opacity="0.15" rx="3"/>
+    <rect x="0" y="10" width="120" height="6" fill="#28A745" opacity="0.5" rx="3"/>
+    <text x="0" y="30" font-family="monospace" font-size="9" fill="#C8962E" opacity="0.5">CERTIFICATION</text>
+    <rect x="0" y="40" width="140" height="6" fill="#C8962E" opacity="0.15" rx="3"/>
+    <rect x="0" y="40" width="95" height="6" fill="#C8962E" opacity="0.5" rx="3"/>
+  </g>
+
+  <!-- Incident-free counter — bottom right -->
+  <g transform="translate(620, 370)">
+    <text x="0" y="0" font-family="monospace" font-size="9" fill="#28A745" opacity="0.5">JOURS SANS INCIDENT</text>
+    <text x="60" y="30" font-family="monospace" font-size="28" fill="#28A745" text-anchor="middle" opacity="0.5" font-weight="bold">365</text>
+  </g>
+</svg>

@@ -1,0 +1,113 @@
+<svg viewBox="0 0 600 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @keyframes pulse-glow { 0%, 100% { opacity: 0.6; } 50% { opacity: 1; } }
+      @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-8px); } }
+      @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+      .glow { animation: pulse-glow 3s ease-in-out infinite; }
+      .float { animation: float 4s ease-in-out infinite; }
+      .rotate { animation: rotate 20s linear infinite; }
+    </style>
+    <radialGradient id="sun-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#10B981;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#10B981;stop-opacity:0" />
+    </radialGradient>
+    <linearGradient id="sun-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#D9A84F;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#10B981;stop-opacity:0.6" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="500" fill="#080E1A"/>
+
+  <!-- Sun with rays -->
+  <g class="float">
+    <circle cx="500" cy="80" r="35" fill="url(#sun-grad)" opacity="0.8"/>
+    <!-- Sun rays -->
+    <line x1="500" y1="35" x2="500" y2="15" stroke="#D9A84F" stroke-width="2" opacity="0.6" stroke-linecap="round"/>
+    <line x1="500" y1="125" x2="500" y2="145" stroke="#D9A84F" stroke-width="2" opacity="0.6" stroke-linecap="round"/>
+    <line x1="455" y1="80" x2="435" y2="80" stroke="#D9A84F" stroke-width="2" opacity="0.6" stroke-linecap="round"/>
+    <line x1="545" y1="80" x2="565" y2="80" stroke="#D9A84F" stroke-width="2" opacity="0.6" stroke-linecap="round"/>
+    <!-- Diagonal rays -->
+    <line x1="465" y1="45" x2="450" y2="30" stroke="#D9A84F" stroke-width="1.5" opacity="0.5" stroke-linecap="round"/>
+    <line x1="535" y1="115" x2="550" y2="130" stroke="#D9A84F" stroke-width="1.5" opacity="0.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- Solar Panel Array - Left -->
+  <g>
+    <!-- Panel 1 -->
+    <rect x="60" y="180" width="70" height="50" fill="rgba(16, 185, 129, 0.15)" stroke="#10B981" stroke-width="1.5" rx="2"/>
+    <line x1="68" y1="180" x2="68" y2="230" stroke="#10B981" stroke-width="0.5" opacity="0.4"/>
+    <line x1="76" y1="180" x2="76" y2="230" stroke="#10B981" stroke-width="0.5" opacity="0.4"/>
+    <line x1="84" y1="180" x2="84" y2="230" stroke="#10B981" stroke-width="0.5" opacity="0.4"/>
+    <line x1="92" y1="180" x2="92" y2="230" stroke="#10B981" stroke-width="0.5" opacity="0.4"/>
+    <line x1="100" y1="180" x2="100" y2="230" stroke="#10B981" stroke-width="0.5" opacity="0.4"/>
+    <line x1="108" y1="180" x2="108" y2="230" stroke="#10B981" stroke-width="0.5" opacity="0.4"/>
+    <line x1="116" y1="180" x2="116" y2="230" stroke="#10B981" stroke-width="0.5" opacity="0.4"/>
+
+    <!-- Panel 2 -->
+    <rect x="60" y="235" width="70" height="50" fill="rgba(16, 185, 129, 0.15)" stroke="#10B981" stroke-width="1.5" rx="2"/>
+    <line x1="68" y1="235" x2="68" y2="285" stroke="#10B981" stroke-width="0.5" opacity="0.4"/>
+    <line x1="76" y1="235" x2="76" y2="285" stroke="#10B981" stroke-width="0.5" opacity="0.4"/>
+    <line x1="84" y1="235" x2="84" y2="285" stroke="#10B981" stroke-width="0.5" opacity="0.4"/>
+    <line x1="92" y1="235" x2="92" y2="285" stroke="#10B981" stroke-width="0.5" opacity="0.4"/>
+    <line x1="100" y1="235" x2="100" y2="285" stroke="#10B981" stroke-width="0.5" opacity="0.4"/>
+    <line x1="108" y1="235" x2="108" y2="285" stroke="#10B981" stroke-width="0.5" opacity="0.4"/>
+    <line x1="116" y1="235" x2="116" y2="285" stroke="#10B981" stroke-width="0.5" opacity="0.4"/>
+  </g>
+
+  <!-- Wind Turbine -->
+  <g class="float" style="animation-delay: 1s">
+    <!-- Tower -->
+    <rect x="285" y="200" width="10" height="180" fill="rgba(16, 185, 129, 0.2)" stroke="#10B981" stroke-width="1.5" rx="2"/>
+
+    <!-- Hub -->
+    <circle cx="290" cy="200" r="8" fill="#10B981" opacity="0.8"/>
+
+    <!-- Blades -->
+    <g class="rotate">
+      <polygon points="290,160 288,200 292,200" fill="rgba(16, 185, 129, 0.3)" stroke="#10B981" stroke-width="1"/>
+      <polygon points="290,160 278,192 298,208" fill="rgba(16, 185, 129, 0.2)" stroke="#10B981" stroke-width="1"/>
+      <polygon points="290,160 302,192 282,208" fill="rgba(16, 185, 129, 0.25)" stroke="#10B981" stroke-width="1"/>
+    </g>
+  </g>
+
+  <!-- Electrical Tower/Grid Lines - Right -->
+  <g>
+    <!-- Tower structure -->
+    <line x1="450" y1="380" x2="430" y2="200" stroke="#0EA5E9" stroke-width="1.5"/>
+    <line x1="450" y1="380" x2="470" y2="200" stroke="#0EA5E9" stroke-width="1.5"/>
+    <line x1="450" y1="300" x2="420" y2="300" stroke="#0EA5E9" stroke-width="1" opacity="0.6"/>
+    <line x1="450" y1="300" x2="480" y2="300" stroke="#0EA5E9" stroke-width="1" opacity="0.6"/>
+    <line x1="450" y1="240" x2="420" y2="240" stroke="#0EA5E9" stroke-width="1" opacity="0.6"/>
+    <line x1="450" y1="240" x2="480" y2="240" stroke="#0EA5E9" stroke-width="1" opacity="0.6"/>
+
+    <!-- Power lines -->
+    <path d="M 420 240 Q 400 200 380 160" stroke="#10B981" stroke-width="1.5" fill="none" opacity="0.7"/>
+    <path d="M 480 240 Q 500 200 520 160" stroke="#10B981" stroke-width="1.5" fill="none" opacity="0.7"/>
+    <path d="M 420 300 Q 380 320 340 340" stroke="#0EA5E9" stroke-width="1.5" fill="none" opacity="0.7"/>
+  </g>
+
+  <!-- Battery Storage Icon -->
+  <g class="float" style="animation-delay: 2s">
+    <!-- Battery outline -->
+    <rect x="200" y="340" width="80" height="120" fill="rgba(16, 185, 129, 0.1)" stroke="#10B981" stroke-width="2" rx="4"/>
+    <!-- Battery terminal -->
+    <rect x="235" y="325" width="10" height="15" fill="#10B981" rx="1"/>
+    <!-- Battery segments -->
+    <line x1="215" y1="370" x2="265" y2="370" stroke="#10B981" stroke-width="1.5" opacity="0.7"/>
+    <line x1="215" y1="390" x2="265" y2="390" stroke="#10B981" stroke-width="1.5" opacity="0.5"/>
+    <line x1="215" y1="410" x2="265" y2="410" stroke="#10B981" stroke-width="1.5" opacity="0.3"/>
+    <!-- Charge level -->
+    <rect x="210" y="350" width="60" height="35" fill="rgba(16, 185, 129, 0.2)" rx="2"/>
+  </g>
+
+  <!-- Grid connections -->
+  <g opacity="0.5">
+    <circle cx="150" cy="150" r="4" fill="#10B981"/>
+    <circle cx="500" cy="400" r="4" fill="#0EA5E9"/>
+    <line x1="420" y1="240" x2="150" y2="150" stroke="#10B981" stroke-width="1" opacity="0.4"/>
+    <line x1="480" y1="300" x2="500" y2="400" stroke="#0EA5E9" stroke-width="1" opacity="0.4"/>
+  </g>
+</svg>

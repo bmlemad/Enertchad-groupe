@@ -1,0 +1,63 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Fluides de forage et brines">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0A1628;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0F2240;stop-opacity:1" />
+    </linearGradient>
+    <pattern id="grid1" width="50" height="50" patternUnits="userSpaceOnUse">
+      <path d="M 50 0 L 0 0 0 50" fill="none" stroke="#2E86DE" stroke-width="0.5" opacity="0.08"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="450" fill="url(#grad1)"/>
+  <rect width="800" height="450" fill="url(#grid1)"/>
+  
+  <!-- Left side: Droplet cascade -->
+  <circle cx="100" cy="80" r="28" fill="#C8962E" opacity="0.85"/>
+  <circle cx="75" cy="155" r="22" fill="#2E86DE" opacity="0.75"/>
+  <circle cx="125" cy="210" r="25" fill="#C8962E" opacity="0.7"/>
+  <circle cx="80" cy="300" r="20" fill="#2E86DE" opacity="0.65"/>
+  <circle cx="140" cy="350" r="18" fill="#C8962E" opacity="0.6"/>
+  
+  <!-- Flow connectors -->
+  <path d="M 100 108 Q 85 130 75 177" stroke="#C8962E" stroke-width="2.5" fill="none" opacity="0.6" stroke-linecap="round"/>
+  <path d="M 75 177 Q 100 190 125 235" stroke="#2E86DE" stroke-width="2.5" fill="none" opacity="0.6" stroke-linecap="round"/>
+  <path d="M 125 235 Q 105 265 80 320" stroke="#C8962E" stroke-width="2.5" fill="none" opacity="0.6" stroke-linecap="round"/>
+  <path d="M 80 320 Q 110 335 140 368" stroke="#2E86DE" stroke-width="2.5" fill="none" opacity="0.6" stroke-linecap="round"/>
+  
+  <!-- Right side: Molecular structures -->
+  <g transform="translate(600, 90)">
+    <!-- Hexagon molecule -->
+    <circle cx="0" cy="0" r="4" fill="#C8962E"/>
+    <circle cx="40" cy="23" r="4" fill="#C8962E"/>
+    <circle cx="40" cy="69" r="4" fill="#C8962E"/>
+    <circle cx="0" cy="92" r="4" fill="#C8962E"/>
+    <circle cx="-40" cy="69" r="4" fill="#C8962E"/>
+    <circle cx="-40" cy="23" r="4" fill="#C8962E"/>
+    <line x1="0" y1="0" x2="40" y2="23" stroke="#C8962E" stroke-width="2" opacity="0.8"/>
+    <line x1="40" y1="23" x2="40" y2="69" stroke="#C8962E" stroke-width="2" opacity="0.8"/>
+    <line x1="40" y1="69" x2="0" y2="92" stroke="#C8962E" stroke-width="2" opacity="0.8"/>
+    <line x1="0" y1="92" x2="-40" y2="69" stroke="#C8962E" stroke-width="2" opacity="0.8"/>
+    <line x1="-40" y1="69" x2="-40" y2="23" stroke="#C8962E" stroke-width="2" opacity="0.8"/>
+    <line x1="-40" y1="23" x2="0" y2="0" stroke="#C8962E" stroke-width="2" opacity="0.8"/>
+  </g>
+  
+  <g transform="translate(660, 280)">
+    <!-- Smaller hexagon -->
+    <circle cx="0" cy="0" r="3" fill="#2E86DE"/>
+    <circle cx="28" cy="16" r="3" fill="#2E86DE"/>
+    <circle cx="28" cy="48" r="3" fill="#2E86DE"/>
+    <circle cx="0" cy="64" r="3" fill="#2E86DE"/>
+    <circle cx="-28" cy="48" r="3" fill="#2E86DE"/>
+    <circle cx="-28" cy="16" r="3" fill="#2E86DE"/>
+    <line x1="0" y1="0" x2="28" y2="16" stroke="#2E86DE" stroke-width="1.5" opacity="0.7"/>
+    <line x1="28" y1="16" x2="28" y2="48" stroke="#2E86DE" stroke-width="1.5" opacity="0.7"/>
+    <line x1="28" y1="48" x2="0" y2="64" stroke="#2E86DE" stroke-width="1.5" opacity="0.7"/>
+    <line x1="0" y1="64" x2="-28" y2="48" stroke="#2E86DE" stroke-width="1.5" opacity="0.7"/>
+    <line x1="-28" y1="48" x2="-28" y2="16" stroke="#2E86DE" stroke-width="1.5" opacity="0.7"/>
+    <line x1="-28" y1="16" x2="0" y2="0" stroke="#2E86DE" stroke-width="1.5" opacity="0.7"/>
+  </g>
+  
+  <!-- Bottom wave pattern -->
+  <path d="M 0 380 Q 100 350 200 380 T 400 380 T 600 380 T 800 380" stroke="#C8962E" stroke-width="2.5" fill="none" opacity="0.5" stroke-linecap="round"/>
+  <path d="M 0 410 Q 100 385 200 410 T 400 410 T 600 410 T 800 410" stroke="#2E86DE" stroke-width="2" fill="none" opacity="0.4" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,89 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Forage et complétion - Well cross-section">
+  <defs>
+    <linearGradient id="grad_pil2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0A1628;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#162D50;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#grad_pil2)"/>
+
+  <!-- Geological layers — full width horizontal bands -->
+  <rect x="0" y="60" width="800" height="65" fill="#1A3A5C" opacity="0.4"/>
+  <rect x="0" y="125" width="800" height="70" fill="#1E2D3D" opacity="0.5"/>
+  <rect x="0" y="195" width="800" height="80" fill="#2A1F1A" opacity="0.35"/>
+  <rect x="0" y="275" width="800" height="75" fill="#1A3A5C" opacity="0.3"/>
+  <rect x="0" y="350" width="800" height="100" fill="#2A1F1A" opacity="0.4"/>
+
+  <!-- Layer labels right side -->
+  <text x="720" y="98" font-family="monospace" font-size="10" fill="#2E86DE" opacity="0.5">SURFACE</text>
+  <text x="720" y="165" font-family="monospace" font-size="10" fill="#C8962E" opacity="0.5">ARGILE</text>
+  <text x="720" y="240" font-family="monospace" font-size="10" fill="#2E86DE" opacity="0.5">GRÈS</text>
+  <text x="720" y="318" font-family="monospace" font-size="10" fill="#C8962E" opacity="0.5">CALC.</text>
+  <text x="720" y="400" font-family="monospace" font-size="10" fill="#28A745" opacity="0.5">RÉSERVOIR</text>
+
+  <!-- Well bore — large central vertical -->
+  <g transform="translate(350, 0)">
+    <!-- Conductor casing (widest) -->
+    <rect x="-40" y="30" width="80" height="50" fill="none" stroke="#C8962E" stroke-width="3" opacity="0.7"/>
+
+    <!-- Surface casing -->
+    <rect x="-32" y="60" width="64" height="100" fill="none" stroke="#C8962E" stroke-width="2.5" opacity="0.7"/>
+
+    <!-- Cement annulus (surface) -->
+    <path d="M -40 80 Q -48 100 -40 120" fill="none" stroke="#28A745" stroke-width="2.5" opacity="0.5" stroke-dasharray="4,3"/>
+    <path d="M 40 80 Q 48 100 40 120" fill="none" stroke="#28A745" stroke-width="2.5" opacity="0.5" stroke-dasharray="4,3"/>
+
+    <!-- Intermediate casing -->
+    <rect x="-24" y="140" width="48" height="140" fill="none" stroke="#2E86DE" stroke-width="2.5" opacity="0.7"/>
+
+    <!-- Cement annulus (intermediate) -->
+    <path d="M -32 160 Q -38 200 -32 240" fill="none" stroke="#28A745" stroke-width="2" opacity="0.4" stroke-dasharray="4,3"/>
+    <path d="M 32 160 Q 38 200 32 240" fill="none" stroke="#28A745" stroke-width="2" opacity="0.4" stroke-dasharray="4,3"/>
+
+    <!-- Production liner -->
+    <rect x="-16" y="270" width="32" height="150" fill="none" stroke="#C8962E" stroke-width="2" opacity="0.8"/>
+
+    <!-- Perforations in reservoir -->
+    <g opacity="0.8">
+      <circle cx="-20" cy="370" r="3" fill="#C8962E"/>
+      <circle cx="20" cy="370" r="3" fill="#C8962E"/>
+      <circle cx="-20" cy="390" r="3" fill="#C8962E"/>
+      <circle cx="20" cy="390" r="3" fill="#C8962E"/>
+      <circle cx="-20" cy="410" r="3" fill="#C8962E"/>
+      <circle cx="20" cy="410" r="3" fill="#C8962E"/>
+    </g>
+
+    <!-- Flow arrows from perforations -->
+    <path d="M -35 380 L -22 380" stroke="#28A745" stroke-width="1.5" opacity="0.6"/>
+    <path d="M 22 380 L 35 380" stroke="#28A745" stroke-width="1.5" opacity="0.6"/>
+    <path d="M -35 400 L -22 400" stroke="#28A745" stroke-width="1.5" opacity="0.6"/>
+    <path d="M 22 400 L 35 400" stroke="#28A745" stroke-width="1.5" opacity="0.6"/>
+
+    <!-- Tubing string inside -->
+    <line x1="0" y1="50" x2="0" y2="360" stroke="#2E86DE" stroke-width="2" opacity="0.6" stroke-dasharray="6,4"/>
+
+    <!-- Packer -->
+    <rect x="-18" y="340" width="36" height="12" fill="#2E86DE" opacity="0.4"/>
+  </g>
+
+  <!-- Depth scale left -->
+  <g transform="translate(60, 60)">
+    <line x1="0" y1="0" x2="0" y2="390" stroke="#C8962E" stroke-width="1.5" opacity="0.4"/>
+    <line x1="-6" y1="0" x2="6" y2="0" stroke="#C8962E" stroke-width="1.5" opacity="0.5"/>
+    <text x="15" y="5" font-family="monospace" font-size="10" fill="#C8962E" opacity="0.6">0m</text>
+    <line x1="-6" y1="100" x2="6" y2="100" stroke="#C8962E" stroke-width="1.5" opacity="0.5"/>
+    <text x="15" y="105" font-family="monospace" font-size="10" fill="#C8962E" opacity="0.6">800m</text>
+    <line x1="-6" y1="200" x2="6" y2="200" stroke="#C8962E" stroke-width="1.5" opacity="0.5"/>
+    <text x="15" y="205" font-family="monospace" font-size="10" fill="#C8962E" opacity="0.6">1600m</text>
+    <line x1="-6" y1="300" x2="6" y2="300" stroke="#C8962E" stroke-width="1.5" opacity="0.5"/>
+    <text x="15" y="305" font-family="monospace" font-size="10" fill="#C8962E" opacity="0.6">2400m</text>
+    <line x1="-6" y1="390" x2="6" y2="390" stroke="#C8962E" stroke-width="1.5" opacity="0.5"/>
+    <text x="15" y="395" font-family="monospace" font-size="10" fill="#C8962E" opacity="0.6">3100m</text>
+  </g>
+
+  <!-- Surface equipment silhouette top -->
+  <g transform="translate(310, 5)">
+    <rect x="0" y="0" width="80" height="25" fill="none" stroke="#C8962E" stroke-width="1.5" opacity="0.4"/>
+    <line x1="40" y1="0" x2="40" y2="-10" stroke="#C8962E" stroke-width="2" opacity="0.5"/>
+  </g>
+</svg>

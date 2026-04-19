@@ -1,0 +1,152 @@
+<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-6px); } }
+      @keyframes pulse { 0%, 100% { opacity: 0.6; } 50% { opacity: 1; } }
+      .float { animation: float 3s ease-in-out infinite; }
+      .pulse { animation: pulse 2s ease-in-out infinite; }
+    </style>
+    <radialGradient id="broadcast-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#D9A84F;stop-opacity:0.4" />
+      <stop offset="100%" style="stop-color:#D9A84F;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="400" fill="#080E1A"/>
+
+  <!-- Newspaper/Article 1 - Left -->
+  <g class="float" style="animation-delay: 0s">
+    <!-- Paper -->
+    <rect x="60" y="100" width="130" height="200" fill="rgba(217, 168, 79, 0.1)" stroke="#D9A84F" stroke-width="2" rx="4"/>
+
+    <!-- Title bar -->
+    <rect x="70" y="115" width="110" height="8" fill="#D9A84F" opacity="0.6" rx="2"/>
+
+    <!-- Text lines -->
+    <line x1="70" y1="135" x2="175" y2="135" stroke="#D9A84F" stroke-width="1" opacity="0.4"/>
+    <line x1="70" y1="145" x2="175" y2="145" stroke="#D9A84F" stroke-width="1" opacity="0.4"/>
+    <line x1="70" y1="155" x2="175" y2="155" stroke="#D9A84F" stroke-width="1" opacity="0.3"/>
+    <line x1="70" y1="165" x2="170" y2="165" stroke="#D9A84F" stroke-width="1" opacity="0.3"/>
+
+    <!-- Image placeholder -->
+    <rect x="70" y="175" width="110" height="40" fill="rgba(217, 168, 79, 0.15)" stroke="#D9A84F" stroke-width="1" rx="2"/>
+    <line x1="75" y1="180" x2="175" y2="210" stroke="#D9A84F" stroke-width="0.5" opacity="0.3"/>
+    <line x1="175" y1="180" x2="75" y2="210" stroke="#D9A84F" stroke-width="0.5" opacity="0.3"/>
+
+    <!-- Footer info -->
+    <line x1="70" y1="225" x2="175" y2="225" stroke="#D9A84F" stroke-width="0.5" opacity="0.3"/>
+    <line x1="70" y1="235" x2="160" y2="235" stroke="#D9A84F" stroke-width="0.5" opacity="0.3"/>
+  </g>
+
+  <!-- Newspaper/Article 2 - Center -->
+  <g class="float" style="animation-delay: 0.8s">
+    <!-- Paper -->
+    <rect x="335" y="80" width="130" height="200" fill="rgba(217, 168, 79, 0.1)" stroke="#D9A84F" stroke-width="2" rx="4"/>
+
+    <!-- Title bar -->
+    <rect x="345" y="95" width="110" height="8" fill="#D9A84F" opacity="0.6" rx="2"/>
+
+    <!-- Text lines -->
+    <line x1="345" y1="115" x2="450" y2="115" stroke="#D9A84F" stroke-width="1" opacity="0.4"/>
+    <line x1="345" y1="125" x2="450" y2="125" stroke="#D9A84F" stroke-width="1" opacity="0.4"/>
+    <line x1="345" y1="135" x2="450" y2="135" stroke="#D9A84F" stroke-width="1" opacity="0.3"/>
+
+    <!-- Image placeholder -->
+    <rect x="345" y="145" width="110" height="45" fill="rgba(217, 168, 79, 0.15)" stroke="#D9A84F" stroke-width="1" rx="2"/>
+    <polygon points="360,160 390,140 420,165 410,175 380,150 360,170" fill="rgba(217, 168, 79, 0.2)" opacity="0.5"/>
+
+    <!-- Text -->
+    <line x1="345" y1="200" x2="450" y2="200" stroke="#D9A84F" stroke-width="0.5" opacity="0.3"/>
+    <line x1="345" y1="210" x2="430" y2="210" stroke="#D9A84F" stroke-width="0.5" opacity="0.3"/>
+  </g>
+
+  <!-- Newspaper/Article 3 - Right -->
+  <g class="float" style="animation-delay: 1.6s">
+    <!-- Paper -->
+    <rect x="610" y="100" width="130" height="200" fill="rgba(217, 168, 79, 0.1)" stroke="#D9A84F" stroke-width="2" rx="4"/>
+
+    <!-- Title bar -->
+    <rect x="620" y="115" width="110" height="8" fill="#D9A84F" opacity="0.6" rx="2"/>
+
+    <!-- Text lines -->
+    <line x1="620" y1="135" x2="725" y2="135" stroke="#D9A84F" stroke-width="1" opacity="0.4"/>
+    <line x1="620" y1="145" x2="725" y2="145" stroke="#D9A84F" stroke-width="1" opacity="0.4"/>
+    <line x1="620" y1="155" x2="725" y2="155" stroke="#D9A84F" stroke-width="1" opacity="0.3"/>
+
+    <!-- Image placeholder -->
+    <rect x="620" y="165" width="110" height="40" fill="rgba(217, 168, 79, 0.15)" stroke="#D9A84F" stroke-width="1" rx="2"/>
+    <circle cx="650" cy="180" r="8" fill="rgba(217, 168, 79, 0.3)"/>
+    <circle cx="670" cy="195" r="6" fill="rgba(217, 168, 79, 0.2)"/>
+
+    <!-- Footer -->
+    <line x1="620" y1="215" x2="725" y2="215" stroke="#D9A84F" stroke-width="0.5" opacity="0.3"/>
+  </g>
+
+  <!-- Broadcast Waves -->
+  <g class="pulse" opacity="0.6">
+    <circle cx="400" cy="320" r="15" fill="none" stroke="#D9A84F" stroke-width="1.5"/>
+    <circle cx="400" cy="320" r="30" fill="none" stroke="#D9A84F" stroke-width="1"/>
+    <circle cx="400" cy="320" r="45" fill="none" stroke="#D9A84F" stroke-width="0.5" opacity="0.4"/>
+  </g>
+
+  <!-- Camera Lens -->
+  <g class="float" style="animation-delay: 0.5s">
+    <!-- Outer lens -->
+    <circle cx="500" cy="280" r="35" fill="none" stroke="#D9A84F" stroke-width="2" opacity="0.8"/>
+
+    <!-- Inner lens rings -->
+    <circle cx="500" cy="280" r="28" fill="none" stroke="#D9A84F" stroke-width="1" opacity="0.6"/>
+    <circle cx="500" cy="280" r="20" fill="none" stroke="#D9A84F" stroke-width="1" opacity="0.5"/>
+    <circle cx="500" cy="280" r="12" fill="none" stroke="#D9A84F" stroke-width="1" opacity="0.6"/>
+
+    <!-- Lens glare -->
+    <circle cx="485" cy="265" r="4" fill="#D9A84F" opacity="0.4"/>
+  </g>
+
+  <!-- Calendar Icon -->
+  <g class="float" style="animation-delay: 1s">
+    <!-- Calendar frame -->
+    <rect x="150" y="300" width="70" height="80" fill="rgba(217, 168, 79, 0.1)" stroke="#D9A84F" stroke-width="1.5" rx="3"/>
+
+    <!-- Header -->
+    <rect x="150" y="300" width="70" height="18" fill="#D9A84F" opacity="0.4" rx="3"/>
+
+    <!-- Grid lines -->
+    <line x1="150" y1="330" x2="220" y2="330" stroke="#D9A84F" stroke-width="0.5" opacity="0.4"/>
+    <line x1="150" y1="350" x2="220" y2="350" stroke="#D9A84F" stroke-width="0.5" opacity="0.4"/>
+    <line x1="150" y1="370" x2="220" y2="370" stroke="#D9A84F" stroke-width="0.5" opacity="0.4"/>
+
+    <line x1="167" y1="330" x2="167" y2="380" stroke="#D9A84F" stroke-width="0.5" opacity="0.4"/>
+    <line x1="184" y1="330" x2="184" y2="380" stroke="#D9A84F" stroke-width="0.5" opacity="0.4"/>
+    <line x1="201" y1="330" x2="201" y2="380" stroke="#D9A84F" stroke-width="0.5" opacity="0.4"/>
+
+    <!-- Day highlight -->
+    <circle cx="176" cy="360" r="4" fill="#D9A84F" opacity="0.6"/>
+  </g>
+
+  <!-- RSS Feed Symbol -->
+  <g class="float" style="animation-delay: 1.5s">
+    <!-- Feed box -->
+    <rect x="630" y="310" width="70" height="70" fill="none" stroke="#D9A84F" stroke-width="1.5" rx="3"/>
+
+    <!-- Dots pattern -->
+    <circle cx="645" cy="325" r="3" fill="#D9A84F" opacity="0.8"/>
+    <circle cx="660" cy="325" r="3" fill="#D9A84F" opacity="0.8"/>
+
+    <circle cx="645" cy="345" r="3" fill="#D9A84F" opacity="0.6"/>
+    <circle cx="660" cy="345" r="3" fill="#D9A84F" opacity="0.6"/>
+
+    <circle cx="645" cy="365" r="3" fill="#D9A84F" opacity="0.4"/>
+    <circle cx="660" cy="365" r="3" fill="#D9A84F" opacity="0.4"/>
+
+    <!-- Wave indicator -->
+    <path d="M 675 365 Q 680 360 685 365" fill="none" stroke="#D9A84F" stroke-width="1" opacity="0.5"/>
+  </g>
+
+  <!-- Connector lines -->
+  <g opacity="0.2">
+    <line x1="190" y1="300" x2="500" y2="320"/>
+    <line x1="400" y1="380" x2="660" y2="350"/>
+  </g>
+</svg>

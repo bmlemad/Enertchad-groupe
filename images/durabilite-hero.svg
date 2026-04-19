@@ -1,0 +1,108 @@
+<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-6px); } }
+      @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+      .float { animation: float 3s ease-in-out infinite; }
+      .rotate { animation: rotate 8s linear infinite; }
+    </style>
+    <radialGradient id="tree-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#10B981;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#10B981;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="400" fill="#080E1A"/>
+
+  <!-- Acacia Tree Left -->
+  <g class="float">
+    <!-- Trunk -->
+    <rect x="140" y="240" width="16" height="120" fill="rgba(16, 185, 129, 0.2)" stroke="#10B981" stroke-width="1.5" rx="8"/>
+
+    <!-- Main canopy circles -->
+    <circle cx="130" cy="160" r="45" fill="rgba(16, 185, 129, 0.15)" stroke="#10B981" stroke-width="1.5"/>
+    <circle cx="130" cy="160" r="45" fill="url(#tree-glow)"/>
+
+    <!-- Secondary foliage layers -->
+    <circle cx="100" cy="180" r="35" fill="rgba(16, 185, 129, 0.1)" stroke="#10B981" stroke-width="1" opacity="0.8"/>
+    <circle cx="160" cy="175" r="38" fill="rgba(16, 185, 129, 0.1)" stroke="#10B981" stroke-width="1" opacity="0.8"/>
+    <circle cx="140" cy="200" r="32" fill="rgba(16, 185, 129, 0.12)" stroke="#10B981" stroke-width="1" opacity="0.7"/>
+
+    <!-- Leaves accent -->
+    <g opacity="0.6">
+      <polygon points="110,150 115,140 120,145" fill="#10B981"/>
+      <polygon points="155,165 160,155 165,160" fill="#10B981"/>
+      <polygon points="125,195 130,185 135,190" fill="#10B981"/>
+    </g>
+  </g>
+
+  <!-- Clean Industrial Facility Right -->
+  <g class="float" style="animation-delay: 0.5s">
+    <!-- Main structure -->
+    <rect x="520" y="200" width="140" height="160" fill="rgba(46, 134, 222, 0.1)" stroke="#2E86DE" stroke-width="1.5" rx="4"/>
+
+    <!-- Smokestack/tower -->
+    <rect x="630" y="140" width="20" height="220" fill="rgba(46, 134, 222, 0.15)" stroke="#2E86DE" stroke-width="1.5"/>
+
+    <!-- Clean emission effect -->
+    <circle cx="640" cy="130" r="12" fill="rgba(224, 242, 254, 0.2)" stroke="#0EA5E9" stroke-width="1" opacity="0.7"/>
+    <circle cx="640" cy="115" r="14" fill="rgba(224, 242, 254, 0.15)" stroke="#0EA5E9" stroke-width="1" opacity="0.5"/>
+
+    <!-- Storage tanks -->
+    <circle cx="560" cy="260" r="25" fill="none" stroke="#2E86DE" stroke-width="1.5" opacity="0.6"/>
+    <circle cx="620" cy="280" r="20" fill="none" stroke="#0EA5E9" stroke-width="1.5" opacity="0.6"/>
+
+    <!-- Pipe connections -->
+    <path d="M 560 235 Q 580 220 640 180" stroke="#2E86DE" stroke-width="1" fill="none" opacity="0.5"/>
+    <path d="M 620 260 L 640 240" stroke="#0EA5E9" stroke-width="1" fill="none" opacity="0.5"/>
+  </g>
+
+  <!-- Sun above -->
+  <g class="float">
+    <circle cx="680" cy="60" r="30" fill="#D9A84F" opacity="0.7"/>
+    <circle cx="680" cy="60" r="30" fill="none" stroke="#D9A84F" stroke-width="1" opacity="0.4"/>
+  </g>
+
+  <!-- Flying Birds -->
+  <g opacity="0.6">
+    <path d="M 200 120 L 205 115 L 210 120" fill="none" stroke="#10B981" stroke-width="1.5" stroke-linecap="round">
+      <animate attributeName="d" values="M 200 120 L 205 115 L 210 120; M 210 125 L 215 120 L 220 125; M 220 115 L 225 110 L 230 115" dur="3s" repeatCount="indefinite"/>
+    </path>
+    <path d="M 300 100 L 305 95 L 310 100" fill="none" stroke="#10B981" stroke-width="1.5" stroke-linecap="round">
+      <animate attributeName="d" values="M 300 100 L 305 95 L 310 100; M 310 105 L 315 100 L 320 105; M 320 95 L 325 90 L 330 95" dur="3.5s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- Circular Economy Arrows -->
+  <g opacity="0.5">
+    <!-- Left arrow -->
+    <path d="M 250 300 Q 280 320 310 300" fill="none" stroke="#10B981" stroke-width="1.5" stroke-linecap="round"/>
+    <polygon points="310,300 315,295 312,305" fill="#10B981"/>
+
+    <!-- Right arrow -->
+    <path d="M 400 300 Q 370 320 340 300" fill="none" stroke="#10B981" stroke-width="1.5" stroke-linecap="round"/>
+    <polygon points="340,300 335,295 338,305" fill="#10B981"/>
+
+    <!-- Connection lines -->
+    <circle cx="280" cy="285" r="3" fill="#10B981" opacity="0.6"/>
+    <circle cx="370" cy="285" r="3" fill="#10B981" opacity="0.6"/>
+    <line x1="280" y1="285" x2="370" y2="285" stroke="#10B981" stroke-width="1" opacity="0.4"/>
+  </g>
+
+  <!-- Ground line -->
+  <line x1="50" y1="360" x2="750" y2="360" stroke="#10B981" stroke-width="1" opacity="0.3"/>
+
+  <!-- Soil layers indicator -->
+  <g opacity="0.3">
+    <line x1="50" y1="365" x2="750" y2="365" stroke="#D9A84F" stroke-width="0.5"/>
+    <line x1="50" y1="375" x2="750" y2="375" stroke="#D9A84F" stroke-width="0.5"/>
+  </g>
+
+  <!-- Connection between tree and facility (sustainability link) -->
+  <g opacity="0.25">
+    <line x1="185" y1="200" x2="520" y2="220" stroke="#10B981" stroke-width="1"/>
+    <circle cx="240" cy="205" r="2" fill="#10B981"/>
+    <circle cx="465" cy="215" r="2" fill="#10B981"/>
+  </g>
+</svg>

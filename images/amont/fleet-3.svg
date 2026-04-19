@@ -1,0 +1,62 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ESP/pumps - Submersible pump">
+  <defs>
+    <linearGradient id="grad_fleet3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0A1628;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0F2240;stop-opacity:1" />
+    </linearGradient>
+    <pattern id="hatch_fleet3" width="10" height="10" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="10" y2="10" stroke="#2E86DE" stroke-width="0.5" opacity="0.1"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="450" fill="url(#grad_fleet3)"/>
+  <rect width="800" height="450" fill="url(#hatch_fleet3)"/>
+  
+  <!-- Submersible pump assembly center-left -->
+  <g transform="translate(150, 80)">
+    <!-- Motor section -->
+    <rect x="0" y="0" width="50" height="60" fill="none" stroke="#C8962E" stroke-width="2.5" opacity="0.85"/>
+    <circle cx="25" cy="30" r="12" fill="none" stroke="#C8962E" stroke-width="1.5" opacity="0.7"/>
+    <text x="25" y="35" font-family="monospace" font-size="10" fill="#C8962E" text-anchor="middle" opacity="0.6">MOTOR</text>
+    
+    <!-- Pump stages -->
+    <rect x="0" y="65" width="50" height="45" fill="none" stroke="#2E86DE" stroke-width="2.5" opacity="0.8"/>
+    <line x1="0" y1="75" x2="50" y2="75" stroke="#C8962E" stroke-width="1" opacity="0.5"/>
+    <line x1="0" y1="85" x2="50" y2="85" stroke="#2E86DE" stroke-width="1" opacity="0.5"/>
+    <line x1="0" y1="95" x2="50" y2="95" stroke="#C8962E" stroke-width="1" opacity="0.5"/>
+    <line x1="0" y1="105" x2="50" y2="105" stroke="#2E86DE" stroke-width="1" opacity="0.5"/>
+    <text x="25" y="115" font-family="monospace" font-size="9" fill="#2E86DE" text-anchor="middle" opacity="0.6">PUMP</text>
+  </g>
+  
+  <!-- Electrical cables right -->
+  <g transform="translate(480, 100)">
+    <!-- Power cables -->
+    <line x1="0" y1="10" x2="0" y2="120" stroke="#C8962E" stroke-width="2.5" opacity="0.8"/>
+    <line x1="25" y1="10" x2="25" y2="120" stroke="#2E86DE" stroke-width="2.5" opacity="0.8"/>
+    <line x1="50" y1="10" x2="50" y2="120" stroke="#C8962E" stroke-width="2.5" opacity="0.8"/>
+    
+    <!-- Cable connectors -->
+    <circle cx="0" cy="8" r="3" fill="#C8962E" opacity="0.7"/>
+    <circle cx="25" cy="8" r="3" fill="#2E86DE" opacity="0.7"/>
+    <circle cx="50" cy="8" r="3" fill="#C8962E" opacity="0.7"/>
+    
+    <!-- Insulation bands -->
+    <rect x="-5" y="30" width="60" height="3" fill="none" stroke="#2E86DE" stroke-width="1" opacity="0.5"/>
+    <rect x="-5" y="60" width="60" height="3" fill="none" stroke="#C8962E" stroke-width="1" opacity="0.5"/>
+    <rect x="-5" y="90" width="60" height="3" fill="none" stroke="#2E86DE" stroke-width="1" opacity="0.5"/>
+  </g>
+  
+  <!-- Performance metrics bottom -->
+  <g transform="translate(100, 310)">
+    <text x="0" y="0" font-family="monospace" font-size="12" fill="#C8962E" opacity="0.8" font-weight="bold">Flow Rate:</text>
+    <rect x="0" y="12" width="120" height="10" fill="none" stroke="#C8962E" stroke-width="2" opacity="0.6"/>
+    <rect x="0" y="12" width="90" height="10" fill="#C8962E" opacity="0.5"/>
+    <text x="130" y="20" font-family="monospace" font-size="10" fill="#C8962E" opacity="0.6">500 bbl/d</text>
+  </g>
+  
+  <g transform="translate(450, 310)">
+    <text x="0" y="0" font-family="monospace" font-size="12" fill="#2E86DE" opacity="0.8" font-weight="bold">Power Draw:</text>
+    <circle cx="30" cy="20" r="12" fill="none" stroke="#2E86DE" stroke-width="1.5" opacity="0.6"/>
+    <line x1="30" y1="10" x2="30" y2="5" stroke="#2E86DE" stroke-width="2" opacity="0.7"/>
+    <text x="50" y="24" font-family="monospace" font-size="10" fill="#2E86DE" opacity="0.6">120 kW</text>
+  </g>
+</svg>

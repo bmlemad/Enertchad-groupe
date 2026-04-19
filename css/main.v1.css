@@ -24,7 +24,7 @@
   --shadow-l:0 20px 60px rgba(0,0,0,0.4);
   --shadow-m:0 8px 30px rgba(0,0,0,0.3);
   /* spacing */
-  --space-xs:0.5rem;--space-sm:1rem;--space-md:1.5rem;--space-lg:2.5rem;--space-xl:4rem;--space-2xl:6rem;
+  --space-xs:var(--sp-xs,0.5rem);--space-sm:var(--sp-md,1rem);--space-md:var(--sp-lg,1.5rem);--space-lg:var(--sp-xl,2rem);--space-xl:var(--sp-3xl,4rem);--space-2xl:var(--sp-4xl,6rem);
 }
 
 /* ═══ RESPONSIVE BREAKPOINTS ═══ */
@@ -174,7 +174,8 @@ body::before{content:'';position:fixed;inset:0;z-index:9990;pointer-events:none;
 .mega-drop::before{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent 5%,rgba(200,150,46,0.25) 50%,transparent 95%)}
 .mega-drop::after{content:'';position:absolute;top:0;right:0;width:400px;height:400px;
   background:radial-gradient(circle,rgba(200,150,46,0.04) 0%,transparent 70%);pointer-events:none}
-.nav-item.open .mega-drop{clip-path:inset(0 0 0 0)}
+.nav-item.open .mega-drop,
+.mega-drop.active{clip-path:inset(0 0 0 0);transform:none;opacity:1;visibility:visible}
 
 /* ── Header bar inside mega ── */
 .mega-header{display:flex;align-items:center;justify-content:space-between;padding:1rem 2.5rem;

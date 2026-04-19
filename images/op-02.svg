@@ -1,0 +1,110 @@
+<svg viewBox="0 0 600 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @keyframes pulse-glow { 0%, 100% { opacity: 0.6; } 50% { opacity: 1; } }
+      @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+      @keyframes dash { to { stroke-dashoffset: 0; } }
+      .glow { animation: pulse-glow 3s ease-in-out infinite; }
+      .float { animation: float 4s ease-in-out infinite; }
+      .dash-line { stroke-dasharray: 4, 4; animation: dash 20s linear infinite; }
+    </style>
+    <radialGradient id="glow1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:0.4" />
+      <stop offset="100%" style="stop-color:#8B5CF6;stop-opacity:0" />
+    </radialGradient>
+    <radialGradient id="glow2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#0EA5E9;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#0EA5E9;stop-opacity:0" />
+    </radialGradient>
+    <filter id="blur">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="500" fill="#080E1A"/>
+
+  <!-- Monitoring Screen 1 - Left -->
+  <g class="float" style="animation-delay: 0s">
+    <rect x="50" y="100" width="180" height="140" fill="rgba(139, 92, 246, 0.1)" stroke="#8B5CF6" stroke-width="2" rx="8"/>
+    <!-- Screen graph lines -->
+    <polyline points="70,200 85,180 100,190 115,160 130,170 145,150 160,160"
+              fill="none" stroke="#8B5CF6" stroke-width="1.5" opacity="0.8"/>
+    <circle cx="70" cy="200" r="3" fill="#8B5CF6"/>
+    <circle cx="145" cy="150" r="3" fill="#8B5CF6"/>
+    <!-- Grid pattern -->
+    <line x1="70" y1="120" x2="210" y2="120" stroke="#8B5CF6" stroke-width="0.5" opacity="0.3"/>
+    <line x1="70" y1="135" x2="210" y2="135" stroke="#8B5CF6" stroke-width="0.5" opacity="0.3"/>
+    <line x1="70" y1="150" x2="210" y2="150" stroke="#8B5CF6" stroke-width="0.5" opacity="0.3"/>
+  </g>
+
+  <!-- Monitoring Screen 2 - Right -->
+  <g class="float" style="animation-delay: 1s">
+    <rect x="370" y="100" width="180" height="140" fill="rgba(139, 92, 246, 0.1)" stroke="#8B5CF6" stroke-width="2" rx="8"/>
+    <!-- Circular graph -->
+    <circle cx="460" cy="160" r="35" fill="none" stroke="#8B5CF6" stroke-width="1.5" opacity="0.5"/>
+    <path d="M 460 125 A 35 35 0 0 1 490 190" fill="none" stroke="#8B5CF6" stroke-width="2"/>
+    <circle cx="490" cy="190" r="4" fill="#8B5CF6"/>
+  </g>
+
+  <!-- Central Digital Brain/Node Hub -->
+  <g class="glow">
+    <circle cx="300" cy="280" r="50" fill="url(#glow1)"/>
+    <circle cx="300" cy="280" r="50" fill="none" stroke="#8B5CF6" stroke-width="1.5" opacity="0.6"/>
+    <!-- Inner circuit -->
+    <circle cx="300" cy="280" r="35" fill="none" stroke="#8B5CF6" stroke-width="1" opacity="0.4"/>
+    <circle cx="300" cy="280" r="20" fill="none" stroke="#8B5CF6" stroke-width="1" opacity="0.4"/>
+    <circle cx="300" cy="280" r="8" fill="#8B5CF6" opacity="0.8"/>
+  </g>
+
+  <!-- Connected Nodes/Sensors -->
+  <g opacity="0.7">
+    <!-- Top left node -->
+    <circle cx="150" cy="150" r="6" fill="#8B5CF6" class="glow"/>
+    <line x1="160" y1="160" x2="290" y2="240" stroke="#8B5CF6" stroke-width="1" opacity="0.4" class="dash-line"/>
+
+    <!-- Top right node -->
+    <circle cx="450" cy="150" r="6" fill="#8B5CF6" class="glow"/>
+    <line x1="440" y1="160" x2="310" y2="240" stroke="#8B5CF6" stroke-width="1" opacity="0.4" class="dash-line"/>
+
+    <!-- Bottom left node -->
+    <circle cx="120" cy="380" r="6" fill="#0EA5E9" class="glow"/>
+    <line x1="140" y1="370" x2="280" y2="310" stroke="#0EA5E9" stroke-width="1" opacity="0.4" class="dash-line"/>
+
+    <!-- Bottom right node -->
+    <circle cx="480" cy="380" r="6" fill="#0EA5E9" class="glow"/>
+    <line x1="460" y1="370" x2="320" y2="310" stroke="#0EA5E9" stroke-width="1" opacity="0.4" class="dash-line"/>
+  </g>
+
+  <!-- Flowing Data Particles -->
+  <g opacity="0.6">
+    <circle cx="250" cy="250" r="3" fill="#8B5CF6">
+      <animate attributeName="cx" values="200;300;350;300;200" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="250;220;250;300;250" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;1;1;0" dur="8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="350" cy="300" r="3" fill="#0EA5E9">
+      <animate attributeName="cx" values="350;300;250;300;350" dur="7s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="300;330;300;230;300" dur="7s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;1;1;0" dur="7s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="300" cy="220" r="2" fill="#8B5CF6">
+      <animate attributeName="cx" values="200;300;400;300;200" dur="9s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="280;200;280;360;280" dur="9s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.8;0.8;0.8;0" dur="9s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Chip/Circuit Board Pattern -->
+  <g opacity="0.4">
+    <rect x="80" y="280" width="40" height="40" fill="none" stroke="#8B5CF6" stroke-width="1"/>
+    <rect x="85" y="285" width="30" height="30" fill="none" stroke="#8B5CF6" stroke-width="0.5"/>
+    <line x1="100" y1="280" x2="100" y2="320" stroke="#8B5CF6" stroke-width="0.5"/>
+    <line x1="80" y1="300" x2="120" y2="300" stroke="#8B5CF6" stroke-width="0.5"/>
+
+    <rect x="480" y="280" width="40" height="40" fill="none" stroke="#0EA5E9" stroke-width="1"/>
+    <rect x="485" y="285" width="30" height="30" fill="none" stroke="#0EA5E9" stroke-width="0.5"/>
+    <line x1="500" y1="280" x2="500" y2="320" stroke="#0EA5E9" stroke-width="0.5"/>
+    <line x1="480" y1="300" x2="520" y2="300" stroke="#0EA5E9" stroke-width="0.5"/>
+  </g>
+</svg>

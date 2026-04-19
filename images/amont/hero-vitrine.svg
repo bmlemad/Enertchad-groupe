@@ -1,0 +1,171 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Champ pétrolier sahélien au coucher du soleil avec pompe à balancier">
+  <defs>
+    <linearGradient id="skyH" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#07152B"/>
+      <stop offset="0.22" stop-color="#1A3460"/>
+      <stop offset="0.45" stop-color="#4A3418"/>
+      <stop offset="0.65" stop-color="#A06820"/>
+      <stop offset="0.82" stop-color="#D8A73A"/>
+      <stop offset="0.95" stop-color="#F2C354"/>
+      <stop offset="1" stop-color="#8A6518"/>
+    </linearGradient>
+    <radialGradient id="sunH" cx="0.72" cy="0.78" r="0.18">
+      <stop offset="0" stop-color="#F0DC82" stop-opacity="1"/>
+      <stop offset="0.25" stop-color="#F0DC82" stop-opacity="0.9"/>
+      <stop offset="0.6" stop-color="#D8A73A" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#D8A73A" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="hazeH" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#A06820" stop-opacity="0"/>
+      <stop offset="1" stop-color="#d88a3a" stop-opacity="0.35"/>
+    </linearGradient>
+    <linearGradient id="groundH" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1A1208"/>
+      <stop offset="0.5" stop-color="#0A0604"/>
+      <stop offset="1" stop-color="#050305"/>
+    </linearGradient>
+    <filter id="glowH" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+    <filter id="atmH" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="1600" height="900" fill="url(#skyH)"/>
+
+  <!-- Sun halo glow -->
+  <circle cx="1150" cy="700" r="380" fill="url(#sunH)" filter="url(#glowH)" opacity="0.9"/>
+
+  <!-- Sun disc -->
+  <circle cx="1150" cy="700" r="78" fill="#F0DC82"/>
+  <circle cx="1150" cy="700" r="72" fill="#F0DC82"/>
+
+  <!-- Distant hills layer 3 (far) -->
+  <path d="M0,640 C180,595 330,612 480,590 C620,572 780,600 920,585 C1080,570 1240,595 1400,580 C1520,570 1600,595 1600,620 L1600,720 L0,720 Z" fill="#2B1F10" opacity="0.55" filter="url(#atmH)"/>
+
+  <!-- Distant hills layer 2 (mid) -->
+  <path d="M0,680 C150,655 320,670 480,650 C640,632 800,658 960,645 C1120,630 1280,655 1440,642 C1540,635 1600,655 1600,680 L1600,760 L0,760 Z" fill="#241410" opacity="0.75"/>
+
+  <!-- Atmospheric haze band -->
+  <rect x="0" y="620" width="1600" height="180" fill="url(#hazeH)" opacity="0.5"/>
+
+  <!-- Mid plain -->
+  <path d="M0,720 L1600,720 L1600,780 L0,780 Z" fill="#1A1208"/>
+
+  <!-- Distant pump jack silhouettes (tiny) -->
+  <g fill="#0a0604" opacity="0.85">
+    <g transform="translate(220,705) scale(0.35)">
+      <rect x="-12" y="0" width="24" height="40" />
+      <line x1="0" y1="0" x2="0" y2="-45" stroke="#0a0604" stroke-width="4"/>
+      <line x1="-18" y1="-45" x2="22" y2="-38" stroke="#0a0604" stroke-width="5"/>
+      <circle cx="22" cy="-38" r="5"/>
+    </g>
+    <g transform="translate(380,712) scale(0.28)">
+      <rect x="-12" y="0" width="24" height="40"/>
+      <line x1="0" y1="0" x2="0" y2="-45" stroke="#0a0604" stroke-width="4"/>
+      <line x1="-18" y1="-42" x2="22" y2="-48" stroke="#0a0604" stroke-width="5"/>
+    </g>
+    <g transform="translate(520,710) scale(0.3)">
+      <rect x="-12" y="0" width="24" height="40"/>
+      <line x1="0" y1="0" x2="0" y2="-45" stroke="#0a0604" stroke-width="4"/>
+      <line x1="-18" y1="-48" x2="22" y2="-40" stroke="#0a0604" stroke-width="5"/>
+    </g>
+  </g>
+
+  <!-- Derrick tower distant right -->
+  <g transform="translate(1380,560)" fill="#0a0604" opacity="0.88">
+    <polygon points="0,200 -30,200 -15,0 15,0 30,200"/>
+    <line x1="-28" y1="180" x2="28" y2="180" stroke="#0a0604" stroke-width="2"/>
+    <line x1="-25" y1="160" x2="25" y2="160" stroke="#0a0604" stroke-width="2"/>
+    <line x1="-22" y1="140" x2="22" y2="140" stroke="#0a0604" stroke-width="2"/>
+    <line x1="-19" y1="120" x2="19" y2="120" stroke="#0a0604" stroke-width="2"/>
+    <line x1="-16" y1="100" x2="16" y2="100" stroke="#0a0604" stroke-width="2"/>
+    <line x1="-13" y1="80" x2="13" y2="80" stroke="#0a0604" stroke-width="2"/>
+    <line x1="-10" y1="60" x2="10" y2="60" stroke="#0a0604" stroke-width="2"/>
+    <line x1="-28" y1="200" x2="28" y2="0" stroke="#0a0604" stroke-width="1.5"/>
+    <line x1="28" y1="200" x2="-28" y2="0" stroke="#0a0604" stroke-width="1.5"/>
+    <rect x="-8" y="-20" width="16" height="20"/>
+    <line x1="0" y1="-20" x2="0" y2="-45" stroke="#0a0604" stroke-width="2"/>
+    <circle cx="0" cy="-48" r="3" fill="#ff6b1a"/>
+  </g>
+
+  <!-- Birds -->
+  <g fill="none" stroke="#0a0604" stroke-width="2" opacity="0.7">
+    <path d="M900,280 q8,-8 16,0 q8,-8 16,0"/>
+    <path d="M960,240 q6,-6 12,0 q6,-6 12,0"/>
+    <path d="M840,310 q6,-6 12,0 q6,-6 12,0"/>
+  </g>
+
+  <!-- Foreground ground -->
+  <rect x="0" y="780" width="1600" height="120" fill="url(#groundH)"/>
+
+  <!-- Foreground grass tufts -->
+  <g stroke="#1A1208" stroke-width="2" fill="none" opacity="0.8">
+    <path d="M80,870 l-3,-18 M85,870 l1,-20 M90,870 l4,-16"/>
+    <path d="M240,880 l-3,-15 M245,880 l1,-18"/>
+    <path d="M1450,875 l-3,-16 M1455,875 l2,-19 M1460,875 l5,-14"/>
+  </g>
+
+  <!-- Main pump jack FOREGROUND center-left -->
+  <g transform="translate(540,780)">
+    <!-- Base concrete -->
+    <rect x="-110" y="0" width="220" height="18" fill="#08050a"/>
+    <rect x="-95" y="-8" width="190" height="12" fill="#12090a"/>
+    <!-- Support A-frame -->
+    <polygon points="-85,0 -50,-135 -20,-135 -65,0" fill="#0a0604"/>
+    <polygon points="85,0 50,-135 20,-135 65,0" fill="#0a0604"/>
+    <rect x="-22" y="-145" width="44" height="14" fill="#0a0604"/>
+    <!-- Samson post / walking beam pivot -->
+    <circle cx="0" cy="-138" r="10" fill="#0a0604"/>
+    <circle cx="0" cy="-138" r="4" fill="#1A1208"/>
+    <!-- Walking beam (horse head) -->
+    <polygon points="-175,-115 -190,-140 -175,-165 155,-155 175,-138 155,-120" fill="#0a0604"/>
+    <polygon points="-175,-115 -195,-135 -210,-155 -220,-130 -210,-105 -180,-108" fill="#0a0604"/>
+    <!-- Polished rod down to wellhead -->
+    <line x1="-205" y1="-115" x2="-205" y2="0" stroke="#0a0604" stroke-width="6"/>
+    <rect x="-215" y="-4" width="20" height="18" fill="#0a0604"/>
+    <!-- Counterweights crank -->
+    <circle cx="140" cy="-100" r="38" fill="#0a0604"/>
+    <circle cx="140" cy="-100" r="30" fill="#120908"/>
+    <rect x="135" y="-135" width="10" height="70" fill="#0a0604"/>
+    <line x1="140" y1="-100" x2="0" y2="-138" stroke="#0a0604" stroke-width="5"/>
+    <!-- Motor housing -->
+    <rect x="80" y="-35" width="70" height="35" fill="#0a0604"/>
+    <rect x="85" y="-30" width="60" height="6" fill="#1A1208"/>
+    <!-- Warning light -->
+    <circle cx="0" cy="-175" r="4" fill="#ff6b1a" opacity="0.9"/>
+  </g>
+
+  <!-- Wellhead xmas tree foreground right -->
+  <g transform="translate(1180,780)">
+    <rect x="-40" y="0" width="80" height="12" fill="#0a0604"/>
+    <rect x="-18" y="-8" width="36" height="16" fill="#12090a"/>
+    <rect x="-14" y="-50" width="28" height="42" fill="#0a0604"/>
+    <rect x="-10" y="-80" width="20" height="30" fill="#0a0604"/>
+    <rect x="-8" y="-110" width="16" height="30" fill="#0a0604"/>
+    <!-- Valves -->
+    <circle cx="-22" cy="-25" r="9" fill="#0a0604"/>
+    <circle cx="-22" cy="-25" r="5" fill="#12090a"/>
+    <circle cx="22" cy="-25" r="9" fill="#0a0604"/>
+    <circle cx="22" cy="-25" r="5" fill="#12090a"/>
+    <circle cx="-20" cy="-65" r="7" fill="#0a0604"/>
+    <circle cx="20" cy="-65" r="7" fill="#0a0604"/>
+    <rect x="-28" y="-28" width="10" height="6" fill="#0a0604"/>
+    <rect x="18" y="-28" width="10" height="6" fill="#0a0604"/>
+    <!-- Top cap -->
+    <rect x="-12" y="-116" width="24" height="6" fill="#0a0604"/>
+    <circle cx="0" cy="-120" r="4" fill="#ff6b1a" opacity="0.9"/>
+  </g>
+
+  <!-- Subtle gold rim light on horizon -->
+  <rect x="0" y="718" width="1600" height="2" fill="#F2C354" opacity="0.5"/>
+
+  <!-- Vignette -->
+  <radialGradient id="vignH" cx="0.5" cy="0.5" r="0.75">
+    <stop offset="0.6" stop-color="#000" stop-opacity="0"/>
+    <stop offset="1" stop-color="#000" stop-opacity="0.55"/>
+  </radialGradient>
+  <rect width="1600" height="900" fill="url(#vignH)"/>
+</svg>

@@ -1,0 +1,70 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Proppants et chimie EOR">
+  <defs>
+    <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0A1628;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0F2240;stop-opacity:1" />
+    </linearGradient>
+    <pattern id="hatch3" width="8" height="8" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="8" y2="8" stroke="#2E86DE" stroke-width="0.5" opacity="0.12"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="450" fill="url(#grad3)"/>
+  <rect width="800" height="450" fill="url(#hatch3)"/>
+  
+  <!-- Fractured rock layers left side -->
+  <g transform="translate(80, 100)">
+    <!-- Layer 1 -->
+    <path d="M 0 0 L 120 0 L 115 35 L 5 35 Z" fill="none" stroke="#C8962E" stroke-width="2" opacity="0.7"/>
+    <line x1="30" y1="0" x2="25" y2="35" stroke="#C8962E" stroke-width="1" opacity="0.5"/>
+    <line x1="60" y1="0" x2="55" y2="35" stroke="#C8962E" stroke-width="1" opacity="0.5"/>
+    <line x1="90" y1="0" x2="85" y2="35" stroke="#C8962E" stroke-width="1" opacity="0.5"/>
+    
+    <!-- Layer 2 -->
+    <path d="M 0 50 L 120 50 L 110 85 L 10 85 Z" fill="none" stroke="#2E86DE" stroke-width="2" opacity="0.7"/>
+    <line x1="20" y1="50" x2="12" y2="85" stroke="#2E86DE" stroke-width="1" opacity="0.5"/>
+    <line x1="50" y1="50" x2="42" y2="85" stroke="#2E86DE" stroke-width="1" opacity="0.5"/>
+    <line x1="80" y1="50" x2="72" y2="85" stroke="#2E86DE" stroke-width="1" opacity="0.5"/>
+    
+    <!-- Layer 3 -->
+    <path d="M 0 100 L 120 100 L 105 135 L 15 135 Z" fill="none" stroke="#C8962E" stroke-width="2" opacity="0.7"/>
+    <line x1="30" y1="100" x2="20" y2="135" stroke="#C8962E" stroke-width="1" opacity="0.5"/>
+    <line x1="70" y1="100" x2="60" y2="135" stroke="#C8962E" stroke-width="1" opacity="0.5"/>
+  </g>
+  
+  <!-- Injection arrows center -->
+  <g transform="translate(350, 80)">
+    <defs>
+      <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="5" refY="3" orient="auto">
+        <polygon points="0 0, 10 3, 0 6" fill="#C8962E"/>
+      </marker>
+    </defs>
+    <path d="M 40 20 L 40 80" stroke="#C8962E" stroke-width="3" fill="none" marker-end="url(#arrowhead)" opacity="0.8"/>
+    <path d="M 80 20 L 80 80" stroke="#2E86DE" stroke-width="3" fill="none" marker-end="url(#arrowhead)" opacity="0.8"/>
+    <path d="M 120 20 L 120 80" stroke="#C8962E" stroke-width="3" fill="none" marker-end="url(#arrowhead)" opacity="0.8"/>
+    
+    <!-- Pressure circles -->
+    <circle cx="40" cy="100" r="8" fill="none" stroke="#C8962E" stroke-width="2" opacity="0.6"/>
+    <circle cx="40" cy="100" r="12" fill="none" stroke="#C8962E" stroke-width="1" opacity="0.4"/>
+    <circle cx="80" cy="100" r="8" fill="none" stroke="#2E86DE" stroke-width="2" opacity="0.6"/>
+    <circle cx="80" cy="100" r="12" fill="none" stroke="#2E86DE" stroke-width="1" opacity="0.4"/>
+    <circle cx="120" cy="100" r="8" fill="none" stroke="#C8962E" stroke-width="2" opacity="0.6"/>
+    <circle cx="120" cy="100" r="12" fill="none" stroke="#C8962E" stroke-width="1" opacity="0.4"/>
+  </g>
+  
+  <!-- Reservoir cross-section right -->
+  <g transform="translate(550, 150)">
+    <!-- Reservoir boundary -->
+    <ellipse cx="80" cy="60" rx="90" ry="70" fill="none" stroke="#2E86DE" stroke-width="2.5" opacity="0.7"/>
+    
+    <!-- Internal layers -->
+    <path d="M 5 60 Q 80 40 155 60" fill="none" stroke="#C8962E" stroke-width="1.5" opacity="0.5"/>
+    <path d="M 10 75 Q 80 65 150 75" fill="none" stroke="#2E86DE" stroke-width="1.5" opacity="0.5"/>
+    <path d="M 20 90 Q 80 85 140 90" fill="none" stroke="#C8962E" stroke-width="1.5" opacity="0.4"/>
+    
+    <!-- Well point -->
+    <circle cx="80" cy="60" r="5" fill="#C8962E" opacity="0.8"/>
+  </g>
+  
+  <!-- Bottom decoration -->
+  <path d="M 50 360 Q 200 330 400 360 T 750 360" stroke="#C8962E" stroke-width="2" fill="none" opacity="0.4" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,109 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pipeline & Transport — Panoramic pipeline cross-country view">
+  <defs>
+    <linearGradient id="grad_mid1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0F2240"/>
+      <stop offset="60%" stop-color="#0A1628"/>
+      <stop offset="100%" stop-color="#081020"/>
+    </linearGradient>
+    <linearGradient id="sky_mid1" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#0A1628"/>
+      <stop offset="100%" stop-color="#122A4D"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#grad_mid1)"/>
+
+  <!-- Horizon line & terrain -->
+  <path d="M 0 240 Q 100 220 200 235 Q 350 250 500 230 Q 650 215 800 240" fill="none" stroke="#28A745" stroke-width="1" opacity="0.2"/>
+  <path d="M 0 245 Q 200 260 400 245 Q 600 230 800 250 L 800 450 L 0 450 Z" fill="#0A1220" opacity="0.5"/>
+
+  <!-- ===== PIPELINE: long perspective cross-section ===== -->
+  <!-- Pipeline running across landscape — large, diagonal perspective -->
+  <g>
+    <!-- Pipeline outer tube (far to near perspective) -->
+    <path d="M 30 200 L 770 280" stroke="#C8962E" stroke-width="28" opacity="0.15" stroke-linecap="round"/>
+    <path d="M 30 200 L 770 280" stroke="#C8962E" stroke-width="18" opacity="0.25" stroke-linecap="round"/>
+    <path d="M 30 200 L 770 280" stroke="#C8962E" stroke-width="12" opacity="0.5" stroke-linecap="round"/>
+    <!-- Weld marks on pipeline -->
+    <circle cx="150" cy="214" r="8" fill="none" stroke="#C8962E" stroke-width="1.5" opacity="0.3"/>
+    <circle cx="300" cy="234" r="9" fill="none" stroke="#C8962E" stroke-width="1.5" opacity="0.3"/>
+    <circle cx="450" cy="252" r="10" fill="none" stroke="#C8962E" stroke-width="1.5" opacity="0.35"/>
+    <circle cx="600" cy="268" r="11" fill="none" stroke="#C8962E" stroke-width="1.5" opacity="0.4"/>
+
+    <!-- Pipeline supports/cradles -->
+    <g opacity="0.4">
+      <path d="M 148 222 L 140 265 L 160 265 Z" fill="none" stroke="#2E86DE" stroke-width="1.5"/>
+      <path d="M 298 242 L 288 285 L 310 285 Z" fill="none" stroke="#2E86DE" stroke-width="1.5"/>
+      <path d="M 448 260 L 436 305 L 460 305 Z" fill="none" stroke="#2E86DE" stroke-width="1.5"/>
+      <path d="M 598 276 L 584 325 L 612 325 Z" fill="none" stroke="#2E86DE" stroke-width="1.5"/>
+    </g>
+
+    <!-- Flow direction arrows inside pipeline -->
+    <g opacity="0.35">
+      <path d="M 100 207 L 120 210" stroke="#28A745" stroke-width="2" marker-end="url(#arr_m1)"/>
+      <path d="M 250 227 L 270 230" stroke="#28A745" stroke-width="2" marker-end="url(#arr_m1)"/>
+      <path d="M 400 247 L 420 250" stroke="#28A745" stroke-width="2" marker-end="url(#arr_m1)"/>
+      <path d="M 550 264 L 570 267" stroke="#28A745" stroke-width="2" marker-end="url(#arr_m1)"/>
+      <path d="M 700 278 L 720 280" stroke="#28A745" stroke-width="2" marker-end="url(#arr_m1)"/>
+    </g>
+    <defs>
+      <marker id="arr_m1" markerWidth="6" markerHeight="4" refX="6" refY="2" orient="auto">
+        <polygon points="0 0,6 2,0 4" fill="#28A745" opacity="0.6"/>
+      </marker>
+    </defs>
+  </g>
+
+  <!-- Cross-section inset (top left) -->
+  <g transform="translate(50, 40)">
+    <text x="60" y="0" font-family="monospace" font-size="8" fill="#C8962E" text-anchor="middle" opacity="0.5" font-weight="bold">COUPE TRANSVERSALE</text>
+    <!-- Pipe cross section -->
+    <circle cx="60" cy="55" r="40" fill="none" stroke="#C8962E" stroke-width="2.5" opacity="0.6"/>
+    <circle cx="60" cy="55" r="34" fill="none" stroke="#C8962E" stroke-width="1.5" opacity="0.4"/>
+    <!-- Coating layer -->
+    <circle cx="60" cy="55" r="44" fill="none" stroke="#2E86DE" stroke-width="1" opacity="0.3" stroke-dasharray="3 2"/>
+    <!-- Fluid inside -->
+    <path d="M 26 55 A 34 34 0 0 0 94 55" fill="none" stroke="none"/>
+    <ellipse cx="60" cy="65" rx="32" ry="15" fill="#C8962E" opacity="0.08"/>
+    <!-- Labels -->
+    <text x="60" y="55" font-family="monospace" font-size="7" fill="#C8962E" text-anchor="middle" opacity="0.5">Ø 30"</text>
+    <text x="60" y="65" font-family="monospace" font-size="6" fill="#2E86DE" text-anchor="middle" opacity="0.35">API 5L X60</text>
+    <!-- Dimension arrows -->
+    <line x1="16" y1="55" x2="16" y2="11" stroke="#C8962E" stroke-width="0.8" opacity="0.3"/>
+    <line x1="16" y1="55" x2="16" y2="99" stroke="#C8962E" stroke-width="0.8" opacity="0.3"/>
+  </g>
+
+  <!-- Elevation profile (bottom) -->
+  <g transform="translate(40, 350)">
+    <text x="0" y="0" font-family="monospace" font-size="8" fill="#C8962E" opacity="0.45" font-weight="bold">PROFIL ALTIMÉTRIQUE DOBA → KRIBI</text>
+    <!-- Axes -->
+    <line x1="0" y1="10" x2="0" y2="75" stroke="#C8962E" stroke-width="0.8" opacity="0.3"/>
+    <line x1="0" y1="75" x2="720" y2="75" stroke="#C8962E" stroke-width="0.8" opacity="0.3"/>
+    <!-- Elevation profile curve -->
+    <path d="M 0 30 Q 50 20 120 35 Q 200 50 300 40 Q 400 25 480 45 Q 560 55 640 50 Q 700 60 720 65" fill="none" stroke="#28A745" stroke-width="2" opacity="0.5"/>
+    <!-- Fill under curve -->
+    <path d="M 0 30 Q 50 20 120 35 Q 200 50 300 40 Q 400 25 480 45 Q 560 55 640 50 Q 700 60 720 65 L 720 75 L 0 75 Z" fill="#28A745" opacity="0.05"/>
+    <!-- Pump stations -->
+    <circle cx="0" cy="28" r="4" fill="#C8962E" opacity="0.6"/>
+    <circle cx="180" cy="45" r="4" fill="#C8962E" opacity="0.6"/>
+    <circle cx="360" cy="35" r="4" fill="#C8962E" opacity="0.6"/>
+    <circle cx="540" cy="50" r="4" fill="#C8962E" opacity="0.6"/>
+    <circle cx="720" cy="63" r="4" fill="#2E86DE" opacity="0.6"/>
+    <!-- Labels -->
+    <text x="0" y="18" font-family="monospace" font-size="6" fill="#C8962E" text-anchor="middle" opacity="0.4">DOBA</text>
+    <text x="180" y="18" font-family="monospace" font-size="5" fill="#C8962E" text-anchor="middle" opacity="0.3">PS-1</text>
+    <text x="360" y="18" font-family="monospace" font-size="5" fill="#C8962E" text-anchor="middle" opacity="0.3">PS-2</text>
+    <text x="540" y="18" font-family="monospace" font-size="5" fill="#C8962E" text-anchor="middle" opacity="0.3">PS-3</text>
+    <text x="720" y="18" font-family="monospace" font-size="6" fill="#2E86DE" text-anchor="middle" opacity="0.4">KRIBI</text>
+    <!-- Distance markers -->
+    <text x="360" y="88" font-family="monospace" font-size="7" fill="#C8962E" text-anchor="middle" opacity="0.35">1 070 km</text>
+  </g>
+
+  <!-- Top right: throughput indicator -->
+  <g transform="translate(580, 40)">
+    <text x="0" y="0" font-family="monospace" font-size="9" fill="#C8962E" opacity="0.5" font-weight="bold">DÉBIT TRANSIT</text>
+    <text x="0" y="30" font-family="monospace" font-size="28" fill="#C8962E" opacity="0.6" font-weight="bold">33M</text>
+    <text x="105" y="30" font-family="monospace" font-size="10" fill="#C8962E" opacity="0.4">bbl/an</text>
+    <rect x="0" y="42" width="170" height="5" fill="#C8962E" opacity="0.12" rx="2"/>
+    <rect x="0" y="42" width="140" height="5" fill="#C8962E" opacity="0.4" rx="2"/>
+    <text x="0" y="60" font-family="monospace" font-size="7" fill="#2E86DE" opacity="0.35">CAPACITÉ: 250 000 bbl/j</text>
+  </g>
+</svg>

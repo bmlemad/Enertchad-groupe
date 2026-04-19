@@ -1,0 +1,151 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Réseau de Collecte — Topological well gathering network">
+  <defs>
+    <linearGradient id="grad_mid4" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#0A1628"/>
+      <stop offset="100%" stop-color="#0F2240"/>
+    </linearGradient>
+    <radialGradient id="glow_mid4" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2E86DE" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+    <marker id="arr_m4" markerWidth="6" markerHeight="4" refX="6" refY="2" orient="auto">
+      <polygon points="0 0,6 2,0 4" fill="#28A745" opacity="0.7"/>
+    </marker>
+    <filter id="glow4">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="800" height="450" fill="url(#grad_mid4)"/>
+  <rect width="800" height="450" fill="url(#glow_mid4)"/>
+
+  <!-- ===== WELL NODES scattered across field ===== -->
+  <!-- Each well = small circle + pulsing ring + label -->
+
+  <!-- Cluster Nord (top left) -->
+  <g transform="translate(80, 80)">
+    <circle cx="0" cy="0" r="12" fill="none" stroke="#2E86DE" stroke-width="1" opacity="0.2"/>
+    <circle cx="0" cy="0" r="6" fill="#2E86DE" opacity="0.6"/>
+    <text x="0" y="-18" font-family="monospace" font-size="7" fill="#2E86DE" text-anchor="middle" opacity="0.5">W-01</text>
+  </g>
+  <g transform="translate(160, 55)">
+    <circle cx="0" cy="0" r="12" fill="none" stroke="#2E86DE" stroke-width="1" opacity="0.2"/>
+    <circle cx="0" cy="0" r="6" fill="#2E86DE" opacity="0.6"/>
+    <text x="0" y="-18" font-family="monospace" font-size="7" fill="#2E86DE" text-anchor="middle" opacity="0.5">W-02</text>
+  </g>
+  <g transform="translate(130, 140)">
+    <circle cx="0" cy="0" r="12" fill="none" stroke="#2E86DE" stroke-width="1" opacity="0.2"/>
+    <circle cx="0" cy="0" r="6" fill="#2E86DE" opacity="0.5"/>
+    <text x="0" y="-18" font-family="monospace" font-size="7" fill="#2E86DE" text-anchor="middle" opacity="0.4">W-03</text>
+  </g>
+
+  <!-- Cluster Ouest (bottom left) -->
+  <g transform="translate(60, 280)">
+    <circle cx="0" cy="0" r="12" fill="none" stroke="#C8962E" stroke-width="1" opacity="0.2"/>
+    <circle cx="0" cy="0" r="6" fill="#C8962E" opacity="0.6"/>
+    <text x="0" y="-18" font-family="monospace" font-size="7" fill="#C8962E" text-anchor="middle" opacity="0.5">W-04</text>
+  </g>
+  <g transform="translate(140, 320)">
+    <circle cx="0" cy="0" r="12" fill="none" stroke="#C8962E" stroke-width="1" opacity="0.2"/>
+    <circle cx="0" cy="0" r="6" fill="#C8962E" opacity="0.5"/>
+    <text x="0" y="-18" font-family="monospace" font-size="7" fill="#C8962E" text-anchor="middle" opacity="0.4">W-05</text>
+  </g>
+  <g transform="translate(100, 380)">
+    <circle cx="0" cy="0" r="12" fill="none" stroke="#C8962E" stroke-width="1" opacity="0.2"/>
+    <circle cx="0" cy="0" r="6" fill="#C8962E" opacity="0.5"/>
+    <text x="0" y="-18" font-family="monospace" font-size="7" fill="#C8962E" text-anchor="middle" opacity="0.4">W-06</text>
+  </g>
+
+  <!-- Cluster Est (right) -->
+  <g transform="translate(580, 90)">
+    <circle cx="0" cy="0" r="12" fill="none" stroke="#2E86DE" stroke-width="1" opacity="0.2"/>
+    <circle cx="0" cy="0" r="6" fill="#2E86DE" opacity="0.6"/>
+    <text x="0" y="-18" font-family="monospace" font-size="7" fill="#2E86DE" text-anchor="middle" opacity="0.5">W-07</text>
+  </g>
+  <g transform="translate(680, 140)">
+    <circle cx="0" cy="0" r="12" fill="none" stroke="#2E86DE" stroke-width="1" opacity="0.2"/>
+    <circle cx="0" cy="0" r="6" fill="#2E86DE" opacity="0.55"/>
+    <text x="0" y="-18" font-family="monospace" font-size="7" fill="#2E86DE" text-anchor="middle" opacity="0.45">W-08</text>
+  </g>
+  <g transform="translate(620, 340)">
+    <circle cx="0" cy="0" r="12" fill="none" stroke="#C8962E" stroke-width="1" opacity="0.2"/>
+    <circle cx="0" cy="0" r="6" fill="#C8962E" opacity="0.55"/>
+    <text x="0" y="-18" font-family="monospace" font-size="7" fill="#C8962E" text-anchor="middle" opacity="0.45">W-09</text>
+  </g>
+  <g transform="translate(720, 280)">
+    <circle cx="0" cy="0" r="12" fill="none" stroke="#C8962E" stroke-width="1" opacity="0.2"/>
+    <circle cx="0" cy="0" r="6" fill="#C8962E" opacity="0.5"/>
+    <text x="0" y="-18" font-family="monospace" font-size="7" fill="#C8962E" text-anchor="middle" opacity="0.4">W-10</text>
+  </g>
+
+  <!-- ===== GATHERING LINES — flowing to manifolds ===== -->
+  <!-- Cluster Nord → Manifold A -->
+  <path d="M 80 80 Q 200 100 260 155" stroke="#2E86DE" stroke-width="1.5" fill="none" opacity="0.35" stroke-dasharray="4 3"/>
+  <path d="M 160 55 Q 220 100 260 155" stroke="#2E86DE" stroke-width="1.5" fill="none" opacity="0.35" stroke-dasharray="4 3"/>
+  <path d="M 130 140 L 260 160" stroke="#2E86DE" stroke-width="1.5" fill="none" opacity="0.35" stroke-dasharray="4 3"/>
+
+  <!-- Cluster Ouest → Manifold B -->
+  <path d="M 60 280 Q 180 260 280 250" stroke="#C8962E" stroke-width="1.5" fill="none" opacity="0.3" stroke-dasharray="4 3"/>
+  <path d="M 140 320 Q 220 290 280 260" stroke="#C8962E" stroke-width="1.5" fill="none" opacity="0.3" stroke-dasharray="4 3"/>
+  <path d="M 100 380 Q 200 340 280 270" stroke="#C8962E" stroke-width="1.5" fill="none" opacity="0.25" stroke-dasharray="4 3"/>
+
+  <!-- Cluster Est → Manifold C -->
+  <path d="M 580 90 Q 520 140 480 170" stroke="#2E86DE" stroke-width="1.5" fill="none" opacity="0.35" stroke-dasharray="4 3"/>
+  <path d="M 680 140 Q 580 160 480 180" stroke="#2E86DE" stroke-width="1.5" fill="none" opacity="0.3" stroke-dasharray="4 3"/>
+  <path d="M 620 340 Q 550 290 480 250" stroke="#C8962E" stroke-width="1.5" fill="none" opacity="0.3" stroke-dasharray="4 3"/>
+  <path d="M 720 280 Q 600 260 480 240" stroke="#C8962E" stroke-width="1.5" fill="none" opacity="0.25" stroke-dasharray="4 3"/>
+
+  <!-- ===== MANIFOLDS (3 intermediate collection points) ===== -->
+  <!-- Manifold A (top center) -->
+  <g transform="translate(270, 160)">
+    <rect x="-18" y="-18" width="36" height="36" rx="8" fill="none" stroke="#2E86DE" stroke-width="2" opacity="0.6"/>
+    <rect x="-12" y="-12" width="24" height="24" rx="5" fill="none" stroke="#2E86DE" stroke-width="1" opacity="0.3"/>
+    <text x="0" y="4" font-family="monospace" font-size="8" fill="#2E86DE" text-anchor="middle" opacity="0.6" font-weight="bold">M-A</text>
+    <text x="0" y="32" font-family="monospace" font-size="6" fill="#2E86DE" text-anchor="middle" opacity="0.35">3 puits</text>
+  </g>
+
+  <!-- Manifold B (bottom center-left) -->
+  <g transform="translate(290, 260)">
+    <rect x="-18" y="-18" width="36" height="36" rx="8" fill="none" stroke="#C8962E" stroke-width="2" opacity="0.6"/>
+    <rect x="-12" y="-12" width="24" height="24" rx="5" fill="none" stroke="#C8962E" stroke-width="1" opacity="0.3"/>
+    <text x="0" y="4" font-family="monospace" font-size="8" fill="#C8962E" text-anchor="middle" opacity="0.6" font-weight="bold">M-B</text>
+    <text x="0" y="32" font-family="monospace" font-size="6" fill="#C8962E" text-anchor="middle" opacity="0.35">3 puits</text>
+  </g>
+
+  <!-- Manifold C (right center) -->
+  <g transform="translate(480, 210)">
+    <rect x="-18" y="-18" width="36" height="36" rx="8" fill="none" stroke="#2E86DE" stroke-width="2" opacity="0.6"/>
+    <rect x="-12" y="-12" width="24" height="24" rx="5" fill="none" stroke="#2E86DE" stroke-width="1" opacity="0.3"/>
+    <text x="0" y="4" font-family="monospace" font-size="8" fill="#2E86DE" text-anchor="middle" opacity="0.6" font-weight="bold">M-C</text>
+    <text x="0" y="32" font-family="monospace" font-size="6" fill="#2E86DE" text-anchor="middle" opacity="0.35">4 puits</text>
+  </g>
+
+  <!-- ===== TRUNK LINES: Manifolds → Central Processing Facility ===== -->
+  <path d="M 288 165 Q 350 185 380 205" stroke="#28A745" stroke-width="2.5" fill="none" opacity="0.5" marker-end="url(#arr_m4)"/>
+  <path d="M 300 250 Q 350 235 375 218" stroke="#28A745" stroke-width="2.5" fill="none" opacity="0.5" marker-end="url(#arr_m4)"/>
+  <path d="M 462 210 Q 430 210 405 210" stroke="#28A745" stroke-width="2.5" fill="none" opacity="0.5" marker-end="url(#arr_m4)"/>
+
+  <!-- ===== CENTRAL PROCESSING FACILITY (CPF) ===== -->
+  <g transform="translate(390, 210)" filter="url(#glow4)">
+    <circle cx="0" cy="0" r="28" fill="none" stroke="#28A745" stroke-width="2.5" opacity="0.7"/>
+    <circle cx="0" cy="0" r="22" fill="none" stroke="#28A745" stroke-width="1.5" opacity="0.4"/>
+    <circle cx="0" cy="0" r="16" fill="none" stroke="#C8962E" stroke-width="1" opacity="0.5"/>
+    <!-- Inner icon: separator symbol -->
+    <rect x="-8" y="-5" width="16" height="10" rx="3" fill="none" stroke="#C8962E" stroke-width="1.5" opacity="0.6"/>
+    <text x="0" y="48" font-family="monospace" font-size="9" fill="#28A745" text-anchor="middle" opacity="0.6" font-weight="bold">CPF</text>
+    <text x="0" y="60" font-family="monospace" font-size="6" fill="#28A745" text-anchor="middle" opacity="0.35">Station Séparation</text>
+  </g>
+
+  <!-- ===== KPI PANEL (bottom) ===== -->
+  <g transform="translate(250, 390)">
+    <rect x="0" y="0" width="300" height="40" rx="6" fill="none" stroke="#C8962E" stroke-width="1" opacity="0.2"/>
+    <line x1="100" y1="5" x2="100" y2="35" stroke="#C8962E" stroke-width="0.8" opacity="0.15"/>
+    <line x1="200" y1="5" x2="200" y2="35" stroke="#C8962E" stroke-width="0.8" opacity="0.15"/>
+    <text x="50" y="16" font-family="monospace" font-size="14" fill="#C8962E" text-anchor="middle" opacity="0.6" font-weight="bold">350+</text>
+    <text x="50" y="30" font-family="monospace" font-size="6" fill="#C8962E" text-anchor="middle" opacity="0.4">km conduites</text>
+    <text x="150" y="16" font-family="monospace" font-size="14" fill="#2E86DE" text-anchor="middle" opacity="0.6" font-weight="bold">8</text>
+    <text x="150" y="30" font-family="monospace" font-size="6" fill="#2E86DE" text-anchor="middle" opacity="0.4">manifolds</text>
+    <text x="250" y="16" font-family="monospace" font-size="14" fill="#28A745" text-anchor="middle" opacity="0.6" font-weight="bold">3</text>
+    <text x="250" y="30" font-family="monospace" font-size="6" fill="#28A745" text-anchor="middle" opacity="0.4">stations sép.</text>
+  </g>
+</svg>

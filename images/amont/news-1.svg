@@ -1,0 +1,51 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Article actualité 1 - News">
+  <defs>
+    <linearGradient id="grad_news1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0A1628;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0F2240;stop-opacity:1" />
+    </linearGradient>
+    <pattern id="grid_news1" width="50" height="50" patternUnits="userSpaceOnUse">
+      <path d="M 50 0 L 0 0 0 50" fill="none" stroke="#C8962E" stroke-width="0.5" opacity="0.08"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="450" fill="url(#grad_news1)"/>
+  <rect width="800" height="450" fill="url(#grid_news1)"/>
+  
+  <!-- Newspaper layout -->
+  <g transform="translate(50, 40)">
+    <!-- Header bar -->
+    <rect x="0" y="0" width="700" height="30" fill="none" stroke="#C8962E" stroke-width="2.5" opacity="0.85"/>
+    <text x="350" y="22" font-family="Georgia, serif" font-size="20" fill="#C8962E" text-anchor="middle" opacity="0.85" font-weight="bold">ENERGTCHAD NEWS</text>
+    
+    <!-- Divider line -->
+    <line x1="0" y1="35" x2="700" y2="35" stroke="#C8962E" stroke-width="1.5" opacity="0.6"/>
+    
+    <!-- Headline section -->
+    <rect x="0" y="45" width="700" height="60" fill="none" stroke="#2E86DE" stroke-width="2" opacity="0.8"/>
+    <text x="20" y="70" font-family="Georgia, serif" font-size="16" fill="#C8962E" opacity="0.85" font-weight="bold">Major Breakthrough: Record Production Levels Achieved</text>
+    <text x="20" y="95" font-family="Georgia, serif" font-size="12" fill="#2E86DE" opacity="0.75">New operational milestones set across all fields this quarter</text>
+    
+    <!-- Content columns -->
+    <!-- Column 1 -->
+    <rect x="0" y="110" width="330" height="200" fill="none" stroke="#C8962E" stroke-width="1.5" opacity="0.6"/>
+    <line x1="10" y1="120" x2="320" y2="120" stroke="#2E86DE" stroke-width="0.8" opacity="0.4"/>
+    <line x1="10" y1="130" x2="320" y2="130" stroke="#2E86DE" stroke-width="0.8" opacity="0.4"/>
+    <line x1="10" y1="140" x2="320" y2="140" stroke="#C8962E" stroke-width="0.8" opacity="0.4"/>
+    <line x1="10" y1="155" x2="320" y2="155" stroke="#2E86DE" stroke-width="0.8" opacity="0.4"/>
+    <line x1="10" y1="170" x2="320" y2="170" stroke="#2E86DE" stroke-width="0.8" opacity="0.4"/>
+    <line x1="10" y1="185" x2="320" y2="185" stroke="#2E86DE" stroke-width="0.8" opacity="0.4"/>
+    
+    <!-- Column 2 -->
+    <rect x="350" y="110" width="350" height="200" fill="none" stroke="#2E86DE" stroke-width="1.5" opacity="0.6"/>
+    <circle cx="430" cy="150" r="30" fill="none" stroke="#C8962E" stroke-width="1.5" opacity="0.5"/>
+    <text x="430" y="160" font-family="monospace" font-size="12" fill="#C8962E" text-anchor="middle" opacity="0.6">DATA</text>
+    
+    <line x1="365" y1="200" x2="685" y2="200" stroke="#C8962E" stroke-width="0.8" opacity="0.4"/>
+    <line x1="365" y1="220" x2="685" y2="220" stroke="#2E86DE" stroke-width="0.8" opacity="0.4"/>
+    <line x1="365" y1="240" x2="685" y2="240" stroke="#C8962E" stroke-width="0.8" opacity="0.4"/>
+    <line x1="365" y1="260" x2="685" y2="260" stroke="#2E86DE" stroke-width="0.8" opacity="0.4"/>
+    
+    <!-- Footer date -->
+    <text x="350" y="330" font-family="monospace" font-size="10" fill="#C8962E" text-anchor="middle" opacity="0.6">April 2026 - EnerTchad Communications</text>
+  </g>
+</svg>

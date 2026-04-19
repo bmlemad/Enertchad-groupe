@@ -1,0 +1,11 @@
+{
+  "stations": 24,
+  "stations_cities": 14,
+  "refinery_capacity_current": "20,000 b/j",
+  "refinery_capacity_target": "60,000 b/j",
+  "refined_products": "700,000 t/an",
+  "regulator": "ARSAT",
+  "lpg_production": "60,000 t/an",
+  "kerosene": "20,000 t/an",
+  "polypropylene": "25,000 t/an"
+}

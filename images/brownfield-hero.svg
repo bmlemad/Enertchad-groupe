@@ -1,0 +1,145 @@
+<svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-6px); } }
+      @keyframes pulse { 0%, 100% { opacity: 0.6; } 50% { opacity: 1; } }
+      @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+      .float { animation: float 3s ease-in-out infinite; }
+      .pulse { animation: pulse 2s ease-in-out infinite; }
+      .rotate { animation: rotate 4s linear infinite; }
+    </style>
+    <radialGradient id="derrick-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#2E86DE;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#2E86DE;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="400" fill="#080E1A"/>
+
+  <!-- Oil Derrick Structure -->
+  <g class="float">
+    <!-- Main tower -->
+    <line x1="200" y1="80" x2="200" y2="280" stroke="#2E86DE" stroke-width="3" opacity="0.8"/>
+
+    <!-- Support braces left -->
+    <line x1="200" y1="100" x2="160" y2="140" stroke="#2E86DE" stroke-width="1.5" opacity="0.6"/>
+    <line x1="200" y1="150" x2="160" y2="190" stroke="#2E86DE" stroke-width="1.5" opacity="0.6"/>
+    <line x1="200" y1="200" x2="160" y2="240" stroke="#2E86DE" stroke-width="1.5" opacity="0.6"/>
+
+    <!-- Support braces right -->
+    <line x1="200" y1="100" x2="240" y2="140" stroke="#2E86DE" stroke-width="1.5" opacity="0.6"/>
+    <line x1="200" y1="150" x2="240" y2="190" stroke="#2E86DE" stroke-width="1.5" opacity="0.6"/>
+    <line x1="200" y1="200" x2="240" y2="240" stroke="#2E86DE" stroke-width="1.5" opacity="0.6"/>
+
+    <!-- Cross braces -->
+    <line x1="160" y1="140" x2="240" y2="140" stroke="#2E86DE" stroke-width="1" opacity="0.4"/>
+    <line x1="160" y1="190" x2="240" y2="190" stroke="#2E86DE" stroke-width="1" opacity="0.4"/>
+
+    <!-- Top cap -->
+    <circle cx="200" cy="80" r="8" fill="#2E86DE" opacity="0.7" stroke="#2E86DE" stroke-width="1"/>
+
+    <!-- Derrick glow -->
+    <circle cx="200" cy="150" r="50" fill="url(#derrick-glow)"/>
+
+    <!-- Base -->
+    <rect x="190" y="280" width="20" height="10" fill="#2E86DE" opacity="0.6"/>
+  </g>
+
+  <!-- Wrench Overlay (Optimization) -->
+  <g class="rotate" style="transform-origin: 300px 150px">
+    <rect x="280" y="130" width="40" height="12" fill="none" stroke="#D97706" stroke-width="2" rx="6"/>
+    <circle cx="315" cy="136" r="8" fill="none" stroke="#D97706" stroke-width="2"/>
+    <circle cx="315" cy="136" r="4" fill="#D97706" opacity="0.5"/>
+  </g>
+
+  <!-- Upward Arrow - Growth/Improvement -->
+  <g class="float" style="animation-delay: 0.5s">
+    <!-- Arrow shaft -->
+    <line x1="380" y1="220" x2="380" y2="100" stroke="#D9A84F" stroke-width="3" opacity="0.8" stroke-linecap="round"/>
+
+    <!-- Arrow head -->
+    <polygon points="380,80 370,105 390,105" fill="#D9A84F" opacity="0.8"/>
+
+    <!-- Arrow glow -->
+    <circle cx="380" cy="150" r="35" fill="rgba(217, 168, 79, 0.15)" opacity="0.6"/>
+  </g>
+
+  <!-- Recovery Improvement Chart -->
+  <g class="float" style="animation-delay: 1s">
+    <!-- Chart background -->
+    <rect x="420" y="240" width="140" height="100" fill="rgba(46, 134, 222, 0.1)" stroke="#2E86DE" stroke-width="1.5" rx="4"/>
+
+    <!-- Grid lines -->
+    <line x1="420" y1="265" x2="560" y2="265" stroke="#2E86DE" stroke-width="0.5" opacity="0.3"/>
+    <line x1="420" y1="290" x2="560" y2="290" stroke="#2E86DE" stroke-width="0.5" opacity="0.3"/>
+    <line x1="420" y1="315" x2="560" y2="315" stroke="#2E86DE" stroke-width="0.5" opacity="0.3"/>
+
+    <!-- Recovery curve -->
+    <polyline points="435,310 450,295 465,280 480,265 495,250 510,235" fill="none" stroke="#10B981" stroke-width="2.5" opacity="0.8" stroke-linecap="round"/>
+
+    <!-- Data points -->
+    <circle cx="435" cy="310" r="3" fill="#10B981" opacity="0.7"/>
+    <circle cx="450" cy="295" r="3" fill="#10B981" opacity="0.8"/>
+    <circle cx="465" cy="280" r="3" fill="#10B981" opacity="0.8"/>
+    <circle cx="480" cy="265" r="3" fill="#10B981" opacity="0.8"/>
+    <circle cx="495" cy="250" r="3" fill="#10B981" opacity="0.8"/>
+    <circle cx="510" cy="235" r="3" fill="#10B981" opacity="0.8"/>
+
+    <!-- Value indicator -->
+    <text x="520" y="250" font-size="10" fill="#10B981" opacity="0.7">+45%</text>
+  </g>
+
+  <!-- Gears/Cogs - Left side -->
+  <g opacity="0.6">
+    <!-- Large gear -->
+    <g class="rotate" style="transform-origin: 120px 300px">
+      <circle cx="120" cy="300" r="28" fill="none" stroke="#8B5CF6" stroke-width="2"/>
+      <circle cx="120" cy="300" r="18" fill="none" stroke="#8B5CF6" stroke-width="1" opacity="0.5"/>
+
+      <!-- Gear teeth -->
+      <g stroke="#8B5CF6" stroke-width="1.5" opacity="0.7">
+        <line x1="120" y1="270" x2="120" y2="260"/>
+        <line x1="135" y1="285" x2="142" y2="278"/>
+        <line x1="150" y1="300" x2="160" y2="300"/>
+        <line x1="135" y1="315" x2="142" y2="322"/>
+        <line x1="120" y1="330" x2="120" y2="340"/>
+        <line x1="105" y1="315" x2="98" y2="322"/>
+        <line x1="90" y1="300" x2="80" y2="300"/>
+        <line x1="105" y1="285" x2="98" y2="278"/>
+      </g>
+    </g>
+
+    <!-- Small gear -->
+    <g class="rotate" style="transform-origin: 280px 320px; animation-direction: reverse;">
+      <circle cx="280" cy="320" r="18" fill="none" stroke="#8B5CF6" stroke-width="1.5"/>
+      <circle cx="280" cy="320" r="10" fill="none" stroke="#8B5CF6" stroke-width="0.8" opacity="0.5"/>
+
+      <!-- Gear teeth -->
+      <g stroke="#8B5CF6" stroke-width="1" opacity="0.6">
+        <line x1="280" y1="300" x2="280" y2="292"/>
+        <line x1="292" y1="308" x2="298" y2="302"/>
+        <line x1="300" y1="320" x2="308" y2="320"/>
+        <line x1="292" y1="332" x2="298" y2="338"/>
+        <line x1="280" y1="340" x2="280" y2="348"/>
+        <line x1="268" y1="332" x2="262" y2="338"/>
+        <line x1="260" y1="320" x2="252" y2="320"/>
+        <line x1="268" y1="308" x2="262" y2="302"/>
+      </g>
+    </g>
+
+    <!-- Connection line between gears -->
+    <line x1="150" y1="310" x2="250" y2="320" stroke="#8B5CF6" stroke-width="1" opacity="0.4"/>
+  </g>
+
+  <!-- Optimization indicator lines -->
+  <g opacity="0.4">
+    <line x1="320" y1="200" x2="350" y2="200" stroke="#D97706" stroke-width="1"/>
+    <circle cx="335" cy="200" r="2" fill="#D97706"/>
+  </g>
+
+  <!-- Efficiency label accent -->
+  <g opacity="0.5">
+    <rect x="100" y="100" width="60" height="30" fill="rgba(46, 134, 222, 0.1)" stroke="#2E86DE" stroke-width="1" rx="3"/>
+  </g>
+</svg>

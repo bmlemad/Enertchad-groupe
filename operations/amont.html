@@ -1,818 +1,881 @@
 <!DOCTYPE html>
-<html lang="fr">
- <head>
+<html lang="fr" class="no-js">
+<head>
   <meta charset="utf-8"/>
-  <meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
-  <title>Amont — EnerTchad</title>
-  <meta content="EnerTchad Amont : services intégrés E&P au Tchad — exploration, forage, production, EOR, SCADA. Expertise techniques pour bassins Doba et Bongor." name="description"/>
-  <meta content="EnerTchad, amont, forage, production, EOR, services pétroliers, Tchad, Afrique Centrale, SCADA, champ numérique, ENR, décarbonation, solaire hybride, valorisation gaz associé, LDAR, CCUS" name="keywords"/>
-  <meta content="EnerTchad S.A." name="author"/>
-  <meta content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" name="robots"/>
-  <meta content="strict-origin-when-cross-origin" name="referrer"/>
-  <link href="https://enertchad-groupe.vercel.app/amont" rel="canonical"/>
-  <link href="https://enertchad-groupe.vercel.app/amont" hreflang="fr" rel="alternate"/>
-  <link href="https://enertchad-groupe.vercel.app/amont?lang=en" hreflang="en" rel="alternate"/>
-  <link href="https://enertchad-groupe.vercel.app/amont" hreflang="x-default" rel="alternate"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://plausible.io; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://plausible.io; frame-src 'none'; object-src 'none'; base-uri 'self';"/>
+  <title>Amont — Exploration & Production | EnerTchad</title>
+  <meta name="description" content="Opérations Amont EnerTchad — Exploration, production pétrolière et gestion des réserves."/>
+  <meta name="robots" content="index,follow"/>
+  <link href="../manifest.json" rel="manifest"/>
+  <meta name="theme-color" content="#080E1A"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+  <meta name="apple-mobile-web-app-title" content="EnerTchad"/>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png"/>
+  <link rel="icon" type="image/x-icon" href="../favicon.ico"/>
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png"/>
+  <link rel="preload" href="../logo-enertchad.svg" as="image" type="image/svg+xml"/>
+
   <!-- OG -->
-  <meta content="EnerTchad Amont — Services Pétroliers E&amp;P" property="og:title"/>
-  <meta content="Services des champs pétroliers et gaziers au Tchad — Unité · Innovation · Durabilité." property="og:description"/>
-  <meta content="website" property="og:type"/>
-  <meta content="https://enertchad-groupe.vercel.app/amont" property="og:url"/>
-  <meta content="https://enertchad-groupe.vercel.app/amont/og-image.png" property="og:image"/>
-  <meta content="1200" property="og:image:width"/>
-  <meta content="630" property="og:image:height"/>
-  <meta content="fr_TD" property="og:locale"/>
-  <meta content="EnerTchad Amont" property="og:site_name"/>
-  <meta content="en_US" property="og:locale:alternate"/>
-  <meta content="EnerTchad Amont — Services pétroliers E&amp;P au Tchad, champ de Doba" property="og:image:alt"/>
-  <!-- Twitter -->
-  <meta content="summary_large_image" name="twitter:card"/>
-  <meta content="EnerTchad Amont — Services Pétroliers E&amp;P" name="twitter:title"/>
-  <meta content="Forage, production, EOR — solutions intégrées au Tchad." name="twitter:description"/>
-  <meta content="https://enertchad-groupe.vercel.app/amont/og-image.png" name="twitter:image"/>
-  <meta content="EnerTchad Amont — Services pétroliers au Tchad" name="twitter:image:alt"/>
-  <meta content="@EnerTchad" name="twitter:site"/>
-  <meta content="@EnerTchad" name="twitter:creator"/>
+  <meta property="og:title" content="Amont — Exploration & Production | EnerTchad"/>
+  <meta property="og:description" content="EnerTchad Amont : services E&P aux 7 opérateurs sur 5 bassins pétroliers du Tchad. 144K b/j, objectif 250K b/j."/>
+  <meta property="og:image:alt" content="EnerTchad Amont — Exploration & Production"/>
+
+  <!-- Twitter Card (QW-02) -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:site" content="@EnerTchad"/>
+  <meta name="twitter:title" content="Amont — Exploration & Production | EnerTchad"/>
+  <meta name="twitter:description" content="EnerTchad Amont : services E&P aux 7 opérateurs sur 5 bassins pétroliers du Tchad. 144K b/j."/>
+  <meta name="twitter:image" content="https://www.enertchad.td/images/og-enertchad.png"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://www.enertchad.td/operations/amont"/>
+  <meta property="og:locale" content="fr_TD"/>
+  <meta property="og:site_name" content="EnerTchad Groupe"/>
+  <meta property="og:image" content="https://www.enertchad.td/images/og-enertchad.png"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+  <!-- Fonts & Icons -->
+
   <!-- JSON-LD -->
   <script type="application/ld+json">
-   {"@context":"https://schema.org","@type":"Organization","name":"EnerTchad Amont","url":"https://enertchad-groupe.vercel.app/amont","logo":"https://enertchad-groupe.vercel.app/amont/logo.svg","description":"Services parapétroliers intégrés pour l'exploration et la production au Tchad.","address":{"@type":"PostalAddress","streetAddress":"Cité du 1er Décembre, Radisson Blu, Bloc D, Bureau 23, Quartier Sabangali","addressLocality":"N'Djaména","addressCountry":"TD"},"telephone":"+235-99-29-86-96","email":"amont@enertchad.td","sameAs":["https://www.linkedin.com/company/enertchad"],"areaServed":{"@type":"Country","name":"Tchad"},"foundingDate":"2026","numberOfEmployees":{"@type":"QuantitativeValue","minValue":50,"maxValue":200},"hasOfferCatalog":{"@type":"OfferCatalog","name":"Services E&P","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Forage & Complétion"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Géosciences & Réservoir"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Récupération & Levage Artificiel"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Intégrité & Flow Assurance"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Chimie pétrolière & EOR"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Water-to-Value™"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"SCADA & Champ Numérique"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Ingénierie & Commissioning"}}]}}
+  {"@context":"https://schema.org","@type":"Organization","name":"EnerTchad Groupe","legalName":"EnerTchad Groupe SA/CA","description":"Société pétrolière & gazière intégrée au Tchad. 6 filiales couvrant l'amont, le midstream et l'aval. Production nationale 144K b/j, objectif 250K b/j d'ici 2030.","url":"https://www.enertchad.td","address":{"@type":"PostalAddress","streetAddress":"Cité du 1er Décembre, Radisson Blu, Bloc D, Bureau 23, Quartier Sabangali","addressLocality":"N'Djaména","addressRegion":"N'Djaména","postalCode":"BP 0000","addressCountry":"TD"},"telephone":"+235-99-29-86-96","email":"contact@enertchad.td","foundingDate":"2026","numberOfEmployees":{"@type":"QuantitativeValue","value":1240},"sameAs":["https://www.linkedin.com/company/enertchad"],"areaServed":{"@type":"Country","name":"Chad"},"industry":"Oil and Gas"}
   </script>
   <script type="application/ld+json">
-   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://enertchad-groupe.vercel.app/amont"},{"@type":"ListItem","position":2,"name":"Exploration","item":"https://enertchad-groupe.vercel.app/amont#exploration"},{"@type":"ListItem","position":3,"name":"Forage","item":"https://enertchad-groupe.vercel.app/amont#forage"},{"@type":"ListItem","position":4,"name":"Production","item":"https://enertchad-groupe.vercel.app/amont#production"},{"@type":"ListItem","position":5,"name":"Bassins","item":"https://enertchad-groupe.vercel.app/amont#bassins"},{"@type":"ListItem","position":6,"name":"Géosciences","item":"https://enertchad-groupe.vercel.app/amont#geosciences"}]}
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://www.enertchad.td/"},{"@type":"ListItem","position":2,"name":"Opérations","item":"https://www.enertchad.td/operations/"},{"@type":"ListItem","position":3,"name":"Amont","item":"https://www.enertchad.td/operations/amont"}]}
   </script>
+
+  <!-- FAQPage JSON-LD -->
   <script type="application/ld+json">
-   {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Quels bassins EnerTchad Amont explore-t-elle ?","acceptedAnswer":{"@type":"Answer","text":"EnerTchad Amont opère sur deux bassins principaux : le bassin de Doba (champ de Doba, Komé, Gam, Miandou) et le bassin de Bongor (champ de Bongor). Ces bassins recèlent les principales réserves pétrolières et gazières du Tchad, stratégiques pour la souveraineté énergétique nationale."}},{"@type":"Question","name":"Quelle est la production quotidienne de pétrole brut ?","acceptedAnswer":{"@type":"Answer","text":"EnerTchad Amont vise une production intégrée optimisée des bassins de Doba et Bongor. La production quotidienne dépend des conditions géologiques, des investissements en développement, et des technologies d'optimisation déployées (EOR, Water-to-Value)."}},{"@type":"Question","name":"Quel est la qualité du pétrole brut exploité ?","acceptedAnswer":{"@type":"Answer","text":"Le pétrole brut de Doba est un brut léger à moyen (API 28-32°), de bonne qualité, avec des teneurs en soufre faibles. Le brut de Bongor possède des caractéristiques similaires. Cette qualité supérieure en fait un atout sur les marchés internationaux et facilite le raffinage."}},{"@type":"Question","name":"Quels services techniques EnerTchad Amont propose-t-elle ?","acceptedAnswer":{"@type":"Answer","text":"EnerTchad Amont propose des services intégrés : forage et complétion, géosciences et réservoir, production et levage artificiel, EOR (enhanced oil recovery), intégrité et flow assurance, SCADA et champ numérique, water-to-value, et ingénierie de commissioning."}},{"@type":"Question","name":"Qu'est-ce que le Digital Twin d'EnerTchad Amont ?","acceptedAnswer":{"@type":"Answer","text":"Le Digital Twin (champ numérique) est une réplique numérique des installations pétrolières, intégrant données temps réel de capteurs IoT, SCADA, et modèles géologiques. Cela permet l'optimisation de production, la prédiction d'anomalies, et la prise de décision data-driven pour maximiser la récupération."}}]}
+  {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Combien de bassins pétroliers actifs au Tchad ?", "acceptedAnswer": {"@type": "Answer", "text": "Le Tchad compte 5 bassins pétroliers actifs : Doba, Bongor, Doseo, Salamat et Termit, avec des réserves prouvées de 1,5 milliard de barils (2P)."}}, {"@type": "Question", "name": "Qui sont les principaux opérateurs pétroliers au Tchad ?", "acceptedAnswer": {"@type": "Answer", "text": "Les 7 opérateurs majeurs sont : CNPCIC (60K b/j), Perenco (18K b/j), TPC/Savannah, SHT, CGIP, Delonex Energy et ERHC."}}, {"@type": "Question", "name": "Quelle est la production pétrolière du Tchad ?", "acceptedAnswer": {"@type": "Answer", "text": "La production nationale est de 144 000 barils/jour (2024), avec un objectif de 250 000 b/j à horizon 2030."}}]}
   </script>
-  <!-- ═══ FAVICON — logo EnerTchad dans l'onglet navigateur ═══ -->
-  <link href="logo.svg" rel="icon" type="image/svg+xml"/>
-  <link href="logo.svg" rel="icon" sizes="any" type="image/svg+xml"/>
-  <link href="logo.svg" rel="shortcut icon" type="image/svg+xml"/>
-  <link href="logo.svg" rel="apple-touch-icon"/>
-  <link href="logo.svg" rel="apple-touch-icon" sizes="180x180"/>
-  <link color="#2E86DE" href="logo.svg" rel="mask-icon"/>
-  <meta content="logo.svg" name="msapplication-TileImage"/>
-  <meta content="#0F2240" name="msapplication-TileColor"/>
-  <!-- ═══ PWA META ═══ -->
-  <meta content="#0A1628" media="(prefers-color-scheme: dark)" name="theme-color"/>
-  <meta content="#F8FAFC" media="(prefers-color-scheme: light)" name="theme-color"/>
-  <meta content="yes" name="apple-mobile-web-app-capable"/>
-  <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
-  <meta content="EnerTchad Amont" name="apple-mobile-web-app-title"/>
-  <meta content="yes" name="mobile-web-app-capable"/>
-  <meta content="EnerTchad Amont" name="application-name"/>
-  <link href="/manifest.json" rel="manifest"/>
-  <link href="logo.svg" rel="apple-touch-icon"/>
-  <link href="https://fonts.googleapis.com" rel="preconnect"/>
-  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-  <link crossorigin="" href="https://cdnjs.cloudflare.com" rel="preconnect"/>
-  <!-- Google Fonts — non-blocking load with fallback -->
-  <link as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&amp;family=Space+Grotesk:wght@400..700&amp;display=swap" rel="preload"/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&amp;family=Space+Grotesk:wght@400..700&amp;display=swap" media="print" onload="this.media='all'" rel="stylesheet"/>
-  <noscript>
-   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&amp;family=Space+Grotesk:wght@400..700&amp;display=swap" rel="stylesheet"/>
-  </noscript>
-  <!-- Font Awesome — non-blocking load with fallback -->
-  <link as="style" crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" rel="preload"/>
-  <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" media="print" onload="this.media='all'" rel="stylesheet"/>
-  <noscript>
-   <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" rel="stylesheet"/>
-  </noscript>
-  <!-- Leaflet — Operational Map -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
-  <link rel="stylesheet" href="/css/main.v1.css">
-  <link rel="stylesheet" href="/css/amont.v1.css">
-  <link href="https://cdnjs.cloudflare.com" rel="dns-prefetch"/>
-  <script>
-   /* FOUC prevention — apply theme before first paint */
-(function(){try{var t=localStorage.getItem('enertchad-theme');var p=window.matchMedia&&window.matchMedia('(prefers-color-scheme:light)').matches;if(t==='light'||(t!=='dark'&&p))document.documentElement.classList.add('light-theme')}catch(e){}})()
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Space+Grotesk:wght@400..700&display=swap" rel="preload"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Space+Grotesk:wght@400..700&display=swap" media="print" onload="this.media='all'" rel="stylesheet"/>
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Space+Grotesk:wght@400..700&display=swap" rel="stylesheet"/></noscript>
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" integrity="sha384-OLBgp1GsljhM2TJ+sbHjaiH9txEUvgdDTAzHv2P24donTt6/529l+9Ua0vFImLlb" crossorigin="anonymous"/>
+  <noscript><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/></noscript>
+
+  <!-- Preload -->
+  <link rel="preload" href="../css/style.min.css" as="style"/>
+  <link rel="stylesheet" href="../css/premium.css"/>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Space+Grotesk:wght@400..700&display=swap" as="style"/>
+
+  <!-- CSS -->
+  <style>
+/* Design Tokens */
+:root{--bg:#080E1A;--bg-mid:#0C1426;--bg-card:#0F1A2E;--bg-elevated:#121D33;--surface:#141D30;--surface-alt:#1A2540;--surface-hover:#1E2D4A;--white:#FFFFFF;--text:#E2E8F0;--text-sec:#94A3B8;--text-muted:#7C8DB0;--gold:#D9A84F;--gold-light:#E8C36A;--gold-dim:rgba(217,168,79,0.15);--amont:#2E86DE;--amont-dim:rgba(46,134,222,0.12);--midstream:#0EA5E9;--midstream-dim:rgba(14,165,233,0.12);--aval:#D97706;--aval-dim:rgba(217,119,6,0.12);--tech:#8B5CF6;--tech-dim:rgba(139,92,246,0.12);--energy:#10B981;--energy-dim:rgba(16,185,129,0.12);--petro:#E11D48;--petro-dim:rgba(225,29,72,0.12);--success:#10B981;--success-dim:rgba(16,185,129,0.12);--danger:#EF4444;--danger-dim:rgba(239,68,68,0.12);--warning:#F59E0B;--warning-dim:rgba(245,158,11,0.12);--font-d:'Space Grotesk',system-ui,sans-serif;--font-b:'Inter',system-ui,sans-serif;--sp-xs:0.5rem;--sp-sm:0.75rem;--sp-md:1rem;--sp-lg:1.5rem;--sp-xl:2rem;--sp-2xl:3rem;--sp-3xl:4rem;--sp-4xl:6rem;--sp-5xl:8rem;--radius:14px;--radius-sm:10px;--radius-xs:6px;--radius-full:9999px;--ease:cubic-bezier(0.22,0.61,0.36,1);--tr:0.4s var(--ease);--tr-fast:0.2s var(--ease);--shadow-sm:0 2px 8px rgba(0,0,0,0.2);--shadow-md:0 8px 30px rgba(0,0,0,0.3);--shadow-lg:0 20px 60px rgba(0,0,0,0.4);--header-h:72px;--max-w:1280px;--mega-accent:var(--amont);--mega-glow:rgba(46,134,222,0.06);--tab-y:0px;--tab-h:56px;}
+
+/* Reset */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+
+/* Base */
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}
+body{font-family:var(--font-b);font-size:1rem;line-height:1.7;color:var(--text);background:var(--bg);overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 50% at 50% -20%,rgba(217,168,79,0.06),transparent),radial-gradient(ellipse 60% 40% at 80% 80%,rgba(46,134,222,0.04),transparent);pointer-events:none;z-index:0}
+
+/* Skip Link */
+.skip-link{position:absolute;top:-100%;left:16px;z-index:10000;padding:12px 24px;background:var(--gold);color:var(--bg);font-weight:700;border-radius:0 0 8px 8px;text-decoration:none;transition:top .2s}
+.skip-link:focus{top:0}
+
+/* Container */
+.ctn{width:100%;max-width:var(--max-w);margin:0 auto;padding:0 var(--sp-lg)}
+
+/* Header */
+.header{position:fixed;top:0;left:0;right:0;height:var(--header-h);display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1rem,3vw,3rem);background:rgba(8,14,26,0.6);backdrop-filter:blur(30px) saturate(1.8);-webkit-backdrop-filter:blur(30px) saturate(1.8);z-index:1000;transition:all 0.6s var(--ease)}
+.header.scrolled{height:60px;background:rgba(8,14,26,0.97);box-shadow:0 8px 40px rgba(0,0,0,0.5),0 1px 0 rgba(217,168,79,0.1)}
+
+/* Logo */
+.logo-wrap{display:flex;align-items:center;gap:var(--sp-sm);color:var(--white);text-decoration:none;position:relative}
+.logo-wrap svg,.logo-wrap img{width:40px;height:40px}
+.logo-text{font-family:var(--font-d);font-size:1.25rem;font-weight:700;color:var(--white);letter-spacing:-0.01em;transition:font-size 0.4s var(--ease)}
+
+/* Nav */
+.nav{display:flex;align-items:center;gap:4px;list-style:none;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.04);border-radius:var(--radius-full);padding:4px}
+.nav-link{position:relative;display:flex;align-items:center;gap:6px;padding:8px 16px;font-family:var(--font-b);font-size:0.82rem;font-weight:500;color:var(--text-sec);border-radius:var(--radius-full);transition:all 0.35s var(--ease);cursor:pointer;border:none;background:none;letter-spacing:0.01em;white-space:nowrap}
+.nav-link:hover{color:var(--white);background:rgba(255,255,255,0.06)}
+
+/* Header Actions */
+.header-actions{display:flex;align-items:center;gap:var(--sp-sm)}
+.header-cta{display:inline-flex;align-items:center;gap:6px;padding:7px 18px;font-family:var(--font-d);font-size:0.78rem;font-weight:600;color:var(--bg);background:var(--gold);border-radius:var(--radius-full);text-decoration:none;transition:all 0.35s var(--ease);letter-spacing:0.02em;white-space:nowrap}
+.header-cta:hover{background:var(--gold-light);box-shadow:0 4px 20px rgba(217,168,79,0.3)}
+
+/* Mega Overlay */
+.mega-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(16px) saturate(1.4);-webkit-backdrop-filter:blur(16px) saturate(1.4);opacity:0;visibility:hidden;transition:opacity 0.5s var(--ease),visibility 0.5s;z-index:998}
+.mega-overlay.active{opacity:1;visibility:visible}
+
+/* Hero */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:calc(var(--header-h) + var(--sp-3xl)) 0 var(--sp-3xl);overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 100% 80% at 20% 50%,rgba(46,134,222,0.08),transparent 60%),radial-gradient(ellipse 80% 60% at 80% 30%,rgba(217,168,79,0.06),transparent 60%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:200px;background:linear-gradient(to top,var(--bg),transparent);pointer-events:none}
+.hero-inner{position:relative;z-index:1;max-width:800px}
+
+/* Page Loader */
+.page-loader{position:fixed;inset:0;z-index:9999;background:var(--bg);display:flex;align-items:center;justify-content:center;transition:opacity 0.6s var(--ease),visibility 0.6s}
+.page-loader.loaded{opacity:0;visibility:hidden;pointer-events:none}
+.loader-inner{text-align:center}
+.loader-logo{font-family:var(--font-d);font-size:2.5rem;font-weight:700;color:var(--white);letter-spacing:-0.02em;margin-bottom:var(--sp-xl)}
+.loader-logo span{color:var(--gold)}
+.loader-bar{width:120px;height:3px;margin:0 auto;background:rgba(255,255,255,0.06);border-radius:3px;overflow:hidden}
+.loader-bar-fill{width:0;height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-light));border-radius:3px;animation:loaderFill 1.2s var(--ease) forwards}
+@keyframes loaderFill{0%{width:0}60%{width:80%}100%{width:100%}}
+
+/* Cookie Consent */
+.cookie-consent{position:fixed;bottom:0;left:0;right:0;z-index:200;background:rgba(12,20,38,0.98);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-top:1px solid rgba(217,168,79,0.15);padding:var(--sp-md) 0;transform:translateY(100%);transition:transform 0.5s var(--ease)}
+.cookie-consent.active{transform:translateY(0)}
+  </style>
+<link rel="preload" href="../css/style.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
+  <noscript><link rel="stylesheet" href="../css/style.min.css"/></noscript>
+
+  <!-- GSAP -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="></script>
+  <script defer src="../js/app.min.js"></script>
+  <link rel="canonical" href="https://www.enertchad.td/operations/amont"/>
+  <link rel="alternate" hreflang="fr" href="https://www.enertchad.td/operations/amont"/>
+  <link rel="alternate" hreflang="en" href="https://www.enertchad.td/operations/amont?lang=en"/>
+
+  <!-- WebSite JSON-LD (QW-01) -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebSite","name":"EnerTchad Groupe","url":"https://www.enertchad.td/","inLanguage":["fr-TD","en"],"publisher":{"@type":"Organization","name":"EnerTchad Groupe"}}
   </script>
-  <!-- ═══ ANALYTICS — Add your tracking IDs ═══ -->
-  <script defer data-domain="enertchad-groupe.vercel.app" src="https://plausible.io/js/script.js"></script>
-  <script defer src="/js/shared.js"></script>
-  <script>
-   window.addEventListener('cookie-consent',function(e){
-  if(e.detail.choice==='all'){
-    // Load analytics scripts here when consent given
-    // Example: var s=document.createElement('script');s.src='...';document.head.appendChild(s);
-  }
-});
-  </script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
- </head>
- <body class="preloader-active">
-<div class="page-transition" id="pageTransition" aria-hidden="true">
-  <div class="pt-logo">
-    <img src="/logo.svg" alt="" width="48" height="48"/>
-    <div class="pt-bar"><div class="pt-fill"></div></div>
+
+  <!-- Analytics — Plausible (QW-10) -->
+  <script defer data-domain="enertchad.td" src="https://plausible.io/js/script.tagged-events.js"></script>
+  <script>window.plausible=window.plausible||function(){(window.plausible.q=window.plausible.q||[]).push(arguments)}</script>
+
+  <!-- Leaflet loaded on-demand when map section enters viewport -->
+  <link rel="stylesheet" href="../css/amont.v1.css">
+</head>
+<body>
+<a href="#main-content" class="skip-link" data-i18n data-en="Skip to content">Aller au contenu</a>
+
+<!-- ═══ LOADING SCREEN ═══ -->
+<div class="page-loader" id="pageLoader" aria-hidden="true">
+  <div class="loader-inner">
+    <div class="loader-logo"><img src="../logo-enertchad.svg" alt="EnerTchad" width="60" height="60" style="filter:drop-shadow(0 0 20px rgba(217,168,79,0.4))"/></div>
+    <div class="loader-bar"><div class="loader-bar-fill"></div></div>
   </div>
 </div>
+
 <div class="reading-progress" id="readingProgress" aria-hidden="true"></div>
-  <a class="skip-link" href="#main-content">
-   Aller au contenu principal
+<noscript><style>.reveal,.reveal-left{opacity:1!important;transform:none!important}</style></noscript>
+
+<!-- ═══ HEADER ═══ -->
+<header class="header" id="header">
+  <a class="logo-wrap" href="../index.html" aria-label="EnerTchad Groupe — Accueil">
+    <img loading="lazy" class="logo-img" src="../logo-enertchad.svg" alt="EnerTchad" width="40" height="40" decoding="async"/>
+    <div class="logo-text">Ener<span>Tchad</span></div>
   </a>
-  <noscript>
-   <div class="noscript-alert">
-    Ce site nécessite JavaScript pour fonctionner correctement. Veuillez activer JavaScript dans votre navigateur.
-   </div>
-  </noscript>
-  <!-- ═══ PRELOADER / SPLASH ═══ -->
-  <div aria-label="Chargement du site EnerTchad Amont" aria-live="polite" id="preloader" role="status">
-   <!-- Floating particles -->
-   <div aria-hidden="true" class="preloader-particles" id="preloaderParticles">
-   </div>
-   <div class="preloader-stage">
-    <div aria-hidden="true" class="preloader-halo">
-    </div>
-    <div aria-hidden="true" class="preloader-dome">
-    </div>
-    <div aria-hidden="true" class="preloader-ring">
-    </div>
-    <img alt="EnerTchad" class="preloader-logo" decoding="async" fetchpriority="high" height="380" src="logo.svg" width="380" loading="lazy"/>
-    <div aria-hidden="true" class="preloader-sheen">
-    </div>
-   </div>
-   <div aria-label="Unité Innovation Durabilité" class="preloader-slogan">
-    <span class="pw">
-     Unité
-    </span>
-    <span aria-hidden="true" class="pdot">
-    </span>
-    <span class="pw">
-     Innovation
-    </span>
-    <span aria-hidden="true" class="pdot">
-    </span>
-    <span class="pw">
-     Durabilité
-    </span>
-   </div>
-   <div aria-hidden="true" class="preloader-progress">
-    <div class="preloader-progress-fill" id="preloaderFill">
-    </div>
-   </div>
-   <div aria-hidden="true" class="preloader-pct" id="preloaderPct">
-    0 %
-   </div>
-  </div>
-  <script>
-   /* ═══ CROSS-SITE URLS — Single source of truth ═══ */
-var ENERTCHAD={
-  groupe:'/',
-  amont:'/amont',
-  midstream:'/intermediaire',
-  aval:'/aval',
-  tech:'/technologies',
-  energies:'/energies',
-  petrochimie:'/#petrochimie'
-};
-   "use strict";
-(function(){
-  const pl=document.getElementById('preloader');
-  if(!pl)return;
-  // Generate floating particles — reduced on mobile for performance
-  const particlesEl=document.getElementById('preloaderParticles');
-  if(particlesEl){
-    var conn=navigator.connection||navigator.mozConnection||navigator.webkitConnection;
-if(conn&&(conn.effectiveType==='2g'||conn.effectiveType==='slow-2g'||conn.saveData))return;
-    const count=window.matchMedia('(max-width:768px)').matches?8:18;
-    for(let i=0;i<count;i++){
-      const p=document.createElement('div');
-      p.className='preloader-particle';
-      const sz=Math.random()*4+2;
-      p.style.cssText='width:'+sz+'px;height:'+sz+'px;left:'+Math.random()*100+'%;animation-duration:'+(Math.random()*5+4)+'s;animation-delay:'+(Math.random()*4)+'s;';
-      particlesEl.appendChild(p);
-    }
-  }
-  // Progress bar animation
-  const fill=document.getElementById('preloaderFill');
-  const pctEl=document.getElementById('preloaderPct');
-  let progress=0;
-  const progressInterval=setInterval(function(){
-    // Fast start, slow middle, fast end
-    let increment;
-    if(progress<30)increment=Math.random()*6+3;
-    else if(progress<70)increment=Math.random()*3+1;
-    else if(progress<90)increment=Math.random()*2+0.5;
-    else increment=0.3;
-    progress=Math.min(progress+increment,loaded?100:92);
-    if(fill)fill.style.transform='scaleX('+progress/100+')';
-    if(pctEl)pctEl.textContent=Math.round(progress)+' %';
-  },80);
-  // Exit animation
-  function hide(){
-    progress=100;
-    if(fill)fill.style.transform='scaleX(1)';
-    if(pctEl)pctEl.textContent='100 %';
-    clearInterval(progressInterval);
-    setTimeout(function(){
-      pl.classList.add('is-leaving');
-      setTimeout(function(){
-        document.body.classList.remove('preloader-active');
-        if(pl&&pl.parentNode)pl.parentNode.removeChild(pl);
-      },950);
-    },200);
-  }
-  let loaded=false,minElapsed=false;
-  function maybeHide(){if(loaded&&minElapsed)hide();}
-  const minTime=window.matchMedia('(max-width:768px)').matches?800:1200;
-  setTimeout(function(){minElapsed=true;maybeHide();},minTime);
-  if(document.readyState==='complete'){loaded=true;maybeHide();}
-  else window.addEventListener('load',function(){loaded=true;maybeHide();});
-  // Safety fallback: never stay more than 5s
-  setTimeout(hide,5000);
-})();
-  </script>
-  <!-- ═══ REVEAL ON SCROLL — [data-r] elements ═══ -->
-  <script>
-   (function(){
-  /* Fallback safety: if IntersectionObserver unsupported, reveal everything immediately */
-  if(!('IntersectionObserver' in window)){
-    document.querySelectorAll('[data-r]').forEach(function(el){el.classList.add('v')});
-    return;
-  }
-  /* Respect reduced motion — show everything without animation */
-  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-    document.querySelectorAll('[data-r]').forEach(function(el){el.classList.add('v')});
-    return;
-  }
-  var io=new IntersectionObserver(function(entries){
-    entries.forEach(function(entry){
-      if(entry.isIntersecting){
-        entry.target.classList.add('v');
-        io.unobserve(entry.target);
-      }
-    });
-  },{rootMargin:'0px 0px -10% 0px',threshold:0.01});
-  /* Observe all current [data-r] */
-  function observeAll(){
-    document.querySelectorAll('[data-r]:not(.v)').forEach(function(el){io.observe(el)});
-  }
-  /* Safety: reveal elements visible above fold immediately */
-  function revealAboveFold(){
-    var vh=window.innerHeight||document.documentElement.clientHeight;
-    document.querySelectorAll('[data-r]').forEach(function(el){
-      var r=el.getBoundingClientRect();
-      if(r.top < vh && r.bottom > 0){
-        el.classList.add('v');
-      }
-    });
-  }
-  if(document.readyState==='loading'){
-    document.addEventListener('DOMContentLoaded',function(){revealAboveFold();observeAll()});
-  } else {
-    revealAboveFold();
-    observeAll();
-  }
-  /* Safety net: after 3s, reveal everything still hidden (prevents stuck-invisible content) */
-  setTimeout(function(){
-    document.querySelectorAll('[data-r]:not(.v)').forEach(function(el){el.classList.add('v')});
-  },3000);
-})();
-  </script>
-  <!-- ═══ PSEUDO REAL-TIME KPI TICKER ═══ -->
-  <script>
-   (function(){
-  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
-  var liveKpis=document.querySelectorAll('[data-live]');
-  if(!liveKpis.length)return;
-  function formatValue(el,newVal){
-    var suffix=el.getAttribute('data-suffix')||'';
-    if(suffix==='+')return newVal+'+';
-    if(suffix==='%')return newVal+'%';
-    if(newVal>=1000)return newVal.toLocaleString('fr-FR');
-    return String(newVal);
-  }
-  function tickerUpdate(el){
-    var current=parseInt(el.getAttribute('data-current')||el.getAttribute('data-count')||'0',10);
-    var minStep=parseInt(el.getAttribute('data-step-min')||'1',10);
-    var maxStep=parseInt(el.getAttribute('data-step-max')||'2',10);
-    var direction=el.getAttribute('data-direction')||'up';
-    var step=minStep+Math.floor(Math.random()*(maxStep-minStep+1));
-    var newVal=direction==='fluctuate'?current+(Math.random()>0.5?step:-step):current+step;
-    el.style.transition='color 0.4s ease,transform 0.3s ease';
-    el.style.color='#D4A840';
-    el.style.transform='scale(1.04)';
-    el.textContent=formatValue(el,newVal);
-    el.setAttribute('data-current',newVal);
-    setTimeout(function(){el.style.color='';el.style.transform='';},600);
-  }
-  setTimeout(function(){
-    liveKpis.forEach(function(el){
-      var interval=parseInt(el.getAttribute('data-live-interval')||'20000',10);
-      var jitter=parseInt(el.getAttribute('data-live-jitter')||'5000',10);
-      function scheduleNext(){
-        var delay=interval+Math.floor(Math.random()*jitter);
-        setTimeout(function(){tickerUpdate(el);scheduleNext();},delay);
-      }
-      scheduleNext();
-    });
-  },3000);
-})();
-  </script>
-  <!-- SKIP NAV -->
-  <a class="skip-nav" href="#main-content">
-   Aller au contenu principal
-  </a>
-  <!-- ═══ MARKET TICKER ═══ -->
-  <div aria-label="Cours du marché pétrolier" class="ticker" role="marquee">
-   <div class="ticker-track">
-    <span class="ticker-item">
-     <i aria-hidden="true" class="fas fa-oil-can">
-     </i>
-     Brent
-     <span class="val">
-      $74.82
-     </span>
-     <span aria-label="hausse" class="up">
-      ▲ 0.4%
-     </span>
-    </span>
-    <span class="ticker-item">
-     <i aria-hidden="true" class="fas fa-oil-can">
-     </i>
-     WTI
-     <span class="val">
-      $71.38
-     </span>
-     <span aria-label="baisse" class="down">
-      ▼ 0.2%
-     </span>
-    </span>
-    <span class="ticker-item">
-     <i aria-hidden="true" class="fas fa-bolt">
-     </i>
-     Gaz nat.
-     <span class="val">
-      $2.18
-     </span>
-     /MMBtu
-    </span>
-    <span class="ticker-item">
-     <i aria-hidden="true" class="fas fa-gauge">
-     </i>
-     Tchad
-     <span class="val">
-      68K
-     </span>
-     bbl/j
-    </span>
-    <span class="ticker-item">
-     <i aria-hidden="true" class="fas fa-timeline">
-     </i>
-     Export
-     <span class="val">
-      33M
-     </span>
-     bbl/an
-    </span>
-    <span class="ticker-item">
-     <i aria-hidden="true" class="fas fa-helmet-safety">
-     </i>
-     Puits actifs
-     <span class="val">
-      300+
-     </span>
-    </span>
-    <span class="ticker-item">
-     <i aria-hidden="true" class="fas fa-oil-can">
-     </i>
-     Brent
-     <span class="val">
-      $74.82
-     </span>
-     <span aria-label="hausse" class="up">
-      ▲ 0.4%
-     </span>
-    </span>
-    <span class="ticker-item">
-     <i aria-hidden="true" class="fas fa-oil-can">
-     </i>
-     WTI
-     <span class="val">
-      $71.38
-     </span>
-     <span aria-label="baisse" class="down">
-      ▼ 0.2%
-     </span>
-    </span>
-    <span class="ticker-item">
-     <i aria-hidden="true" class="fas fa-bolt">
-     </i>
-     Gaz nat.
-     <span class="val">
-      $2.18
-     </span>
-     /MMBtu
-    </span>
-    <span class="ticker-item">
-     <i aria-hidden="true" class="fas fa-gauge">
-     </i>
-     Tchad
-     <span class="val">
-      68K
-     </span>
-     bbl/j
-    </span>
-    <span class="ticker-item">
-     <i aria-hidden="true" class="fas fa-timeline">
-     </i>
-     Export
-     <span class="val">
-      33M
-     </span>
-     bbl/an
-    </span>
-    <span class="ticker-item">
-     <i aria-hidden="true" class="fas fa-helmet-safety">
-     </i>
-     Puits actifs
-     <span class="val">
-      300+
-     </span>
-    </span>
-   </div>
-  </div>
-  <!-- ═══ HEADER ═══ -->
-  <header class="header" id="top">
-   <div class="ctn">
-    <a aria-label="Accueil — EnerTchad Amont" aria-current="page" class="logo" href="#top">
-     <img alt="EnerTchad" height="40" loading="lazy" src="logo.svg" width="40"/>
-     <div class="logo-text">
-      EnerTchad
-      <span>
-       Amont · E&amp;P
-      </span>
-     </div>
-    </a>
-    <nav aria-label="Navigation principale" class="nav">
-     <!-- 1. Opérations Mega Menu — Tabbed System -->
-     <div class="nav-item" data-mega="operations">
-      <button class="nav-link" data-en="Operations" data-i18n="" type="button">Opérations <i class="fas fa-chevron-down chevron" aria-hidden="true"></i></button>
-      <div class="mega-overlay" id="megaOverlay-ops"></div>
-      <div class="mega-drop" role="menu" aria-label="Opérations E&P">
-       <div class="mega-header">
-        <h2 class="mega-header-title">Opérations & Exploration</h2>
-        <div class="mega-header-search">
-         <i class="fas fa-search"></i>
-         <input type="text" placeholder="Rechercher..." aria-label="Rechercher dans Opérations"/>
-        </div>
-        <button class="mega-close" aria-label="Fermer"><i class="fas fa-times"></i></button>
-       </div>
-       <div class="mega-body">
-        <div class="mega-tabs" role="tablist">
-         <button class="mega-tab active" role="tab" aria-selected="true" data-tab="tab-ops-1">
-          <i class="fas fa-mountain"></i> Exploration & Prod
-         </button>
-         <button class="mega-tab" role="tab" aria-selected="false" data-tab="tab-ops-2">
-          <i class="fas fa-flask"></i> Intelligence
-         </button>
-         <button class="mega-tab" role="tab" aria-selected="false" data-tab="tab-ops-3">
-          <i class="fas fa-map"></i> Nos Actifs
-         </button>
-        </div>
-        <div class="mega-content">
-         <!-- Tab 1: Exploration & Production -->
-         <div class="mega-tab-panel active" id="tab-ops-1" role="tabpanel">
-          <div class="mega-grid">
-           <a href="#exploration" class="mega-link">
-            <div class="mega-icon" style="background:rgba(46,134,222,0.1);color:var(--accent)"><i class="fas fa-mountain"></i></div>
-            <div class="mega-link-text">
-             <h4>Exploration <span class="mega-badge mega-badge-blue">Sismique</span></h4>
-             <p>Acquisition sismique, interprétation géologique, classement des prospects</p>
-            </div>
-           </a>
-           <a href="#forage" class="mega-link">
-            <div class="mega-icon" style="background:rgba(46,134,222,0.1);color:var(--accent)"><i class="fas fa-oil-well"></i></div>
-            <div class="mega-link-text">
-             <h4>Forage & Complétion <span class="mega-badge mega-badge-blue">MWD</span></h4>
-             <p>Ingénierie puits, forage directionnel, complétion & tests</p>
-            </div>
-           </a>
-           <a href="#production" class="mega-link">
-            <div class="mega-icon" style="background:rgba(46,134,222,0.1);color:var(--accent)"><i class="fas fa-industry"></i></div>
-            <div class="mega-link-text">
-             <h4>Production & EOR</h4>
-             <p>Levage artificiel, EOR chimique, gestion de l'eau — 68K bbl/j</p>
-            </div>
-           </a>
-          </div>
-         </div>
-         <!-- Tab 2: Intelligence -->
-         <div class="mega-tab-panel" id="tab-ops-2" role="tabpanel">
-          <div class="mega-grid">
-           <a href="#geosciences" class="mega-link">
-            <div class="mega-icon" style="background:rgba(139,92,246,0.1);color:#8B5CF6"><i class="fas fa-earth-americas"></i></div>
-            <div class="mega-link-text">
-             <h4>Géosciences</h4>
-             <p>Modélisation statique/dynamique, jumeau numérique, PVT & carottes</p>
-            </div>
-           </a>
-           <a href="#calc-reserves" class="mega-link">
-            <div class="mega-icon" style="background:rgba(139,92,246,0.1);color:#8B5CF6"><i class="fas fa-calculator"></i></div>
-            <div class="mega-link-text">
-             <h4>Simulateur Réserves <span class="mega-badge mega-badge-gold">STOIIP</span></h4>
-             <p>Estimation volumétrique interactive — STOIIP, EUR, facteur de récupération</p>
-            </div>
-           </a>
-          </div>
-         </div>
-         <!-- Tab 3: Assets -->
-         <div class="mega-tab-panel" id="tab-ops-3" role="tabpanel">
-          <div class="mega-grid">
-           <a href="#bassins" class="mega-link">
-            <div class="mega-icon" style="background:rgba(16,185,129,0.1);color:var(--success)"><i class="fas fa-map-location-dot"></i></div>
-            <div class="mega-link-text">
-             <h4>Bassin de Doba <span class="mega-badge mega-badge-blue">200+</span></h4>
-             <p>200+ puits, 50K bbl/j, 900 Mbl cumulés</p>
-            </div>
-           </a>
-           <a href="#bassins" class="mega-link">
-            <div class="mega-icon" style="background:rgba(200,150,46,0.1);color:var(--gold)"><i class="fas fa-map-location-dot"></i></div>
-            <div class="mega-link-text">
-             <h4>Bassin de Bongor <span class="mega-badge mega-badge-gold">50+</span></h4>
-             <p>50+ puits, 18K bbl/j, champs Daniela &amp; Mimosa</p>
-            </div>
-           </a>
-          </div>
-         </div>
-        </div>
-       </div>
-       <div class="mega-footer">
-        <div class="mega-footer-title"><i class="fas fa-link"></i> Accès rapide</div>
-        <div class="mega-quick">
-         <a href="#exploration"><i class="fas fa-mountain"></i> Exploration</a>
-         <a href="#forage"><i class="fas fa-oil-well"></i> Forage</a>
-         <a href="#production"><i class="fas fa-industry"></i> Production</a>
-         <a href="#bassins"><i class="fas fa-map"></i> Bassins</a>
-         <a href="#geosciences"><i class="fas fa-earth-americas"></i> Géosciences</a>
-        </div>
-       </div>
-      </div>
-     </div>
-     <!-- 2. Groupe Mega Menu — Tabbed System -->
-     <div class="nav-item" data-mega="groupe">
-      <button class="nav-link" data-en="Group" data-i18n="" type="button">Groupe <i class="fas fa-chevron-down chevron" aria-hidden="true"></i></button>
-      <div class="mega-overlay" id="megaOverlay-groupe"></div>
-      <div class="mega-drop" role="menu" aria-label="EnerTchad Groupe">
-       <div class="mega-header">
-        <h2 class="mega-header-title">Groupe EnerTchad</h2>
-        <div class="mega-header-search">
-         <i class="fas fa-search"></i>
-         <input type="text" placeholder="Rechercher..." aria-label="Rechercher dans Groupe"/>
-        </div>
-        <button class="mega-close" aria-label="Fermer"><i class="fas fa-times"></i></button>
-       </div>
-       <div class="mega-body">
-        <div class="mega-tabs" role="tablist">
-         <button class="mega-tab active" role="tab" aria-selected="true" data-tab="tab-groupe-1">
-          <i class="fas fa-building"></i> Filiales
-         </button>
-         <button class="mega-tab" role="tab" aria-selected="false" data-tab="tab-groupe-2">
-          <i class="fas fa-briefcase"></i> Corporate
-         </button>
-        </div>
-        <div class="mega-content">
-         <!-- Tab 1: Filiales -->
-         <div class="mega-tab-panel active" id="tab-groupe-1" role="tabpanel">
-          <div class="mega-grid">
-           <a href="/intermediaire" rel="noopener" class="mega-link">
-            <div class="mega-icon" style="background:rgba(14,165,233,0.1);color:#0EA5E9"><i class="fas fa-pipe-section"></i></div>
-            <div class="mega-link-text">
-             <h4>Intermédiaire <span class="mega-badge" style="background:rgba(14,165,233,0.12);color:#0EA5E9;border-color:rgba(14,165,233,0.2)">Transport</span></h4>
-             <p>Pipeline 1 070 km, stockage, SCADA</p>
-            </div>
-           </a>
-           <a href="/aval" rel="noopener" class="mega-link">
-            <div class="mega-icon" style="background:rgba(217,119,6,0.1);color:#D97706"><i class="fas fa-gas-pump"></i></div>
-            <div class="mega-link-text">
-             <h4>Aval <span class="mega-badge" style="background:rgba(217,119,6,0.12);color:#D97706;border-color:rgba(217,119,6,0.2)">Distribution</span></h4>
-             <p>Stations-service, GPL, carte fidélité NRJ+</p>
-            </div>
-           </a>
-           <a href="/technologies" rel="noopener" class="mega-link">
-            <div class="mega-icon" style="background:rgba(139,92,246,0.1);color:#8B5CF6"><i class="fas fa-microchip"></i></div>
-            <div class="mega-link-text">
-             <h4>Technologies <span class="mega-badge mega-badge-gold" style="background:rgba(139,92,246,0.12);color:#8B5CF6;border-color:rgba(139,92,246,0.2)">EnerTech</span></h4>
-             <p>Digital Twin, SCADA, IA prédictive, cybersécurité IoT</p>
-            </div>
-           </a>
-           <a href="/energies" rel="noopener" class="mega-link">
-            <div class="mega-icon" style="background:rgba(16,185,129,0.1);color:var(--energy)"><i class="fas fa-bolt"></i></div>
-            <div class="mega-link-text">
-             <h4>Énergies <span class="mega-badge mega-badge-green">Électricité</span></h4>
-             <p>Centrales gaz, solaire, micro-grids, stockage</p>
-            </div>
-           </a>
-           <a href="/#petrochimie" rel="noopener" class="mega-link">
-            <div class="mega-icon" style="background:rgba(225,29,72,0.1);color:var(--petro)"><i class="fas fa-flask-vial"></i></div>
-            <div class="mega-link-text">
-             <h4>Pétrochimie <span class="mega-badge" style="background:rgba(225,29,72,0.12);color:var(--petro);border-color:rgba(225,29,72,0.2)">Chimie</span></h4>
-             <p>Polymères, engrais, chimie de base</p>
-            </div>
-           </a>
-          </div>
-         </div>
-         <!-- Tab 2: Corporate -->
-         <div class="mega-tab-panel" id="tab-groupe-2" role="tabpanel">
-          <div class="mega-grid">
-           <a href="/" rel="noopener" class="mega-link">
-            <div class="mega-icon" style="background:rgba(200,150,46,0.1);color:var(--gold)"><i class="fas fa-globe"></i></div>
-            <div class="mega-link-text">
-             <h4>Site Groupe</h4>
-             <p>Gouvernance, ESG, Academy, médias</p>
-            </div>
-           </a>
-           <a href="/#services" rel="noopener" class="mega-link">
-            <div class="mega-icon" style="background:rgba(200,150,46,0.1);color:var(--gold)"><i class="fas fa-cubes"></i></div>
-            <div class="mega-link-text">
-             <h4>Fonctions Support</h4>
-             <p>HSE, Digital, RH, Supply Chain</p>
-            </div>
-           </a>
-           <a href="/#carrieres" rel="noopener" class="mega-link">
-            <div class="mega-icon" style="background:rgba(200,150,46,0.1);color:var(--gold)"><i class="fas fa-briefcase"></i></div>
-            <div class="mega-link-text">
-             <h4>Carrières</h4>
-             <p>Opportunités, culture, développement</p>
-            </div>
-           </a>
-          </div>
-         </div>
-        </div>
-       </div>
-       <div class="mega-footer">
-        <div class="mega-footer-title"><i class="fas fa-link"></i> Accès rapide</div>
-        <div class="mega-quick">
-         <a href="/"><i class="fas fa-globe"></i> Groupe</a>
-         <a href="/#academy"><i class="fas fa-graduation-cap"></i> Academy</a>
-         <a href="/#esg"><i class="fas fa-leaf"></i> ESG</a>
-         <a href="/technologies"><i class="fas fa-microchip"></i> Tech</a>
-        </div>
-       </div>
-      </div>
-     </div>
-     <!-- CTA -->
-     <a class="nav-cta" data-en="Contact" data-i18n="" href="/#contact">
-      <i aria-hidden="true" class="fas fa-paper-plane"></i> Contact
-     </a>
-    </nav>
-    <button aria-label="Rechercher" class="nav-search" id="searchOpen" type="button">
-     <i aria-hidden="true" class="fas fa-magnifying-glass">
-     </i>
+
+    <nav class="nav" role="navigation" aria-label="Navigation principale">
+    <button class="nav-link" data-mega="oilfield" aria-expanded="false" aria-haspopup="true" data-i18n data-en="Services">
+      Services <i class="fas fa-chevron-down chevron"></i>
     </button>
-    <button aria-label="Basculer thème clair/sombre" class="theme-toggle" onclick="toggleTheme()" title="Thème" type="button">
-     <i aria-hidden="true" class="fas fa-moon theme-icon-dark">
-     </i>
-     <i aria-hidden="true" class="fas fa-sun theme-icon-light">
-     </i>
+    <button class="nav-link" data-mega="groupe" aria-expanded="false" aria-haspopup="true" data-i18n data-en="Group">
+      Groupe <i class="fas fa-chevron-down chevron"></i>
     </button>
-    <div aria-label="Langue" class="lang-switch" role="radiogroup">
-     <button aria-checked="true" class="lang-btn active" data-lang-btn="fr" role="radio" title="Français">
-      FR
-     </button>
-     <button aria-checked="false" class="lang-btn" data-lang-btn="en" role="radio" title="English">
-      EN
-     </button>
-    </div>
-    <button aria-controls="mobileNav" aria-expanded="false" aria-label="Ouvrir le menu" class="mob-tog" id="mobOpen" type="button">
-     <i class="fas fa-bars">
-     </i>
+    <button class="nav-link" data-mega="durabilite" aria-expanded="false" aria-haspopup="true" data-i18n data-en="Commitment">
+      Engagement <i class="fas fa-chevron-down chevron"></i>
     </button>
-   </div>
-  </header>
-  <!-- ═══ VISIBLE BREADCRUMB ═══ -->
-  <nav class="breadcrumb" aria-label="Fil d'Ariane">
-    <div class="ctn">
-      <a href="/" class="bc-link" data-i18n data-en="Home">Accueil</a>
-      <span class="bc-sep" aria-hidden="true">›</span>
-      <a href="/" class="bc-link" data-i18n data-en="Subsidiaries">Filiales</a>
-      <span class="bc-sep" aria-hidden="true">›</span>
-      <span class="bc-current" aria-current="page" data-i18n data-en="Upstream — E&P">Amont — E&P</span>
-    </div>
+    <button class="nav-link" data-mega="talents" aria-expanded="false" aria-haspopup="true" data-i18n data-en="Careers">
+      Talents <i class="fas fa-chevron-down chevron"></i>
+    </button>
+    <button class="nav-link" data-mega="actualites" aria-expanded="false" aria-haspopup="true" data-i18n data-en="Media">
+      Médias <i class="fas fa-chevron-down chevron"></i>
+    </button>
+    <a class="nav-link" href="../investisseurs.html" data-i18n data-en="Investors"><i class="fas fa-chart-pie" style="font-size:0.72rem;opacity:0.7"></i> Investisseurs</a>
   </nav>
-  <!-- ═══ SCROLL PROGRESS BAR ═══ -->
-  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
-  <!-- ═══ BREADCRUMB BAR ═══ -->
-  <nav class="breadcrumb-bar" id="breadcrumbBar" aria-label="Fil d'Ariane">
-    <a href="#hero" class="bc-home"><i class="fas fa-home"></i> Accueil</a>
-    <i class="fas fa-chevron-right bc-sep"></i>
-    <span class="bc-current" id="bcCurrent">—</span>
-    <div class="bc-sections" id="bcDots"></div>
-  </nav>
-  <!-- ═══ GLOBAL SEARCH OVERLAY ═══ -->
-  <div class="search-overlay" id="searchOverlay" role="dialog" aria-label="Recherche globale">
-    <div class="search-modal">
-      <div class="search-input-wrap">
-        <i class="fas fa-search"></i>
-        <input class="search-input" id="searchInput" type="text" placeholder="Rechercher sur EnerTchad Amont…" autocomplete="off" spellcheck="false"/>
-        <span class="search-kbd">ESC</span>
+
+  <div class="header-actions">
+    <a href="../contact.html" class="header-cta" data-i18n data-en="Request a quote">Demander un devis</a>
+    <button class="lang-btn" id="langToggle" aria-label="Changer de langue">
+      <i class="fas fa-globe"></i> <span class="lang-label">FR</span>
+    </button>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+    </div>
+  </div>
+</div>
+
+<!-- ═══ MEGA MENU: OPERATIONS ═══ -->
+<!-- ═══ MEGA MENU: SERVICES DES CHAMPS ═══ -->
+<div class="mega-overlay" id="megaOverlay"></div>
+<div class="mega-drop" id="megaDrop-oilfield" role="dialog" aria-label="Services & Énergies" aria-modal="true">
+  <div class="mega-inner">
+    <div class="mega-header">
+      <h3 class="mega-title" data-i18n data-en="Services & Energy">Services & Énergies</h3>
+      <span class="mega-kpi-badge" aria-live="polite"><i class="fas fa-link"></i> <span data-i18n data-en="Integrated value chain — Upstream · Midstream · Downstream">Chaîne de valeur intégrée — Amont · Intermédiaire · Aval</span></span>
+      <button class="mega-close" id="megaClose" aria-label="Fermer"><i class="fas fa-xmark"></i></button>
+    </div>
+    <div class="mega-body">
+      <div class="mega-tabs" role="tablist">
+        <div class="mega-tab active" role="tab" data-tab="upstream" aria-selected="true" aria-controls="panel-upstream" id="tab-upstream">
+          <div class="mega-tab-icon" style="background:var(--amont-dim);color:var(--amont)"><i class="fas fa-mountain"></i></div>
+          <div class="mega-tab-text">
+            <div class="mega-tab-label" data-i18n data-en="Upstream">Amont</div>
+            <div class="mega-tab-sub" data-i18n data-en="E&amp;P, Well Services, Drilling, Consulting">E&amp;P, Well Services, Forage, Consulting</div>
+          </div>
+          <span class="mega-tab-stat">5 bassins</span>
+        </div>
+        <div class="mega-tab" role="tab" data-tab="midstream" aria-selected="false" aria-controls="panel-midstream" id="tab-midstream">
+          <div class="mega-tab-icon" style="background:var(--midstream-dim);color:var(--midstream)"><i class="fas fa-route"></i></div>
+          <div class="mega-tab-text">
+            <div class="mega-tab-label" data-i18n data-en="Midstream">Intermédiaire</div>
+            <div class="mega-tab-sub" data-i18n data-en="Pipeline, Transport, Digital &amp; SCADA">Pipeline, Transport, Digital &amp; SCADA</div>
+          </div>
+          <span class="mega-tab-stat">1 070 km</span>
+        </div>
+        <div class="mega-tab" role="tab" data-tab="downstream" aria-selected="false" aria-controls="panel-downstream" id="tab-downstream">
+          <div class="mega-tab-icon" style="background:var(--aval-dim);color:var(--aval)"><i class="fas fa-industry"></i></div>
+          <div class="mega-tab-text">
+            <div class="mega-tab-label" data-i18n data-en="Downstream">Aval</div>
+            <div class="mega-tab-sub" data-i18n data-en="Refining, Distribution, Stations, Trading">Raffinage, Distribution, Stations, Négoce</div>
+          </div>
+          <span class="mega-tab-stat">24 stations</span>
+        </div>
       </div>
-      <div class="search-results" id="searchResults"></div>
-      <div class="search-footer">
-        <span><kbd>↑</kbd><kbd>↓</kbd> naviguer</span>
-        <span><kbd>↵</kbd> ouvrir</span>
-        <span><kbd>Ctrl</kbd>+<kbd>K</kbd> recherche</span>
+      <div class="mega-divider"></div>
+      <div class="mega-panels-wrap">
+        <!-- ═══ UPSTREAM PANEL ═══ -->
+        <div class="mega-panel active" data-panel="upstream" role="tabpanel" id="panel-upstream" aria-labelledby="tab-upstream">
+          <a class="mega-card" href="../operations/amont.html">
+            <div class="mega-card-icon" style="color:var(--amont)"><i class="fas fa-mountain"></i></div>
+            <h4 data-i18n data-en="Exploration &amp; Production">Exploration &amp; Production</h4>
+            <p data-i18n data-en="5 producing basins. 1.5 Gbl 2P reserves. Seismic campaigns, EOR on mature fields. 144 kb/d production.">5 bassins producteurs. 1,5 Gbl réserves 2P. Campagnes sismiques, EOR champs matures. 144 kb/j.</p>
+            <span class="mega-card-stat"><i class="fas fa-map-marked-alt"></i> 5 bassins</span>
+          </a>
+          <a class="mega-card" href="../services/well-services.html">
+            <div class="mega-card-icon" style="color:var(--well)"><i class="fas fa-wrench"></i></div>
+            <h4 data-i18n data-en="Well Services &amp; Workover">Well Services &amp; Workover</h4>
+            <p data-i18n data-en="Completion, intervention, workover, EOR. Wireline logging, well diagnostics, pressure control. 24/7 support.">Complétion, intervention, workover, EOR. Wireline, diagnostique puits, contrôle pression. Support 24/7.</p>
+            <span class="mega-card-stat"><i class="fas fa-clock"></i> 24/7</span>
+          </a>
+          <a class="mega-card" href="../services/drilling.html">
+            <div class="mega-card-icon" style="color:var(--drilling)"><i class="fas fa-oil-well"></i></div>
+            <h4 data-i18n data-en="Drilling &amp; Engineering">Drilling &amp; Engineering</h4>
+            <p data-i18n data-en="Well planning, directional drilling, slim-hole wells. 3D modeling, hydraulics, HSE &amp; well control.">Planification puits, forage directionnel, slim-hole. Modélisation 3D, hydraulique, HSE &amp; contrôle.</p>
+            <span class="mega-card-stat"><i class="fas fa-map"></i> Multi-bassins</span>
+          </a>
+          <a class="mega-card" href="../services/consulting.html">
+            <div class="mega-card-icon" style="color:var(--consulting)"><i class="fas fa-graduation-cap"></i></div>
+            <h4 data-i18n data-en="Consulting &amp; EnerAcademy">Consulting &amp; EnerAcademy</h4>
+            <p data-i18n data-en="Reservoir engineering, brownfield strategies, EOR design. IWCF training, HSE certification. 2,400 h/year.">Ingénierie réservoir, stratégies brownfield, schémas EOR. Formation IWCF, certification HSE. 2 400 h/an.</p>
+            <span class="mega-card-stat"><i class="fas fa-chart-bar"></i> 2 400 h/an</span>
+          </a>
+        </div>
+        <!-- ═══ MIDSTREAM PANEL ═══ -->
+        <div class="mega-panel" data-panel="midstream" role="tabpanel" id="panel-midstream" aria-labelledby="tab-midstream">
+          <a class="mega-card" href="../operations/intermediaire.html">
+            <div class="mega-card-icon" style="color:var(--midstream)"><i class="fas fa-route"></i></div>
+            <h4 data-i18n data-en="Pipeline Corridor">Corridor Pipeline</h4>
+            <p data-i18n data-en="Doba-Kribi (1,070 km), Ronier-Djermaya (311 km). COTCO/TOTCO operations. 12 depots, real-time monitoring.">Doba-Kribi (1 070 km), Ronier-Djermaya (311 km). Opérations COTCO/TOTCO. 12 dépôts, monitoring temps réel.</p>
+            <span class="mega-card-stat"><i class="fas fa-ruler"></i> 1 070 km</span>
+          </a>
+          <a class="mega-card" href="../operations/intermediaire.html#transport">
+            <div class="mega-card-icon" style="color:var(--midstream)"><i class="fas fa-ship"></i></div>
+            <h4 data-i18n data-en="Marine Terminal &amp; FSO">Terminal marin &amp; FSO</h4>
+            <p data-i18n data-en="Komé Kribi 1 FSO (2.4M bbl). 29 liftings in 2024. 33M bbl/year throughput. Offshore 12 km.">FSO Komé Kribi 1 (2,4M bbl). 29 enlèvements 2024. 33M bbl/an capacité. Offshore 12 km.</p>
+            <span class="mega-card-stat"><i class="fas fa-anchor"></i> 33M bbl/an</span>
+          </a>
+          <a class="mega-card" href="../services/digital.html">
+            <div class="mega-card-icon" style="color:var(--digital)"><i class="fas fa-tower-broadcast"></i></div>
+            <h4 data-i18n data-en="Digital &amp; SCADA">Digital &amp; SCADA</h4>
+            <p data-i18n data-en="Field-wide SCADA, 350+ sensors, AI predictive analytics, digital twin. OT cybersecurity ISO 27001.">SCADA terrain, 350+ capteurs, IA prédictive, jumeau numérique. Cybersécurité OT ISO 27001.</p>
+            <span class="mega-card-stat"><i class="fas fa-satellite-dish"></i> 350+ capteurs</span>
+          </a>
+          <a class="mega-card" href="../services/technologies.html">
+            <div class="mega-card-icon" style="color:var(--tech)"><i class="fas fa-microchip"></i></div>
+            <h4 data-i18n data-en="Technologies &amp; Innovation">Technologies &amp; Innovation</h4>
+            <p data-i18n data-en="Digital twin, IoT networks, AI-driven optimization, automation. Modernizing petroleum operations.">Jumeau numérique, réseaux IoT, optimisation IA, automatisation. Modernisation des opérations pétrolières.</p>
+            <span class="mega-card-stat"><i class="fas fa-brain"></i> AI-driven</span>
+          </a>
+        </div>
+        <!-- ═══ DOWNSTREAM PANEL ═══ -->
+        <div class="mega-panel" data-panel="downstream" role="tabpanel" id="panel-downstream" aria-labelledby="tab-downstream">
+          <a class="mega-card" href="../operations/aval.html">
+            <div class="mega-card-icon" style="color:var(--aval)"><i class="fas fa-industry"></i></div>
+            <h4 data-i18n data-en="SRN Djarmaya Refinery">Raffinerie SRN Djarmaya</h4>
+            <p data-i18n data-en="20 kb/d capacity (target 60 kb/d). Gasoline, diesel, LPG, kerosene. National fuel sovereignty.">20 kb/j (objectif 60 kb/j). Essence, diesel, GPL, kérosène. Souveraineté énergétique nationale.</p>
+            <span class="mega-card-stat"><i class="fas fa-cogs"></i> 20 → 60 kb/j</span>
+          </a>
+          <a class="mega-card" href="../operations/aval.html#stations">
+            <div class="mega-card-icon" style="color:var(--aval)"><i class="fas fa-gas-pump"></i></div>
+            <h4 data-i18n data-en="24 Premium Stations">24 Stations premium</h4>
+            <p data-i18n data-en="Ultra-premium stations across 14 cities. Fuels, LPG, EV charging, loyalty programs. 24/7 service.">Stations ultra-premium dans 14 villes. Carburants, GPL, bornes IRVE, programmes fidélité. 24/7.</p>
+            <span class="mega-card-stat"><i class="fas fa-location-dot"></i> 14 villes</span>
+          </a>
+          <a class="mega-card" href="../distribution/">
+            <div class="mega-card-icon" style="color:var(--aval)"><i class="fas fa-truck"></i></div>
+            <h4 data-i18n data-en="Distribution &amp; Trading">Distribution &amp; Négoce</h4>
+            <p data-i18n data-en="Nationwide distribution, industrial lubricants, B2B supply, fleet management. National coverage.">Distribution nationale, lubrifiants industriels, chaînes B2B, gestion flotte. Couverture nationale.</p>
+            <span class="mega-card-stat"><i class="fas fa-boxes-stacked"></i> National</span>
+          </a>
+          <a class="mega-card" href="../operations/energies.html">
+            <div class="mega-card-icon" style="color:var(--energy)"><i class="fas fa-leaf"></i></div>
+            <h4 data-i18n data-en="Renewable Energy">Énergies renouvelables</h4>
+            <p data-i18n data-en="Solar canopies, hybrid power, LNG transition. ESG-aligned energy diversification strategy.">Ombrières solaires, énergie hybride, transition GNL. Stratégie diversification énergétique ESG.</p>
+            <span class="mega-card-stat"><i class="fas fa-solar-panel"></i> Net-Zero 2050</span>
+          </a>
+        </div>
+      </div>
+      <div class="mega-footer">
+        <a class="mega-footer-link" href="../operations/amont.html" data-i18n data-en="Explore the full value chain">Explorer toute la chaîne de valeur <i class="fas fa-arrow-right"></i></a>
+        <div class="mega-footer-stats">
+          <div class="mega-footer-stat">
+            <span class="mega-footer-stat-value">3</span>
+            <span class="mega-footer-stat-label" data-i18n data-en="Segments">Segments</span>
+          </div>
+          <div class="mega-footer-stat">
+            <span class="mega-footer-stat-value">7</span>
+            <span class="mega-footer-stat-label" data-i18n data-en="Divisions">Divisions</span>
+          </div>
+          <div class="mega-footer-stat">
+            <span class="mega-footer-stat-value">24/7</span>
+            <span class="mega-footer-stat-label" data-i18n data-en="Field support">Support terrain</span>
+          </div>
+          <div class="mega-footer-stat">
+            <span class="mega-footer-stat-value">100%</span>
+            <span class="mega-footer-stat-label" data-i18n data-en="Chadian team">Équipe tchadienne</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  <!-- ═══ MOBILE NAV ═══ -->
-  <div aria-hidden="true" aria-label="Menu mobile" class="mobile-nav" id="mobileNav" role="dialog">
-   <!-- Sticky header -->
-   <div class="mn-header">
-    <a aria-label="Accueil" class="logo-link" href="#top">
-     <img alt="Logo EnerTchad" height="36" loading="lazy" src="logo.svg" width="36"/>
-     <div class="logo-container">
-      <span class="logo-brand">
-       EnerTchad
-      </span>
-      <span class="logo-tagline">
-       Amont · E&amp;P
-      </span>
-     </div>
-    </a>
-    <button aria-label="Fermer le menu" class="mn-close" id="mobClose" type="button">
-     <i class="fas fa-times">
-     </i>
-    </button>
-   </div>
-   <!-- Theme & Language toggle -->
-   <div class="mobile-nav-flex">
-    <button aria-label="Basculer thème" class="theme-toggle theme-toggle-btn" onclick="toggleTheme()" title="Thème" type="button">
-     <i aria-hidden="true" class="fas fa-moon theme-icon-dark">
-     </i>
-     <i aria-hidden="true" class="fas fa-sun theme-icon-light" style="display:none">
-     </i>
-     <span>
-      Thème
-     </span>
-    </button>
-   </div>
-   <div class="mn-lang">
-    <button class="mn-lang-btn active" data-lang-btn="fr" type="button">
-     Français
-    </button>
-    <button class="mn-lang-btn" data-lang-btn="en" type="button">
-     English
-    </button>
-   </div>
-   <!-- Body -->
-   <div class="mn-body">
-    <button class="mn-search-btn" onclick="document.getElementById('searchOverlay').classList.add('active');document.getElementById('searchInput').focus()" style="display:flex;align-items:center;gap:0.75rem;width:100%;padding:0.75rem 1rem;margin-bottom:0.5rem;background:rgba(46,134,222,0.06);border:1px solid rgba(46,134,222,0.12);border-radius:10px;color:rgba(255,255,255,0.7);font-size:0.85rem;cursor:pointer;font-family:inherit">
-      <i class="fas fa-search" style="color:var(--accent)"></i> Rechercher… <span style="margin-left:auto;font-size:0.65rem;opacity:0.5">Ctrl+K</span>
-    </button>
-    <a class="mn-link" data-en="Exploration" data-i18n="" href="#exploration">
-     <div class="mn-link-ic blue"><i aria-hidden="true" class="fas fa-mountain"></i></div>
-     <div class="mn-link-text"><span class="mn-link-name">Exploration</span></div>
-    </a>
-    <a class="mn-link" data-en="Drilling" data-i18n="" href="#forage">
-     <div class="mn-link-ic blue"><i aria-hidden="true" class="fas fa-oil-well"></i></div>
-     <div class="mn-link-text"><span class="mn-link-name">Forage</span></div>
-    </a>
-    <a class="mn-link" data-en="Production" data-i18n="" href="#production">
-     <div class="mn-link-ic blue"><i aria-hidden="true" class="fas fa-industry"></i></div>
-     <div class="mn-link-text"><span class="mn-link-name">Production</span></div>
-    </a>
-    <a class="mn-link" data-en="Basins" data-i18n="" href="#bassins">
-     <div class="mn-link-ic green"><i aria-hidden="true" class="fas fa-map-location-dot"></i></div>
-     <div class="mn-link-text"><span class="mn-link-name">Bassins</span></div>
-    </a>
-    <a class="mn-link" data-en="Geosciences" data-i18n="" href="#geosciences">
-     <div class="mn-link-ic blue"><i aria-hidden="true" class="fas fa-earth-americas"></i></div>
-     <div class="mn-link-text"><span class="mn-link-name">Géosciences</span></div>
-    </a>
-    <a class="mn-link" data-en="Group" data-i18n="" href="/">
-     <div class="mn-link-ic gold"><i aria-hidden="true" class="fas fa-globe"></i></div>
-     <div class="mn-link-text"><span class="mn-link-name">Groupe</span></div>
-    </a>
-    <a class="mn-link" data-en="Technologies" data-i18n="" href="/technologies">
-     <div class="mn-link-ic" style="background:rgba(139,92,246,0.12);color:#8B5CF6"><i aria-hidden="true" class="fas fa-microchip"></i></div>
-     <div class="mn-link-text"><span class="mn-link-name">Technologies</span></div>
-    </a>
-    <a class="mn-link" href="/energies" rel="noopener">
-     <div class="mn-link-ic" style="background:rgba(16,185,129,0.12);color:#10B981"><i class="fas fa-bolt"></i></div>
-     <div class="mn-link-text"><span class="mn-link-name">Énergies</span></div>
-    </a>
-    <a class="mn-link mn-link-accent" href="#top">
-     <div class="mn-link-ic blue"><i aria-hidden="true" class="fas fa-arrow-up"></i></div>
-     <div class="mn-link-text"><span class="mn-link-name" data-en="Back to Top" data-i18n="">Retour en haut</span></div>
-    </a>
-   </div>
-   <!-- /mn-body -->
-   <!-- Fixed CTA bottom -->
-   <div class="mn-cta-wrap">
-    <a class="mn-cta" href="/#contact">
-     <i aria-hidden="true" class="fas fa-paper-plane">
-     </i>
-     <span data-en="Contact Us" data-i18n="">
-      Nous contacter
-     </span>
-    </a>
-   </div>
+</div>
+
+<div class="mega-drop" id="megaDrop-groupe" role="dialog" aria-label="Groupe" aria-modal="true">
+  <div class="mega-inner">
+    <div class="mega-header">
+      <h3 class="mega-title" data-i18n data-en="The Group">Le Groupe</h3>
+      <span class="mega-kpi-badge"><i class="fas fa-building"></i> <span data-i18n data-en="6 subsidiaries">6 filiales</span></span>
+      <button class="mega-close" aria-label="Fermer"><i class="fas fa-xmark"></i></button>
+    </div>
+    <div class="mega-body">
+      <div class="mega-tabs" role="tablist">
+        <div class="mega-tab active" role="tab" data-tab="gouvernance" aria-selected="true" aria-controls="panel-gouvernance" id="tab-gouvernance">
+          <div class="mega-tab-icon" style="background:var(--gold-dim);color:var(--gold)"><i class="fas fa-landmark"></i></div>
+          <div class="mega-tab-text">
+            <div class="mega-tab-label" data-i18n data-en="Governance">Gouvernance</div>
+            <div class="mega-tab-sub" data-i18n data-en="Identity & Leadership">Identité & Direction</div>
+          </div>
+          <span class="mega-tab-stat">SA/CA</span>
+        </div>
+        <div class="mega-tab" role="tab" data-tab="filiales" aria-selected="false" aria-controls="panel-filiales" id="tab-filiales">
+          <div class="mega-tab-icon" style="background:var(--amont-dim);color:var(--amont)"><i class="fas fa-sitemap"></i></div>
+          <div class="mega-tab-text">
+            <div class="mega-tab-label" data-i18n data-en="Subsidiaries">Filiales</div>
+            <div class="mega-tab-sub" data-i18n data-en="Integrated Value Chain">Chaîne de valeur intégrée</div>
+          </div>
+          <span class="mega-tab-stat">6 filiales</span>
+        </div>
+        <div class="mega-tab" role="tab" data-tab="performance" aria-selected="false" aria-controls="panel-performance" id="tab-performance">
+          <div class="mega-tab-icon" style="background:var(--midstream-dim);color:var(--midstream)"><i class="fas fa-chart-line"></i></div>
+          <div class="mega-tab-text">
+            <div class="mega-tab-label" data-i18n data-en="Performance">Performance</div>
+            <div class="mega-tab-sub" data-i18n data-en="Financials & KPIs">Finances & KPIs</div>
+          </div>
+          <span class="mega-tab-stat">$1.7 Md</span>
+        </div>
+      </div>
+      <div class="mega-divider"></div>
+      <div class="mega-panels-wrap">
+        <div class="mega-panel active" data-panel="gouvernance" role="tabpanel" id="panel-gouvernance" aria-labelledby="tab-gouvernance">
+          <a class="mega-card" href="../groupe/index.html">
+            <div class="mega-card-icon" style="color:var(--gold)"><i class="fas fa-building-columns"></i></div>
+            <h4 data-i18n data-en="Corporate Identity">Identité corporate</h4>
+            <p data-i18n data-en="Vision, mission, values and strategic ambition 2026-2030">Vision, mission, valeurs et ambition stratégique 2026-2030</p>
+            <span class="mega-card-stat"><i class="fas fa-bullseye"></i> Vision 2030</span>
+          </a>
+          <a class="mega-card" href="../groupe/index.html#gouvernance">
+            <div class="mega-card-icon" style="color:var(--gold)"><i class="fas fa-user-tie"></i></div>
+            <h4 data-i18n data-en="Board & Management">CA & Direction Générale</h4>
+            <p data-i18n data-en="Board of Directors, Executive Committee, governance framework OHADA">Conseil d'Administration, Comité Exécutif, cadre OHADA</p>
+            <span class="mega-card-stat"><i class="fas fa-shield-halved"></i> ISO 37001</span>
+          </a>
+          <a class="mega-card" href="../groupe/index.html#histoire">
+            <div class="mega-card-icon" style="color:var(--gold)"><i class="fas fa-clock-rotate-left"></i></div>
+            <h4 data-i18n data-en="History & Milestones">Histoire & Jalons</h4>
+            <p data-i18n data-en="From Chad's first oil to an integrated national champion">Du premier baril tchadien au champion national intégré</p>
+            <span class="mega-card-stat"><i class="fas fa-flag"></i> Depuis 2026</span>
+          </a>
+        </div>
+        <div class="mega-panel" data-panel="filiales" role="tabpanel" id="panel-filiales" aria-labelledby="tab-filiales">
+          <a class="mega-card" href="amont.html">
+            <div class="mega-card-icon" style="color:var(--amont)"><i class="fas fa-oil-well"></i></div>
+            <h4>EnerTchad Amont</h4>
+            <p data-i18n data-en="Exploration & Production — 144 kb/d">Exploration & Production — 144 kb/j</p>
+            <span class="mega-card-stat"><i class="fas fa-arrow-trend-up"></i> Cœur de métier</span>
+          </a>
+          <a class="mega-card" href="intermediaire.html">
+            <div class="mega-card-icon" style="color:var(--midstream)"><i class="fas fa-arrows-left-right-to-line"></i></div>
+            <h4>EnerTchad Intermédiaire</h4>
+            <p data-i18n data-en="Transport & Logistics — 1,381 km pipelines">Transport & Logistique — 1 381 km pipelines</p>
+            <span class="mega-card-stat"><i class="fas fa-arrow-trend-up"></i> Cœur de métier</span>
+          </a>
+          <a class="mega-card" href="aval.html">
+            <div class="mega-card-icon" style="color:var(--aval)"><i class="fas fa-gas-pump"></i></div>
+            <h4>EnerTchad Aval</h4>
+            <p data-i18n data-en="Refining & Distribution — 24 stations">Raffinage & Distribution — 24 stations</p>
+            <span class="mega-card-stat"><i class="fas fa-arrow-trend-up"></i> Cœur de métier</span>
+          </a>
+          <a class="mega-card" href="aval.html#lubrifiants">
+            <div class="mega-card-icon" style="color:var(--petro)"><i class="fas fa-flask-vial"></i></div>
+            <h4>EnerTchad Pétrochimie</h4>
+            <p data-i18n data-en="Lubricants, Bitumen & Transformation — Vision 2030">Lubrifiants, Bitume & Transformation — Vision 2030</p>
+            <span class="mega-card-stat"><i class="fas fa-flask"></i> Solutions</span>
+          </a>
+          <a class="mega-card" href="technologies.html#scada">
+            <div class="mega-card-icon" style="color:var(--tech)"><i class="fas fa-microchip"></i></div>
+            <h4>EnerTchad Technologies</h4>
+            <p data-i18n data-en="SCADA, AI, Cybersecurity & Digital Twin">SCADA, IA, Cybersécurité & Jumeaux numériques</p>
+            <span class="mega-card-stat"><i class="fas fa-microchip"></i> Solutions</span>
+          </a>
+          <a class="mega-card" href="energies.html#solaire">
+            <div class="mega-card-icon" style="color:var(--energy)"><i class="fas fa-bolt"></i></div>
+            <h4>EnerTchad Énergies</h4>
+            <p data-i18n data-en="Power Generation & Renewables — 32 MW">Production électrique & Renouvelables — 32 MW</p>
+            <span class="mega-card-stat"><i class="fas fa-bolt"></i> Solutions</span>
+          </a>
+        </div>
+        <div class="mega-panel" data-panel="performance" role="tabpanel" id="panel-performance" aria-labelledby="tab-performance">
+          <a class="mega-card" href="../groupe/index.html#finances">
+            <div class="mega-card-icon" style="color:var(--midstream)"><i class="fas fa-dollar-sign"></i></div>
+            <h4 data-i18n data-en="Financial Results">Résultats financiers</h4>
+            <p data-i18n data-en="$1.7B revenue, $240M EBITDA, 20.2% margin">$1,7 Md CA, $240M EBITDA, marge 20,2%</p>
+            <span class="mega-card-stat"><i class="fas fa-chart-bar"></i> +70% YoY</span>
+          </a>
+          <a class="mega-card" href="../groupe/index.html#capex">
+            <div class="mega-card-icon" style="color:var(--energy)"><i class="fas fa-hand-holding-dollar"></i></div>
+            <h4 data-i18n data-en="CAPEX & Investments">CAPEX & Investissements</h4>
+            <p data-i18n data-en="$180M CAPEX 2026, strategic growth plan">$180M CAPEX 2026, plan de croissance stratégique</p>
+            <span class="mega-card-stat"><i class="fas fa-seedling"></i> Croissance</span>
+          </a>
+          <a class="mega-card" href="../groupe/index.html#hse-perf">
+            <div class="mega-card-icon" style="color:var(--gold)"><i class="fas fa-shield-halved"></i></div>
+            <h4 data-i18n data-en="HSE Performance">Performance HSE</h4>
+            <p data-i18n data-en="0.42 TRIR, 842 days without incident, zero fatality">TRIR 0,42, 842 jours sans incident, zéro fatalité</p>
+            <span class="mega-card-stat"><i class="fas fa-medal"></i> Excellence HSE</span>
+          </a>
+        </div>
+      </div>
+      <div class="mega-footer">
+        <a class="mega-footer-link" href="../groupe/index.html" data-i18n data-en="Discover the Group">Découvrir le Groupe <i class="fas fa-arrow-right"></i></a>
+        <div class="mega-footer-stats">
+          <div class="mega-footer-stat">
+            <span class="mega-footer-stat-value">1 240</span>
+            <span class="mega-footer-stat-label" data-i18n data-en="Employees">Collaborateurs</span>
+          </div>
+          <div class="mega-footer-stat">
+            <span class="mega-footer-stat-value">96%</span>
+            <span class="mega-footer-stat-label" data-i18n data-en="Chadian workforce">Main-d'œuvre tchadienne</span>
+          </div>
+          <div class="mega-footer-stat">
+            <span class="mega-footer-stat-value">53</span>
+            <span class="mega-footer-stat-label" data-i18n data-en="Published contracts">Contrats publiés</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <!-- ═══ HERO ═══ -->
-  <main id="main-content">
+</div>
+
+<!-- ═══ MEGA MENU: DURABILITÉ ═══ -->
+<div class="mega-drop" id="megaDrop-durabilite" role="dialog" aria-label="Durabilité" aria-modal="true">
+  <div class="mega-inner">
+    <div class="mega-header">
+      <h3 class="mega-title" data-i18n data-en="Commitment">Engagement</h3>
+      <span class="mega-kpi-badge"><i class="fas fa-leaf"></i> <span data-i18n data-en="ESG Reporting">Reporting ESG</span></span>
+      <button class="mega-close" aria-label="Fermer"><i class="fas fa-xmark"></i></button>
+    </div>
+    <div class="mega-body">
+      <div class="mega-tabs" role="tablist">
+        <div class="mega-tab active" role="tab" data-tab="environnement" aria-selected="true" aria-controls="panel-environnement" id="tab-environnement">
+          <div class="mega-tab-icon" style="background:var(--energy-dim);color:var(--energy)"><i class="fas fa-earth-africa"></i></div>
+          <div class="mega-tab-text">
+            <div class="mega-tab-label" data-i18n data-en="Environment">Environnement</div>
+            <div class="mega-tab-sub" data-i18n data-en="Climate & Biodiversity">Climat & Biodiversité</div>
+          </div>
+          <span class="mega-tab-stat">-30% torchage</span>
+        </div>
+        <div class="mega-tab" role="tab" data-tab="social" aria-selected="false" aria-controls="panel-social" id="tab-social">
+          <div class="mega-tab-icon" style="background:var(--amont-dim);color:var(--amont)"><i class="fas fa-people-group"></i></div>
+          <div class="mega-tab-text">
+            <div class="mega-tab-label" data-i18n data-en="Social">Social</div>
+            <div class="mega-tab-sub" data-i18n data-en="Communities & Local Content">Communautés & Contenu Local</div>
+          </div>
+          <span class="mega-tab-stat">96% local</span>
+        </div>
+        <div class="mega-tab" role="tab" data-tab="gouv_esg" aria-selected="false" aria-controls="panel-gouv_esg" id="tab-gouv_esg">
+          <div class="mega-tab-icon" style="background:var(--gold-dim);color:var(--gold)"><i class="fas fa-scale-balanced"></i></div>
+          <div class="mega-tab-text">
+            <div class="mega-tab-label" data-i18n data-en="ESG Governance">Gouvernance ESG</div>
+            <div class="mega-tab-sub" data-i18n data-en="EITI, Transparency & Ethics">ITIE, Transparence & Éthique</div>
+          </div>
+          <span class="mega-tab-stat">53 contrats</span>
+        </div>
+      </div>
+      <div class="mega-divider"></div>
+      <div class="mega-panels-wrap">
+        <div class="mega-panel active" data-panel="environnement" role="tabpanel" id="panel-environnement" aria-labelledby="tab-environnement">
+          <a class="mega-card" href="../durabilite.html#climat">
+            <div class="mega-card-icon" style="color:var(--energy)"><i class="fas fa-temperature-arrow-down"></i></div>
+            <h4 data-i18n data-en="Climate Strategy">Stratégie climat</h4>
+            <p data-i18n data-en="Gas flaring reduction, carbon footprint tracking, decarbonization roadmap">Réduction torchage, suivi empreinte carbone, feuille de route décarbonation</p>
+            <span class="mega-card-stat"><i class="fas fa-fire-flame-curved"></i> -30% torchage</span>
+          </a>
+          <a class="mega-card" href="../durabilite.html#energie">
+            <div class="mega-card-icon" style="color:var(--energy)"><i class="fas fa-solar-panel"></i></div>
+            <h4 data-i18n data-en="Renewable Energy">Énergies renouvelables</h4>
+            <p data-i18n data-en="Solar hybrid installations, gas-to-power conversion, energy transition">Installations solaires hybrides, conversion gaz-électricité, transition énergétique</p>
+            <span class="mega-card-stat"><i class="fas fa-bolt"></i> 5 MW solaire</span>
+          </a>
+          <a class="mega-card" href="../durabilite.html#biodiversite">
+            <div class="mega-card-icon" style="color:var(--energy)"><i class="fas fa-tree"></i></div>
+            <h4 data-i18n data-en="Biodiversity">Biodiversité</h4>
+            <p data-i18n data-en="Environmental impact assessments, biodiversity offset, reforestation programs">Études d'impact, compensation biodiversité, programmes de reboisement</p>
+            <span class="mega-card-stat"><i class="fas fa-seedling"></i> GRI Reporting</span>
+          </a>
+        </div>
+        <div class="mega-panel" data-panel="social" role="tabpanel" id="panel-social" aria-labelledby="tab-social">
+          <a class="mega-card" href="../durabilite.html#communautes">
+            <div class="mega-card-icon" style="color:var(--amont)"><i class="fas fa-handshake-angle"></i></div>
+            <h4 data-i18n data-en="Local Communities">Communautés locales</h4>
+            <p data-i18n data-en="Community development programs, infrastructure projects, stakeholder engagement">Programmes de développement, projets d'infrastructure, dialogue parties prenantes</p>
+            <span class="mega-card-stat"><i class="fas fa-hand-holding-heart"></i> Impact social</span>
+          </a>
+          <a class="mega-card" href="../durabilite.html#local-content">
+            <div class="mega-card-icon" style="color:var(--amont)"><i class="fas fa-flag"></i></div>
+            <h4 data-i18n data-en="Local Content">Contenu local</h4>
+            <p data-i18n data-en="96% Chadian workforce, local procurement strategy, supplier development">96% main-d'œuvre tchadienne, stratégie achats locaux, développement fournisseurs</p>
+            <span class="mega-card-stat"><i class="fas fa-users"></i> 96% tchadien</span>
+          </a>
+          <a class="mega-card" href="../durabilite.html#hse">
+            <div class="mega-card-icon" style="color:var(--amont)"><i class="fas fa-hard-hat"></i></div>
+            <h4 data-i18n data-en="HSE Excellence">Excellence HSE</h4>
+            <p data-i18n data-en="0.42 TRIR, 842 incident-free days, zero fatality target">TRIR 0,42, 842 jours sans incident, objectif zéro fatalité</p>
+            <span class="mega-card-stat"><i class="fas fa-medal"></i> 842 jours HSE</span>
+          </a>
+        </div>
+        <div class="mega-panel" data-panel="gouv_esg" role="tabpanel" id="panel-gouv_esg" aria-labelledby="tab-gouv_esg">
+          <a class="mega-card" href="../durabilite.html#itie">
+            <div class="mega-card-icon" style="color:var(--gold)"><i class="fas fa-file-contract"></i></div>
+            <h4 data-i18n data-en="EITI Compliance">Conformité ITIE</h4>
+            <p data-i18n data-en="53 published contracts, full revenue transparency, EITI Standard adherence">53 contrats publiés, transparence totale des revenus, adhésion au Standard ITIE</p>
+            <span class="mega-card-stat"><i class="fas fa-check-circle"></i> Conforme ITIE</span>
+          </a>
+          <a class="mega-card" href="../durabilite.html#ethique">
+            <div class="mega-card-icon" style="color:var(--gold)"><i class="fas fa-gavel"></i></div>
+            <h4 data-i18n data-en="Anti-corruption">Anti-corruption</h4>
+            <p data-i18n data-en="ISO 37001 certified, anti-bribery management system, OHADA compliance">Certifié ISO 37001, système anti-corruption, conformité OHADA</p>
+            <span class="mega-card-stat"><i class="fas fa-shield-halved"></i> ISO 37001</span>
+          </a>
+          <a class="mega-card" href="../durabilite.html#reporting">
+            <div class="mega-card-icon" style="color:var(--gold)"><i class="fas fa-chart-pie"></i></div>
+            <h4 data-i18n data-en="ESG Reporting">Reporting ESG</h4>
+            <p data-i18n data-en="GRI Standards, sustainability report, ESG scorecard and KPI tracking">Standards GRI, rapport durabilité, tableau de bord ESG et suivi KPIs</p>
+            <span class="mega-card-stat"><i class="fas fa-chart-line"></i> GRI Standards</span>
+          </a>
+        </div>
+      </div>
+      <div class="mega-footer">
+        <a class="mega-footer-link" href="../durabilite.html" data-i18n data-en="Our ESG commitments">Nos engagements ESG <i class="fas fa-arrow-right"></i></a>
+        <div class="mega-footer-stats">
+          <div class="mega-footer-stat">
+            <span class="mega-footer-stat-value">-30%</span>
+            <span class="mega-footer-stat-label" data-i18n data-en="Gas flaring">Torchage gaz</span>
+          </div>
+          <div class="mega-footer-stat">
+            <span class="mega-footer-stat-value">0,42</span>
+            <span class="mega-footer-stat-label" data-i18n data-en="TRIR">TRIR</span>
+          </div>
+          <div class="mega-footer-stat">
+            <span class="mega-footer-stat-value">GRI</span>
+            <span class="mega-footer-stat-label" data-i18n data-en="Reporting">Reporting</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ MEGA MENU: TALENTS ═══ -->
+<div class="mega-drop" id="megaDrop-talents" role="dialog" aria-label="Talents" aria-modal="true">
+  <div class="mega-inner">
+    <div class="mega-header">
+      <h3 class="mega-title" data-i18n data-en="Talents & Careers">Talents & Carrières</h3>
+      <span class="mega-kpi-badge"><i class="fas fa-graduation-cap"></i> <span data-i18n data-en="1,240 employees">1 240 collaborateurs</span></span>
+      <button class="mega-close" aria-label="Fermer"><i class="fas fa-xmark"></i></button>
+    </div>
+    <div class="mega-body">
+      <div class="mega-tabs" role="tablist">
+        <div class="mega-tab active" role="tab" data-tab="carrieres" aria-selected="true" aria-controls="panel-carrieres" id="tab-carrieres">
+          <div class="mega-tab-icon" style="background:var(--amont-dim);color:var(--amont)"><i class="fas fa-briefcase"></i></div>
+          <div class="mega-tab-text">
+            <div class="mega-tab-label" data-i18n data-en="Careers">Carrières</div>
+            <div class="mega-tab-sub" data-i18n data-en="Join our team">Rejoignez notre équipe</div>
+          </div>
+          <span class="mega-tab-stat">Recrutement</span>
+        </div>
+        <div class="mega-tab" role="tab" data-tab="academy" aria-selected="false" aria-controls="panel-academy" id="tab-academy">
+          <div class="mega-tab-icon" style="background:var(--tech-dim);color:var(--tech)"><i class="fas fa-user-graduate"></i></div>
+          <div class="mega-tab-text">
+            <div class="mega-tab-label" data-i18n data-en="Academy">Academy</div>
+            <div class="mega-tab-sub" data-i18n data-en="Training & Development">Formation & Développement</div>
+          </div>
+          <span class="mega-tab-stat">+200 h/an</span>
+        </div>
+        <div class="mega-tab" role="tab" data-tab="culture" aria-selected="false" aria-controls="panel-culture" id="tab-culture">
+          <div class="mega-tab-icon" style="background:var(--energy-dim);color:var(--energy)"><i class="fas fa-heart"></i></div>
+          <div class="mega-tab-text">
+            <div class="mega-tab-label" data-i18n data-en="Culture">Culture</div>
+            <div class="mega-tab-sub" data-i18n data-en="Values & Life at EnerTchad">Valeurs & Vie chez EnerTchad</div>
+          </div>
+          <span class="mega-tab-stat">Unité</span>
+        </div>
+      </div>
+      <div class="mega-divider"></div>
+      <div class="mega-panels-wrap">
+        <div class="mega-panel active" data-panel="carrieres" role="tabpanel" id="panel-carrieres" aria-labelledby="tab-carrieres">
+          <a class="mega-card" href="../talents.html#offres">
+            <div class="mega-card-icon" style="color:var(--amont)"><i class="fas fa-magnifying-glass"></i></div>
+            <h4 data-i18n data-en="Open Positions">Offres d'emploi</h4>
+            <p data-i18n data-en="Engineering, operations, management — explore our current openings across all subsidiaries">Ingénierie, opérations, management — découvrez nos postes ouverts dans toutes les filiales</p>
+            <span class="mega-card-stat"><i class="fas fa-briefcase"></i> Postes ouverts</span>
+          </a>
+          <a class="mega-card" href="../talents.html#candidature">
+            <div class="mega-card-icon" style="color:var(--amont)"><i class="fas fa-paper-plane"></i></div>
+            <h4 data-i18n data-en="Apply Now">Candidature spontanée</h4>
+            <p data-i18n data-en="Submit your CV and cover letter — join the energy champion of Central Africa">Envoyez votre CV et lettre de motivation — rejoignez le champion énergétique d'Afrique Centrale</p>
+            <span class="mega-card-stat"><i class="fas fa-envelope"></i> talents@enertchad.td</span>
+          </a>
+          <a class="mega-card" href="../talents.html#stages">
+            <div class="mega-card-icon" style="color:var(--amont)"><i class="fas fa-graduation-cap"></i></div>
+            <h4 data-i18n data-en="Internships">Stages & Alternance</h4>
+            <p data-i18n data-en="Programs for students and young graduates in petroleum engineering, geosciences, HSE, and management">Programmes pour étudiants et jeunes diplômés en ingénierie pétrolière, géosciences, HSE et management</p>
+            <span class="mega-card-stat"><i class="fas fa-user-graduate"></i> Jeunes talents</span>
+          </a>
+        </div>
+        <div class="mega-panel" data-panel="academy" role="tabpanel" id="panel-academy" aria-labelledby="tab-academy">
+          <a class="mega-card" href="../talents.html#academy">
+            <div class="mega-card-icon" style="color:var(--tech)"><i class="fas fa-chalkboard-user"></i></div>
+            <h4 data-i18n data-en="EnerTchad Academy">EnerTchad Academy</h4>
+            <p data-i18n data-en="In-house training center for petroleum engineering, geosciences, HSE, and leadership development">Centre de formation interne en ingénierie pétrolière, géosciences, HSE et leadership</p>
+            <span class="mega-card-stat"><i class="fas fa-certificate"></i> Centre certifié</span>
+          </a>
+          <a class="mega-card" href="../talents.html#competences">
+            <div class="mega-card-icon" style="color:var(--tech)"><i class="fas fa-chart-simple"></i></div>
+            <h4 data-i18n data-en="Skills Development">Développement compétences</h4>
+            <p data-i18n data-en="+200 hours training per employee per year, mentorship, and technical certification programs">+200h de formation/employé/an, mentorat et certifications techniques</p>
+            <span class="mega-card-stat"><i class="fas fa-arrow-up"></i> +200 h/an</span>
+          </a>
+          <a class="mega-card" href="../talents.html#partenariats">
+            <div class="mega-card-icon" style="color:var(--tech)"><i class="fas fa-handshake"></i></div>
+            <h4 data-i18n data-en="Academic Partnerships">Partenariats académiques</h4>
+            <p data-i18n data-en="Collaborations with Chadian universities and international petroleum institutes for knowledge transfer">Collaborations avec universités tchadiennes et instituts pétroliers internationaux</p>
+            <span class="mega-card-stat"><i class="fas fa-university"></i> Universités</span>
+          </a>
+        </div>
+        <div class="mega-panel" data-panel="culture" role="tabpanel" id="panel-culture" aria-labelledby="tab-culture">
+          <a class="mega-card" href="../talents.html#valeurs">
+            <div class="mega-card-icon" style="color:var(--energy)"><i class="fas fa-gem"></i></div>
+            <h4 data-i18n data-en="Our Values">Nos Valeurs</h4>
+            <p data-i18n data-en="Unity, Innovation, Sustainability — the three pillars that guide our people, our work, and our impact">Unité, Innovation, Durabilité — les trois piliers qui guident nos équipes, notre travail et notre impact</p>
+            <span class="mega-card-stat"><i class="fas fa-star"></i> 3 piliers</span>
+          </a>
+          <a class="mega-card" href="../talents.html#diversite">
+            <div class="mega-card-icon" style="color:var(--energy)"><i class="fas fa-people-arrows"></i></div>
+            <h4 data-i18n data-en="Diversity & Inclusion">Diversité & Inclusion</h4>
+            <p data-i18n data-en="Multicultural workforce, gender equity programs, disability inclusion initiatives">Effectif multiculturel, programmes d'équité genre, initiatives inclusion handicap</p>
+            <span class="mega-card-stat"><i class="fas fa-equals"></i> Équité</span>
+          </a>
+          <a class="mega-card" href="../talents.html#vie">
+            <div class="mega-card-icon" style="color:var(--energy)"><i class="fas fa-house-chimney-user"></i></div>
+            <h4 data-i18n data-en="Life at EnerTchad">Vie chez EnerTchad</h4>
+            <p data-i18n data-en="Benefits, work-life balance, team events, company culture and employee wellbeing programs">Avantages, équilibre vie-travail, événements, culture d'entreprise et bien-être</p>
+            <span class="mega-card-stat"><i class="fas fa-heart"></i> Bien-être</span>
+          </a>
+        </div>
+      </div>
+      <div class="mega-footer">
+        <a class="mega-footer-link" href="../talents.html" data-i18n data-en="Join EnerTchad">Rejoindre EnerTchad <i class="fas fa-arrow-right"></i></a>
+        <div class="mega-footer-stats">
+          <div class="mega-footer-stat">
+            <span class="mega-footer-stat-value">+200h</span>
+            <span class="mega-footer-stat-label" data-i18n data-en="Training/employee/year">Formation/employé/an</span>
+          </div>
+          <div class="mega-footer-stat">
+            <span class="mega-footer-stat-value">85%</span>
+            <span class="mega-footer-stat-label" data-i18n data-en="Retention rate">Taux de rétention</span>
+          </div>
+          <div class="mega-footer-stat">
+            <span class="mega-footer-stat-value">42</span>
+            <span class="mega-footer-stat-label" data-i18n data-en="Open positions">Postes ouverts</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ MEGA MENU: ACTUALITÉS ═══ -->
+<div class="mega-drop" id="megaDrop-actualites" role="dialog" aria-label="Actualités" aria-modal="true">
+  <div class="mega-inner">
+    <div class="mega-header">
+      <h3 class="mega-title" data-i18n data-en="News & Media">Actualités & Médias</h3>
+      <span class="mega-kpi-badge" aria-live="polite"><i class="fas fa-rss"></i> <span data-i18n data-en="3 categories · Editorial content">3 rubriques · Contenu éditorial</span></span>
+      <button class="mega-close" aria-label="Fermer"><i class="fas fa-xmark"></i></button>
+    </div>
+    <div class="mega-body">
+      <!-- Tabs -->
+      <div class="mega-tabs" role="tablist">
+        <div class="mega-tab active" role="tab" data-tab="alaune" aria-selected="true" aria-controls="panel-alaune" id="tab-alaune">
+          <div class="mega-tab-icon" style="background:rgba(217,168,79,0.12);color:var(--gold)"><i class="fas fa-newspaper"></i></div>
+          <div class="mega-tab-text">
+            <div class="mega-tab-label" data-i18n data-en="Headlines">À la Une</div>
+            <div class="mega-tab-sub" data-i18n data-en="Latest articles">Derniers articles</div>
+          </div>
+          <span class="mega-tab-stat">3 articles</span>
+        </div>
+        <div class="mega-tab" role="tab" data-tab="communiques" aria-selected="false" aria-controls="panel-communiques" id="tab-communiques">
+          <div class="mega-tab-icon" style="background:rgba(46,134,222,0.12);color:var(--amont)"><i class="fas fa-bullhorn"></i></div>
+          <div class="mega-tab-text">
+            <div class="mega-tab-label" data-i18n data-en="Press Releases">Communiqués</div>
+            <div class="mega-tab-sub" data-i18n data-en="Official announcements">Annonces officielles</div>
+          </div>
+          <span class="mega-tab-stat">Presse</span>
+        </div>
+        <div class="mega-tab" role="tab" data-tab="media" aria-selected="false" aria-controls="panel-media" id="tab-media">
+          <div class="mega-tab-icon" style="background:rgba(16,185,129,0.12);color:var(--energy)"><i class="fas fa-photo-film"></i></div>
+          <div class="mega-tab-text">
+            <div class="mega-tab-label" data-i18n data-en="Media & Events">Média & Événements</div>
+            <div class="mega-tab-sub" data-i18n data-en="Gallery, calendar, press review">Galerie, agenda, revue de presse</div>
+          </div>
+          <span class="mega-tab-stat">Multimédia</span>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div class="mega-divider"></div>
+
+      <!-- Panels -->
+      <div class="mega-panels-wrap">
+        <!-- À la Une Panel -->
+        <div class="mega-panel active" data-panel="alaune" role="tabpanel" id="panel-alaune" aria-labelledby="tab-alaune">
+          <a class="mega-card" href="../actualites.html#esso">
+            <div class="mega-card-icon" style="color:var(--gold)"><i class="fas fa-handshake"></i></div>
+            <h4 data-i18n data-en="ESSO Chad Acquisition">Acquisition ESSO Tchad</h4>
+            <p data-i18n data-en="EnerTchad acquires ESSO's upstream assets — a historic milestone consolidating national production control.">EnerTchad acquiert les actifs amont d'ESSO — une étape historique consolidant le contrôle national de la production.</p>
+            <span class="mega-card-stat"><i class="fas fa-calendar"></i> Mars 2026</span>
+          </a>
+          <a class="mega-card" href="../actualites.html#solaire-kome">
+            <div class="mega-card-icon" style="color:var(--energy)"><i class="fas fa-solar-panel"></i></div>
+            <h4 data-i18n data-en="Komé Solar Farm Inaugurated">Ferme Solaire de Komé Inaugurée</h4>
+            <p data-i18n data-en="5 MW solar farm operational at Komé, reducing field emissions by 22% and fuel costs by 18%.">Ferme solaire 5 MW opérationnelle à Komé, réduisant les émissions de 22 % et les coûts carburant de 18 %.</p>
+            <span class="mega-card-stat"><i class="fas fa-calendar"></i> Fév 2026</span>
+          </a>
+          <a class="mega-card" href="../actualites.html#record">
+            <div class="mega-card-icon" style="color:var(--amont)"><i class="fas fa-chart-line"></i></div>
+            <h4 data-i18n data-en="Production Record: 144 kb/d">Record de Production : 144 kb/j</h4>
+            <p data-i18n data-en="Chad reaches historic production peak of 144,000 barrels per day across all active basins.">Le Tchad atteint un pic historique de 144 000 barils/jour sur l'ensemble des bassins actifs.</p>
+            <span class="mega-card-stat"><i class="fas fa-calendar"></i> Jan 2026</span>
+          </a>
+        </div>
+
+        <!-- Communiqués Panel -->
+        <div class="mega-panel" data-panel="communiques" role="tabpanel" id="panel-communiques" aria-labelledby="tab-communiques">
+          <a class="mega-card" href="../actualites.html#communiques">
+            <div class="mega-card-icon" style="color:var(--amont)"><i class="fas fa-file-lines"></i></div>
+            <h4 data-i18n data-en="Financial Results H2 2025">Résultats Financiers S2 2025</h4>
+            <p data-i18n data-en="EBITDA $1.2B, net profit +18% YoY. Full financial disclosure and analyst presentation available.">EBITDA $1,2 Mrd, bénéfice net +18 % YoY. Divulgation financière complète et présentation analyste disponibles.</p>
+            <span class="mega-card-stat"><i class="fas fa-chart-pie"></i> Financier</span>
+          </a>
+          <a class="mega-card" href="../actualites.html#communiques">
+            <div class="mega-card-icon" style="color:var(--amont)"><i class="fas fa-handshake-angle"></i></div>
+            <h4 data-i18n data-en="Perenco Strategic Partnership">Partenariat Stratégique Perenco</h4>
+            <p data-i18n data-en="Joint development agreement for 20 additional wells across Badila and Krim fields with GWDC rig deployment.">Accord de développement conjoint pour 20 puits sur Badila et Krim avec déploiement du rig GWDC.</p>
+            <span class="mega-card-stat"><i class="fas fa-oil-well"></i> Partenariat</span>
+          </a>
+          <a class="mega-card" href="../actualites.html#communiques">
+            <div class="mega-card-icon" style="color:var(--amont)"><i class="fas fa-gavel"></i></div>
+            <h4 data-i18n data-en="ITIE Compliance Report 2025">Rapport Conformité ITIE 2025</h4>
+            <p data-i18n data-en="Chad maintains ITIE compliant status. Full transparency report on extractive revenues and government allocations published.">Le Tchad maintient son statut conforme ITIE. Rapport complet sur les revenus extractifs et allocations publié.</p>
+            <span class="mega-card-stat"><i class="fas fa-shield-check"></i> Conformité</span>
+          </a>
+        </div>
+
+        <!-- Média & Événements Panel -->
+        <div class="mega-panel" data-panel="media" role="tabpanel" id="panel-media" aria-labelledby="tab-media">
+          <a class="mega-card" href="../actualites.html#media">
+            <div class="mega-card-icon" style="color:var(--energy)"><i class="fas fa-images"></i></div>
+            <h4 data-i18n data-en="Photo & Video Gallery">Galerie Photo & Vidéo</h4>
+            <p data-i18n data-en="Operations footage, corporate events, field visits, aerial surveys. HD media library for press and partners.">Images d'opérations, événements corporate, visites terrain, survols aériens. Médiathèque HD pour presse et partenaires.</p>
+            <span class="mega-card-stat"><i class="fas fa-camera"></i> 200+ médias</span>
+          </a>
+          <a class="mega-card" href="../actualites.html#media">
+            <div class="mega-card-icon" style="color:var(--energy)"><i class="fas fa-calendar-days"></i></div>
+            <h4 data-i18n data-en="Events Calendar">Agenda & Événements</h4>
+            <p data-i18n data-en="Industry conferences, CEMAC energy summits, EnerTchad Academy graduations, HSE safety weeks.">Conférences sectorielles, sommets énergie CEMAC, remises diplômes Academy, semaines sécurité HSE.</p>
+            <span class="mega-card-stat"><i class="fas fa-calendar"></i> 6 événements/an</span>
+          </a>
+          <a class="mega-card" href="../actualites.html#media">
+            <div class="mega-card-icon" style="color:var(--energy)"><i class="fas fa-newspaper"></i></div>
+            <h4 data-i18n data-en="Press Review">Revue de Presse</h4>
+            <p data-i18n data-en="International and regional media coverage. Curated articles from Reuters, Jeune Afrique, Africa Energy, Bloomberg.">Couverture médiatique internationale et régionale. Articles Reuters, Jeune Afrique, Africa Energy, Bloomberg.</p>
+            <span class="mega-card-stat"><i class="fas fa-globe"></i> Presse int.</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Mega Footer -->
+      <div class="mega-footer">
+        <a class="mega-footer-link" href="../actualites.html" data-i18n data-en="All news & press releases">Toutes les actualités & communiqués <i class="fas fa-arrow-right"></i></a>
+        <div class="mega-footer-stats">
+          <div class="mega-footer-stat">
+            <span class="mega-footer-stat-value">12+</span>
+            <span class="mega-footer-stat-label" data-i18n data-en="Articles">Articles</span>
+          </div>
+          <div class="mega-footer-stat">
+            <span class="mega-footer-stat-value">4</span>
+            <span class="mega-footer-stat-label" data-i18n data-en="Press Releases">Communiqués</span>
+          </div>
+          <div class="mega-footer-stat">
+            <span class="mega-footer-stat-value">6/an</span>
+            <span class="mega-footer-stat-label" data-i18n data-en="Events">Événements</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ MAIN ═══ -->
+
+    </div>
+  </div>
+</div>
+
+<main data-category="exploration-production" data-segment="societe-petroliere" data-tags="E&P, Upstream, Exploration, Bassins, Production, Sismique" id="main-content">
+<nav class="breadcrumb" aria-label="Fil d'Ariane">
+  <div class="ctn">
+    <ol class="breadcrumb-list">
+      <li><a href="../index.html" data-i18n data-en="Home">Accueil</a></li>
+      <li class="sep"><i class="fas fa-chevron-right"></i></li>
+      <li><span data-i18n data-en="Petroleum">Société Pétrolière</span></li>
+      <li class="sep"><i class="fas fa-chevron-right"></i></li>
+      <li class="current" data-i18n data-en="Upstream">Amont</li>
+    </ol>
+  </div>
+</nav>
+
   <section aria-label="Accueil EnerTchad Amont" class="hero" id="hero">
    <div aria-hidden="true" class="hero-tod-layer">
    </div>
@@ -931,37 +994,37 @@ if(conn&&(conn.effectiveType==='2g'||conn.effectiveType==='slow-2g'||conn.saveDa
      <h2 class="stitle reveal" data-i18n data-en="Exploration &amp; Basin Evaluation">Exploration &amp; Évaluation des Bassins</h2>
      <p class="sdesc" data-i18n data-en="From 2D/3D seismic acquisition to prospect ranking — we de-risk frontier and mature basins across Chad's sedimentary provinces.">De l'acquisition sismique 2D/3D au classement des prospects — nous réduisons les risques des bassins frontaliers et matures dans les provinces sédimentaires du Tchad.</p>
     </div>
-    <div class="stagger" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
+    <div class="stagger grid-3">
      <div class="op-card reveal card-3d" data-r>
-      <div style="padding:28px">
-       <div style="width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:var(--accent-12);border:1px solid var(--accent-20);color:var(--accent-light);font-size:1.5rem;margin-bottom:18px"><i class="fas fa-wave-square"></i></div>
-       <h3 style="font-family:var(--font-d);font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:10px" data-i18n data-en="Seismic Acquisition">Acquisition Sismique</h3>
-       <p style="font-size:0.85rem;color:var(--white-60);line-height:1.7" data-i18n data-en="2D reconnaissance and 3D high-density surveys covering 12 000+ km² across Doba, Bongor, Salamat and Erdis basins. Vibroseis and dynamite sources adapted to Sahelian terrain.">Campagnes 2D de reconnaissance et 3D haute densité couvrant 12 000+ km² sur les bassins de Doba, Bongor, Salamat et Erdis. Sources Vibroseis et dynamite adaptées au terrain sahélien.</p>
-       <div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">
-        <span style="font-size:0.72rem;padding:5px 12px;background:var(--accent-08);border:1px solid var(--accent-15);border-radius:6px;color:var(--accent-light);font-weight:500">12 000+ km²</span>
-        <span style="font-size:0.72rem;padding:5px 12px;background:var(--accent-08);border:1px solid var(--accent-15);border-radius:6px;color:var(--accent-light);font-weight:500">2D / 3D</span>
+      <div class="card-padding">
+       <div class="icon-box icon-box-accent"><i class="fas fa-wave-square"></i></div>
+       <h3 class="card-title" data-i18n data-en="Seismic Acquisition">Acquisition Sismique</h3>
+       <p class="card-desc" data-i18n data-en="2D reconnaissance and 3D high-density surveys covering 12 000+ km² across Doba, Bongor, Salamat and Erdis basins. Vibroseis and dynamite sources adapted to Sahelian terrain.">Campagnes 2D de reconnaissance et 3D haute densité couvrant 12 000+ km² sur les bassins de Doba, Bongor, Salamat et Erdis. Sources Vibroseis et dynamite adaptées au terrain sahélien.</p>
+       <div class="badge-group">
+        <span class="badge badge-accent">12 000+ km²</span>
+        <span class="badge badge-accent">2D / 3D</span>
        </div>
       </div>
      </div>
      <div class="op-card reveal card-3d" data-r>
-      <div style="padding:28px">
-       <div style="width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:var(--accent-12);border:1px solid var(--accent-20);color:var(--accent-light);font-size:1.5rem;margin-bottom:18px"><i class="fas fa-layer-group"></i></div>
-       <h3 style="font-family:var(--font-d);font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:10px" data-i18n data-en="Geological Interpretation">Interprétation Géologique</h3>
-       <p style="font-size:0.85rem;color:var(--white-60);line-height:1.7" data-i18n data-en="Structural and stratigraphic interpretation, horizon mapping, fault analysis. Integration of well logs, cores and biostratigraphy for play-based prospect evaluation.">Interprétation structurale et stratigraphique, cartographie d'horizons, analyse de failles. Intégration des diagraphies, carottes et biostratigraphie pour l'évaluation des prospects.</p>
-       <div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">
-        <span style="font-size:0.72rem;padding:5px 12px;background:var(--accent-08);border:1px solid var(--accent-15);border-radius:6px;color:var(--accent-light);font-weight:500">Petrel / Kingdom</span>
-        <span style="font-size:0.72rem;padding:5px 12px;background:var(--accent-08);border:1px solid var(--accent-15);border-radius:6px;color:var(--accent-light);font-weight:500">Well-tie</span>
+      <div class="card-padding">
+       <div class="icon-box icon-box-accent"><i class="fas fa-layer-group"></i></div>
+       <h3 class="card-title" data-i18n data-en="Geological Interpretation">Interprétation Géologique</h3>
+       <p class="card-desc" data-i18n data-en="Structural and stratigraphic interpretation, horizon mapping, fault analysis. Integration of well logs, cores and biostratigraphy for play-based prospect evaluation.">Interprétation structurale et stratigraphique, cartographie d'horizons, analyse de failles. Intégration des diagraphies, carottes et biostratigraphie pour l'évaluation des prospects.</p>
+       <div class="badge-group">
+        <span class="badge badge-accent">Petrel / Kingdom</span>
+        <span class="badge badge-accent">Well-tie</span>
        </div>
       </div>
      </div>
      <div class="op-card reveal card-3d" data-r>
-      <div style="padding:28px">
-       <div style="width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:var(--gold-12);border:1px solid var(--gold-20);color:var(--gold-light);font-size:1.5rem;margin-bottom:18px"><i class="fas fa-ranking-star"></i></div>
-       <h3 style="font-family:var(--font-d);font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:10px" data-i18n data-en="Prospect Ranking &amp; Risking">Classement &amp; Analyse de Risques</h3>
-       <p style="font-size:0.85rem;color:var(--white-60);line-height:1.7" data-i18n data-en="Probabilistic volumetric assessment (P10/P50/P90), geological chance of success mapping, and portfolio ranking to prioritize drilling candidates.">Évaluation volumétrique probabiliste (P10/P50/P90), cartographie des probabilités géologiques de succès et classement du portefeuille pour prioriser les candidats au forage.</p>
-       <div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">
-        <span style="font-size:0.72rem;padding:5px 12px;background:var(--gold-08);border:1px solid var(--gold-15);border-radius:6px;color:var(--gold-light);font-weight:500">P10 / P50 / P90</span>
-        <span style="font-size:0.72rem;padding:5px 12px;background:var(--gold-08);border:1px solid var(--gold-15);border-radius:6px;color:var(--gold-light);font-weight:500">COS mapping</span>
+      <div class="card-padding">
+       <div class="icon-box icon-box-gold"><i class="fas fa-ranking-star"></i></div>
+       <h3 class="card-title" data-i18n data-en="Prospect Ranking &amp; Risking">Classement &amp; Analyse de Risques</h3>
+       <p class="card-desc" data-i18n data-en="Probabilistic volumetric assessment (P10/P50/P90), geological chance of success mapping, and portfolio ranking to prioritize drilling candidates.">Évaluation volumétrique probabiliste (P10/P50/P90), cartographie des probabilités géologiques de succès et classement du portefeuille pour prioriser les candidats au forage.</p>
+       <div class="badge-group">
+        <span class="badge badge-gold">P10 / P50 / P90</span>
+        <span class="badge badge-gold">COS mapping</span>
        </div>
       </div>
      </div>
@@ -977,49 +1040,49 @@ if(conn&&(conn.effectiveType==='2g'||conn.effectiveType==='slow-2g'||conn.saveDa
      <h2 class="stitle reveal" data-i18n data-en="From Spud to First Oil">Du Premier Coup de Trépan au Premier Baril</h2>
      <p class="sdesc" data-i18n data-en="Integrated drilling operations across Chad's rift basins — from well design and directional drilling to completion, testing and commissioning.">Opérations de forage intégrées dans les bassins en rift du Tchad — de la conception du puits et du forage directionnel à la complétion, aux tests et à la mise en service.</p>
     </div>
-    <div class="stagger" style="display:grid;grid-template-columns:repeat(2,1fr);gap:24px">
+    <div class="stagger grid-2">
      <div class="op-card reveal card-3d" data-r>
-      <div style="padding:28px">
-       <div style="width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:var(--gold-12);border:1px solid var(--gold-20);color:var(--gold-light);font-size:1.5rem;margin-bottom:18px"><i class="fas fa-arrow-down-long"></i></div>
-       <h3 style="font-family:var(--font-d);font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:10px" data-i18n data-en="Well Engineering &amp; Directional Drilling">Ingénierie Puits &amp; Forage Directionnel</h3>
-       <p style="font-size:0.85rem;color:var(--white-60);line-height:1.7" data-i18n data-en="Casing design, mud engineering, MWD/LWD, directional and horizontal drilling up to 4 500 m MD. Optimized well trajectories for Doba's faulted reservoirs and Bongor's graben structures.">Conception des tubages, ingénierie des boues, MWD/LWD, forage directionnel et horizontal jusqu'à 4 500 m MD. Trajectoires optimisées pour les réservoirs faillés de Doba et les structures en graben de Bongor.</p>
-       <div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">
-        <span style="font-size:0.72rem;padding:5px 12px;background:var(--gold-08);border:1px solid var(--gold-15);border-radius:6px;color:var(--gold-light);font-weight:500">4 500 m MD</span>
-        <span style="font-size:0.72rem;padding:5px 12px;background:var(--gold-08);border:1px solid var(--gold-15);border-radius:6px;color:var(--gold-light);font-weight:500">MWD / LWD</span>
-        <span style="font-size:0.72rem;padding:5px 12px;background:var(--gold-08);border:1px solid var(--gold-15);border-radius:6px;color:var(--gold-light);font-weight:500">Horizontal</span>
+      <div class="card-padding">
+       <div class="icon-box icon-box-gold"><i class="fas fa-arrow-down-long"></i></div>
+       <h3 class="card-title" data-i18n data-en="Well Engineering &amp; Directional Drilling">Ingénierie Puits &amp; Forage Directionnel</h3>
+       <p class="card-desc" data-i18n data-en="Casing design, mud engineering, MWD/LWD, directional and horizontal drilling up to 4 500 m MD. Optimized well trajectories for Doba's faulted reservoirs and Bongor's graben structures.">Conception des tubages, ingénierie des boues, MWD/LWD, forage directionnel et horizontal jusqu'à 4 500 m MD. Trajectoires optimisées pour les réservoirs faillés de Doba et les structures en graben de Bongor.</p>
+       <div class="badge-group">
+        <span class="badge badge-gold">4 500 m MD</span>
+        <span class="badge badge-gold">MWD / LWD</span>
+        <span class="badge badge-gold">Horizontal</span>
        </div>
       </div>
      </div>
      <div class="op-card reveal card-3d" data-r>
-      <div style="padding:28px">
-       <div style="width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:var(--accent-12);border:1px solid var(--accent-20);color:var(--accent-light);font-size:1.5rem;margin-bottom:18px"><i class="fas fa-gears"></i></div>
-       <h3 style="font-family:var(--font-d);font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:10px" data-i18n data-en="Completion &amp; Well Testing">Complétion &amp; Tests de Puits</h3>
-       <p style="font-size:0.85rem;color:var(--white-60);line-height:1.7" data-i18n data-en="Sand control, perforation, gravel packing, multi-zone completion. DST, PBU and production logging for deliverability assessment and reservoir characterization.">Contrôle du sable, perforation, gravel pack, complétion multi-zones. DST, PBU et diagraphies de production pour l'évaluation de la productivité et la caractérisation des réservoirs.</p>
-       <div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">
-        <span style="font-size:0.72rem;padding:5px 12px;background:var(--accent-08);border:1px solid var(--accent-15);border-radius:6px;color:var(--accent-light);font-weight:500">DST / PBU</span>
-        <span style="font-size:0.72rem;padding:5px 12px;background:var(--accent-08);border:1px solid var(--accent-15);border-radius:6px;color:var(--accent-light);font-weight:500">Multi-zone</span>
+      <div class="card-padding">
+       <div class="icon-box icon-box-accent"><i class="fas fa-gears"></i></div>
+       <h3 class="card-title" data-i18n data-en="Completion &amp; Well Testing">Complétion &amp; Tests de Puits</h3>
+       <p class="card-desc" data-i18n data-en="Sand control, perforation, gravel packing, multi-zone completion. DST, PBU and production logging for deliverability assessment and reservoir characterization.">Contrôle du sable, perforation, gravel pack, complétion multi-zones. DST, PBU et diagraphies de production pour l'évaluation de la productivité et la caractérisation des réservoirs.</p>
+       <div class="badge-group">
+        <span class="badge badge-accent">DST / PBU</span>
+        <span class="badge badge-accent">Multi-zone</span>
        </div>
       </div>
      </div>
      <div class="op-card reveal card-3d" data-r>
-      <div style="padding:28px">
-       <div style="width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:rgba(16,185,129,0.15);border:1px solid rgba(16,185,129,0.22);color:var(--success-light);font-size:1.5rem;margin-bottom:18px"><i class="fas fa-wrench"></i></div>
-       <h3 style="font-family:var(--font-d);font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:10px" data-i18n data-en="Workover &amp; Well Intervention">Workover &amp; Intervention sur Puits</h3>
-       <p style="font-size:0.85rem;color:var(--white-60);line-height:1.7" data-i18n data-en="Coiled tubing, slickline, wireline, stimulation (acid/frac). Well abandonment P&amp;A operations per ITOPF and Chadian regulatory standards.">Coiled tubing, slickline, wireline, stimulation (acide/fracturation). Opérations d'abandon P&A selon les standards ITOPF et la réglementation tchadienne.</p>
-       <div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">
-        <span style="font-size:0.72rem;padding:5px 12px;background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.15);border-radius:6px;color:var(--success-light);font-weight:500">Coiled Tubing</span>
+      <div class="card-padding">
+       <div class="icon-box icon-box-energy"><i class="fas fa-wrench"></i></div>
+       <h3 class="card-title" data-i18n data-en="Workover &amp; Well Intervention">Workover &amp; Intervention sur Puits</h3>
+       <p class="card-desc" data-i18n data-en="Coiled tubing, slickline, wireline, stimulation (acid/frac). Well abandonment P&amp;A operations per ITOPF and Chadian regulatory standards.">Coiled tubing, slickline, wireline, stimulation (acide/fracturation). Opérations d'abandon P&A selon les standards ITOPF et la réglementation tchadienne.</p>
+       <div class="badge-group">
+        <span class="badge badge-energy">Coiled Tubing</span>
         <span style="font-size:0.72rem;padding:5px 12px;background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.15);border-radius:6px;color:var(--success-light);font-weight:500">Stimulation</span>
        </div>
       </div>
      </div>
      <div class="op-card reveal card-3d" data-r>
-      <div style="padding:28px">
-       <div style="width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:var(--accent-12);border:1px solid var(--accent-20);color:var(--accent-light);font-size:1.5rem;margin-bottom:18px"><i class="fas fa-chart-line"></i></div>
-       <h3 style="font-family:var(--font-d);font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:10px" data-i18n data-en="Drilling Performance">Performance Forage</h3>
-       <p style="font-size:0.85rem;color:var(--white-60);line-height:1.7" data-i18n data-en="Real-time drilling data analytics, NPT reduction program, and benchmarking against offset wells. Average 18% faster than basin average since 2026 campaign.">Analyse en temps réel des données de forage, programme de réduction du NPT et benchmarking par rapport aux puits voisins. En moyenne 18 % plus rapide que la moyenne du bassin depuis la campagne 2026.</p>
-       <div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">
-        <span style="font-size:0.72rem;padding:5px 12px;background:var(--accent-08);border:1px solid var(--accent-15);border-radius:6px;color:var(--accent-light);font-weight:500">−18 % NPT</span>
-        <span style="font-size:0.72rem;padding:5px 12px;background:var(--accent-08);border:1px solid var(--accent-15);border-radius:6px;color:var(--accent-light);font-weight:500">Real-time</span>
+      <div class="card-padding">
+       <div class="icon-box icon-box-accent"><i class="fas fa-chart-line"></i></div>
+       <h3 class="card-title" data-i18n data-en="Drilling Performance">Performance Forage</h3>
+       <p class="card-desc" data-i18n data-en="Real-time drilling data analytics, NPT reduction program, and benchmarking against offset wells. Average 18% faster than basin average since 2026 campaign.">Analyse en temps réel des données de forage, programme de réduction du NPT et benchmarking par rapport aux puits voisins. En moyenne 18 % plus rapide que la moyenne du bassin depuis la campagne 2026.</p>
+       <div class="badge-group">
+        <span class="badge badge-accent">−18 % NPT</span>
+        <span class="badge badge-accent">Real-time</span>
        </div>
       </div>
      </div>
@@ -1082,16 +1145,16 @@ if(conn&&(conn.effectiveType==='2g'||conn.effectiveType==='slow-2g'||conn.saveDa
       <span style="font-size:0.82rem;color:var(--white-60);font-weight:500" data-i18n data-en="2P reserves">réserves 2P</span>
      </div>
     </div>
-    <div class="stagger" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
+    <div class="stagger grid-3">
      <div class="op-card reveal card-3d" data-r>
-      <div style="padding:28px">
+      <div class="card-padding">
        <div style="width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:var(--accent-12);border:1px solid var(--accent-20);color:var(--accent-light);font-size:1.5rem;margin-bottom:18px"><i class="fas fa-pump-soap"></i></div>
        <h3 style="font-family:var(--font-d);font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:10px" data-i18n data-en="Artificial Lift Systems">Levage Artificiel</h3>
        <p style="font-size:0.85rem;color:var(--white-60);line-height:1.7" data-i18n data-en="ESP, rod pump, gas lift and PCP systems. Optimized lift selection per well economics, reservoir pressure and fluid properties.">ESP, pompes à balancier, gas lift et PCP. Sélection du levage optimisée selon l'économie du puits, la pression réservoir et les propriétés des fluides.</p>
       </div>
      </div>
      <div class="op-card reveal card-3d" data-r>
-      <div style="padding:28px">
+      <div class="card-padding">
        <div style="width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:var(--gold-12);border:1px solid var(--gold-20);color:var(--gold-light);font-size:1.5rem;margin-bottom:18px"><i class="fas fa-flask"></i></div>
        <h3 style="font-family:var(--font-d);font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:10px" data-i18n data-en="Chemical EOR &amp; Local Sourcing">EOR Chimique &amp; Sourcing Local</h3>
        <p style="font-size:0.85rem;color:var(--white-60);line-height:1.7" data-i18n data-en="ASP flooding (Alkaline-Surfactant-Polymer) using local Chadian resources: Borkou natron as alkaline agent, neem/karité-derived biosurfactants, cotton cellulose polymers. Targeting +8-17% OOIP incremental recovery on mature Doba reservoirs and 20-25% on Bongor heavy crude via CSS thermal pilots.">Injection ASP (Alcalin-Surfactant-Polymère) utilisant les ressources locales tchadiennes : natron du Borkou comme agent alcalin, biosurfactants dérivés du neem/karité, polymères cellulosiques de coton. Cible +8-17 % OOIP de récupération incrémentale sur les réservoirs matures de Doba et 20-25 % sur le brut lourd de Bongor via des pilotes thermiques CSS.</p>
@@ -1103,7 +1166,7 @@ if(conn&&(conn.effectiveType==='2g'||conn.effectiveType==='slow-2g'||conn.saveDa
       </div>
      </div>
      <div class="op-card reveal card-3d" data-r>
-      <div style="padding:28px">
+      <div class="card-padding">
        <div style="width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:rgba(16,185,129,0.15);border:1px solid rgba(16,185,129,0.22);color:var(--success-light);font-size:1.5rem;margin-bottom:18px"><i class="fas fa-water"></i></div>
        <h3 style="font-family:var(--font-d);font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:10px" data-i18n data-en="Water Management">Gestion de l'Eau</h3>
        <p style="font-size:0.85rem;color:var(--white-60);line-height:1.7" data-i18n data-en="Produced water treatment, reinjection systems and Water-to-Value™ program converting excess water into community irrigation supply.">Traitement des eaux de production, systèmes de réinjection et programme Water-to-Value™ convertissant l'excédent d'eau en alimentation pour l'irrigation communautaire.</p>
@@ -1218,10 +1281,10 @@ if(conn&&(conn.effectiveType==='2g'||conn.effectiveType==='slow-2g'||conn.saveDa
      <h2 class="stitle reveal" data-i18n data-en="Enhanced Recovery from Chadian Resources">Récupération Assistée à partir de Ressources Tchadiennes</h2>
      <p class="sdesc" data-i18n data-en="Leveraging Chad's unique natural resources — natron, gum arabic, cotton cellulose, neem and spirulina — to develop locally-sourced EOR chemicals, reducing import dependency and creating downstream value from our agricultural and mineral wealth.">Exploiter les ressources naturelles uniques du Tchad — natron, gomme arabique, cellulose de coton, neem et spiruline — pour développer des produits chimiques EOR sourcés localement, réduisant la dépendance aux importations et créant de la valeur aval à partir de notre richesse agricole et minérale.</p>
     </div>
-    <div class="stagger" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
+    <div class="stagger grid-3">
      <!-- Natron -->
      <div class="op-card reveal card-3d" data-r>
-      <div style="padding:28px">
+      <div class="card-padding">
        <div style="width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:var(--gold-12);border:1px solid var(--gold-20);color:var(--gold-light);font-size:1.5rem;margin-bottom:18px"><i class="fas fa-gem"></i></div>
        <h3 style="font-family:var(--font-d);font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:10px" data-i18n data-en="Natron — Alkaline EOR Agent">Natron — Agent Alcalin EOR</h3>
        <p style="font-size:0.85rem;color:var(--white-60);line-height:1.7" data-i18n data-en="Lake Chad and Borkou natron (Na₂CO₃·NaHCO₃·2H₂O) as locally-mined alkaline agent for ASP flooding, replacing imported sodium carbonate. Achieves 6-17% OOIP tertiary recovery in sandstone reservoirs. Buffer effect reduces IFT with less rock damage than NaOH.">Le natron du lac Tchad et du Borkou (Na₂CO₃·NaHCO₃·2H₂O) comme agent alcalin miné localement pour l'injection ASP, remplaçant le carbonate de sodium importé. Atteint 6-17 % OOIP de récupération tertiaire dans les réservoirs gréseux. L'effet tampon réduit la tension interfaciale avec moins de dommage aux roches que le NaOH.</p>
@@ -1233,7 +1296,7 @@ if(conn&&(conn.effectiveType==='2g'||conn.effectiveType==='slow-2g'||conn.saveDa
      </div>
      <!-- Gomme Arabique & Biopolymères -->
      <div class="op-card reveal card-3d" data-r>
-      <div style="padding:28px">
+      <div class="card-padding">
        <div style="width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:var(--accent-12);border:1px solid var(--accent-20);color:var(--accent-light);font-size:1.5rem;margin-bottom:18px"><i class="fas fa-tree"></i></div>
        <h3 style="font-family:var(--font-d);font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:10px" data-i18n data-en="Gum Arabic — Biopolymer EOR">Gomme Arabique — Biopolymère EOR</h3>
        <p style="font-size:0.85rem;color:var(--white-60);line-height:1.7" data-i18n data-en="Chad produces 42 000+ tonnes/year of gum arabic (world #2). Complex polysaccharide base for xanthan gum-type biopolymers offering superior stability in high-salinity, high-temperature reservoirs where synthetic HPAM fails. Supports 500 000+ rural households.">Le Tchad produit 42 000+ tonnes/an de gomme arabique (2ᵉ mondial). Base polysaccharide complexe pour des biopolymères type gomme xanthane offrant une stabilité supérieure dans les réservoirs haute salinité/haute température où le HPAM synthétique échoue. Soutient 500 000+ ménages ruraux.</p>
@@ -1245,7 +1308,7 @@ if(conn&&(conn.effectiveType==='2g'||conn.effectiveType==='slow-2g'||conn.saveDa
      </div>
      <!-- Cotton Cellulose -->
      <div class="op-card reveal card-3d" data-r>
-      <div style="padding:28px">
+      <div class="card-padding">
        <div style="width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:rgba(16,185,129,0.15);border:1px solid rgba(16,185,129,0.22);color:var(--success-light);font-size:1.5rem;margin-bottom:18px"><i class="fas fa-cotton-bureau"></i></div>
        <h3 style="font-family:var(--font-d);font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:10px" data-i18n data-en="Cotton Cellulose — Polymer Precursor">Cellulose de Coton — Précurseur Polymère</h3>
        <p style="font-size:0.85rem;color:var(--white-60);line-height:1.7" data-i18n data-en="Chad's cotton production (150 000-180 000 t/year, 250 000 ha, 2.5M workers) yields 94% pure cellulose fiber. Low-grade cotton converts to cellulose-based EOR polymers (CMC, HEC) for viscosity control in polymer flooding, replacing petroleum-derived polyacrylamide.">La production cotonnière tchadienne (150 000-180 000 t/an, 250 000 ha, 2,5 M travailleurs) fournit des fibres de cellulose pure à 94 %. Le coton de faible qualité se convertit en polymères EOR cellulosiques (CMC, HEC) pour le contrôle de viscosité dans l'injection de polymères, remplaçant le polyacrylamide pétrosourcé.</p>
@@ -1257,7 +1320,7 @@ if(conn&&(conn.effectiveType==='2g'||conn.effectiveType==='slow-2g'||conn.saveDa
      </div>
      <!-- Neem & Karité Biosurfactants -->
      <div class="op-card reveal card-3d" data-r>
-      <div style="padding:28px">
+      <div class="card-padding">
        <div style="width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:var(--accent-12);border:1px solid var(--accent-20);color:var(--accent-light);font-size:1.5rem;margin-bottom:18px"><i class="fas fa-leaf"></i></div>
        <h3 style="font-family:var(--font-d);font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:10px" data-i18n data-en="Neem &amp; Karité — Biosurfactants">Neem &amp; Karité — Biosurfactants</h3>
        <p style="font-size:0.85rem;color:var(--white-60);line-height:1.7" data-i18n data-en="Neem seed oil and shea butter (karité) as feedstock for biodegradable surfactant production. Reduces interfacial tension 1 000-fold for oil mobilization. Combined with natron alkaline in ASP formulations, local biosurfactants achieve 27%+ ROIP recovery rates.">L'huile de graines de neem et le beurre de karité comme matière première pour la production de surfactants biodégradables. Réduit la tension interfaciale de 1 000 fois pour la mobilisation de l'huile. Combinés avec le natron alcalin en formulations ASP, les biosurfactants locaux atteignent 27 %+ de taux de récupération ROIP.</p>
@@ -1269,7 +1332,7 @@ if(conn&&(conn.effectiveType==='2g'||conn.effectiveType==='slow-2g'||conn.saveDa
      </div>
      <!-- Spirulina Biosurfactants -->
      <div class="op-card reveal card-3d" data-r>
-      <div style="padding:28px">
+      <div class="card-padding">
        <div style="width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:var(--gold-12);border:1px solid var(--gold-20);color:var(--gold-light);font-size:1.5rem;margin-bottom:18px"><i class="fas fa-bacteria"></i></div>
        <h3 style="font-family:var(--font-d);font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:10px" data-i18n data-en="Spirulina — Microbial EOR">Spiruline — EOR Microbien</h3>
        <p style="font-size:0.85rem;color:var(--white-60);line-height:1.7" data-i18n data-en="Lake Chad spirulina (250+ dry tonnes/year, world's lowest-cost producer) contains cyanobacteria capable of biosurfactant synthesis. Microbial EOR (MEOR) pilot pathway for in-situ surfactant generation in mature Doba wells at a fraction of synthetic chemical costs.">La spiruline du lac Tchad (250+ tonnes sèches/an, producteur au coût le plus bas au monde) contient des cyanobactéries capables de synthèse de biosurfactants. Voie pilote EOR microbienne (MEOR) pour la génération in-situ de surfactants dans les puits matures de Doba à une fraction du coût des produits chimiques synthétiques.</p>
@@ -1281,7 +1344,7 @@ if(conn&&(conn.effectiveType==='2g'||conn.effectiveType==='slow-2g'||conn.saveDa
      </div>
      <!-- Thermal EOR Bongor -->
      <div class="op-card reveal card-3d" data-r>
-      <div style="padding:28px">
+      <div class="card-padding">
        <div style="width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:rgba(239,68,68,0.15);border:1px solid rgba(239,68,68,0.22);color:#fca5a5;font-size:1.5rem;margin-bottom:18px"><i class="fas fa-fire"></i></div>
        <h3 style="font-family:var(--font-d);font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:10px" data-i18n data-en="Thermal EOR — Bongor Heavy Crude">EOR Thermique — Brut Lourd Bongor</h3>
        <p style="font-size:0.85rem;color:var(--white-60);line-height:1.7" data-i18n data-en="CSS (Cyclic Steam Stimulation) and SAGD pilots for Bongor Basin heavy crude (17-22° API). Steam injection at 300-340°C reduces viscosity by 50%+ per 10°C increment. Recovery factors 20-50% vs. 5-10% primary. Gas from Djermaya refinery byproducts fuels steam generation.">Pilotes CSS (Stimulation Cyclique par Vapeur) et SAGD pour le brut lourd du Bassin de Bongor (17-22° API). Injection de vapeur à 300-340 °C réduit la viscosité de 50 %+ par incrément de 10 °C. Facteurs de récupération 20-50 % vs. 5-10 % primaire. Le gaz des sous-produits de la raffinerie de Djermaya alimente la génération de vapeur.</p>
@@ -1296,7 +1359,7 @@ if(conn&&(conn.effectiveType==='2g'||conn.effectiveType==='slow-2g'||conn.saveDa
     <!-- Local Value Chain Roadmap -->
     <div style="margin-top:48px;padding:32px;background:linear-gradient(160deg,var(--gold-08) 0%,rgba(16,185,129,0.05) 100%);border:1px solid var(--gold-15);border-radius:var(--radius);backdrop-filter:blur(8px)" data-r>
      <h3 style="font-family:var(--font-d);font-size:1.2rem;font-weight:700;color:var(--white);margin-bottom:20px;text-align:center" data-i18n data-en="Local EOR Value Chain Roadmap">Feuille de Route — Chaîne de Valeur EOR Locale</h3>
-     <div class="stagger" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
+     <div class="stagger grid-3">
       <div style="text-align:center;padding:16px">
        <div style="font-size:0.72rem;color:var(--gold-light);font-weight:700;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px" data-i18n data-en="Phase 1 · 2025-2027">Phase 1 · 2025-2027</div>
        <p style="font-size:0.82rem;color:var(--white-60);line-height:1.6" data-i18n data-en="Natron industrial sourcing (Borkou/Lake Chad), ASP pilot on 3 Doba wells, CSS feasibility study Bongor heavy oil">Sourcing industriel du natron (Borkou/Lac Tchad), pilote ASP sur 3 puits Doba, étude de faisabilité CSS brut lourd Bongor</p>
@@ -1437,9 +1500,9 @@ if(conn&&(conn.effectiveType==='2g'||conn.effectiveType==='slow-2g'||conn.saveDa
       </div>
      </div>
     </div>
-    <div class="stagger" style="display:grid;grid-template-columns:repeat(2,1fr);gap:24px">
+    <div class="stagger grid-2">
      <div class="op-card reveal card-3d" data-r>
-      <div style="padding:28px">
+      <div class="card-padding">
        <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px">
         <div style="width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:var(--accent-12);border:1px solid var(--accent-20);color:var(--accent-light);font-size:1.3rem"><i class="fas fa-oil-well"></i></div>
         <div>
@@ -1456,7 +1519,7 @@ if(conn&&(conn.effectiveType==='2g'||conn.effectiveType==='slow-2g'||conn.saveDa
       </div>
      </div>
      <div class="op-card reveal card-3d" data-r>
-      <div style="padding:28px">
+      <div class="card-padding">
        <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px">
         <div style="width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:var(--gold-12);border:1px solid var(--gold-20);color:var(--gold-light);font-size:1.3rem"><i class="fas fa-oil-well"></i></div>
         <div>
@@ -1623,9 +1686,9 @@ if(conn&&(conn.effectiveType==='2g'||conn.effectiveType==='slow-2g'||conn.saveDa
       <span style="font-size:0.82rem;color:var(--white-60);font-weight:500" data-i18n data-en="polypropylene / year">polypropylène / an</span>
      </div>
     </div>
-    <div class="stagger" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
+    <div class="stagger grid-3">
      <div class="op-card reveal card-3d" data-r>
-      <div style="padding:28px">
+      <div class="card-padding">
        <div style="width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:var(--gold-12);border:1px solid var(--gold-20);color:var(--gold-light);font-size:1.5rem;margin-bottom:18px"><i class="fas fa-industry"></i></div>
        <h3 style="font-family:var(--font-d);font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:10px" data-i18n data-en="Djermaya Refinery Feedstock">Alimentation Raffinerie Djermaya</h3>
        <p style="font-size:0.85rem;color:var(--white-60);line-height:1.7" data-i18n data-en="Crude oil from Bongor Basin (Ronier, Mimosa, Koudalwa fields) feeds the 20 000 bbl/d Djermaya refinery via a dedicated 300 km pipeline. Commissioned in 2011, joint venture CNPC 60% / SHT 40%. Produces gasoline, diesel, kerosene, LPG, fuel oil and Jet A1.">Le brut du Bassin de Bongor (champs Ronier, Mimosa, Koudalwa) alimente la raffinerie de Djermaya de 20 000 bbl/j via un pipeline dédié de 300 km. Mise en service en 2011, joint-venture CNPC 60 % / SHT 40 %. Production d'essence, gasoil, kérosène, GPL, fuel lourd et Jet A1.</p>
@@ -1636,7 +1699,7 @@ if(conn&&(conn.effectiveType==='2g'||conn.effectiveType==='slow-2g'||conn.saveDa
       </div>
      </div>
      <div class="op-card reveal card-3d" data-r>
-      <div style="padding:28px">
+      <div class="card-padding">
        <div style="width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:var(--accent-12);border:1px solid var(--accent-20);color:var(--accent-light);font-size:1.5rem;margin-bottom:18px"><i class="fas fa-atom"></i></div>
        <h3 style="font-family:var(--font-d);font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:10px" data-i18n data-en="Petrochemical Processing">Transformation Pétrochimique</h3>
        <p style="font-size:0.85rem;color:var(--white-60);line-height:1.7" data-i18n data-en="Djermaya refinery integrates basic petrochemical conversion producing 25 000 tonnes/year of polypropylene from refinery streams. Annual refined output: 240 M liters gasoline, 300 M liters diesel, 60 000 tonnes LPG and 40 000 tonnes fuel oil.">La raffinerie de Djermaya intègre une conversion pétrochimique de base produisant 25 000 tonnes/an de polypropylène à partir des flux de raffinage. Production annuelle raffinée : 240 M litres d'essence, 300 M litres de gasoil, 60 000 tonnes de GPL et 40 000 tonnes de fuel lourd.</p>
@@ -1647,7 +1710,7 @@ if(conn&&(conn.effectiveType==='2g'||conn.effectiveType==='slow-2g'||conn.saveDa
       </div>
      </div>
      <div class="op-card reveal card-3d" data-r>
-      <div style="padding:28px">
+      <div class="card-padding">
        <div style="width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:rgba(16,185,129,0.15);border:1px solid rgba(16,185,129,0.22);color:var(--success-light);font-size:1.5rem;margin-bottom:18px"><i class="fas fa-ship"></i></div>
        <h3 style="font-family:var(--font-d);font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:10px" data-i18n data-en="Export &amp; Growth Strategy">Stratégie Export &amp; Croissance</h3>
        <p style="font-size:0.85rem;color:var(--white-60);line-height:1.7" data-i18n data-en="85–90% of 144 000 bbl/d national crude production exported via the 1 070 km Doba-Kribi pipeline (COTCO). Chad Connection 2030 targets 250 000 bbl/d with refinery Phase II expansion to 2.5 Mt/year capacity.">85–90 % des 144 000 bbl/j de production brute nationale exportés via le pipeline Doba-Kribi de 1 070 km (COTCO). Le plan Tchad Connexion 2030 vise 250 000 bbl/j avec l'expansion Phase II de la raffinerie à 2,5 Mt/an de capacité.</p>
@@ -1669,23 +1732,23 @@ if(conn&&(conn.effectiveType==='2g'||conn.effectiveType==='slow-2g'||conn.saveDa
      <h2 class="stitle reveal" data-i18n data-en="Subsurface Intelligence">Intelligence du Sous-Sol</h2>
      <p class="sdesc" data-i18n data-en="Advanced reservoir characterization, dynamic simulation and digital field management for optimized recovery across our asset portfolio.">Caractérisation avancée des réservoirs, simulation dynamique et gestion numérique des champs pour une récupération optimisée de notre portefeuille d'actifs.</p>
     </div>
-    <div class="stagger" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
+    <div class="stagger grid-3">
      <div class="op-card reveal card-3d" data-r>
-      <div style="padding:28px">
+      <div class="card-padding">
        <div style="width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:var(--accent-12);border:1px solid var(--accent-20);color:var(--accent-light);font-size:1.5rem;margin-bottom:18px"><i class="fas fa-cubes"></i></div>
        <h3 style="font-family:var(--font-d);font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:10px" data-i18n data-en="Static &amp; Dynamic Modeling">Modélisation Statique &amp; Dynamique</h3>
        <p style="font-size:0.85rem;color:var(--white-60);line-height:1.7" data-i18n data-en="Geostatistical modeling (Petrel/SKUA-GOCAD), history-matched Eclipse/CMG simulation. 15+ reservoir models maintained and updated quarterly.">Modélisation géostatistique (Petrel/SKUA-GOCAD), simulation Eclipse/CMG calée sur l'historique. 15+ modèles de réservoir maintenus et mis à jour trimestriellement.</p>
       </div>
      </div>
      <div class="op-card reveal card-3d" data-r>
-      <div style="padding:28px">
+      <div class="card-padding">
        <div style="width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:var(--gold-12);border:1px solid var(--gold-20);color:var(--gold-light);font-size:1.5rem;margin-bottom:18px"><i class="fas fa-brain"></i></div>
        <h3 style="font-family:var(--font-d);font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:10px" data-i18n data-en="Digital Twin &amp; Predictive AI">Jumeau Numérique &amp; IA Prédictive</h3>
        <p style="font-size:0.85rem;color:var(--white-60);line-height:1.7" data-i18n data-en="Real-time reservoir digital twin integrating SCADA, well tests and production data. ML models predict water breakthrough, ESP failures and infill locations.">Jumeau numérique en temps réel intégrant SCADA, tests de puits et données de production. Modèles ML prédisant les percées d'eau, défaillances d'ESP et emplacements d'infill.</p>
       </div>
      </div>
      <div class="op-card reveal card-3d" data-r>
-      <div style="padding:28px">
+      <div class="card-padding">
        <div style="width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:rgba(16,185,129,0.15);border:1px solid rgba(16,185,129,0.22);color:var(--success-light);font-size:1.5rem;margin-bottom:18px"><i class="fas fa-vial"></i></div>
        <h3 style="font-family:var(--font-d);font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:10px" data-i18n data-en="PVT &amp; Core Analysis">Analyse PVT &amp; Carottes</h3>
        <p style="font-size:0.85rem;color:var(--white-60);line-height:1.7" data-i18n data-en="In-house PVT laboratory for fluid characterization, SCAL measurements and EOR screening. Special core analysis for wettability, relative permeability and capillary pressure.">Laboratoire PVT interne pour la caractérisation des fluides, mesures SCAL et screening EOR. Analyses spéciales de carottes pour la mouillabilité, la perméabilité relative et la pression capillaire.</p>
@@ -1704,10 +1767,10 @@ if(conn&&(conn.effectiveType==='2g'||conn.effectiveType==='slow-2g'||conn.saveDa
      <p class="sdesc" data-i18n data-en="Advanced digital oilfield capabilities, AI-driven optimization, carbon capture pilots and renewable integration powering EnerTchad's energy transition roadmap.">Capacités avancées de champ numérique, optimisation pilotée par l'IA, pilotes de capture du carbone et intégration des énergies renouvelables alimentant la feuille de route de la transition énergétique d'EnerTchad.</p>
     </div>
 
-    <div class="stagger" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
+    <div class="stagger grid-3">
      <!-- EOR Innovation -->
      <div class="op-card reveal card-3d" data-r>
-      <div style="padding:28px">
+      <div class="card-padding">
        <div style="width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:var(--gold-12);border:1px solid var(--gold-20);color:var(--gold-light);font-size:1.5rem;margin-bottom:18px"><i class="fas fa-flask-vial"></i></div>
        <h3 style="font-family:var(--font-d);font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:10px" data-i18n data-en="EOR Pilot Programs">Programmes Pilotes EOR</h3>
        <p style="font-size:0.85rem;color:var(--white-60);line-height:1.7;margin-bottom:14px" data-i18n data-en="Active pilots for ASP (Alkaline-Surfactant-Polymer) flooding on Doba sandstones targeting 10-15% recovery increase. CSS (Cyclic Steam Stimulation) appraisal on Bongor heavy oil. Microbial EOR (MEOR) feasibility study leveraging Lake Chad spirulina.">Pilotes actifs pour injection ASP (Alcalin-Surfactant-Polymère) sur les grès de Doba visant une augmentation de 10-15 % de la récupération. Évaluation CSS (Stimulation Cyclique par Vapeur) sur le brut lourd de Bongor. Étude de faisabilité EOR microbienne (MEOR) exploitant la spiruline du Lac Tchad.</p>
@@ -1721,7 +1784,7 @@ if(conn&&(conn.effectiveType==='2g'||conn.effectiveType==='slow-2g'||conn.saveDa
 
      <!-- Digital Oilfield -->
      <div class="op-card reveal card-3d" data-r>
-      <div style="padding:28px">
+      <div class="card-padding">
        <div style="width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:var(--accent-12);border:1px solid var(--accent-20);color:var(--accent-light);font-size:1.5rem;margin-bottom:18px"><i class="fas fa-gauge-high"></i></div>
        <h3 style="font-family:var(--font-d);font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:10px" data-i18n data-en="Digital Oilfield &amp; SCADA">Champ Numérique &amp; SCADA</h3>
        <p style="font-size:0.85rem;color:var(--white-60);line-height:1.7;margin-bottom:14px" data-i18n data-en="Real-time SCADA integration across 735 producing wells with automated shutdowns, pressure/temperature monitoring and production forecasting. IoT sensors on critical equipment reduce downtime by 18%. Cloud-based PI System enables distributed operations teams.">Intégration SCADA en temps réel sur 735 puits producteurs avec arrêts automatisés, surveillance pression/température et prévisions de production. Les capteurs IoT sur équipement critique réduisent les temps d'arrêt de 18 %. Système PI basé sur le cloud permet aux équipes opérationnelles distribuées.</p>
@@ -1735,7 +1798,7 @@ if(conn&&(conn.effectiveType==='2g'||conn.effectiveType==='slow-2g'||conn.saveDa
 
      <!-- AI Reservoir Modeling -->
      <div class="op-card reveal card-3d" data-r>
-      <div style="padding:28px">
+      <div class="card-padding">
        <div style="width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:rgba(139,92,246,0.15);border:1px solid rgba(139,92,246,0.22);color:var(--tech-text);font-size:1.5rem;margin-bottom:18px"><i class="fas fa-brain"></i></div>
        <h3 style="font-family:var(--font-d);font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:10px" data-i18n data-en="AI-Driven Reservoir Modeling">Modélisation Réservoir Pilotée par IA</h3>
        <p style="font-size:0.85rem;color:var(--white-60);line-height:1.7;margin-bottom:14px" data-i18n data-en="Machine learning models predict water breakthrough timing, ESP failure risk and optimal infill drilling locations 6-12 months in advance. Neural networks optimize well completions saving 12% in drilling costs. Digital twin updates quarterly from well tests.">Les modèles d'apprentissage automatique prédisent le calendrier de percée d'eau, le risque de défaillance d'ESP et les emplacements optimaux de forage d'infill 6-12 mois à l'avance. Les réseaux de neurones optimisent les complétions de puits économisant 12 % des coûts de forage. Twin numérique mis à jour trimestriellement à partir des tests de puits.</p>
@@ -1749,7 +1812,7 @@ if(conn&&(conn.effectiveType==='2g'||conn.effectiveType==='slow-2g'||conn.saveDa
 
      <!-- Carbon Capture -->
      <div class="op-card reveal card-3d" data-r>
-      <div style="padding:28px">
+      <div class="card-padding">
        <div style="width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:rgba(16,185,129,0.15);border:1px solid rgba(16,185,129,0.22);color:var(--success-light);font-size:1.5rem;margin-bottom:18px"><i class="fas fa-wind"></i></div>
        <h3 style="font-family:var(--font-d);font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:10px" data-i18n data-en="CCUS Pilot Program">Programme Pilote CCUS</h3>
        <p style="font-size:0.85rem;color:var(--white-60);line-height:1.7;margin-bottom:14px" data-i18n data-en="Pilot carbon capture and utilization for CO₂-EOR (Miscible Injection) on two Doba wells targeting 15,000 tCO₂/year. Captured CO₂ from Djermaya refinery gas treatment feeds the pilot. Permanent geological storage feasibility study underway.">Pilote de capture et utilisation du carbone pour EOR-CO₂ (Injection Miscible) sur deux puits de Doba visant 15 000 tCO₂/an. Le CO₂ capturé du traitement des gaz de la raffinerie Djermaya alimente le pilote. Étude de faisabilité du stockage géologique permanent en cours.</p>
@@ -1763,7 +1826,7 @@ if(conn&&(conn.effectiveType==='2g'||conn.effectiveType==='slow-2g'||conn.saveDa
 
      <!-- Renewable Integration -->
      <div class="op-card reveal card-3d" data-r>
-      <div style="padding:28px">
+      <div class="card-padding">
        <div style="width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:rgba(200,150,46,0.15);border:1px solid rgba(200,150,46,0.22);color:var(--gold-light);font-size:1.5rem;margin-bottom:18px"><i class="fas fa-solar-panel"></i></div>
        <h3 style="font-family:var(--font-d);font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:10px" data-i18n data-en="Hybrid Solar &amp; Gas Power">Énergie Solaire &amp; Gaz Hybride</h3>
        <p style="font-size:0.85rem;color:var(--white-60);line-height:1.7;margin-bottom:14px" data-i18n data-en="Hybrid solar-gas power at Doba facilities: 5 MW solar array supplies 40% of peak production power during daylight, with gas turbine peak shaving. Reduces fuel consumption by 18% and flaring by 22%. Plans to scale to 15 MW across all fields by 2028.">Énergie solaire-gaz hybride aux installations Doba : réseau solaire 5 MW fournit 40 % de la puissance de production maximale pendant le jour, avec écrêtage des pics du turbocompresseur à gaz. Réduit la consommation de carburant de 18 % et le brûlage de 22 %. Plans d'expansion à 15 MW dans tous les champs d'ici 2028.</p>
@@ -1777,7 +1840,7 @@ if(conn&&(conn.effectiveType==='2g'||conn.effectiveType==='slow-2g'||conn.saveDa
 
      <!-- LDAR & Emissions -->
      <div class="op-card reveal card-3d" data-r>
-      <div style="padding:28px">
+      <div class="card-padding">
        <div style="width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:rgba(239,68,68,0.15);border:1px solid rgba(239,68,68,0.22);color:#fca5a5;font-size:1.5rem;margin-bottom:18px"><i class="fas fa-droplet"></i></div>
        <h3 style="font-family:var(--font-d);font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:10px" data-i18n data-en="LDAR &amp; Emissions Reduction">LDAR &amp; Réduction des Émissions</h3>
        <p style="font-size:0.85rem;color:var(--white-60);line-height:1.7;margin-bottom:14px" data-i18n data-en="Leak Detection &amp; Repair (LDAR) program using drone-based FLIR thermography and gas sensing. Eliminates 92% of fugitive emissions from surface equipment. Methane intensity: 4.2 kg CO₂-eq/bbl (industry avg: 8.5). Flaring reduction via gas sales agreements.">Programme LDAR (Détection et Réparation de Fuites) utilisant la thermographie FLIR et capteurs de gaz montés sur drones. Élimine 92 % des émissions fugitives de l'équipement de surface. Intensité du méthane : 4,2 kg CO₂-eq/bbl (moyenne industrie : 8,5). Réduction du brûlage par accords de vente de gaz.</p>
@@ -1838,95 +1901,195 @@ if(conn&&(conn.effectiveType==='2g'||conn.effectiveType==='slow-2g'||conn.saveDa
   <section style="padding:48px 0;background:var(--primary);border-top:1px solid var(--white-06);border-bottom:1px solid var(--white-06)" data-r>
    <div class="ctn" style="text-align:center">
     <p style="font-size:1rem;color:var(--white-60);margin-bottom:20px;max-width:600px;margin-left:auto;margin-right:auto;line-height:1.7" data-i18n data-en="HSE, logistics, training, fleet management, cybersecurity and other support services are managed at group level.">HSE, logistique, formation, gestion de flotte, cybersécurité et autres services support sont gérés au niveau du groupe.</p>
-    <a href="/#services" class="btn btn-brand" data-i18n data-en="View all Group services →" style="display:inline-flex;align-items:center;gap:8px">
+    <a href="../index.html#services" class="btn btn-brand" data-i18n data-en="View all Group services →" style="display:inline-flex;align-items:center;gap:8px">
      <i class="fas fa-arrow-up-right-from-square"></i> Voir tous les services Groupe →
     </a>
    </div>
   </section>
 
-  </main><!-- /main-content -->
-  <!-- ═══ FILIALE NAVIGATION ═══ -->
-  <nav class="filiale-nav" aria-label="Navigation entre filiales">
-    <a href="/" class="prev"><i class="fas fa-arrow-left"></i> Groupe EnerTchad</a>
-    <a href="/intermediaire"><i class="fas fa-arrow-right"></i> Intermédiaire — Transport</a>
-  </nav>
-  <!-- ═══ FOOTER ═══ -->
-  <footer style="background:#060c17;color:var(--white-60);padding:48px 0 24px;border-top:1px solid var(--white-06)">
-   <div class="ctn">
-    <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px">
-     <div>
-      <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
-       <img src="logo.svg" alt="EnerTchad" width="36" height="36" loading="lazy">
-       <div><strong style="color:var(--white);font-family:var(--font-d);font-size:1.1rem;display:block">EnerTchad</strong><span style="font-size:0.78rem;color:var(--accent-light)">Amont · E&P</span></div>
+  </main>
+
+
+
+  <!-- ═══ CTA BAND ═══ -->
+  <section class="cta-band" style="background:linear-gradient(135deg,rgba(217,168,79,0.06),rgba(217,168,79,0.02));border-top:1px solid rgba(217,168,79,0.08);border-bottom:1px solid rgba(217,168,79,0.08);padding:var(--sp-3xl,4rem) 0">
+    <div class="ctn" style="text-align:center">
+      <h2 style="font-family:var(--font-d);font-size:clamp(1.5rem,3vw,2rem);color:var(--white);margin-bottom:var(--sp-md)" data-i18n data-en="Ready to Partner with EnerTchad?">Prêt à collaborer avec EnerTchad ?</h2>
+      <p style="color:var(--text-sec);font-size:0.95rem;max-width:50ch;margin:0 auto var(--sp-xl)" data-i18n data-en="Contact our team to discuss your energy needs. Expert consultation, competitive pricing, and 24/7 support.">Contactez notre équipe pour vos besoins énergétiques. Consultation experte, tarification compétitive et support 24/7.</p>
+      <div style="display:flex;gap:var(--sp-md);justify-content:center;flex-wrap:wrap">
+        <a href="../contact.html" class="btn btn-primary" data-i18n data-en="Contact Us">Contactez-nous</a>
+        <a href="../contact.html#devis" class="btn btn-outline" data-i18n data-en="Request a Quote">Demander un devis</a>
       </div>
-      <p style="font-size:0.82rem;line-height:1.7;max-width:320px" data-i18n data-en="Integrated upstream E&P operator in Chad — from seismic exploration to mature field optimization across Doba and Bongor basins.">Opérateur amont E&P intégré au Tchad — de l'exploration sismique à l'optimisation des champs matures dans les bassins de Doba et Bongor.</p>
-     </div>
-     <div>
-      <h4 style="font-family:var(--font-d);font-size:0.82rem;font-weight:700;color:var(--white);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:16px" data-i18n data-en="Upstream">Amont</h4>
-      <nav style="display:flex;flex-direction:column;gap:10px">
-       <a href="#exploration" style="font-size:0.82rem;color:var(--white-60);text-decoration:none;transition:color 0.3s" data-i18n data-en="Exploration">Exploration</a>
-       <a href="#forage" style="font-size:0.82rem;color:var(--white-60);text-decoration:none;transition:color 0.3s" data-i18n data-en="Drilling">Forage</a>
-       <a href="#production" style="font-size:0.82rem;color:var(--white-60);text-decoration:none;transition:color 0.3s" data-i18n data-en="Production">Production</a>
-       <a href="#bassins" style="font-size:0.82rem;color:var(--white-60);text-decoration:none;transition:color 0.3s" data-i18n data-en="Basins">Bassins</a>
-       <a href="#geosciences" style="font-size:0.82rem;color:var(--white-60);text-decoration:none;transition:color 0.3s" data-i18n data-en="Geosciences">Géosciences</a>
-      </nav>
-     </div>
-     <div>
-      <h4 style="font-family:var(--font-d);font-size:0.82rem;font-weight:700;color:var(--white);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:16px" data-i18n data-en="Group">Groupe</h4>
-      <nav style="display:flex;flex-direction:column;gap:10px">
-       <a href="/" style="font-size:0.82rem;color:var(--white-60);text-decoration:none;transition:color 0.3s" data-i18n data-en="Corporate Site">Site Corporate</a>
-       <a href="/#services" style="font-size:0.82rem;color:var(--white-60);text-decoration:none;transition:color 0.3s" data-i18n data-en="Services">Services</a>
-       <a href="/#carrieres" style="font-size:0.82rem;color:var(--white-60);text-decoration:none;transition:color 0.3s" data-i18n data-en="Careers">Carrières</a>
-       <a href="/#contact" style="font-size:0.82rem;color:var(--white-60);text-decoration:none;transition:color 0.3s" data-i18n data-en="Contact">Contact</a>
-      </nav>
-     </div>
-     <div>
-      <h4 style="font-family:var(--font-d);font-size:0.82rem;font-weight:700;color:var(--white);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:16px" data-i18n data-en="Subsidiaries">Filiales</h4>
-      <nav style="display:flex;flex-direction:column;gap:10px">
-       <a href="/intermediaire" style="font-size:0.82rem;color:var(--white-60);text-decoration:none;transition:color 0.3s">Intermédiaire</a>
-       <a href="/aval" style="font-size:0.82rem;color:var(--white-60);text-decoration:none;transition:color 0.3s">Aval</a>
-      </nav>
-     </div>
     </div>
-    <div style="border-top:1px solid var(--white-06);padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
-     <div>
-      <p style="font-size:0.75rem;color:var(--white-40)">&copy; 2026 EnerTchad S.A. — <span data-i18n data-en="All rights reserved">Tous droits réservés</span></p>
-      <p style="font-size:0.75rem;color:var(--white-40)">N'Djamena, Tchad &middot; amont@enertchad.td &middot; +235 99 29 86 96</p>
-      <div style="display:flex;gap:1rem;margin-top:1rem">
-        <a href="https://linkedin.com/company/enertchad" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-icon" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:50%;border:1px solid rgba(255,255,255,0.1);color:var(--text-sec,#94A3B8);transition:all 0.3s"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://x.com/EnerTchad" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" class="social-icon" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:50%;border:1px solid rgba(255,255,255,0.1);color:var(--text-sec,#94A3B8);transition:all 0.3s"><i class="fab fa-x-twitter"></i></a>
-        <a href="https://facebook.com/EnerTchad" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="social-icon" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:50%;border:1px solid rgba(255,255,255,0.1);color:var(--text-sec,#94A3B8);transition:all 0.3s"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://youtube.com/@EnerTchad" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="social-icon" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:50%;border:1px solid rgba(255,255,255,0.1);color:var(--text-sec,#94A3B8);transition:all 0.3s"><i class="fab fa-youtube"></i></a>
-      </div>
-     </div>
-    </div>
-   </div>
-  </footer>
-  <!-- ═══ COOKIE CONSENT BANNER ═══ -->
-  <div aria-label="Cookie consent" class="cookie-banner" hidden="" id="cookieBanner" role="dialog">
-   <div class="cookie-banner-inner">
-    <div class="cookie-banner-text">
-     <strong data-en="🍪 Cookies &amp; privacy" data-i18n="">
-      🍪 Cookies &amp; confidentialité
-     </strong>
-     <p data-en="We use essential cookies for site functionality and optional analytics to improve experience. You control your choices." data-i18n="">
-      Nous utilisons des cookies essentiels pour le fonctionnement du site et des cookies analytiques optionnels pour améliorer l'expérience. Vous contrôlez vos choix.
-     </p>
-    </div>
-    <div class="cookie-banner-actions">
-     <button class="cookie-btn cookie-btn-decline" data-en="Essential only" data-i18n="" id="cookieDecline">
-      Essentiels uniquement
-     </button>
-     <button class="cookie-btn cookie-btn-accept" data-en="Accept all" data-i18n="" id="cookieAccept">
-      Tout accepter
-     </button>
-     <a class="cookie-link" data-en="Learn more →" data-i18n="" href="cookies.html">
-      En savoir plus →
-     </a>
-    </div>
-   </div>
+  </section>
+
+<!-- ═══ MODERN MEGA FOOTER 2026 ═══ -->
+<footer class="footer modern-footer" role="contentinfo">
+  <!-- Animated Top Border -->
+  <div class="footer-top-accent" aria-hidden="true">
+    <div class="footer-accent-line"></div>
   </div>
-  <script>
+
+  <!-- KPI Strip -->
+  <div class="footer-kpi-strip">
+    <div class="ctn">
+      <div class="kpi-ticker">
+        <div class="kpi-item">
+          <span class="kpi-num" data-count="1240">1 240</span>
+          <span class="kpi-tag" data-i18n data-en="Employees">Collaborateurs</span>
+        </div>
+        <div class="kpi-divider" aria-hidden="true"></div>
+        <div class="kpi-item">
+          <span class="kpi-num" data-count="144000">144K</span>
+          <span class="kpi-tag" data-i18n data-en="bbl/day">bbl/jour</span>
+        </div>
+        <div class="kpi-divider" aria-hidden="true"></div>
+        <div class="kpi-item">
+          <span class="kpi-num">24</span>
+          <span class="kpi-tag" data-i18n data-en="Stations">Stations</span>
+        </div>
+        <div class="kpi-divider" aria-hidden="true"></div>
+        <div class="kpi-item">
+          <span class="kpi-num" data-count="4">4</span>
+          <span class="kpi-tag" data-i18n data-en="OFS Divisions">Pôles OFS</span>
+        </div>
+        <div class="kpi-divider" aria-hidden="true"></div>
+        <div class="kpi-item">
+          <span class="kpi-num" data-count="1070">1 070</span>
+          <span class="kpi-tag" data-i18n data-en="km pipeline">km pipeline</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="ctn footer-body">
+    <div class="footer-grid-modern">
+      <!-- Brand Column -->
+      <div class="footer-brand-col">
+        <a href="../index.html" class="footer-logo-link" aria-label="EnerTchad Groupe — Accueil">
+          <div class="footer-logo-mark">
+            <img loading="lazy" src="../logo-enertchad.svg" alt="" width="32" height="32" class="logo-img" decoding="async"/>
+          </div>
+          <span class="footer-wordmark">EnerTchad<em>Groupe</em></span>
+        </a>
+        <p class="footer-desc" data-i18n data-en="Oilfield services &amp; petroleum distribution across Chad. Major expertise, local agility.">Services pétroliers &amp; distribution au Tchad. L'expertise des majors, l'agilité locale.</p>
+        <div class="footer-badges">
+          <span class="f-badge" title="IWCF">IWCF</span>
+          <span class="f-badge" title="API">API</span>
+          <span class="f-badge" title="ISO 14001">ISO 14001</span>
+          <span class="f-badge" title="ITIE/EITI">ITIE</span>
+        </div>
+      </div>
+
+      <!-- Nav Columns -->
+      <nav class="footer-nav-col" aria-label="Services des Champs">
+        <h6 data-i18n data-en="Services">Services</h6>
+        <ul>
+          <li><a href="../services/well-services.html" data-i18n data-en="Well Services">Well Services</a></li>
+          <li><a href="../services/drilling.html" data-i18n data-en="Drilling &amp; Engineering">Drilling &amp; Engineering</a></li>
+          <li><a href="../services/digital.html" data-i18n data-en="Digital &amp; SCADA">Digital &amp; SCADA</a></li>
+          <li><a href="../services/consulting.html" data-i18n data-en="Consulting &amp; Training">Consulting &amp; Formation</a></li>
+          <li><a href="../distribution/" data-i18n data-en="Distribution">Distribution &amp; Négoce</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-nav-col" aria-label="Société Pétrolière">
+        <h6 data-i18n data-en="Energy">Énergies</h6>
+        <ul>
+          <li><a href="../operations/amont.html" data-i18n data-en="Upstream — E&amp;P">Amont — E&amp;P</a></li>
+          <li><a href="../operations/intermediaire.html" data-i18n data-en="Midstream">Intermédiaire</a></li>
+          <li><a href="../operations/aval.html" data-i18n data-en="Downstream">Aval — Raffinage</a></li>
+          <li><a href="../services/technologies.html" data-i18n data-en="Technologies &amp; AI">Technologies &amp; IA</a></li>
+          <li><a href="../maps.html" data-i18n data-en="Operations Map">Carte des Opérations</a></li>
+          <li><a href="../operations/energies.html" data-i18n data-en="Renewables">Énergies Renouvelables</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-nav-col" aria-label="Entreprise">
+        <h6 data-i18n data-en="Company">Entreprise</h6>
+        <ul>
+          <li><a href="../groupe/index.html" data-i18n data-en="About">À propos</a></li>
+          <li><a href="../durabilite.html" data-i18n data-en="ESG &amp; Sustainability">Durabilité &amp; ESG</a></li>
+          <li><a href="../investisseurs.html" data-i18n data-en="Investors">Investisseurs</a></li>
+          <li><a href="../talents.html" data-i18n data-en="Careers">Talents &amp; Carrières</a></li>
+          <li><a href="../actualites.html" data-i18n data-en="Media">Médias</a></li>
+        </ul>
+      </nav>
+      <div class="footer-nav-col footer-cta-col">
+        <h6 data-i18n data-en="Get in Touch">Nous Contacter</h6>
+        <div class="footer-contact-stack">
+          <a href="../contact.html" class="footer-cta-btn" data-i18n data-en="Contact Us"><i class="fas fa-arrow-right"></i> Contactez-nous</a>
+          <a href="../contact.html#devis" class="footer-cta-link" data-i18n data-en="Request a Quote"><i class="fas fa-file-invoice"></i> Demander un devis</a>
+          <a href="tel:+23599298696" class="footer-cta-link"><i class="fas fa-phone"></i> +235 99 29 86 96</a>
+          <a href="mailto:contact@enertchad.td" class="footer-cta-link"><i class="fas fa-envelope"></i> contact@enertchad.td</a>
+        </div>
+        <div class="footer-hours">
+          <i class="fas fa-clock"></i>
+          <span data-i18n data-en="Mon–Fri 7:30–17:30 · 24/7 emergencies">Lun–Ven 7h30–17h30 · Urgences 24/7</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Newsletter Band -->
+  <div class="footer-newsletter-band">
+    <div class="ctn">
+      <div class="newsletter-inner">
+        <div class="newsletter-text">
+          <strong data-i18n data-en="Industry Intelligence">Veille Sectorielle</strong>
+          <span data-i18n data-en="Monthly insights on energy &amp; oilfield services.">Analyses mensuelles énergie &amp; services pétroliers.</span>
+        </div>
+        <form class="newsletter-modern" aria-label="Newsletter">
+          <input type="email" placeholder="nom@entreprise.td" required aria-label="Email"/>
+          <button type="submit" data-i18n data-en="Subscribe">S'abonner</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="footer-bottom-bar">
+    <div class="ctn">
+      <div class="bottom-bar-inner">
+        <span class="footer-copy" data-i18n data-en="&copy; 2026 EnerTchad Groupe SA/CA">&copy; 2026 EnerTchad Groupe SA/CA</span>
+        <div class="footer-legal-links">
+          <a href="../mentions-legales.html" data-i18n data-en="Legal">Mentions légales</a>
+          <a href="../confidentialite.html" data-i18n data-en="Privacy">Confidentialité</a>
+          <a href="../cookies.html" data-i18n data-en="Cookies">Cookies</a>
+        </div>
+        <div class="footer-social-row">
+          <a href="https://www.linkedin.com/company/enertchad" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://x.com/EnerTchad" target="_blank" rel="noopener noreferrer" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://www.facebook.com/EnerTchad" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.youtube.com/@EnerTchad" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Address (structured data) -->
+  <address class="footer-address" hidden>
+    <span data-i18n data-en="Radisson Blu, Block D, Office 23 — N'Djamena, Chad">Radisson Blu, Bloc D, Bureau 23 — N'Djaména, Tchad</span>
+  </address>
+</footer>
+
+<button class="scroll-top" id="scrollTop" aria-label="Retour en haut"><i class="fas fa-arrow-up"></i></button>
+
+  <!-- ═══ COOKIE CONSENT ═══ -->
+  <div class="cookie-consent" id="cookieConsent" role="dialog" aria-label="Consentement cookies" aria-live="polite">
+    <div class="cookie-inner">
+      <div class="cookie-text">
+        <i class="fas fa-cookie-bite" style="color:var(--gold);margin-right:8px"></i>
+        <span data-i18n data-en="We use cookies for analytics only (Plausible, no personal data). ">Nous utilisons des cookies pour l'analyse uniquement (Plausible, sans données personnelles). </span>
+        <a href="../confidentialite.html" style="color:var(--gold);text-decoration:underline" data-i18n data-en="Privacy Policy">Politique de confidentialité</a>
+      </div>
+      <div class="cookie-actions">
+        <button class="cookie-btn cookie-btn--accept" id="cookieAccept" data-i18n data-en="Accept">Accepter</button>
+        <button class="cookie-btn cookie-btn--decline" id="cookieDecline" data-i18n data-en="Decline">Refuser</button>
+      </div>
+    </div>
+  </div>
+
+<script>
    /* ═══ COOKIE CONSENT ═══ */
 (function(){
   var KEY='enertchad-cookies';
@@ -1975,7 +2138,7 @@ if(conn&&(conn.effectiveType==='2g'||conn.effectiveType==='slow-2g'||conn.saveDa
   if(saved==='en'||saved==='fr'){applyLang(saved)}
 })();
   </script>
-  <script>
+<script>
    /* ═══ CONTACT FORM — ASYNC SUBMIT WITH FORMSPREE ═══ */
 (function(){
   var form=document.getElementById('contactForm');
@@ -2011,18 +2174,7 @@ if(conn&&(conn.effectiveType==='2g'||conn.effectiveType==='slow-2g'||conn.saveDa
   });
 })();
   </script>
-  <script>
-   /* PWA: register service worker (graceful no-op if missing) */
-if('serviceWorker' in navigator){
-  window.addEventListener('load',function(){
-    navigator.serviceWorker.register('/sw.js').catch(function(){
-      /* SW file optional - no error */
-    });
-  });
-}
-  </script>
-  <!-- ═══ AMONT CALCULATOR SCRIPT ═══ -->
-  <script>
+<script>
    (function(){
   var section = document.getElementById('calc-reserves');
   if(!section) return;
@@ -2137,10 +2289,31 @@ if('serviceWorker' in navigator){
   setInterval(tick,2200);
 })();
 
-/* ═══ LEAFLET BASIN MAP ═══ */
+/* ═══ LEAFLET BASIN MAP (lazy-loaded) ═══ */
 (function(){
   var el=document.getElementById('bassinMap');
-  if(!el||typeof L==='undefined')return;
+  if(!el)return;
+
+  /* Lazy-load Leaflet CSS + JS only when map section enters viewport */
+  var loaded=false;
+  var obs=new IntersectionObserver(function(entries){
+    if(entries[0].isIntersecting && !loaded){
+      loaded=true;
+      obs.disconnect();
+      var css=document.createElement('link');
+      css.rel='stylesheet';
+      css.href='https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css';
+      document.head.appendChild(css);
+      var js=document.createElement('script');
+      js.src='https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js';
+      js.onload=function(){ initBasinMap(); };
+      document.head.appendChild(js);
+    }
+  },{rootMargin:'200px'});
+  obs.observe(el);
+
+  function initBasinMap(){
+    if(typeof L==='undefined')return;
   var map=L.map('bassinMap',{center:[12,16],zoom:5,scrollWheelZoom:false,attributionControl:false});
   L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{maxZoom:18}).addTo(map);
   L.control.attribution({prefix:false}).addTo(map);
@@ -2233,6 +2406,7 @@ if('serviceWorker' in navigator){
     return div;
   };
   legend.addTo(map);
+  } /* end initBasinMap */
 })();
 
 /* ═══ INTERVAL CLEANUP — Prevent memory leaks on navigation ═══ */
@@ -2539,11 +2713,6 @@ window.showToast=function(msg,type,ms){
   setTimeout(function(){t.classList.add('hide');setTimeout(function(){t.remove()},400)},ms);
 };
   </script>
-/* Page transition */
-(function(){var pt=document.getElementById('pageTransition');if(!pt)return;window.addEventListener('load',function(){setTimeout(function(){pt.style.opacity='0';pt.style.pointerEvents='none';setTimeout(function(){pt.style.display='none'},500)},300)});document.querySelectorAll('a[href^="/"]').forEach(function(l){l.addEventListener('click',function(e){var h=l.getAttribute('href');if(h&&h.startsWith('/')&&!h.startsWith('/#')){e.preventDefault();pt.style.display='flex';pt.style.opacity='1';pt.style.pointerEvents='auto';setTimeout(function(){window.location.href=h},400)}})})})();
-/* GSAP animations */
-(function(){if(typeof gsap==='undefined'||typeof ScrollTrigger==='undefined')return;if(window.matchMedia('(prefers-reduced-motion:reduce)').matches)return;gsap.registerPlugin(ScrollTrigger);gsap.utils.toArray('h2,.card,[data-r]').forEach(function(el){gsap.from(el,{y:40,opacity:0,duration:0.8,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 85%',toggleActions:'play none none none'}})})})();
-  </script>
-<button class="scroll-top" id="scrollTop" aria-label="Retour en haut"><i class="fas fa-chevron-up"></i></button>
- </body>
+<script defer src="../js/premium.js"></script>
+</body>
 </html>

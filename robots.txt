@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /api/
+Disallow: /_next/
+Disallow: /.vercel/
 
-Sitemap: https://enertchad-groupe.vercel.app/sitemap.xml
+Sitemap: https://www.enertchad.td/sitemap.xml

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D4A840"/>
+      <stop offset="100%" stop-color="#C8962E"/>
+    </linearGradient>
+  </defs>
+  <!-- Gold ring -->
+  <circle cx="100" cy="100" r="82" fill="none" stroke="url(#ringGrad)" stroke-width="8"/>
+  <!-- Petals — 4 teardrop shapes arranged as a clover -->
+  <!-- Top petal — Gold/Yellow -->
+  <ellipse cx="100" cy="62" rx="22" ry="30" fill="#D4A840" transform="rotate(0,100,100)"/>
+  <!-- Left petal — Blue -->
+  <ellipse cx="62" cy="105" rx="22" ry="30" fill="#2E6FBF" transform="rotate(90,62,105)"/>
+  <!-- Right petal — Green -->
+  <ellipse cx="138" cy="105" rx="22" ry="30" fill="#3A8C3F" transform="rotate(90,138,105)"/>
+  <!-- Bottom petal — Cream -->
+  <ellipse cx="100" cy="138" rx="22" ry="30" fill="#F0E6B8" transform="rotate(0,100,138)"/>
+  <!-- Center overlap — subtle blend -->
+  <circle cx="100" cy="100" r="14" fill="#F5F0D8" opacity="0.5"/>
+</svg>

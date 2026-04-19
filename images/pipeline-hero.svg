@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Pipeline transport and logistics illustration showing the Doba-Kribi pipeline with storage facilities, pump stations, and FSO terminal vessel">
+  <defs>
+    <linearGradient id="skyG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0B1628"/>
+      <stop offset="100%" stop-color="#132240"/>
+    </linearGradient>
+    <linearGradient id="groundG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1A2A44"/>
+      <stop offset="100%" stop-color="#0D1B2E"/>
+    </linearGradient>
+    <linearGradient id="pipeGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0EA5E9"/>
+      <stop offset="50%" stop-color="#2E86DE"/>
+      <stop offset="100%" stop-color="#0EA5E9"/>
+    </linearGradient>
+    <linearGradient id="pipeVert" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0EA5E9"/>
+      <stop offset="100%" stop-color="#1E3A5F"/>
+    </linearGradient>
+    <filter id="glowB">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+  <!-- Sky -->
+  <rect width="800" height="500" fill="url(#skyG)"/>
+  <!-- Ground -->
+  <rect y="340" width="800" height="160" fill="url(#groundG)"/>
+  <line x1="0" y1="340" x2="800" y2="340" stroke="#0EA5E9" stroke-width="1" opacity="0.2"/>
+
+  <!-- Stars -->
+  <circle cx="100" cy="50" r="1.5" fill="#fff" opacity="0.5"/>
+  <circle cx="350" cy="35" r="1" fill="#fff" opacity="0.4"/>
+  <circle cx="550" cy="70" r="1.5" fill="#fff" opacity="0.6"/>
+  <circle cx="700" cy="45" r="1" fill="#fff" opacity="0.3"/>
+
+  <!-- Main pipeline (Doba-Kribi style) -->
+  <g>
+    <!-- Pipeline tube -->
+    <path d="M 30,280 Q 150,260 300,270 Q 450,280 550,250 Q 650,220 770,230"
+          fill="none" stroke="url(#pipeGrad)" stroke-width="8" stroke-linecap="round"/>
+    <!-- Pipeline highlight -->
+    <path d="M 30,278 Q 150,258 300,268 Q 450,278 550,248 Q 650,218 770,228"
+          fill="none" stroke="#fff" stroke-width="1" opacity="0.15"/>
+
+    <!-- Valve stations -->
+    <g transform="translate(180, 264)">
+      <rect x="-12" y="-16" width="24" height="32" rx="3" fill="#1E3A5F" stroke="#0EA5E9" stroke-width="1.5"/>
+      <circle cx="0" cy="0" r="6" fill="#0EA5E9" opacity="0.4"/>
+      <circle cx="0" cy="0" r="3" fill="#0EA5E9" filter="url(#glowB)"/>
+    </g>
+    <g transform="translate(420, 275)">
+      <rect x="-12" y="-16" width="24" height="32" rx="3" fill="#1E3A5F" stroke="#0EA5E9" stroke-width="1.5"/>
+      <circle cx="0" cy="0" r="6" fill="#0EA5E9" opacity="0.4"/>
+      <circle cx="0" cy="0" r="3" fill="#0EA5E9" filter="url(#glowB)"/>
+    </g>
+    <g transform="translate(650, 225)">
+      <rect x="-12" y="-16" width="24" height="32" rx="3" fill="#1E3A5F" stroke="#0EA5E9" stroke-width="1.5"/>
+      <circle cx="0" cy="0" r="6" fill="#0EA5E9" opacity="0.4"/>
+      <circle cx="0" cy="0" r="3" fill="#0EA5E9" filter="url(#glowB)"/>
+    </g>
+  </g>
+
+  <!-- Storage tanks (left) -->
+  <g transform="translate(60, 310)">
+    <ellipse cx="0" cy="-35" rx="30" ry="8" fill="#1E3A5F" stroke="#0EA5E9" stroke-width="1"/>
+    <rect x="-30" y="-35" width="60" height="40" fill="#1E3A5F" stroke="#0EA5E9" stroke-width="1"/>
+    <ellipse cx="0" cy="5" rx="30" ry="8" fill="#152A45" stroke="#0EA5E9" stroke-width="1"/>
+    <text x="0" y="-12" text-anchor="middle" font-family="Arial" font-size="8" fill="#0EA5E9" opacity="0.8">DEPOT</text>
+  </g>
+
+  <!-- Storage tanks (right cluster) -->
+  <g transform="translate(720, 290)">
+    <ellipse cx="0" cy="-40" rx="35" ry="9" fill="#1E3A5F" stroke="#0EA5E9" stroke-width="1"/>
+    <rect x="-35" y="-40" width="70" height="48" fill="#1E3A5F" stroke="#0EA5E9" stroke-width="1"/>
+    <ellipse cx="0" cy="8" rx="35" ry="9" fill="#152A45" stroke="#0EA5E9" stroke-width="1"/>
+    <text x="0" y="-15" text-anchor="middle" font-family="Arial" font-size="8" fill="#0EA5E9" opacity="0.8">TERMINAL</text>
+  </g>
+
+  <!-- Pump station (center) -->
+  <g transform="translate(400, 310)">
+    <rect x="-25" y="-20" width="50" height="30" rx="4" fill="#1E3A5F" stroke="#D9A84F" stroke-width="1.5"/>
+    <circle cx="0" cy="-5" r="8" fill="none" stroke="#D9A84F" stroke-width="1.5"/>
+    <path d="M -4,-5 L 4,-5 L 0,-10 Z" fill="#D9A84F"/>
+    <text x="0" y="20" text-anchor="middle" font-family="Arial" font-size="7" fill="#D9A84F" opacity="0.8">POMPAGE</text>
+  </g>
+
+  <!-- FSO Ship (bottom right) -->
+  <g transform="translate(700, 370)">
+    <path d="M -40,0 L -35,-12 L 35,-12 L 40,0 Z" fill="#1E3A5F" stroke="#0EA5E9" stroke-width="1"/>
+    <rect x="-10" y="-22" width="20" height="10" rx="2" fill="#1E3A5F" stroke="#0EA5E9" stroke-width="0.5"/>
+    <line x1="0" y1="-22" x2="0" y2="-32" stroke="#D9A84F" stroke-width="1"/>
+    <!-- Water line -->
+    <path d="M -50,2 Q -40,-3 -30,2 Q -20,-3 -10,2 Q 0,-3 10,2 Q 20,-3 30,2 Q 40,-3 50,2"
+          fill="none" stroke="#0EA5E9" stroke-width="0.8" opacity="0.4"/>
+    <text x="0" y="16" text-anchor="middle" font-family="Arial" font-size="7" fill="#0EA5E9" opacity="0.6">FSO 357k dwt</text>
+  </g>
+
+  <!-- Distance markers -->
+  <g opacity="0.4">
+    <line x1="60" y1="300" x2="400" y2="300" stroke="#D9A84F" stroke-width="0.5" stroke-dasharray="4,3"/>
+    <text x="230" y="296" text-anchor="middle" font-family="Arial" font-size="8" fill="#D9A84F">1 070 km</text>
+    <line x1="400" y1="295" x2="720" y2="295" stroke="#0EA5E9" stroke-width="0.5" stroke-dasharray="4,3"/>
+    <text x="560" y="291" text-anchor="middle" font-family="Arial" font-size="8" fill="#0EA5E9">311 km</text>
+  </g>
+
+  <!-- Flow arrows on pipeline -->
+  <g opacity="0.6">
+    <polygon points="250,268 260,264 260,272" fill="#0EA5E9"/>
+    <polygon points="500,258 510,254 510,262" fill="#0EA5E9"/>
+    <polygon points="700,228 710,224 710,232" fill="#0EA5E9"/>
+  </g>
+
+  <!-- Underground cross-section hint -->
+  <g opacity="0.15">
+    <path d="M 0,340 Q 200,380 400,360 Q 600,340 800,370" fill="none" stroke="#0EA5E9" stroke-width="1"/>
+    <path d="M 0,380 Q 200,410 400,400 Q 600,390 800,410" fill="none" stroke="#0EA5E9" stroke-width="0.5"/>
+  </g>
+
+  <!-- Data overlay -->
+  <text x="40" y="480" font-family="Arial, sans-serif" font-size="11" fill="#0EA5E9" opacity="0.5" letter-spacing="2">TRANSPORT &amp; LOGISTIQUE</text>
+</svg>

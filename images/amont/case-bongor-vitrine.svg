@@ -1,0 +1,269 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Salle de contrôle SCADA Bongor — opérateur devant un mur d'écrans de supervision temps réel">
+  <defs>
+    <linearGradient id="roomB" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#07152B"/>
+      <stop offset="0.5" stop-color="#0F2240"/>
+      <stop offset="1" stop-color="#050c1a"/>
+    </linearGradient>
+    <linearGradient id="floorB" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1A3460"/>
+      <stop offset="1" stop-color="#050305"/>
+    </linearGradient>
+    <linearGradient id="screenB" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#07152B"/>
+      <stop offset="1" stop-color="#050c1a"/>
+    </linearGradient>
+    <linearGradient id="deskB" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1A3460"/>
+      <stop offset="1" stop-color="#050c1a"/>
+    </linearGradient>
+    <radialGradient id="ambientB" cx="0.5" cy="0.3" r="0.6">
+      <stop offset="0" stop-color="#28a745" stop-opacity="0.18"/>
+      <stop offset="0.6" stop-color="#28a745" stop-opacity="0.04"/>
+      <stop offset="1" stop-color="#28a745" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glowB"><feGaussianBlur stdDeviation="8"/></filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#roomB)"/>
+  <rect width="1600" height="900" fill="url(#ambientB)"/>
+
+  <!-- Ceiling strip lights -->
+  <g>
+    <rect x="100" y="20" width="1400" height="4" fill="#3A5060" opacity="0.4"/>
+    <rect x="100" y="20" width="1400" height="2" fill="#7A90B0" opacity="0.7"/>
+    <!-- Subtle ambient glow -->
+    <rect x="100" y="24" width="1400" height="40" fill="url(#ambientB)" opacity="0.5"/>
+  </g>
+
+  <!-- Back wall perspective lines -->
+  <g stroke="#1A3460" stroke-width="1" opacity="0.4">
+    <line x1="0" y1="0" x2="400" y2="400"/>
+    <line x1="1600" y1="0" x2="1200" y2="400"/>
+    <line x1="0" y1="900" x2="400" y2="500"/>
+    <line x1="1600" y1="900" x2="1200" y2="500"/>
+  </g>
+
+  <!-- FLOOR -->
+  <polygon points="0,720 1600,720 1600,900 0,900" fill="url(#floorB)"/>
+  <!-- Floor grid lines (perspective) -->
+  <g stroke="#1A3460" stroke-width="1" opacity="0.35">
+    <line x1="0" y1="760" x2="1600" y2="760"/>
+    <line x1="0" y1="800" x2="1600" y2="800"/>
+    <line x1="0" y1="840" x2="1600" y2="840"/>
+    <line x1="0" y1="880" x2="1600" y2="880"/>
+  </g>
+
+  <!-- VIDEO WALL FRAME -->
+  <rect x="160" y="100" width="1280" height="460" fill="#050305" stroke="#1A3460" stroke-width="4"/>
+
+  <!-- SCREEN 1 top-left — SCADA P&ID diagram -->
+  <g transform="translate(180,120)">
+    <rect width="400" height="220" fill="url(#screenB)"/>
+    <rect width="400" height="220" fill="none" stroke="#1A3460" stroke-width="1"/>
+    <!-- Title bar -->
+    <rect width="400" height="16" fill="#050c1a"/>
+    <text x="8" y="12" font-family="monospace" font-size="10" fill="#28a745" font-weight="700">BONGOR — VUE GÉNÉRALE</text>
+    <circle cx="388" cy="8" r="3" fill="#28a745"/>
+    <!-- P&ID piping network -->
+    <g stroke="#28a745" stroke-width="2" fill="none">
+      <line x1="30" y1="60" x2="130" y2="60"/>
+      <line x1="130" y1="60" x2="130" y2="120"/>
+      <line x1="130" y1="120" x2="250" y2="120"/>
+      <line x1="250" y1="60" x2="250" y2="180"/>
+      <line x1="250" y1="180" x2="370" y2="180"/>
+      <line x1="130" y1="60" x2="250" y2="60"/>
+    </g>
+    <!-- Valves (circles) -->
+    <g>
+      <circle cx="80" cy="60" r="5" fill="none" stroke="#F2C354" stroke-width="1.5"/>
+      <circle cx="180" cy="120" r="5" fill="none" stroke="#F2C354" stroke-width="1.5"/>
+      <circle cx="300" cy="180" r="5" fill="none" stroke="#F2C354" stroke-width="1.5"/>
+      <circle cx="250" cy="100" r="5" fill="none" stroke="#28a745" stroke-width="1.5"/>
+    </g>
+    <!-- Tanks/vessels -->
+    <rect x="120" y="55" width="20" height="10" fill="none" stroke="#28a745" stroke-width="1"/>
+    <rect x="240" y="55" width="20" height="10" fill="none" stroke="#28a745" stroke-width="1"/>
+    <ellipse cx="130" cy="120" rx="10" ry="4" fill="none" stroke="#28a745" stroke-width="1"/>
+    <!-- Readings -->
+    <text x="35" y="80" font-family="monospace" font-size="8" fill="#F2C354">142 bar</text>
+    <text x="135" y="145" font-family="monospace" font-size="8" fill="#F2C354">68 °C</text>
+    <text x="255" y="200" font-family="monospace" font-size="8" fill="#28a745">NORMAL</text>
+  </g>
+
+  <!-- SCREEN 2 top-right — Dashboard -->
+  <g transform="translate(600,120)">
+    <rect width="400" height="220" fill="url(#screenB)"/>
+    <rect width="400" height="220" fill="none" stroke="#1A3460" stroke-width="1"/>
+    <rect width="400" height="16" fill="#050c1a"/>
+    <text x="8" y="12" font-family="monospace" font-size="10" fill="#F2C354" font-weight="700">PRODUCTION TEMPS RÉEL</text>
+    <!-- Big KPI -->
+    <text x="20" y="70" font-family="monospace" font-size="36" fill="#F2C354" font-weight="700">18 420</text>
+    <text x="20" y="90" font-family="monospace" font-size="10" fill="#8a97a8">BARILS / JOUR</text>
+    <text x="20" y="110" font-family="monospace" font-size="8" fill="#28a745">▲ +2.3% vs hier</text>
+    <!-- Mini trend line chart -->
+    <g transform="translate(180,40)">
+      <rect x="0" y="0" width="200" height="90" fill="#050c1a" stroke="#1A3460" stroke-width="1"/>
+      <polyline points="10,70 30,60 50,65 70,50 90,55 110,40 130,45 150,30 170,35 190,22" fill="none" stroke="#28a745" stroke-width="2"/>
+      <polyline points="10,70 30,60 50,65 70,50 90,55 110,40 130,45 150,30 170,35 190,22" fill="none" stroke="#28a745" stroke-width="6" opacity="0.2" filter="url(#glowB)"/>
+      <!-- Grid -->
+      <line x1="10" y1="25" x2="195" y2="25" stroke="#1A3460" stroke-width="0.5"/>
+      <line x1="10" y1="50" x2="195" y2="50" stroke="#1A3460" stroke-width="0.5"/>
+      <line x1="10" y1="75" x2="195" y2="75" stroke="#1A3460" stroke-width="0.5"/>
+    </g>
+    <!-- Bottom rows -->
+    <g font-family="monospace" font-size="9">
+      <text x="20" y="155" fill="#8a97a8">PUITS ACTIFS</text>
+      <text x="140" y="155" fill="#F2C354">42/45</text>
+      <text x="20" y="175" fill="#8a97a8">PRESSION MOY</text>
+      <text x="140" y="175" fill="#F2C354">138 bar</text>
+      <text x="20" y="195" fill="#8a97a8">DISPONIBILITÉ</text>
+      <text x="140" y="195" fill="#28a745">99.2%</text>
+      <text x="220" y="155" fill="#8a97a8">WATER CUT</text>
+      <text x="330" y="155" fill="#F2C354">32%</text>
+      <text x="220" y="175" fill="#8a97a8">GAS/OIL R.</text>
+      <text x="330" y="175" fill="#F2C354">412</text>
+      <text x="220" y="195" fill="#8a97a8">ALARMES</text>
+      <text x="330" y="195" fill="#28a745">0 CRIT.</text>
+    </g>
+  </g>
+
+  <!-- SCREEN 3 right — MAP -->
+  <g transform="translate(1020,120)">
+    <rect width="400" height="220" fill="url(#screenB)"/>
+    <rect width="400" height="220" fill="none" stroke="#1A3460" stroke-width="1"/>
+    <rect width="400" height="16" fill="#050c1a"/>
+    <text x="8" y="12" font-family="monospace" font-size="10" fill="#28a745" font-weight="700">CARTOGRAPHIE PIPELINES</text>
+    <!-- Map background -->
+    <g opacity="0.5">
+      <path d="M20,60 Q80,50 140,70 T260,65 Q320,70 380,55" fill="none" stroke="#1A3460" stroke-width="40"/>
+      <path d="M40,140 Q100,130 160,150 T280,145" fill="none" stroke="#1A3460" stroke-width="30"/>
+    </g>
+    <!-- Pipeline lines -->
+    <path d="M30,180 L100,150 L160,170 L230,130 L310,140 L380,100" fill="none" stroke="#F2C354" stroke-width="2"/>
+    <path d="M30,180 L100,150 L160,170 L230,130 L310,140 L380,100" fill="none" stroke="#F2C354" stroke-width="6" opacity="0.25" filter="url(#glowB)"/>
+    <!-- Nodes / well sites -->
+    <g>
+      <circle cx="30" cy="180" r="5" fill="#28a745"/>
+      <circle cx="30" cy="180" r="9" fill="none" stroke="#28a745" stroke-width="1" opacity="0.5"/>
+      <circle cx="100" cy="150" r="4" fill="#28a745"/>
+      <circle cx="160" cy="170" r="4" fill="#28a745"/>
+      <circle cx="230" cy="130" r="4" fill="#28a745"/>
+      <circle cx="310" cy="140" r="4" fill="#F2C354"/>
+      <circle cx="310" cy="140" r="8" fill="none" stroke="#F2C354" stroke-width="1"/>
+      <circle cx="380" cy="100" r="5" fill="#28a745"/>
+    </g>
+    <text x="20" y="205" font-family="monospace" font-size="8" fill="#8a97a8">LAT 10.28°N   LON 15.47°E</text>
+  </g>
+
+  <!-- SCREEN 4 bottom wide — Alarms / logs -->
+  <g transform="translate(180,360)">
+    <rect width="1240" height="180" fill="url(#screenB)"/>
+    <rect width="1240" height="180" fill="none" stroke="#1A3460" stroke-width="1"/>
+    <rect width="1240" height="18" fill="#050c1a"/>
+    <text x="8" y="13" font-family="monospace" font-size="10" fill="#28a745" font-weight="700">JOURNAL ÉVÉNEMENTS — TEMPS RÉEL</text>
+    <!-- Log lines -->
+    <g font-family="monospace" font-size="10">
+      <text x="20" y="40" fill="#8a97a8">14:28:42</text>
+      <text x="110" y="40" fill="#28a745">[OK]</text>
+      <text x="160" y="40" fill="#BCD9FF">Puits BNG-12 — débit stabilisé 412 bbl/j (consigne 400)</text>
+      <text x="20" y="60" fill="#8a97a8">14:28:15</text>
+      <text x="110" y="60" fill="#28a745">[OK]</text>
+      <text x="160" y="60" fill="#BCD9FF">Rapport journalier généré — 42/45 puits actifs, disponibilité 99.2%</text>
+      <text x="20" y="80" fill="#8a97a8">14:27:58</text>
+      <text x="110" y="80" fill="#F2C354">[INFO]</text>
+      <text x="160" y="80" fill="#BCD9FF">Maintenance préventive ESP-07 — planifiée 2026-04-12 08:00</text>
+      <text x="20" y="100" fill="#8a97a8">14:27:30</text>
+      <text x="110" y="100" fill="#28a745">[OK]</text>
+      <text x="160" y="100" fill="#BCD9FF">Synchronisation SCADA ↔ data lake — 2 341 points / 3 s</text>
+      <text x="20" y="120" fill="#8a97a8">14:27:02</text>
+      <text x="110" y="120" fill="#F2C354">[INFO]</text>
+      <text x="160" y="120" fill="#BCD9FF">Détection LDAR caméra OGI — zone Nord balayée, aucune fuite</text>
+      <text x="20" y="140" fill="#8a97a8">14:26:41</text>
+      <text x="110" y="140" fill="#28a745">[OK]</text>
+      <text x="160" y="140" fill="#BCD9FF">Injection polymère EOR — 280 m³/j (cible 275)</text>
+      <text x="20" y="160" fill="#8a97a8">14:26:10</text>
+      <text x="110" y="160" fill="#28a745">[OK]</text>
+      <text x="160" y="160" fill="#BCD9FF">Micro-réseau solaire hybride Doba — 1.8 MW, batterie 72%</text>
+    </g>
+  </g>
+
+  <!-- DESK (foreground) -->
+  <g>
+    <rect x="120" y="620" width="1360" height="14" fill="url(#deskB)"/>
+    <rect x="120" y="634" width="1360" height="100" fill="#050c1a"/>
+    <rect x="120" y="620" width="1360" height="3" fill="#1A3460"/>
+    <!-- Desk glow from screens -->
+    <rect x="160" y="623" width="1280" height="2" fill="#28a745" opacity="0.3" filter="url(#glowB)"/>
+  </g>
+
+  <!-- Two workstation monitors on desk -->
+  <g transform="translate(420,620)">
+    <rect x="-90" y="-110" width="180" height="105" fill="#050305" stroke="#1A3460" stroke-width="2"/>
+    <rect x="-86" y="-106" width="172" height="97" fill="#07152B"/>
+    <!-- Dashboard mini -->
+    <rect x="-80" y="-100" width="160" height="10" fill="#050c1a"/>
+    <circle cx="-70" cy="-80" r="18" fill="none" stroke="#28a745" stroke-width="2"/>
+    <circle cx="-70" cy="-80" r="18" fill="none" stroke="#28a745" stroke-width="2" stroke-dasharray="60 113" transform="rotate(-90 -70 -80)"/>
+    <text x="-78" y="-76" font-family="monospace" font-size="10" fill="#F2C354">92%</text>
+    <polyline points="-30,-60 -10,-70 10,-65 30,-78 50,-72 70,-85" fill="none" stroke="#28a745" stroke-width="1.5"/>
+    <rect x="-80" y="-40" width="35" height="20" fill="none" stroke="#1A3460"/>
+    <rect x="-35" y="-40" width="35" height="20" fill="none" stroke="#1A3460"/>
+    <rect x="10" y="-40" width="35" height="20" fill="none" stroke="#1A3460"/>
+    <!-- Stand -->
+    <rect x="-10" y="-5" width="20" height="12" fill="#1A3460"/>
+    <rect x="-25" y="7" width="50" height="4" fill="#1A3460"/>
+  </g>
+
+  <g transform="translate(1180,620)">
+    <rect x="-90" y="-110" width="180" height="105" fill="#050305" stroke="#1A3460" stroke-width="2"/>
+    <rect x="-86" y="-106" width="172" height="97" fill="#07152B"/>
+    <rect x="-80" y="-100" width="160" height="10" fill="#050c1a"/>
+    <!-- Bar chart -->
+    <g>
+      <rect x="-75" y="-50" width="12" height="40" fill="#28a745"/>
+      <rect x="-55" y="-60" width="12" height="50" fill="#28a745"/>
+      <rect x="-35" y="-45" width="12" height="35" fill="#28a745"/>
+      <rect x="-15" y="-70" width="12" height="60" fill="#F2C354"/>
+      <rect x="5" y="-55" width="12" height="45" fill="#28a745"/>
+      <rect x="25" y="-65" width="12" height="55" fill="#28a745"/>
+      <rect x="45" y="-50" width="12" height="40" fill="#28a745"/>
+      <rect x="65" y="-75" width="12" height="65" fill="#F2C354"/>
+    </g>
+    <rect x="-10" y="-5" width="20" height="12" fill="#1A3460"/>
+    <rect x="-25" y="7" width="50" height="4" fill="#1A3460"/>
+  </g>
+
+  <!-- Operator silhouette (center, back to viewer) -->
+  <g transform="translate(800,720)">
+    <!-- Chair -->
+    <rect x="-35" y="-20" width="70" height="8" fill="#050305"/>
+    <rect x="-25" y="-80" width="50" height="65" fill="#050305"/>
+    <rect x="-4" y="-12" width="8" height="60" fill="#050305"/>
+    <circle cx="0" cy="50" r="4" fill="#050305"/>
+    <!-- Body -->
+    <path d="M-32,-85 L-36,-165 L36,-165 L32,-85 Z" fill="#0F2240"/>
+    <!-- Arms resting on desk -->
+    <rect x="-50" y="-135" width="30" height="14" fill="#0F2240"/>
+    <rect x="20" y="-135" width="30" height="14" fill="#0F2240"/>
+    <!-- Head -->
+    <ellipse cx="0" cy="-180" rx="18" ry="22" fill="#1a1410"/>
+    <!-- Subtle screen glow on head/shoulders -->
+    <path d="M-32,-165 L-36,-145 L36,-145 L32,-165 Z" fill="#28a745" opacity="0.15"/>
+    <ellipse cx="0" cy="-185" rx="12" ry="8" fill="#28a745" opacity="0.1"/>
+  </g>
+
+  <!-- Label pill -->
+  <g transform="translate(60,820)">
+    <rect x="0" y="0" width="320" height="42" rx="21" fill="rgba(6,26,14,0.85)" stroke="#F2C354" stroke-width="1.5"/>
+    <circle cx="24" cy="21" r="6" fill="#F2C354"/>
+    <text x="42" y="27" font-family="Georgia, serif" font-size="15" fill="#F2C354" font-weight="700" letter-spacing="0.06em">BONGOR — SCADA TEMPS RÉEL</text>
+  </g>
+
+  <!-- Soft vignette -->
+  <radialGradient id="vignB" cx="0.5" cy="0.45" r="0.85">
+    <stop offset="0.5" stop-color="#000" stop-opacity="0"/>
+    <stop offset="1" stop-color="#000" stop-opacity="0.6"/>
+  </radialGradient>
+  <rect width="1600" height="900" fill="url(#vignB)"/>
+</svg>
