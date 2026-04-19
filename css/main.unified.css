@@ -959,11 +959,7 @@ html.light .search-footer kbd{border-color:rgba(0,0,0,0.1);background:rgba(0,0,0
 .ir-trend.down{background:rgba(239,68,68,0.1);color:#EF4444}
 
 /* ═══ CURSOR GLOW (desktop) ═══ */
-.cursor-glow{position:fixed;width:300px;height:300px;border-radius:50%;pointer-events:none;z-index:9998;
-  background:radial-gradient(circle,rgba(200,150,46,0.04) 0%,transparent 70%);
-  transform:translate(-50%,-50%);transition:opacity 0.3s;opacity:0}
-body:hover .cursor-glow{opacity:1}
-
+body:hover 
 /* ═══ FOOTER ENHANCED ═══ */
 .footer-social{display:flex;gap:0.75rem;margin-top:0.75rem}
 .footer-social a{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;
@@ -1891,10 +1887,6 @@ a:hover{color:var(--gold-light)}
 .mobile-toggle.active span:nth-child(2){opacity:0;
   width:0}
 .mobile-toggle.active span:nth-child(3){transform:rotate(-45deg) translate(4px,-4px)}
-@keyframes megaShimmer{
-  0%,100% {
-  background-position:200% 0
-}
 50% {
   background-position:-200% 0
 }
