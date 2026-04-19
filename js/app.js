@@ -113,6 +113,7 @@ var ENERTCHAD = {
     var trigger = document.querySelector('[data-mega="' + id + '"]');
     var drop = trigger ? trigger.querySelector('.mega-drop') : null;
     if (!drop) return;
+    if (trigger) trigger.classList.add('open');
     drop.classList.add('active');
     if (megaOverlay) megaOverlay.classList.add('active');
     document.querySelectorAll('[data-mega="' + id + '"]').forEach(function(t) { t.setAttribute('aria-expanded','true'); });
@@ -121,6 +122,7 @@ var ENERTCHAD = {
   }
 
   function closeMega() {
+    document.querySelectorAll('.nav-item.open').forEach(function(n) { n.classList.remove('open'); });
     allMegaDrops.forEach(function(d) { d.classList.remove('active'); });
     if (megaOverlay) megaOverlay.classList.remove('active');
     document.querySelectorAll('[data-mega]').forEach(function(t) { t.setAttribute('aria-expanded','false'); });
