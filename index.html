@@ -100,8 +100,8 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 .ctn{width:100%;max-width:var(--max-w);margin:0 auto;padding:0 var(--sp-lg)}
 
 /* Header */
-.header{position:fixed;top:0;left:0;right:0;height:var(--header-h);display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1rem,3vw,3rem);background:rgba(8,14,26,0.6);backdrop-filter:blur(30px) saturate(1.8);-webkit-backdrop-filter:blur(30px) saturate(1.8);z-index:1000;transition:all 0.6s var(--ease)}
-.header.scrolled{height:60px;background:rgba(8,14,26,0.97);box-shadow:0 8px 40px rgba(0,0,0,0.5),0 1px 0 rgba(217,168,79,0.1)}
+.header{position:fixed;top:33px;left:0;right:0;height:var(--header-h);display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1rem,3vw,3rem);background:rgba(8,14,26,0.6);backdrop-filter:blur(30px) saturate(1.8);-webkit-backdrop-filter:blur(30px) saturate(1.8);z-index:1000;transition:all 0.6s var(--ease)}
+.header.scrolled{top:0;height:60px;background:rgba(8,14,26,0.97);box-shadow:0 8px 40px rgba(0,0,0,0.5),0 1px 0 rgba(217,168,79,0.1)}
 
 /* Logo */
 .logo-wrap{display:flex;align-items:center;gap:var(--sp-sm);color:var(--white);text-decoration:none;position:relative}
@@ -165,9 +165,35 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
   <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
   <link rel="stylesheet" href="css/main.v1.css"/>
   <link rel="stylesheet" href="css/premium.css"/>
+  <link rel="stylesheet" href="css/enhance.css"/>
 </head>
 <body>
 <a href="#main" class="skip-link" data-i18n data-en="Skip to content">Aller au contenu</a>
+
+<!-- ═══ SCROLL PROGRESS ═══ -->
+<div class="scroll-prog" id="scrollProg" aria-hidden="true"></div>
+
+<!-- ═══ TICKER ═══ -->
+<div class="ticker" aria-label="Métriques EnerTchad temps réel">
+  <div class="ticker-track" aria-hidden="true">
+    <div class="ticker-item"><i class="fas fa-oil-well"></i> Production <span class="val">144K b/j</span></div>
+    <div class="ticker-item"><i class="fas fa-map-marked-alt"></i> Bassins actifs <span class="val">5</span></div>
+    <div class="ticker-item"><i class="fas fa-users"></i> Collaborateurs <span class="val">1 240</span></div>
+    <div class="ticker-item"><i class="fas fa-gas-pump"></i> Stations <span class="val">24</span></div>
+    <div class="ticker-item"><i class="fas fa-chart-line"></i> Objectif 2030 <span class="val up">250K b/j</span></div>
+    <div class="ticker-item"><i class="fas fa-globe-africa"></i> Filiales <span class="val">7</span></div>
+    <div class="ticker-item"><i class="fas fa-award"></i> Certifications <span class="val">ISO 37001 · EITI</span></div>
+    <div class="ticker-item"><i class="fas fa-briefcase"></i> Expérience <span class="val">20+ ans</span></div>
+    <div class="ticker-item"><i class="fas fa-oil-well"></i> Production <span class="val">144K b/j</span></div>
+    <div class="ticker-item"><i class="fas fa-map-marked-alt"></i> Bassins actifs <span class="val">5</span></div>
+    <div class="ticker-item"><i class="fas fa-users"></i> Collaborateurs <span class="val">1 240</span></div>
+    <div class="ticker-item"><i class="fas fa-gas-pump"></i> Stations <span class="val">24</span></div>
+    <div class="ticker-item"><i class="fas fa-chart-line"></i> Objectif 2030 <span class="val up">250K b/j</span></div>
+    <div class="ticker-item"><i class="fas fa-globe-africa"></i> Filiales <span class="val">7</span></div>
+    <div class="ticker-item"><i class="fas fa-award"></i> Certifications <span class="val">ISO 37001 · EITI</span></div>
+    <div class="ticker-item"><i class="fas fa-briefcase"></i> Expérience <span class="val">20+ ans</span></div>
+  </div>
+</div>
 
 <!-- ═══ LOADING SCREEN ═══ -->
 <div class="page-loader" id="pageLoader" aria-hidden="true">
@@ -209,6 +235,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
   </nav>
 
   <div class="header-actions">
+    <button class="theme-toggle" aria-label="Changer de thème"><span class="theme-icon-dark"><i class="fas fa-sun"></i></span><span class="theme-icon-light"><i class="fas fa-moon"></i></span></button>
     <a href="contact.html" class="header-cta" data-i18n data-en="Request a quote">Demander un devis</a>
     <button class="lang-btn" id="langToggle" aria-label="Changer de langue">
       <i class="fas fa-globe"></i> <span class="lang-label">FR</span>
@@ -2410,6 +2437,42 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
   </div>
 </div>
 
+<!-- ═══ BREADCRUMB BAR ═══ -->
+<nav class="breadcrumb-bar" id="breadcrumbBar" aria-label="Fil d'Ariane">
+  <a href="#hero" class="bc-home"><i class="fas fa-home"></i> Accueil</a>
+  <i class="fas fa-chevron-right bc-sep"></i>
+  <span class="bc-current" id="bcCurrent">—</span>
+  <div class="bc-sections" id="bcDots"></div>
+</nav>
+
+<!-- ═══ SEARCH OVERLAY (Ctrl+K) ═══ -->
+<div class="search-overlay" id="searchOverlay" role="dialog" aria-label="Recherche globale">
+  <div class="search-modal">
+    <div class="search-input-wrap">
+      <i class="fas fa-search"></i>
+      <input class="search-input" id="searchInput" type="text" placeholder="Rechercher sur EnerTchad…" autocomplete="off" spellcheck="false"/>
+      <span class="search-kbd">ESC</span>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+    <div class="search-footer">
+      <span><kbd>↑</kbd><kbd>↓</kbd> naviguer</span>
+      <span><kbd>↵</kbd> ouvrir</span>
+      <span><kbd>Ctrl</kbd>+<kbd>K</kbd> recherche</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ DOT NAV ═══ -->
+<nav class="dot-nav" id="dotNav" aria-label="Navigation sections">
+  <a href="#hero" title="Accueil" class="active"></a>
+  <a href="#nos-univers" title="Nos Univers"></a>
+  <a href="#services-petroliers" title="Services"></a>
+  <a href="#operations" title="Opérations"></a>
+  <a href="#distribution" title="Distribution"></a>
+  <a href="#contact-section" title="Contact"></a>
+</nav>
+
 <script defer src="js/premium.js"></script>
+<script defer src="js/enhance.js"></script>
 </body>
 </html>
