@@ -144,15 +144,15 @@ var ENERTCHAD = {
     activeMegaId = null;
   }
 
-  var megaClickHandled = false;
+  var lastMegaClickTime = 0;
   function handleMegaClick(e, id) {
-    if (megaClickHandled) return;
-    megaClickHandled = true;
+    var now = Date.now();
+    if (now - lastMegaClickTime < 400) return;   /* debounce rapid clicks */
+    lastMegaClickTime = now;
     e.preventDefault();
     e.stopPropagation();
+    e.stopImmediatePropagation();
     if (activeMegaId === id) { closeMega(); } else { openMega(id); }
-    /* Reset flag after current event loop completes */
-    setTimeout(function() { megaClickHandled = false; }, 0);
   }
 
   document.querySelectorAll('[data-mega]').forEach(function(trigger) {
@@ -166,17 +166,11 @@ var ENERTCHAD = {
       triggerLink.style.cursor = 'pointer';
     }
 
-    /* Click handler on the trigger <a> directly */
-    if (triggerLink) {
-      triggerLink.addEventListener('click', function(e) {
-        var navItem = this.closest('[data-mega]');
-        var id = navItem ? navItem.getAttribute('data-mega') : null;
-        if (id) handleMegaClick(e, id);
-      });
-    }
-
-    /* Also handle clicks on the parent div (e.g. chevron icon area) */
+    /* Single click handler on the parent [data-mega] div only.
+       Clicks on child <a> or chevron bubble up here. */
     trigger.addEventListener('click', function(e) {
+      /* Ignore clicks that originated inside the mega-drop panel itself */
+      if (e.target.closest('.mega-drop')) return;
       var id = this.getAttribute('data-mega');
       if (id) handleMegaClick(e, id);
     });
