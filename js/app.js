@@ -145,23 +145,35 @@ var ENERTCHAD = {
   }
 
   document.querySelectorAll('[data-mega]').forEach(function(trigger) {
-    /* Handler on the parent div in capture phase */
+    /* Neutralize the <a> href to prevent navigation — store original for accessibility */
+    var triggerLink = trigger.querySelector(':scope > a[href]');
+    if (triggerLink) {
+      triggerLink.setAttribute('data-href', triggerLink.getAttribute('href'));
+      triggerLink.removeAttribute('href');
+      triggerLink.setAttribute('role', 'button');
+      triggerLink.setAttribute('tabindex', '0');
+      triggerLink.style.cursor = 'pointer';
+    }
+
+    /* Click handler on the trigger <a> directly */
+    if (triggerLink) {
+      triggerLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var navItem = this.closest('[data-mega]');
+        var id = navItem ? navItem.getAttribute('data-mega') : null;
+        if (!id) return;
+        if (activeMegaId === id) { closeMega(); } else { openMega(id); }
+      });
+    }
+
+    /* Also handle clicks on the parent div (e.g. chevron icon area) */
     trigger.addEventListener('click', function(e) {
       e.preventDefault();
       e.stopPropagation();
       var id = this.getAttribute('data-mega');
       if (activeMegaId === id) { closeMega(); } else { openMega(id); }
-    }, true); /* capture phase: fire before child <a> navigates */
-
-    /* Also intercept clicks directly on the child <a> to prevent navigation.
-       Only preventDefault — the parent capture handler manages open/close logic. */
-    var triggerLink = trigger.querySelector(':scope > a[href]');
-    if (triggerLink) {
-      triggerLink.addEventListener('click', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-      });
-    }
+    });
   });
 
   // Close buttons (all)
