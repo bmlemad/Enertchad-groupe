@@ -108,6 +108,13 @@ var ENERTCHAD = {
   var allMegaDrops = document.querySelectorAll('.mega-drop');
   var activeMegaId = null;
 
+  /* Cancel any WAAPI animations that override CSS clip-path */
+  function cancelWAAPI(el) {
+    if (el && el.getAnimations) {
+      el.getAnimations().forEach(function(a) { try { a.cancel(); } catch(e) {} });
+    }
+  }
+
   function openMega(id) {
     closeMega(); // close any open
     var trigger = document.querySelector('[data-mega="' + id + '"]');
@@ -115,6 +122,9 @@ var ENERTCHAD = {
     if (!drop) return;
     if (trigger) trigger.classList.add('open');
     drop.classList.add('active');
+    /* WAAPI transition animations override clip-path — cancel and force */
+    cancelWAAPI(drop);
+    drop.style.clipPath = 'inset(0)';
     if (megaOverlay) megaOverlay.classList.add('active');
     document.querySelectorAll('[data-mega="' + id + '"]').forEach(function(t) { t.setAttribute('aria-expanded','true'); });
     document.body.style.overflow = 'hidden';
@@ -123,7 +133,11 @@ var ENERTCHAD = {
 
   function closeMega() {
     document.querySelectorAll('.nav-item.open').forEach(function(n) { n.classList.remove('open'); });
-    allMegaDrops.forEach(function(d) { d.classList.remove('active'); });
+    allMegaDrops.forEach(function(d) {
+      cancelWAAPI(d);
+      d.classList.remove('active');
+      d.style.clipPath = '';
+    });
     if (megaOverlay) megaOverlay.classList.remove('active');
     document.querySelectorAll('[data-mega]').forEach(function(t) { t.setAttribute('aria-expanded','false'); });
     document.body.style.overflow = '';
