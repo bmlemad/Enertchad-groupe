@@ -502,7 +502,11 @@ window.addEventListener('pagehide',function(){ids.forEach(clearInterval);ids=[]}
     if(el.getAttribute('data-revealed'))return;
     el.setAttribute('data-revealed','1');
     el.classList.add('visible');
-    /* Force inline styles to guarantee visibility (CSS transitions can stall) */
+    /* Cancel WAAPI animations (GSAP creates paused ones that override everything) */
+    if(el.getAnimations){
+      el.getAnimations().forEach(function(a){try{a.cancel()}catch(e){}});
+    }
+    /* Force inline styles to guarantee visibility */
     el.style.opacity='1';
     el.style.transform='translateY(0)';
   }
