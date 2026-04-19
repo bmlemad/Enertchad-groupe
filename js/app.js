@@ -125,6 +125,8 @@ var ENERTCHAD = {
     /* WAAPI transition animations override clip-path — cancel and force */
     cancelWAAPI(drop);
     drop.style.clipPath = 'inset(0)';
+    drop.style.visibility = 'visible';
+    drop.style.pointerEvents = 'auto';
     if (megaOverlay) megaOverlay.classList.add('active');
     document.querySelectorAll('[data-mega="' + id + '"]').forEach(function(t) { t.setAttribute('aria-expanded','true'); });
     document.body.style.overflow = 'hidden';
@@ -137,6 +139,8 @@ var ENERTCHAD = {
       cancelWAAPI(d);
       d.classList.remove('active');
       d.style.clipPath = '';
+      d.style.visibility = '';
+      d.style.pointerEvents = '';
     });
     if (megaOverlay) megaOverlay.classList.remove('active');
     document.querySelectorAll('[data-mega]').forEach(function(t) { t.setAttribute('aria-expanded','false'); });

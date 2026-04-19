@@ -170,12 +170,13 @@ body::before{content:'';position:fixed;inset:0;z-index:9990;pointer-events:none;
   border-bottom:1px solid rgba(200,150,46,0.08);
   box-shadow:0 60px 120px rgba(0,0,0,0.7),0 0 0 1px rgba(255,255,255,0.03);
   clip-path:inset(0 0 100% 0);transition:clip-path 0.5s cubic-bezier(0.16,1,0.3,1);
+  pointer-events:none;visibility:hidden;
   padding:0;overflow:hidden}
 .mega-drop::before{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent 5%,rgba(200,150,46,0.25) 50%,transparent 95%)}
 .mega-drop::after{content:'';position:absolute;top:0;right:0;width:400px;height:400px;
   background:radial-gradient(circle,rgba(200,150,46,0.04) 0%,transparent 70%);pointer-events:none}
 .nav-item.open .mega-drop,
-.mega-drop.active{clip-path:inset(0 0 0 0);transform:none;opacity:1;visibility:visible}
+.mega-drop.active{clip-path:inset(0 0 0 0);transform:none;opacity:1;visibility:visible;pointer-events:auto}
 
 /* ── Header bar inside mega ── */
 .mega-header{display:flex;align-items:center;justify-content:space-between;padding:1rem 2.5rem;
