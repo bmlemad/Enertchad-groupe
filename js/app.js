@@ -44,14 +44,14 @@ var ENERTCHAD = {
   }
 
   /* ─── HEADER SCROLL — Progressive Morphing ─── */
-  const header = document.getElementById('header');
-  const scrollTop = document.getElementById('scrollTop');
+  var header = document.querySelector('.header') || document.getElementById('header');
+  var scrollTop = document.getElementById('scrollTop');
   var lastScrollY = 0;
   var headerHidden = false;
 
   var scrollTicking = false;
   function onScroll() {
-    const y = window.scrollY;
+    var y = window.scrollY;
     if (header) {
       header.classList.toggle('scrolled', y > 40);
       // Auto-hide header on scroll down (past 300px), show on scroll up
@@ -68,7 +68,7 @@ var ENERTCHAD = {
         headerHidden = false;
       }
     }
-    if (scrollTop) scrollTop.classList.toggle('show', y > 400);
+    if (scrollTop) scrollTop.classList.toggle('visible', y > 400);
     lastScrollY = y;
     scrollTicking = false;
   }
@@ -110,7 +110,8 @@ var ENERTCHAD = {
 
   function openMega(id) {
     closeMega(); // close any open
-    var drop = document.getElementById('megaDrop-' + id);
+    var trigger = document.querySelector('[data-mega="' + id + '"]');
+    var drop = trigger ? trigger.querySelector('.mega-drop') : null;
     if (!drop) return;
     drop.classList.add('active');
     if (megaOverlay) megaOverlay.classList.add('active');
@@ -254,7 +255,8 @@ var ENERTCHAD = {
     var originalOpenMega = openMega;
     openMega = function(id) {
       originalOpenMega.call(this, id);
-      var drop = document.getElementById('megaDrop-' + id);
+      var trigger = document.querySelector('[data-mega="' + id + '"]');
+      var drop = trigger ? trigger.querySelector('.mega-drop') : null;
       if (!drop) return;
 
       // Store trigger and focusable elements
@@ -322,8 +324,8 @@ var ENERTCHAD = {
   });
 
   /* ─── MOBILE TOGGLE ─── */
-  const mobileToggle = document.getElementById('mobileToggle');
-  const nav = document.querySelector('.nav');
+  var mobileToggle = document.getElementById('mobileToggle');
+  var nav = document.querySelector('.header-nav') || document.querySelector('.nav');
 
   if (mobileToggle && nav) {
     mobileToggle.addEventListener('click', function () {

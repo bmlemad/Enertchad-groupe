@@ -77,9 +77,14 @@
     .rse-grid > .rse-card,
     .esg-pillars > .esg-pillar,
     .ir-grid > .ir-card { opacity: 1 !important; transform: none !important; animation: none !important; }
+    /* Fix hero carousel slides visibility */
+    .hero-carousel .hc-slide.active { opacity: 1 !important; }
+    /* Fix scroll-to-top button visibility when scrolled */
+    .scroll-top.visible { opacity: 1 !important; pointer-events: auto !important; }
   </style>
   <script defer data-domain="enertchad-groupe.vercel.app" src="https://plausible.io/js/script.js"></script>
   <script defer src="/js/shared.js"></script>
+  <script defer src="/js/app.js"></script>
   <!-- GSAP disabled: conflicts with [data-r] CSS reveal system via WAAPI animations -->
   <!-- <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script> -->
   <!-- <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script> -->
@@ -2664,7 +2669,7 @@
       <p class="section-desc" data-i18n data-en="Monthly updates on group news, operations and career opportunities.">Actualités du groupe, opérations et opportunités de carrière — une fois par mois.</p>
     </div>
     <!-- Newsletter — Créer un formulaire sur https://formspree.io puis remplacer l'ID ci-dessous -->
-    <form class="nl-bar" data-r action="https://formspree.io/f/contact@enertchad.td" method="POST" aria-label="Inscription newsletter">
+    <form class="nl-bar" data-r action="https://formspree.io/f/xanwkpqz" method="POST" aria-label="Inscription newsletter">
       <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off"/>
       <div class="newsletter-segments" style="display:flex;flex-wrap:wrap;gap:0.5rem;justify-content:center;margin-bottom:1.25rem">
           <button type="button" class="segment-btn active" data-seg="all" aria-label="Toutes les catégories" style="background:var(--gold);color:var(--bg);border:1px solid var(--gold);border-radius:20px;padding:0.4rem 1rem;font-size:0.78rem;cursor:pointer;transition:all 0.2s;font-family:var(--font-b)">Toutes</button>
