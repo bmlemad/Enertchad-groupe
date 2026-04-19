@@ -314,7 +314,8 @@ var ENERTCHAD = window.ENERTCHAD || {
     }
   });
 
-  /* IO reveals elements as they scroll in */
+  /* IO reveals elements as they scroll in — generous margin on mobile */
+  var isMobile = window.innerWidth <= 768;
   var obs = new IntersectionObserver(function(entries){
     entries.forEach(function(e){
       if(e.isIntersecting){
@@ -322,7 +323,7 @@ var ENERTCHAD = window.ENERTCHAD || {
         obs.unobserve(e.target);
       }
     });
-  }, {threshold: 0.08, rootMargin: '0px 0px -40px 0px'});
+  }, {threshold: 0.05, rootMargin: isMobile ? '0px 0px 200px 0px' : '0px 0px -40px 0px'});
 
   els.forEach(function(el){
     if(el.classList.contains('will-reveal')){
@@ -348,12 +349,15 @@ var ENERTCHAD = window.ENERTCHAD || {
     if(!ticking){ ticking=true; requestAnimationFrame(function(){ checkScroll(); ticking=false; }); }
   }, {passive:true});
 
-  /* Safety fallback: reveal everything after 4s */
+  /* Initial check — catch elements already near viewport */
+  requestAnimationFrame(checkScroll);
+
+  /* Safety fallback: reveal everything after 2s on mobile, 4s on desktop */
   setTimeout(function(){
     document.querySelectorAll('[data-r].will-reveal:not(.visible)').forEach(function(el){
       el.classList.add('visible');
     });
-  }, 4000);
+  }, isMobile ? 2000 : 4000);
 })();
 
 /* ─────────────────────────────────────────────────────────────────

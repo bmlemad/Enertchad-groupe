@@ -111,15 +111,33 @@
       /* Cookie banner mobile */
       .cookie-banner { margin: 0 0.5rem 70px; border-radius: 16px; }
     }
+    /* Mobile reveal: faster/instant transitions to avoid blank content */
+    @media (max-width: 768px) {
+      [data-r].will-reveal { transition-duration: 0.3s !important; transition-delay: 0s !important; }
+      .filiale-card, .vc-card, .section-header { opacity: 1 !important; transform: none !important; }
+      /* Smoother mobile nav drawer */
+      .mobile-nav { transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease; }
+      /* Better text contrast & readability */
+      .section-desc, .sdesc { font-size: 0.95rem; line-height: 1.65; }
+      /* Horizontal scroll containment */
+      body { overflow-x: hidden; }
+      /* Better CTA button sizing */
+      .btn, .cta-btn, .hero-btn { min-height: 48px; padding: 0.875rem 1.5rem; font-size: 0.95rem; }
+      /* Footer mobile spacing */
+      .footer { padding: 2rem 1rem !important; }
+      .footer-grid { gap: 1.5rem; }
+    }
     @media (max-width: 480px) {
       .hero-title { font-size: clamp(1.75rem, 9vw, 2.5rem) !important; }
       .hero-kpis { flex-wrap: wrap; }
       .hero-kpis .hk-item { flex: 0 0 calc(50% - 0.5rem); }
+      /* Stack filiale cards vertically */
+      .filiales-grid { grid-template-columns: 1fr !important; gap: 1rem; }
     }
   </style>
   <script defer data-domain="enertchad-groupe.vercel.app" src="https://plausible.io/js/script.js"></script>
-  <script defer src="/js/shared.js"></script>
-  <script defer src="/js/app.js?v=31"></script>
+  <script defer src="/js/shared.js?v=31"></script>
+  <script defer src="/js/app.js?v=32"></script>
   <!-- GSAP disabled: conflicts with [data-r] CSS reveal system via WAAPI animations -->
   <!-- <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script> -->
   <!-- <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script> -->
