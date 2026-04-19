@@ -411,7 +411,76 @@
     }
   </style>
 </head>
-<body>
+<body class="preloader-active">
+<!-- ═══ PRELOADER ═══ -->
+<div aria-label="Chargement du site EnerTchad" aria-live="polite" id="preloader" role="status">
+  <div aria-hidden="true" class="preloader-particles" id="preloaderParticles"></div>
+  <div class="preloader-stage">
+    <div aria-hidden="true" class="preloader-halo"></div>
+    <div aria-hidden="true" class="preloader-dome"></div>
+    <div aria-hidden="true" class="preloader-ring"></div>
+    <img alt="EnerTchad" class="preloader-logo" decoding="async" fetchpriority="high" height="380" src="/logo.svg" width="380"/>
+    <div aria-hidden="true" class="preloader-sheen"></div>
+  </div>
+  <div aria-label="Accès aux Énergies · Unité · Innovation · Durabilité" class="preloader-slogan">
+    <span class="pw">Accès aux Énergies</span>
+    <span aria-hidden="true" class="pdot"></span>
+    <span class="pw">Unité</span>
+    <span aria-hidden="true" class="pdot"></span>
+    <span class="pw">Innovation</span>
+    <span aria-hidden="true" class="pdot"></span>
+    <span class="pw">Durabilité</span>
+  </div>
+  <div aria-hidden="true" class="preloader-progress">
+    <div class="preloader-progress-fill" id="preloaderFill"></div>
+  </div>
+  <div aria-hidden="true" class="preloader-pct" id="preloaderPct">0 %</div>
+</div>
+<script>
+(function(){
+  var pre=document.getElementById('preloader');
+  if(!pre)return;
+  var fill=document.getElementById('preloaderFill');
+  var pct=document.getElementById('preloaderPct');
+  var particles=document.getElementById('preloaderParticles');
+  var progress=0;var loaded=false;var start=Date.now();
+  /* Particles */
+  var isSlow=navigator.connection&&(navigator.connection.effectiveType==='2g'||navigator.connection.effectiveType==='slow-2g'||navigator.connection.saveData);
+  if(!isSlow&&particles){
+    var count=window.innerWidth<768?8:18;
+    for(var i=0;i<count;i++){
+      var p=document.createElement('div');p.className='preloader-particle';
+      var sz=Math.random()*4+2;
+      p.style.cssText='width:'+sz+'px;height:'+sz+'px;left:'+Math.random()*100+'%;animation-duration:'+(Math.random()*5+4)+'s;animation-delay:'+(Math.random()*4)+'s;';
+      particles.appendChild(p);
+    }
+  }
+  /* Progress */
+  var iv=setInterval(function(){
+    if(progress<30)progress+=Math.random()*6+3;
+    else if(progress<70)progress+=Math.random()*3+1;
+    else if(progress<90)progress+=Math.random()*2+0.5;
+    else if(!loaded)progress+=0.3;
+    else progress=100;
+    progress=Math.min(progress,loaded?100:92);
+    if(fill)fill.style.width=progress+'%';
+    if(pct)pct.textContent=Math.round(progress)+' %';
+    if(progress>=100)clearInterval(iv);
+  },80);
+  function hide(){
+    if(pre.classList.contains('is-leaving'))return;
+    loaded=true;
+    var minTime=window.innerWidth<768?800:1200;
+    var elapsed=Date.now()-start;
+    setTimeout(function(){
+      pre.classList.add('is-leaving');
+      setTimeout(function(){pre.remove();document.body.classList.remove('preloader-active')},950);
+    },Math.max(0,minTime-elapsed+200));
+  }
+  window.addEventListener('load',hide);
+  setTimeout(hide,5000);
+})();
+</script>
 <a href="#main" class="skip-link" data-i18n data-en="Skip to content">Aller au contenu</a>
 
 <!-- ═══ LOADING SCREEN ═══ -->
