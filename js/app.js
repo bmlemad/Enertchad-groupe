@@ -144,6 +144,17 @@ var ENERTCHAD = {
     activeMegaId = null;
   }
 
+  var megaClickHandled = false;
+  function handleMegaClick(e, id) {
+    if (megaClickHandled) return;
+    megaClickHandled = true;
+    e.preventDefault();
+    e.stopPropagation();
+    if (activeMegaId === id) { closeMega(); } else { openMega(id); }
+    /* Reset flag after current event loop completes */
+    setTimeout(function() { megaClickHandled = false; }, 0);
+  }
+
   document.querySelectorAll('[data-mega]').forEach(function(trigger) {
     /* Neutralize the <a> href to prevent navigation — store original for accessibility */
     var triggerLink = trigger.querySelector(':scope > a[href]');
@@ -158,21 +169,16 @@ var ENERTCHAD = {
     /* Click handler on the trigger <a> directly */
     if (triggerLink) {
       triggerLink.addEventListener('click', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
         var navItem = this.closest('[data-mega]');
         var id = navItem ? navItem.getAttribute('data-mega') : null;
-        if (!id) return;
-        if (activeMegaId === id) { closeMega(); } else { openMega(id); }
+        if (id) handleMegaClick(e, id);
       });
     }
 
     /* Also handle clicks on the parent div (e.g. chevron icon area) */
     trigger.addEventListener('click', function(e) {
-      e.preventDefault();
-      e.stopPropagation();
       var id = this.getAttribute('data-mega');
-      if (activeMegaId === id) { closeMega(); } else { openMega(id); }
+      if (id) handleMegaClick(e, id);
     });
   });
 
