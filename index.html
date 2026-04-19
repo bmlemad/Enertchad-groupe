@@ -67,12 +67,8 @@
   <link as="style" href="/css/main.v1.css" rel="preload"/>
   <link href="/css/main.v1.css" rel="stylesheet"/>
   <style>
-    /* Override: ensure all [data-r] sections visible immediately.
-       shared.js adds scroll-triggered fade-in via JS classList + inline styles. */
+    /* Force all [data-r] elements visible — overrides main.v1.css opacity:0 rule */
     [data-r] { opacity: 1 !important; transform: none !important; }
-    [data-r].will-reveal { opacity: 0 !important; transform: translateY(30px) !important;
-      transition: opacity 0.7s cubic-bezier(0.22,0.61,0.36,1), transform 0.7s cubic-bezier(0.22,0.61,0.36,1); }
-    [data-r].will-reveal.visible { opacity: 1 !important; transform: translateY(0) !important; }
   </style>
   <script defer data-domain="enertchad-groupe.vercel.app" src="https://plausible.io/js/script.js"></script>
   <script defer src="/js/shared.js"></script>
