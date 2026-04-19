@@ -81,6 +81,41 @@
     .hero-carousel .hc-slide.active { opacity: 1 !important; }
     /* Fix scroll-to-top button visibility when scrolled */
     .scroll-top.visible { opacity: 1 !important; pointer-events: auto !important; }
+
+    /* ─── Mobile Modernization Enhancements ─── */
+    @media (max-width: 768px) {
+      /* Smoother mobile header */
+      .header { padding: 0 1rem; backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+      /* Better mobile hamburger touch target */
+      .mobile-toggle { min-width: 44px; min-height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 10px; transition: background 0.2s ease; }
+      .mobile-toggle:active { background: rgba(200,150,46,0.15); }
+      .mobile-toggle.active i { transition: transform 0.3s ease; }
+      /* Hero mobile optimization */
+      .hero { min-height: 85svh; }
+      .hero-title { font-size: clamp(2rem, 8vw, 3.2rem) !important; line-height: 1.1; }
+      .hero-sub { font-size: clamp(0.85rem, 3vw, 1rem) !important; padding: 0 0.5rem; }
+      .hero-kpis { gap: 0.75rem; padding: 0 0.5rem; }
+      .hero-kpis .hk-item { padding: 0.5rem; }
+      /* Section spacing on mobile */
+      section { padding-top: 3rem !important; padding-bottom: 3rem !important; }
+      .section-title { font-size: clamp(1.5rem, 6vw, 2.2rem) !important; }
+      /* Card grid mobile: single column stacked */
+      .kpi-grid, .st-grid, .et-pillars, .rse-grid, .esg-pillars { gap: 0.75rem; }
+      /* Better touch feedback on cards */
+      .kpi-card:active, .st-card:active, .vc-card:active { transform: scale(0.98) !important; transition: transform 0.15s ease; }
+      /* Mobile bottom nav active state */
+      .mbn-item.active { color: var(--gold); }
+      .mbn-item.active i { transform: translateY(-2px); }
+      /* Scroll-to-top positioning above bottom nav */
+      .scroll-top { bottom: 80px !important; right: 16px !important; }
+      /* Cookie banner mobile */
+      .cookie-banner { margin: 0 0.5rem 70px; border-radius: 16px; }
+    }
+    @media (max-width: 480px) {
+      .hero-title { font-size: clamp(1.75rem, 9vw, 2.5rem) !important; }
+      .hero-kpis { flex-wrap: wrap; }
+      .hero-kpis .hk-item { flex: 0 0 calc(50% - 0.5rem); }
+    }
   </style>
   <script defer data-domain="enertchad-groupe.vercel.app" src="https://plausible.io/js/script.js"></script>
   <script defer src="/js/shared.js"></script>

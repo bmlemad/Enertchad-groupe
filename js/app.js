@@ -340,57 +340,139 @@ var ENERTCHAD = {
     }, TIMING.RESIZE_DEBOUNCE);
   });
 
-  /* ─── MOBILE TOGGLE ─── */
+  /* ─── MOBILE NAV — Full-screen drawer with accordion sections ─── */
   var mobileToggle = document.getElementById('mobileToggle');
-  var nav = document.querySelector('.header-nav') || document.querySelector('.nav');
+  var mobileNav = document.getElementById('mobileNav');
+  var mobileClose = document.getElementById('mobileClose');
+  var mnSearchBtn = document.getElementById('mnSearchBtn');
 
-  if (mobileToggle && nav) {
+  function openMobileNav() {
+    if (!mobileNav) return;
+    mobileNav.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    if (mobileToggle) {
+      mobileToggle.classList.add('active');
+      mobileToggle.setAttribute('aria-expanded', 'true');
+      /* Switch icon to X */
+      var icon = mobileToggle.querySelector('i');
+      if (icon) { icon.className = 'fas fa-times'; }
+    }
+  }
+
+  function closeMobileNav() {
+    if (!mobileNav) return;
+    mobileNav.classList.remove('open');
+    document.body.style.overflow = '';
+    if (mobileToggle) {
+      mobileToggle.classList.remove('active');
+      mobileToggle.setAttribute('aria-expanded', 'false');
+      var icon = mobileToggle.querySelector('i');
+      if (icon) { icon.className = 'fas fa-bars'; }
+    }
+    /* Collapse all open sections */
+    mobileNav.querySelectorAll('.mn-section.open').forEach(function(s) {
+      s.classList.remove('open');
+      var hdr = s.querySelector('.mn-section-header');
+      if (hdr) hdr.setAttribute('aria-expanded', 'false');
+    });
+  }
+
+  if (mobileToggle) {
     mobileToggle.addEventListener('click', function () {
-      var isOpen = this.classList.toggle('active');
-      this.setAttribute('aria-expanded', isOpen);
-      nav.style.display = isOpen ? 'flex' : '';
-      // On mobile, show nav as full-screen overlay
-      if (isOpen) {
-        nav.style.flexDirection = 'column';
-        nav.style.position = 'fixed';
-        nav.style.top = 'var(--header-h, 72px)';
-        nav.style.left = '0';
-        nav.style.right = '0';
-        nav.style.bottom = '0';
-        nav.style.background = 'rgba(8,14,26,0.98)';
-        nav.style.backdropFilter = 'blur(30px)';
-        nav.style.webkitBackdropFilter = 'blur(30px)';
-        nav.style.padding = '2rem 1.5rem';
-        nav.style.zIndex = '997';
-        nav.style.gap = '0.25rem';
-        nav.style.alignItems = 'stretch';
-        nav.style.border = 'none';
-        nav.style.borderRadius = '0';
-        document.body.style.overflow = 'hidden';
-        // Stagger animate nav links
-        var links = nav.querySelectorAll('.nav-link');
-        links.forEach(function (link, i) {
-          link.style.opacity = '0';
-          link.style.transform = 'translateX(-20px)';
-          link.style.transition = 'none';
-          setTimeout(function () {
-            link.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
-            link.style.opacity = '1';
-            link.style.transform = 'translateX(0)';
-            link.style.fontSize = '1.1rem';
-            link.style.padding = '0.75rem 1rem';
-            link.style.borderRadius = '10px';
-          }, 50 + i * 60);
-        });
+      if (mobileNav && mobileNav.classList.contains('open')) {
+        closeMobileNav();
       } else {
-        nav.removeAttribute('style');
-        nav.querySelectorAll('.nav-link').forEach(function (link) {
-          link.removeAttribute('style');
-        });
-        document.body.style.overflow = '';
+        openMobileNav();
       }
     });
   }
+
+  if (mobileClose) {
+    mobileClose.addEventListener('click', closeMobileNav);
+  }
+
+  /* Accordion sections */
+  if (mobileNav) {
+    mobileNav.querySelectorAll('.mn-section-header').forEach(function(hdr) {
+      hdr.addEventListener('click', function () {
+        var section = this.closest('.mn-section');
+        var wasOpen = section.classList.contains('open');
+        /* Close all other sections */
+        mobileNav.querySelectorAll('.mn-section.open').forEach(function(s) {
+          s.classList.remove('open');
+          var h = s.querySelector('.mn-section-header');
+          if (h) h.setAttribute('aria-expanded', 'false');
+        });
+        /* Toggle this one */
+        if (!wasOpen) {
+          section.classList.add('open');
+          this.setAttribute('aria-expanded', 'true');
+        }
+      });
+      /* Keyboard support */
+      hdr.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          this.click();
+        }
+      });
+    });
+
+    /* Close nav when a link is clicked (for same-page anchors) */
+    mobileNav.querySelectorAll('.mn-link').forEach(function(link) {
+      link.addEventListener('click', function() {
+        closeMobileNav();
+      });
+    });
+  }
+
+  /* Search shortcut in mobile nav */
+  if (mnSearchBtn) {
+    mnSearchBtn.addEventListener('click', function() {
+      closeMobileNav();
+      var overlay = document.getElementById('searchOverlay');
+      var searchInput = document.getElementById('searchInput');
+      if (overlay) {
+        overlay.classList.add('active');
+        if (searchInput) searchInput.focus();
+      }
+    });
+  }
+
+  /* ─── MOBILE BOTTOM NAV — Active state on scroll ─── */
+  (function() {
+    var bottomNav = document.querySelector('.mobile-bottom-nav');
+    if (!bottomNav) return;
+    var items = bottomNav.querySelectorAll('.mbn-item[data-section]');
+    if (!items.length) return;
+
+    function updateBottomNav() {
+      var y = window.scrollY;
+      var wH = window.innerHeight;
+      var active = null;
+      items.forEach(function(item) {
+        var sectionId = item.getAttribute('data-section');
+        var section = document.getElementById(sectionId);
+        if (section) {
+          var rect = section.getBoundingClientRect();
+          if (rect.top < wH * 0.5 && rect.bottom > 0) {
+            active = item;
+          }
+        }
+      });
+      items.forEach(function(item) {
+        item.classList.toggle('active', item === active);
+      });
+    }
+
+    var bnTicking = false;
+    window.addEventListener('scroll', function() {
+      if (!bnTicking) {
+        requestAnimationFrame(function() { updateBottomNav(); bnTicking = false; });
+        bnTicking = true;
+      }
+    }, { passive: true });
+  })();
 
   /* ─── GSAP SCROLL ANIMATIONS ─── */
   function initGSAP() {
@@ -693,9 +775,7 @@ var ENERTCHAD = {
         e.preventDefault();
         closeMega();
         // Close mobile nav
-        if (mobileToggle && mobileToggle.classList.contains('active') && mobileToggle.click) {
-          mobileToggle.click();
-        }
+        closeMobileNav();
         var offset = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-h') || '72', 10);
         var top = target.getBoundingClientRect().top + window.scrollY - offset;
         window.scrollTo({ top: top, behavior: 'smooth' });
