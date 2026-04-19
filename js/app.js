@@ -153,16 +153,13 @@ var ENERTCHAD = {
       if (activeMegaId === id) { closeMega(); } else { openMega(id); }
     }, true); /* capture phase: fire before child <a> navigates */
 
-    /* Also intercept clicks directly on the child <a> to prevent navigation */
+    /* Also intercept clicks directly on the child <a> to prevent navigation.
+       Only preventDefault — the parent capture handler manages open/close logic. */
     var triggerLink = trigger.querySelector(':scope > a[href]');
     if (triggerLink) {
       triggerLink.addEventListener('click', function(e) {
         e.preventDefault();
         e.stopPropagation();
-        var navItem = this.closest('[data-mega]');
-        var id = navItem ? navItem.getAttribute('data-mega') : null;
-        if (!id) return;
-        if (activeMegaId === id) { closeMega(); } else { openMega(id); }
       });
     }
   });
