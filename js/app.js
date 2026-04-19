@@ -147,9 +147,10 @@ var ENERTCHAD = {
   document.querySelectorAll('[data-mega]').forEach(function(trigger) {
     trigger.addEventListener('click', function(e) {
       e.preventDefault();
+      e.stopPropagation();
       var id = this.getAttribute('data-mega');
       if (activeMegaId === id) { closeMega(); } else { openMega(id); }
-    });
+    }, true); /* capture phase: fire before child <a> navigates */
   });
 
   // Close buttons (all)
