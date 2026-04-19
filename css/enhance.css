@@ -14,6 +14,10 @@
 .ticker-item .down{color:#EF4444}
 @keyframes tickScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
+/* ═══ HEADER OFFSET FOR TICKER ═══ */
+.header{top:37px!important}
+.header.scrolled{top:0!important}
+
 /* ═══ SCROLL PROGRESS BAR ═══ */
 .scroll-prog{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--gold,#D9A84F),var(--amont,#2E86DE),var(--gold,#D9A84F));z-index:10001;width:0;pointer-events:none;box-shadow:0 0 10px rgba(217,168,79,0.4)}
 
