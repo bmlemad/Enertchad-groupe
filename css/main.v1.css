@@ -838,18 +838,8 @@ html.light .breadcrumb-bar{background:rgba(245,245,240,0.95);border-bottom-color
 .bc-sep{color:var(--text-muted);font-size:0.6rem;flex-shrink:0}
 .bc-current{color:var(--white);font-weight:600;text-overflow:ellipsis;overflow:hidden}
 html.light .bc-current{color:var(--white)}
-.bc-sections{display:flex;align-items:center;gap:0.25rem;margin-left:auto;flex-shrink:0}
-.bc-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.15);padding:0;min-width:44px;min-height:44px;display:flex;align-items:center;justify-content:center;background-clip:content-box;transition:all 0.3s ease;cursor:pointer;position:relative}
-.bc-dot.active{background:var(--gold);box-shadow:0 0 6px rgba(200,150,46,0.4);transform:scale(1.3)}
-.bc-dot:hover{background:rgba(255,255,255,0.35)}
-html.light .bc-dot{background:rgba(0,0,0,0.1)}
-html.light .bc-dot.active{background:var(--gold)}
-html.light .bc-dot:hover{background:rgba(0,0,0,0.25)}
-/* Tooltip on dot hover */
-.bc-dot::after{content:attr(data-label);position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);
-  background:rgba(8,14,26,0.95);color:var(--white);padding:3px 8px;border-radius:4px;font-size:0.62rem;
-  white-space:nowrap;pointer-events:none;opacity:0;transition:opacity 0.2s ease}
-.bc-dot:hover::after{opacity:1}
+.bc-sections{display:none}
+.bc-dot{display:none}
 
 /* ═══ GLOBAL SEARCH OVERLAY (Cmd+K) ═══ */
 .search-overlay{position:fixed;inset:0;z-index:10001;background:rgba(0,0,0,0.6);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
