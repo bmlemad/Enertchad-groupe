@@ -63,7 +63,9 @@ window.addEventListener('pagehide',function(){ids.forEach(clearInterval);ids=[]}
 })();
 
 /* ═══ HERO REVEAL + TITLE ANIMATION ═══ */
+/* (GSAP disabled — [data-r] CSS reveal handles visibility via shared.js) */
 (function(){
+  if(typeof gsap==='undefined')return;
   var hero=document.querySelector('.hero');
   if(!hero)return;
   var tlHero=gsap.timeline({paused:true});
@@ -81,6 +83,7 @@ window.addEventListener('pagehide',function(){ids.forEach(clearInterval);ids=[]}
 
 /* ═══ SECTION REVEALS + COUNTERS + FADEIN ON SCROLL ═══ */
 (function(){
+  if(typeof gsap==='undefined')return;
   var sections=document.querySelectorAll('section');
   var tlArray=[];
   var counts={};
@@ -372,7 +375,7 @@ window.addEventListener('pagehide',function(){ids.forEach(clearInterval);ids=[]}
 
 /* ═══ GSAP SCROLL TRIGGER ANIMATIONS ═══ */
 (function(){
-  if(typeof ScrollTrigger!=='undefined'){
+  if(typeof ScrollTrigger!=='undefined' && typeof gsap!=='undefined'){
     gsap.registerPlugin(ScrollTrigger);
 
     document.querySelectorAll('[data-scroll-trigger]').forEach(function(el){
