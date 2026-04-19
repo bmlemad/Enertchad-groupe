@@ -297,17 +297,61 @@ var ENERTCHAD = window.ENERTCHAD || {
   if(window.matchMedia('(prefers-reduced-motion:reduce)').matches) return;
   var els = document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale,[data-r]');
   if(!els.length) return;
+  function forceReveal(el){
+    el.classList.add('visible');
+    /* Cancel GSAP WAAPI animations that override CSS/inline styles */
+    if(el.getAnimations){
+      el.getAnimations().forEach(function(a){try{a.cancel()}catch(e){}});
+    }
+    el.style.opacity='1';
+    el.style.transform='translateY(0)';
+  }
+
   var obs = new IntersectionObserver(function(entries){
     entries.forEach(function(e){
       if(e.isIntersecting){
-        e.target.classList.add('visible');
+        forceReveal(e.target);
         obs.unobserve(e.target);
       }
     });
-  }, {threshold: 0.15, rootMargin: '0px 0px -60px 0px'});
+  }, {threshold: 0.08, rootMargin: '0px 0px -40px 0px'});
+
+  /* Immediately reveal above-fold elements */
+  var wH = window.innerHeight || document.documentElement.clientHeight;
   els.forEach(function(el){
-    obs.observe(el);
+    var r = el.getBoundingClientRect();
+    if(r.top < wH + 60){
+      forceReveal(el);
+    } else {
+      obs.observe(el);
+    }
   });
+
+  /* Scroll listener as backup (IO can miss elements) */
+  var ticking = false;
+  function checkScroll(){
+    var wH2 = window.innerHeight || document.documentElement.clientHeight;
+    els.forEach(function(el){
+      if(!el.style.opacity || el.style.opacity !== '1'){
+        var r = el.getBoundingClientRect();
+        if(r.top < wH2 + 80 && r.bottom > -80){
+          forceReveal(el);
+        }
+      }
+    });
+  }
+  window.addEventListener('scroll', function(){
+    if(!ticking){ ticking=true; requestAnimationFrame(function(){ checkScroll(); ticking=false; }); }
+  }, {passive:true});
+  document.addEventListener('scroll', function(){
+    if(!ticking){ ticking=true; requestAnimationFrame(function(){ checkScroll(); ticking=false; }); }
+  }, {passive:true});
+
+  /* Repeated fallback to catch GSAP WAAPI created by later scripts */
+  setTimeout(function(){ els.forEach(forceReveal); }, 300);
+  setTimeout(function(){ els.forEach(forceReveal); }, 800);
+  setTimeout(function(){ els.forEach(forceReveal); }, 1500);
+  setTimeout(function(){ els.forEach(forceReveal); }, 3000);
 })();
 
 /* ─────────────────────────────────────────────────────────────────
