@@ -679,7 +679,7 @@ if(conn&&(conn.effectiveType==='2g'||conn.effectiveType==='slow-2g'||conn.saveDa
       <i aria-hidden="true" class="fas fa-search">
       </i>
      </button>
-     <button aria-controls="mobileNav" aria-expanded="false" aria-label="Ouvrir le menu" class="mob-toggle" id="mobOpen">
+     <button aria-controls="mobileNav" aria-expanded="false" aria-label="Ouvrir le menu" class="mob-tog" id="mobOpen">
       <i aria-hidden="true" class="fas fa-bars">
       </i>
      </button>
@@ -2694,8 +2694,32 @@ if('serviceWorker' in navigator){
   input.addEventListener('input',function(){render(this.value)});
   overlay.addEventListener('click',function(e){if(e.target===overlay)close()});
   /* Add search button in header nav */
-  var nav=document.querySelector('.nav');
+  var nav=document.querySelector('.mega-nav');
   if(nav){var btn=document.createElement('button');btn.className='nav-link';btn.innerHTML='<i class="fas fa-search"></i> <span style="font-size:0.6rem;opacity:0.5">Ctrl+K</span>';btn.style.cssText='cursor:pointer';btn.addEventListener('click',open);nav.insertBefore(btn,nav.querySelector('.nav-cta'))}
+})();
+
+/* ═══ MOBILE NAV ═══ */
+(function(){
+  var mn=document.getElementById('mobileNav');
+  var mobOpen=document.getElementById('mobOpen');
+  var mobClose=document.getElementById('mobClose');
+  if(!mn)return;
+  function openMobile(){
+    mn.classList.add('open');mn.setAttribute('aria-hidden','false');
+    if(mobOpen)mobOpen.setAttribute('aria-expanded','true');
+    document.body.style.overflow='hidden';
+    if(mobClose)mobClose.focus();
+  }
+  function closeMobile(){
+    mn.classList.remove('open');mn.setAttribute('aria-hidden','true');
+    document.body.style.overflow='';
+    if(mobOpen)mobOpen.setAttribute('aria-expanded','false');
+  }
+  if(mobOpen)mobOpen.addEventListener('click',openMobile);
+  if(mobClose)mobClose.addEventListener('click',closeMobile);
+  mn.querySelectorAll('a[href]').forEach(function(a){a.addEventListener('click',closeMobile)});
+  mn.addEventListener('keydown',function(e){if(e.key==='Escape')closeMobile()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&mn.classList.contains('open'))closeMobile()});
 })();
 
 /* ═══ PREMIUM: Scroll-reveal engine ═══ */
