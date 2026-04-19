@@ -497,6 +497,17 @@ window.addEventListener('pagehide',function(){ids.forEach(clearInterval);ids=[]}
 (function(){
   var els=document.querySelectorAll('[data-r]');
   if(!els.length)return;
+
+  /* Immediately reveal elements already in (or above) the viewport */
+  var wH=window.innerHeight||document.documentElement.clientHeight;
+  els.forEach(function(el){
+    var r=el.getBoundingClientRect();
+    if(r.top<wH+50){
+      el.classList.add('visible');
+    }
+  });
+
+  /* Observer for the rest as user scrolls */
   var obs=new IntersectionObserver(function(entries){
     entries.forEach(function(e){
       if(e.isIntersecting){
@@ -504,8 +515,20 @@ window.addEventListener('pagehide',function(){ids.forEach(clearInterval);ids=[]}
         obs.unobserve(e.target);
       }
     });
-  },{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
-  els.forEach(function(el){obs.observe(el)});
+  },{threshold:0.05,rootMargin:'100px 0px -20px 0px'});
+  els.forEach(function(el){
+    if(!el.classList.contains('visible')) obs.observe(el);
+  });
+
+  /* Safety net: after 1.5s force-reveal anything still hidden in viewport */
+  setTimeout(function(){
+    els.forEach(function(el){
+      if(!el.classList.contains('visible')){
+        var r=el.getBoundingClientRect();
+        if(r.top<wH+100) el.classList.add('visible');
+      }
+    });
+  },1500);
 })();
 
 /* ═══ KEYBOARD SHORTCUTS ═══ */
