@@ -498,37 +498,54 @@ window.addEventListener('pagehide',function(){ids.forEach(clearInterval);ids=[]}
   var els=document.querySelectorAll('[data-r]');
   if(!els.length)return;
 
-  /* Immediately reveal elements already in (or above) the viewport */
-  var wH=window.innerHeight||document.documentElement.clientHeight;
-  els.forEach(function(el){
-    var r=el.getBoundingClientRect();
-    if(r.top<wH+50){
-      el.classList.add('visible');
-    }
-  });
-
-  /* Observer for the rest as user scrolls */
-  var obs=new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(e.isIntersecting){
-        e.target.classList.add('visible');
-        obs.unobserve(e.target);
-      }
-    });
-  },{threshold:0.05,rootMargin:'100px 0px -20px 0px'});
-  els.forEach(function(el){
-    if(!el.classList.contains('visible')) obs.observe(el);
-  });
-
-  /* Safety net: after 1.5s force-reveal anything still hidden in viewport */
-  setTimeout(function(){
+  function revealVisible(){
+    var wH=window.innerHeight||document.documentElement.clientHeight;
+    var found=false;
     els.forEach(function(el){
       if(!el.classList.contains('visible')){
         var r=el.getBoundingClientRect();
-        if(r.top<wH+100) el.classList.add('visible');
+        if(r.top<wH+60 && r.bottom>-60){
+          el.classList.add('visible');
+          found=true;
+        }
       }
     });
-  },1500);
+    return found;
+  }
+
+  /* Reveal on load */
+  revealVisible();
+
+  /* Reveal on scroll with throttle */
+  var ticking=false;
+  window.addEventListener('scroll',function(){
+    if(!ticking){
+      ticking=true;
+      requestAnimationFrame(function(){
+        revealVisible();
+        ticking=false;
+      });
+    }
+  },{passive:true});
+
+  /* Also try IntersectionObserver as backup */
+  if('IntersectionObserver' in window){
+    var obs=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          e.target.classList.add('visible');
+          obs.unobserve(e.target);
+        }
+      });
+    },{threshold:0.01,rootMargin:'120px 0px 0px 0px'});
+    els.forEach(function(el){
+      if(!el.classList.contains('visible')) obs.observe(el);
+    });
+  }
+
+  /* Safety net */
+  setTimeout(revealVisible,800);
+  setTimeout(revealVisible,2000);
 })();
 
 /* ═══ KEYBOARD SHORTCUTS ═══ */
