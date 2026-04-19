@@ -493,6 +493,21 @@ window.addEventListener('pagehide',function(){ids.forEach(clearInterval);ids=[]}
   revealElements.forEach(function(el){revealObs.observe(el)});
 })();
 
+/* ═══ SCROLL REVEAL FOR [data-r] ELEMENTS ═══ */
+(function(){
+  var els=document.querySelectorAll('[data-r]');
+  if(!els.length)return;
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.classList.add('visible');
+        obs.unobserve(e.target);
+      }
+    });
+  },{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+  els.forEach(function(el){obs.observe(el)});
+})();
+
 /* ═══ KEYBOARD SHORTCUTS ═══ */
 (function(){
   document.addEventListener('keydown',function(e){
