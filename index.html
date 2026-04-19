@@ -69,6 +69,14 @@
   <style>
     /* Force all reveal/[data-r] elements visible — overrides main.v1.css opacity:0 rules */
     [data-r], .reveal, .reveal-left, .reveal-right, .reveal-scale { opacity: 1 !important; transform: none !important; }
+    /* Force grid child cards visible — overrides fadeUp animation with opacity:0 in main.v1.css */
+    .kpi-grid > .kpi-card,
+    .st-grid > .st-card,
+    .et-pillars > .et-pillar,
+    .media-grid > .media-card,
+    .rse-grid > .rse-card,
+    .esg-pillars > .esg-pillar,
+    .ir-grid > .ir-card { opacity: 1 !important; transform: none !important; animation: none !important; }
   </style>
   <script defer data-domain="enertchad-groupe.vercel.app" src="https://plausible.io/js/script.js"></script>
   <script defer src="/js/shared.js"></script>
