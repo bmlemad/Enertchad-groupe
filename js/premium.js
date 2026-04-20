@@ -128,7 +128,7 @@
       { title: 'Intermédiaire — Pipeline & Raffinage', url: 'operations/intermediaire.html', icon: 'fa-industry', cat: 'Société Pétrolière', desc: 'Transport, raffinage, logistique' },
       { title: 'Aval — Distribution & Retail', url: 'operations/aval.html', icon: 'fa-gas-pump', cat: 'Société Pétrolière', desc: 'Stations-service, distribution, négoce' },
       { title: 'Technologies', url: 'operations/technologies.html', icon: 'fa-flask', cat: 'Innovation', desc: 'R&D, brevets, technologies propriétaires' },
-      { title: 'Énergies', url: 'operations/energies.html', icon: 'fa-bolt', cat: 'Innovation', desc: 'Transition énergétique, solaire, biogaz' },
+      { title: 'EnerTchad GreenTech', url: 'operations/greentech.html', icon: 'fa-bolt', cat: 'Innovation', desc: 'Transition énergétique, solaire, biogaz, hybride' },
       { title: 'Groupe', url: 'groupe/index.html', icon: 'fa-building', cat: 'Corporate', desc: 'Gouvernance, histoire, leadership' },
       { title: 'Durabilité & ESG', url: 'durabilite.html', icon: 'fa-leaf', cat: 'Corporate', desc: 'RSE, environnement, communautés' },
       { title: 'Talents & Carrières', url: 'talents.html', icon: 'fa-users', cat: 'Corporate', desc: 'Recrutement, EnerAcademy, culture' },
@@ -143,9 +143,6 @@
     var path = window.location.pathname;
     if (path.match(/\/(services|operations|groupe|distribution)\//)) depth = 1;
     var prefix = depth ? '../' : '';
-
-    // Skip if enhance.js already created a search overlay
-    if (document.querySelector('.search-overlay .search-modal')) return;
 
     // Build overlay HTML
     var overlay = document.createElement('div');
@@ -535,7 +532,7 @@
           provider: {
             '@type': 'Organization',
             name: 'EnerTchad Groupe',
-            url: 'https://www.enertchad.td'
+            url: 'https://enertchad-groupe.vercel.app'
           },
           areaServed: { '@type': 'Country', name: 'Chad' }
         });
@@ -559,8 +556,35 @@
     initKpiCounters(); // KPI homepage counters
     initPageTransitions();
     initScrollTop();
-    initHeaderSearch();
+    // initHeaderSearch();  // HEADER_CLEANUP 2026-04-20 — bouton search retiré du header (site 7 pages, Ctrl+K suffit)
     injectStructuredData();
+    initNewsletterRedirect();
+  }
+
+  /* ─── Newsletter footer redirect to /newsletter.html with email prefill ─── */
+  function initNewsletterRedirect(){
+    var forms = document.querySelectorAll('form.newsletter-modern[data-redirect]');
+    forms.forEach(function(f){
+      f.addEventListener('submit', function(e){
+        e.preventDefault();
+        var target = f.getAttribute('data-redirect') || 'newsletter.html';
+        var input = f.querySelector('input[type="email"]');
+        var email = input && input.value ? encodeURIComponent(input.value.trim()) : '';
+        var prefix = /\/(operations|services|distribution|groupe)\//.test(location.pathname) ? '../' : '';
+        var url = prefix + target + (email ? ('?email=' + email + '#nl-form') : '#nl-form');
+        window.location.href = url;
+      });
+    });
+    if(/newsletter\.html/.test(location.pathname)){
+      try{
+        var params = new URLSearchParams(location.search);
+        var e = params.get('email');
+        if(e){
+          var em = document.querySelector('#nlForm input[name="email"]');
+          if(em){ em.value = e; em.focus(); }
+        }
+      }catch(_){}
+    }
   }
 
   if (document.readyState === 'loading') {

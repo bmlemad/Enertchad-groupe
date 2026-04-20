@@ -1,5 +1,5 @@
 {
-  "$schema": "https://enertchad.td/schemas/kpis.schema.json",
+  "$schema": "https://enertchad-groupe.vercel.app/schemas/kpis.schema.json",
   "version": "2026.04.17",
   "updated_at": "2026-04-17",
   "source_of_truth": "EnerTchad-Plan-Action-Consolide-2026.docx",

@@ -1,0 +1,64 @@
+/* EnerTchad — shared-hero-a.css
+   Extrait de 4 pages inline (QW-DEDUP-INLINE · 2026-04-20)
+   Pages : actualites.html, operations/amont.html, operations/energies.html, services/technologies.html
+*/
+/* Design Tokens */
+:root{--bg:#080E1A;--bg-mid:#0C1426;--bg-card:#0F1A2E;--bg-elevated:#121D33;--surface:#141D30;--surface-alt:#1A2540;--surface-hover:#1E2D4A;--white:#FFFFFF;--text:#E2E8F0;--text-sec:#94A3B8;--text-muted:#7C8DB0;--gold:#D9A84F;--gold-light:#E8C36A;--gold-dim:rgba(217,168,79,0.15);--amont:#2E86DE;--amont-dim:rgba(46,134,222,0.12);--midstream:#0EA5E9;--midstream-dim:rgba(14,165,233,0.12);--aval:#D97706;--aval-dim:rgba(217,119,6,0.12);--tech:#8B5CF6;--tech-dim:rgba(139,92,246,0.12);--energy:#10B981;--energy-dim:rgba(16,185,129,0.12);--petro:#E11D48;--petro-dim:rgba(225,29,72,0.12);--success:#10B981;--success-dim:rgba(16,185,129,0.12);--danger:#EF4444;--danger-dim:rgba(239,68,68,0.12);--warning:#F59E0B;--warning-dim:rgba(245,158,11,0.12);--font-d:'Space Grotesk',system-ui,sans-serif;--font-b:'Inter',system-ui,sans-serif;--sp-xs:0.5rem;--sp-sm:0.75rem;--sp-md:1rem;--sp-lg:1.5rem;--sp-xl:2rem;--sp-2xl:3rem;--sp-3xl:4rem;--sp-4xl:6rem;--sp-5xl:8rem;--radius:14px;--radius-sm:10px;--radius-xs:6px;--radius-full:9999px;--ease:cubic-bezier(0.22,0.61,0.36,1);--tr:0.4s var(--ease);--tr-fast:0.2s var(--ease);--shadow-sm:0 2px 8px rgba(0,0,0,0.2);--shadow-md:0 8px 30px rgba(0,0,0,0.3);--shadow-lg:0 20px 60px rgba(0,0,0,0.4);--header-h:72px;--max-w:1280px;--mega-accent:var(--amont);--mega-glow:rgba(46,134,222,0.06);--tab-y:0px;--tab-h:56px;}
+
+/* Reset */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+
+/* Base */
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}
+body{font-family:var(--font-b);font-size:1rem;line-height:1.7;color:var(--text);background:var(--bg);overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 50% at 50% -20%,rgba(217,168,79,0.06),transparent),radial-gradient(ellipse 60% 40% at 80% 80%,rgba(46,134,222,0.04),transparent);pointer-events:none;z-index:0}
+
+/* Skip Link */
+.skip-link{position:absolute;top:-100%;left:16px;z-index:10000;padding:12px 24px;background:var(--gold);color:var(--bg);font-weight:700;border-radius:0 0 8px 8px;text-decoration:none;transition:top .2s}
+.skip-link:focus{top:0}
+
+/* Container */
+.ctn{width:100%;max-width:var(--max-w);margin:0 auto;padding:0 var(--sp-lg)}
+
+/* Header */
+.header{position:fixed;top:0;left:0;right:0;height:var(--header-h);display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1rem,3vw,3rem);background:rgba(8,14,26,0.6);backdrop-filter:blur(30px) saturate(1.8);-webkit-backdrop-filter:blur(30px) saturate(1.8);z-index:1000;transition:all 0.6s var(--ease)}
+.header.scrolled{height:60px;background:rgba(8,14,26,0.97);box-shadow:0 8px 40px rgba(0,0,0,0.5),0 1px 0 rgba(217,168,79,0.1)}
+
+/* Logo */
+.logo-wrap{display:flex;align-items:center;gap:var(--sp-sm);color:var(--white);text-decoration:none;position:relative}
+.logo-wrap svg,.logo-wrap img{width:40px;height:40px}
+.logo-text{font-family:var(--font-d);font-size:1.25rem;font-weight:700;color:var(--white);letter-spacing:-0.01em;transition:font-size 0.4s var(--ease)}
+
+/* Nav */
+.nav{display:flex;align-items:center;gap:4px;list-style:none;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.04);border-radius:var(--radius-full);padding:4px}
+.nav-link{position:relative;display:flex;align-items:center;gap:6px;padding:8px 16px;font-family:var(--font-b);font-size:0.82rem;font-weight:500;color:var(--text-sec);border-radius:var(--radius-full);transition:all 0.35s var(--ease);cursor:pointer;border:none;background:none;letter-spacing:0.01em;white-space:nowrap}
+.nav-link:hover{color:var(--white);background:rgba(255,255,255,0.06)}
+
+/* Header Actions */
+.header-actions{display:flex;align-items:center;gap:var(--sp-sm)}
+.header-cta{display:inline-flex;align-items:center;gap:6px;padding:7px 18px;font-family:var(--font-d);font-size:0.78rem;font-weight:600;color:var(--bg);background:var(--gold);border-radius:var(--radius-full);text-decoration:none;transition:all 0.35s var(--ease);letter-spacing:0.02em;white-space:nowrap}
+.header-cta:hover{background:var(--gold-light);box-shadow:0 4px 20px rgba(217,168,79,0.3)}
+
+/* Mega Overlay */
+.mega-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(16px) saturate(1.4);-webkit-backdrop-filter:blur(16px) saturate(1.4);opacity:0;visibility:hidden;transition:opacity 0.5s var(--ease),visibility 0.5s;z-index:998}
+.mega-overlay.active{opacity:1;visibility:visible}
+
+/* Hero */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:calc(var(--header-h) + var(--sp-3xl)) 0 var(--sp-3xl);overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 100% 80% at 20% 50%,rgba(46,134,222,0.08),transparent 60%),radial-gradient(ellipse 80% 60% at 80% 30%,rgba(217,168,79,0.06),transparent 60%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:200px;background:linear-gradient(to top,var(--bg),transparent);pointer-events:none}
+.hero-inner{position:relative;z-index:1;max-width:800px}
+
+/* Page Loader */
+.page-loader{position:fixed;inset:0;z-index:9999;background:var(--bg);display:flex;align-items:center;justify-content:center;transition:opacity 0.6s var(--ease),visibility 0.6s}
+.page-loader.loaded{opacity:0;visibility:hidden;pointer-events:none}
+.loader-inner{text-align:center}
+.loader-logo{font-family:var(--font-d);font-size:2.5rem;font-weight:700;color:var(--white);letter-spacing:-0.02em;margin-bottom:var(--sp-xl)}
+.loader-logo span{color:var(--gold)}
+.loader-bar{width:120px;height:3px;margin:0 auto;background:rgba(255,255,255,0.06);border-radius:3px;overflow:hidden}
+.loader-bar-fill{width:0;height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-light));border-radius:3px;animation:loaderFill 1.2s var(--ease) forwards}
+@keyframes loaderFill{0%{width:0}60%{width:80%}100%{width:100%}}
+
+/* Cookie Consent */
+.cookie-consent{position:fixed;bottom:0;left:0;right:0;z-index:200;background:rgba(12,20,38,0.98);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-top:1px solid rgba(217,168,79,0.15);padding:var(--sp-md) 0;transform:translateY(100%);transition:transform 0.5s var(--ease)}
+.cookie-consent.active{transform:translateY(0)}

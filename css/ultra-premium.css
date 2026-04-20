@@ -1,0 +1,504 @@
+/* ════════════════════════════════════════════════════════════════════
+   EnerTchad Groupe — Ultra-Premium Layer  (UP-P1 · 2026-04-20)
+   ════════════════════════════════════════════════════════════════════
+   Stratégie : empilement non-destructif sur main.v1.css + premium.css.
+   Surcharge ciblée via @layer + sélecteurs spécifiques, afin d'élever
+   l'aesthetic vers la ligne des majors (Aramco, Equinor, Shell) sans
+   toucher aux fichiers existants. Rollback : retirer le <link> en <head>.
+   ════════════════════════════════════════════════════════════════════ */
+
+@layer base, tokens, typography, spacing, motion, components, finish;
+
+/* ─── 1. TOKENS ULTRA-PREMIUM ───────────────────────────────────── */
+@layer tokens {
+  :root{
+    /* Profondeurs */
+    --ink:          #050911;
+    --ink-soft:     #0A0F1C;
+    --stone:        #12182A;
+
+    /* Métal chaud */
+    --cognac:       #C89648;
+    --cognac-light: #E2B572;
+    --cognac-dim:   rgba(200,150,72,0.14);
+    --brass:        #B8884D;
+    --brass-dim:    rgba(184,136,77,0.18);
+    --paper-warm:   #F0E8D6;
+
+    /* Glows */
+    --cognac-glow:  rgba(200,150,72,0.28);
+    --brass-glow:   rgba(184,136,77,0.22);
+
+    /* Espaces royaux */
+    --space-royal:   clamp(6rem, 10vh, 12rem);
+    --space-theatre: clamp(4rem, 7vh, 9rem);
+    --space-opera:   clamp(3rem, 5vh, 7rem);
+
+    /* Fonts */
+    --font-s:        'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+    --font-feature-premium: "kern" 1, "liga" 1, "calt" 1, "ss01" 1;
+
+    /* Easing bespoke */
+    --ease-silk:   cubic-bezier(0.77, 0, 0.175, 1);
+    --ease-swift: cubic-bezier(0.22, 0.61, 0.36, 1);
+    --ease-theatre: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* Theme dark remap vers encre + cognac */
+  html:not(.light){
+    --bg: var(--ink);
+    --bg-mid: var(--ink-soft);
+    --bg-card: var(--stone);
+  }
+}
+
+/* ─── 2. TYPOGRAPHIE ULTRA-PREMIUM ──────────────────────────────── */
+@layer typography {
+  body{
+    font-feature-settings: var(--font-feature-premium);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* H1 Hero — échelle royale + serif italique sur <em> */
+  .hero h1,
+  .hero-title{
+    font-size: clamp(3rem, 7.5vw, 7.5rem) !important;
+    line-height: 0.96 !important;
+    letter-spacing: -0.035em !important;
+    font-weight: 600 !important;
+  }
+  .hero h1 em,
+  .hero-title em,
+  .lux-em{
+    font-family: var(--font-s);
+    font-style: italic;
+    font-weight: 500;
+    color: var(--cognac-light);
+    background: none !important;
+    -webkit-text-fill-color: currentColor !important;
+    letter-spacing: -0.01em;
+    padding-right: .03em;
+  }
+
+  /* H2 section heading */
+  .section-title,
+  .section h2,
+  section > h2{
+    font-size: clamp(2rem, 4.5vw, 3.8rem);
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    font-weight: 650;
+  }
+
+  /* Eyebrow premium (petites capitales plates) */
+  .hero-eyebrow,
+  .eyebrow,
+  .section-eyebrow{
+    font-size: 0.7rem !important;
+    letter-spacing: 0.32em !important;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  /* Paragraphes lead */
+  .lead,
+  .hero-sub,
+  .hero-desc{
+    font-size: clamp(1.05rem, 1.6vw, 1.35rem);
+    line-height: 1.55;
+    color: var(--text);
+    opacity: .92;
+    max-width: 62ch;
+  }
+}
+
+/* ─── 3. ESPACEMENT ROYAL ───────────────────────────────────────── */
+@layer spacing {
+  .section{
+    padding-top: var(--space-royal);
+    padding-bottom: var(--space-royal);
+  }
+  .section.section--theatre{ padding-block: var(--space-theatre); }
+  .section.section--opera{   padding-block: var(--space-opera); }
+
+  .hero{
+    min-height: 100svh;
+    padding: clamp(6rem, 12vh, 10rem) clamp(1.5rem, 4vw, 5rem) clamp(4rem, 8vh, 8rem);
+  }
+
+  /* Divider gold thin entre sections (option) */
+  .section + .section.section--divided::before{
+    content:""; display:block;
+    height:1px; max-width:320px; margin: 0 auto calc(-.5 * var(--space-royal));
+    background: linear-gradient(90deg, transparent, var(--cognac) 50%, transparent);
+    opacity:.35;
+  }
+}
+
+/* ─── 4. MOTION & REVEAL ────────────────────────────────────────── */
+@layer motion {
+  /* Scroll reveal CSS-only (plus léger que GSAP pour les éléments simples) */
+  [data-up-reveal]{
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity .9s var(--ease-theatre), transform .9s var(--ease-theatre);
+    transition-delay: calc(var(--up-i, 0) * 0.08s);
+  }
+  [data-up-reveal].is-shown{
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Parallax via transform (applied by JS) */
+  [data-up-parallax]{ will-change: transform; }
+
+  /* Page transition morph */
+  body::before{
+    content:""; position:fixed; inset:0;
+    background: linear-gradient(180deg, var(--ink), var(--stone));
+    z-index: 9998; pointer-events: none;
+    opacity: 0;
+    transition: opacity .55s var(--ease-silk);
+  }
+  body.up-transitioning::before{ opacity: 1; }
+
+  /* Reduce motion respect */
+  @media (prefers-reduced-motion: reduce){
+    [data-up-reveal],
+    [data-up-parallax]{ opacity: 1 !important; transform: none !important; }
+  }
+}
+
+/* ─── 5. COMPOSANTS ULTRA-PREMIUM ───────────────────────────────── */
+@layer components {
+  /* Focus ring luxueux — remplace le bord brut */
+  *:focus-visible{
+    outline: 0 !important;
+    box-shadow:
+      0 0 0 3px rgba(200,150,72,0.26),
+      0 0 0 6px rgba(200,150,72,0.10) !important;
+    border-radius: 10px;
+    transition: box-shadow .2s var(--ease-swift);
+  }
+
+  /* Buttons — variantes lux */
+  .btn--lux,
+  a.btn.btn-primary,
+  a.btn.btn--primary{
+    background: linear-gradient(140deg, var(--cognac) 0%, var(--cognac-light) 55%, var(--cognac) 100%);
+    background-size: 200% 100%;
+    background-position: 0% 50%;
+    color: #0A0F1C !important;
+    border: none;
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.35),
+      0 10px 30px -12px rgba(200,150,72,.55);
+    font-weight: 700;
+    letter-spacing: .02em;
+    transition: background-position .5s var(--ease-silk), transform .35s var(--ease-silk), box-shadow .35s var(--ease-silk);
+  }
+  .btn--lux:hover,
+  a.btn.btn-primary:hover{
+    background-position: 100% 50%;
+    transform: translateY(-2px);
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.45),
+      0 18px 42px -14px rgba(200,150,72,.65);
+  }
+
+  .btn--ghost-lux,
+  a.btn.btn-outline{
+    position: relative;
+    background: rgba(255,255,255,0.02);
+    color: var(--paper-warm) !important;
+    border: 1px solid transparent;
+    background-image:
+      linear-gradient(rgba(10,15,28,.6), rgba(10,15,28,.6)),
+      linear-gradient(135deg, var(--cognac), var(--brass) 50%, var(--cognac));
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    transition: color .3s var(--ease-silk), transform .3s var(--ease-silk), background-color .3s var(--ease-silk);
+  }
+  .btn--ghost-lux:hover{
+    color: var(--cognac-light) !important;
+    transform: translateY(-1px);
+  }
+
+  /* Cards sheen — overlay gradient mobile */
+  .card,
+  .vc-card,
+  .kpi-card,
+  .ncard,
+  .rse-card{
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    transition: transform .55s var(--ease-silk), box-shadow .55s var(--ease-silk);
+  }
+  .card::after,
+  .vc-card::after,
+  .kpi-card::after,
+  .ncard::after,
+  .rse-card::after{
+    content:""; position:absolute; inset:0;
+    background: linear-gradient(115deg,
+      transparent 20%,
+      rgba(255,255,255,0.06) 48%,
+      transparent 72%);
+    transform: translateX(-120%);
+    transition: transform .9s var(--ease-silk);
+    pointer-events: none; z-index: 0;
+  }
+  .card:hover::after,
+  .vc-card:hover::after,
+  .kpi-card:hover::after,
+  .ncard:hover::after,
+  .rse-card:hover::after{
+    transform: translateX(120%);
+  }
+  .card:hover,
+  .vc-card:hover,
+  .kpi-card:hover,
+  .ncard:hover,
+  .rse-card:hover{
+    transform: translateY(-3px) scale(1.008);
+    box-shadow:
+      0 24px 60px -24px rgba(200,150,72,.28),
+      0 1px 0 rgba(255,255,255,.06) inset;
+  }
+
+  /* Curseur blob cognac (attaché par JS ; désactivé sur touch) */
+  .up-cursor{
+    position: fixed; top:0; left:0;
+    width: 18px; height:18px; border-radius:50%;
+    background: radial-gradient(circle, var(--cognac-light) 0%, var(--cognac) 60%, transparent 75%);
+    mix-blend-mode: screen;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: transform .08s linear, width .3s var(--ease-swift), height .3s var(--ease-swift), opacity .25s;
+    opacity: 0;
+    filter: blur(.5px);
+  }
+  .up-cursor.is-ready{ opacity:.85; }
+  .up-cursor.is-hovering{ width: 42px; height:42px; opacity:.65; filter: blur(4px); }
+  @media (hover:none), (pointer:coarse){ .up-cursor{ display:none; } }
+
+  /* Scrollbar fine cognac (dark theme) */
+  html:not(.light) body::-webkit-scrollbar{ width: 10px; }
+  html:not(.light) body::-webkit-scrollbar-track{ background: var(--ink); }
+  html:not(.light) body::-webkit-scrollbar-thumb{
+    background: linear-gradient(180deg, var(--cognac), var(--brass));
+    border-radius: 6px; border: 2px solid var(--ink);
+  }
+}
+
+/* ─── 6. FINISHING TOUCHES ──────────────────────────────────────── */
+@layer finish {
+  /* Fine grain sur tout le bg */
+  body::after{
+    content:""; position:fixed; inset:0; pointer-events:none;
+    z-index: 9997;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.08 0'/></filter><rect width='240' height='240' filter='url(%23n)'/></svg>");
+    opacity: .55; mix-blend-mode: overlay;
+  }
+
+  /* Sélection de texte cognac */
+  ::selection{
+    background: var(--cognac);
+    color: var(--ink);
+  }
+
+  /* Liens texte éditoriaux */
+  a.lux-link{
+    color: var(--cognac-light);
+    text-decoration: underline;
+    text-decoration-color: rgba(200,150,72,.35);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+    transition: text-decoration-color .3s var(--ease-silk), color .3s var(--ease-silk);
+  }
+  a.lux-link:hover{
+    color: var(--cognac);
+    text-decoration-color: var(--cognac);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   P2 · Scroll scrubbing · Counters · Refined italic
+   ═════════════════════════════════════════════════════════════════════════ */
+@layer components {
+
+  /* --- H1 italique serif : boost léger au-dessus de la règle P1 --- */
+  .hero-title-premium .lux-em,
+  h1 .lux-em,
+  h2 .lux-em {
+    font-family: var(--font-s, 'Cormorant Garamond'), Georgia, serif;
+    font-style: italic;
+    font-weight: 500;
+    color: var(--cognac);
+    letter-spacing: -0.01em;
+    margin-inline: 0.04em;
+  }
+
+  /* --- Scroll scrubbing : utilitaires de progression --- */
+  [data-up-scrub]{
+    --up-p: 0;
+    will-change: transform, opacity, filter;
+  }
+  [data-up-scrub][data-up-scrub-mode="rise"]{
+    transform: translate3d(0, calc((1 - var(--up-p)) * 40px), 0);
+    opacity: calc(0.4 + var(--up-p) * 0.6);
+  }
+  [data-up-scrub][data-up-scrub-mode="zoom"]{
+    transform: scale(calc(1.04 - var(--up-p) * 0.04));
+    filter: saturate(calc(0.9 + var(--up-p) * 0.2));
+  }
+  [data-up-scrub][data-up-scrub-mode="lift"]{
+    transform: translate3d(0, calc((1 - var(--up-p)) * 24px), 0) scale(calc(0.98 + var(--up-p) * 0.02));
+    opacity: calc(0.65 + var(--up-p) * 0.35);
+  }
+
+  /* --- Counter UP : mise en valeur tabular + anti-CLS --- */
+  [data-up-counter]{
+    font-variant-numeric: tabular-nums lining-nums;
+    font-feature-settings: 'tnum' 1, 'lnum' 1;
+  }
+
+  /* --- Parallax layer : force le compositor --- */
+  [data-up-parallax]{
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce){
+  [data-up-scrub]{ transform: none !important; opacity: 1 !important; filter: none !important; }
+  [data-up-parallax]{ transform: none !important; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   P3 · Theme controller · morph cross-fade · bouton premium
+   ═════════════════════════════════════════════════════════════════════════ */
+@layer components {
+
+  /* Bouton thème — aligné sur le lang-btn visuellement */
+  .up-theme-btn{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px; /* HEADER_CLEANUP 2026-04-20 — cohérent avec .lang-btn / .mobile-toggle */
+    background: rgba(255,255,255,0.025);
+    color: var(--text-sec, #94A3B8);
+    cursor: pointer;
+    transition: border-color .25s var(--ease-silk),
+                color .25s var(--ease-silk),
+                background .25s var(--ease-silk),
+                transform .25s var(--ease-silk);
+  }
+  .up-theme-btn:hover{
+    border-color: var(--cognac, #C89648);
+    color: var(--cognac, #C89648);
+    background: rgba(200, 150, 72, 0.06);
+    transform: translateY(-1px);
+  }
+  .up-theme-btn:focus-visible{
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(200, 150, 72, 0.35),
+                0 0 0 6px rgba(200, 150, 72, 0.15);
+  }
+  .up-theme-btn svg{
+    width: 18px;
+    height: 18px;
+    transition: transform .5s var(--ease-silk);
+  }
+  .up-theme-btn:hover svg{
+    transform: rotate(25deg) scale(1.08);
+  }
+
+  /* Bascule icône sun ↔ moon selon le thème */
+  html.light .up-theme-btn .up-sun,
+  html.light .up-theme-btn .up-sun-core{ display: none; }
+  html.light .up-theme-btn .up-moon{ display: block !important; }
+
+  /* Adaptation light-mode du bouton */
+  html.light .up-theme-btn{
+    border-color: rgba(0,0,0,0.15);
+    color: var(--text-sec, #555566);
+  }
+  html.light .up-theme-btn:hover{
+    border-color: var(--cognac, #C89648);
+    color: var(--cognac, #C89648);
+    background: rgba(200, 150, 72, 0.08);
+  }
+
+  /* --- Morph cross-fade (fallback sans View Transitions API) --- */
+  html.up-theme-morphing,
+  html.up-theme-morphing body,
+  html.up-theme-morphing .section,
+  html.up-theme-morphing .card,
+  html.up-theme-morphing .vc-card,
+  html.up-theme-morphing .kpi-card,
+  html.up-theme-morphing .ncard,
+  html.up-theme-morphing .footer,
+  html.up-theme-morphing .hero,
+  html.up-theme-morphing header,
+  html.up-theme-morphing .btn-premium,
+  html.up-theme-morphing .btn-outline-premium{
+    transition: background-color .55s var(--ease-silk),
+                color .55s var(--ease-silk),
+                border-color .55s var(--ease-silk),
+                box-shadow .55s var(--ease-silk) !important;
+  }
+}
+
+/* View Transitions API — enveloppe racine */
+@supports (view-transition-name: none){
+  html::view-transition-old(root),
+  html::view-transition-new(root){
+    animation-duration: .55s;
+    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce){
+  html.up-theme-morphing,
+  html.up-theme-morphing *{
+    transition: none !important;
+  }
+  .up-theme-btn svg{ transition: none !important; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   P3 · Hero video layer (graceful degrade tant qu'aucune <source> n'est activée)
+   ═════════════════════════════════════════════════════════════════════════ */
+.hero-video{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0;                         /* invisible par défaut */
+  transition: opacity .6s var(--ease-silk, cubic-bezier(0.5, 0, 0.1, 1));
+  pointer-events: none;
+}
+/* Visible dès qu'une <source> a un src non vide (:has est supporté partout en 2025+) */
+.hero-video:has(source[src]){
+  opacity: 0.38;
+  mix-blend-mode: luminosity;
+}
+/* Light-mode : baisse subtile pour ne pas écraser la lisibilité */
+html.light .hero-video:has(source[src]){
+  opacity: 0.22;
+  mix-blend-mode: normal;
+}
+@media (prefers-reduced-motion: reduce){
+  .hero-video{ transition: none !important; }
+}
