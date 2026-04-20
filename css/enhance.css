@@ -63,11 +63,6 @@
 .search-trigger{background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.08);border-radius:10px;width:38px;height:38px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:0.85rem;color:rgba(255,255,255,0.6);transition:all 0.3s ease;padding:0}
 .search-trigger:hover{background:rgba(200,150,72,0.08);color:var(--cognac,#C89648);border-color:rgba(200,150,72,0.45)}
 
-/* ═══ DOT NAV ═══ */
-.dot-nav{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:80;display:flex;flex-direction:column;gap:10px}
-.dot-nav a{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.12);transition:all 0.3s ease;display:block}
-.dot-nav a.active,.dot-nav a:hover{background:var(--gold,#D9A84F);border-color:var(--gold,#D9A84F);transform:scale(1.3)}
-@media(max-width:768px){.dot-nav{display:none}}
 
 /* ═══ THEME TOGGLE legacy — rayon modernisé (surchargé par unified header icons) ═══ */
 .theme-toggle{background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.08);border-radius:10px;width:38px;height:38px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:0.85rem;color:rgba(255,255,255,0.6);transition:all 0.3s ease;padding:0}
@@ -114,7 +109,7 @@ body.light-theme .sr-item{color:#475569}
 body.light-theme .sr-item:hover{background:rgba(217,168,79,0.06);color:#0F172A}
 body.light-theme .theme-toggle{background:rgba(0,0,0,0.04);border-color:rgba(0,0,0,0.08);color:#475569}
 body.light-theme .search-trigger{background:rgba(0,0,0,0.04);border-color:rgba(0,0,0,0.08);color:#475569}
-body.light-theme .dot-nav a{background:rgba(0,0,0,0.1);border-color:rgba(0,0,0,0.1)}
+
 
 /* ═══ RESPONSIVE ═══ */
 @media(max-width:768px){

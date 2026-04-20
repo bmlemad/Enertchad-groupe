@@ -60,24 +60,6 @@ var ENERTCHAD={
   },{passive:true});
 })();
 
-/* ═══ DOT NAV ═══ */
-(function(){
-  var dn=document.getElementById('dotNav');
-  if(!dn) return;
-  var links=dn.querySelectorAll('a');
-  var ids=[];
-  links.forEach(function(a){ids.push(a.getAttribute('href').replace('#',''))});
-  window.addEventListener('scroll',function(){
-    var sp=window.scrollY+window.innerHeight/3;
-    ids.forEach(function(id,i){
-      var s=document.getElementById(id);
-      if(s&&sp>=s.offsetTop&&sp<s.offsetTop+s.offsetHeight){
-        links.forEach(function(d){d.classList.remove('active')});
-        if(links[i]) links[i].classList.add('active');
-      }
-    });
-  },{passive:true});
-})();
 
 /* ═══ THEME TOGGLE ═══ */
 (function(){
