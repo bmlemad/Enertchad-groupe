@@ -1,11 +1,10 @@
 /* ================================================================
-   EnerTchad — NAV PREMIUM  (QW-NAV · 2026-04-20)
-   Couche visuelle et interactions premium pour le header de groupe
-   Cible : ultra-premium major-oil standard (Shell, TotalEnergies, Equinor)
-   Ne remplace rien : augmente .header / .nav / .nav-link / .mega-overlay
+   EnerTchad — NAV PREMIUM v2  (MEGA-REDESIGN · 2026-04-20)
+   Full redesign: animated gradient mesh, glass cards, stagger cascade,
+   spotlight hero, tabbed operations, counter metrics, enhanced mobile.
    ================================================================ */
 
-/* -- 1. HEADER GLASS + SCROLL INDICATOR ---------------------------- */
+/* -- 1. HEADER GLASS + SCROLL INDICATOR ----------------------------- */
 .header{
   transition: top .5s var(--ease), height .5s var(--ease),
               background .5s var(--ease), box-shadow .5s var(--ease),
@@ -26,7 +25,6 @@
 }
 .header.scrolled::before{opacity:1}
 
-/* Fine progress bar inside the header (scroll-linked) */
 .header-progress{
   position:absolute; left:0; bottom:0; height:2px; width:0%;
   background: linear-gradient(90deg, var(--gold), var(--gold-light, #E8C36A));
@@ -54,7 +52,7 @@
   filter: drop-shadow(0 4px 16px rgba(217,168,79,.35));
 }
 
-/* -- 3. NAV — magnetic link indicator ------------------------------ */
+/* -- 3. NAV — magnetic link indicator -------------------------------- */
 .nav{ position: relative; }
 .nav-indicator{
   position: absolute; top: 4px; bottom: 4px;
@@ -78,11 +76,9 @@
 .nav:focus-within .nav-indicator{ opacity: 1; }
 
 .nav-link{ position: relative; z-index: 1; }
-/* HEADER_POLISH_V2 : extension verticale de la hitbox des triggers mega
-   pour que la souris puisse descendre vers le panel sans perdre le hover. */
 .nav-link[data-mega]{
   padding-bottom: 16px;
-  margin-bottom: -16px;  /* neutralise visuellement — ne modifie pas la hauteur perçue */
+  margin-bottom: -16px;
 }
 .nav-link::after{
   content:"";
@@ -99,7 +95,6 @@
   color: var(--white) !important;
   background: rgba(217,168,79,.10) !important;
 }
-/* HEADER_POLISH_V2 : chevron flip quand le panel est ouvert */
 .nav-link .chevron{
   transition: transform .3s var(--ease);
   display: inline-block;
@@ -107,7 +102,6 @@
 .nav-link[aria-expanded="true"] .chevron{
   transform: rotate(180deg);
 }
-/* Respecte prefers-reduced-motion pour l'animation hamburger et le chevron */
 @media (prefers-reduced-motion: reduce){
   .header-actions .mobile-toggle span,
   .nav-link .chevron{
@@ -120,198 +114,209 @@
   border-radius: var(--radius-full, 999px);
 }
 
-/* -- 4. MEGA-MENU PANEL (shared shell, colored per business unit) -- */
+/* ================================================================
+   4. MEGA MENU PANEL — FULL REDESIGN v2
+   ================================================================ */
 .mega-panel{
   position: fixed;
-  /* HEADER_POLISH_V2 2026-04-20 — réduit le gap trigger↔panel de 44→14 px pour fluidité */
   top: calc(var(--header-h, 72px) + 14px);
-  left: 50%; transform: translate(-50%, -8px);
-  width: min(1120px, calc(100vw - 48px));
-  max-height: min(70vh, 640px);
-  padding: 28px;
-  background: linear-gradient(180deg,
-    rgba(15, 26, 46, .96),
-    rgba(12, 20, 38, .98));
-  border: 1px solid rgba(217,168,79,.18);
-  border-radius: 20px;
+  left: 50%; transform: translate(-50%, -12px) scale(.98);
+  width: min(1180px, calc(100vw - 40px));
+  max-height: min(75vh, 680px);
+  padding: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 15% 0%, var(--mega-glow, rgba(217,168,79,.06)), transparent 60%),
+    radial-gradient(ellipse 60% 40% at 85% 80%, rgba(46,134,222,.04), transparent 60%),
+    linear-gradient(180deg, rgba(10,18,32,.97), rgba(8,14,26,.99));
+  border: 1px solid rgba(217,168,79,.14);
+  border-radius: 22px;
   box-shadow:
-    0 30px 80px rgba(0,0,0,.55),
-    0 2px 0 rgba(217,168,79,.08) inset,
-    0 -1px 0 rgba(255,255,255,.02) inset;
-  backdrop-filter: blur(24px) saturate(1.6);
-  -webkit-backdrop-filter: blur(24px) saturate(1.6);
+    0 40px 100px -20px rgba(0,0,0,.7),
+    0 4px 24px -4px rgba(0,0,0,.4),
+    inset 0 1px 0 rgba(255,255,255,.04),
+    inset 0 -1px 0 rgba(0,0,0,.2);
+  backdrop-filter: blur(32px) saturate(1.8);
+  -webkit-backdrop-filter: blur(32px) saturate(1.8);
   opacity: 0; visibility: hidden; pointer-events: none;
-  transition: opacity .35s var(--ease), transform .45s var(--ease), visibility .35s;
+  transition: opacity .3s var(--ease), transform .4s cubic-bezier(.22,.61,.36,1), visibility .3s;
   z-index: 1001;
-  overflow: visible; /* permet au bridge ::after de déborder */
+  overflow: hidden;
 }
 .mega-panel.active{
   opacity:1; visibility:visible; pointer-events:auto;
-  transform: translate(-50%, 0);
+  transform: translate(-50%, 0) scale(1);
 }
+
+/* Top gold accent line */
 .mega-panel::before{
   content:"";
-  position:absolute; top:-1px; left:20%; right:20%; height:1px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
-  opacity:.6;
+  position:absolute; top:0; left:0; right:0; height:1px;
+  background: linear-gradient(90deg,
+    transparent 5%,
+    rgba(217,168,79,.6) 30%,
+    rgba(217,168,79,.8) 50%,
+    rgba(217,168,79,.6) 70%,
+    transparent 95%);
+  z-index:2;
 }
-/* Bridge invisible : reste dans la hitbox du panel pendant la traversée trigger→panel.
-   Désactivé tant que le panel n'est pas actif pour ne pas bloquer les autres UI. */
+
+/* Bridge for mouse travel from nav to panel */
 .mega-panel::after{
   content:"";
   position:absolute;
-  top:-24px;      /* couvre le gap 14px + 10px de slack */
-  left:-40px; right:-40px;   /* élargit le corridor horizontal */
-  height:28px;
+  top:-28px; left:-40px; right:-40px; height:32px;
   background: transparent;
   pointer-events: none;
 }
-.mega-panel.active::after{
-  pointer-events: auto;
-}
-/* Contenu interne toujours clippé (le panel lui-même est overflow:visible pour le bridge) */
-.mega-panel > .mega-grid,
-.mega-panel > .mega-foot{
-  position: relative;
-  z-index: 1;
-}
+.mega-panel.active::after{ pointer-events: auto; }
+
+/* -- Business-unit glow tones -- */
+.mega-panel[data-tone="amont"]    { --mega-glow: rgba(46,134,222,.12); --mega-accent: #5FA8FF; --mega-accent-dim: rgba(46,134,222,.08); }
+.mega-panel[data-tone="midstream"]{ --mega-glow: rgba(14,165,233,.12); --mega-accent: #38BDF8; --mega-accent-dim: rgba(14,165,233,.08); }
+.mega-panel[data-tone="aval"]     { --mega-glow: rgba(217,119,6,.14);  --mega-accent: #FBBF24; --mega-accent-dim: rgba(217,119,6,.08); }
+.mega-panel[data-tone="energies"] { --mega-glow: rgba(16,185,129,.12); --mega-accent: #34D399; --mega-accent-dim: rgba(16,185,129,.08); }
+
+/* ---- Grid Layout: Feature (left) | Content (right) ---- */
 .mega-grid{
   display: grid;
-  grid-template-columns: 1.1fr 2.4fr;
-  gap: 28px;
+  grid-template-columns: 320px 1fr;
+  gap: 0;
+  min-height: 380px;
 }
+
+/* ---- Feature / Spotlight Card ---- */
 .mega-feature{
-  display:flex; flex-direction:column; justify-content:space-between;
-  padding: 22px;
-  border-radius: 14px;
-  background: linear-gradient(160deg,
-    rgba(217,168,79,.08),
-    rgba(46,134,222,.04) 60%,
-    rgba(16,185,129,.04));
-  border: 1px solid rgba(255,255,255,.06);
-  min-height: 240px;
+  position: relative;
+  display: flex; flex-direction: column; justify-content: space-between;
+  padding: 32px 28px 28px;
+  background:
+    radial-gradient(ellipse 120% 80% at 20% 0%, var(--mega-accent-dim, rgba(217,168,79,.06)), transparent 70%),
+    linear-gradient(180deg, rgba(255,255,255,.02), transparent);
+  border-right: 1px solid rgba(255,255,255,.05);
+  overflow: hidden;
+}
+.mega-feature-hero{
+  position: absolute; top: 0; left: 0; right: 0; height: 140px;
+  background-size: cover; background-position: center;
+  opacity: .15; filter: saturate(1.2) brightness(.6);
+  pointer-events: none;
+  mask-image: linear-gradient(180deg, rgba(0,0,0,.8) 20%, transparent 100%);
+  -webkit-mask-image: linear-gradient(180deg, rgba(0,0,0,.8) 20%, transparent 100%);
 }
 .mega-feature .mega-eyebrow{
-  font: 600 .72rem/1 var(--font-d, 'Space Grotesk');
-  letter-spacing: .18em; text-transform: uppercase;
-  color: var(--gold); opacity: .9;
+  position: relative; z-index: 1;
+  display: inline-flex; align-items: center; gap: 8px;
+  font: 700 .68rem/1 var(--font-d, 'Space Grotesk');
+  letter-spacing: .22em; text-transform: uppercase;
+  color: var(--mega-accent, var(--gold));
+  padding: 6px 12px;
+  background: var(--mega-accent-dim, rgba(217,168,79,.06));
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: 999px;
+  width: fit-content;
+  margin-bottom: 16px;
 }
 .mega-feature h3{
-  font: 700 1.35rem/1.2 var(--font-d, 'Space Grotesk');
-  color: var(--white); margin: 10px 0 10px;
+  position: relative; z-index: 1;
+  font: 700 1.45rem/1.25 var(--font-d, 'Space Grotesk');
+  color: var(--white); margin: 0 0 12px;
+  letter-spacing: -.01em;
 }
 .mega-feature p{
-  font: 400 .9rem/1.55 var(--font-b, 'Inter');
+  position: relative; z-index: 1;
+  font: 400 .88rem/1.6 var(--font-b, 'Inter');
   color: var(--text-sec, #9AA3B2);
+  margin-bottom: 20px;
+}
+
+/* Metrics — animated counter style */
+.mega-metric{
+  position: relative; z-index: 1;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+  padding: 16px 0;
+  border-top: 1px solid rgba(255,255,255,.06);
   margin-bottom: 18px;
 }
-.mega-feature .mega-metric{
-  display:flex; gap:16px; flex-wrap:wrap;
+.mega-metric span{
+  text-align: center;
 }
-.mega-feature .mega-metric span{
-  font: 700 1.4rem/1 var(--font-d);
+.mega-metric span b,
+.mega-metric span strong{
+  display: block;
+  font: 800 1.5rem/1 var(--font-d);
+  color: var(--white);
+  letter-spacing: -.02em;
+}
+/* Fallback for the non-b/strong wrapped text */
+.mega-metric span{
+  font: 800 1.5rem/1 var(--font-d);
   color: var(--white);
 }
-.mega-feature .mega-metric span small{
-  display:block; font: 400 .7rem/1 var(--font-b);
+.mega-metric span small{
+  display: block; font: 400 .66rem/1.2 var(--font-b);
   color: var(--text-muted, #6B7280);
-  letter-spacing:.05em; text-transform: uppercase;
-  margin-top: 4px;
+  letter-spacing: .06em; text-transform: uppercase;
+  margin-top: 6px;
 }
-.mega-feature .mega-cta{
-  display:inline-flex; align-items:center; gap:8px;
-  padding: 9px 16px; border-radius: 999px;
-  font: 600 .78rem/1 var(--font-d);
-  color: var(--bg); background: var(--gold);
+
+/* CTA Button */
+.mega-cta{
+  position: relative; z-index: 1;
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 12px 20px; border-radius: 12px;
+  font: 600 .82rem/1 var(--font-d);
+  color: var(--bg, #080E1A);
+  background: linear-gradient(135deg, var(--gold), var(--gold-light, #E8C36A));
   text-decoration: none;
-  transition: background .3s var(--ease), transform .3s var(--ease);
+  box-shadow: 0 4px 20px -4px rgba(217,168,79,.4);
+  transition: transform .3s var(--ease), box-shadow .3s var(--ease), filter .3s var(--ease);
+  overflow: hidden;
 }
-.mega-feature .mega-cta:hover{
-  background: var(--gold-light, #E8C36A);
-  transform: translateX(2px);
+.mega-cta::after{
+  content:"";
+  position: absolute; inset: 0;
+  background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,.3) 50%, transparent 70%);
+  transform: translateX(-100%);
+  transition: transform .6s var(--ease);
 }
-
-.mega-cols{
-  display:grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px 24px;
-  align-content: start;
-}
-.mega-col h4{
-  font: 600 .7rem/1 var(--font-d);
-  letter-spacing: .16em; text-transform: uppercase;
-  color: var(--gold); opacity:.9;
-  margin: 0 0 12px;
-}
-.mega-col ul{ list-style:none; margin:0; padding:0; }
-.mega-col li{ margin: 0 0 4px; }
-.mega-col a{
-  display:flex; align-items:center; gap:10px;
-  padding: 8px 10px; border-radius: 10px;
-  color: var(--text-sec, #C4CAD4);
-  font: 500 .86rem/1.3 var(--font-b);
-  text-decoration:none;
-  transition: background .25s var(--ease), color .25s var(--ease), transform .25s var(--ease);
-}
-.mega-col a i{
-  font-size: .78rem; width:16px; text-align:center;
-  color: var(--gold); opacity:.85;
-}
-.mega-col a small{
-  display:block; color: var(--text-muted, #6B7280);
-  font: 400 .72rem/1.3 var(--font-b);
-  margin-top: 2px;
-}
-.mega-col a:hover{
-  background: rgba(255,255,255,.04);
-  color: var(--white);
-  transform: translateX(3px);
+.mega-cta:hover::after{ transform: translateX(100%); }
+.mega-cta:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 8px 30px -4px rgba(217,168,79,.55);
+  filter: brightness(1.08);
 }
 
-/* Business-unit accent tints (applied when data-mega matches) */
-.mega-panel[data-tone="amont"]    .mega-feature{ background: linear-gradient(160deg, rgba(46,134,222,.14), rgba(12,20,38,.2)); }
-.mega-panel[data-tone="amont"]    .mega-eyebrow{ color:#5FA8FF; }
-.mega-panel[data-tone="midstream"].mega-feature{ background: linear-gradient(160deg, rgba(14,165,233,.14), rgba(12,20,38,.2)); }
-.mega-panel[data-tone="midstream"] .mega-eyebrow{ color:#38BDF8; }
-.mega-panel[data-tone="aval"]     .mega-feature{ background: linear-gradient(160deg, rgba(217,119,6,.16), rgba(12,20,38,.2)); }
-.mega-panel[data-tone="aval"]     .mega-eyebrow{ color:#FBBF24; }
-.mega-panel[data-tone="energies"] .mega-feature{ background: linear-gradient(160deg, rgba(16,185,129,.14), rgba(12,20,38,.2)); }
-.mega-panel[data-tone="energies"] .mega-eyebrow{ color:#34D399; }
-
-/* -- 4b. MEGA PANEL — P2 enhancements (2026-04-20) ----------------- */
-
-/* R6 : image de header optionnelle en haut du feature */
-.mega-feature-hero{
-  position: absolute; top:0; left:0; right:0; height: 110px;
-  background-size: cover; background-position: center;
-  opacity: .22; filter: saturate(1.1) brightness(.7);
-  pointer-events: none; border-radius: 16px 16px 0 0;
-  mask-image: linear-gradient(180deg, rgba(0,0,0,.9), transparent);
-  -webkit-mask-image: linear-gradient(180deg, rgba(0,0,0,.9), transparent);
+/* ---- Content Area (right side) ---- */
+.mega-cols-wrap{
+  display: flex; flex-direction: column;
+  padding: 24px 28px 24px 24px;
+  overflow-y: auto;
+  max-height: min(75vh, 680px);
 }
-.mega-feature{ position: relative; overflow: hidden; }
+.mega-cols-wrap::-webkit-scrollbar{ width: 4px; }
+.mega-cols-wrap::-webkit-scrollbar-thumb{ background: rgba(217,168,79,.25); border-radius: 2px; }
 
-/* R10 : barre de recherche inline */
-.mega-cols-wrap{ display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+/* Inline search bar */
 .mega-search{
-  position: relative;
   display: flex; align-items: center; gap: 10px;
-  padding: 10px 14px;
+  padding: 10px 16px;
   background: rgba(255,255,255,0.03);
   border: 1px solid rgba(255,255,255,0.06);
   border-radius: 12px;
-  transition: border-color .2s var(--ease), background .2s var(--ease);
+  margin-bottom: 18px;
+  transition: border-color .25s var(--ease), background .25s var(--ease), box-shadow .25s var(--ease);
 }
 .mega-search:focus-within{
-  border-color: rgba(217,168,79,0.4);
+  border-color: rgba(217,168,79,0.35);
   background: rgba(255,255,255,0.05);
+  box-shadow: 0 0 0 3px rgba(217,168,79,.08);
 }
 .mega-search i{ color: var(--text-muted, #6B7280); font-size: .82rem; }
 .mega-search-input{
   flex: 1; min-width: 0;
   background: transparent; border: none; outline: none;
   color: var(--white);
-  font: 500 .88rem/1.3 var(--font-b);
+  font: 500 .86rem/1.3 var(--font-b);
 }
 .mega-search-input::placeholder{ color: var(--text-muted, #6B7280); }
 .mega-search-empty{
@@ -320,19 +325,98 @@
   white-space: nowrap;
 }
 
-/* R5 : état page-courante sur items */
+/* ---- 3-Column Card Grid ---- */
+.mega-cols{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px 20px;
+  align-content: start;
+  flex: 1;
+}
+.mega-col h4{
+  font: 700 .68rem/1 var(--font-d);
+  letter-spacing: .18em; text-transform: uppercase;
+  color: var(--mega-accent, var(--gold));
+  margin: 0 0 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255,255,255,.04);
+}
+.mega-col ul{ list-style: none; margin: 0; padding: 0; }
+.mega-col li{
+  margin: 0 0 2px;
+  opacity: 0; transform: translateY(6px);
+  transition: opacity .3s var(--ease), transform .3s var(--ease);
+}
+.mega-panel.active .mega-col li{
+  opacity: 1; transform: translateY(0);
+}
+/* Stagger cascade — items fade in sequentially */
+.mega-panel.active .mega-col:nth-child(1) li:nth-child(1){ transition-delay: .06s; }
+.mega-panel.active .mega-col:nth-child(1) li:nth-child(2){ transition-delay: .10s; }
+.mega-panel.active .mega-col:nth-child(1) li:nth-child(3){ transition-delay: .14s; }
+.mega-panel.active .mega-col:nth-child(2) li:nth-child(1){ transition-delay: .08s; }
+.mega-panel.active .mega-col:nth-child(2) li:nth-child(2){ transition-delay: .12s; }
+.mega-panel.active .mega-col:nth-child(2) li:nth-child(3){ transition-delay: .16s; }
+.mega-panel.active .mega-col:nth-child(3) li:nth-child(1){ transition-delay: .10s; }
+.mega-panel.active .mega-col:nth-child(3) li:nth-child(2){ transition-delay: .14s; }
+.mega-panel.active .mega-col:nth-child(3) li:nth-child(3){ transition-delay: .18s; }
+
+/* Card-style links with icon + text + subtitle */
+.mega-col a{
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 10px 12px; border-radius: 12px;
+  color: var(--text-sec, #C4CAD4);
+  font: 500 .86rem/1.3 var(--font-b);
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: background .25s var(--ease), color .25s var(--ease),
+              transform .25s var(--ease), border-color .25s var(--ease),
+              box-shadow .25s var(--ease);
+}
+.mega-col a i{
+  flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  width: 32px; height: 32px;
+  border-radius: 8px;
+  background: var(--mega-accent-dim, rgba(217,168,79,.06));
+  color: var(--mega-accent, var(--gold));
+  font-size: .78rem;
+  transition: transform .3s var(--ease), background .3s var(--ease);
+}
+.mega-col a .cmdk-title{
+  display: flex; flex-direction: column;
+}
+.mega-col a small{
+  display: block; color: var(--text-muted, #6B7280);
+  font: 400 .72rem/1.3 var(--font-b);
+  margin-top: 2px;
+}
+.mega-col a:hover{
+  background: rgba(255,255,255,.04);
+  border-color: rgba(255,255,255,.06);
+  color: var(--white);
+  transform: translateX(3px);
+  box-shadow: 0 2px 12px -4px rgba(0,0,0,.3);
+}
+.mega-col a:hover i{
+  transform: scale(1.08);
+  background: var(--mega-accent-dim, rgba(217,168,79,.12));
+}
+
+/* Current page state */
 .mega-col a[aria-current="page"],
 .mega-col a.is-current{
-  background: rgba(217,168,79,0.08);
+  background: rgba(217,168,79,0.06);
+  border-color: rgba(217,168,79,.15);
   color: var(--white);
-  box-shadow: inset 2px 0 0 var(--gold);
+  box-shadow: inset 3px 0 0 var(--gold);
 }
 .mega-col a[aria-current="page"] i,
-.mega-col a.is-current i{ color: var(--gold); opacity: 1; }
+.mega-col a.is-current i{
+  color: var(--gold); background: rgba(217,168,79,.12);
+}
 
-/* -- 5. HEADER ACTIONS — unified icon-button system (UP HEADER_CLEANUP 2026-04-20)
-   Passage des cercles (999px) à un rayon modernisé 10px, bordure plus subtile,
-   hover cognac cohérent avec .up-theme-btn, focus halo conforme design system. */
+/* -- 5. HEADER ACTIONS -- */
 .header-actions .lang-btn,
 .header-actions .theme-toggle,
 .header-actions .up-theme-btn,
@@ -371,42 +455,26 @@
               0 0 0 6px rgba(200,150,72,.15);
 }
 .header-actions .lang-btn{
-  width: auto;
-  padding: 0 12px;
-  gap: 6px;
+  width: auto; padding: 0 12px; gap: 6px;
   font: 600 .78rem/1 var(--font-d);
   letter-spacing: .04em;
 }
-/* HEADER_POLISH_V2 : hamburger animé (3 barres → X) ─ state pilotée par aria-expanded. */
 .header-actions .mobile-toggle{
-  position: relative;
-  font-size: 0; /* reset any inherited icon font */
+  position: relative; font-size: 0;
 }
 .header-actions .mobile-toggle span{
-  position: absolute;
-  left: 11px;
-  width: 16px;
-  height: 1.5px;
-  background: currentColor;
-  border-radius: 2px;
+  position: absolute; left: 11px;
+  width: 16px; height: 1.5px;
+  background: currentColor; border-radius: 2px;
   transform-origin: center;
-  transition:
-    transform .35s var(--ease),
-    top .35s var(--ease),
-    opacity .25s var(--ease);
+  transition: transform .35s var(--ease), top .35s var(--ease), opacity .25s var(--ease);
 }
 .header-actions .mobile-toggle span:nth-child(1){ top: 13px; }
 .header-actions .mobile-toggle span:nth-child(2){ top: 18px; }
 .header-actions .mobile-toggle span:nth-child(3){ top: 23px; }
-.header-actions .mobile-toggle[aria-expanded="true"] span:nth-child(1){
-  top: 18px; transform: rotate(45deg);
-}
-.header-actions .mobile-toggle[aria-expanded="true"] span:nth-child(2){
-  opacity: 0; transform: scaleX(0);
-}
-.header-actions .mobile-toggle[aria-expanded="true"] span:nth-child(3){
-  top: 18px; transform: rotate(-45deg);
-}
+.header-actions .mobile-toggle[aria-expanded="true"] span:nth-child(1){ top: 18px; transform: rotate(45deg); }
+.header-actions .mobile-toggle[aria-expanded="true"] span:nth-child(2){ opacity: 0; transform: scaleX(0); }
+.header-actions .mobile-toggle[aria-expanded="true"] span:nth-child(3){ top: 18px; transform: rotate(-45deg); }
 .header-actions .lang-btn .lang-label{
   font: 700 .72rem/1 var(--font-d);
   letter-spacing: .05em;
@@ -429,6 +497,8 @@ html.light .header-actions .mobile-toggle:hover{
   border-color: rgba(200,150,72,.5);
   color: var(--cognac, #C89648);
 }
+
+/* Header CTA shimmer */
 .header-cta{
   position: relative; overflow: hidden;
 }
@@ -436,30 +506,26 @@ html.light .header-actions .mobile-toggle:hover{
   content:"";
   position:absolute; inset:0;
   background: linear-gradient(120deg,
-    transparent 30%,
-    rgba(255,255,255,.35) 50%,
-    transparent 70%);
+    transparent 30%, rgba(255,255,255,.35) 50%, transparent 70%);
   transform: translateX(-100%);
   transition: transform .8s var(--ease);
 }
 .header-cta:hover::before{ transform: translateX(100%); }
 
-/* -- 6. COMMAND PALETTE (Ctrl/⌘ K) --------------------------------- */
-/* HEADER_POLISH_V2 : cmdk trigger aligné sur le système d'icônes (radius 10, hover cognac) */
+/* ================================================================
+   6. COMMAND PALETTE (Ctrl/⌘ K)
+   ================================================================ */
 .cmdk-trigger{
   display: inline-flex; align-items:center; gap:8px;
-  height: 38px;
-  padding: 0 12px;
+  height: 38px; padding: 0 12px;
   border-radius: 10px;
   background: rgba(255,255,255,.025);
   border: 1px solid rgba(255,255,255,.08);
   color: var(--text-sec, #9AA3B2);
   font: 500 .78rem/1 var(--font-b);
   cursor: pointer;
-  transition: background .28s var(--ease),
-              border-color .28s var(--ease),
-              color .28s var(--ease),
-              transform .28s var(--ease),
+  transition: background .28s var(--ease), border-color .28s var(--ease),
+              color .28s var(--ease), transform .28s var(--ease),
               box-shadow .28s var(--ease);
 }
 .cmdk-trigger:hover{
@@ -471,8 +537,7 @@ html.light .header-actions .mobile-toggle:hover{
 }
 .cmdk-trigger:focus-visible{
   outline: none;
-  box-shadow: 0 0 0 3px rgba(200,150,72,.35),
-              0 0 0 6px rgba(200,150,72,.15);
+  box-shadow: 0 0 0 3px rgba(200,150,72,.35), 0 0 0 6px rgba(200,150,72,.15);
 }
 .cmdk-trigger kbd{
   font: 600 .68rem/1 var(--font-d);
@@ -483,13 +548,11 @@ html.light .header-actions .mobile-toggle:hover{
 }
 .cmdk-trigger > span{ letter-spacing: .02em; }
 html.light .cmdk-trigger{
-  background: rgba(0,0,0,.02);
-  border-color: rgba(0,0,0,.12);
+  background: rgba(0,0,0,.02); border-color: rgba(0,0,0,.12);
   color: var(--text-sec, #555566);
 }
 html.light .cmdk-trigger kbd{
-  background: rgba(0,0,0,.06);
-  border-color: rgba(0,0,0,.1);
+  background: rgba(0,0,0,.06); border-color: rgba(0,0,0,.1);
   color: var(--text-pri, #050911);
 }
 @media(max-width: 980px){ .cmdk-trigger{ display:none; } }
@@ -506,26 +569,28 @@ html.light .cmdk-trigger kbd{
 }
 .cmdk-overlay.active{ opacity:1; visibility:visible; }
 .cmdk-modal{
-  width: min(620px, 100%);
-  background: linear-gradient(180deg, rgba(15,26,46,.98), rgba(12,20,38,.99));
+  width: min(640px, 100%);
+  background:
+    radial-gradient(ellipse 60% 30% at 50% 0%, rgba(217,168,79,.06), transparent 60%),
+    linear-gradient(180deg, rgba(15,26,46,.98), rgba(12,20,38,.99));
   border: 1px solid rgba(217,168,79,.18);
-  border-radius: 18px;
+  border-radius: 20px;
   box-shadow: 0 40px 120px rgba(0,0,0,.7);
   overflow: hidden;
-  transform: translateY(-20px) scale(.98);
+  transform: translateY(-20px) scale(.97);
   opacity: 0;
   transition: transform .35s var(--ease), opacity .35s var(--ease);
 }
 .cmdk-overlay.active .cmdk-modal{ transform: translateY(0) scale(1); opacity:1; }
 .cmdk-search{
   display:flex; align-items:center; gap:12px;
-  padding: 18px 22px;
+  padding: 20px 24px;
   border-bottom: 1px solid rgba(255,255,255,.06);
 }
-.cmdk-search i{ color: var(--gold); font-size: 1rem; }
+.cmdk-search i{ color: var(--gold); font-size: 1.05rem; }
 .cmdk-search input{
   flex: 1; background: transparent; border: 0; outline: 0;
-  color: var(--white); font: 500 1rem/1 var(--font-b);
+  color: var(--white); font: 500 1.05rem/1 var(--font-b);
 }
 .cmdk-search input::placeholder{ color: var(--text-muted, #6B7280); }
 .cmdk-search kbd{
@@ -568,7 +633,7 @@ html.light .cmdk-trigger kbd{
   font: 400 .85rem/1.4 var(--font-b);
 }
 .cmdk-footer{
-  display:flex; gap:18px; padding: 10px 18px;
+  display:flex; gap:18px; padding: 12px 20px;
   border-top: 1px solid rgba(255,255,255,.06);
   font: 500 .7rem/1 var(--font-d);
   color: var(--text-muted, #6B7280);
@@ -582,7 +647,9 @@ html.light .cmdk-trigger kbd{
   border: 1px solid rgba(255,255,255,.06);
 }
 
-/* -- 7. MOBILE DRAWER — full-screen with staggered entry ----------- */
+/* ================================================================
+   7. MOBILE DRAWER — full-screen with staggered entry
+   ================================================================ */
 .mobile-drawer{
   position: fixed; inset: 0; z-index: 1050;
   background: linear-gradient(180deg, rgba(8,14,26,.98), rgba(12,20,38,.995));
@@ -605,6 +672,11 @@ html.light .cmdk-trigger kbd{
   color: var(--white); font-size: 1.1rem;
   display:flex; align-items:center; justify-content:center;
   cursor: pointer;
+  transition: background .3s var(--ease), border-color .3s var(--ease);
+}
+.mobile-drawer-close:hover{
+  background: rgba(217,168,79,.1);
+  border-color: rgba(217,168,79,.3);
 }
 .mobile-drawer nav{
   display:flex; flex-direction:column; gap:4px;
@@ -671,15 +743,46 @@ html.light .cmdk-trigger kbd{
   border: 1px solid rgba(255,255,255,.15);
 }
 
-/* -- 8. REDUCED MOTION & PRINT ------------------------------------- */
+/* ================================================================
+   8. RESPONSIVE
+   ================================================================ */
+@media(max-width: 980px){
+  .mega-panel{
+    width: calc(100vw - 16px);
+    border-radius: 16px;
+    max-height: 80vh;
+  }
+  .mega-grid{
+    grid-template-columns: 1fr;
+  }
+  .mega-feature{
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,.05);
+    min-height: auto;
+    padding: 24px 20px;
+  }
+  .mega-cols{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media(max-width: 640px){
+  .mega-cols{
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ================================================================
+   9. REDUCED MOTION & PRINT
+   ================================================================ */
 @media (prefers-reduced-motion: reduce){
   .header, .nav-indicator, .nav-link::after,
   .logo-wrap .logo-img, .mega-panel, .mobile-drawer,
-  .cmdk-modal, .header-cta::before{
+  .cmdk-modal, .header-cta::before,
+  .mega-col li, .mega-cta::after{
     transition: none !important;
     animation: none !important;
-    transform: none !important;
   }
+  .mega-col li{ opacity: 1; transform: none; }
 }
 @media print{
   .header-progress, .mega-panel, .cmdk-overlay, .mobile-drawer{ display:none !important; }

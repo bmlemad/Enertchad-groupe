@@ -1,13 +1,7 @@
 /* ================================================================
-   EnerTchad — NAV PREMIUM  (QW-NAV · 2026-04-20)
-   Logique de navigation ultra-premium :
-     - Magnetic indicator sur .nav (track .nav-link hover/focus)
-     - Active-link auto-detect (aria-current="page")
-     - Mega-menu data-driven (amont/midstream/aval/energies + groupe/durabilite/talents/actualites)
-     - Scroll progress dans le header (.header-progress)
-     - Command palette Ctrl/⌘-K
-     - Mobile drawer full-screen avec stagger
-     - Keyboard navigation complète, focus trap, aria-live
+   EnerTchad — NAV PREMIUM v2  (MEGA-REDESIGN · 2026-04-20)
+   Full redesign: animated glass cards, stagger cascade, spotlight hero,
+   command palette, mobile drawer, keyboard nav, analytics.
    ================================================================ */
 (function(){
   'use strict';
@@ -144,23 +138,23 @@
           ['1 070', 'km pipeline'],
           ['24', 'stations · 14 villes']
         ],
-        cta: { label: 'Explorer les opérations', href: 'operations/amont.html' }
+        cta: { label: 'Explorer les opérations', href: '/operations/amont' }
       },
       cols: [
         { title:'Amont', items:[
-          { i:'fa-oil-well',   t:'Exploration & Production', s:'5 bassins · 7 opérateurs',    href:'operations/amont.html' },
-          { i:'fa-magnifying-glass-chart', t:'Géosciences',  s:'144K b/j · 250K b/j 2030',    href:'operations/amont.html#geosciences' },
-          { i:'fa-hard-hat',   t:'Forage & Well Services',   s:'Ingénierie puits',            href:'operations/amont.html#forage' }
+          { i:'fa-oil-well',   t:'Exploration & Production', s:'5 bassins · 7 opérateurs',    href:'/operations/amont' },
+          { i:'fa-magnifying-glass-chart', t:'Géosciences',  s:'144K b/j · 250K b/j 2030',    href:'/operations/amont#geosciences' },
+          { i:'fa-hard-hat',   t:'Forage & Well Services',   s:'Ingénierie puits',            href:'/operations/amont#forage' }
         ]},
         { title:'Intermédiaire', items:[
-          { i:'fa-pipe-section',t:'Pipeline Doba-Kribi',      s:'1 070 km · stockage',         href:'operations/intermediaire.html' },
-          { i:'fa-warehouse',  t:'Stockage & Logistique',    s:'Midstream intégré',           href:'operations/intermediaire.html#operations' },
-          { i:'fa-satellite-dish', t:'SCADA & Télémétrie',    s:'Dashboard temps réel',        href:'operations/intermediaire.html#dashboard' }
+          { i:'fa-pipe-section',t:'Pipeline Doba-Kribi',      s:'1 070 km · stockage',         href:'/operations/intermediaire' },
+          { i:'fa-warehouse',  t:'Stockage & Logistique',    s:'Midstream intégré',           href:'/operations/intermediaire#operations' },
+          { i:'fa-satellite-dish', t:'SCADA & Télémétrie',    s:'Dashboard temps réel',        href:'/operations/intermediaire#dashboard' }
         ]},
         { title:'Aval & Énergies', items:[
-          { i:'fa-industry',   t:'Raffinerie Djarmaya',      s:'20 kb/j · HSE ISO',           href:'operations/aval.html' },
-          { i:'fa-gas-pump',   t:'Stations-service',         s:'24 stations · 14 villes',     href:'operations/aval.html#stations' },
-          { i:'fa-solar-panel',t:'EnerTchad GreenTech',      s:'500 MW · solaire, éolien, hybride', href:'operations/greentech.html' }
+          { i:'fa-industry',   t:'Raffinerie Djarmaya',      s:'20 kb/j · HSE ISO',           href:'/operations/aval' },
+          { i:'fa-gas-pump',   t:'Stations-service',         s:'24 stations · 14 villes',     href:'/operations/aval#stations' },
+          { i:'fa-solar-panel',t:'EnerTchad GreenTech',      s:'500 MW · solaire, éolien, hybride', href:'/operations/greentech' }
         ]}
       ]
     },
@@ -176,23 +170,23 @@
           ['7',     'filiales'],
           ['20+',   'ans d\'expérience']
         ],
-        cta: { label: 'Découvrir le groupe', href: 'groupe/index.html' }
+        cta: { label: 'Découvrir le groupe', href: '/groupe/' }
       },
       cols: [
         { title:'Qui nous sommes', items:[
-          { i:'fa-building', t:'Présentation',   s:'Vision, missions, ambition', href:'groupe/index.html#identite' },
-          { i:'fa-users',    t:'Gouvernance',    s:'Conseil, comités, éthique',  href:'groupe/index.html#gouvernance' },
-          { i:'fa-timeline', t:'Histoire',       s:'Étapes clés · 2026',         href:'groupe/index.html#histoire' }
+          { i:'fa-building', t:'Présentation',   s:'Vision, missions, ambition', href:'/groupe/#identite' },
+          { i:'fa-users',    t:'Gouvernance',    s:'Conseil, comités, éthique',  href:'/groupe/#gouvernance' },
+          { i:'fa-timeline', t:'Histoire',       s:'Étapes clés · 2026',         href:'/groupe/#histoire' }
         ]},
         { title:'Organisation', items:[
-          { i:'fa-sitemap',  t:'Filiales',       s:'Amont · Mid · Aval · GreenTech', href:'groupe/index.html#subsidiaries' },
-          { i:'fa-globe-africa', t:'Implantations',s:'14 villes · 5 bassins',    href:'groupe/index.html#poles' },
-          { i:'fa-handshake', t:'Partenariats',  s:'Majors, États, multilatéraux', href:'groupe/index.html#partenariats' }
+          { i:'fa-sitemap',  t:'Filiales',       s:'Amont · Mid · Aval · GreenTech', href:'/groupe/#subsidiaries' },
+          { i:'fa-globe-africa', t:'Implantations',s:'14 villes · 5 bassins',    href:'/groupe/#poles' },
+          { i:'fa-handshake', t:'Partenariats',  s:'Majors, États, multilatéraux', href:'/groupe/#partenariats' }
         ]},
         { title:'Reconnaissance', items:[
-          { i:'fa-certificate', t:'Certifications',s:'ISO 37001/26000/27001',   href:'durabilite.html#certifications' },
-          { i:'fa-newspaper',   t:'Presse',       s:'Dossier et ressources',    href:'actualites.html#communiques' },
-          { i:'fa-medal',       t:'Prix & distinctions',s:'EITI · Afrique',     href:'groupe/index.html#publications' }
+          { i:'fa-certificate', t:'Certifications',s:'ISO 37001/26000/27001',   href:'/durabilite#certifications' },
+          { i:'fa-newspaper',   t:'Presse',       s:'Dossier et ressources',    href:'/actualites#communiques' },
+          { i:'fa-medal',       t:'Prix & distinctions',s:'EITI · Afrique',     href:'/groupe/#publications' }
         ]}
       ]
     },
@@ -208,23 +202,23 @@
           ['GRI', 'reporting'],
           ['ITIE', 'compliance']
         ],
-        cta: { label: 'Rapport Durabilité 2025', href: 'durabilite.html#rapport-rse' }
+        cta: { label: 'Rapport Durabilité 2025', href: '/durabilite#rapport-rse' }
       },
       cols: [
         { title:'Planète', items:[
-          { i:'fa-leaf',      t:'Trajectoire carbone',   s:'Scope 1-2-3',          href:'durabilite.html#climat' },
-          { i:'fa-wind',      t:'Transition énergétique',s:'Solaire · éolien · hybride', href:'operations/greentech.html' },
-          { i:'fa-droplet',   t:'Eau & biodiversité',   s:'Gestion intégrée',     href:'durabilite.html#biodiversite' }
+          { i:'fa-leaf',      t:'Trajectoire carbone',   s:'Scope 1-2-3',          href:'/durabilite#climat' },
+          { i:'fa-wind',      t:'Transition énergétique',s:'Solaire · éolien · hybride', href:'/operations/greentech' },
+          { i:'fa-droplet',   t:'Eau & biodiversité',   s:'Gestion intégrée',     href:'/durabilite#biodiversite' }
         ]},
         { title:'Communautés', items:[
-          { i:'fa-people-roof', t:'Impact local',        s:'Contenu local, emploi', href:'durabilite.html#local-content' },
-          { i:'fa-graduation-cap', t:'Éducation',        s:'EnerTchad Academy',    href:'talents.html#academy' },
-          { i:'fa-heart-pulse', t:'Santé & sécurité',    s:'ISO 45001',            href:'durabilite.html#hse' }
+          { i:'fa-people-roof', t:'Impact local',        s:'Contenu local, emploi', href:'/durabilite#local-content' },
+          { i:'fa-graduation-cap', t:'Éducation',        s:'EnerTchad Academy',    href:'/talents#academy' },
+          { i:'fa-heart-pulse', t:'Santé & sécurité',    s:'ISO 45001',            href:'/durabilite#hse' }
         ]},
         { title:'Gouvernance', items:[
-          { i:'fa-scale-balanced', t:'Éthique & compliance', s:'ISO 37001',       href:'durabilite.html#ethique' },
-          { i:'fa-file-shield',    t:'Cybersécurité',        s:'ISO 27001 · OT',  href:'durabilite.html#cyber' },
-          { i:'fa-file-contract',  t:'Reporting',            s:'GRI · ITIE · TCFD', href:'durabilite.html#reporting' }
+          { i:'fa-scale-balanced', t:'Éthique & compliance', s:'ISO 37001',       href:'/durabilite#ethique' },
+          { i:'fa-file-shield',    t:'Cybersécurité',        s:'ISO 27001 · OT',  href:'/durabilite#cyber' },
+          { i:'fa-file-contract',  t:'Reporting',            s:'GRI · ITIE · TCFD', href:'/durabilite#reporting' }
         ]}
       ]
     },
@@ -240,23 +234,23 @@
           ['80%',  'recrutement local'],
           ['6',    'métiers-phares']
         ],
-        cta: { label: 'Voir les offres', href: 'talents.html#offres' }
+        cta: { label: 'Voir les offres', href: '/talents#offres' }
       },
       cols: [
         { title:'Candidats', items:[
-          { i:'fa-briefcase',   t:'Offres d\'emploi', s:'Forage, HSE, IT, énergies', href:'talents.html#offres' },
-          { i:'fa-user-graduate', t:'Graduate Trainee',s:'Jeunes diplômés',         href:'talents.html#graduate' },
-          { i:'fa-paper-plane', t:'Candidature spontanée',s:'Postulez',             href:'talents.html#candidature' }
+          { i:'fa-briefcase',   t:'Offres d\'emploi', s:'Forage, HSE, IT, énergies', href:'/talents#offres' },
+          { i:'fa-user-graduate', t:'Graduate Trainee',s:'Jeunes diplômés',         href:'/talents#graduate' },
+          { i:'fa-paper-plane', t:'Candidature spontanée',s:'Postulez',             href:'/talents#candidature' }
         ]},
         { title:'Formation', items:[
-          { i:'fa-school',      t:'EnerTchad Academy',s:'200h/an',                  href:'talents.html#academy' },
-          { i:'fa-certificate', t:'Certifications métier',s:'IWCF, NEBOSH, API',    href:'talents.html#competences' },
-          { i:'fa-rotate',      t:'Mobilité interne',  s:'7 filiales',              href:'talents.html#parcours' }
+          { i:'fa-school',      t:'EnerTchad Academy',s:'200h/an',                  href:'/talents#academy' },
+          { i:'fa-certificate', t:'Certifications métier',s:'IWCF, NEBOSH, API',    href:'/talents#competences' },
+          { i:'fa-rotate',      t:'Mobilité interne',  s:'7 filiales',              href:'/talents#parcours' }
         ]},
         { title:'Culture', items:[
-          { i:'fa-bullseye',    t:'Nos valeurs',       s:'Rigueur · impact · éthique', href:'talents.html#valeurs' },
-          { i:'fa-users-gear',  t:'Diversité & inclusion',s:'Charte + KPI',         href:'talents.html#diversite' },
-          { i:'fa-handshake-angle', t:'Onboarding',    s:'Parcours 90 jours',       href:'talents.html#avantages' }
+          { i:'fa-bullseye',    t:'Nos valeurs',       s:'Rigueur · impact · éthique', href:'/talents#valeurs' },
+          { i:'fa-users-gear',  t:'Diversité & inclusion',s:'Charte + KPI',         href:'/talents#diversite' },
+          { i:'fa-handshake-angle', t:'Onboarding',    s:'Parcours 90 jours',       href:'/talents#avantages' }
         ]}
       ]
     },
@@ -272,23 +266,23 @@
           ['12',   'communiqués / an'],
           ['HD',   'photothèque']
         ],
-        cta: { label: 'Voir toutes les actus', href: 'actualites.html' }
+        cta: { label: 'Voir toutes les actus', href: '/actualites' }
       },
       cols: [
         { title:'Publications', items:[
-          { i:'fa-envelope-open-text', t:'Newsletter Insights', s:'Veille éditoriale · mensuelle', href:'newsletter.html' },
-          { i:'fa-bullhorn',   t:'Communiqués de presse',s:'Flux officiel',          href:'actualites.html#communiques' },
-          { i:'fa-podcast',    t:'Interviews & médias', s:'Dirigeants',             href:'actualites.html#media' }
+          { i:'fa-envelope-open-text', t:'Newsletter Insights', s:'Veille éditoriale · mensuelle', href:'/newsletter' },
+          { i:'fa-bullhorn',   t:'Communiqués de presse',s:'Flux officiel',          href:'/actualites#communiques' },
+          { i:'fa-podcast',    t:'Interviews & médias', s:'Dirigeants',             href:'/actualites#media' }
         ]},
         { title:'Ressources', items:[
-          { i:'fa-file-lines', t:'Rapports annuels',    s:'Intégrés · audités',     href:'investisseurs.html#documents' },
-          { i:'fa-images',     t:'Photothèque',         s:'Assets HD',               href:'actualites.html#media' },
-          { i:'fa-folder-open',t:'Kit presse',          s:'Logo, charte, bios',      href:'actualites.html#media' }
+          { i:'fa-file-lines', t:'Rapports annuels',    s:'Intégrés · audités',     href:'/investisseurs#documents' },
+          { i:'fa-images',     t:'Photothèque',         s:'Assets HD',               href:'/actualites#media' },
+          { i:'fa-folder-open',t:'Kit presse',          s:'Logo, charte, bios',      href:'/actualites#media' }
         ]},
         { title:'Contact', items:[
-          { i:'fa-envelope',   t:'Presse',              s:'presse@enertchad-groupe', href:'contact.html#formulaire' },
-          { i:'fa-users',      t:'Relations investisseurs',s:'Analystes',           href:'investisseurs.html#corporate-info' },
-          { i:'fa-comments',   t:'Parties prenantes',   s:'ONG, multilatéraux',     href:'contact.html#formulaire' }
+          { i:'fa-envelope',   t:'Presse',              s:'presse@enertchad-groupe', href:'/contact#formulaire' },
+          { i:'fa-users',      t:'Relations investisseurs',s:'Analystes',           href:'/investisseurs#corporate-info' },
+          { i:'fa-comments',   t:'Parties prenantes',   s:'ONG, multilatéraux',     href:'/contact#formulaire' }
         ]}
       ]
     }
@@ -518,25 +512,25 @@
   // 4. COMMAND PALETTE (Ctrl/⌘-K)
   // =================================================================
   var CMDK_DEFAULTS = [
-    { group:'Accueil',    t:'Accueil',           s:'Page d\'accueil',          i:'fa-home',        href:'index.html' },
-    { group:'Opérations', t:'EnerTchad Amont',   s:'Exploration & Production', i:'fa-oil-well',    href:'operations/amont.html' },
-    { group:'Opérations', t:'EnerTchad Intermédiaire', s:'Pipeline & midstream', i:'fa-pipe-section', href:'operations/intermediaire.html' },
-    { group:'Opérations', t:'EnerTchad Aval',    s:'Raffinerie & stations',    i:'fa-industry',    href:'operations/aval.html' },
-    { group:'Opérations', t:'EnerTchad GreenTech',s:'500 MW renouvelables',    i:'fa-solar-panel', href:'operations/greentech.html' },
-    { group:'Groupe',     t:'Présentation',      s:'Vision & missions',        i:'fa-building',    href:'groupe/index.html#identite' },
-    { group:'Groupe',     t:'Gouvernance',       s:'Conseil & comités',        i:'fa-users',       href:'groupe/index.html#gouvernance' },
-    { group:'Groupe',     t:'Filiales',          s:'7 filiales',               i:'fa-sitemap',     href:'groupe/index.html#subsidiaries' },
-    { group:'Engagement', t:'Durabilité',        s:'ESG · RSE · GRI',          i:'fa-leaf',        href:'durabilite.html' },
-    { group:'Engagement', t:'Rapport 2025',      s:'PDF · 2,4 Mo',             i:'fa-file-pdf',    href:'durabilite.html#rapport-rse' },
-    { group:'Talents',    t:'Offres d\'emploi',  s:'Forage · HSE · IT',        i:'fa-briefcase',   href:'talents.html#offres' },
-    { group:'Talents',    t:'EnerTchad Academy', s:'Formation 200h/an',        i:'fa-school',      href:'talents.html#academy' },
-    { group:'Médias',     t:'Actualités',        s:'Communiqués & presse',     i:'fa-newspaper',   href:'actualites.html' },
-    { group:'Médias',     t:'Newsletter',        s:'Veille éditoriale',        i:'fa-envelope-open-text', href:'newsletter.html' },
-    { group:'Médias',     t:'Investisseurs',     s:'Rapports & IR',            i:'fa-chart-pie',   href:'investisseurs.html' },
-    { group:'Contact',    t:'Contact',           s:'Nous écrire',              i:'fa-envelope',    href:'contact.html' },
-    { group:'Action',     t:'Demander un devis', s:'Formulaire contact',       i:'fa-file-signature', href:'contact.html#devis' },
+    { group:'Accueil',    t:'Accueil',           s:'Page d\'accueil',          i:'fa-home',        href:'/' },
+    { group:'Opérations', t:'EnerTchad Amont',   s:'Exploration & Production', i:'fa-oil-well',    href:'/operations/amont' },
+    { group:'Opérations', t:'EnerTchad Intermédiaire', s:'Pipeline & midstream', i:'fa-pipe-section', href:'/operations/intermediaire' },
+    { group:'Opérations', t:'EnerTchad Aval',    s:'Raffinerie & stations',    i:'fa-industry',    href:'/operations/aval' },
+    { group:'Opérations', t:'EnerTchad GreenTech',s:'500 MW renouvelables',    i:'fa-solar-panel', href:'/operations/greentech' },
+    { group:'Groupe',     t:'Présentation',      s:'Vision & missions',        i:'fa-building',    href:'/groupe/#identite' },
+    { group:'Groupe',     t:'Gouvernance',       s:'Conseil & comités',        i:'fa-users',       href:'/groupe/#gouvernance' },
+    { group:'Groupe',     t:'Filiales',          s:'7 filiales',               i:'fa-sitemap',     href:'/groupe/#subsidiaries' },
+    { group:'Engagement', t:'Durabilité',        s:'ESG · RSE · GRI',          i:'fa-leaf',        href:'/durabilite' },
+    { group:'Engagement', t:'Rapport 2025',      s:'PDF · 2,4 Mo',             i:'fa-file-pdf',    href:'/durabilite#rapport-rse' },
+    { group:'Talents',    t:'Offres d\'emploi',  s:'Forage · HSE · IT',        i:'fa-briefcase',   href:'/talents#offres' },
+    { group:'Talents',    t:'EnerTchad Academy', s:'Formation 200h/an',        i:'fa-school',      href:'/talents#academy' },
+    { group:'Médias',     t:'Actualités',        s:'Communiqués & presse',     i:'fa-newspaper',   href:'/actualites' },
+    { group:'Médias',     t:'Newsletter',        s:'Veille éditoriale',        i:'fa-envelope-open-text', href:'/newsletter' },
+    { group:'Médias',     t:'Investisseurs',     s:'Rapports & IR',            i:'fa-chart-pie',   href:'/investisseurs' },
+    { group:'Contact',    t:'Contact',           s:'Nous écrire',              i:'fa-envelope',    href:'/contact' },
+    { group:'Action',     t:'Demander un devis', s:'Formulaire contact',       i:'fa-file-signature', href:'/contact#devis' },
     { group:'Action',     t:'Changer de langue', s:'FR ↔ EN',                  i:'fa-language',    action:'lang' },
-    { group:'Action',     t:'Télécharger le logo', s:'SVG',                    i:'fa-image',       href:'logo-enertchad.svg' }
+    { group:'Action',     t:'Télécharger le logo', s:'SVG',                    i:'fa-image',       href:'/logo-enertchad.svg' }
   ];
 
   function initCommandPalette(){
@@ -733,8 +727,8 @@
       '<button class="mobile-drawer-close" aria-label="Fermer le menu"><i class="fas fa-xmark"></i></button>' +
       '<nav role="navigation" aria-label="Navigation mobile">'+itemsHTML+'</nav>' +
       '<div class="mobile-drawer-cta">' +
-        '<a class="btn btn-primary" href="contact.html">Demander un devis</a>' +
-        '<a class="btn btn-ghost" href="talents.html">Rejoindre EnerTchad</a>' +
+        '<a class="btn btn-primary" href="/contact">Demander un devis</a>' +
+        '<a class="btn btn-ghost" href="/talents">Rejoindre EnerTchad</a>' +
       '</div>';
     document.body.appendChild(d);
 
