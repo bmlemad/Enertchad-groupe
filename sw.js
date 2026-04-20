@@ -1,10 +1,10 @@
 /**
- * EnerTchad Groupe — Service Worker v2.0
+ * EnerTchad Groupe — Service Worker v3.0
  * Production-ready with cache-first for static assets, network-first for HTML
  * Offline fallback support with offline.html
  */
 
-const CACHE_NAME = 'enertchad-groupe-v5';
+const CACHE_NAME = 'enertchad-groupe-v3';
 const OFFLINE_URL = '/offline.html';
 
 // Critical static assets to pre-cache on install
@@ -13,14 +13,15 @@ const STATIC_ASSETS = [
   '/index.html',
   '/offline.html',
   '/404.html',
-  '/css/main.unified.css',
+  '/css/style.min.css',
+  '/css/main.v1.css',
+  '/css/amont.v1.css',
+  '/css/premium.css',
+  '/css/shared-hero-a.css',
+  '/css/shared-hero-b.css',
   '/js/app.min.js',
-  '/js/app.js',
-  '/js/main.bundle.js',
-  '/js/shared.js',
   '/js/chad-map.js',
   '/js/premium.js',
-  '/logo.svg',
   '/logo-enertchad.svg',
   '/favicon.svg',
   '/manifest.json'

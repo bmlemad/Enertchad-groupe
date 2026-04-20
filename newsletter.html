@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="fr" class="no-js">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://plausible.io; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://plausible.io; frame-src 'none'; object-src 'none'; base-uri 'self';"/>
+  <title>Newsletter — Veille Énergétique | EnerTchad Groupe</title>
+  <meta name="description" content="Abonnez-vous à la veille énergétique d'EnerTchad Groupe : analyses mensuelles, dossiers trimestriels, dashboards marchés, alertes ESG et rapports investisseurs. Une édition pensée comme les majors."/>
+  <meta name="author" content="EnerTchad S.A."/>
+  <meta name="robots" content="index,follow"/>
+  <link href="manifest.json" rel="manifest"/>
+  <meta name="theme-color" content="#080E1A"/>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"/>
+  <link rel="icon" type="image/x-icon" href="favicon.ico"/>
+  <link rel="apple-touch-icon" href="apple-touch-icon.png"/>
+  <link rel="preload" href="logo-enertchad.svg" as="image" type="image/svg+xml"/>
+
+  <!-- OG -->
+  <meta property="og:title" content="Newsletter — Veille Énergétique | EnerTchad Groupe"/>
+  <meta property="og:description" content="Les analyses énergie & services pétroliers d'un groupe intégré tchadien. Qualité éditoriale des majors, perspective africaine."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://enertchad-groupe.vercel.app/newsletter.html"/>
+  <meta property="og:locale" content="fr_TD"/>
+  <meta property="og:locale:alternate" content="en_US"/>
+  <meta property="og:site_name" content="EnerTchad Groupe"/>
+  <meta property="og:image" content="https://enertchad-groupe.vercel.app/images/og-enertchad.png"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta property="og:image:alt" content="EnerTchad Newsletter"/>
+
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:site" content="@EnerTchad"/>
+  <meta name="twitter:title" content="Newsletter — Veille Énergétique | EnerTchad Groupe"/>
+  <meta name="twitter:description" content="Abonnez-vous à la veille énergétique d'EnerTchad : mensuelle, trimestrielle, alertes marchés."/>
+  <meta name="twitter:image" content="https://enertchad-groupe.vercel.app/images/og-enertchad.png"/>
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebPage","name":"Newsletter EnerTchad Groupe","description":"Page d'abonnement à la veille énergétique d'EnerTchad Groupe","url":"https://enertchad-groupe.vercel.app/newsletter.html","publisher":{"@type":"Organization","name":"EnerTchad Groupe","logo":"https://enertchad-groupe.vercel.app/assets/logo-enertchad.png"},"mainEntity":{"@type":"Periodical","name":"EnerTchad Insights","issn":"—","publisher":"EnerTchad Groupe SA","inLanguage":["fr","en"]}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://enertchad-groupe.vercel.app/"},{"@type":"ListItem","position":2,"name":"Médias","item":"https://enertchad-groupe.vercel.app/actualites.html"},{"@type":"ListItem","position":3,"name":"Newsletter","item":"https://enertchad-groupe.vercel.app/newsletter.html"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"À quelle fréquence la newsletter est-elle publiée ?","acceptedAnswer":{"@type":"Answer","text":"Trois cadences : hebdomadaire (Pulse), mensuelle (Insights) et trimestrielle (Deep-Dive). Vous choisissez celles qui vous conviennent."}},{"@type":"Question","name":"La newsletter est-elle gratuite ?","acceptedAnswer":{"@type":"Answer","text":"Oui. L'abonnement est gratuit et sans engagement. Vous pouvez vous désabonner en un clic depuis chaque édition."}},{"@type":"Question","name":"Mes données sont-elles partagées ?","acceptedAnswer":{"@type":"Answer","text":"Non. Vos données restent internes à EnerTchad Groupe, conformément à notre politique de confidentialité et au RGPD."}},{"@type":"Question","name":"Puis-je recevoir la version anglaise ?","acceptedAnswer":{"@type":"Answer","text":"Oui — sélectionnez l'anglais lors de l'abonnement ou mettez à jour votre préférence depuis votre espace lecteur."}}]}
+  </script>
+
+  <link rel="stylesheet" href="css/premium.css"/>
+  <link rel="stylesheet" href="css/nav-premium.css"/>
+  <link as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Space+Grotesk:wght@400..700&family=Fraunces:opsz,wght@9..144,300..700&display=swap" rel="preload"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Space+Grotesk:wght@400..700&family=Fraunces:opsz,wght@9..144,300..700&display=swap" rel="stylesheet"/>
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
+  <noscript><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/></noscript>
+  <link rel="stylesheet" href="css/style.min.css"/>
+  <link rel="stylesheet" href="css/newsletter.css"/>
+
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous"></script>
+  <script defer src="js/app.min.js"></script>
+  <script defer src="js/lang.js"></script>
+  <script defer src="js/nav-premium.js"></script>
+  <script defer src="js/premium.js"></script>
+  <script defer data-domain="enertchad-groupe.vercel.app" src="https://plausible.io/js/script.tagged-events.js"></script>
+  <script>window.plausible=window.plausible||function(){(window.plausible.q=window.plausible.q||[]).push(arguments)}</script>
+
+  <link rel="canonical" href="https://enertchad-groupe.vercel.app/newsletter.html"/>
+  <link rel="alternate" hreflang="fr" href="https://enertchad-groupe.vercel.app/newsletter.html"/>
+  <link rel="alternate" hreflang="en" href="https://enertchad-groupe.vercel.app/newsletter.html?lang=en"/>
+</head>
+<body class="nl-page">
+<a href="#nl-main" class="skip-link" data-i18n data-en="Skip to content">Aller au contenu</a>
+
+<div class="page-loader" id="pageLoader" aria-hidden="true">
+  <div class="loader-inner">
+    <div class="loader-logo"><img src="logo-enertchad.svg" alt="EnerTchad" width="60" height="60" style="filter:drop-shadow(0 0 20px rgba(217,168,79,0.4))"/></div>
+    <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+  </div>
+</div>
+<div class="reading-progress" id="readingProgress" aria-hidden="true"></div>
+<noscript><style>.reveal,.reveal-left{opacity:1!important;transform:none!important}</style></noscript>
+
+<!-- ═══ HEADER (même structure que les autres pages) ═══ -->
+<header class="header" id="header">
+  <a class="logo-wrap" href="index.html" aria-label="EnerTchad Groupe — Accueil">
+    <img loading="lazy" class="logo-img" src="logo-enertchad.svg" alt="EnerTchad" width="40" height="40" decoding="async"/>
+    <div class="logo-text">Ener<span>Tchad</span></div>
+  </a>
+
+    <nav class="nav" role="navigation" aria-label="Navigation principale">
+    <button class="nav-link" data-mega="oilfield" aria-expanded="false" aria-haspopup="true" data-i18n data-en="Operations">
+      Opérations <i class="fas fa-chevron-down chevron"></i>
+    </button>
+    <button class="nav-link" data-mega="groupe" aria-expanded="false" aria-haspopup="true" data-i18n data-en="Group">
+      Groupe <i class="fas fa-chevron-down chevron"></i>
+    </button>
+    <button class="nav-link" data-mega="durabilite" aria-expanded="false" aria-haspopup="true" data-i18n data-en="Commitment">
+      Engagement <i class="fas fa-chevron-down chevron"></i>
+    </button>
+    <button class="nav-link" data-mega="talents" aria-expanded="false" aria-haspopup="true" data-i18n data-en="Careers">
+      Talents <i class="fas fa-chevron-down chevron"></i>
+    </button>
+    <button class="nav-link" data-mega="actualites" aria-expanded="false" aria-haspopup="true" data-i18n data-en="Media">
+      Médias <i class="fas fa-chevron-down chevron"></i>
+    </button>
+    <a class="nav-link" href="investisseurs.html" data-i18n data-en="Investors"><i class="fas fa-chart-pie" style="font-size:0.72rem;opacity:0.7"></i> Investisseurs</a>
+  </nav>
+
+  <div class="header-actions">
+    <a href="contact.html" class="header-cta" data-i18n data-en="Request a quote">Demander un devis</a>
+    <button class="lang-btn" id="langToggle" aria-label="Changer de langue">
+      <i class="fas fa-globe"></i> <span class="lang-label">FR</span>
+    </button>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<div class="mega-overlay" id="megaOverlay"></div>
+
+<main id="nl-main">
+
+<!-- ═══ HERO ÉDITORIAL ═══ -->
+<section class="nl-hero" aria-labelledby="nl-hero-title">
+  <div class="nl-hero-bg" aria-hidden="true">
+    <div class="nl-hero-grid"></div>
+    <div class="nl-hero-orb nl-hero-orb--gold"></div>
+    <div class="nl-hero-orb nl-hero-orb--cyan"></div>
+    <div class="nl-hero-noise"></div>
+  </div>
+  <div class="ctn nl-hero-inner">
+    <div class="nl-hero-left">
+      <span class="nl-eyebrow">
+        <span class="nl-dot"></span>
+        <span data-i18n data-en="EnerTchad Editorial · Issue 42 · April 2026">Rédaction EnerTchad · Édition 42 · Avril 2026</span>
+      </span>
+      <h1 id="nl-hero-title" class="nl-hero-title">
+        <span class="nl-hero-title-1" data-i18n data-en="The energy signal,">Le signal énergétique,</span>
+        <span class="nl-hero-title-2" data-i18n data-en="curated from N'Djamena.">édité depuis N'Djaména.</span>
+      </h1>
+      <p class="nl-hero-lead" data-i18n data-en="EnerTchad Insights brings together field intelligence from Doba to Komé, capital market signals, ESG benchmarks and technology watches — in one crafted, bilingual letter.">
+        EnerTchad Insights réunit le terrain de Doba à Komé, les signaux des marchés de capitaux, les benchmarks ESG et les veilles technologiques — dans une lettre soignée, bilingue.
+      </p>
+      <div class="nl-hero-meta">
+        <div class="nl-hero-meta-item"><strong>12 400+</strong><span data-i18n data-en="executive readers">lecteurs exécutifs</span></div>
+        <div class="nl-hero-meta-divider"></div>
+        <div class="nl-hero-meta-item"><strong>41 %</strong><span data-i18n data-en="average open rate">taux d'ouverture moyen</span></div>
+        <div class="nl-hero-meta-divider"></div>
+        <div class="nl-hero-meta-item"><strong>18</strong><span data-i18n data-en="countries">pays</span></div>
+      </div>
+      <div class="nl-hero-cta">
+        <a href="#nl-form" class="nl-btn nl-btn--primary"><i class="fas fa-envelope-open-text"></i> <span data-i18n data-en="Subscribe free">S'abonner gratuitement</span></a>
+        <a href="#nl-archives" class="nl-btn nl-btn--ghost"><i class="fas fa-book-open"></i> <span data-i18n data-en="Browse archive">Parcourir les archives</span></a>
+      </div>
+      <div class="nl-hero-trust" aria-label="Cités dans">
+        <span class="nl-trust-label" data-i18n data-en="As seen in">Cités dans</span>
+        <div class="nl-trust-logos">
+          <span class="nl-trust-logo">Financial Times</span>
+          <span class="nl-trust-logo">Reuters</span>
+          <span class="nl-trust-logo">Jeune Afrique</span>
+          <span class="nl-trust-logo">S&amp;P Global</span>
+          <span class="nl-trust-logo">Bloomberg</span>
+        </div>
+      </div>
+    </div>
+
+    <aside class="nl-hero-right" aria-label="Aperçu édition courante">
+      <figure class="nl-cover">
+        <div class="nl-cover-stamp"><i class="fas fa-star"></i> <span>N°42</span></div>
+        <div class="nl-cover-head">
+          <span class="nl-cover-kicker" data-i18n data-en="Deep-Dive · Q2 2026">Deep-Dive · T2 2026</span>
+          <h2 class="nl-cover-title" data-i18n data-en="After ExxonMobil: the sovereign transition of Chadian oil.">Après ExxonMobil : la transition souveraine du pétrole tchadien.</h2>
+          <p class="nl-cover-dek" data-i18n data-en="48 pages · 9 interviews · 22 proprietary data charts">48 pages · 9 entretiens · 22 graphiques propriétaires</p>
+        </div>
+        <div class="nl-cover-meta">
+          <span><i class="fas fa-feather-pointed"></i> <span data-i18n data-en="Editorial Board">Comité éditorial</span></span>
+          <span><i class="fas fa-lock-open"></i> <span data-i18n data-en="Open access">Accès libre</span></span>
+        </div>
+        <div class="nl-cover-shine" aria-hidden="true"></div>
+      </figure>
+      <div class="nl-hero-quote">
+        <i class="fas fa-quote-left"></i>
+        <blockquote data-i18n data-en="“One of the rare briefings I read in full, without skipping.”">« Un des rares briefings que je lis en entier, sans zapper. »</blockquote>
+        <cite>— <strong>Amina D.</strong>, <span data-i18n data-en="Director, Africa Energy — London">Directrice Afrique Énergie — Londres</span></cite>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ═══ ÉDITIONS SIGNATURE ═══ -->
+<section class="nl-editions" aria-labelledby="nl-editions-title">
+  <div class="ctn">
+    <div class="nl-section-head">
+      <span class="nl-eyebrow nl-eyebrow--on-surface">
+        <i class="fas fa-layer-group"></i>
+        <span data-i18n data-en="Our signatures">Nos signatures</span>
+      </span>
+      <h2 id="nl-editions-title" data-i18n data-en="Four editions. Zero noise.">Quatre éditions. Zéro bruit.</h2>
+      <p data-i18n data-en="Choose the cadence and depth that match your role. Each edition is independently sourced by our editorial board.">
+        Choisissez la cadence et la profondeur adaptées à votre rôle. Chaque édition est sourcée indépendamment par notre comité éditorial.
+      </p>
+    </div>
+
+    <div class="nl-editions-grid">
+      <article class="nl-edition nl-edition--pulse">
+        <header class="nl-edition-head">
+          <span class="nl-edition-tag" data-i18n data-en="Weekly">Hebdomadaire</span>
+          <i class="fas fa-bolt nl-edition-icon"></i>
+        </header>
+        <h3 class="nl-edition-title">Pulse</h3>
+        <p class="nl-edition-desc" data-i18n data-en="Friday 18:00 (GMT+1). Five signals, five minutes. Brent, gas, refining margins, Chad oil rent, emerging news.">
+          Vendredi 18h00 (GMT+1). Cinq signaux, cinq minutes. Brent, gaz, marges de raffinage, rente tchadienne, news émergentes.
+        </p>
+        <ul class="nl-edition-bullets">
+          <li data-i18n data-en="5 markets data points">5 points marchés</li>
+          <li data-i18n data-en="3-line editorial">Édito en 3 lignes</li>
+          <li data-i18n data-en="1 chart of the week">1 graphique de la semaine</li>
+        </ul>
+        <footer class="nl-edition-foot">
+          <span class="nl-edition-len"><i class="far fa-clock"></i> <span data-i18n data-en="5 min read">5 min de lecture</span></span>
+          <span class="nl-edition-tick">✓ <span data-i18n data-en="Always free">Toujours gratuit</span></span>
+        </footer>
+      </article>
+
+      <article class="nl-edition nl-edition--insights">
+        <header class="nl-edition-head">
+          <span class="nl-edition-tag" data-i18n data-en="Monthly">Mensuelle</span>
+          <i class="fas fa-compass nl-edition-icon"></i>
+        </header>
+        <h3 class="nl-edition-title">Insights</h3>
+        <p class="nl-edition-desc" data-i18n data-en="A 12-page letter. Original analysis, interview with an industry leader, technology feature, ESG update.">
+          Lettre de 12 pages. Analyses originales, entretien d'un leader, dossier technologie, mise à jour ESG.
+        </p>
+        <ul class="nl-edition-bullets">
+          <li data-i18n data-en="12-page editorial PDF">PDF éditorial 12 pages</li>
+          <li data-i18n data-en="Exclusive interview">Entretien exclusif</li>
+          <li data-i18n data-en="Data appendix (CSV)">Annexe data (CSV)</li>
+        </ul>
+        <footer class="nl-edition-foot">
+          <span class="nl-edition-len"><i class="far fa-clock"></i> <span data-i18n data-en="20 min read">20 min de lecture</span></span>
+          <span class="nl-edition-badge nl-edition-badge--pop">★ <span data-i18n data-en="Most popular">Le plus lu</span></span>
+        </footer>
+      </article>
+
+      <article class="nl-edition nl-edition--deep">
+        <header class="nl-edition-head">
+          <span class="nl-edition-tag" data-i18n data-en="Quarterly">Trimestrielle</span>
+          <i class="fas fa-binoculars nl-edition-icon"></i>
+        </header>
+        <h3 class="nl-edition-title">Deep-Dive</h3>
+        <p class="nl-edition-desc" data-i18n data-en="48-page dossier, one strategic theme per quarter. Proprietary scenarios, regional benchmarks, field reports.">
+          Dossier de 48 pages, un thème stratégique par trimestre. Scénarios propriétaires, benchmarks régionaux, reportages terrain.
+        </p>
+        <ul class="nl-edition-bullets">
+          <li data-i18n data-en="48-page dossier">Dossier 48 pages</li>
+          <li data-i18n data-en="3-scenario foresight">3 scénarios prospectifs</li>
+          <li data-i18n data-en="Executive briefing (EN/FR)">Briefing exécutif (EN/FR)</li>
+        </ul>
+        <footer class="nl-edition-foot">
+          <span class="nl-edition-len"><i class="far fa-clock"></i> <span data-i18n data-en="45 min read">45 min de lecture</span></span>
+          <span class="nl-edition-tick">✓ <span data-i18n data-en="Open access">Accès libre</span></span>
+        </footer>
+      </article>
+
+      <article class="nl-edition nl-edition--alerts">
+        <header class="nl-edition-head">
+          <span class="nl-edition-tag" data-i18n data-en="Real-time">Temps réel</span>
+          <i class="fas fa-satellite-dish nl-edition-icon"></i>
+        </header>
+        <h3 class="nl-edition-title">Alerts</h3>
+        <p class="nl-edition-desc" data-i18n data-en="Market-moving events only. Corporate actions, force majeure, regulatory shifts, Chad operations updates.">
+          Uniquement les événements market-moving. Opérations capitalistiques, force majeure, régulation, opérations Tchad.
+        </p>
+        <ul class="nl-edition-bullets">
+          <li data-i18n data-en="Push-style alerts">Alertes push-style</li>
+          <li data-i18n data-en="&lt; 300 words each">&lt; 300 mots chacune</li>
+          <li data-i18n data-en="Context &amp; next steps">Contexte &amp; suites</li>
+        </ul>
+        <footer class="nl-edition-foot">
+          <span class="nl-edition-len"><i class="far fa-clock"></i> <span data-i18n data-en="1 min read">1 min de lecture</span></span>
+          <span class="nl-edition-tick">✓ <span data-i18n data-en="On-demand">À la demande</span></span>
+        </footer>
+      </article>
+    </div>
+  </div>
+</section>
+<!-- ═══ FORMULAIRE PREMIUM (cœur de la page) ═══ -->
+<section class="nl-form-wrap" id="nl-form" aria-labelledby="nl-form-title">
+  <div class="ctn">
+    <div class="nl-form-card">
+      <div class="nl-form-left">
+        <span class="nl-eyebrow nl-eyebrow--on-surface">
+          <i class="fas fa-envelope-open-text"></i>
+          <span data-i18n data-en="Subscribe">Abonnement</span>
+        </span>
+        <h2 id="nl-form-title" data-i18n data-en="Receive EnerTchad Insights.">Recevez EnerTchad Insights.</h2>
+        <p class="nl-form-intro" data-i18n data-en="One minute to subscribe. Double opt-in, no spam, one-click unsubscribe. Your preferences can be updated at any time.">
+          Une minute pour s'abonner. Double opt-in, zéro spam, désabonnement en un clic. Vos préférences sont modifiables à tout moment.
+        </p>
+        <ul class="nl-form-assures">
+          <li><i class="fas fa-shield-halved"></i> <span data-i18n data-en="GDPR-compliant, hosted in the EU">Conforme RGPD, hébergé en UE</span></li>
+          <li><i class="fas fa-hand-holding-heart"></i> <span data-i18n data-en="Never sold, never shared">Jamais vendu, jamais partagé</span></li>
+          <li><i class="fas fa-ban"></i> <span data-i18n data-en="No third-party trackers in emails">Zéro tracker tiers dans les emails</span></li>
+        </ul>
+        <div class="nl-form-editorial">
+          <div class="nl-editor-portrait" aria-hidden="true">FK</div>
+          <div class="nl-editor-text">
+            <strong data-i18n data-en="Signed by the editorial board">Signé par le comité éditorial</strong>
+            <span data-i18n data-en="Dr. F. Koumba, Editor-in-chief · Former ExxonMobil, IEA contributor">Dr F. Koumba, Rédactrice en chef · Ex-ExxonMobil, contributrice AIE</span>
+          </div>
+        </div>
+      </div>
+
+      <form class="nl-form" id="nlForm" novalidate aria-describedby="nl-form-status">
+        <!-- Étape 1 : identité -->
+        <div class="nl-field-row">
+          <label class="nl-field">
+            <span class="nl-label" data-i18n data-en="First name">Prénom</span>
+            <input type="text" name="firstName" autocomplete="given-name" required placeholder="Felix"/>
+          </label>
+          <label class="nl-field">
+            <span class="nl-label" data-i18n data-en="Last name">Nom</span>
+            <input type="text" name="lastName" autocomplete="family-name" required placeholder="Ngarndja"/>
+          </label>
+        </div>
+        <label class="nl-field nl-field--full">
+          <span class="nl-label" data-i18n data-en="Professional email">Email professionnel</span>
+          <input type="email" name="email" autocomplete="email" required placeholder="nom@entreprise.td" aria-describedby="nl-email-help"/>
+          <small id="nl-email-help" class="nl-help" data-i18n data-en="Used only to deliver the newsletter and ensure double opt-in.">Utilisé uniquement pour l'envoi et le double opt-in.</small>
+        </label>
+        <div class="nl-field-row">
+          <label class="nl-field">
+            <span class="nl-label" data-i18n data-en="Organization">Organisation</span>
+            <input type="text" name="org" autocomplete="organization" placeholder="EnerTchad Groupe, AIE, Shell…"/>
+          </label>
+          <label class="nl-field">
+            <span class="nl-label" data-i18n data-en="Country">Pays</span>
+            <select name="country" autocomplete="country-name">
+              <option value="TD">Tchad</option>
+              <option value="CM">Cameroun</option>
+              <option value="FR">France</option>
+              <option value="GB">United Kingdom</option>
+              <option value="US">United States</option>
+              <option value="NG">Nigeria</option>
+              <option value="other" data-i18n data-en="Other">Autre</option>
+            </select>
+          </label>
+        </div>
+        <label class="nl-field nl-field--full">
+          <span class="nl-label" data-i18n data-en="Role">Fonction</span>
+          <select name="role">
+            <option data-i18n data-en="Executive / C-suite">Dirigeant·e / C-suite</option>
+            <option data-i18n data-en="Investor / analyst">Investisseur / analyste</option>
+            <option data-i18n data-en="Engineer / operations">Ingénieur·e / opérations</option>
+            <option data-i18n data-en="Academic / research">Universitaire / recherche</option>
+            <option data-i18n data-en="Public sector / regulator">Secteur public / régulateur</option>
+            <option data-i18n data-en="Journalist">Journaliste</option>
+            <option data-i18n data-en="Student">Étudiant·e</option>
+            <option data-i18n data-en="Other">Autre</option>
+          </select>
+        </label>
+
+        <!-- Étape 2 : préférences contenu -->
+        <fieldset class="nl-prefs">
+          <legend data-i18n data-en="Topics that matter to you">Thématiques qui vous intéressent</legend>
+          <div class="nl-chips">
+            <label class="nl-chip"><input type="checkbox" name="topic" value="upstream" checked/><span><i class="fas fa-mountain"></i> <span data-i18n data-en="Upstream">Amont</span></span></label>
+            <label class="nl-chip"><input type="checkbox" name="topic" value="midstream" checked/><span><i class="fas fa-route"></i> <span data-i18n data-en="Midstream">Intermédiaire</span></span></label>
+            <label class="nl-chip"><input type="checkbox" name="topic" value="downstream"/><span><i class="fas fa-industry"></i> <span data-i18n data-en="Downstream">Aval</span></span></label>
+            <label class="nl-chip"><input type="checkbox" name="topic" value="greentech"/><span><i class="fas fa-leaf"></i> <span data-i18n data-en="GreenTech">GreenTech</span></span></label>
+            <label class="nl-chip"><input type="checkbox" name="topic" value="esg" checked/><span><i class="fas fa-seedling"></i> <span data-i18n data-en="ESG &amp; Climate">ESG &amp; Climat</span></span></label>
+            <label class="nl-chip"><input type="checkbox" name="topic" value="finance"/><span><i class="fas fa-chart-line"></i> <span data-i18n data-en="Finance">Finance</span></span></label>
+            <label class="nl-chip"><input type="checkbox" name="topic" value="tech"/><span><i class="fas fa-microchip"></i> <span data-i18n data-en="Technology &amp; AI">Technologie &amp; IA</span></span></label>
+            <label class="nl-chip"><input type="checkbox" name="topic" value="africa"/><span><i class="fas fa-globe-africa"></i> <span data-i18n data-en="Africa energy">Énergie Afrique</span></span></label>
+          </div>
+        </fieldset>
+
+        <!-- Étape 3 : cadence -->
+        <fieldset class="nl-prefs">
+          <legend data-i18n data-en="Editions you'd like to receive">Éditions que vous souhaitez recevoir</legend>
+          <div class="nl-radio-cards">
+            <label class="nl-radio-card"><input type="checkbox" name="edition" value="pulse"/><span class="nl-rc-inner"><i class="fas fa-bolt"></i><strong>Pulse</strong><em data-i18n data-en="Weekly · 5 min">Hebdo · 5 min</em></span></label>
+            <label class="nl-radio-card nl-radio-card--pop"><input type="checkbox" name="edition" value="insights" checked/><span class="nl-rc-inner"><i class="fas fa-compass"></i><strong>Insights</strong><em data-i18n data-en="Monthly · 20 min">Mensuelle · 20 min</em></span></label>
+            <label class="nl-radio-card"><input type="checkbox" name="edition" value="deep" checked/><span class="nl-rc-inner"><i class="fas fa-binoculars"></i><strong>Deep-Dive</strong><em data-i18n data-en="Quarterly · 45 min">Trimestrielle · 45 min</em></span></label>
+            <label class="nl-radio-card"><input type="checkbox" name="edition" value="alerts"/><span class="nl-rc-inner"><i class="fas fa-satellite-dish"></i><strong>Alerts</strong><em data-i18n data-en="On demand">À la demande</em></span></label>
+          </div>
+        </fieldset>
+
+        <!-- Étape 4 : langue & format -->
+        <div class="nl-field-row">
+          <label class="nl-field">
+            <span class="nl-label" data-i18n data-en="Language">Langue</span>
+            <select name="lang">
+              <option value="fr">Français</option>
+              <option value="en">English</option>
+              <option value="bilingual" data-i18n data-en="Bilingual">Bilingue</option>
+            </select>
+          </label>
+          <label class="nl-field">
+            <span class="nl-label" data-i18n data-en="Format">Format</span>
+            <select name="format">
+              <option value="html" data-i18n data-en="HTML (rich)">HTML (riche)</option>
+              <option value="plain" data-i18n data-en="Plain text">Texte brut</option>
+              <option value="pdf">PDF</option>
+            </select>
+          </label>
+        </div>
+
+        <!-- Consentements -->
+        <div class="nl-consents">
+          <label class="nl-check">
+            <input type="checkbox" name="consent" required/>
+            <span data-i18n data-en="I agree to receive EnerTchad Insights and accept the privacy policy.">J'accepte de recevoir EnerTchad Insights et la politique de confidentialité.</span>
+          </label>
+          <label class="nl-check">
+            <input type="checkbox" name="consentPartners"/>
+            <span data-i18n data-en="Optional — receive curated invites to EnerTchad events and roundtables.">Optionnel — recevoir des invitations aux événements et tables rondes EnerTchad.</span>
+          </label>
+        </div>
+
+        <!-- Honeypot anti-spam -->
+        <div class="nl-hp" aria-hidden="true"><label>Do not fill<input type="text" name="website" tabindex="-1" autocomplete="off"/></label></div>
+
+        <button type="submit" class="nl-submit">
+          <span class="nl-submit-label" data-i18n data-en="Confirm my subscription">Confirmer mon abonnement</span>
+          <i class="fas fa-arrow-right"></i>
+        </button>
+
+        <p id="nl-form-status" class="nl-form-status" role="status" aria-live="polite"></p>
+
+        <p class="nl-form-note">
+          <i class="fas fa-lock"></i>
+          <span data-i18n data-en="You'll receive a verification email. You can unsubscribe at any moment from every edition.">Vous recevrez un email de vérification. Désabonnement possible depuis chaque édition.</span>
+          <a href="confidentialite.html" data-i18n data-en="Privacy policy">Politique de confidentialité</a>
+        </p>
+      </form>
+    </div>
+  </div>
+</section>
+<!-- ═══ ARCHIVES ═══ -->
+<section class="nl-archives" id="nl-archives" aria-labelledby="nl-arch-title">
+  <div class="ctn">
+    <div class="nl-section-head">
+      <span class="nl-eyebrow nl-eyebrow--on-surface">
+        <i class="fas fa-box-archive"></i>
+        <span data-i18n data-en="Archive">Archives</span>
+      </span>
+      <h2 id="nl-arch-title" data-i18n data-en="Read before you subscribe.">Lisez avant de vous abonner.</h2>
+      <p data-i18n data-en="Open access. Every edition is available in PDF with a CSV data appendix.">Accès libre. Chaque édition disponible en PDF, annexe data CSV incluse.</p>
+    </div>
+    <div class="nl-arch-filters" role="tablist" aria-label="Filtrer archives">
+      <button class="nl-filter is-active" data-filter="all" role="tab" aria-selected="true" data-i18n data-en="All">Tous</button>
+      <button class="nl-filter" data-filter="deep" role="tab" aria-selected="false">Deep-Dive</button>
+      <button class="nl-filter" data-filter="insights" role="tab" aria-selected="false">Insights</button>
+      <button class="nl-filter" data-filter="pulse" role="tab" aria-selected="false">Pulse</button>
+    </div>
+    <div class="nl-arch-grid">
+      <a class="nl-arch-card" data-type="deep" href="#">
+        <div class="nl-arch-cover nl-arch-cover--deep">
+          <span class="nl-arch-num">N°42</span>
+          <span class="nl-arch-stamp">Deep-Dive</span>
+          <h3 data-i18n data-en="After ExxonMobil: the sovereign transition">Après ExxonMobil : la transition souveraine</h3>
+        </div>
+        <div class="nl-arch-body">
+          <span class="nl-arch-meta">T2 2026 · 48 p.</span>
+          <p data-i18n data-en="Acquisition of ESSO assets, re-engineering the upstream value chain, revenue scenarios.">Reprise des actifs ESSO, réingénierie amont, scénarios de revenus.</p>
+          <span class="nl-arch-cta"><i class="fas fa-file-pdf"></i> <span data-i18n data-en="Read PDF">Lire le PDF</span></span>
+        </div>
+      </a>
+      <a class="nl-arch-card" data-type="insights" href="#">
+        <div class="nl-arch-cover nl-arch-cover--insights">
+          <span class="nl-arch-num">N°41</span>
+          <span class="nl-arch-stamp">Insights</span>
+          <h3 data-i18n data-en="Komé solar farm: 5 MW of energy transition">Ferme solaire de Komé : 5 MW de transition</h3>
+        </div>
+        <div class="nl-arch-body">
+          <span class="nl-arch-meta">Mars 2026 · 12 p.</span>
+          <p data-i18n data-en="Integrated project with on-site storage, grid tie-in, carbon offset mechanics.">Projet intégré, stockage sur site, connexion réseau, mécanique carbone.</p>
+          <span class="nl-arch-cta"><i class="fas fa-file-pdf"></i> <span data-i18n data-en="Read PDF">Lire le PDF</span></span>
+        </div>
+      </a>
+      <a class="nl-arch-card" data-type="insights" href="#">
+        <div class="nl-arch-cover nl-arch-cover--insights-alt">
+          <span class="nl-arch-num">N°40</span>
+          <span class="nl-arch-stamp">Insights</span>
+          <h3 data-i18n data-en="144,000 bbl/day: how we got there">144 000 bbl/jour : le chemin parcouru</h3>
+        </div>
+        <div class="nl-arch-body">
+          <span class="nl-arch-meta">Février 2026 · 12 p.</span>
+          <p data-i18n data-en="EOR on mature fields, wireline, workover. The operational playbook.">EOR champs matures, wireline, workover. Le playbook opérationnel.</p>
+          <span class="nl-arch-cta"><i class="fas fa-file-pdf"></i> <span data-i18n data-en="Read PDF">Lire le PDF</span></span>
+        </div>
+      </a>
+      <a class="nl-arch-card" data-type="deep" href="#">
+        <div class="nl-arch-cover nl-arch-cover--deep-alt">
+          <span class="nl-arch-num">N°39</span>
+          <span class="nl-arch-stamp">Deep-Dive</span>
+          <h3 data-i18n data-en="Gas: the missed third act of Chadian energy?">Gaz : le troisième acte manqué de l'énergie tchadienne ?</h3>
+        </div>
+        <div class="nl-arch-body">
+          <span class="nl-arch-meta">T1 2026 · 48 p.</span>
+          <p data-i18n data-en="Proven reserves, LNG corridors, regional logistics, financing profile.">Réserves prouvées, corridors GNL, logistique régionale, profil de financement.</p>
+          <span class="nl-arch-cta"><i class="fas fa-file-pdf"></i> <span data-i18n data-en="Read PDF">Lire le PDF</span></span>
+        </div>
+      </a>
+      <a class="nl-arch-card" data-type="pulse" href="#">
+        <div class="nl-arch-cover nl-arch-cover--pulse">
+          <span class="nl-arch-num">W15</span>
+          <span class="nl-arch-stamp">Pulse</span>
+          <h3 data-i18n data-en="Brent, spreads &amp; the Chadian mix">Brent, spreads &amp; le mix tchadien</h3>
+        </div>
+        <div class="nl-arch-body">
+          <span class="nl-arch-meta">Semaine 15 · 5 min</span>
+          <p data-i18n data-en="Five signals before the weekend: Brent, TTF, WTI-Brent spread, OPEC guidance, Doba differential.">Cinq signaux avant week-end : Brent, TTF, spread WTI-Brent, guidance OPEP, différentiel Doba.</p>
+          <span class="nl-arch-cta"><i class="fas fa-envelope-open-text"></i> <span data-i18n data-en="Open edition">Ouvrir l'édition</span></span>
+        </div>
+      </a>
+      <a class="nl-arch-card" data-type="insights" href="#">
+        <div class="nl-arch-cover nl-arch-cover--insights-alt">
+          <span class="nl-arch-num">N°38</span>
+          <span class="nl-arch-stamp">Insights</span>
+          <h3 data-i18n data-en="Sahel local content: a playbook">Contenu local Sahel : un playbook</h3>
+        </div>
+        <div class="nl-arch-body">
+          <span class="nl-arch-meta">Janvier 2026 · 12 p.</span>
+          <p data-i18n data-en="From procurement to training: how 60% local content was reached.">De la sous-traitance à la formation : comment atteindre 60 % de contenu local.</p>
+          <span class="nl-arch-cta"><i class="fas fa-file-pdf"></i> <span data-i18n data-en="Read PDF">Lire le PDF</span></span>
+        </div>
+      </a>
+    </div>
+    <div class="nl-arch-more">
+      <a href="actualites.html" class="nl-btn nl-btn--ghost"><i class="fas fa-arrow-right"></i> <span data-i18n data-en="See all 42 editions">Voir les 42 éditions</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ COMITÉ ÉDITORIAL ═══ -->
+<section class="nl-board" aria-labelledby="nl-board-title">
+  <div class="ctn">
+    <div class="nl-section-head">
+      <span class="nl-eyebrow nl-eyebrow--on-surface">
+        <i class="fas fa-feather-pointed"></i>
+        <span data-i18n data-en="Editorial Board">Comité éditorial</span>
+      </span>
+      <h2 id="nl-board-title" data-i18n data-en="By practitioners, for practitioners.">Par des praticiens, pour des praticiens.</h2>
+      <p data-i18n data-en="Ten years' average experience across upstream, midstream and capital markets. Each article is named, sourced, and reviewed by two editors.">
+        Dix ans d'expérience en moyenne — amont, intermédiaire, marchés de capitaux. Chaque article est signé, sourcé et revu par deux éditeurs.
+      </p>
+    </div>
+    <div class="nl-board-grid">
+      <figure class="nl-board-card">
+        <div class="nl-board-portrait" aria-hidden="true">FK</div>
+        <figcaption>
+          <strong>Dr Félicité Koumba</strong>
+          <span data-i18n data-en="Editor-in-chief · Ex-ExxonMobil · IEA contributor">Rédactrice en chef · Ex-ExxonMobil · Contributrice AIE</span>
+        </figcaption>
+      </figure>
+      <figure class="nl-board-card">
+        <div class="nl-board-portrait" aria-hidden="true">AM</div>
+        <figcaption>
+          <strong>Ahmat Moussa</strong>
+          <span data-i18n data-en="Markets editor · Ex-Société Générale commodities desk">Éditeur marchés · Ex-Société Générale desk matières</span>
+        </figcaption>
+      </figure>
+      <figure class="nl-board-card">
+        <div class="nl-board-portrait" aria-hidden="true">LN</div>
+        <figcaption>
+          <strong>Laetitia N'Garndja</strong>
+          <span data-i18n data-en="ESG &amp; climate editor · Ex-AfDB">Éditrice ESG &amp; climat · Ex-BAD</span>
+        </figcaption>
+      </figure>
+      <figure class="nl-board-card">
+        <div class="nl-board-portrait" aria-hidden="true">JB</div>
+        <figcaption>
+          <strong>Jean-Baptiste Djidda</strong>
+          <span data-i18n data-en="Technology editor · Ex-Schlumberger digital">Éditeur technologie · Ex-Schlumberger digital</span>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TÉMOIGNAGES ═══ -->
+<section class="nl-testi" aria-labelledby="nl-testi-title">
+  <div class="ctn">
+    <div class="nl-section-head">
+      <span class="nl-eyebrow nl-eyebrow--on-surface">
+        <i class="fas fa-quote-left"></i>
+        <span data-i18n data-en="Readers">Lecteurs</span>
+      </span>
+      <h2 id="nl-testi-title" data-i18n data-en="What readers say.">Ce qu'en disent les lecteurs.</h2>
+    </div>
+    <div class="nl-testi-grid">
+      <blockquote class="nl-testi-card">
+        <p data-i18n data-en="“The only African-energy newsletter I read from start to finish. Rigorous, non-performative.”">« La seule newsletter énergie-Afrique que je lis de bout en bout. Rigoureuse, non performative. »</p>
+        <footer><strong>Olivier R.</strong> · <span data-i18n data-en="Senior analyst · BNP Paribas">Analyste senior · BNP Paribas</span></footer>
+      </blockquote>
+      <blockquote class="nl-testi-card">
+        <p data-i18n data-en="“The data appendix alone is worth the subscription. Twenty minutes well spent every month.”">« L'annexe data vaut à elle seule l'abonnement. Vingt minutes bien investies chaque mois. »</p>
+        <footer><strong>Zineb C.</strong> · <span data-i18n data-en="Commodities strategist · London">Stratège matières · Londres</span></footer>
+      </blockquote>
+      <blockquote class="nl-testi-card">
+        <p data-i18n data-en="“Clear, well-sourced, bilingual. I share every Deep-Dive with my team.”">« Clair, bien sourcé, bilingue. Je partage chaque Deep-Dive avec mon équipe. »</p>
+        <footer><strong>Dr Mahamat H.</strong> · <span data-i18n data-en="Director · Ministry of Petroleum, Chad">Directeur · Ministère du Pétrole, Tchad</span></footer>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CANAUX ALTERNATIFS ═══ -->
+<section class="nl-channels" aria-labelledby="nl-channels-title">
+  <div class="ctn">
+    <div class="nl-section-head nl-section-head--tight">
+      <h2 id="nl-channels-title" data-i18n data-en="Prefer another channel?">Vous préférez un autre canal ?</h2>
+    </div>
+    <div class="nl-channels-grid">
+      <a class="nl-channel" href="#" aria-label="RSS">
+        <i class="fas fa-rss"></i>
+        <strong>RSS</strong>
+        <span data-i18n data-en="Full-text feed, auto-deliverable to Feedly, Inoreader…">Flux full-text, compatible Feedly, Inoreader…</span>
+      </a>
+      <a class="nl-channel" href="https://www.linkedin.com/company/enertchad" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-linkedin-in"></i>
+        <strong>LinkedIn</strong>
+        <span data-i18n data-en="Follow the newsletter directly on your feed.">Suivez la newsletter directement dans votre fil.</span>
+      </a>
+      <a class="nl-channel" href="#" aria-label="Podcast">
+        <i class="fas fa-podcast"></i>
+        <strong>Podcast</strong>
+        <span data-i18n data-en="Audio version of every Deep-Dive — 25 to 35 min.">Version audio de chaque Deep-Dive — 25 à 35 min.</span>
+      </a>
+      <a class="nl-channel" href="#" aria-label="API">
+        <i class="fas fa-code"></i>
+        <strong>API</strong>
+        <span data-i18n data-en="Developer API for data charts and CSV appendices.">API pour les graphiques et annexes CSV.</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section class="nl-faq" aria-labelledby="nl-faq-title">
+  <div class="ctn nl-faq-inner">
+    <div class="nl-section-head nl-section-head--tight">
+      <span class="nl-eyebrow nl-eyebrow--on-surface">
+        <i class="fas fa-circle-question"></i>
+        <span>FAQ</span>
+      </span>
+      <h2 id="nl-faq-title" data-i18n data-en="Common questions">Questions fréquentes</h2>
+    </div>
+    <div class="nl-faq-list">
+      <details class="nl-faq-item">
+        <summary><span data-i18n data-en="How often is the newsletter published?">À quelle fréquence la newsletter est-elle publiée ?</span><i class="fas fa-plus"></i></summary>
+        <p data-i18n data-en="Four cadences — Pulse (weekly), Insights (monthly), Deep-Dive (quarterly), Alerts (on demand). You choose which ones to receive.">
+          Quatre cadences — Pulse (hebdo), Insights (mensuelle), Deep-Dive (trimestrielle), Alerts (à la demande). Vous choisissez celles que vous recevez.
+        </p>
+      </details>
+      <details class="nl-faq-item">
+        <summary><span data-i18n data-en="Is the newsletter really free?">La newsletter est-elle vraiment gratuite ?</span><i class="fas fa-plus"></i></summary>
+        <p data-i18n data-en="Yes — all four editions are free and without commitment. We consider quality journalism a public good for our region.">
+          Oui — les quatre éditions sont gratuites et sans engagement. Le journalisme de qualité est un bien public pour notre région.
+        </p>
+      </details>
+      <details class="nl-faq-item">
+        <summary><span data-i18n data-en="Will my data be shared with third parties?">Mes données sont-elles partagées ?</span><i class="fas fa-plus"></i></summary>
+        <p data-i18n data-en="Never. Your email and preferences stay within EnerTchad Groupe, hosted in the EU, compliant with GDPR and the Chadian DPA.">
+          Jamais. Votre email et vos préférences restent internes à EnerTchad Groupe, hébergés en UE, conformes RGPD et à la loi tchadienne sur la protection des données.
+        </p>
+      </details>
+      <details class="nl-faq-item">
+        <summary><span data-i18n data-en="Can I get the English edition?">Puis-je recevoir la version anglaise ?</span><i class="fas fa-plus"></i></summary>
+        <p data-i18n data-en="Yes. Select English or Bilingual when subscribing, or change it later from your reader preferences.">
+          Oui. Sélectionnez English ou Bilingue lors de l'inscription, ou modifiez vos préférences depuis votre espace lecteur.
+        </p>
+      </details>
+      <details class="nl-faq-item">
+        <summary><span data-i18n data-en="How do I unsubscribe?">Comment se désabonner ?</span><i class="fas fa-plus"></i></summary>
+        <p data-i18n data-en="One click, from any edition. A confirmation is not required. You can also write to press@enertchad.td.">
+          En un clic, depuis n'importe quelle édition. Aucune confirmation n'est requise. Vous pouvez aussi écrire à presse@enertchad.td.
+        </p>
+      </details>
+      <details class="nl-faq-item">
+        <summary><span data-i18n data-en="Can I quote or reuse content?">Puis-je citer ou réutiliser le contenu ?</span><i class="fas fa-plus"></i></summary>
+        <p data-i18n data-en="Yes, with attribution (“EnerTchad Insights — Issue N°”). For extended reuse, contact the editorial desk.">
+          Oui, avec attribution (« EnerTchad Insights — Édition N° »). Pour une réutilisation étendue, contactez la rédaction.
+        </p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA BAND ═══ -->
+<section class="nl-cta-band" aria-label="Appel à abonnement">
+  <div class="ctn nl-cta-inner">
+    <div>
+      <h2 data-i18n data-en="Sign up in under a minute.">Abonnez-vous en moins d'une minute.</h2>
+      <p data-i18n data-en="Join 12,400+ executives receiving EnerTchad Insights.">Rejoignez plus de 12 400 dirigeants abonnés à EnerTchad Insights.</p>
+    </div>
+    <a href="#nl-form" class="nl-btn nl-btn--primary nl-btn--lg"><i class="fas fa-envelope-open-text"></i> <span data-i18n data-en="Subscribe now">S'abonner maintenant</span></a>
+  </div>
+</section>
+</main>
+
+<!-- ═══ FOOTER PREMIUM ═══ -->
+<footer class="footer modern-footer" role="contentinfo" id="footer">
+  <div class="footer-kpi-strip">
+    <div class="ctn">
+      <div class="footer-kpi-inner">
+        <div class="kpi-item"><span class="kpi-num">12 400+</span><span class="kpi-tag" data-i18n data-en="Subscribers">Abonnés</span></div>
+        <div class="kpi-divider" aria-hidden="true"></div>
+        <div class="kpi-item"><span class="kpi-num">41 %</span><span class="kpi-tag" data-i18n data-en="Open rate">Taux d'ouverture</span></div>
+        <div class="kpi-divider" aria-hidden="true"></div>
+        <div class="kpi-item"><span class="kpi-num">18</span><span class="kpi-tag" data-i18n data-en="Countries">Pays</span></div>
+        <div class="kpi-divider" aria-hidden="true"></div>
+        <div class="kpi-item"><span class="kpi-num">42</span><span class="kpi-tag" data-i18n data-en="Editions">Éditions</span></div>
+        <div class="kpi-divider" aria-hidden="true"></div>
+        <div class="kpi-item"><span class="kpi-num">0</span><span class="kpi-tag" data-i18n data-en="Third-party trackers">Trackers tiers</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="ctn footer-body">
+    <div class="footer-grid-modern">
+      <div class="footer-brand-col">
+        <a href="index.html" class="footer-logo-link" aria-label="EnerTchad Groupe — Accueil">
+          <div class="footer-logo-mark"><img loading="lazy" src="logo-enertchad.svg" alt="" width="32" height="32" class="logo-img" decoding="async"/></div>
+          <span class="footer-wordmark">EnerTchad<em>Groupe</em></span>
+        </a>
+        <p class="footer-desc" data-i18n data-en="Oilfield services &amp; petroleum distribution across Chad. Major expertise, local agility.">Services pétroliers &amp; distribution au Tchad. L'expertise des majors, l'agilité locale.</p>
+        <div class="footer-badges">
+          <span class="f-badge" title="IWCF">IWCF</span>
+          <span class="f-badge" title="API">API</span>
+          <span class="f-badge" title="ISO 14001">ISO 14001</span>
+          <span class="f-badge" title="ITIE/EITI">ITIE</span>
+        </div>
+      </div>
+      <nav class="footer-nav-col" aria-label="Médias">
+        <h6 data-i18n data-en="Media">Médias</h6>
+        <ul>
+          <li><a href="actualites.html" data-i18n data-en="News">Actualités</a></li>
+          <li><a href="newsletter.html" data-i18n data-en="Newsletter">Newsletter</a></li>
+          <li><a href="actualites.html#presse" data-i18n data-en="Press kit">Dossier de presse</a></li>
+          <li><a href="actualites.html#rapports" data-i18n data-en="Annual reports">Rapports annuels</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-nav-col" aria-label="Opérations">
+        <h6 data-i18n data-en="Operations">Opérations</h6>
+        <ul>
+          <li><a href="operations/amont.html">Amont — E&amp;P</a></li>
+          <li><a href="operations/intermediaire.html">Intermédiaire</a></li>
+          <li><a href="operations/aval.html">Aval</a></li>
+          <li><a href="operations/greentech.html">GreenTech</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-nav-col" aria-label="Entreprise">
+        <h6 data-i18n data-en="Company">Entreprise</h6>
+        <ul>
+          <li><a href="groupe/index.html" data-i18n data-en="About">À propos</a></li>
+          <li><a href="durabilite.html" data-i18n data-en="Sustainability">Durabilité</a></li>
+          <li><a href="investisseurs.html" data-i18n data-en="Investors">Investisseurs</a></li>
+          <li><a href="talents.html" data-i18n data-en="Careers">Talents</a></li>
+        </ul>
+      </nav>
+      <div class="footer-nav-col footer-cta-col">
+        <h6 data-i18n data-en="Editorial contact">Contact rédaction</h6>
+        <div class="footer-contact-stack">
+          <a href="mailto:presse@enertchad.td" class="footer-cta-link"><i class="fas fa-envelope"></i> presse@enertchad.td</a>
+          <a href="tel:+23599298696" class="footer-cta-link"><i class="fas fa-phone"></i> +235 99 29 86 96</a>
+          <a href="contact.html" class="footer-cta-btn"><i class="fas fa-arrow-right"></i> <span data-i18n data-en="Contact us">Contactez-nous</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom-bar">
+    <div class="ctn">
+      <div class="bottom-bar-inner">
+        <span class="footer-copy">&copy; 2026 EnerTchad Groupe SA/CA</span>
+        <div class="footer-legal-links">
+          <a href="mentions-legales.html" data-i18n data-en="Legal">Mentions légales</a>
+          <a href="confidentialite.html" data-i18n data-en="Privacy">Confidentialité</a>
+          <a href="cookies.html" data-i18n data-en="Cookies">Cookies</a>
+        </div>
+        <div class="footer-social-row">
+          <a href="https://www.linkedin.com/company/enertchad" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://x.com/EnerTchad" target="_blank" rel="noopener noreferrer" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://www.facebook.com/EnerTchad" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.youtube.com/@EnerTchad" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="cookie-consent" id="cookieConsent">
+  <div class="ctn" style="display:flex;align-items:center;justify-content:space-between;gap:var(--sp-lg);flex-wrap:wrap">
+    <p style="margin:0;font-size:0.9rem" data-i18n data-en="We use cookies to improve your experience. By continuing to browse, you accept our use of cookies.">Nous utilisons les cookies pour améliorer votre expérience. En continuant, vous acceptez notre utilisation de cookies.</p>
+    <div style="display:flex;gap:var(--sp-sm)">
+      <button id="cookieAccept" class="btn btn--brand btn--sm" data-i18n data-en="Accept">Accepter</button>
+      <a href="cookies.html" class="btn btn--outline btn--sm" data-i18n data-en="Learn more">En savoir plus</a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ Interactivité locale (form + filters + FAQ) ═══ -->
+<script>
+(function(){
+  'use strict';
+  // Filters archives
+  var filters = document.querySelectorAll('.nl-filter');
+  var cards = document.querySelectorAll('.nl-arch-card');
+  filters.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var f = btn.getAttribute('data-filter');
+      filters.forEach(function(b){ b.classList.remove('is-active'); b.setAttribute('aria-selected','false'); });
+      btn.classList.add('is-active'); btn.setAttribute('aria-selected','true');
+      cards.forEach(function(c){
+        var t = c.getAttribute('data-type');
+        c.style.display = (f==='all' || t===f) ? '' : 'none';
+      });
+    });
+  });
+  // Form submit (client-side demo)
+  var form = document.getElementById('nlForm');
+  if(form){
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var status = document.getElementById('nl-form-status');
+      var email = form.querySelector('input[name="email"]');
+      var consent = form.querySelector('input[name="consent"]');
+      var hp = form.querySelector('input[name="website"]');
+      if(hp && hp.value){ return; } // anti-spam
+      if(!email.value || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)){
+        status.textContent = 'Merci d\u0027indiquer un email valide.';
+        status.className = 'nl-form-status is-error';
+        email.focus(); return;
+      }
+      if(!consent.checked){
+        status.textContent = 'Merci d\u0027accepter la politique de confidentialit\u00e9.';
+        status.className = 'nl-form-status is-error';
+        consent.focus(); return;
+      }
+      status.textContent = '\u2713 Merci ! Un email de confirmation vient d\u0027\u00eatre envoy\u00e9.';
+      status.className = 'nl-form-status is-ok';
+      if(window.plausible){ window.plausible('Newsletter Subscribe'); }
+      form.reset();
+    });
+  }
+  // FAQ icon flip on toggle
+  document.querySelectorAll('.nl-faq-item').forEach(function(d){
+    d.addEventListener('toggle', function(){
+      var i = d.querySelector('summary i');
+      if(!i) return;
+      i.className = d.open ? 'fas fa-minus' : 'fas fa-plus';
+    });
+  });
+})();
+</script>
+</body>
+</html>

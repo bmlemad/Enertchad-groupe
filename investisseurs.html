@@ -7,16 +7,16 @@
   <title>Investisseurs | EnerTchad Groupe</title>
   <meta name="description" content="Investisseurs EnerTchad — Informations financières, rapports et opportunités d'investissement."/>
   <meta name="robots" content="index,follow"/>
-  <link href="/manifest.json" rel="manifest"/>
+  <link href="manifest.json" rel="manifest"/>
   <meta name="theme-color" content="#080E1A"/>
   <meta name="apple-mobile-web-app-capable" content="yes"/>
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
   <meta name="apple-mobile-web-app-title" content="EnerTchad"/>
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
-  <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
-  <link rel="preload" href="/logo.svg" as="image" type="image/svg+xml"/>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"/>
+  <link rel="icon" type="image/x-icon" href="favicon.ico"/>
+  <link rel="apple-touch-icon" href="apple-touch-icon.png"/>
+  <link rel="preload" href="logo-enertchad.svg" as="image" type="image/svg+xml"/>
 
   <!-- OG -->
   <meta property="og:title" content="Investisseurs | EnerTchad Groupe"/>
@@ -54,93 +54,46 @@
   <link as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Space+Grotesk:wght@400..700&display=swap" rel="preload"/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Space+Grotesk:wght@400..700&display=swap" media="print" onload="this.media='all'" rel="stylesheet"/>
   <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Space+Grotesk:wght@400..700&display=swap" rel="stylesheet"/></noscript>
-<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" integrity="sha384-OLBgp1GsljhM2TJ+sbHjaiH9txEUvgdDTAzHv2P24donTt6/529l+9Ua0vFImLlb" crossorigin="anonymous"/>
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
   <noscript><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/></noscript>
-  <link rel="stylesheet" href="/css/main.unified.css?v=2"/>
+    <link rel="stylesheet" href="css/premium.css"/>
+<link rel="preload" href="css/style.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
+  <noscript><link rel="stylesheet" href="css/style.min.css"/></noscript>
 
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="></script>
   <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
-  <script defer src="/js/app.min.js"></script>
+  <script defer src="js/app.min.js"></script>
   <link rel="canonical" href="https://enertchad-groupe.vercel.app/investisseurs"/>
   <link rel="alternate" hreflang="fr" href="https://enertchad-groupe.vercel.app/investisseurs"/>
   <link rel="alternate" hreflang="en" href="https://enertchad-groupe.vercel.app/investisseurs?lang=en"/>
 
   <!-- Analytics — Plausible (QW-10) -->
-  <script defer data-domain="enertchad.td" src="https://plausible.io/js/script.tagged-events.js"></script>
+  <script defer data-domain="enertchad-groupe.vercel.app" src="https://plausible.io/js/script.tagged-events.js"></script>
   <script>window.plausible=window.plausible||function(){(window.plausible.q=window.plausible.q||[]).push(arguments)}</script>
+  <!-- Sentry — DSN injecté via data-sentry-dsn (fail-silent si absent). Configurer en build-time (Vercel env SENTRY_DSN). -->
+  <script defer src="https://browser.sentry-cdn.com/7.120.0/bundle.min.js" crossorigin="anonymous" data-sentry-dsn=""></script>
+  <script>
+    window.addEventListener("load", function(){
+      var s = document.querySelector("script[data-sentry-dsn]");
+      var dsn = s && s.getAttribute("data-sentry-dsn");
+      if (window.Sentry && dsn && dsn.length > 10) {
+        try { Sentry.init({ dsn: dsn, environment: "production", tracesSampleRate: 0.1, release: (window.__BUILD_SHA__ || "unknown") }); } catch(e) { /* fail-silent */ }
+      }
+    });
+  </script>
 
+  <script defer src="js/lang.js"></script>
+  <script defer src="js/nav-premium.js"></script>
+  <script defer src="js/ultra-premium.js"></script>
+  <link rel="stylesheet" href="css/nav-premium.css"/>
+  <!-- Ultra-Premium layer (UP-P1 · 2026-04-20) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap">
+  <link rel="stylesheet" href="css/ultra-premium.css"/>
 </head>
-<body class="preloader-active">
-<!-- ═══ PRELOADER ═══ -->
-<div aria-label="Chargement du site EnerTchad" aria-live="polite" id="preloader" role="status">
-  <div aria-hidden="true" class="preloader-particles" id="preloaderParticles"></div>
-  <div class="preloader-stage">
-    <div aria-hidden="true" class="preloader-halo"></div>
-    <div aria-hidden="true" class="preloader-dome"></div>
-    <div aria-hidden="true" class="preloader-ring"></div>
-    <img alt="EnerTchad" class="preloader-logo" decoding="async" fetchpriority="high" height="380" src="/logo.svg" width="380"/>
-    <div aria-hidden="true" class="preloader-sheen"></div>
-  </div>
-  <div aria-label="Accès aux Énergies · Unité · Innovation · Durabilité" class="preloader-slogan">
-    <span class="pw">Accès aux Énergies</span>
-    <span aria-hidden="true" class="pdot"></span>
-    <span class="pw">Unité</span>
-    <span aria-hidden="true" class="pdot"></span>
-    <span class="pw">Innovation</span>
-    <span aria-hidden="true" class="pdot"></span>
-    <span class="pw">Durabilité</span>
-  </div>
-  <div aria-hidden="true" class="preloader-progress">
-    <div class="preloader-progress-fill" id="preloaderFill"></div>
-  </div>
-  <div aria-hidden="true" class="preloader-pct" id="preloaderPct">0 %</div>
-</div>
-<script>
-(function(){
-  var pre=document.getElementById('preloader');
-  if(!pre)return;
-  var fill=document.getElementById('preloaderFill');
-  var pct=document.getElementById('preloaderPct');
-  var particles=document.getElementById('preloaderParticles');
-  var progress=0;var loaded=false;var start=Date.now();
-  /* Particles */
-  var isSlow=navigator.connection&&(navigator.connection.effectiveType==='2g'||navigator.connection.effectiveType==='slow-2g'||navigator.connection.saveData);
-  if(!isSlow&&particles){
-    var count=window.innerWidth<768?8:18;
-    for(var i=0;i<count;i++){
-      var p=document.createElement('div');p.className='preloader-particle';
-      var sz=Math.random()*4+2;
-      p.style.cssText='width:'+sz+'px;height:'+sz+'px;left:'+Math.random()*100+'%;animation-duration:'+(Math.random()*5+4)+'s;animation-delay:'+(Math.random()*4)+'s;';
-      particles.appendChild(p);
-    }
-  }
-  /* Progress */
-  var iv=setInterval(function(){
-    if(progress<30)progress+=Math.random()*6+3;
-    else if(progress<70)progress+=Math.random()*3+1;
-    else if(progress<90)progress+=Math.random()*2+0.5;
-    else if(!loaded)progress+=0.3;
-    else progress=100;
-    progress=Math.min(progress,loaded?100:92);
-    if(fill)fill.style.width=progress+'%';
-    if(pct)pct.textContent=Math.round(progress)+' %';
-    if(progress>=100)clearInterval(iv);
-  },80);
-  function hide(){
-    if(pre.classList.contains('is-leaving'))return;
-    loaded=true;
-    var minTime=window.innerWidth<768?800:1200;
-    var elapsed=Date.now()-start;
-    setTimeout(function(){
-      pre.classList.add('is-leaving');
-      setTimeout(function(){pre.remove();document.body.classList.remove('preloader-active')},950);
-    },Math.max(0,minTime-elapsed+200));
-  }
-  window.addEventListener('load',hide);
-  setTimeout(hide,5000);
-})();
-</script>
+<body>
 <a href="#main" class="skip-link" data-i18n data-en="Skip to content">Aller au contenu</a>
 
 <!-- ═══ LOADING SCREEN ═══ -->
@@ -155,9 +108,9 @@
 <noscript><style>.reveal,.reveal-left{opacity:1!important;transform:none!important}</style></noscript>
 
 <header class="header" id="header">
-  <a class="logo-wrap" href="/" aria-label="EnerTchad Groupe — Accueil">
-    <img loading="lazy" class="logo-img" src="/logo.svg" alt="EnerTchad" width="40" height="40" decoding="async"/>
-    <div class="logo-text">EnerTchad<span>Groupe</span></div>
+  <a class="logo-wrap" href="index.html" aria-label="EnerTchad Groupe — Accueil">
+    <img loading="lazy" class="logo-img" src="logo-enertchad.svg" alt="EnerTchad" width="40" height="40" decoding="async"/>
+    <div class="logo-text">Ener<span>Tchad</span></div>
   </a>
 
     <nav class="nav" role="navigation" aria-label="Navigation principale">
@@ -167,20 +120,20 @@
     <button class="nav-link" data-mega="groupe" aria-expanded="false" aria-haspopup="true" data-i18n data-en="Group">
       Groupe <i class="fas fa-chevron-down chevron"></i>
     </button>
-    <button class="nav-link" data-mega="durabilite" aria-expanded="false" aria-haspopup="true" data-i18n data-en="Sustainability">
-      Durabilité <i class="fas fa-chevron-down chevron"></i>
+    <button class="nav-link" data-mega="durabilite" aria-expanded="false" aria-haspopup="true" data-i18n data-en="Commitment">
+      Engagement <i class="fas fa-chevron-down chevron"></i>
     </button>
-    <button class="nav-link" data-mega="talents" aria-expanded="false" aria-haspopup="true" data-i18n data-en="Talents">
+    <button class="nav-link" data-mega="talents" aria-expanded="false" aria-haspopup="true" data-i18n data-en="Careers">
       Talents <i class="fas fa-chevron-down chevron"></i>
     </button>
-    <button class="nav-link" data-mega="actualites" aria-expanded="false" aria-haspopup="true" data-i18n data-en="News">
-      Actualités <i class="fas fa-chevron-down chevron"></i>
+    <button class="nav-link" data-mega="actualites" aria-expanded="false" aria-haspopup="true" data-i18n data-en="Media">
+      Médias <i class="fas fa-chevron-down chevron"></i>
     </button>
-    <a class="nav-link" href="/investisseurs" data-i18n data-en="Investors"><i class="fas fa-chart-pie" style="font-size:0.72rem;opacity:0.7"></i> Investisseurs</a>
+    <a class="nav-link" href="investisseurs.html" data-i18n data-en="Investors"><i class="fas fa-chart-pie" style="font-size:0.72rem;opacity:0.7"></i> Investisseurs</a>
   </nav>
 
   <div class="header-actions">
-    <a href="/contact" class="header-cta" data-i18n data-en="Contact">Contact</a>
+    <a href="contact.html" class="header-cta" data-i18n data-en="Request a quote">Demander un devis</a>
     <button class="lang-btn" id="langToggle" aria-label="Changer de langue">
       <i class="fas fa-globe"></i> <span class="lang-label">FR</span>
     </button>
@@ -190,589 +143,24 @@
   </div>
 </header>
 
-<!-- ═══ MEGA MENU: SERVICES DES CHAMPS ═══ -->
-<div class="mega-overlay" id="megaOverlay"></div>
-<div class="mega-drop" id="megaDrop-oilfield" role="dialog" aria-label="Services & Énergies" aria-modal="true">
-  <div class="mega-inner">
-    <div class="mega-header">
-      <h3 class="mega-title" data-i18n data-en="Services & Energy">Services & Énergies</h3>
-      <span class="mega-kpi-badge" aria-live="polite"><i class="fas fa-link"></i> <span data-i18n data-en="Integrated value chain — Upstream · Midstream · Downstream">Chaîne de valeur intégrée — Amont · Intermédiaire · Aval</span></span>
-      <button class="mega-close" id="megaClose" aria-label="Fermer"><i class="fas fa-xmark"></i></button>
-    </div>
-    <div class="mega-body">
-      <div class="mega-tabs" role="tablist">
-        <div class="mega-tab active" role="tab" data-tab="upstream" aria-selected="true" aria-controls="panel-upstream" id="tab-upstream">
-          <div class="mega-tab-icon" style="background:var(--amont-dim);color:var(--amont)"><i class="fas fa-mountain"></i></div>
-          <div class="mega-tab-text">
-            <div class="mega-tab-label" data-i18n data-en="Upstream">Amont</div>
-            <div class="mega-tab-sub" data-i18n data-en="E&amp;P, Well Services, Drilling, Consulting">E&amp;P, Well Services, Forage, Consulting</div>
-          </div>
-          <span class="mega-tab-stat">5 bassins</span>
-        </div>
-        <div class="mega-tab" role="tab" data-tab="midstream" aria-selected="false" aria-controls="panel-midstream" id="tab-midstream">
-          <div class="mega-tab-icon" style="background:var(--midstream-dim);color:var(--midstream)"><i class="fas fa-route"></i></div>
-          <div class="mega-tab-text">
-            <div class="mega-tab-label" data-i18n data-en="Midstream">Intermédiaire</div>
-            <div class="mega-tab-sub" data-i18n data-en="Pipeline, Transport, Digital &amp; SCADA">Pipeline, Transport, Digital &amp; SCADA</div>
-          </div>
-          <span class="mega-tab-stat">1 070 km</span>
-        </div>
-        <div class="mega-tab" role="tab" data-tab="downstream" aria-selected="false" aria-controls="panel-downstream" id="tab-downstream">
-          <div class="mega-tab-icon" style="background:var(--aval-dim);color:var(--aval)"><i class="fas fa-industry"></i></div>
-          <div class="mega-tab-text">
-            <div class="mega-tab-label" data-i18n data-en="Downstream">Aval</div>
-            <div class="mega-tab-sub" data-i18n data-en="Refining, Distribution, Stations, Trading">Raffinage, Distribution, Stations, Négoce</div>
-          </div>
-          <span class="mega-tab-stat">24 stations</span>
-        </div>
-      </div>
-      <div class="mega-divider"></div>
-      <div class="mega-panels-wrap">
-        <!-- ═══ UPSTREAM PANEL ═══ -->
-        <div class="mega-panel active" data-panel="upstream" role="tabpanel" id="panel-upstream" aria-labelledby="tab-upstream">
-          <a class="mega-card" href="/amont">
-            <div class="mega-card-icon" style="color:var(--amont)"><i class="fas fa-mountain"></i></div>
-            <h4 data-i18n data-en="Exploration &amp; Production">Exploration &amp; Production</h4>
-            <p data-i18n data-en="5 producing basins. 1.5 Gbl 2P reserves. Seismic campaigns, EOR on mature fields. 144 kb/d production.">5 bassins producteurs. 1,5 Gbl réserves 2P. Campagnes sismiques, EOR champs matures. 144 kb/j.</p>
-            <span class="mega-card-stat"><i class="fas fa-map-marked-alt"></i> 5 bassins</span>
-          </a>
-          <a class="mega-card" href="/services/well-services">
-            <div class="mega-card-icon" style="color:var(--well)"><i class="fas fa-wrench"></i></div>
-            <h4 data-i18n data-en="Well Services &amp; Workover">Well Services &amp; Workover</h4>
-            <p data-i18n data-en="Completion, intervention, workover, EOR. Wireline logging, well diagnostics, pressure control. 24/7 support.">Complétion, intervention, workover, EOR. Wireline, diagnostique puits, contrôle pression. Support 24/7.</p>
-            <span class="mega-card-stat"><i class="fas fa-clock"></i> 24/7</span>
-          </a>
-          <a class="mega-card" href="/services/drilling">
-            <div class="mega-card-icon" style="color:var(--drilling)"><i class="fas fa-oil-well"></i></div>
-            <h4 data-i18n data-en="Drilling &amp; Engineering">Drilling &amp; Engineering</h4>
-            <p data-i18n data-en="Well planning, directional drilling, slim-hole wells. 3D modeling, hydraulics, HSE &amp; well control.">Planification puits, forage directionnel, slim-hole. Modélisation 3D, hydraulique, HSE &amp; contrôle.</p>
-            <span class="mega-card-stat"><i class="fas fa-map"></i> Multi-bassins</span>
-          </a>
-          <a class="mega-card" href="/services/consulting">
-            <div class="mega-card-icon" style="color:var(--consulting)"><i class="fas fa-graduation-cap"></i></div>
-            <h4 data-i18n data-en="Consulting &amp; EnerAcademy">Consulting &amp; EnerAcademy</h4>
-            <p data-i18n data-en="Reservoir engineering, brownfield strategies, EOR design. IWCF training, HSE certification. 2,400 h/year.">Ingénierie réservoir, stratégies brownfield, schémas EOR. Formation IWCF, certification HSE. 2 400 h/an.</p>
-            <span class="mega-card-stat"><i class="fas fa-chart-bar"></i> 2 400 h/an</span>
-          </a>
-        </div>
-        <!-- ═══ MIDSTREAM PANEL ═══ -->
-        <div class="mega-panel" data-panel="midstream" role="tabpanel" id="panel-midstream" aria-labelledby="tab-midstream">
-          <a class="mega-card" href="/intermediaire">
-            <div class="mega-card-icon" style="color:var(--midstream)"><i class="fas fa-route"></i></div>
-            <h4 data-i18n data-en="Pipeline Corridor">Corridor Pipeline</h4>
-            <p data-i18n data-en="Doba-Kribi (1,070 km), Ronier-Djermaya (311 km). COTCO/TOTCO operations. 12 depots, real-time monitoring.">Doba-Kribi (1 070 km), Ronier-Djermaya (311 km). Opérations COTCO/TOTCO. 12 dépôts, monitoring temps réel.</p>
-            <span class="mega-card-stat"><i class="fas fa-ruler"></i> 1 070 km</span>
-          </a>
-          <a class="mega-card" href="/intermediaire#transport">
-            <div class="mega-card-icon" style="color:var(--midstream)"><i class="fas fa-ship"></i></div>
-            <h4 data-i18n data-en="Marine Terminal &amp; FSO">Terminal marin &amp; FSO</h4>
-            <p data-i18n data-en="Komé Kribi 1 FSO (2.4M bbl). 29 liftings in 2024. 33M bbl/year throughput. Offshore 12 km.">FSO Komé Kribi 1 (2,4M bbl). 29 enlèvements 2024. 33M bbl/an capacité. Offshore 12 km.</p>
-            <span class="mega-card-stat"><i class="fas fa-anchor"></i> 33M bbl/an</span>
-          </a>
-          <a class="mega-card" href="/services/digital">
-            <div class="mega-card-icon" style="color:var(--digital)"><i class="fas fa-tower-broadcast"></i></div>
-            <h4 data-i18n data-en="Digital &amp; SCADA">Digital &amp; SCADA</h4>
-            <p data-i18n data-en="Field-wide SCADA, 350+ sensors, AI predictive analytics, digital twin. OT cybersecurity ISO 27001.">SCADA terrain, 350+ capteurs, IA prédictive, jumeau numérique. Cybersécurité OT ISO 27001.</p>
-            <span class="mega-card-stat"><i class="fas fa-satellite-dish"></i> 350+ capteurs</span>
-          </a>
-          <a class="mega-card" href="/technologies">
-            <div class="mega-card-icon" style="color:var(--tech)"><i class="fas fa-microchip"></i></div>
-            <h4 data-i18n data-en="Technologies &amp; Innovation">Technologies &amp; Innovation</h4>
-            <p data-i18n data-en="Digital twin, IoT networks, AI-driven optimization, automation. Modernizing petroleum operations.">Jumeau numérique, réseaux IoT, optimisation IA, automatisation. Modernisation des opérations pétrolières.</p>
-            <span class="mega-card-stat"><i class="fas fa-brain"></i> AI-driven</span>
-          </a>
-        </div>
-        <!-- ═══ DOWNSTREAM PANEL ═══ -->
-        <div class="mega-panel" data-panel="downstream" role="tabpanel" id="panel-downstream" aria-labelledby="tab-downstream">
-          <a class="mega-card" href="/aval">
-            <div class="mega-card-icon" style="color:var(--aval)"><i class="fas fa-industry"></i></div>
-            <h4 data-i18n data-en="SRN Djarmaya Refinery">Raffinerie SRN Djarmaya</h4>
-            <p data-i18n data-en="20 kb/d capacity (target 60 kb/d). Gasoline, diesel, LPG, kerosene. National fuel sovereignty.">20 kb/j (objectif 60 kb/j). Essence, diesel, GPL, kérosène. Souveraineté énergétique nationale.</p>
-            <span class="mega-card-stat"><i class="fas fa-cogs"></i> 20 → 60 kb/j</span>
-          </a>
-          <a class="mega-card" href="/aval#stations">
-            <div class="mega-card-icon" style="color:var(--aval)"><i class="fas fa-gas-pump"></i></div>
-            <h4 data-i18n data-en="24 Premium Stations">24 Stations premium</h4>
-            <p data-i18n data-en="Ultra-premium stations across 14 cities. Fuels, LPG, EV charging, loyalty programs. 24/7 service.">Stations ultra-premium dans 14 villes. Carburants, GPL, bornes IRVE, programmes fidélité. 24/7.</p>
-            <span class="mega-card-stat"><i class="fas fa-location-dot"></i> 14 villes</span>
-          </a>
-          <a class="mega-card" href="/aval">
-            <div class="mega-card-icon" style="color:var(--aval)"><i class="fas fa-truck"></i></div>
-            <h4 data-i18n data-en="Distribution &amp; Trading">Distribution &amp; Négoce</h4>
-            <p data-i18n data-en="Nationwide distribution, industrial lubricants, B2B supply, fleet management. National coverage.">Distribution nationale, lubrifiants industriels, chaînes B2B, gestion flotte. Couverture nationale.</p>
-            <span class="mega-card-stat"><i class="fas fa-boxes-stacked"></i> National</span>
-          </a>
-          <a class="mega-card" href="/energies">
-            <div class="mega-card-icon" style="color:var(--energy)"><i class="fas fa-leaf"></i></div>
-            <h4 data-i18n data-en="Renewable Energy">Énergies renouvelables</h4>
-            <p data-i18n data-en="Solar canopies, hybrid power, LNG transition. ESG-aligned energy diversification strategy.">Ombrières solaires, énergie hybride, transition GNL. Stratégie diversification énergétique ESG.</p>
-            <span class="mega-card-stat"><i class="fas fa-solar-panel"></i> Net-Zero 2050</span>
-          </a>
-        </div>
-      </div>
-      <div class="mega-footer">
-        <a class="mega-footer-link" href="/amont" data-i18n data-en="Explore the full value chain">Explorer toute la chaîne de valeur <i class="fas fa-arrow-right"></i></a>
-        <div class="mega-footer-stats">
-          <div class="mega-footer-stat">
-            <span class="mega-footer-stat-value">3</span>
-            <span class="mega-footer-stat-label" data-i18n data-en="Segments">Segments</span>
-          </div>
-          <div class="mega-footer-stat">
-            <span class="mega-footer-stat-value">7</span>
-            <span class="mega-footer-stat-label" data-i18n data-en="Divisions">Divisions</span>
-          </div>
-          <div class="mega-footer-stat">
-            <span class="mega-footer-stat-value">24/7</span>
-            <span class="mega-footer-stat-label" data-i18n data-en="Field support">Support terrain</span>
-          </div>
-          <div class="mega-footer-stat">
-            <span class="mega-footer-stat-value">100%</span>
-            <span class="mega-footer-stat-label" data-i18n data-en="Chadian team">Équipe tchadienne</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="mega-drop" id="megaDrop-groupe" role="dialog" aria-label="Groupe" aria-modal="true">
-  <div class="mega-inner">
-    <div class="mega-header">
-      <h3 class="mega-title" data-i18n data-en="The Group">Le Groupe</h3>
-      <span class="mega-kpi-badge"><i class="fas fa-building"></i> <span data-i18n data-en="4 service poles">4 pôles de services</span></span>
-      <button class="mega-close" aria-label="Fermer"><i class="fas fa-xmark"></i></button>
-    </div>
-    <div class="mega-body">
-      <div class="mega-tabs" role="tablist">
-        <div class="mega-tab active" role="tab" data-tab="gouvernance" aria-selected="true" aria-controls="panel-gouvernance" id="tab-gouvernance">
-          <div class="mega-tab-icon" style="background:var(--gold-dim);color:var(--gold)"><i class="fas fa-landmark"></i></div>
-          <div class="mega-tab-text">
-            <div class="mega-tab-label" data-i18n data-en="Governance">Gouvernance</div>
-            <div class="mega-tab-sub" data-i18n data-en="Identity & Leadership">Identité & Direction</div>
-          </div>
-          <span class="mega-tab-stat">OFS 2026</span>
-        </div>
-        <div class="mega-tab" role="tab" data-tab="expertise" aria-selected="false" aria-controls="panel-expertise" id="tab-expertise">
-          <div class="mega-tab-icon" style="background:var(--well);color:var(--white)"><i class="fas fa-users"></i></div>
-          <div class="mega-tab-text">
-            <div class="mega-tab-label" data-i18n data-en="Expertise">Expertise</div>
-            <div class="mega-tab-sub" data-i18n data-en="Team Origins & Track Record">Origines équipe & Parcours</div>
-          </div>
-          <span class="mega-tab-stat">20+ years</span>
-        </div>
-        <div class="mega-tab" role="tab" data-tab="impact" aria-selected="false" aria-controls="panel-impact" id="tab-impact">
-          <div class="mega-tab-icon" style="background:var(--consulting);color:var(--white)"><i class="fas fa-chart-line"></i></div>
-          <div class="mega-tab-text">
-            <div class="mega-tab-label" data-i18n data-en="Impact & Values">Impact & Valeurs</div>
-            <div class="mega-tab-sub" data-i18n data-en="Local Content & Performance">Contenu local & Performance</div>
-          </div>
-          <span class="mega-tab-stat">100% Tchad</span>
-        </div>
-      </div>
-      <div class="mega-divider"></div>
-      <div class="mega-panels-wrap">
-        <div class="mega-panel active" data-panel="gouvernance" role="tabpanel" id="panel-gouvernance" aria-labelledby="tab-gouvernance">
-          <a class="mega-card" href="/groupe/">
-            <div class="mega-card-icon" style="color:var(--gold)"><i class="fas fa-building-columns"></i></div>
-            <h4 data-i18n data-en="Corporate Identity">Identité corporate</h4>
-            <p data-i18n data-en="New OFS company created in 2026 by Chadian experts from majors and service companies. Vision: excellence in oilfield services.">Nouvelle société OFS créée en 2026 par des experts tchadiens issus des majors et prestataires. Vision : excellence en services pétroliers.</p>
-            <span class="mega-card-stat"><i class="fas fa-bullseye"></i> OFS 2026</span>
-          </a>
-          <a class="mega-card" href="/groupe/#gouvernance">
-            <div class="mega-card-icon" style="color:var(--gold)"><i class="fas fa-user-tie"></i></div>
-            <h4 data-i18n data-en="Board & Leadership">CA & Direction</h4>
-            <p data-i18n data-en="Executive management with deep roots in Chad's oil sector. Transparent governance aligned with OHADA standards and international best practices.">Gestion exécutive ancrée dans le secteur pétrolier tchadien. Gouvernance transparente conforme aux standards OHADA.</p>
-            <span class="mega-card-stat"><i class="fas fa-shield-halved"></i> OHADA</span>
-          </a>
-          <a class="mega-card" href="/groupe/#valeurs">
-            <div class="mega-card-icon" style="color:var(--gold)"><i class="fas fa-heart"></i></div>
-            <h4 data-i18n data-en="Core Values">Valeurs fondamentales</h4>
-            <p data-i18n data-en="Trust, innovation, excellence, and local commitment. 'Mix expert + local' — major company expertise combined with Chadian agility.">Confiance, innovation, excellence, ancrage local. 'Mix expert + local' — expertise des majors, agilité tchadienne.</p>
-            <span class="mega-card-stat"><i class="fas fa-handshake"></i> Trust</span>
-          </a>
-        </div>
-        <div class="mega-panel" data-panel="expertise" role="tabpanel" id="panel-expertise" aria-labelledby="tab-expertise">
-          <a class="mega-card" href="/groupe/#expertise">
-            <div class="mega-card-icon" style="color:var(--well)"><i class="fas fa-chart-bar"></i></div>
-            <h4 data-i18n data-en="20+ Years of Experience">20+ ans d'expérience</h4>
-            <p data-i18n data-en="Founders and team forged in major international E&P and oilfield services companies. The first Chadian OFS of this scale.">Fondateurs et équipe forgés dans les grandes compagnies E&P et de services internationales. La première OFS tchadienne de cette envergure.</p>
-            <span class="mega-card-stat"><i class="fas fa-award"></i> Experienced</span>
-          </a>
-          <a class="mega-card" href="/groupe/#team">
-            <div class="mega-card-icon" style="color:var(--drilling)"><i class="fas fa-people-group"></i></div>
-            <h4 data-i18n data-en="100% Chadian Team">100% Équipe tchadienne</h4>
-            <p data-i18n data-en="All team members are Chadian nationals with international certifications (IWCF, API, IMCA). No external dependencies. Full local empowerment.">Tous les collaborateurs sont tchadiens avec certifications internationales (IWCF, API, IMCA). Zéro dépendance externe. Empowerment local complet.</p>
-            <span class="mega-card-stat"><i class="fas fa-flag"></i> 100% Local</span>
-          </a>
-          <a class="mega-card" href="/groupe/#certifications">
-            <div class="mega-card-icon" style="color:var(--digital)"><i class="fas fa-certificate"></i></div>
-            <h4 data-i18n data-en="International Certifications">Certifications internationales</h4>
-            <p data-i18n data-en="IWCF well control, API drilling certifications, IMCA offshore standards, HSE qualifications. Continuous professional development aligned with industry standards.">Certifications IWCF, API forage, IMCA offshore, qualifications HSE. Développement professionnel continu aux standards secteur.</p>
-            <span class="mega-card-stat"><i class="fas fa-check-circle"></i> ISO Certified</span>
-          </a>
-        </div>
-        <div class="mega-panel" data-panel="impact" role="tabpanel" id="panel-impact" aria-labelledby="tab-impact">
-          <a class="mega-card" href="/groupe/#local-content">
-            <div class="mega-card-icon" style="color:var(--consulting)"><i class="fas fa-flag"></i></div>
-            <h4 data-i18n data-en="Local Content Maximization">Maximisation contenu local</h4>
-            <p data-i18n data-en="100% Chadian workforce. Local sourcing where possible. Training for skills transfer. Supporting Chad's resource sovereignty through local expertise development.">100% main-d'œuvre tchadienne. Sourcing local. Formation transfert compétences. Soutien souveraineté ressources du Tchad.</p>
-            <span class="mega-card-stat"><i class="fas fa-users"></i> 100% Local</span>
-          </a>
-          <a class="mega-card" href="/groupe/#performance">
-            <div class="mega-card-icon" style="color:var(--gold)"><i class="fas fa-chart-line"></i></div>
-            <h4 data-i18n data-en="Performance Metrics">KPIs Performance</h4>
-            <p data-i18n data-en="50+ completed projects. 24/7 support availability. 0 major safety incidents. 100% project delivery on schedule. Industry-leading uptime and efficiency.">50+ projets réalisés. Disponibilité 24/7. 0 incident majeur. 100% livrables à temps. Excellence opérationnelle.</p>
-            <span class="mega-card-stat"><i class="fas fa-medal"></i> Excellence</span>
-          </a>
-          <a class="mega-card" href="/durabilite">
-            <div class="mega-card-icon" style="color:var(--energy)"><i class="fas fa-leaf"></i></div>
-            <h4 data-i18n data-en="Sustainability Commitment">Engagement durabilité</h4>
-            <p data-i18n data-en="HSE as top priority. Zero-incident culture. Responsible environmental practices. Community engagement. Aligned with ESG standards and Chad's net-zero 2050 roadmap.">Sécurité prioritaire. Culture zéro-incident. Pratiques responsables. Engagement communautaire. Aligné ESG et trajectoire net-zéro 2050.</p>
-            <span class="mega-card-stat"><i class="fas fa-shield-halved"></i> HSE First</span>
-          </a>
-        </div>
-      </div>
-      <div class="mega-footer">
-        <a class="mega-footer-link" href="/groupe/" data-i18n data-en="Discover the Group">Découvrir le Groupe <i class="fas fa-arrow-right"></i></a>
-        <div class="mega-footer-stats">
-          <div class="mega-footer-stat">
-            <span class="mega-footer-stat-value">1 240</span>
-            <span class="mega-footer-stat-label" data-i18n data-en="Team members">Collaborateurs</span>
-          </div>
-          <div class="mega-footer-stat">
-            <span class="mega-footer-stat-value">100%</span>
-            <span class="mega-footer-stat-label" data-i18n data-en="Chadian team">Équipe tchadienne</span>
-          </div>
-          <div class="mega-footer-stat">
-            <span class="mega-footer-stat-value">50+</span>
-            <span class="mega-footer-stat-label" data-i18n data-en="Projects">Projets</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ═══ MEGA MENU: DURABILITÉ ═══ -->
-<div class="mega-drop" id="megaDrop-durabilite" role="dialog" aria-label="Durabilité" aria-modal="true">
-  <div class="mega-inner">
-    <div class="mega-header">
-      <h3 class="mega-title" data-i18n data-en="Commitment">Engagement</h3>
-      <span class="mega-kpi-badge"><i class="fas fa-leaf"></i> <span data-i18n data-en="HSE & Responsibility">HSE & Responsabilité</span></span>
-      <button class="mega-close" aria-label="Fermer"><i class="fas fa-xmark"></i></button>
-    </div>
-    <div class="mega-body">
-      <div class="mega-tabs" role="tablist">
-        <div class="mega-tab active" role="tab" data-tab="hse" aria-selected="true" aria-controls="panel-hse" id="tab-hse">
-          <div class="mega-tab-icon" style="background:var(--consulting);color:var(--consulting)"><i class="fas fa-hard-hat"></i></div>
-          <div class="mega-tab-text">
-            <div class="mega-tab-label" data-i18n data-en="HSE Excellence">Excellence HSE</div>
-            <div class="mega-tab-sub" data-i18n data-en="Zero-Incident Culture">Culture zéro-incident</div>
-          </div>
-          <span class="mega-tab-stat">Zero Incident</span>
-        </div>
-        <div class="mega-tab" role="tab" data-tab="social" aria-selected="false" aria-controls="panel-social" id="tab-social">
-          <div class="mega-tab-icon" style="background:var(--gold);color:var(--white)"><i class="fas fa-people-group"></i></div>
-          <div class="mega-tab-text">
-            <div class="mega-tab-label" data-i18n data-en="Social Impact">Impact social</div>
-            <div class="mega-tab-sub" data-i18n data-en="Local Development">Développement local</div>
-          </div>
-          <span class="mega-tab-stat">100% Local</span>
-        </div>
-        <div class="mega-tab" role="tab" data-tab="governance" aria-selected="false" aria-controls="panel-governance" id="tab-governance">
-          <div class="mega-tab-icon" style="background:var(--digital);color:var(--white)"><i class="fas fa-scale-balanced"></i></div>
-          <div class="mega-tab-text">
-            <div class="mega-tab-label" data-i18n data-en="Governance">Gouvernance</div>
-            <div class="mega-tab-sub" data-i18n data-en="Transparency & Ethics">Transparence & Éthique</div>
-          </div>
-          <span class="mega-tab-stat">Transparent</span>
-        </div>
-      </div>
-      <div class="mega-divider"></div>
-      <div class="mega-panels-wrap">
-        <div class="mega-panel active" data-panel="hse" role="tabpanel" id="panel-hse" aria-labelledby="tab-hse">
-          <a class="mega-card" href="/durabilite#hse">
-            <div class="mega-card-icon" style="color:var(--consulting)"><i class="fas fa-hard-hat"></i></div>
-            <h4 data-i18n data-en="Safety First Culture">Culture Sécurité d'abord</h4>
-            <p data-i18n data-en="Zero-incident target. Daily toolbox talks, incident reporting, and corrective actions. HSE policies aligned with international standards.">Objectif zéro-incident. Causeries quotidiennes, signalements, actions correctrices. Politiques HSE standards internationaux.</p>
-            <span class="mega-card-stat"><i class="fas fa-shield-halved"></i> Zero Incident</span>
-          </a>
-          <a class="mega-card" href="/durabilite#training">
-            <div class="mega-card-icon" style="color:var(--consulting)"><i class="fas fa-graduation-cap"></i></div>
-            <h4 data-i18n data-en="HSE Training & Certification">Formation & Certification HSE</h4>
-            <p data-i18n data-en="Annual HSE refresher courses, well control drills, emergency response training, and IWCF/API certifications for all team members.">Recyclage HSE annuel, exercices contrôle puits, formation réponse urgence, certifications IWCF/API tous collaborateurs.</p>
-            <span class="mega-card-stat"><i class="fas fa-certificate"></i> Certified</span>
-          </a>
-          <a class="mega-card" href="/durabilite#environmental">
-            <div class="mega-card-icon" style="color:var(--consulting)"><i class="fas fa-leaf"></i></div>
-            <h4 data-i18n data-en="Environmental Stewardship">Responsabilité environnementale</h4>
-            <p data-i18n data-en="Spill prevention, waste management, minimal environmental footprint, and compliance with Chad's environmental regulations.">Prévention déversements, gestion déchets, empreinte minimale, conformité réglementations environnementales Tchad.</p>
-            <span class="mega-card-stat"><i class="fas fa-check-circle"></i> Compliant</span>
-          </a>
-        </div>
-        <div class="mega-panel" data-panel="social" role="tabpanel" id="panel-social" aria-labelledby="tab-social">
-          <a class="mega-card" href="/durabilite#local-workforce">
-            <div class="mega-card-icon" style="color:var(--gold)"><i class="fas fa-people-group"></i></div>
-            <h4 data-i18n data-en="Local Workforce & Employment">Main-d'œuvre locale</h4>
-            <p data-i18n data-en="85% local Chadian team. Fair wages, benefits, and career development. Skills transfer and local expertise building.">85% équipe tchadienne locale. Salaires justes, avantages, développement carrière. Transfert compétences, expertise locale.</p>
-            <span class="mega-card-stat"><i class="fas fa-flag"></i> 85% Local</span>
-          </a>
-          <a class="mega-card" href="/durabilite#community">
-            <div class="mega-card-icon" style="color:var(--gold)"><i class="fas fa-heart"></i></div>
-            <h4 data-i18n data-en="Community Partnerships">Partenariats communautaires</h4>
-            <p data-i18n data-en="Education support (42 schools), health initiatives, water and sanitation projects, and economic development in oil-producing regions.">Soutien éducation (42 écoles), initiatives santé, projets eau et assainissement, développement économique régions productrices.</p>
-            <span class="mega-card-stat"><i class="fas fa-handshake"></i> 15,000+ beneficiaries</span>
-          </a>
-          <a class="mega-card" href="/durabilite#training-dev">
-            <div class="mega-card-icon" style="color:var(--gold)"><i class="fas fa-graduation-cap"></i></div>
-            <h4 data-i18n data-en="Training & Skill Development">Formation & Développement</h4>
-            <p data-i18n data-en="2,400 training hours annually through EnerAcademy. Well control, drilling, HSE, SCADA, and technical certifications. Continuous professional growth.">2 400 heures formation annuelles via EnerAcademy. Contrôle puits, forage, HSE, SCADA, certifications. Croissance professionnelle.</p>
-            <span class="mega-card-stat"><i class="fas fa-chart-line"></i> 2,400 h/yr</span>
-          </a>
-        </div>
-        <div class="mega-panel" data-panel="governance" role="tabpanel" id="panel-governance" aria-labelledby="tab-governance">
-          <a class="mega-card" href="/durabilite#transparency">
-            <div class="mega-card-icon" style="color:var(--digital)"><i class="fas fa-scale-balanced"></i></div>
-            <h4 data-i18n data-en="Transparency & Reporting">Transparence & Reporting</h4>
-            <p data-i18n data-en="EITI member since 2007. 53 contracts published. GRI-aligned sustainability reporting. Annual ESG reports. Full disclosure aligned with international standards.">Membre ITIE depuis 2007. 53 contrats publiés. Reporting GRI. Rapports ESG annuels. Transparence totale normes internationales.</p>
-            <span class="mega-card-stat"><i class="fas fa-file-check"></i> EITI Member</span>
-          </a>
-          <a class="mega-card" href="/durabilite#ethics">
-            <div class="mega-card-icon" style="color:var(--digital)"><i class="fas fa-handshake"></i></div>
-            <h4 data-i18n data-en="Ethics & Compliance">Éthique & Conformité</h4>
-            <p data-i18n data-en="Zero-tolerance corruption policy. Anti-bribery compliance. Conflict of interest management. Whistleblower protection. Regular audits and training.">Politique tolérance zéro corruption. Conformité anti-pot-de-vin. Gestion conflits intérêts. Protection lanceurs d'alerte. Audits réguliers.</p>
-            <span class="mega-card-stat"><i class="fas fa-shield-halved"></i> Compliant</span>
-          </a>
-          <a class="mega-card" href="/durabilite#climate">
-            <div class="mega-card-icon" style="color:var(--digital)"><i class="fas fa-leaf"></i></div>
-            <h4 data-i18n data-en="Climate Roadmap">Trajectoire climatique</h4>
-            <p data-i18n data-en="Net-zero target 2050. 94% gas capture. -12% CO₂/barrel (2026). Renewable energy projects (8 solar stations). Methane reduction and flaring elimination.">Cible net-zéro 2050. 94% gaz capturé. -12% CO₂/baril (2026). Projets énergies renouvelables. Réduction méthane et zéro torchage.</p>
-            <span class="mega-card-stat"><i class="fas fa-tree"></i> Net-Zero 2050</span>
-          </a>
-        </div>
-      </div>
-      <div class="mega-footer">
-        <a class="mega-footer-link" href="/durabilite" data-i18n data-en="Explore Sustainability">Explorer la Durabilité <i class="fas fa-arrow-right"></i></a>
-        <div class="mega-footer-stats">
-          <div class="mega-footer-stat">
-            <span class="mega-footer-stat-value">842</span>
-            <span class="mega-footer-stat-label" data-i18n data-en="HSE days">Jours HSE consécutifs</span>
-          </div>
-          <div class="mega-footer-stat">
-            <span class="mega-footer-stat-value">0.42</span>
-            <span class="mega-footer-stat-label" data-i18n data-en="TRIR Score">TRIR Score</span>
-          </div>
-          <div class="mega-footer-stat">
-            <span class="mega-footer-stat-value">94%</span>
-            <span class="mega-footer-stat-label" data-i18n data-en="Gas Captured">Gaz capturé</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ═══ MEGA MENU: TALENTS ═══ -->
-<div class="mega-drop" id="megaDrop-talents" role="dialog" aria-label="Talents" aria-modal="true">
-  <div class="mega-inner">
-    <div class="mega-header">
-      <h3 class="mega-title" data-i18n data-en="Careers">Talents</h3>
-      <span class="mega-kpi-badge"><i class="fas fa-users"></i> <span data-i18n data-en="Grow with us">Grandissez avec nous</span></span>
-      <button class="mega-close" aria-label="Fermer"><i class="fas fa-xmark"></i></button>
-    </div>
-    <div class="mega-body">
-      <div class="mega-tabs" role="tablist">
-        <div class="mega-tab active" role="tab" data-tab="opportunities" aria-selected="true" aria-controls="panel-opportunities" id="tab-opportunities">
-          <div class="mega-tab-icon" style="background:var(--digital);color:var(--digital)"><i class="fas fa-briefcase"></i></div>
-          <div class="mega-tab-text">
-            <div class="mega-tab-label" data-i18n data-en="Open Positions">Postes ouverts</div>
-            <div class="mega-tab-sub" data-i18n data-en="Join Our Team">Rejoignez notre équipe</div>
-          </div>
-          <span class="mega-tab-stat">Hiring</span>
-        </div>
-        <div class="mega-tab" role="tab" data-tab="development" aria-selected="false" aria-controls="panel-development" id="tab-development">
-          <div class="mega-tab-icon" style="background:var(--drilling);color:var(--drilling)"><i class="fas fa-chart-line"></i></div>
-          <div class="mega-tab-text">
-            <div class="mega-tab-label" data-i18n data-en="Career Development">Développement carrière</div>
-            <div class="mega-tab-sub" data-i18n data-en="Growth & Learning">Croissance & Apprentissage</div>
-          </div>
-          <span class="mega-tab-stat">Growth</span>
-        </div>
-      </div>
-      <div class="mega-divider"></div>
-      <div class="mega-panels-wrap">
-        <div class="mega-panel active" data-panel="opportunities" role="tabpanel" id="panel-opportunities" aria-labelledby="tab-opportunities">
-          <a class="mega-card" href="/talents#jobs">
-            <div class="mega-card-icon" style="color:var(--digital)"><i class="fas fa-briefcase"></i></div>
-            <h4 data-i18n data-en="Current Openings">Offres actuelles</h4>
-            <p data-i18n data-en="Well Services technicians, drilling engineers, SCADA operators, HSE specialists, and consulting team members. Competitive salaries and benefits.">Techniciens Well Services, ingénieurs forage, opérateurs SCADA, spécialistes HSE, équipe consulting. Salaires compétitifs et avantages.</p>
-            <span class="mega-card-stat"><i class="fas fa-arrow-right"></i> View Jobs</span>
-          </a>
-          <a class="mega-card" href="/talents#internships">
-            <div class="mega-card-icon" style="color:var(--digital)"><i class="fas fa-graduation-cap"></i></div>
-            <h4 data-i18n data-en="Internships & Graduate Programs">Stages & Programmes jeunes diplômés</h4>
-            <p data-i18n data-en="Paid internships for engineering and technical students. Full-time positions for graduates. Mentoring from experienced professionals.">Stages rémunérés étudiants ingénierie. CDI jeunes diplômés. Mentorat avec professionnels expérimentés.</p>
-            <span class="mega-card-stat"><i class="fas fa-star"></i> Entry-Level</span>
-          </a>
-          <a class="mega-card" href="/talents#why-join">
-            <div class="mega-card-icon" style="color:var(--digital)"><i class="fas fa-heart"></i></div>
-            <h4 data-i18n data-en="Why Join EnerTchad">Pourquoi rejoindre EnerTchad</h4>
-            <p data-i18n data-en="100% Chadian-led company. Fast-growing OFS. International standards. Learning opportunities. Fair compensation. Strong HSE culture. Support local expertise.">Entreprise 100% tchadienne. OFS en croissance rapide. Standards internationaux. Opportunités apprentissage. Compensation juste. HSE premier.</p>
-            <span class="mega-card-stat"><i class="fas fa-check-circle"></i> Great Place</span>
-          </a>
-        </div>
-        <div class="mega-panel" data-panel="development" role="tabpanel" id="panel-development" aria-labelledby="tab-development">
-          <a class="mega-card" href="/talents#academy">
-            <div class="mega-card-icon" style="color:var(--drilling)"><i class="fas fa-graduation-cap"></i></div>
-            <h4 data-i18n data-en="EnerAcademy Training">Formation EnerAcademy</h4>
-            <p data-i18n data-en="2,400 training hours/year. Well control, drilling, SCADA, HSE, and equipment certifications. Customized programs for all levels.">2 400 heures formation/an. Contrôle puits, forage, SCADA, HSE, certifications équipements. Programmes personnalisés tous niveaux.</p>
-            <span class="mega-card-stat"><i class="fas fa-users"></i> 2,400 h/yr</span>
-          </a>
-          <a class="mega-card" href="/talents#mentoring">
-            <div class="mega-card-icon" style="color:var(--drilling)"><i class="fas fa-handshake-angle"></i></div>
-            <h4 data-i18n data-en="Mentoring Programs">Programmes mentorat</h4>
-            <p data-i18n data-en="One-on-one mentoring from experienced team members, career guidance, technical skill development, and leadership training for future leaders.">Mentorat un-à-un avec membres équipe, guidance carrière, développement compétences techniques, formation leadership.</p>
-            <span class="mega-card-stat"><i class="fas fa-person"></i> Mentored</span>
-          </a>
-          <a class="mega-card" href="/talents#certifications">
-            <div class="mega-card-icon" style="color:var(--drilling)"><i class="fas fa-certificate"></i></div>
-            <h4 data-i18n data-en="Professional Certifications">Certifications professionnelles</h4>
-            <p data-i18n data-en="Company-sponsored international certifications (IWCF, API, IMCA, etc.). Continuous professional development aligned with industry standards.">Certifications internationales sponsorisées (IWCF, API, IMCA). Développement professionnel continu standards secteur.</p>
-            <span class="mega-card-stat"><i class="fas fa-award"></i> Certified</span>
-          </a>
-        </div>
-      </div>
-      <div class="mega-footer">
-        <a class="mega-footer-link" href="/talents" data-i18n data-en="Explore Careers">Voir tous les postes <i class="fas fa-arrow-right"></i></a>
-        <div class="mega-footer-stats">
-          <div class="mega-footer-stat">
-            <span class="mega-footer-stat-value">1 240</span>
-            <span class="mega-footer-stat-label" data-i18n data-en="Team members">Collaborateurs</span>
-          </div>
-          <div class="mega-footer-stat">
-            <span class="mega-footer-stat-value">85%</span>
-            <span class="mega-footer-stat-label" data-i18n data-en="Local workforce">Main-d'œuvre locale</span>
-          </div>
-          <div class="mega-footer-stat">
-            <span class="mega-footer-stat-value">100%</span>
-            <span class="mega-footer-stat-label" data-i18n data-en="Equal opportunity">Opportunités égales</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ═══ MEGA MENU: ACTUALITÉS ═══ -->
-<div class="mega-drop" id="megaDrop-actualites" role="dialog" aria-label="Actualités" aria-modal="true">
-  <div class="mega-inner">
-    <div class="mega-header">
-      <h3 class="mega-title" data-i18n data-en="Media">Médias</h3>
-      <span class="mega-kpi-badge"><i class="fas fa-newspaper"></i> <span data-i18n data-en="Stay Updated">Restez informés</span></span>
-      <button class="mega-close" aria-label="Fermer"><i class="fas fa-xmark"></i></button>
-    </div>
-    <div class="mega-body">
-      <div class="mega-tabs" role="tablist">
-        <div class="mega-tab active" role="tab" data-tab="recent" aria-selected="true" aria-controls="panel-recent" id="tab-recent">
-          <div class="mega-tab-icon" style="background:var(--energy);color:var(--energy)"><i class="fas fa-newspaper"></i></div>
-          <div class="mega-tab-text">
-            <div class="mega-tab-label" data-i18n data-en="Latest News">Dernières actualités</div>
-            <div class="mega-tab-sub" data-i18n data-en="Company & Industry">Entreprise & Secteur</div>
-          </div>
-          <span class="mega-tab-stat">Daily</span>
-        </div>
-        <div class="mega-tab" role="tab" data-tab="press" aria-selected="false" aria-controls="panel-press" id="tab-press">
-          <div class="mega-tab-icon" style="background:var(--gold);color:var(--gold)"><i class="fas fa-bullhorn"></i></div>
-          <div class="mega-tab-text">
-            <div class="mega-tab-label" data-i18n data-en="Press Releases">Communiqués presse</div>
-            <div class="mega-tab-sub" data-i18n data-en="Official Announcements">Annonces officielles</div>
-          </div>
-          <span class="mega-tab-stat">Official</span>
-        </div>
-      </div>
-      <div class="mega-divider"></div>
-      <div class="mega-panels-wrap">
-        <div class="mega-panel active" data-panel="recent" role="tabpanel" id="panel-recent" aria-labelledby="tab-recent">
-          <a class="mega-card" href="/actualites">
-            <div class="mega-card-icon" style="color:var(--energy)"><i class="fas fa-newspaper"></i></div>
-            <h4 data-i18n data-en="Company News">Actualités entreprise</h4>
-            <p data-i18n data-en="Updates on EnerTchad's operations, project completions, partnerships, and company milestones. Latest news from the oilfield services and distribution business.">Mises à jour opérations, projets finalisés, partenariats et jalons. Actualités pétrolier et distribution.</p>
-            <span class="mega-card-stat"><i class="fas fa-arrow-right"></i> Read News</span>
-          </a>
-          <a class="mega-card" href="/actualites#industry">
-            <div class="mega-card-icon" style="color:var(--energy)"><i class="fas fa-globe"></i></div>
-            <h4 data-i18n data-en="Industry Insights">Insights industrie</h4>
-            <p data-i18n data-en="Analysis of Chad's oil sector trends, global energy market updates, technology breakthroughs, and regulatory changes affecting our business.">Analyse tendances secteur tchadien, actualisations marché énergétique, innovations technologiques, changements réglementaires.</p>
-            <span class="mega-card-stat"><i class="fas fa-chart-line"></i> Analysis</span>
-          </a>
-          <a class="mega-card" href="/actualites#events">
-            <div class="mega-card-icon" style="color:var(--energy)"><i class="fas fa-calendar"></i></div>
-            <h4 data-i18n data-en="Events & Conferences">Événements & Conférences</h4>
-            <p data-i18n data-en="EnerTchad participation in industry conferences, trade shows, exhibitions, and sponsored events. Networking and thought leadership platforms.">Participation conférences secteur, salons, exhibitions, événements sponsorisés. Réseautage et leadership d'opinion.</p>
-            <span class="mega-card-stat"><i class="fas fa-people-group"></i> Events</span>
-          </a>
-        </div>
-        <div class="mega-panel" data-panel="press" role="tabpanel" id="panel-press" aria-labelledby="tab-press">
-          <a class="mega-card" href="/actualites#press-releases">
-            <div class="mega-card-icon" style="color:var(--gold)"><i class="fas fa-bullhorn"></i></div>
-            <h4 data-i18n data-en="Official Press Releases">Communiqués officiels</h4>
-            <p data-i18n data-en="Official company announcements, major partnerships, regulatory approvals, strategic initiatives, and earnings/financial updates from EnerTchad management.">Annonces officielles, partenariats majeurs, approbations réglementaires, initiatives stratégiques et updates financières.">
-            <span class="mega-card-stat"><i class="fas fa-check-circle"></i> Official</span>
-          </a>
-          <a class="mega-card" href="/actualites#media">
-            <div class="mega-card-icon" style="color:var(--gold)"><i class="fas fa-microphone"></i></div>
-            <h4 data-i18n data-en="Media Center">Centre médias</h4>
-            <p data-i18n data-en="High-resolution photos, video materials, logos, and branded assets for journalists and media partners covering EnerTchad.">Photos haute résolution, vidéos, logos et ressources pour journalistes et partenaires médias couvrant EnerTchad.</p>
-            <span class="mega-card-stat"><i class="fas fa-download"></i> Download</span>
-          </a>
-          <a class="mega-card" href="/contact">
-            <div class="mega-card-icon" style="color:var(--gold)"><i class="fas fa-envelope"></i></div>
-            <h4 data-i18n data-en="Press Contact">Contact presse</h4>
-            <p data-i18n data-en="Reach EnerTchad's communication team for media inquiries, interview requests, fact verification, and official statements.">Contactez l'équipe communication pour demandes média, demandes interviews, vérifications de faits et déclarations officielles.</p>
-            <span class="mega-card-stat"><i class="fas fa-arrow-right"></i> Contact</span>
-          </a>
-        </div>
-      </div>
-      <div class="mega-footer">
-        <a class="mega-footer-link" href="/actualites" data-i18n data-en="Read All News">Lire toutes les actualités <i class="fas fa-arrow-right"></i></a>
-        <div class="mega-footer-stats">
-          <div class="mega-footer-stat">
-            <span class="mega-footer-stat-value">Daily</span>
-            <span class="mega-footer-stat-label" data-i18n data-en="News Updates">Actualisations actualités</span>
-          </div>
-          <div class="mega-footer-stat">
-            <span class="mega-footer-stat-value">50+</span>
-            <span class="mega-footer-stat-label" data-i18n data-en="Annual Events">Événements annuels</span>
-          </div>
-          <div class="mega-footer-stat">
-            <span class="mega-footer-stat-value">100%</span>
-            <span class="mega-footer-stat-label" data-i18n data-en="Transparency">Transparence</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
 <main data-category="corporate" data-segment="entreprise" data-tags="Finance, Relations investisseurs, Rapports annuels, Gouvernance" id="main">
 <nav class="breadcrumb" aria-label="Fil d'Ariane">
   <div class="ctn">
     <ol class="breadcrumb-list">
-      <li><a href="/" data-i18n data-en="Home">Accueil</a></li>
+      <li><a href="index.html" data-i18n data-en="Home">Accueil</a></li>
       <li class="sep"><i class="fas fa-chevron-right"></i></li>
       <li class="current" data-i18n data-en="Investors">Investisseurs</li>
     </ol>
   </div>
 </nav>
 
-
   <!-- ═══ HERO ═══ -->
   <section class="hero" style="background:linear-gradient(135deg, rgba(13, 27, 42, 0.95) 0%, rgba(8, 14, 26, 0.98) 100%), url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1200 600%22><rect fill=%22%23080e1a%22 width=%221200%22 height=%22600%22/><circle cx=%22200%22 cy=%22100%22 r=%2280%22 fill=%22rgba(217,168,79,0.05)%22/><circle cx=%221000%22 cy=%22500%22 r=%22120%22 fill=%22rgba(16,185,129,0.04)%22/></svg>')">
     <div class="ctn hero-content">
-      <h1 class="reveal" style="font-family:var(--font-d);font-size:clamp(2.4rem,6vw,4rem);line-height:1.15;color:var(--white);margin-bottom:var(--sp-lg)" data-i18n data-en="Investor Relations Dashboard">Tableau de bord relations investisseurs</h1>
+      <h1 class="reveal" style="font-family:var(--font-d);font-size:clamp(2.4rem,6vw,4rem);line-height:1.15;color:var(--white);margin-bottom:var(--sp-lg)" data-i18n data-en="Investor <em class='lux-em'>Relations</em> Dashboard">Tableau de bord <em class="lux-em">relations</em> investisseurs</h1>
       <p class="reveal" style="font-size:1.1rem;color:var(--text-sec);max-width:600px;margin-bottom:var(--sp-2xl);line-height:1.7" data-i18n data-en="Financial performance, operational assets, ESG metrics, and strategic opportunities. Real-time data from EnerTchad Groupe.">Performance financière, actifs opérationnels, métriques ESG et opportunités stratégiques. Données en temps réel d'EnerTchad Groupe.</p>
       <div class="cta-actions reveal" style="gap:var(--sp-md)">
-        <a href="/contact" class="btn btn-primary"><i class="fas fa-handshake"></i> <span data-i18n data-en="Investor Contact">Contact investisseurs</span></a>
+        <a href="contact.html" class="btn btn-primary"><i class="fas fa-handshake"></i> <span data-i18n data-en="Investor Contact">Contact investisseurs</span></a>
         <a href="#key-figures" class="btn btn-outline"><i class="fas fa-chart-line"></i> <span data-i18n data-en="View KPIs">Voir les KPIs</span></a>
       </div>
     </div>
@@ -781,7 +169,7 @@
   <!-- ═══ SECTION 1: KPI DASHBOARD STRIP ═══ -->
   <section class="section" id="kpis-investors">
     <div class="ctn">
-      <div class="section-header reveal" style="text-align:center;margin-bottom:var(--sp-2xl)">
+      <div class="section-header reveal" style="text-align:center;margin-bottom:var(--sp-2xl)" data-up-scrub data-up-scrub-mode="rise">
         <div class="section-label" style="justify-content:center;color:var(--gold)" data-i18n data-en="Dashboard KPIs">Tableau de bord KPIs</div>
         <h2 data-i18n data-en="Key Performance Indicators">Indicateurs clés de performance</h2>
       </div>
@@ -855,7 +243,7 @@
   <!-- ═══ SECTION 2: PRODUCTION CHART ═══ -->
   <section class="section" id="production-chart" style="background:var(--bg-mid)">
     <div class="ctn">
-      <div class="section-header reveal" style="text-align:center;margin-bottom:var(--sp-2xl)">
+      <div class="section-header reveal" style="text-align:center;margin-bottom:var(--sp-2xl)" data-up-scrub data-up-scrub-mode="rise">
         <div class="section-label" style="justify-content:center;color:var(--drilling)" data-i18n data-en="Production Trajectory">Trajectoire production</div>
         <h2 data-i18n data-en="7-Year Growth Plan 2024-2030">Plan de croissance 7 ans 2024-2030</h2>
       </div>
@@ -884,7 +272,7 @@
   <!-- ═══ SECTION 3: PROJETS STRATÉGIQUES TIMELINE ═══ -->
   <section class="section" id="timeline">
     <div class="ctn">
-      <div class="section-header reveal" style="text-align:center;margin-bottom:var(--sp-2xl)">
+      <div class="section-header reveal" style="text-align:center;margin-bottom:var(--sp-2xl)" data-up-scrub data-up-scrub-mode="rise">
         <div class="section-label" style="justify-content:center;color:var(--consulting)" data-i18n data-en="Strategic Milestones">Jalons stratégiques</div>
         <h2 data-i18n data-en="Project Roadmap">Feuille de route projets</h2>
       </div>
@@ -1412,8 +800,8 @@
         Planifiez une réunion avec notre équipe relations investisseurs. Disponibles pour meetings, présentations et discussions due diligence.
       </p>
       <div class="cta-actions reveal">
-        <a href="/contact" class="btn btn-primary"><i class="fas fa-calendar-days"></i> <span data-i18n data-en="Schedule Meeting">Planifier une réunion</span></a>
-        <a href="/durabilite" class="btn btn-outline"><i class="fas fa-leaf"></i> <span data-i18n data-en="View ESG Report">Rapport ESG</span></a>
+        <a href="contact.html" class="btn btn-primary"><i class="fas fa-calendar-days"></i> <span data-i18n data-en="Schedule Meeting">Planifier une réunion</span></a>
+        <a href="durabilite.html" class="btn btn-outline"><i class="fas fa-leaf"></i> <span data-i18n data-en="View ESG Report">Rapport ESG</span></a>
       </div>
     </div>
   </section>
@@ -1573,7 +961,7 @@
         </div>
         <div class="kpi-divider" aria-hidden="true"></div>
         <div class="kpi-item">
-          <span class="kpi-num">24</span>
+          <span class="kpi-num" data-up-counter="24" data-up-counter-duration="1600">24</span>
           <span class="kpi-tag" data-i18n data-en="Stations">Stations</span>
         </div>
         <div class="kpi-divider" aria-hidden="true"></div>
@@ -1595,7 +983,7 @@
     <div class="footer-grid-modern">
       <!-- Brand Column -->
       <div class="footer-brand-col">
-        <a href="/" class="footer-logo-link" aria-label="EnerTchad Groupe — Accueil">
+        <a href="index.html" class="footer-logo-link" aria-label="EnerTchad Groupe — Accueil">
           <div class="footer-logo-mark">
             <img loading="lazy" src="logo-enertchad.svg" alt="" width="32" height="32" class="logo-img" decoding="async"/>
           </div>
@@ -1614,39 +1002,39 @@
       <nav class="footer-nav-col" aria-label="Services des Champs">
         <h6 data-i18n data-en="Services">Services</h6>
         <ul>
-          <li><a href="/services/well-services" data-i18n data-en="Well Services">Well Services</a></li>
-          <li><a href="/services/drilling" data-i18n data-en="Drilling &amp; Engineering">Drilling &amp; Engineering</a></li>
-          <li><a href="/services/digital" data-i18n data-en="Digital &amp; SCADA">Digital &amp; SCADA</a></li>
-          <li><a href="/services/consulting" data-i18n data-en="Consulting &amp; Training">Consulting &amp; Formation</a></li>
-          <li><a href="/aval" data-i18n data-en="Distribution">Distribution &amp; Négoce</a></li>
+          <li><a href="services/well-services.html" data-i18n data-en="Well Services">Well Services</a></li>
+          <li><a href="services/drilling.html" data-i18n data-en="Drilling &amp; Engineering">Drilling &amp; Engineering</a></li>
+          <li><a href="services/digital.html" data-i18n data-en="Digital &amp; SCADA">Digital &amp; SCADA</a></li>
+          <li><a href="services/consulting.html" data-i18n data-en="Consulting &amp; Training">Consulting &amp; Formation</a></li>
+          <li><a href="distribution/" data-i18n data-en="Distribution">Distribution &amp; Négoce</a></li>
         </ul>
       </nav>
       <nav class="footer-nav-col" aria-label="Société Pétrolière">
         <h6 data-i18n data-en="Energy">Énergies</h6>
         <ul>
-          <li><a href="/amont" data-i18n data-en="Upstream — E&amp;P">Amont — E&amp;P</a></li>
-          <li><a href="/intermediaire" data-i18n data-en="Midstream">Intermédiaire</a></li>
-          <li><a href="/aval" data-i18n data-en="Downstream">Aval — Raffinage</a></li>
-          <li><a href="/technologies" data-i18n data-en="Technologies &amp; AI">Technologies &amp; IA</a></li>
-          <li><a href="/energies" data-i18n data-en="Renewables">Énergies Renouvelables</a></li>
+          <li><a href="operations/amont.html" data-i18n data-en="Upstream — E&amp;P">Amont — E&amp;P</a></li>
+          <li><a href="operations/intermediaire.html" data-i18n data-en="Midstream">Intermédiaire</a></li>
+          <li><a href="operations/aval.html" data-i18n data-en="Downstream">Aval — Raffinage</a></li>
+          <li><a href="services/technologies.html" data-i18n data-en="Technologies &amp; AI">Technologies &amp; IA</a></li>
+          <li><a href="operations/greentech.html" data-i18n data-en="Renewables">Énergies Renouvelables</a></li>
         </ul>
       </nav>
       <nav class="footer-nav-col" aria-label="Entreprise">
         <h6 data-i18n data-en="Company">Entreprise</h6>
         <ul>
-          <li><a href="/groupe/" data-i18n data-en="About">À propos</a></li>
-          <li><a href="/durabilite" data-i18n data-en="ESG &amp; Sustainability">Durabilité &amp; ESG</a></li>
-          <li><a href="/investisseurs" data-i18n data-en="Investors">Investisseurs</a></li>
-          <li><a href="/talents" data-i18n data-en="Careers">Talents &amp; Carrières</a></li>
-          <li><a href="/actualites" data-i18n data-en="Media">Médias</a></li>
-          <li><a href="/maps" data-i18n data-en="Operations Map">Carte des Opérations</a></li>
+          <li><a href="groupe/index.html" data-i18n data-en="About">À propos</a></li>
+          <li><a href="durabilite.html" data-i18n data-en="ESG &amp; Sustainability">Durabilité &amp; ESG</a></li>
+          <li><a href="investisseurs.html" data-i18n data-en="Investors">Investisseurs</a></li>
+          <li><a href="talents.html" data-i18n data-en="Careers">Talents &amp; Carrières</a></li>
+          <li><a href="actualites.html" data-i18n data-en="Media">Médias</a></li><li><a href="newsletter.html" data-i18n data-en="Newsletter">Newsletter</a></li>
+          <li><a href="maps.html" data-i18n data-en="Operations Map">Carte des Opérations</a></li>
         </ul>
       </nav>
       <div class="footer-nav-col footer-cta-col">
         <h6 data-i18n data-en="Get in Touch">Nous Contacter</h6>
         <div class="footer-contact-stack">
-          <a href="/contact" class="footer-cta-btn" data-i18n data-en="Contact Us"><i class="fas fa-arrow-right"></i> Contactez-nous</a>
-          <a href="/contact#devis" class="footer-cta-link" data-i18n data-en="Request a Quote"><i class="fas fa-file-invoice"></i> Demander un devis</a>
+          <a href="contact.html" class="footer-cta-btn" data-i18n data-en="Contact Us"><i class="fas fa-arrow-right"></i> Contactez-nous</a>
+          <a href="contact.html#devis" class="footer-cta-link" data-i18n data-en="Request a Quote"><i class="fas fa-file-invoice"></i> Demander un devis</a>
           <a href="tel:+23599298696" class="footer-cta-link"><i class="fas fa-phone"></i> +235 99 29 86 96</a>
           <a href="mailto:contact@enertchad.td" class="footer-cta-link"><i class="fas fa-envelope"></i> contact@enertchad.td</a>
         </div>
@@ -1666,7 +1054,7 @@
           <strong data-i18n data-en="Industry Intelligence">Veille Sectorielle</strong>
           <span data-i18n data-en="Monthly insights on energy &amp; oilfield services.">Analyses mensuelles énergie &amp; services pétroliers.</span>
         </div>
-        <form class="newsletter-modern" aria-label="Newsletter">
+        <form class="newsletter-modern newsletter-modern-linked" aria-label="Newsletter" data-redirect="newsletter.html">
           <input type="email" placeholder="nom@entreprise.td" required aria-label="Email"/>
           <button type="submit" data-i18n data-en="Subscribe">S'abonner</button>
         </form>
@@ -1680,9 +1068,9 @@
       <div class="bottom-bar-inner">
         <span class="footer-copy" data-i18n data-en="&copy; 2026 EnerTchad Groupe SA/CA">&copy; 2026 EnerTchad Groupe SA/CA</span>
         <div class="footer-legal-links">
-          <a href="/mentions-legales" data-i18n data-en="Legal">Mentions légales</a>
-          <a href="/confidentialite" data-i18n data-en="Privacy">Confidentialité</a>
-          <a href="/cookies" data-i18n data-en="Cookies">Cookies</a>
+          <a href="mentions-legales.html" data-i18n data-en="Legal">Mentions légales</a>
+          <a href="confidentialite.html" data-i18n data-en="Privacy">Confidentialité</a>
+          <a href="cookies.html" data-i18n data-en="Cookies">Cookies</a>
         </div>
         <div class="footer-social-row">
           <a href="https://www.linkedin.com/company/enertchad" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
@@ -1708,11 +1096,11 @@
     </p>
     <div style="display:flex;gap:var(--sp-sm)">
       <button id="cookieAccept" class="btn btn--brand btn--sm" data-i18n data-en="Accept">Accepter</button>
-      <a href="/cookies" class="btn btn--outline btn--sm" data-i18n data-en="Learn more">En savoir plus</a>
+      <a href="cookies.html" class="btn btn--outline btn--sm" data-i18n data-en="Learn more">En savoir plus</a>
     </div>
   </div>
 </div>
 
-<script defer src="/js/premium.js"></script>
+<script defer src="js/premium.js"></script>
 </body>
 </html>
