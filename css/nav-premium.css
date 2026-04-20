@@ -170,11 +170,12 @@
 }
 .mega-panel.active::after{ pointer-events: auto; }
 
-/* -- Business-unit glow tones -- */
+/* -- Business-unit glow tones (5 unique) -- */
 .mega-panel[data-tone="amont"]    { --mega-glow: rgba(46,134,222,.12); --mega-accent: #5FA8FF; --mega-accent-dim: rgba(46,134,222,.08); }
 .mega-panel[data-tone="midstream"]{ --mega-glow: rgba(14,165,233,.12); --mega-accent: #38BDF8; --mega-accent-dim: rgba(14,165,233,.08); }
 .mega-panel[data-tone="aval"]     { --mega-glow: rgba(217,119,6,.14);  --mega-accent: #FBBF24; --mega-accent-dim: rgba(217,119,6,.08); }
 .mega-panel[data-tone="energies"] { --mega-glow: rgba(16,185,129,.12); --mega-accent: #34D399; --mega-accent-dim: rgba(16,185,129,.08); }
+.mega-panel[data-tone="medias"]   { --mega-glow: rgba(168,85,247,.12); --mega-accent: #C084FC; --mega-accent-dim: rgba(168,85,247,.08); }
 
 /* ---- Grid Layout: Feature (left) | Content (right) ---- */
 .mega-grid{
@@ -350,16 +351,22 @@
 .mega-panel.active .mega-col li{
   opacity: 1; transform: translateY(0);
 }
-/* Stagger cascade — items fade in sequentially */
+/* Stagger cascade — items fade in sequentially (supports up to 5 items/col) */
 .mega-panel.active .mega-col:nth-child(1) li:nth-child(1){ transition-delay: .06s; }
 .mega-panel.active .mega-col:nth-child(1) li:nth-child(2){ transition-delay: .10s; }
 .mega-panel.active .mega-col:nth-child(1) li:nth-child(3){ transition-delay: .14s; }
+.mega-panel.active .mega-col:nth-child(1) li:nth-child(4){ transition-delay: .18s; }
+.mega-panel.active .mega-col:nth-child(1) li:nth-child(5){ transition-delay: .22s; }
 .mega-panel.active .mega-col:nth-child(2) li:nth-child(1){ transition-delay: .08s; }
 .mega-panel.active .mega-col:nth-child(2) li:nth-child(2){ transition-delay: .12s; }
 .mega-panel.active .mega-col:nth-child(2) li:nth-child(3){ transition-delay: .16s; }
+.mega-panel.active .mega-col:nth-child(2) li:nth-child(4){ transition-delay: .20s; }
+.mega-panel.active .mega-col:nth-child(2) li:nth-child(5){ transition-delay: .24s; }
 .mega-panel.active .mega-col:nth-child(3) li:nth-child(1){ transition-delay: .10s; }
 .mega-panel.active .mega-col:nth-child(3) li:nth-child(2){ transition-delay: .14s; }
 .mega-panel.active .mega-col:nth-child(3) li:nth-child(3){ transition-delay: .18s; }
+.mega-panel.active .mega-col:nth-child(3) li:nth-child(4){ transition-delay: .22s; }
+.mega-panel.active .mega-col:nth-child(3) li:nth-child(5){ transition-delay: .26s; }
 
 /* Card-style links with icon + text + subtitle */
 .mega-col a{
