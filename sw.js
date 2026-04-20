@@ -4,7 +4,7 @@
  * Offline fallback support with offline.html
  */
 
-const CACHE_NAME = 'enertchad-groupe-v3';
+const CACHE_NAME = 'enertchad-groupe-v4';
 const OFFLINE_URL = '/offline.html';
 
 // Critical static assets to pre-cache on install
@@ -15,13 +15,17 @@ const STATIC_ASSETS = [
   '/404.html',
   '/css/style.min.css',
   '/css/main.v1.css',
-  '/css/amont.v1.css',
   '/css/premium.css',
+  '/css/nav-premium.css',
+  '/css/ultra-premium.css',
+  '/css/enhance.css',
   '/css/shared-hero-a.css',
-  '/css/shared-hero-b.css',
   '/js/app.min.js',
-  '/js/chad-map.js',
+  '/js/nav-premium.js',
+  '/js/enhance.js',
+  '/js/lang.js',
   '/js/premium.js',
+  '/js/chad-map.js',
   '/logo-enertchad.svg',
   '/favicon.svg',
   '/manifest.json'
