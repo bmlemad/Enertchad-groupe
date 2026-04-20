@@ -1,7 +1,9 @@
+# robots.txt — EnerTchad Groupe
+# Domaine canonique : enertchad-groupe.vercel.app (à basculer vers www.enertchad.td quand le DNS sera prêt)
 User-agent: *
 Allow: /
 Disallow: /api/
 Disallow: /_next/
 Disallow: /.vercel/
 
-Sitemap: https://www.enertchad.td/sitemap.xml
+Sitemap: https://enertchad-groupe.vercel.app/sitemap.xml

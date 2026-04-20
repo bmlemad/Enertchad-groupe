@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="fr" class="no-js">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://plausible.io; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://plausible.io; frame-src 'none'; object-src 'none'; base-uri 'self';"/>
+  <title>EnerTchad GreenTech — Énergies nouvelles & renouvelables | EnerTchad Groupe</title>
+  <meta name="description" content="EnerTchad GreenTech : 500 MW renouvelables visés (solaire, éolien, hybride, stockage, IRVE) + énergies nouvelles (hydrogène vert, biocarburants, CCUS, géothermie). Transition bas-carbone du Tchad."/>
+  <meta name="robots" content="index,follow"/>
+  <meta name="theme-color" content="#080E1A"/>
+  <link href="../manifest.json" rel="manifest"/>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png"/>
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png"/>
+  <link rel="preload" href="../logo-enertchad.svg" as="image" type="image/svg+xml"/>
+  <link rel="canonical" href="https://enertchad-groupe.vercel.app/operations/greentech"/>
+  <link rel="alternate" hreflang="fr" href="https://enertchad-groupe.vercel.app/operations/greentech"/>
+  <link rel="alternate" hreflang="en" href="https://enertchad-groupe.vercel.app/operations/greentech?lang=en"/>
+
+  <!-- OG / Twitter -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="EnerTchad Groupe"/>
+  <meta property="og:title" content="EnerTchad GreenTech — Énergies nouvelles & renouvelables"/>
+  <meta property="og:description" content="500 MW renouvelables + hydrogène vert + biocarburants + CCUS. La filière GreenTech d'EnerTchad Groupe."/>
+  <meta property="og:url" content="https://enertchad-groupe.vercel.app/operations/greentech"/>
+  <meta property="og:image" content="https://enertchad-groupe.vercel.app/images/og-enertchad.png"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta property="og:image:alt" content="EnerTchad GreenTech — Énergies nouvelles et renouvelables"/>
+  <meta property="og:locale" content="fr_TD"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:site" content="@EnerTchad"/>
+  <meta name="twitter:title" content="EnerTchad GreenTech — Énergies nouvelles & renouvelables"/>
+  <meta name="twitter:description" content="500 MW renouvelables + hydrogène vert + biocarburants + CCUS. La filière GreenTech d'EnerTchad Groupe."/>
+  <meta name="twitter:image" content="https://enertchad-groupe.vercel.app/images/og-enertchad.png"/>
+
+  <!-- JSON-LD : Organization (subOrganization GreenTech) -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","@id":"https://enertchad-groupe.vercel.app/#greentech","name":"EnerTchad GreenTech","legalName":"EnerTchad GreenTech SA","description":"Filière énergies nouvelles et renouvelables d'EnerTchad Groupe : 500 MW renouvelables (solaire, éolien, hybride, stockage, IRVE) + énergies nouvelles (hydrogène vert, biocarburants, CCUS, géothermie).","url":"https://enertchad-groupe.vercel.app/operations/greentech","parentOrganization":{"@type":"Organization","name":"EnerTchad Groupe","url":"https://enertchad-groupe.vercel.app"},"areaServed":{"@type":"Country","name":"Chad"},"industry":"Renewable Energy","foundingDate":"2026"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://enertchad-groupe.vercel.app/"},{"@type":"ListItem","position":2,"name":"Opérations","item":"https://enertchad-groupe.vercel.app/operations/"},{"@type":"ListItem","position":3,"name":"GreenTech","item":"https://enertchad-groupe.vercel.app/operations/greentech"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Qu'est-ce qu'EnerTchad GreenTech ?","acceptedAnswer":{"@type":"Answer","text":"EnerTchad GreenTech est la filière du groupe EnerTchad dédiée aux énergies nouvelles et renouvelables. Elle rassemble deux pôles : un pôle Renouvelables (solaire, éolien, hybride, stockage, IRVE) visant 500 MW installés à horizon 2030, et un pôle Énergies Nouvelles (hydrogène vert, biocarburants, captage et stockage du CO₂, géothermie) en phase pilote."}},
+    {"@type":"Question","name":"Quels sont les objectifs 2030 de GreenTech ?","acceptedAnswer":{"@type":"Answer","text":"470 à 500 MW renouvelables installés (solaire utility, hybride, éolien), 100 MWh de stockage batteries, 240 bornes IRVE déployées, un pilote hydrogène vert de 5 MW, deux bassins pilotes de captage CO₂ et une unité de biocarburants de 30 000 t/an."}},
+    {"@type":"Question","name":"Comment GreenTech s'articule-t-il avec le cœur pétrolier d'EnerTchad ?","acceptedAnswer":{"@type":"Answer","text":"GreenTech alimente en électricité bas-carbone les sites amont et aval du groupe (hybridation des sites isolés, IRVE dans les 24 stations-service), tout en développant de manière autonome un marché tiers. Les équipes d'ingénieurs pipeline et procédés contribuent à l'industrialisation des pilotes CCUS et hydrogène."}}
+  ]}
+  </script>
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Space+Grotesk:wght@400..700&display=swap" rel="preload"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Space+Grotesk:wght@400..700&display=swap" media="print" onload="this.media='all'" rel="stylesheet"/>
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Space+Grotesk:wght@400..700&display=swap" rel="stylesheet"/></noscript>
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
+  <noscript><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/></noscript>
+
+  <!-- Shared CSS -->
+  <link rel="preload" href="../css/style.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
+  <noscript><link rel="stylesheet" href="../css/style.min.css"/></noscript>
+  <link rel="stylesheet" href="../css/main.v1.css"/>
+  <link rel="stylesheet" href="../css/premium.css"/>
+  <link rel="stylesheet" href="../css/enhance.css"/>
+  <link rel="stylesheet" href="../css/nav-premium.css"/>
+
+  <!-- Design tokens locaux (hérite, override GreenTech tone) -->
+  <style>
+    :root{
+      --bg:#080E1A;--bg-mid:#0C1426;--bg-card:#0F1A2E;
+      --text:#E2E8F0;--text-sec:#94A3B8;--text-muted:#7C8DB0;--white:#FFFFFF;
+      --gold:#D9A84F;--gold-light:#E8C36A;
+      --energy:#10B981;--energy-dark:#059669;--energy-light:#34D399;
+      --h2:#38BDF8;     /* Hydrogen accent */
+      --bio:#84CC16;    /* Biofuels accent */
+      --ccus:#8B5CF6;   /* Carbon capture accent */
+      --geo:#F97316;    /* Geothermal accent */
+      --font-d:'Space Grotesk',system-ui,sans-serif;
+      --font-b:'Inter',system-ui,sans-serif;
+      --sp-sm:0.75rem;--sp-md:1rem;--sp-lg:1.5rem;--sp-xl:2rem;--sp-2xl:3rem;--sp-3xl:4rem;
+      --radius:14px;--radius-full:9999px;
+      --ease:cubic-bezier(0.22,0.61,0.36,1);
+      --header-h:72px;--max-w:1280px;
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    body{background:var(--bg);color:var(--text);font-family:var(--font-b);margin:0;line-height:1.7;overflow-x:hidden}
+    body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
+      background:
+        radial-gradient(ellipse 80% 50% at 50% -10%, rgba(16,185,129,.08), transparent 60%),
+        radial-gradient(ellipse 60% 40% at 85% 75%, rgba(56,189,248,.05), transparent 60%);
+    }
+    .ctn{max-width:var(--max-w);margin:0 auto;padding:0 clamp(1rem,3vw,2rem)}
+    .gt-eyebrow{font-family:var(--font-d);font-weight:600;font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;color:var(--energy-light);display:inline-block;padding:5px 12px;border-radius:var(--radius-full);background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.25)}
+    h1,h2,h3,h4{font-family:var(--font-d);color:var(--white);line-height:1.15;letter-spacing:-.01em;margin:0}
+
+    /* === HERO === */
+    .gt-hero{position:relative;min-height:92vh;display:flex;align-items:center;padding:calc(var(--header-h) + var(--sp-3xl)) 0 var(--sp-3xl);overflow:hidden}
+    .gt-hero::before{content:'';position:absolute;inset:0;background:
+      radial-gradient(1000px 600px at 18% 30%, rgba(16,185,129,.14), transparent 60%),
+      radial-gradient(800px 600px at 85% 70%, rgba(56,189,248,.10), transparent 60%),
+      radial-gradient(600px 500px at 50% 100%, rgba(217,168,79,.06), transparent 70%);
+      pointer-events:none}
+    .gt-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:180px;background:linear-gradient(to top,var(--bg),transparent);pointer-events:none}
+    .gt-hero-inner{position:relative;z-index:1;max-width:920px}
+    .gt-hero h1{font-size:clamp(2.6rem,6vw,4.8rem);font-weight:700;margin:var(--sp-md) 0;line-height:1.05}
+    .gt-hero h1 em{font-style:normal;background:linear-gradient(120deg,var(--energy-light),var(--h2) 70%,var(--gold-light));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .gt-hero p.lead{font-size:clamp(1.05rem,1.6vw,1.25rem);color:var(--text-sec);max-width:720px;margin:var(--sp-md) 0 var(--sp-xl)}
+    .gt-hero-actions{display:flex;gap:var(--sp-md);flex-wrap:wrap;margin-top:var(--sp-xl)}
+    .gt-btn{display:inline-flex;align-items:center;gap:10px;padding:12px 22px;border-radius:var(--radius-full);font-family:var(--font-d);font-weight:600;font-size:.88rem;letter-spacing:.02em;text-decoration:none;transition:all .35s var(--ease);cursor:pointer;border:none}
+    .gt-btn-primary{background:linear-gradient(135deg,var(--energy),var(--energy-dark));color:#fff;box-shadow:0 8px 30px rgba(16,185,129,.25)}
+    .gt-btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(16,185,129,.35)}
+    .gt-btn-ghost{background:rgba(255,255,255,.05);color:var(--white);border:1px solid rgba(255,255,255,.12)}
+    .gt-btn-ghost:hover{background:rgba(255,255,255,.1);border-color:var(--energy-light)}
+
+    .gt-hero-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:var(--sp-3xl);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);overflow:hidden;max-width:860px}
+    .gt-hero-kpis .k{background:var(--bg-card);padding:var(--sp-lg);position:relative}
+    .gt-hero-kpis .k .num{font-family:var(--font-d);font-size:1.9rem;font-weight:700;color:var(--white);letter-spacing:-.01em;display:block}
+    .gt-hero-kpis .k .lbl{display:block;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);margin-top:6px}
+    .gt-hero-kpis .k:nth-child(1) .num{color:var(--energy-light)}
+    .gt-hero-kpis .k:nth-child(2) .num{color:var(--h2)}
+    .gt-hero-kpis .k:nth-child(3) .num{color:var(--bio)}
+    .gt-hero-kpis .k:nth-child(4) .num{color:var(--gold)}
+    @media(max-width:720px){.gt-hero-kpis{grid-template-columns:repeat(2,1fr)}}
+
+    /* === PILLARS (dual split) === */
+    .gt-pillars{position:relative;padding:var(--sp-3xl) 0}
+    .gt-pillars h2{font-size:clamp(1.8rem,3.4vw,2.6rem);margin-bottom:var(--sp-sm)}
+    .gt-pillars .intro{max-width:780px;color:var(--text-sec);margin-bottom:var(--sp-2xl);font-size:1.05rem}
+    .gt-split{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-xl)}
+    @media(max-width:900px){.gt-split{grid-template-columns:1fr}}
+    .gt-card{background:linear-gradient(160deg,rgba(255,255,255,.03),rgba(255,255,255,.01));border:1px solid rgba(255,255,255,.07);border-radius:var(--radius);padding:var(--sp-xl);position:relative;overflow:hidden;transition:transform .45s var(--ease),border-color .45s var(--ease)}
+    .gt-card::before{content:'';position:absolute;inset:0;opacity:.5;pointer-events:none;transition:opacity .5s var(--ease)}
+    .gt-card.renew::before{background:radial-gradient(ellipse at 0% 0%,rgba(16,185,129,.18),transparent 60%)}
+    .gt-card.novel::before{background:radial-gradient(ellipse at 100% 0%,rgba(56,189,248,.18),transparent 60%)}
+    .gt-card:hover{transform:translateY(-4px);border-color:rgba(255,255,255,.14)}
+    .gt-card:hover::before{opacity:.85}
+    .gt-card .pill-tag{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:var(--radius-full);font:600 .72rem/1 var(--font-d);letter-spacing:.14em;text-transform:uppercase;margin-bottom:var(--sp-md)}
+    .gt-card.renew .pill-tag{background:rgba(16,185,129,.14);color:var(--energy-light);border:1px solid rgba(16,185,129,.3)}
+    .gt-card.novel .pill-tag{background:rgba(56,189,248,.14);color:var(--h2);border:1px solid rgba(56,189,248,.3)}
+    .gt-card h3{font-size:1.6rem;font-weight:700;margin-bottom:10px}
+    .gt-card p.sub{color:var(--text-sec);font-size:.98rem;margin-bottom:var(--sp-lg)}
+    .gt-card ul.feats{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr;gap:10px;position:relative;z-index:1}
+    .gt-card ul.feats li{display:flex;gap:12px;align-items:flex-start;padding:10px 12px;border-radius:10px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.04);transition:background .3s var(--ease)}
+    .gt-card ul.feats li:hover{background:rgba(255,255,255,.04)}
+    .gt-card ul.feats li i{width:24px;flex:0 0 24px;height:24px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:.78rem;margin-top:2px}
+    .gt-card.renew ul.feats li i{background:rgba(16,185,129,.2);color:var(--energy-light)}
+    .gt-card.novel ul.feats li i{background:rgba(56,189,248,.2);color:var(--h2)}
+    .gt-card ul.feats li b{color:var(--white);display:block;font-family:var(--font-d);font-size:.95rem;margin-bottom:2px}
+    .gt-card ul.feats li small{color:var(--text-muted);font-size:.8rem;line-height:1.45}
+    .gt-card .card-cta{display:inline-flex;align-items:center;gap:8px;margin-top:var(--sp-xl);padding:10px 18px;border-radius:var(--radius-full);font:600 .82rem/1 var(--font-d);text-decoration:none;transition:all .3s var(--ease)}
+    .gt-card.renew .card-cta{background:var(--energy);color:#fff}
+    .gt-card.novel .card-cta{background:var(--h2);color:#001830}
+    .gt-card .card-cta:hover{transform:translateX(4px)}
+
+    /* === ROADMAP === */
+    .gt-roadmap{padding:var(--sp-3xl) 0;background:linear-gradient(180deg,transparent, rgba(16,185,129,.04), transparent)}
+    .gt-roadmap h2{font-size:clamp(1.8rem,3.4vw,2.6rem);margin-bottom:var(--sp-sm)}
+    .gt-roadmap .intro{color:var(--text-sec);max-width:780px;margin-bottom:var(--sp-2xl)}
+    .gt-timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sp-lg);margin-top:var(--sp-xl)}
+    @media(max-width:900px){.gt-timeline{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:540px){.gt-timeline{grid-template-columns:1fr}}
+    .gt-milestone{position:relative;padding:var(--sp-lg);border-radius:var(--radius);background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);transition:transform .35s var(--ease),border-color .35s var(--ease)}
+    .gt-milestone:hover{transform:translateY(-3px);border-color:rgba(16,185,129,.3)}
+    .gt-milestone .year{font-family:var(--font-d);font-size:1.9rem;font-weight:700;color:var(--energy-light);letter-spacing:-.01em}
+    .gt-milestone h4{font-size:1rem;color:var(--white);margin:6px 0 var(--sp-sm)}
+    .gt-milestone ul{list-style:none;margin:0;padding:0}
+    .gt-milestone ul li{font-size:.86rem;color:var(--text-sec);padding:6px 0;border-bottom:1px dashed rgba(255,255,255,.05);display:flex;gap:8px;align-items:flex-start}
+    .gt-milestone ul li::before{content:'●';color:var(--energy);font-size:.7rem;margin-top:5px}
+    .gt-milestone ul li:last-child{border-bottom:none}
+
+    /* === MIX TABLE === */
+    .gt-mix{padding:var(--sp-3xl) 0}
+    .gt-mix h2{font-size:clamp(1.8rem,3.4vw,2.6rem);margin-bottom:var(--sp-sm)}
+    .gt-mix .intro{color:var(--text-sec);max-width:780px;margin-bottom:var(--sp-2xl)}
+    .gt-table{width:100%;border-collapse:separate;border-spacing:0;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);overflow:hidden;font-size:.92rem}
+    .gt-table thead th{text-align:left;padding:14px 18px;font-family:var(--font-d);font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);background:var(--bg-mid);border-bottom:1px solid rgba(217,168,79,.2)}
+    .gt-table tbody td{padding:14px 18px;border-bottom:1px solid rgba(255,255,255,.04);color:var(--text)}
+    .gt-table tbody tr:last-child td{border-bottom:none}
+    .gt-table tbody tr:hover{background:rgba(16,185,129,.03)}
+    .gt-table tbody tr.total td{font-weight:700;color:var(--energy-light);background:rgba(16,185,129,.06);border-top:1px solid rgba(16,185,129,.3)}
+    .gt-table .tone{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:10px;vertical-align:middle}
+    .gt-table .t-solar{background:var(--gold)}
+    .gt-table .t-wind{background:var(--h2)}
+    .gt-table .t-hybrid{background:var(--energy)}
+    .gt-table .t-storage{background:var(--ccus)}
+    .gt-table .t-irve{background:var(--geo)}
+    .gt-table .t-h2{background:var(--h2)}
+    .gt-table .t-bio{background:var(--bio)}
+    .gt-table .t-ccus{background:var(--ccus)}
+    .gt-table .t-geo{background:var(--geo)}
+
+    /* === PARTNERS === */
+    .gt-partners{padding:var(--sp-3xl) 0;text-align:center}
+    .gt-partners h2{font-size:clamp(1.6rem,2.8vw,2.2rem);margin-bottom:var(--sp-md)}
+    .gt-partners .intro{color:var(--text-sec);max-width:660px;margin:0 auto var(--sp-2xl)}
+    .gt-partner-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sp-md)}
+    @media(max-width:900px){.gt-partner-grid{grid-template-columns:repeat(2,1fr)}}
+    .gt-partner{padding:var(--sp-lg);background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);transition:border-color .3s var(--ease),transform .3s var(--ease)}
+    .gt-partner:hover{border-color:var(--energy);transform:translateY(-3px)}
+    .gt-partner i{font-size:1.6rem;color:var(--energy-light);margin-bottom:10px;display:block}
+    .gt-partner b{color:var(--white);font-family:var(--font-d);display:block;font-size:.94rem;margin-bottom:6px}
+    .gt-partner small{color:var(--text-muted);font-size:.78rem}
+
+    /* === CTA === */
+    .gt-cta{padding:var(--sp-3xl) 0}
+    .gt-cta-inner{background:linear-gradient(135deg,rgba(16,185,129,.1),rgba(56,189,248,.06));border:1px solid rgba(16,185,129,.25);border-radius:var(--radius);padding:var(--sp-2xl);text-align:center;position:relative;overflow:hidden}
+    .gt-cta-inner::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 0%,rgba(217,168,79,.1),transparent 60%)}
+    .gt-cta-inner h2{font-size:clamp(1.6rem,2.8vw,2.2rem);position:relative;z-index:1}
+    .gt-cta-inner p{color:var(--text-sec);margin:var(--sp-md) auto var(--sp-xl);max-width:620px;position:relative;z-index:1}
+    .gt-cta-inner .actions{display:flex;gap:var(--sp-md);justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
+
+    .gt-badge-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:var(--sp-lg)}
+    .gt-badge{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:var(--radius-full);font-family:var(--font-d);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:var(--text-sec)}
+    .gt-badge i{color:var(--energy-light)}
+  </style>
+
+  <!-- Analytics & shared scripts -->
+  <script defer data-domain="enertchad-groupe.vercel.app" src="https://plausible.io/js/script.tagged-events.js"></script>
+  <script>window.plausible=window.plausible||function(){(window.plausible.q=window.plausible.q||[]).push(arguments)}</script>
+  <script defer src="https://browser.sentry-cdn.com/7.120.0/bundle.min.js" crossorigin="anonymous" data-sentry-dsn=""></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="></script>
+  <script defer src="../js/app.min.js"></script>
+  <script defer src="../js/lang.js"></script>
+  <script defer src="../js/nav-premium.js"></script>
+</head>
+
+<body>
+<a href="#main" class="skip-link" data-i18n data-en="Skip to content">Aller au contenu</a>
+
+<!-- ═══ HEADER (aligné sur le reste du site) ═══ -->
+<header class="header" id="header">
+  <a class="logo-wrap" href="../index.html" aria-label="EnerTchad Groupe — Accueil">
+    <img loading="lazy" class="logo-img" src="../logo-enertchad.svg" alt="EnerTchad" width="40" height="40" decoding="async"/>
+    <div class="logo-text">Ener<span>Tchad</span></div>
+  </a>
+  <nav class="nav" role="navigation" aria-label="Navigation principale">
+    <button class="nav-link" data-mega="oilfield" aria-expanded="false" aria-haspopup="true" data-i18n data-en="Operations">
+      Opérations <i class="fas fa-chevron-down chevron"></i>
+    </button>
+    <button class="nav-link" data-mega="groupe" aria-expanded="false" aria-haspopup="true" data-i18n data-en="Group">
+      Groupe <i class="fas fa-chevron-down chevron"></i>
+    </button>
+    <button class="nav-link" data-mega="durabilite" aria-expanded="false" aria-haspopup="true" data-i18n data-en="Commitment">
+      Engagement <i class="fas fa-chevron-down chevron"></i>
+    </button>
+    <button class="nav-link" data-mega="talents" aria-expanded="false" aria-haspopup="true" data-i18n data-en="Careers">
+      Talents <i class="fas fa-chevron-down chevron"></i>
+    </button>
+    <button class="nav-link" data-mega="actualites" aria-expanded="false" aria-haspopup="true" data-i18n data-en="Media">
+      Médias <i class="fas fa-chevron-down chevron"></i>
+    </button>
+    <a class="nav-link" href="../investisseurs.html" data-i18n data-en="Investors"><i class="fas fa-chart-pie" style="font-size:0.72rem;opacity:0.7"></i> Investisseurs</a>
+  </nav>
+  <div class="header-actions">
+    <a href="../contact.html" class="header-cta" data-i18n data-en="Request a quote">Demander un devis</a>
+    <button class="lang-btn" id="langToggle" aria-label="Changer de langue">
+      <i class="fas fa-globe"></i> <span class="lang-label">FR</span>
+    </button>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<div class="mega-overlay" id="megaOverlay"></div>
+
+<main id="main">
+
+  <!-- ═══ HERO ═══ -->
+  <section class="gt-hero" aria-labelledby="gt-h1">
+    <div class="ctn gt-hero-inner">
+      <span class="gt-eyebrow" data-i18n data-en="EnerTchad GreenTech · New &amp; Renewable Energies">
+        EnerTchad GreenTech · Énergies nouvelles &amp; renouvelables
+      </span>
+      <h1 id="gt-h1" data-i18n data-en="GreenTech — the <em>low-carbon</em> spine of EnerTchad Groupe">
+        GreenTech — l'épine dorsale <em>bas-carbone</em> d'EnerTchad Groupe
+      </h1>
+      <p class="lead" data-i18n data-en="A dedicated subsidiary combining two pillars: Renewables (solar, wind, hybrid, storage, EV charging — 500 MW target by 2030) and New Energies (green hydrogen, biofuels, CCUS, geothermal).">
+        Une filière dédiée unissant deux piliers : <b>Renouvelables</b> (solaire, éolien, hybride, stockage, IRVE — objectif 500 MW à 2030)
+        et <b>Énergies Nouvelles</b> (hydrogène vert, biocarburants, CCUS, géothermie).
+      </p>
+
+      <div class="gt-hero-actions">
+        <a class="gt-btn gt-btn-primary" href="#roadmap">
+          <i class="fas fa-route"></i> <span data-i18n data-en="Roadmap 2025-2030">Roadmap 2025-2030</span>
+        </a>
+        <a class="gt-btn gt-btn-ghost" href="../contact.html#greentech">
+          <i class="fas fa-handshake"></i> <span data-i18n data-en="Partner with GreenTech">Partenaire GreenTech</span>
+        </a>
+      </div>
+
+      <div class="gt-hero-kpis" role="list">
+        <div class="k" role="listitem"><span class="num">500 MW</span><span class="lbl" data-i18n data-en="Renewables by 2030">Renouvelables 2030</span></div>
+        <div class="k" role="listitem"><span class="num">5 MW</span><span class="lbl" data-i18n data-en="Green H₂ pilot">Pilote H₂ vert</span></div>
+        <div class="k" role="listitem"><span class="num">30 kt/an</span><span class="lbl" data-i18n data-en="Biofuels target">Biocarburants cible</span></div>
+        <div class="k" role="listitem"><span class="num">-30 %</span><span class="lbl" data-i18n data-en="Scope 1+2 by 2030">Scope 1+2 2030</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PILLARS (dual split) ═══ -->
+  <section class="gt-pillars" aria-labelledby="gt-pillars-h2">
+    <div class="ctn">
+      <span class="gt-eyebrow" data-i18n data-en="Two pillars">Deux piliers</span>
+      <h2 id="gt-pillars-h2" data-i18n data-en="One brand, two complementary vocations">Une marque, deux vocations complémentaires</h2>
+      <p class="intro" data-i18n data-en="GreenTech brings together under one governance all initiatives that diversify and decarbonise EnerTchad's energy mix, from proven renewable technologies to the breakthroughs of tomorrow.">
+        GreenTech regroupe sous une même gouvernance toutes les initiatives qui diversifient et décarbonent le mix énergétique d'EnerTchad,
+        des technologies renouvelables éprouvées aux ruptures de demain.
+      </p>
+
+      <div class="gt-split">
+
+        <!-- Pillar 1 : Renouvelables -->
+        <article class="gt-card renew" id="renouvelables">
+          <span class="pill-tag"><i class="fas fa-solar-panel"></i> <span data-i18n data-en="Renewables">Renouvelables</span></span>
+          <h3 data-i18n data-en="GreenTech Renewables — 500 MW roadmap">GreenTech Renouvelables — objectif 500 MW</h3>
+          <p class="sub" data-i18n data-en="Proven technologies deployed on industrial sites, on the national grid and for communities.">
+            Technologies matures déployées à la fois sur les sites industriels du groupe, sur le réseau national et au profit des communautés.
+          </p>
+          <ul class="feats">
+            <li><i class="fas fa-sun"></i><div><b data-i18n data-en="Utility solar">Solaire utility</b><small data-i18n data-en="260 MW by 2030 · N'Djamena, Moundou, Abéché">260 MW d'ici 2030 · N'Djamena, Moundou, Abéché</small></div></li>
+            <li><i class="fas fa-wind"></i><div><b data-i18n data-en="Wind">Éolien</b><small data-i18n data-en="70 MW · North-West Chad study">70 MW · étude Nord-Ouest Tchad</small></div></li>
+            <li><i class="fas fa-bolt"></i><div><b data-i18n data-en="Solar+diesel hybrid">Hybride solaire + diesel</b><small data-i18n data-en="140 MW for isolated upstream sites">140 MW pour sites amont isolés</small></div></li>
+            <li><i class="fas fa-battery-three-quarters"></i><div><b data-i18n data-en="Battery storage (BESS)">Stockage batteries (BESS)</b><small data-i18n data-en="100 MWh by 2030 · grid stability &amp; arbitrage">100 MWh en 2030 · stabilité réseau &amp; arbitrage</small></div></li>
+            <li><i class="fas fa-charging-station"></i><div><b data-i18n data-en="EV charging network">Réseau IRVE</b><small data-i18n data-en="240 charging points across 24 stations">240 bornes déployées sur le réseau de 24 stations</small></div></li>
+          </ul>
+          <a class="card-cta" href="#roadmap"><span data-i18n data-en="See roadmap">Voir la feuille de route</span> <i class="fas fa-arrow-right"></i></a>
+        </article>
+
+        <!-- Pillar 2 : Énergies nouvelles -->
+        <article class="gt-card novel" id="energies-nouvelles">
+          <span class="pill-tag"><i class="fas fa-flask"></i> <span data-i18n data-en="New Energies">Énergies nouvelles</span></span>
+          <h3 data-i18n data-en="GreenTech Ventures — breakthrough bets">GreenTech Ventures — les paris de rupture</h3>
+          <p class="sub" data-i18n data-en="Pilot programmes in green hydrogen, advanced biofuels, carbon capture &amp; storage, and deep geothermal.">
+            Programmes pilotes en hydrogène vert, biocarburants avancés, captage &amp; stockage du CO<sub>2</sub> et géothermie profonde.
+          </p>
+          <ul class="feats">
+            <li><i class="fas fa-atom"></i><div><b data-i18n data-en="Green hydrogen">Hydrogène vert</b><small data-i18n data-en="5 MW electrolyser pilot · industrial mobility">Pilote électrolyseur 5 MW · usages mobilité industrielle</small></div></li>
+            <li><i class="fas fa-seedling"></i><div><b data-i18n data-en="Advanced biofuels">Biocarburants avancés</b><small data-i18n data-en="30 kt/yr · jatropha + agro-residues">30 kt/an · jatropha + résidus agricoles</small></div></li>
+            <li><i class="fas fa-compress-arrows-alt"></i><div><b data-i18n data-en="CCUS">Captage &amp; stockage CO<sub>2</sub> (CCUS)</b><small data-i18n data-en="2 pilot basins · EOR + saline aquifer storage">2 bassins pilotes · EOR + aquifères salins</small></div></li>
+            <li><i class="fas fa-mountain-sun"></i><div><b data-i18n data-en="Deep geothermal">Géothermie profonde</b><small data-i18n data-en="Resource exploration · Nord Tchad">Exploration ressource · Nord Tchad</small></div></li>
+            <li><i class="fas fa-industry"></i><div><b data-i18n data-en="Synthetic fuels (e-fuels)">Carburants synthétiques (e-fuels)</b><small data-i18n data-en="Feasibility study coupled with H₂ + CO₂">Étude faisabilité couplée H<sub>2</sub> + CO<sub>2</sub></small></div></li>
+          </ul>
+          <a class="card-cta" href="#mix"><span data-i18n data-en="See portfolio">Voir le portefeuille</span> <i class="fas fa-arrow-right"></i></a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ ROADMAP ═══ -->
+  <section class="gt-roadmap" id="roadmap" aria-labelledby="gt-roadmap-h2">
+    <div class="ctn">
+      <span class="gt-eyebrow" data-i18n data-en="Roadmap">Feuille de route</span>
+      <h2 id="gt-roadmap-h2" data-i18n data-en="From pilot to industrial scale — 2025 to 2030">Du pilote à l'échelle industrielle — 2025 à 2030</h2>
+      <p class="intro" data-i18n data-en="GreenTech deploys its portfolio in four milestones, balancing bankable renewables and bold experimentation on new energies.">
+        GreenTech déploie son portefeuille en quatre jalons, en équilibrant renouvelables bancables et expérimentations audacieuses sur les énergies nouvelles.
+      </p>
+
+      <div class="gt-timeline">
+        <div class="gt-milestone">
+          <div class="year">2025</div>
+          <h4 data-i18n data-en="Foundation">Fondation</h4>
+          <ul>
+            <li data-i18n data-en="25 MW solar commissioned">25 MW solaire mis en service</li>
+            <li data-i18n data-en="12 MW hybrid · 3 upstream sites">12 MW hybride · 3 sites amont</li>
+            <li data-i18n data-en="8 MWh storage deployed">8 MWh stockage déployé</li>
+            <li data-i18n data-en="H₂ feasibility launched">Feasibility H<sub>2</sub> lancée</li>
+          </ul>
+        </div>
+        <div class="gt-milestone">
+          <div class="year">2027</div>
+          <h4 data-i18n data-en="Scale-up">Montée en puissance</h4>
+          <ul>
+            <li data-i18n data-en="100 MW solar + 30 MW hybrid">100 MW solaire + 30 MW hybride</li>
+            <li data-i18n data-en="40 EV charging points">40 bornes IRVE</li>
+            <li data-i18n data-en="H₂ 1 MW pilot online">Pilote H<sub>2</sub> 1 MW en ligne</li>
+            <li data-i18n data-en="Biofuels pre-engineering">Ingénierie biocarburants</li>
+          </ul>
+        </div>
+        <div class="gt-milestone">
+          <div class="year">2028</div>
+          <h4 data-i18n data-en="Industrial ramp">Passage à l'échelle industrielle</h4>
+          <ul>
+            <li data-i18n data-en="120 MW solar utility">120 MW solaire utility</li>
+            <li data-i18n data-en="60 MW hybrid · 20 MW wind">60 MW hybride · 20 MW éolien</li>
+            <li data-i18n data-en="30 MWh storage · 80 IRVE">30 MWh stockage · 80 IRVE</li>
+            <li data-i18n data-en="CCUS basin #1 pilot">Pilote CCUS bassin #1</li>
+          </ul>
+        </div>
+        <div class="gt-milestone">
+          <div class="year">2030</div>
+          <h4 data-i18n data-en="500 MW target">Objectif 500 MW</h4>
+          <ul>
+            <li data-i18n data-en="470 MW+ renewables">470 MW+ renouvelables</li>
+            <li data-i18n data-en="100 MWh storage · 240 IRVE">100 MWh stockage · 240 IRVE</li>
+            <li data-i18n data-en="H₂ 5 MW commercial">H<sub>2</sub> 5 MW commercial</li>
+            <li data-i18n data-en="Biofuels 30 kt/yr operational">Biocarburants 30 kt/an opérationnel</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ MIX TABLE ═══ -->
+  <section class="gt-mix" id="mix" aria-labelledby="gt-mix-h2">
+    <div class="ctn">
+      <span class="gt-eyebrow" data-i18n data-en="Portfolio">Portefeuille</span>
+      <h2 id="gt-mix-h2" data-i18n data-en="The GreenTech portfolio in numbers">Le portefeuille GreenTech en chiffres</h2>
+      <p class="intro" data-i18n data-en="Consolidated outlook across the two pillars. Cumulative figures unless otherwise stated.">
+        Vue consolidée des deux piliers. Chiffres cumulés sauf mention contraire.
+      </p>
+
+      <table class="gt-table" role="table" aria-label="Portefeuille GreenTech">
+        <thead>
+          <tr>
+            <th scope="col" data-i18n data-en="Technology">Technologie</th>
+            <th scope="col">2025</th>
+            <th scope="col">2028</th>
+            <th scope="col">2030</th>
+            <th scope="col" data-i18n data-en="Location">Localisation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="tone t-solar"></span><b data-i18n data-en="Utility solar">Solaire utility</b></td>
+            <td>25 MW</td><td>120 MW</td><td>260 MW</td>
+            <td data-i18n data-en="N'Djamena · Moundou · Abéché">N'Djamena · Moundou · Abéché</td>
+          </tr>
+          <tr>
+            <td><span class="tone t-hybrid"></span><b data-i18n data-en="Solar + diesel hybrid">Hybride solaire+diesel</b></td>
+            <td>12 MW</td><td>60 MW</td><td>140 MW</td>
+            <td data-i18n data-en="Isolated upstream sites · Doba basin">Sites amont isolés · bassin Doba</td>
+          </tr>
+          <tr>
+            <td><span class="tone t-wind"></span><b data-i18n data-en="Wind">Éolien</b></td>
+            <td>—</td><td>20 MW</td><td>70 MW</td>
+            <td data-i18n data-en="North-West Chad · study ongoing">Nord-Ouest Tchad · étude en cours</td>
+          </tr>
+          <tr>
+            <td><span class="tone t-storage"></span><b data-i18n data-en="Battery storage (BESS)">Stockage batteries (BESS)</b></td>
+            <td>8 MWh</td><td>30 MWh</td><td>100 MWh</td>
+            <td data-i18n data-en="Hybrid fleets &amp; grid">Flottes hybrides &amp; réseau</td>
+          </tr>
+          <tr>
+            <td><span class="tone t-irve"></span><b data-i18n data-en="EV charging (IRVE)">Bornes IRVE</b></td>
+            <td>—</td><td>80</td><td>240</td>
+            <td data-i18n data-en="Downstream network · 14 cities">Réseau aval · 14 villes</td>
+          </tr>
+          <tr>
+            <td><span class="tone t-h2"></span><b data-i18n data-en="Green hydrogen">Hydrogène vert</b></td>
+            <td data-i18n data-en="feasibility">feasibility</td><td>1 MW</td><td>5 MW</td>
+            <td data-i18n data-en="Industrial mobility · refinery">Mobilité industrielle · raffinerie</td>
+          </tr>
+          <tr>
+            <td><span class="tone t-bio"></span><b data-i18n data-en="Advanced biofuels">Biocarburants avancés</b></td>
+            <td data-i18n data-en="pre-engineering">pré-ingénierie</td><td>10 kt</td><td>30 kt</td>
+            <td data-i18n data-en="Jatropha &amp; agro-residues">Jatropha &amp; résidus agricoles</td>
+          </tr>
+          <tr>
+            <td><span class="tone t-ccus"></span><b data-i18n data-en="CCUS (capture + storage)">CCUS (captage + stockage)</b></td>
+            <td data-i18n data-en="study">étude</td><td data-i18n data-en="pilot">pilote</td><td>2 basins</td>
+            <td data-i18n data-en="Doba · Bongor EOR + saline">Doba · Bongor EOR + saline</td>
+          </tr>
+          <tr>
+            <td><span class="tone t-geo"></span><b data-i18n data-en="Deep geothermal">Géothermie profonde</b></td>
+            <td data-i18n data-en="exploration">exploration</td><td data-i18n data-en="exploration">exploration</td><td data-i18n data-en="FEED">FEED</td>
+            <td data-i18n data-en="Northern Chad">Nord Tchad</td>
+          </tr>
+          <tr class="total">
+            <td data-i18n data-en="TOTAL renewables installed">TOTAL renouvelables installés</td>
+            <td>37 MW</td><td>200 MW</td><td>470 MW+</td>
+            <td data-i18n data-en="Target 500 MW ±6 %">Cible 500 MW ±6 %</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="gt-badge-row" style="margin-top:var(--sp-xl)">
+        <span class="gt-badge"><i class="fas fa-leaf"></i> GRI 305 · 302</span>
+        <span class="gt-badge"><i class="fas fa-certificate"></i> IRENA aligned</span>
+        <span class="gt-badge"><i class="fas fa-globe"></i> SDG 7 · 13</span>
+        <span class="gt-badge"><i class="fas fa-shield-heart"></i> ISO 14001</span>
+        <span class="gt-badge"><i class="fas fa-industry"></i> ISO 50001</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PARTNERS ═══ -->
+  <section class="gt-partners" aria-labelledby="gt-partners-h2">
+    <div class="ctn">
+      <span class="gt-eyebrow" data-i18n data-en="Partners &amp; alignment">Partenaires &amp; alignement</span>
+      <h2 id="gt-partners-h2" data-i18n data-en="Partner ecosystem">Écosystème de partenaires</h2>
+      <p class="intro" data-i18n data-en="GreenTech advances with institutional, industrial and academic partners to de-risk innovation and finance deployment.">
+        GreenTech avance avec des partenaires institutionnels, industriels et académiques pour dérisquer l'innovation et financer le déploiement.
+      </p>
+
+      <div class="gt-partner-grid">
+        <div class="gt-partner"><i class="fas fa-landmark"></i><b>IRENA</b><small data-i18n data-en="International Renewable Energy Agency — roadmap alignment">Alignement feuille de route renouvelables</small></div>
+        <div class="gt-partner"><i class="fas fa-university"></i><b>AfDB</b><small data-i18n data-en="African Development Bank — blended finance">Financement mixte (blended finance)</small></div>
+        <div class="gt-partner"><i class="fas fa-seedling"></i><b>CIRAD</b><small data-i18n data-en="Tropical agronomy — jatropha &amp; agro-residues">Agronomie tropicale · biocarburants</small></div>
+        <div class="gt-partner"><i class="fas fa-atom"></i><b>IFPEN</b><small data-i18n data-en="French institute of petroleum energies — H₂, CCUS">H<sub>2</sub>, CCUS, e-fuels</small></div>
+        <div class="gt-partner"><i class="fas fa-solar-panel"></i><b data-i18n data-en="Utility IPP consortium">Consortium IPP utility</b><small data-i18n data-en="Utility-scale solar PPA">PPA solaire utility</small></div>
+        <div class="gt-partner"><i class="fas fa-graduation-cap"></i><b data-i18n data-en="Univ. N'Djamena">Univ. N'Djamena</b><small data-i18n data-en="Geothermal resource modelling">Modélisation ressource géothermique</small></div>
+        <div class="gt-partner"><i class="fas fa-handshake"></i><b data-i18n data-en="Multi-stakeholder ITIE">Multipartite ITIE</b><small data-i18n data-en="Transparency &amp; local content">Transparence &amp; contenu local</small></div>
+        <div class="gt-partner"><i class="fas fa-shield-heart"></i><b>ISO 14001 · 50001</b><small data-i18n data-en="Environment &amp; energy management">Environnement &amp; management énergétique</small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CTA ═══ -->
+  <section class="gt-cta" aria-labelledby="gt-cta-h2">
+    <div class="ctn">
+      <div class="gt-cta-inner">
+        <h2 id="gt-cta-h2" data-i18n data-en="Build GreenTech with us">Construisez GreenTech avec nous</h2>
+        <p data-i18n data-en="Whether you are a developer, financier, institution, researcher or community leader — GreenTech is open to partnership, co-investment and technological collaboration.">
+          Développeur, financeur, institution, chercheur ou leader communautaire — GreenTech est ouvert aux partenariats, co-investissements et collaborations technologiques.
+        </p>
+        <div class="actions">
+          <a class="gt-btn gt-btn-primary" href="../contact.html#greentech">
+            <i class="fas fa-paper-plane"></i> <span data-i18n data-en="Become a partner">Devenir partenaire</span>
+          </a>
+          <a class="gt-btn gt-btn-ghost" href="../durabilite.html#rapport-rse">
+            <i class="fas fa-file-pdf"></i> <span data-i18n data-en="Sustainability report">Rapport Durabilité</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer modern-footer" role="contentinfo">
+  <div class="footer-top-accent" aria-hidden="true"><div class="footer-accent-line"></div></div>
+  <div class="footer-kpi-strip">
+    <div class="ctn">
+      <div class="kpi-ticker">
+        <div class="kpi-item"><span class="kpi-num">500 MW</span><span class="kpi-tag" data-i18n data-en="Renewables 2030">Renouvelables 2030</span></div>
+        <div class="kpi-divider" aria-hidden="true"></div>
+        <div class="kpi-item"><span class="kpi-num">5 MW</span><span class="kpi-tag" data-i18n data-en="H₂ pilot">Pilote H<sub>2</sub></span></div>
+        <div class="kpi-divider" aria-hidden="true"></div>
+        <div class="kpi-item"><span class="kpi-num">30 kt</span><span class="kpi-tag" data-i18n data-en="Biofuels / yr">Biocarburants/an</span></div>
+        <div class="kpi-divider" aria-hidden="true"></div>
+        <div class="kpi-item"><span class="kpi-num">240</span><span class="kpi-tag" data-i18n data-en="EV charging points">Bornes IRVE</span></div>
+        <div class="kpi-divider" aria-hidden="true"></div>
+        <div class="kpi-item"><span class="kpi-num">-30 %</span><span class="kpi-tag" data-i18n data-en="Scope 1+2 by 2030">Scope 1+2 2030</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="ctn footer-body">
+    <div class="footer-grid-modern">
+      <div class="footer-brand-col">
+        <a href="../index.html" class="footer-logo-link" aria-label="EnerTchad Groupe — Accueil">
+          <div class="footer-logo-mark"><img loading="lazy" src="../logo-enertchad.svg" alt="" width="32" height="32" class="logo-img" decoding="async"/></div>
+          <span class="footer-wordmark">EnerTchad<em>Groupe</em></span>
+        </a>
+        <p class="footer-desc" data-i18n data-en="GreenTech is the EnerTchad Groupe subsidiary dedicated to new &amp; renewable energies. 500 MW roadmap.">GreenTech est la filière d'EnerTchad Groupe dédiée aux énergies nouvelles &amp; renouvelables. Feuille de route 500 MW.</p>
+        <div class="footer-badges">
+          <span class="f-badge" title="IRENA">IRENA</span>
+          <span class="f-badge" title="ISO 14001">ISO 14001</span>
+          <span class="f-badge" title="ISO 50001">ISO 50001</span>
+          <span class="f-badge" title="SDG 7 · 13">SDG 7 · 13</span>
+        </div>
+      </div>
+      <nav class="footer-nav-col" aria-label="GreenTech">
+        <h6>GreenTech</h6>
+        <ul>
+          <li><a href="#renouvelables" data-i18n data-en="Renewables">Renouvelables</a></li>
+          <li><a href="#energies-nouvelles" data-i18n data-en="New Energies">Énergies nouvelles</a></li>
+          <li><a href="#roadmap" data-i18n data-en="Roadmap">Roadmap</a></li>
+          <li><a href="#mix" data-i18n data-en="Portfolio">Portefeuille</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-nav-col" aria-label="Autres filières">
+        <h6 data-i18n data-en="Other divisions">Autres filières</h6>
+        <ul>
+          <li><a href="amont.html" data-i18n data-en="Upstream">Amont — E&amp;P</a></li>
+          <li><a href="intermediaire.html" data-i18n data-en="Midstream">Intermédiaire</a></li>
+          <li><a href="aval.html" data-i18n data-en="Downstream">Aval — Raffinage</a></li>
+          <li><a href="../maps.html" data-i18n data-en="Operations map">Carte des opérations</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-nav-col" aria-label="Entreprise">
+        <h6 data-i18n data-en="Company">Entreprise</h6>
+        <ul>
+          <li><a href="../groupe/index.html" data-i18n data-en="About">À propos</a></li>
+          <li><a href="../durabilite.html" data-i18n data-en="ESG">Durabilité &amp; ESG</a></li>
+          <li><a href="../investisseurs.html" data-i18n data-en="Investors">Investisseurs</a></li>
+          <li><a href="../talents.html" data-i18n data-en="Careers">Talents</a></li>
+          <li><a href="../actualites.html" data-i18n data-en="Media">Médias</a></li><li><a href="../newsletter.html" data-i18n data-en="Newsletter">Newsletter</a></li>
+        </ul>
+      </nav>
+      <div class="footer-nav-col footer-cta-col">
+        <h6 data-i18n data-en="Get in Touch">Nous Contacter</h6>
+        <div class="footer-contact-stack">
+          <a href="../contact.html#greentech" class="footer-cta-btn"><i class="fas fa-arrow-right"></i> <span data-i18n data-en="Partner with GreenTech">Partenaire GreenTech</span></a>
+          <a href="mailto:greentech@enertchad.td" class="footer-cta-link"><i class="fas fa-envelope"></i> greentech@enertchad.td</a>
+          <a href="tel:+23599298696" class="footer-cta-link"><i class="fas fa-phone"></i> +235 99 29 86 96</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom-bar">
+    <div class="ctn">
+      <div class="bottom-bar-inner">
+        <span class="footer-copy">&copy; 2026 EnerTchad Groupe SA/CA</span>
+        <div class="footer-legal-links">
+          <a href="../mentions-legales.html" data-i18n data-en="Legal">Mentions légales</a>
+          <a href="../confidentialite.html" data-i18n data-en="Privacy">Confidentialité</a>
+          <a href="../cookies.html" data-i18n data-en="Cookies">Cookies</a>
+        </div>
+        <div class="footer-social-row">
+          <a href="https://www.linkedin.com/company/enertchad" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://x.com/EnerTchad" target="_blank" rel="noopener noreferrer" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button class="scroll-top" id="scrollTop" aria-label="Retour en haut"><i class="fas fa-arrow-up"></i></button>
+
+</body>
+</html>

@@ -1,175 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Généré 2026-04-19 — Audit correctif. Domaine canonique : enertchad-groupe.vercel.app (à basculer vers www.enertchad.td quand le DNS sera prêt). 8 URLs servies par Vercel sans extension .html. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <!-- Homepage -->
+
+  <!-- Accueil -->
   <url>
-    <loc>https://www.enertchad.td/index.html</loc>
+    <loc>https://enertchad-groupe.vercel.app/</loc>
     <lastmod>2026-04-19</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.enertchad.td/index.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.enertchad.td/index.html?lang=en" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://enertchad-groupe.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://enertchad-groupe.vercel.app/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://enertchad-groupe.vercel.app/"/>
   </url>
 
-  <!-- Main Pages (Priority 0.8) -->
+  <!-- Groupe -->
   <url>
-    <loc>https://www.enertchad.td/contact.html</loc>
+    <loc>https://enertchad-groupe.vercel.app/groupe</loc>
     <lastmod>2026-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://enertchad-groupe.vercel.app/groupe"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://enertchad-groupe.vercel.app/groupe?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://enertchad-groupe.vercel.app/groupe"/>
+  </url>
+
+  <!-- Opérations — Amont -->
+  <url>
+    <loc>https://enertchad-groupe.vercel.app/operations/amont</loc>
+    <lastmod>2026-04-19</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.enertchad.td/contact.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.enertchad.td/contact.html?lang=en" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://enertchad-groupe.vercel.app/operations/amont"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://enertchad-groupe.vercel.app/operations/amont?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://enertchad-groupe.vercel.app/operations/amont"/>
   </url>
 
+  <!-- Opérations — Intermédiaire -->
   <url>
-    <loc>https://www.enertchad.td/investisseurs.html</loc>
+    <loc>https://enertchad-groupe.vercel.app/operations/intermediaire</loc>
     <lastmod>2026-04-19</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.enertchad.td/investisseurs.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.enertchad.td/investisseurs.html?lang=en" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://enertchad-groupe.vercel.app/operations/intermediaire"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://enertchad-groupe.vercel.app/operations/intermediaire?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://enertchad-groupe.vercel.app/operations/intermediaire"/>
   </url>
 
+  <!-- Opérations — Aval -->
   <url>
-    <loc>https://www.enertchad.td/durabilite.html</loc>
+    <loc>https://enertchad-groupe.vercel.app/operations/aval</loc>
     <lastmod>2026-04-19</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.enertchad.td/durabilite.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.enertchad.td/durabilite.html?lang=en" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://enertchad-groupe.vercel.app/operations/aval"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://enertchad-groupe.vercel.app/operations/aval?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://enertchad-groupe.vercel.app/operations/aval"/>
   </url>
 
+  <!-- Durabilité -->
   <url>
-    <loc>https://www.enertchad.td/talents.html</loc>
+    <loc>https://enertchad-groupe.vercel.app/durabilite</loc>
     <lastmod>2026-04-19</lastmod>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.enertchad.td/talents.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.enertchad.td/talents.html?lang=en" />
-  </url>
-
-  <url>
-    <loc>https://www.enertchad.td/actualites.html</loc>
-    <lastmod>2026-04-19</lastmod>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.enertchad.td/actualites.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.enertchad.td/actualites.html?lang=en" />
-  </url>
-
-  <!-- Subpages (Priority 0.7) -->
-  <url>
-    <loc>https://www.enertchad.td/groupe/index.html</loc>
-    <lastmod>2026-04-19</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.enertchad.td/groupe/index.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.enertchad.td/groupe/index.html?lang=en" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://enertchad-groupe.vercel.app/durabilite"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://enertchad-groupe.vercel.app/durabilite?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://enertchad-groupe.vercel.app/durabilite"/>
   </url>
 
+  <!-- Talents -->
   <url>
-    <loc>https://www.enertchad.td/operations/amont.html</loc>
+    <loc>https://enertchad-groupe.vercel.app/talents</loc>
     <lastmod>2026-04-19</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.enertchad.td/operations/amont.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.enertchad.td/operations/amont.html?lang=en" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://enertchad-groupe.vercel.app/talents"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://enertchad-groupe.vercel.app/talents?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://enertchad-groupe.vercel.app/talents"/>
   </url>
 
+  <!-- Contact -->
   <url>
-    <loc>https://www.enertchad.td/operations/intermediaire.html</loc>
+    <loc>https://enertchad-groupe.vercel.app/contact</loc>
     <lastmod>2026-04-19</lastmod>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.enertchad.td/operations/intermediaire.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.enertchad.td/operations/intermediaire.html?lang=en" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://enertchad-groupe.vercel.app/contact"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://enertchad-groupe.vercel.app/contact?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://enertchad-groupe.vercel.app/contact"/>
   </url>
 
-  <url>
-    <loc>https://www.enertchad.td/operations/aval.html</loc>
-    <lastmod>2026-04-19</lastmod>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.enertchad.td/operations/aval.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.enertchad.td/operations/aval.html?lang=en" />
-  </url>
-
-  <url>
-    <loc>https://www.enertchad.td/operations/energies.html</loc>
-    <lastmod>2026-04-19</lastmod>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.enertchad.td/operations/energies.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.enertchad.td/operations/energies.html?lang=en" />
-  </url>
-
-  <url>
-    <loc>https://www.enertchad.td/services/well-services.html</loc>
-    <lastmod>2026-04-19</lastmod>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.enertchad.td/services/well-services.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.enertchad.td/services/well-services.html?lang=en" />
-  </url>
-
-  <url>
-    <loc>https://www.enertchad.td/services/drilling.html</loc>
-    <lastmod>2026-04-19</lastmod>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.enertchad.td/services/drilling.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.enertchad.td/services/drilling.html?lang=en" />
-  </url>
-
-  <url>
-    <loc>https://www.enertchad.td/services/digital.html</loc>
-    <lastmod>2026-04-19</lastmod>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.enertchad.td/services/digital.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.enertchad.td/services/digital.html?lang=en" />
-  </url>
-
-  <url>
-    <loc>https://www.enertchad.td/services/consulting.html</loc>
-    <lastmod>2026-04-19</lastmod>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.enertchad.td/services/consulting.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.enertchad.td/services/consulting.html?lang=en" />
-  </url>
-
-  <url>
-    <loc>https://www.enertchad.td/services/technologies.html</loc>
-    <lastmod>2026-04-19</lastmod>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.enertchad.td/services/technologies.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.enertchad.td/services/technologies.html?lang=en" />
-  </url>
-
-  <url>
-    <loc>https://www.enertchad.td/distribution/index.html</loc>
-    <lastmod>2026-04-19</lastmod>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.enertchad.td/distribution/index.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.enertchad.td/distribution/index.html?lang=en" />
-  </url>
-
-  <!-- Utility Pages (Priority 0.3) -->
-  <url>
-    <loc>https://www.enertchad.td/maps.html</loc>
-    <lastmod>2026-04-19</lastmod>
-    <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.enertchad.td/maps.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.enertchad.td/maps.html?lang=en" />
-  </url>
-
-  <url>
-    <loc>https://www.enertchad.td/cookies.html</loc>
-    <lastmod>2026-04-19</lastmod>
-    <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.enertchad.td/cookies.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.enertchad.td/cookies.html?lang=en" />
-  </url>
-
-  <url>
-    <loc>https://www.enertchad.td/confidentialite.html</loc>
-    <lastmod>2026-04-19</lastmod>
-    <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.enertchad.td/confidentialite.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.enertchad.td/confidentialite.html?lang=en" />
-  </url>
-
-  <url>
-    <loc>https://www.enertchad.td/mentions-legales.html</loc>
-    <lastmod>2026-04-19</lastmod>
-    <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.enertchad.td/mentions-legales.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.enertchad.td/mentions-legales.html?lang=en" />
-  </url>
 </urlset>

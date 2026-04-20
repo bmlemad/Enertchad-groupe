@@ -7,16 +7,16 @@
   <title>Carte des Opérations | EnerTchad Groupe</title>
   <meta name="description" content="Explorez la carte interactive des opérations EnerTchad à travers le Tchad et la région. Découvrez nos bases opérationnelles, raffinerie, réseau pipeline et stations-service."/>
   <meta name="robots" content="index,follow"/>
-  <link href="/manifest.json" rel="manifest"/>
+  <link href="manifest.json" rel="manifest"/>
   <meta name="theme-color" content="#080E1A"/>
   <meta name="apple-mobile-web-app-capable" content="yes"/>
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
   <meta name="apple-mobile-web-app-title" content="EnerTchad"/>
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
-  <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
-  <link rel="preload" href="/logo.svg" as="image" type="image/svg+xml"/>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"/>
+  <link rel="icon" type="image/x-icon" href="favicon.ico"/>
+  <link rel="apple-touch-icon" href="apple-touch-icon.png"/>
+  <link rel="preload" href="logo-enertchad.svg" as="image" type="image/svg+xml"/>
 
   <!-- OG -->
   <meta property="og:title" content="Carte des Opérations | EnerTchad Groupe"/>
@@ -54,20 +54,33 @@
   <link as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Space+Grotesk:wght@400..700&display=swap" rel="preload"/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Space+Grotesk:wght@400..700&display=swap" media="print" onload="this.media='all'" rel="stylesheet"/>
   <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Space+Grotesk:wght@400..700&display=swap" rel="stylesheet"/></noscript>
-  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" integrity="sha384-OLBgp1GsljhM2TJ+sbHjaiH9txEUvgdDTAzHv2P24donTt6/529l+9Ua0vFImLlb" crossorigin="anonymous"/>
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
   <noscript><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/></noscript>
-  <link rel="stylesheet" href="/css/main.unified.css?v=2"/>
+    <link rel="stylesheet" href="css/premium.css"/>
+  <link rel="preload" href="css/style.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
+  <noscript><link rel="stylesheet" href="css/style.min.css"/></noscript>
 
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="></script>
-  <script defer src="/js/app.min.js"></script>
+  <script defer src="js/app.min.js"></script>
   <link rel="canonical" href="https://enertchad-groupe.vercel.app/maps"/>
   <link rel="alternate" hreflang="fr" href="https://enertchad-groupe.vercel.app/maps"/>
   <link rel="alternate" hreflang="en" href="https://enertchad-groupe.vercel.app/maps?lang=en"/>
 
   <!-- Analytics — Plausible -->
-  <script defer data-domain="enertchad.td" src="https://plausible.io/js/script.tagged-events.js"></script>
+  <script defer data-domain="enertchad-groupe.vercel.app" src="https://plausible.io/js/script.tagged-events.js"></script>
   <script>window.plausible=window.plausible||function(){(window.plausible.q=window.plausible.q||[]).push(arguments)}</script>
+  <!-- Sentry — DSN injecté via data-sentry-dsn (fail-silent si absent). Configurer en build-time (Vercel env SENTRY_DSN). -->
+  <script defer src="https://browser.sentry-cdn.com/7.120.0/bundle.min.js" crossorigin="anonymous" data-sentry-dsn=""></script>
+  <script>
+    window.addEventListener("load", function(){
+      var s = document.querySelector("script[data-sentry-dsn]");
+      var dsn = s && s.getAttribute("data-sentry-dsn");
+      if (window.Sentry && dsn && dsn.length > 10) {
+        try { Sentry.init({ dsn: dsn, environment: "production", tracesSampleRate: 0.1, release: (window.__BUILD_SHA__ || "unknown") }); } catch(e) { /* fail-silent */ }
+      }
+    });
+  </script>
 
   <style>
     :root {
@@ -410,77 +423,11 @@
       }
     }
   </style>
+  <script defer src="js/lang.js"></script>
+  <script defer src="js/nav-premium.js"></script>
+  <link rel="stylesheet" href="css/nav-premium.css"/>
 </head>
-<body class="preloader-active">
-<!-- ═══ PRELOADER ═══ -->
-<div aria-label="Chargement du site EnerTchad" aria-live="polite" id="preloader" role="status">
-  <div aria-hidden="true" class="preloader-particles" id="preloaderParticles"></div>
-  <div class="preloader-stage">
-    <div aria-hidden="true" class="preloader-halo"></div>
-    <div aria-hidden="true" class="preloader-dome"></div>
-    <div aria-hidden="true" class="preloader-ring"></div>
-    <img alt="EnerTchad" class="preloader-logo" decoding="async" fetchpriority="high" height="380" src="/logo.svg" width="380"/>
-    <div aria-hidden="true" class="preloader-sheen"></div>
-  </div>
-  <div aria-label="Accès aux Énergies · Unité · Innovation · Durabilité" class="preloader-slogan">
-    <span class="pw">Accès aux Énergies</span>
-    <span aria-hidden="true" class="pdot"></span>
-    <span class="pw">Unité</span>
-    <span aria-hidden="true" class="pdot"></span>
-    <span class="pw">Innovation</span>
-    <span aria-hidden="true" class="pdot"></span>
-    <span class="pw">Durabilité</span>
-  </div>
-  <div aria-hidden="true" class="preloader-progress">
-    <div class="preloader-progress-fill" id="preloaderFill"></div>
-  </div>
-  <div aria-hidden="true" class="preloader-pct" id="preloaderPct">0 %</div>
-</div>
-<script>
-(function(){
-  var pre=document.getElementById('preloader');
-  if(!pre)return;
-  var fill=document.getElementById('preloaderFill');
-  var pct=document.getElementById('preloaderPct');
-  var particles=document.getElementById('preloaderParticles');
-  var progress=0;var loaded=false;var start=Date.now();
-  /* Particles */
-  var isSlow=navigator.connection&&(navigator.connection.effectiveType==='2g'||navigator.connection.effectiveType==='slow-2g'||navigator.connection.saveData);
-  if(!isSlow&&particles){
-    var count=window.innerWidth<768?8:18;
-    for(var i=0;i<count;i++){
-      var p=document.createElement('div');p.className='preloader-particle';
-      var sz=Math.random()*4+2;
-      p.style.cssText='width:'+sz+'px;height:'+sz+'px;left:'+Math.random()*100+'%;animation-duration:'+(Math.random()*5+4)+'s;animation-delay:'+(Math.random()*4)+'s;';
-      particles.appendChild(p);
-    }
-  }
-  /* Progress */
-  var iv=setInterval(function(){
-    if(progress<30)progress+=Math.random()*6+3;
-    else if(progress<70)progress+=Math.random()*3+1;
-    else if(progress<90)progress+=Math.random()*2+0.5;
-    else if(!loaded)progress+=0.3;
-    else progress=100;
-    progress=Math.min(progress,loaded?100:92);
-    if(fill)fill.style.width=progress+'%';
-    if(pct)pct.textContent=Math.round(progress)+' %';
-    if(progress>=100)clearInterval(iv);
-  },80);
-  function hide(){
-    if(pre.classList.contains('is-leaving'))return;
-    loaded=true;
-    var minTime=window.innerWidth<768?800:1200;
-    var elapsed=Date.now()-start;
-    setTimeout(function(){
-      pre.classList.add('is-leaving');
-      setTimeout(function(){pre.remove();document.body.classList.remove('preloader-active')},950);
-    },Math.max(0,minTime-elapsed+200));
-  }
-  window.addEventListener('load',hide);
-  setTimeout(hide,5000);
-})();
-</script>
+<body>
 <a href="#main" class="skip-link" data-i18n data-en="Skip to content">Aller au contenu</a>
 
 <!-- ═══ LOADING SCREEN ═══ -->
@@ -496,9 +443,9 @@
 
 <!-- ═══ HEADER ═══ -->
 <header class="header" id="header">
-  <a class="logo-wrap" href="/" aria-label="EnerTchad Groupe — Accueil">
-    <img loading="lazy" class="logo-img" src="/logo.svg" alt="EnerTchad" width="40" height="40" decoding="async"/>
-    <div class="logo-text">EnerTchad<span>Groupe</span></div>
+  <a class="logo-wrap" href="index.html" aria-label="EnerTchad Groupe — Accueil">
+    <img loading="lazy" class="logo-img" src="logo-enertchad.svg" alt="EnerTchad" width="40" height="40" decoding="async"/>
+    <div class="logo-text">Ener<span>Tchad</span></div>
   </a>
 
   <nav class="nav" role="navigation" aria-label="Navigation principale">
@@ -508,20 +455,20 @@
     <button class="nav-link" data-mega="groupe" aria-expanded="false" aria-haspopup="true" data-i18n data-en="Group">
       Groupe <i class="fas fa-chevron-down chevron"></i>
     </button>
-    <button class="nav-link" data-mega="durabilite" aria-expanded="false" aria-haspopup="true" data-i18n data-en="Sustainability">
-      Durabilité <i class="fas fa-chevron-down chevron"></i>
+    <button class="nav-link" data-mega="durabilite" aria-expanded="false" aria-haspopup="true" data-i18n data-en="Commitment">
+      Engagement <i class="fas fa-chevron-down chevron"></i>
     </button>
-    <button class="nav-link" data-mega="talents" aria-expanded="false" aria-haspopup="true" data-i18n data-en="Talents">
+    <button class="nav-link" data-mega="talents" aria-expanded="false" aria-haspopup="true" data-i18n data-en="Careers">
       Talents <i class="fas fa-chevron-down chevron"></i>
     </button>
-    <button class="nav-link" data-mega="actualites" aria-expanded="false" aria-haspopup="true" data-i18n data-en="News">
-      Actualités <i class="fas fa-chevron-down chevron"></i>
+    <button class="nav-link" data-mega="actualites" aria-expanded="false" aria-haspopup="true" data-i18n data-en="Media">
+      Médias <i class="fas fa-chevron-down chevron"></i>
     </button>
-    <a class="nav-link" href="/investisseurs" data-i18n data-en="Investors"><i class="fas fa-chart-pie" style="font-size:0.72rem;opacity:0.7"></i> Investisseurs</a>
+    <a class="nav-link" href="investisseurs.html" data-i18n data-en="Investors"><i class="fas fa-chart-pie" style="font-size:0.72rem;opacity:0.7"></i> Investisseurs</a>
   </nav>
 
   <div class="header-actions">
-    <a href="/contact" class="header-cta" data-i18n data-en="Contact">Contact</a>
+    <a href="contact.html" class="header-cta" data-i18n data-en="Request a quote">Demander un devis</a>
     <button class="lang-btn" id="langToggle" aria-label="Changer de langue">
       <i class="fas fa-globe"></i> <span class="lang-label">FR</span>
     </button>
@@ -819,7 +766,7 @@
   <section class="cta-band ctn" style="margin-left: auto; margin-right: auto;">
     <h3 data-i18n data-en="Need an on-ground partner?">Besoin d'un partenaire terrain ?</h3>
     <p data-i18n data-en="Contact our operational team for site visits, partnerships and logistics support.">Contactez notre équipe opérationnelle pour visites sites, partenariats et support logistique.</p>
-    <a href="/contact" class="cta-band-btn">
+    <a href="contact.html" class="cta-band-btn">
       <span data-i18n data-en="Contact Ops Team">Contacter l'équipe</span>
       <i class="fas fa-arrow-right"></i>
     </a>
@@ -828,7 +775,7 @@
 </main>
 
 <!-- ═══ FOOTER ═══ -->
-<footer class="footer">
+<footer class="footer modern-footer" role="contentinfo">
   <div class="footer-body">
     <div class="ctn">
 
@@ -836,39 +783,39 @@
       <nav class="footer-nav-col" aria-label="Services des Champs">
         <h6 data-i18n data-en="Services">Services</h6>
         <ul>
-          <li><a href="/services/well-services" data-i18n data-en="Well Services">Well Services</a></li>
-          <li><a href="/services/drilling" data-i18n data-en="Drilling &amp; Engineering">Drilling &amp; Engineering</a></li>
-          <li><a href="/services/digital" data-i18n data-en="Digital &amp; SCADA">Digital &amp; SCADA</a></li>
-          <li><a href="/services/consulting" data-i18n data-en="Consulting &amp; Training">Consulting &amp; Formation</a></li>
-          <li><a href="/aval" data-i18n data-en="Distribution">Distribution &amp; Négoce</a></li>
+          <li><a href="services/well-services.html" data-i18n data-en="Well Services">Well Services</a></li>
+          <li><a href="services/drilling.html" data-i18n data-en="Drilling &amp; Engineering">Drilling &amp; Engineering</a></li>
+          <li><a href="services/digital.html" data-i18n data-en="Digital &amp; SCADA">Digital &amp; SCADA</a></li>
+          <li><a href="services/consulting.html" data-i18n data-en="Consulting &amp; Training">Consulting &amp; Formation</a></li>
+          <li><a href="distribution/" data-i18n data-en="Distribution">Distribution &amp; Négoce</a></li>
         </ul>
       </nav>
       <nav class="footer-nav-col" aria-label="Société Pétrolière">
         <h6 data-i18n data-en="Energy">Énergies</h6>
         <ul>
-          <li><a href="/amont" data-i18n data-en="Upstream — E&amp;P">Amont — E&amp;P</a></li>
-          <li><a href="/intermediaire" data-i18n data-en="Midstream">Intermédiaire</a></li>
-          <li><a href="/aval" data-i18n data-en="Downstream">Aval — Raffinage</a></li>
-          <li><a href="/technologies" data-i18n data-en="Technologies &amp; AI">Technologies &amp; IA</a></li>
-          <li><a href="/energies" data-i18n data-en="Renewables">Énergies Renouvelables</a></li>
+          <li><a href="operations/amont.html" data-i18n data-en="Upstream — E&amp;P">Amont — E&amp;P</a></li>
+          <li><a href="operations/intermediaire.html" data-i18n data-en="Midstream">Intermédiaire</a></li>
+          <li><a href="operations/aval.html" data-i18n data-en="Downstream">Aval — Raffinage</a></li>
+          <li><a href="services/technologies.html" data-i18n data-en="Technologies &amp; AI">Technologies &amp; IA</a></li>
+          <li><a href="operations/greentech.html" data-i18n data-en="Renewables">Énergies Renouvelables</a></li>
         </ul>
       </nav>
       <nav class="footer-nav-col" aria-label="Entreprise">
         <h6 data-i18n data-en="Company">Entreprise</h6>
         <ul>
-          <li><a href="/groupe/" data-i18n data-en="About">À propos</a></li>
-          <li><a href="/durabilite" data-i18n data-en="ESG &amp; Sustainability">Durabilité &amp; ESG</a></li>
-          <li><a href="/investisseurs" data-i18n data-en="Investors">Investisseurs</a></li>
-          <li><a href="/talents" data-i18n data-en="Careers">Talents &amp; Carrières</a></li>
-          <li><a href="/actualites" data-i18n data-en="Media">Médias</a></li>
-          <li><a href="/maps" data-i18n data-en="Operations Map">Carte des Opérations</a></li>
+          <li><a href="groupe/index.html" data-i18n data-en="About">À propos</a></li>
+          <li><a href="durabilite.html" data-i18n data-en="ESG &amp; Sustainability">Durabilité &amp; ESG</a></li>
+          <li><a href="investisseurs.html" data-i18n data-en="Investors">Investisseurs</a></li>
+          <li><a href="talents.html" data-i18n data-en="Careers">Talents &amp; Carrières</a></li>
+          <li><a href="actualites.html" data-i18n data-en="Media">Médias</a></li><li><a href="newsletter.html" data-i18n data-en="Newsletter">Newsletter</a></li>
+          <li><a href="maps.html" data-i18n data-en="Operations Map">Carte des Opérations</a></li>
         </ul>
       </nav>
       <div class="footer-nav-col footer-cta-col">
         <h6 data-i18n data-en="Get in Touch">Nous Contacter</h6>
         <div class="footer-contact-stack">
-          <a href="/contact" class="footer-cta-btn" data-i18n data-en="Contact Us"><i class="fas fa-arrow-right"></i> Contactez-nous</a>
-          <a href="/contact#devis" class="footer-cta-link" data-i18n data-en="Request a Quote"><i class="fas fa-file-invoice"></i> Demander un devis</a>
+          <a href="contact.html" class="footer-cta-btn" data-i18n data-en="Contact Us"><i class="fas fa-arrow-right"></i> Contactez-nous</a>
+          <a href="contact.html#devis" class="footer-cta-link" data-i18n data-en="Request a Quote"><i class="fas fa-file-invoice"></i> Demander un devis</a>
           <a href="tel:+23599298696" class="footer-cta-link"><i class="fas fa-phone"></i> +235 99 29 86 96</a>
           <a href="mailto:contact@enertchad.td" class="footer-cta-link"><i class="fas fa-envelope"></i> contact@enertchad.td</a>
         </div>
@@ -888,7 +835,7 @@
           <strong data-i18n data-en="Industry Intelligence">Veille Sectorielle</strong>
           <span data-i18n data-en="Monthly insights on energy &amp; oilfield services.">Analyses mensuelles énergie &amp; services pétroliers.</span>
         </div>
-        <form class="newsletter-modern" aria-label="Newsletter">
+        <form class="newsletter-modern newsletter-modern-linked" aria-label="Newsletter" data-redirect="newsletter.html">
           <input type="email" placeholder="nom@entreprise.td" required aria-label="Email"/>
           <button type="submit" data-i18n data-en="Subscribe">S'abonner</button>
         </form>
@@ -902,9 +849,9 @@
       <div class="bottom-bar-inner">
         <span class="footer-copy" data-i18n data-en="&copy; 2026 EnerTchad Groupe SA/CA">&copy; 2026 EnerTchad Groupe SA/CA</span>
         <div class="footer-legal-links">
-          <a href="/mentions-legales" data-i18n data-en="Legal">Mentions légales</a>
-          <a href="/confidentialite" data-i18n data-en="Privacy">Confidentialité</a>
-          <a href="/cookies" data-i18n data-en="Cookies">Cookies</a>
+          <a href="mentions-legales.html" data-i18n data-en="Legal">Mentions légales</a>
+          <a href="confidentialite.html" data-i18n data-en="Privacy">Confidentialité</a>
+          <a href="cookies.html" data-i18n data-en="Cookies">Cookies</a>
         </div>
         <div class="footer-social-row">
           <a href="https://www.linkedin.com/company/enertchad" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
@@ -923,7 +870,7 @@
 </footer>
 
 <!-- ═══ MAP SCRIPT ═══ -->
-<script defer src="/js/chad-map.js"></script>
+<script defer src="js/chad-map.js"></script>
 
 </body>
 </html>
