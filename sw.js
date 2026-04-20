@@ -4,7 +4,7 @@
  * Offline fallback support with offline.html
  */
 
-const CACHE_NAME = 'enertchad-groupe-v4';
+const CACHE_NAME = 'enertchad-groupe-v5';
 const OFFLINE_URL = '/offline.html';
 
 // Critical static assets to pre-cache on install
