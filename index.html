@@ -40,7 +40,7 @@
 
   <!-- JSON-LD Organization + LocalBusiness (unifié via @id) + subOrganization (A8) -->
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":["Organization","LocalBusiness"],"@id":"https://enertchad-groupe.vercel.app/#organization","name":"EnerTchad Groupe","legalName":"EnerTchad Groupe SA/CA","description":"EnerTchad Groupe — Deux univers complémentaires : Services des Champs (4 pôles OFS — Well Services & EOR, Drilling, Digital & SCADA, Consulting) et Société Pétrolière (Amont, Intermédiaire, Aval). 144 kb/j production, 1 240 collaborateurs, 24 stations-service ultra-premium. Expertise des majors, souveraineté tchadienne.","url":"https://enertchad-groupe.vercel.app/","logo":"https://enertchad-groupe.vercel.app/assets/logo-enertchad.png","address":{"@type":"PostalAddress","streetAddress":"Cité du 1er Décembre, Radisson Blu, Bloc D, Bureau 23, Quartier Sabangali","addressLocality":"N'Djaména","addressRegion":"N'Djaména","postalCode":"BP 0000","addressCountry":"TD"},"telephone":"+235-99-29-86-96","email":"contact@enertchad.td","foundingDate":"2026","numberOfEmployees":{"@type":"QuantitativeValue","value":1240},"sameAs":["https://www.linkedin.com/company/enertchad"],"areaServed":{"@type":"Country","name":"Chad"},"industry":"Oilfield Services","subOrganization":[{"@type":"Organization","name":"EnerTchad Amont","url":"https://enertchad-groupe.vercel.app/operations/amont","description":"Exploration & Production — 7 opérateurs sur 5 bassins, 144 K b/j"},{"@type":"Organization","name":"EnerTchad Intermédiaire","url":"https://enertchad-groupe.vercel.app/operations/intermediaire","description":"Pipeline Doba-Kribi 1 070 km, stockage, transport midstream"},{"@type":"Organization","name":"EnerTchad Aval","url":"https://enertchad-groupe.vercel.app/operations/aval","description":"Raffinerie Djarmaya 20 kb/j, 24 stations-service, 14 villes"},{"@type":"Organization","name":"EnerTchad Énergies","url":"https://enertchad-groupe.vercel.app/operations/energies","description":"500 MW renouvelable visés, solaire + éolien, micro-grids"}]}
+  {"@context":"https://schema.org","@type":["Organization","LocalBusiness"],"@id":"https://enertchad-groupe.vercel.app/#organization","name":"EnerTchad Groupe","legalName":"EnerTchad Groupe SA/CA","description":"EnerTchad Groupe — Deux univers complémentaires : Services des Champs (4 pôles OFS — Well Services & EOR, Drilling, Digital & SCADA, Consulting) et Société Pétrolière (Amont, Intermédiaire, Aval). 144 kb/j production, 1 240 collaborateurs, 24 stations-service ultra-premium. Expertise des majors, souveraineté tchadienne.","url":"https://enertchad-groupe.vercel.app/","logo":"https://enertchad-groupe.vercel.app/assets/logo-enertchad.png","address":{"@type":"PostalAddress","streetAddress":"Cité du 1er Décembre, Radisson Blu, Bloc D, Bureau 23, Quartier Sabangali","addressLocality":"N'Djaména","addressRegion":"N'Djaména","postalCode":"BP 0000","addressCountry":"TD"},"telephone":"+235-99-29-86-96","email":"contact@enertchad.td","foundingDate":"2026","numberOfEmployees":{"@type":"QuantitativeValue","value":1240},"sameAs":["https://www.linkedin.com/company/enertchad"],"areaServed":{"@type":"Country","name":"Chad"},"industry":"Oilfield Services","subOrganization":[{"@type":"Organization","name":"EnerTchad Amont","url":"https://enertchad-groupe.vercel.app/operations/amont","description":"Exploration & Production — 7 opérateurs sur 5 bassins, 144 K b/j"},{"@type":"Organization","name":"EnerTchad Intermédiaire","url":"https://enertchad-groupe.vercel.app/operations/intermediaire","description":"Pipeline Doba-Kribi 1 070 km, stockage, transport midstream"},{"@type":"Organization","name":"EnerTchad Aval","url":"https://enertchad-groupe.vercel.app/operations/aval","description":"Raffinerie Djarmaya 20 kb/j, 24 stations-service, 14 villes"},{"@type":"Organization","name":"EnerTchad GreenTech","url":"https://enertchad-groupe.vercel.app/operations/greentech","description":"500 MW renouvelables visés — solaire, éolien, micro-grids hybrides"}]}
   </script>
   <!-- JSON-LD WebSite -->
   <script type="application/ld+json">
@@ -62,15 +62,13 @@
   ]}
   </script>
 
-  <!-- Preload critical resources -->
-    <link as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Space+Grotesk:wght@400..700&display=swap" rel="preload"/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Space+Grotesk:wght@400..700&display=swap" media="print" onload="this.media='all'" rel="stylesheet"/>
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Space+Grotesk:wght@400..700&display=swap" rel="stylesheet"/></noscript>
-
+  <!-- Preconnect & Fonts (deduplicated) -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Space+Grotesk:wght@400..700&display=swap" rel="stylesheet"/>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Space+Grotesk:wght@400..700&display=swap"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Space+Grotesk:wght@400..700&display=swap" media="print" onload="this.media='all'" rel="stylesheet"/>
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Space+Grotesk:wght@400..700&display=swap" rel="stylesheet"/></noscript>
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" integrity="sha384-t1nt8BQoYMLFN5p42tRAtuAAFQaCQODekUVeKKZrEnEyp4H2R0RHFz0KWpmj7i8g" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
   <noscript><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" integrity="sha384-t1nt8BQoYMLFN5p42tRAtuAAFQaCQODekUVeKKZrEnEyp4H2R0RHFz0KWpmj7i8g" crossorigin="anonymous"/></noscript>
 
@@ -171,9 +169,9 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
   <link rel="stylesheet" href="/css/enhance.css"/>
   <link rel="stylesheet" href="/css/nav-premium.css"/>
   <!-- Ultra-Premium layer (UP-P1 · 2026-04-20) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap" media="print" onload="this.media='all'" rel="stylesheet"/>
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap" rel="stylesheet"/></noscript>
   <link rel="stylesheet" href="/css/ultra-premium.css"/>
   <script defer src="/js/lang.js"></script>
   <script defer src="/js/nav-premium.js"></script>
@@ -215,7 +213,6 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
   </div>
 </div>
 
-<div class="reading-progress" id="readingProgress" aria-hidden="true"></div>
 <noscript><style>.reveal,.reveal-left{opacity:1!important;transform:none!important}</style></noscript>
 
 <!-- Skip Link -->
@@ -1364,7 +1361,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
       </div>
       <div class="kpi-card reveal card-3d">
         <div class="kpi-icon"><i class="fas fa-users"></i></div>
-        <div class="kpi-num"><span data-count="500" data-suffix="+">500</span></div>
+        <div class="kpi-num"><span data-count="1240" data-suffix="+">1 240</span></div>
         <div class="kpi-label">Collaborateurs</div>
       </div>
       <div class="kpi-card reveal card-3d">
@@ -1781,7 +1778,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
           <li><a href="/services/drilling" data-i18n data-en="Drilling &amp; Engineering">Drilling &amp; Engineering</a></li>
           <li><a href="/services/digital" data-i18n data-en="Digital &amp; SCADA">Digital &amp; SCADA</a></li>
           <li><a href="/services/consulting" data-i18n data-en="Consulting &amp; Training">Consulting &amp; Formation</a></li>
-          <li><a href="distribution/" data-i18n data-en="Distribution">Distribution &amp; Négoce</a></li>
+          <li><a href="/distribution/" data-i18n data-en="Distribution">Distribution &amp; Négoce</a></li>
         </ul>
       </nav>
       <nav class="footer-nav-col" aria-label="Société Pétrolière">
@@ -1829,7 +1826,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
           <strong data-i18n data-en="Industry Intelligence">Veille Sectorielle</strong>
           <span data-i18n data-en="Monthly insights on energy &amp; oilfield services.">Analyses mensuelles énergie &amp; services pétroliers.</span>
         </div>
-        <form class="newsletter-modern newsletter-modern-linked" aria-label="Newsletter" data-redirect="newsletter.html">
+        <form class="newsletter-modern newsletter-modern-linked" aria-label="Newsletter" data-redirect="/newsletter">
           <input type="email" placeholder="nom@entreprise.td" required aria-label="Email"/>
           <button type="submit" data-i18n data-en="Subscribe">S'abonner</button>
         </form>
@@ -1884,22 +1881,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
   <div class="bc-sections" id="bcDots"></div>
 </nav>
 
-<!-- ═══ SEARCH OVERLAY (Ctrl+K) ═══ -->
-<div class="search-overlay" id="searchOverlay" role="dialog" aria-label="Recherche globale">
-  <div class="search-modal">
-    <div class="search-input-wrap">
-      <i class="fas fa-search"></i>
-      <input class="search-input" id="searchInput" type="text" placeholder="Rechercher sur EnerTchad…" autocomplete="off" spellcheck="false"/>
-      <span class="search-kbd">ESC</span>
-    </div>
-    <div class="search-results" id="searchResults"></div>
-    <div class="search-footer">
-      <span><kbd>↑</kbd><kbd>↓</kbd> naviguer</span>
-      <span><kbd>↵</kbd> ouvrir</span>
-      <span><kbd>Ctrl</kbd>+<kbd>K</kbd> recherche</span>
-    </div>
-  </div>
-</div>
+<!-- Search handled by nav-premium.js command palette (Ctrl/⌘-K) -->
 
 
 <script defer src="/js/premium.js"></script>
