@@ -5,23 +5,112 @@
 (function () {
   'use strict';
 
-  /* ---------- Nav scroll state ---------- */
+  /* ---------- Nav scroll state + progress bar ---------- */
   const nav = document.querySelector('.nav');
-  if (nav) {
-    const onScroll = () => {
-      if (window.scrollY > 20) nav.classList.add('scrolled');
-      else nav.classList.remove('scrolled');
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-  }
+  const navWrap = document.querySelector('.nav-wrap');
+  const navProgress = document.querySelector('.nav-progress span');
+  const onScroll = () => {
+    const y = window.scrollY;
+    if (nav) {
+      if (y > 20) nav.classList.add('scrolled'); else nav.classList.remove('scrolled');
+    }
+    if (navWrap) {
+      if (y > 12) navWrap.classList.add('is-scrolled'); else navWrap.classList.remove('is-scrolled');
+    }
+    if (navProgress) {
+      const h = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = h > 0 ? Math.min(100, (y / h) * 100) : 0;
+      navProgress.style.width = pct.toFixed(2) + '%';
+    }
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
+  onScroll();
 
   /* ---------- Mobile nav toggle ---------- */
   const toggle = document.querySelector('.nav-toggle');
   const links = document.querySelector('.nav-links');
   if (toggle && links) {
-    toggle.addEventListener('click', () => links.classList.toggle('open'));
+    toggle.addEventListener('click', () => {
+      const open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
   }
+
+  /* ---------- Mega menu a11y (click + keyboard) ---------- */
+  document.querySelectorAll('.nav-has-mega').forEach((wrap) => {
+    const trigger = wrap.querySelector('.nav-drop-trigger');
+    const mega = wrap.querySelector('.nav-mega');
+    if (!trigger || !mega) return;
+    trigger.setAttribute('aria-haspopup', 'true');
+    trigger.setAttribute('aria-expanded', 'false');
+
+    const setOpen = (open) => {
+      wrap.classList.toggle('is-open', open);
+      trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    };
+
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      setOpen(!wrap.classList.contains('is-open'));
+    });
+    trigger.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ' || e.key === 'ArrowDown') {
+        e.preventDefault();
+        setOpen(true);
+        const first = mega.querySelector('a');
+        if (first) first.focus();
+      }
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && wrap.classList.contains('is-open')) {
+        setOpen(false);
+        trigger.focus();
+      }
+    });
+    document.addEventListener('click', (e) => {
+      if (!wrap.contains(e.target)) setOpen(false);
+    });
+  });
+
+  /* ---------- Language switcher ---------- */
+  document.querySelectorAll('[data-lang-switch]').forEach((sw) => {
+    const btn = sw.querySelector('.lang-btn');
+    if (!btn) return;
+    btn.setAttribute('aria-haspopup', 'true');
+    btn.setAttribute('aria-expanded', 'false');
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const open = sw.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    document.addEventListener('click', (e) => {
+      if (!sw.contains(e.target)) {
+        sw.classList.remove('is-open');
+        btn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+
+  /* ---------- Newsletter form (progressive enhancement) ---------- */
+  document.querySelectorAll('[data-newsletter]').forEach((form) => {
+    form.addEventListener('submit', (e) => {
+      const emailInput = form.querySelector('input[type="email"]');
+      const consent = form.querySelector('input[type="checkbox"]');
+      if (!emailInput || !emailInput.checkValidity()) return;
+      if (consent && !consent.checked) return;
+      // Visual feedback; let native submit proceed to newsletter.html
+      const btn = form.querySelector('button[type="submit"]');
+      if (btn) {
+        btn.setAttribute('disabled', 'true');
+        btn.style.opacity = '.7';
+        const orig = btn.innerHTML;
+        btn.innerHTML = 'Redirection… <span class="arrow">→</span>';
+        setTimeout(() => { btn.innerHTML = orig; btn.removeAttribute('disabled'); btn.style.opacity = ''; }, 4000);
+      }
+    });
+  });
 
   /* ---------- Scroll reveal ---------- */
   const revealEls = document.querySelectorAll('.reveal');

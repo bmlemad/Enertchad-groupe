@@ -49,62 +49,166 @@
 </head>
 <body>
 
+<!-- ============================= TOP BAR ============================= -->
+<div class="nav-topbar" role="complementary" aria-label="Informations de contact et certifications">
+  <div class="nav-topbar-inner">
+    <div class="topbar-left">
+      <a class="tb-item" href="tel:+23599298696" aria-label="Téléphone">
+        <svg viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><path d="M3.5 1.5h3l1 3-2 1a9 9 0 0 0 4 4l1-2 3 1v3A2 2 0 0 1 11.5 14 10 10 0 0 1 2 4.5 2 2 0 0 1 3.5 1.5z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+        +235 99 29 86 96
+      </a>
+      <a class="tb-item" href="mailto:contact@enertchad.td" aria-label="Email">
+        <svg viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><rect x="1.5" y="3" width="13" height="10" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M1.5 4l6.5 5 6.5-5" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>
+        contact@enertchad.td
+      </a>
+      <span class="tb-divider" aria-hidden="true"></span>
+      <span class="tb-badges">
+        <span class="tb-badge">ITIE</span>
+        <span class="tb-badge">OHADA</span>
+        <span class="tb-badge">ISO 9001 · 14001 · 45001</span>
+      </span>
+    </div>
+    <div class="topbar-right">
+      <a class="tb-social" href="#" aria-label="LinkedIn" rel="me noopener">
+        <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M3.5 2a1.3 1.3 0 1 1 0 2.6A1.3 1.3 0 0 1 3.5 2zM2.4 5.6h2.3v8H2.4zm4 0h2.2v1.1c.3-.5 1.1-1.3 2.5-1.3 2 0 3 1.3 3 3.6v4.6H12V9.6c0-1.1-.5-1.8-1.5-1.8s-1.7.7-1.7 1.9v3.9H6.4z"/></svg>
+      </a>
+      <a class="tb-social" href="#" aria-label="X (Twitter)" rel="me noopener">
+        <svg viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M12.3 2h2.3l-5 5.7 5.9 7.3h-4.6L7.3 10 3.2 15H.9l5.3-6.1L.5 2h4.7L8.7 6.4 12.3 2zm-.8 11.6h1.3L4.5 3.3H3.1z"/></svg>
+      </a>
+      <a class="tb-social" href="#" aria-label="YouTube" rel="me noopener">
+        <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M15.5 4.7a2 2 0 0 0-1.4-1.4C12.8 3 8 3 8 3s-4.8 0-6.1.3A2 2 0 0 0 .5 4.7C.2 5.9.2 8 .2 8s0 2.1.3 3.3a2 2 0 0 0 1.4 1.4C3.2 13 8 13 8 13s4.8 0 6.1-.3a2 2 0 0 0 1.4-1.4c.3-1.2.3-3.3.3-3.3s0-2.1-.3-3.3zM6.5 10.3V5.7L10.5 8l-4 2.3z"/></svg>
+      </a>
+      <span class="tb-divider" aria-hidden="true"></span>
+      <div class="lang-switch" data-lang-switch>
+        <button type="button" class="lang-btn" aria-haspopup="true" aria-expanded="false">
+          <svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M1.5 8h13M8 1.5a10 10 0 0 1 0 13M8 1.5a10 10 0 0 0 0 13" fill="none" stroke="currentColor" stroke-width="1.3"/></svg>
+          <span class="lang-current">FR</span>
+          <svg class="chev" viewBox="0 0 12 12" width="10" height="10" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+        </button>
+        <div class="lang-menu" role="menu">
+          <a href="?lang=fr" class="on" role="menuitem"><span class="lm-code">FR</span>Français</a>
+          <a href="?lang=en" role="menuitem"><span class="lm-code">EN</span>English</a>
+          <a href="?lang=ar" role="menuitem"><span class="lm-code">AR</span>العربية</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- ============================= NAV ============================= -->
 <div class="nav-wrap">
-  <nav class="nav">
+  <nav class="nav" data-nav>
     <div class="nav-inner">
-      <a href="index.html" class="brand">
-        <span class="brand-mark">E</span>
-        <span>Ener<span class="accent">Tchad</span> Groupe</span>
+      <a href="index.html" class="brand" aria-label="EnerTchad Groupe — Accueil">
+        <span class="brand-mark" aria-hidden="true">E</span>
+        <span class="brand-lockup">
+          <span class="brand-name">Ener<span class="accent">Tchad</span></span>
+          <span class="brand-sub">Groupe · SA/CA</span>
+        </span>
       </a>
       <div class="nav-links" id="navLinks">
         <a href="index.html" class="active">Accueil</a>
         <a href="groupe.html">Groupe</a>
-        <div class="nav-dropdown">
-          <button class="nav-drop-trigger" type="button" aria-haspopup="true" aria-expanded="false">Opérations
-            <svg class="chev" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4"/></svg>
+        <div class="nav-dropdown nav-has-mega">
+          <button class="nav-drop-trigger" type="button" aria-haspopup="true" aria-expanded="false">Pôles
+            <svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2"/></svg>
           </button>
-          <div class="nav-drop-menu" role="menu">
-            <a href="operations/amont.html" class="amont" role="menuitem">
-              <span class="nd-num">01</span>
-              <span class="nd-body"><strong>Amont · E&amp;P</strong><span>Exploration &amp; production · 5 bassins</span></span>
-            </a>
-            <a href="operations/intermediaire.html" class="inter" role="menuitem">
-              <span class="nd-num">02</span>
-              <span class="nd-body"><strong>Intermédiaire</strong><span>Pipeline Doba–Kribi · 1 070 km</span></span>
-            </a>
-            <a href="operations/aval.html" class="aval" role="menuitem">
-              <span class="nd-num">03</span>
-              <span class="nd-body"><strong>Aval · Distribution</strong><span>Raffinage &amp; réseau stations</span></span>
-            </a>
-            <a href="operations/services.html" class="svc" role="menuitem">
-              <span class="nd-num">04</span>
-              <span class="nd-body"><strong>Services</strong><span>Oilfield · formation · ingénierie</span></span>
-            </a>
-            <a href="/energies/" class="energies" role="menuitem" style="--accent:#10B981;">
-              <span class="nd-num">05</span>
-              <span class="nd-body"><strong>Énergies · GreenTech</strong><span>125 MW · 28 micro-grids · 624 GWh</span></span>
-            </a>
-            <a href="/technologies/" class="tech" role="menuitem" style="--accent:#8B5CF6;">
-              <span class="nd-num">06</span>
-              <span class="nd-body"><strong>Technologies · EnerTech</strong><span>SCADA · Digital Twins · IA · Cyber</span></span>
-            </a>
+          <div class="nav-mega" role="menu">
+            <div class="nav-mega-inner">
+              <div class="nav-mega-body">
+                <div class="mega-col">
+                  <span class="mega-kicker">Oil &amp; Gas · chaîne intégrée</span>
+                  <a href="operations/amont.html" class="mega-pole" role="menuitem" style="--mp: var(--pole-amont);">
+                    <span class="mp-icon">01</span>
+                    <div class="mp-body">
+                      <strong>Amont · E&amp;P</strong>
+                      <span>Exploration &amp; production</span>
+                      <em>144 kb/j · 5 bassins · sismique 3D</em>
+                    </div>
+                  </a>
+                  <a href="operations/intermediaire.html" class="mega-pole" role="menuitem" style="--mp: var(--pole-inter);">
+                    <span class="mp-icon">02</span>
+                    <div class="mp-body">
+                      <strong>Intermédiaire</strong>
+                      <span>Pipeline · stockage · SCADA</span>
+                      <em>Doba–Kribi · 1 070 km · 24/7</em>
+                    </div>
+                  </a>
+                  <a href="operations/aval.html" class="mega-pole" role="menuitem" style="--mp: var(--pole-aval);">
+                    <span class="mp-icon">03</span>
+                    <div class="mp-body">
+                      <strong>Aval · Distribution</strong>
+                      <span>Raffinage · lubrifiants · GPL</span>
+                      <em>Djarmaya · 24 stations · 14 villes</em>
+                    </div>
+                  </a>
+                  <a href="operations/services.html" class="mega-pole" role="menuitem" style="--mp: var(--pole-svc);">
+                    <span class="mp-icon">04</span>
+                    <div class="mp-body">
+                      <strong>Services</strong>
+                      <span>Oilfield · ingénierie · digital</span>
+                      <em>Workover · HSE · formation</em>
+                    </div>
+                  </a>
+                </div>
+                <div class="mega-col">
+                  <span class="mega-kicker">Énergies &amp; Digital</span>
+                  <a href="/energies/" class="mega-pole" role="menuitem" style="--mp:#10B981;">
+                    <span class="mp-icon">05</span>
+                    <div class="mp-body">
+                      <strong>Énergies · GreenTech</strong>
+                      <span>Solaire · micro-grids · H₂ vert</span>
+                      <em>125 MW · 28 villages · 624 GWh</em>
+                    </div>
+                  </a>
+                  <a href="/technologies/" class="mega-pole" role="menuitem" style="--mp:#8B5CF6;">
+                    <span class="mp-icon">06</span>
+                    <div class="mp-body">
+                      <strong>Technologies · EnerTech</strong>
+                      <span>SCADA · Digital Twins · IA · Cyber</span>
+                      <em>12 840 capteurs · 99,97 % uptime</em>
+                    </div>
+                  </a>
+                  <a href="maps.html" class="mega-map" role="menuitem">
+                    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.2a2.2 2.2 0 1 1 0-4.4 2.2 2.2 0 0 1 0 4.4z" fill="currentColor"/></svg>
+                    <div>
+                      <strong>Carte interactive</strong>
+                      <span>Nos implantations · bassins · infrastructures</span>
+                    </div>
+                    <span class="mega-map-arrow" aria-hidden="true">→</span>
+                  </a>
+                </div>
+                <aside class="mega-feature" aria-label="Performance 2026">
+                  <span class="kicker">Performance 2026</span>
+                  <h4>Une chaîne énergétique <em>intégrée</em>.</h4>
+                  <div class="mf-stats">
+                    <div class="mf-stat"><strong>144<sup>kb/j</sup></strong><span>Production Amont</span></div>
+                    <div class="mf-stat"><strong>1 070<sup>km</sup></strong><span>Pipeline Doba–Kribi</span></div>
+                    <div class="mf-stat"><strong>624<sup>GWh</sup></strong><span>Électricité livrée</span></div>
+                    <div class="mf-stat"><strong>42<sup>kt/an</sup></strong><span>CO₂ évité</span></div>
+                  </div>
+                  <div class="mf-ctas">
+                    <a href="dashboard.html" class="btn btn-primary btn-sm">Dashboard exécutif <span class="arrow">→</span></a>
+                    <a href="investisseurs.html" class="btn btn-ghost btn-sm">Investisseurs</a>
+                  </div>
+                </aside>
+              </div>
+            </div>
           </div>
         </div>
         <a href="investisseurs.html">Investisseurs</a>
         <a href="durabilite.html">Durabilité</a>
         <a href="talents.html">Talents</a>
         <a href="actualites.html">Actualités</a>
-        <a href="contact.html">Contact</a>
       </div>
       <div class="nav-cta">
-        <span class="lang-pill"><span class="on">FR</span>·<span>EN</span></span>
-        <a href="contact.html" class="btn btn-primary">Investir avec nous <span class="arrow">→</span></a>
-        <button class="nav-toggle" aria-label="Menu">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <a href="contact.html" class="btn btn-primary btn-sm nav-cta-btn">Investir avec nous <span class="arrow">→</span></a>
+        <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navLinks">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
         </button>
       </div>
     </div>
+    <div class="nav-progress" aria-hidden="true"><span></span></div>
   </nav>
 </div>
 
@@ -440,66 +544,198 @@
   </div>
 </section>
 
-<!-- ============================= FOOTER ============================= -->
-<footer>
-  <div class="container">
-    <div class="foot-grid">
-      <div class="foot-brand">
-        <div class="brand">
-          <span class="brand-mark">E</span>
-          <span>Ener<span class="accent">Tchad</span> Groupe</span>
+<!-- ============================= FOOTER PREMIUM ============================= -->
+<footer class="foot-premium" role="contentinfo">
+
+  <!-- Pre-footer : Newsletter band -->
+  <div class="foot-pre">
+    <div class="container foot-pre-inner">
+      <div class="foot-pre-copy">
+        <span class="eyebrow eyebrow-gold">Intelligence stratégique</span>
+        <h3 class="foot-pre-title">Recevez les <em>briefings exécutifs</em> EnerTchad</h3>
+        <p class="foot-pre-lead">Un digest mensuel confidentiel : production consolidée, CAPEX, ESG, deal-flow et signaux marché — réservé aux décideurs, investisseurs et partenaires institutionnels.</p>
+        <ul class="foot-pre-bullets" aria-label="Avantages du briefing">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Données consolidées Groupe + 6 pôles</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Dashboard exécutif · KPI opérationnels</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Alerte deal-flow &amp; appels d'offres</li>
+        </ul>
+      </div>
+      <form class="foot-pre-form" data-newsletter action="newsletter.html" method="post" novalidate>
+        <label class="fpf-label" for="fp-email">Email professionnel</label>
+        <div class="fpf-row">
+          <div class="fpf-input">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 7l9 6 9-6"/><rect x="3" y="5" width="18" height="14" rx="2"/></svg>
+            <input id="fp-email" type="email" name="email" placeholder="prenom.nom@entreprise.td" required autocomplete="email">
+          </div>
+          <button type="submit" class="btn btn-primary fpf-submit">
+            S'abonner <span class="arrow">→</span>
+          </button>
         </div>
-        <p>Société Anonyme à Conseil d'Administration · OHADA / AUSCGIE. Siège social : N'Djamena, République du Tchad.</p>
-        <p style="font-size:.82rem; margin-top:16px;">RCCM : TD-NDJ-03-2022-B-00518<br/>Capital : 50 000 000 000 XAF</p>
-      </div>
-      <div>
-        <h5>Pôles</h5>
-        <ul>
-          <li><a href="operations/amont.html">Amont · E&amp;P</a></li>
-          <li><a href="operations/intermediaire.html">Intermédiaire</a></li>
-          <li><a href="operations/aval.html">Aval · Distribution</a></li>
-          <li><a href="operations/services.html">Services</a></li>
-          <li><a href="/energies/">Énergies · GreenTech</a></li>
-          <li><a href="/technologies/">Technologies · EnerTech</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5>Groupe</h5>
-        <ul>
-          <li><a href="groupe.html">À propos</a></li>
-          <li><a href="groupe.html#gouvernance">Gouvernance</a></li>
-          <li><a href="groupe.html#leadership">Leadership</a></li>
-          <li><a href="maps.html">Implantations</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5>Engagement</h5>
-        <ul>
-          <li><a href="durabilite.html">Durabilité &amp; ESG</a></li>
-          <li><a href="durabilite.html#local">Contenu local</a></li>
-          <li><a href="durabilite.html#itie">ITIE</a></li>
-          <li><a href="durabilite.html#hse">HSE</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5>Contact</h5>
-        <ul>
-          <li>Av. Charles de Gaulle<br/>N'Djamena · Tchad</li>
-          <li><a href="tel:+23599298696">+235 99 29 86 96</a></li>
-          <li><a href="mailto:contact@enertchad.td">contact@enertchad.td</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="foot-bottom">
-      <div>© <span data-year>2026</span> EnerTchad Groupe SA/CA. Tous droits réservés.</div>
-      <div class="legal">
-        <a href="mentions-legales.html">Mentions légales</a>
-        <a href="confidentialite.html">Confidentialité</a>
-        <a href="cookies.html">Cookies</a>
-        <a href="contact.html#alerte">Lanceurs d'alerte</a>
-      </div>
+        <label class="fpf-consent">
+          <input type="checkbox" required>
+          <span>J'accepte la <a href="confidentialite.html">politique de confidentialité</a>. Désabonnement en un clic.</span>
+        </label>
+        <div class="fpf-trust">
+          <span class="fpf-trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg> Zéro spam</span>
+          <span class="fpf-trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 2L4 6v6c0 5 3.5 9 8 10 4.5-1 8-5 8-10V6z"/></svg> RGPD / ARCEP</span>
+          <span class="fpf-trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg> Mensuel · 1er jeudi</span>
+        </div>
+      </form>
     </div>
   </div>
+
+  <!-- Main footer -->
+  <div class="foot-main">
+    <!-- Decorative gold line + watermark -->
+    <div class="foot-watermark" aria-hidden="true">
+      <span class="fw-mark">E</span>
+      <span class="fw-text">EnerTchad<br/>Groupe</span>
+    </div>
+
+    <div class="container foot-main-inner">
+      <div class="foot-grid">
+
+        <!-- Colonne 1 : Brand + legal identity -->
+        <div class="foot-brand">
+          <a href="index.html" class="brand brand-footer" aria-label="Accueil EnerTchad Groupe">
+            <span class="brand-mark">E</span>
+            <span class="brand-lockup">
+              <span class="brand-name">Ener<span class="accent">Tchad</span></span>
+              <span class="brand-sub">Groupe · SA/CA</span>
+            </span>
+          </a>
+          <p class="foot-brand-lead">Conglomérat énergétique intégré du Tchad — Amont, Intermédiaire, Aval, Services, Énergies renouvelables et Technologies. Opérateur de la souveraineté énergétique nationale.</p>
+
+          <dl class="foot-legal-data">
+            <div class="fld-row"><dt>RCCM</dt><dd>TD-NDJ-03-2022-B-00518</dd></div>
+            <div class="fld-row"><dt>NIF</dt><dd>FCO 2022 0518</dd></div>
+            <div class="fld-row"><dt>Capital social</dt><dd>50 000 000 000 XAF</dd></div>
+            <div class="fld-row"><dt>Siège</dt><dd>Av. Charles de Gaulle, N'Djamena</dd></div>
+          </dl>
+
+          <div class="fb-badges" aria-label="Certifications &amp; affiliations">
+            <span class="fb-badge"><strong>ITIE</strong><span>Transparence</span></span>
+            <span class="fb-badge"><strong>OHADA</strong><span>AUSCGIE</span></span>
+            <span class="fb-badge"><strong>ISO</strong><span>9001·14001·45001</span></span>
+          </div>
+        </div>
+
+        <!-- Colonne 2 : Pôles -->
+        <div class="foot-col">
+          <h5 class="foot-head">Pôles opérationnels</h5>
+          <ul class="foot-links foot-links-numbered">
+            <li><a href="operations/amont.html"><span class="fl-num">01</span> Amont · E&amp;P</a></li>
+            <li><a href="operations/intermediaire.html"><span class="fl-num">02</span> Intermédiaire</a></li>
+            <li><a href="operations/aval.html"><span class="fl-num">03</span> Aval · Distribution</a></li>
+            <li><a href="operations/services.html"><span class="fl-num">04</span> Services</a></li>
+            <li><a href="/energies/"><span class="fl-num">05</span> Énergies · GreenTech</a></li>
+            <li><a href="/technologies/"><span class="fl-num">06</span> Technologies · EnerTech</a></li>
+          </ul>
+        </div>
+
+        <!-- Colonne 3 : Groupe & Investisseurs -->
+        <div class="foot-col">
+          <h5 class="foot-head">Groupe</h5>
+          <ul class="foot-links">
+            <li><a href="groupe.html">À propos</a></li>
+            <li><a href="groupe.html#gouvernance">Gouvernance</a></li>
+            <li><a href="groupe.html#leadership">Leadership</a></li>
+            <li><a href="maps.html">Implantations</a></li>
+            <li><a href="actualites.html">Actualités &amp; presse</a></li>
+          </ul>
+          <h5 class="foot-head foot-head-mt">Investisseurs</h5>
+          <ul class="foot-links">
+            <li><a href="investisseurs.html">Espace investisseurs</a></li>
+            <li><a href="investisseurs.html#rapports">Rapports annuels</a></li>
+            <li><a href="investisseurs.html#calendar">Calendrier financier</a></li>
+          </ul>
+        </div>
+
+        <!-- Colonne 4 : Engagement ESG + Talents -->
+        <div class="foot-col">
+          <h5 class="foot-head">Engagement</h5>
+          <ul class="foot-links">
+            <li><a href="durabilite.html">Durabilité &amp; ESG</a></li>
+            <li><a href="durabilite.html#local">Contenu local</a></li>
+            <li><a href="durabilite.html#itie">ITIE · Transparence</a></li>
+            <li><a href="durabilite.html#hse">HSE · Sécurité</a></li>
+            <li><a href="durabilite.html#climat">Trajectoire climat</a></li>
+          </ul>
+          <h5 class="foot-head foot-head-mt">Talents</h5>
+          <ul class="foot-links">
+            <li><a href="talents.html">Carrières</a></li>
+            <li><a href="talents.html#programmes">Programmes jeunes</a></li>
+          </ul>
+        </div>
+
+        <!-- Colonne 5 : Contact -->
+        <div class="foot-contact">
+          <h5 class="foot-head">Contact</h5>
+          <address class="fc-address">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 22s-8-7-8-13a8 8 0 0 1 16 0c0 6-8 13-8 13z"/><circle cx="12" cy="9" r="3"/></svg>
+            <span><strong>Siège social</strong><br/>Avenue Charles de Gaulle<br/>B.P. 1056 · N'Djamena<br/>République du Tchad</span>
+          </address>
+          <ul class="fc-contacts">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M22 16.92V21a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.13 5.18 2 2 0 0 1 4.11 3h4.09a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.91 11.09a16 16 0 0 0 6 6l1.45-1.45a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"/></svg> <a href="tel:+23599298696">+235 99 29 86 96</a></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg> <a href="mailto:contact@enertchad.td">contact@enertchad.td</a></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg> <a href="contact.html">Formulaire sécurisé</a></li>
+          </ul>
+          <div class="fc-hours">
+            <span class="fc-hours-label">Heures d'ouverture</span>
+            <span class="fc-hours-val">Lun–Ven · 08h00–17h00 (UTC+1)</span>
+          </div>
+          <div class="fc-socials" aria-label="Réseaux sociaux EnerTchad">
+            <a href="https://www.linkedin.com/company/enertchad" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45C23.2 24 24 23.23 24 22.28V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+            </a>
+            <a href="https://twitter.com/enertchad" target="_blank" rel="noopener" aria-label="X / Twitter">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="https://www.youtube.com/@enertchad" target="_blank" rel="noopener" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.016 3.016 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.016 3.016 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12z"/></svg>
+            </a>
+            <a href="https://wa.me/23599298696" target="_blank" rel="noopener" aria-label="WhatsApp Business">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.599 5.39zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div><!-- /foot-grid -->
+
+      <!-- Certifications row -->
+      <div class="foot-certs" aria-label="Certifications, memberships et partenaires institutionnels">
+        <span class="fc-label">Certifications · Adhésions · Partenaires</span>
+        <div class="fc-row">
+          <span class="fc-chip"><strong>ITIE</strong> Extractive Industries Transparency</span>
+          <span class="fc-chip"><strong>OHADA</strong> AUSCGIE</span>
+          <span class="fc-chip"><strong>CEMAC</strong> Zone monétaire</span>
+          <span class="fc-chip"><strong>OPEC+</strong> Observer</span>
+          <span class="fc-chip"><strong>IFRS</strong> Reporting</span>
+          <span class="fc-chip"><strong>IPIECA</strong> HSE Industry</span>
+          <span class="fc-chip"><strong>GRI</strong> Sustainability</span>
+          <span class="fc-chip"><strong>UN Global Compact</strong></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="container foot-bottom-inner">
+      <div class="foot-bottom">
+        <div class="fb-left">
+          <span>© <span data-year>2026</span> <strong>EnerTchad Groupe SA/CA</strong> · Tous droits réservés.</span>
+          <span class="fb-sep" aria-hidden="true">·</span>
+          <span class="fb-origin">Conçu &amp; opéré à N'Djamena, Tchad <span aria-hidden="true">🇹🇩</span></span>
+        </div>
+        <div class="legal fb-right">
+          <a href="mentions-legales.html">Mentions légales</a>
+          <a href="confidentialite.html">Confidentialité</a>
+          <a href="cookies.html">Cookies</a>
+          <a href="contact.html#alerte">Lanceurs d'alerte</a>
+          <a href="sitemap.xml">Plan du site</a>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /foot-main -->
 </footer>
 
 <script src="assets/js/main.js"></script>
