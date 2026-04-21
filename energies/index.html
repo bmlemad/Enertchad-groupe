@@ -67,6 +67,11 @@
    EnerTchad Énergies — Design System (aligned with Groupe hub v1.0)
    Pole accent: emerald #10B981
    ========================================================================== */
+/* Skip link a11y WCAG 2.4.1 */
+.skip-link{position:absolute;top:-100px;left:0;background:#D9A84F;color:#05080F;padding:12px 20px;font-family:'Inter',sans-serif;font-weight:600;text-decoration:none;border-radius:0 0 8px 0;z-index:10000;transition:top .15s ease}
+.skip-link:focus{top:0;outline:3px solid #FFFFFF;outline-offset:2px}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible,[role="button"]:focus-visible,summary:focus-visible{outline:3px solid #D9A84F;outline-offset:3px;border-radius:6px}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}}
 :root{
   --gold:#D9A84F; --gold-light:#E8C36A; --gold-deep:#B8892E; --gold-dust:rgba(217,168,79,.12);
   --navy:#080E1A; --navy-2:#0B1424; --navy-3:#121C30; --navy-4:#1A2540;
@@ -266,6 +271,7 @@ footer a:hover{color:var(--pole)}
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Aller au contenu principal</a>
 
 <div class="nav-wrap">
   <nav class="nav">
@@ -290,6 +296,7 @@ footer a:hover{color:var(--pole)}
   </nav>
 </div>
 
+<main id="main-content" tabindex="-1">
 <header class="hero" id="vision">
   <div class="container hero-inner">
     <div class="reveal">
@@ -509,6 +516,7 @@ footer a:hover{color:var(--pole)}
     </div>
   </div>
 </section>
+</main>
 
 <footer>
   <div class="container">

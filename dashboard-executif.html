@@ -7,6 +7,47 @@
 <title>EnerTchad Groupe — Dashboard Exécutif</title>
 <meta name="description" content="Cockpit de direction EnerTchad Groupe : production consolidée 6 pôles, CAPEX, ESG, deal-flow, HSE." />
 
+<!-- Canonical + OG/Twitter -->
+<link rel="canonical" href="https://www.enertchad.td/dashboard-executif.html" />
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="EnerTchad Groupe" />
+<meta property="og:locale" content="fr_FR" />
+<meta property="og:url" content="https://www.enertchad.td/dashboard-executif.html" />
+<meta property="og:title" content="EnerTchad Groupe — Dashboard Exécutif" />
+<meta property="og:description" content="Cockpit de direction EnerTchad Groupe : production consolidée 6 pôles, CAPEX, ESG, deal-flow, HSE." />
+<meta property="og:image" content="https://www.enertchad.td/assets/img/og-cover.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="EnerTchad Groupe — Dashboard Exécutif" />
+<meta name="twitter:description" content="Cockpit de direction EnerTchad Groupe : production consolidée 6 pôles, CAPEX, ESG, deal-flow, HSE." />
+<meta name="twitter:image" content="https://www.enertchad.td/assets/img/og-cover.png" />
+
+<!-- Manifest + favicon SVG -->
+<link rel="manifest" href="manifest.json" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23D9A84F'/%3E%3Ctext x='16' y='22' font-family='Space Grotesk, sans-serif' font-weight='700' font-size='16' text-anchor='middle' fill='%23080E1A'%3EE%3C/text%3E%3C/svg%3E" />
+
+<!-- JSON-LD · Organization (minimal) + BreadcrumbList -->
+<script type="application/ld+json">{
+  "@context":"https://schema.org",
+  "@type":"Organization",
+  "name":"EnerTchad Groupe SA/CA",
+  "url":"https://www.enertchad.td/",
+  "logo":"https://www.enertchad.td/assets/img/apple-touch-icon.png"
+}</script>
+<script type="application/ld+json">{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Accueil","item":"https://www.enertchad.td/"},
+    {"@type":"ListItem","position":2,"name":"Dashboard Exécutif","item":"https://www.enertchad.td/dashboard-executif.html"}
+  ]
+}</script>
+
+<!-- Service Worker -->
+<script>if('serviceWorker' in navigator){window.addEventListener('load',()=>{navigator.serviceWorker.register('/sw.js').catch(()=>{});});}</script>
+
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -41,6 +82,40 @@
 </script>
 
 <style>
+  /* Skip link a11y WCAG 2.4.1 */
+  .skip-link {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    background: #D9A84F;
+    color: #05080F;
+    padding: 12px 20px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 0 0 8px 0;
+    z-index: 10000;
+    transition: top .15s ease;
+  }
+  .skip-link:focus {
+    top: 0;
+    outline: 3px solid #FFFFFF;
+    outline-offset: 2px;
+  }
+  /* Focus-visible global a11y */
+  a:focus-visible, button:focus-visible, [tabindex]:focus-visible,
+  [role="button"]:focus-visible, summary:focus-visible {
+    outline: 3px solid #D9A84F;
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: .01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: .01ms !important;
+    }
+  }
   html, body { background: #05080F; color: #E8EAED; font-family: 'Inter', sans-serif; }
   body { min-height: 100vh; background:
     radial-gradient(1400px 600px at 10% 0%, rgba(217,168,79,.08), transparent 60%),
@@ -99,6 +174,7 @@
 <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Aller au contenu principal</a>
 <div id="root"></div>
 
 <script type="text/babel" data-presets="react">
@@ -772,7 +848,7 @@ function App() {
         onPeriodChange={setPeriod}
       />
 
-      <main className="max-w-[1600px] mx-auto px-6 py-6 space-y-6">
+      <main id="main-content" tabIndex={-1} className="max-w-[1600px] mx-auto px-6 py-6 space-y-6">
 
         {/* Executive summary banner */}
         <div className="gradient-border p-5 flex flex-wrap items-center justify-between gap-4 fade-up">
