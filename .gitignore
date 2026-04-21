@@ -1,0 +1,16 @@
+# Wrangler / Cloudflare Pages build artefacts
+.wrangler/
+
+# Node / npm
+node_modules/
+npm-debug.log*
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Python bytecode (scripts/)
+__pycache__/
+*.pyc

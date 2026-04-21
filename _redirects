@@ -10,13 +10,8 @@
 /downstream       /operations/aval.html          301
 /services         /operations/services.html      301
 
-# Clean URLs (sans .html)
-/groupe           /groupe.html             200
-/investisseurs    /investisseurs.html      200
-/durabilite       /durabilite.html         200
-/talents          /talents.html            200
-/actualites       /actualites.html         200
-/contact          /contact.html            200
+# Note: Cloudflare Pages sert automatiquement les clean URLs (/groupe → groupe.html natif).
+# Pas de règles "/groupe /groupe.html 200" : elles créent des boucles 308 avec le pretty URL handler CF.
 
 # Pôles intégrés (ex-sous-domaines Vercel)
 /energies         /energies/               301
