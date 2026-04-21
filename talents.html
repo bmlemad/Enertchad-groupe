@@ -1,955 +1,465 @@
-<!DOCTYPE html>
-<html lang="fr" class="no-js">
+<!doctype html>
+<html lang="fr">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://plausible.io; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://plausible.io; frame-src 'none'; object-src 'none'; base-uri 'self';"/>
-  <title>Talents & Carrières | EnerTchad Groupe</title>
-  <meta name="description" content="Carrières EnerTchad — Rejoignez notre équipe de 1 240 experts pétroliers au Tchad."/>
-  <meta name="robots" content="index,follow"/>
-  <link href="/manifest.json" rel="manifest"/>
-  <meta name="theme-color" content="#080E1A"/>
-  <meta name="apple-mobile-web-app-capable" content="yes"/>
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
-  <meta name="apple-mobile-web-app-title" content="EnerTchad"/>
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
-  <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
-  <link rel="preload" href="/logo-enertchad.svg" as="image" type="image/svg+xml"/>
-
-  <!-- OG -->
-  <meta property="og:title" content="Talents & Carrières | EnerTchad Groupe"/>
-  <meta property="og:description" content="Rejoignez EnerTchad : 1 240 collaborateurs, Academy 200h/an, parcours métiers Well Services à Digital. Postulez."/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:url" content="https://enertchad-groupe.vercel.app/talents"/>
-  <meta property="og:locale" content="fr_TD"/>
-  <meta property="og:site_name" content="EnerTchad Groupe"/>
-  <meta property="og:image" content="https://enertchad-groupe.vercel.app/images/og-enertchad.png"/>
-  <meta property="og:image:width" content="1200"/>
-  <meta property="og:image:height" content="630"/>
-  <meta property="og:image:alt" content="EnerTchad Talents — Carrières & Academy"/>
-
-  <!-- Twitter Card (QW-02) -->
-  <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:site" content="@EnerTchad"/>
-  <meta name="twitter:title" content="Talents & Carrières | EnerTchad Groupe"/>
-  <meta name="twitter:description" content="Rejoignez EnerTchad : 1 240 collaborateurs, Academy 200h/an, parcours métiers Well Services à."/>
-  <meta name="twitter:image" content="https://enertchad-groupe.vercel.app/images/og-enertchad.png"/>
-
-  <!-- JSON-LD -->
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Organization","name":"EnerTchad Groupe","legalName":"EnerTchad Groupe SA/CA","description":"Société de services pétroliers (OFS) au Tchad. 4 pôles : Well Services, Drilling, Digital & SCADA, Consulting. Première OFS tchadienne de cette envergure.","url":"https://enertchad-groupe.vercel.app","address":{"@type":"PostalAddress","streetAddress":"Cité du 1er Décembre, Radisson Blu, Bloc D, Bureau 23, Quartier Sabangali","addressLocality":"N'Djaména","addressRegion":"N'Djaména","postalCode":"BP 0000","addressCountry":"TD"},"telephone":"+235-99-29-86-96","email":"contact@enertchad.td","foundingDate":"2026","numberOfEmployees":{"@type":"QuantitativeValue","value":1240},"sameAs":["https://www.linkedin.com/company/enertchad"],"areaServed":{"@type":"Country","name":"Chad"},"industry":"Oilfield Services"}
-  </script>
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://enertchad-groupe.vercel.app/"},{"@type":"ListItem","position":2,"name":"Talents","item":"https://enertchad-groupe.vercel.app/talents"}]}
-  </script>
-  <!-- WebSite JSON-LD (QW-01) -->
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"WebSite","name":"EnerTchad Groupe","url":"https://enertchad-groupe.vercel.app/","inLanguage":["fr-TD","en"],"publisher":{"@type":"Organization","name":"EnerTchad Groupe"}}
-  </script>
-
-  <!-- FAQPage JSON-LD -->
-  <script type="application/ld+json">
-  {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Comment postuler chez EnerTchad ?", "acceptedAnswer": {"@type": "Answer", "text": "Vous pouvez postuler via notre page Contact ou envoyer votre candidature à talents@enertchad.td. EnerTchad recrute régulièrement des ingénieurs, techniciens et profils administratifs."}}, {"@type": "Question", "name": "EnerTchad propose-t-elle des programmes de formation ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui, EnerTchad Academy propose des programmes de formation en géosciences, ingénierie pétrolière, HSE et management pour développer les compétences nationales tchadiennes."}}]}
-  </script>
-
-  <!-- JSON-LD JobPosting (A9) — 6 offres-types EnerTchad -->
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@graph":[
-    {"@type":"JobPosting","title":"Ingénieur Forage — Drilling & Engineering","datePosted":"2026-04-15","validThrough":"2026-12-31","employmentType":"FULL_TIME","hiringOrganization":{"@type":"Organization","name":"EnerTchad Groupe","sameAs":"https://enertchad-groupe.vercel.app/"},"jobLocation":{"@type":"Place","address":{"@type":"PostalAddress","addressLocality":"N'Djaména","addressCountry":"TD"}},"description":"Pilotage des opérations de forage sur les 5 bassins (Doba, Bongor, Doseo, Salamat, Termit). 5+ ans d'expérience requis.","applicantLocationRequirements":{"@type":"Country","name":"Chad"}},
-    {"@type":"JobPosting","title":"Responsable Distribution & Stations","datePosted":"2026-04-10","validThrough":"2026-10-31","employmentType":"FULL_TIME","hiringOrganization":{"@type":"Organization","name":"EnerTchad Groupe"},"jobLocation":{"@type":"Place","address":{"@type":"PostalAddress","addressLocality":"N'Djaména","addressCountry":"TD"}},"description":"Pilotage du réseau de 24 stations-service ultra-premium dans 14 villes du Tchad."},
-    {"@type":"JobPosting","title":"Inspecteur Pipeline & Intégrité","datePosted":"2026-04-12","validThrough":"2026-11-30","employmentType":"FULL_TIME","hiringOrganization":{"@type":"Organization","name":"EnerTchad Groupe"},"jobLocation":{"@type":"Place","address":{"@type":"PostalAddress","addressLocality":"N'Djaména","addressCountry":"TD"}},"description":"Inspection NDT et intégrité sur les 1 070 km du pipeline Doba-Kribi."},
-    {"@type":"JobPosting","title":"Ingénieur SCADA & Digital","datePosted":"2026-04-08","validThrough":"2026-10-15","employmentType":"FULL_TIME","hiringOrganization":{"@type":"Organization","name":"EnerTchad Groupe"},"jobLocation":{"@type":"Place","address":{"@type":"PostalAddress","addressLocality":"N'Djaména","addressCountry":"TD"}},"description":"Conception et supervision des systèmes SCADA, cybersécurité OT, jumeaux numériques."},
-    {"@type":"JobPosting","title":"Superviseur HSE","datePosted":"2026-04-14","validThrough":"2026-12-15","employmentType":"FULL_TIME","hiringOrganization":{"@type":"Organization","name":"EnerTchad Groupe"},"jobLocation":{"@type":"Place","address":{"@type":"PostalAddress","addressLocality":"N'Djaména","addressCountry":"TD"}},"description":"Management HSE des opérations Amont, Intermédiaire et Aval. ISO 37001/26000."},
-    {"@type":"JobPosting","title":"Graduate Trainee — EnerTchad Academy","datePosted":"2026-04-01","validThrough":"2026-09-30","employmentType":"FULL_TIME","hiringOrganization":{"@type":"Organization","name":"EnerTchad Groupe"},"jobLocation":{"@type":"Place","address":{"@type":"PostalAddress","addressLocality":"N'Djaména","addressCountry":"TD"}},"description":"Programme de formation 200h/an pour jeunes diplômés tchadiens (géosciences, ingénierie, HSE)."}
-  ]}
-  </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Space+Grotesk:wght@400..700&display=swap" rel="preload"/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Space+Grotesk:wght@400..700&display=swap" media="print" onload="this.media='all'" rel="stylesheet"/>
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Space+Grotesk:wght@400..700&display=swap" rel="stylesheet"/></noscript>
-<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
-  <noscript><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/></noscript>
-    <link rel="stylesheet" href="/css/premium.css"/>
-<link rel="preload" href="/css/style.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
-  <noscript><link rel="stylesheet" href="/css/style.min.css"/></noscript>
-
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="></script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="></script>
-  <script defer src="/js/app.min.js"></script>
-  <link rel="canonical" href="https://enertchad-groupe.vercel.app/talents"/>
-  <link rel="alternate" hreflang="fr" href="https://enertchad-groupe.vercel.app/talents"/>
-  <link rel="alternate" hreflang="en" href="https://enertchad-groupe.vercel.app/talents?lang=en"/>
-
-  <!-- Analytics — Plausible (QW-10) -->
-  <script defer data-domain="enertchad-groupe.vercel.app" src="https://plausible.io/js/script.tagged-events.js"></script>
-  <script>window.plausible=window.plausible||function(){(window.plausible.q=window.plausible.q||[]).push(arguments)}</script>
-  <!-- Sentry — DSN injecté via data-sentry-dsn (fail-silent si absent). Configurer en build-time (Vercel env SENTRY_DSN). -->
-  <script defer src="https://browser.sentry-cdn.com/7.120.0/bundle.min.js" crossorigin="anonymous" data-sentry-dsn=""></script>
-  <script>
-    window.addEventListener("load", function(){
-      var s = document.querySelector("script[data-sentry-dsn]");
-      var dsn = s && s.getAttribute("data-sentry-dsn");
-      if (window.Sentry && dsn && dsn.length > 10) {
-        try { Sentry.init({ dsn: dsn, environment: "production", tracesSampleRate: 0.1, release: (window.__BUILD_SHA__ || "unknown") }); } catch(e) { /* fail-silent */ }
-      }
-    });
-  </script>
-
-  <script defer src="/js/lang.js"></script>
-  <script defer src="/js/nav-premium.js"></script>
-  <script defer src="/js/ultra-premium.js"></script>
-  <link rel="stylesheet" href="/css/nav-premium.css"/>
-  <!-- Ultra-Premium layer (UP-P1 · 2026-04-20) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap">
-  <link rel="stylesheet" href="/css/ultra-premium.css"/>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#080E1A" />
+<title>Talents — Carrières, culture & offres d'emploi | EnerTchad Groupe</title>
+<meta name="description" content="Rejoignez EnerTchad Groupe : 1 240 collaborateurs, 85 % d'effectifs tchadiens, Centre de formation agréé. Découvrez nos offres d'emploi ingénierie, opérations, finance, HSE." />
+  <link rel="canonical" href="https://www.enertchad.td/talents.html" />
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="EnerTchad Groupe" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:url" content="https://www.enertchad.td/talents.html" />
+  <meta property="og:title" content="Talents — Carrières, culture & offres d'emploi | EnerTchad Groupe" />
+  <meta property="og:description" content="Rejoignez EnerTchad Groupe : 1 240 collaborateurs, 85 % d'effectifs tchadiens, Centre de formation agréé. Découvrez nos offres d'emploi ingénierie, opérations, finance, HSE." />
+  <meta property="og:image" content="https://www.enertchad.td/assets/img/og-cover.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Talents — Carrières, culture & offres d'emploi | EnerTchad Groupe" />
+  <meta name="twitter:description" content="Rejoignez EnerTchad Groupe : 1 240 collaborateurs, 85 % d'effectifs tchadiens, Centre de formation agréé. Découvrez nos offres d'emploi ingénierie, opérations, finance, HSE." />
+  <meta name="twitter:image" content="https://www.enertchad.td/assets/img/og-cover.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" />
+<link rel="stylesheet" href="assets/css/main.css" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23D9A84F'/%3E%3Ctext x='16' y='22' font-family='Space Grotesk, sans-serif' font-weight='700' font-size='16' text-anchor='middle' fill='%23080E1A'%3EE%3C/text%3E%3C/svg%3E" />
+  <link rel="manifest" href="manifest.json" />
+  <script>if('serviceWorker' in navigator){window.addEventListener('load',()=>{navigator.serviceWorker.register('/sw.js').catch(()=>{});});}</script>
+<script type="application/ld+json">{
+  "@context":"https://schema.org",
+  "@type":"WebPage",
+  "name":"Carrières — EnerTchad",
+  "url":"https://www.enertchad.td/talents.html",
+  "about":{"@type":"Organization","name":"EnerTchad Groupe SA/CA","numberOfEmployees":1240}
+}</script>
 </head>
 <body>
-<a href="#main" class="skip-link" data-i18n data-en="Skip to content">Aller au contenu</a>
 
-<!-- ═══ LOADING SCREEN ═══ -->
-<div class="page-loader" id="pageLoader" aria-hidden="true">
-  <div class="loader-inner">
-    <div class="loader-logo"><img src="/logo-enertchad.svg" alt="EnerTchad" width="60" height="60" style="filter:drop-shadow(0 0 20px rgba(217,168,79,0.4))"/></div>
-    <div class="loader-bar"><div class="loader-bar-fill"></div></div>
-  </div>
+<div class="nav-wrap">
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand"><span class="brand-mark">E</span><span>Ener<span class="accent">Tchad</span> Groupe</span></a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Accueil</a>
+        <a href="groupe.html">Groupe</a>
+        <div class="nav-dropdown">
+          <button class="nav-drop-trigger" type="button" aria-haspopup="true" aria-expanded="false">Opérations
+            <svg class="chev" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4"/></svg>
+          </button>
+          <div class="nav-drop-menu" role="menu">
+            <a href="operations/amont.html" class="amont" role="menuitem">
+              <span class="nd-num">01</span>
+              <span class="nd-body"><strong>Amont · E&amp;P</strong><span>Exploration &amp; production · 5 bassins</span></span>
+            </a>
+            <a href="operations/intermediaire.html" class="inter" role="menuitem">
+              <span class="nd-num">02</span>
+              <span class="nd-body"><strong>Intermédiaire</strong><span>Pipeline Doba–Kribi · 1 070 km</span></span>
+            </a>
+            <a href="operations/aval.html" class="aval" role="menuitem">
+              <span class="nd-num">03</span>
+              <span class="nd-body"><strong>Aval · Distribution</strong><span>Raffinage &amp; réseau stations</span></span>
+            </a>
+            <a href="operations/services.html" class="svc" role="menuitem">
+              <span class="nd-num">04</span>
+              <span class="nd-body"><strong>Services</strong><span>Oilfield · formation · ingénierie</span></span>
+            </a>
+          </div>
+        </div>
+        <a href="investisseurs.html">Investisseurs</a>
+        <a href="durabilite.html">Durabilité</a>
+        <a href="talents.html" class="active">Talents</a>
+        <a href="actualites.html">Actualités</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="nav-cta">
+        <span class="lang-pill"><span class="on">FR</span>·<span>EN</span></span>
+        <a href="contact.html" class="btn btn-primary">Investir avec nous <span class="arrow">→</span></a>
+        <button class="nav-toggle" aria-label="Menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      </div>
+    </div>
+  </nav>
 </div>
 
-<div class="reading-progress" id="readingProgress" aria-hidden="true"></div>
-<noscript><style>.reveal,.reveal-left{opacity:1!important;transform:none!important}</style></noscript>
-
-<header class="header" id="header">
-  <a class="logo-wrap" href="/" aria-label="EnerTchad Groupe — Accueil">
-    <img loading="lazy" class="logo-img" src="/logo-enertchad.svg" alt="EnerTchad" width="40" height="40" decoding="async"/>
-    <div class="logo-text">Ener<span>Tchad</span></div>
-  </a>
-
-    <nav class="nav" role="navigation" aria-label="Navigation principale">
-    <button class="nav-link" data-mega="oilfield" aria-expanded="false" aria-haspopup="true" data-i18n data-en="Operations">
-      Opérations <i class="fas fa-chevron-down chevron"></i>
-    </button>
-    <button class="nav-link" data-mega="groupe" aria-expanded="false" aria-haspopup="true" data-i18n data-en="Group">
-      Groupe <i class="fas fa-chevron-down chevron"></i>
-    </button>
-    <button class="nav-link" data-mega="durabilite" aria-expanded="false" aria-haspopup="true" data-i18n data-en="Commitment">
-      Engagement <i class="fas fa-chevron-down chevron"></i>
-    </button>
-    <button class="nav-link" data-mega="talents" aria-expanded="false" aria-haspopup="true" data-i18n data-en="Careers">
-      Talents <i class="fas fa-chevron-down chevron"></i>
-    </button>
-    <button class="nav-link" data-mega="actualites" aria-expanded="false" aria-haspopup="true" data-i18n data-en="Media">
-      Médias <i class="fas fa-chevron-down chevron"></i>
-    </button>
-    <a class="nav-link" href="/investisseurs" data-i18n data-en="Investors"><i class="fas fa-chart-pie" style="font-size:0.72rem;opacity:0.7"></i> Investisseurs</a>
-  </nav>
-
-  <div class="header-actions">
-    <a href="/contact" class="header-cta" data-i18n data-en="Request a quote">Demander un devis</a>
-    <button class="lang-btn" id="langToggle" aria-label="Changer de langue">
-      <i class="fas fa-globe"></i> <span class="lang-label">FR</span>
-    </button>
-    <button class="mobile-toggle" id="mobileToggle" aria-label="Ouvrir le menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+<header class="hero hero-sub">
+  <div class="container hero-inner">
+    <span class="kicker reveal">Talents</span>
+    <h1 class="reveal">Votre carrière, l'énergie <span class="gold">d'un pays.</span></h1>
+    <p class="lead reveal" style="--delay:.1s;">Nous recrutons des Tchadiennes et des Tchadiens — ingénieurs, techniciens, opérateurs, juristes, financiers, communicants — qui veulent exercer leur métier à N'Djamena, Doba ou Kribi, au cœur d'un projet industriel souverain.</p>
+    <div class="hero-ctas reveal" style="--delay:.2s;">
+      <a href="#offres" class="btn btn-primary">Voir les 14 offres ouvertes <span class="arrow">↓</span></a>
+      <a href="#cfe" class="btn btn-ghost">Centre de formation</a>
+    </div>
   </div>
 </header>
 
-<main data-category="corporate" data-segment="entreprise" data-tags="RH, Carrières, Academy, Formation, Recrutement" id="main">
-<nav class="breadcrumb" aria-label="Fil d'Ariane">
-  <div class="ctn">
-    <ol class="breadcrumb-list">
-      <li><a href="/" data-i18n data-en="Home">Accueil</a></li>
-      <li class="sep"><i class="fas fa-chevron-right"></i></li>
-      <li class="current" data-i18n data-en="Careers">Talents & Carrières</li>
-    </ol>
+<!-- KPI talents -->
+<section class="kpi-board" style="padding: clamp(32px, 5vw, 56px) 0;">
+  <div class="container">
+    <div class="kpi-grid reveal">
+      <div class="kpi-cell"><div><span class="value"><span data-count="1240">0</span></span></div><div class="label">Collaborateurs</div></div>
+      <div class="kpi-cell"><div><span class="value"><span data-count="85">0</span><span class="unit">%</span></span></div><div class="label">Effectif tchadien</div></div>
+      <div class="kpi-cell"><div><span class="value"><span data-count="42">0</span><span class="unit">%</span></span></div><div class="label">Femmes (corporate)</div></div>
+      <div class="kpi-cell"><div><span class="value"><span data-count="162">0</span></span></div><div class="label">Apprentis diplômés 2025</div></div>
+      <div class="kpi-cell"><div><span class="value"><span data-count="94">0</span><span class="unit">%</span></span></div><div class="label">Insertion à 6 mois</div></div>
+      <div class="kpi-cell"><div><span class="value"><span data-count="14">0</span></span></div><div class="label">Offres ouvertes</div></div>
+    </div>
   </div>
-</nav>
+</section>
 
-  <!-- ═══ HERO ═══ -->
-  <section class="page-hero" style="background:radial-gradient(ellipse 80% 60% at 30% 40%,rgba(217,168,79,0.08),transparent)">
-    <div class="ctn">
-      <div class="hero-inner">
-        <div class="breadcrumb reveal">
-          <a href="/" data-i18n data-en="Home">Accueil</a>
-          <span class="sep">/</span>
-          <span style="color:var(--gold)" data-i18n data-en="Careers">Talents</span>
-        </div>
-        <div class="hero-badge reveal">
-          <i class="fas fa-rocket"></i>
-          <span data-i18n data-en="Careers & Academy">Carrières & Academy</span>
-        </div>
-        <h1 class="reveal" data-i18n data-en="Build the <em class='lux-em'>future</em> of Chadian energy">
-          Construisez l'<em class="lux-em">avenir</em> de <span class="gold">l'énergie tchadienne</span>
-        </h1>
-        <p class="hero-desc reveal" data-i18n data-en="EnerTchad is more than a company — it's a mission. Join 500+ professionals working to build Chad's energy sovereignty. We're hiring across all 4 service poles.">
-          EnerTchad est plus qu'une entreprise — c'est une mission. Rejoignez 500+ professionnels qui construisent la souveraineté énergétique du Tchad. Nous recrutons sur les 4 pôles de services.
-        </p>
-        <div class="hero-actions reveal">
-          <a href="#offres" class="btn btn-primary" data-i18n data-en="See open positions">Voir les postes ouverts <i class="fas fa-arrow-down"></i></a>
-          <a href="#academy" class="btn btn-outline" data-i18n data-en="EnerTchad Academy">EnerTchad Academy <i class="fas fa-graduation-cap"></i></a>
-        </div>
-      </div>
-      <img src="images/talents-hero.svg" alt="Carrières EnerTchad" class="hero-illustration reveal-right" aria-hidden="true" loading="lazy" decoding="async"/>
+<!-- Culture -->
+<section class="dark">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="kicker">Culture &amp; valeurs</span>
+      <h2>Ce qui fait notre signature humaine.</h2>
+      <p class="lead">Travailler chez EnerTchad, c'est accepter la rigueur d'une industrie lourde, le goût du terrain africain, et la conviction que chaque poste compte pour la souveraineté énergétique du pays.</p>
     </div>
-  </section>
 
-  <!-- ═══ CULTURE ═══ -->
-  <section class="section" id="culture">
-    <div class="ctn" id="valeurs">
-      <div class="section-header reveal" style="text-align:center" data-up-scrub data-up-scrub-mode="rise">
-        <div class="section-label" style="justify-content:center" data-i18n data-en="Our Culture">Notre culture</div>
-        <h2 data-i18n data-en="Why EnerTchad?">Pourquoi EnerTchad ?</h2>
+    <div class="values-grid reveal">
+      <div class="value-card">
+        <div class="v-num">01</div>
+        <h4>Excellence opérationnelle</h4>
+        <p>Standards internationaux appliqués à la réalité tchadienne. Aucun compromis sur la sécurité, la qualité, la fiabilité.</p>
       </div>
-      <div class="kpi-grid">
-        <div class="kpi-card reveal">
-          <div style="font-size:2rem;color:var(--gold);margin-bottom:var(--sp-sm)"><i class="fas fa-flag"></i></div>
-          <h4 style="margin-bottom:var(--sp-xs)" data-i18n data-en="Chadian Mission">Mission tchadienne</h4>
-          <p style="font-size:0.85rem" data-i18n data-en="Work with purpose — contribute to your country's energy independence and economic development.">Travaillez avec un sens — contribuez à l'indépendance énergétique et au développement économique de votre pays.</p>
-        </div>
-        <div class="kpi-card reveal" id="diversite">
-          <div style="font-size:2rem;color:var(--tech);margin-bottom:var(--sp-sm)"><i class="fas fa-chart-line"></i></div>
-          <h4 style="margin-bottom:var(--sp-xs)" data-i18n data-en="Career Growth">Progression de carrière</h4>
-          <p style="font-size:0.85rem" data-i18n data-en="A fast-growing group means fast-growing careers. From Graduate Trainee to management in record time.">Un groupe en croissance rapide, c'est des carrières en croissance rapide. Du Graduate Trainee au management en temps record.</p>
-        </div>
-        <div class="kpi-card reveal">
-          <div style="font-size:2rem;color:var(--amont);margin-bottom:var(--sp-sm)"><i class="fas fa-globe"></i></div>
-          <h4 style="margin-bottom:var(--sp-xs)" data-i18n data-en="International Exposure">Exposition internationale</h4>
-          <p style="font-size:0.85rem" data-i18n data-en="Work alongside les grandes compagnies, les majors, TPC — gain experience with world-class operators.">Travaillez aux côtés de les grandes compagnies, les majors, TPC — acquérez de l'expérience avec des opérateurs de classe mondiale.</p>
-        </div>
-        <div class="kpi-card reveal" id="vie">
-          <div style="font-size:2rem;color:var(--energy);margin-bottom:var(--sp-sm)"><i class="fas fa-graduation-cap"></i></div>
-          <h4 style="margin-bottom:var(--sp-xs)" data-i18n data-en="Continuous Learning">Formation continue</h4>
-          <p style="font-size:0.85rem" data-i18n data-en="EnerTchad Academy provides certified technical and management training throughout your career.">EnerTchad Academy offre des formations techniques et managériales certifiées tout au long de votre carrière.</p>
-        </div>
+      <div class="value-card">
+        <div class="v-num">02</div>
+        <h4>Ancrage</h4>
+        <p>Nous sommes d'ici. Nos dirigeants ont grandi au Tchad. Nos salariés y vivent. Nos décisions y sont prises.</p>
+      </div>
+      <div class="value-card">
+        <div class="v-num">03</div>
+        <h4>Transmission</h4>
+        <p>Chaque senior forme deux juniors. Chaque poste a un plan de succession. Le Centre de formation est une obligation, pas un luxe.</p>
+      </div>
+      <div class="value-card">
+        <div class="v-num">04</div>
+        <h4>Intégrité</h4>
+        <p>Zéro tolérance pour la corruption, le harcèlement, la discrimination. Dispositif de lanceurs d'alerte confidentiel.</p>
+      </div>
+      <div class="value-card">
+        <div class="v-num">05</div>
+        <h4>Diversité</h4>
+        <p>Parité ambitionnée à 50 % au Comex en 2030. Politique active d'inclusion pour les communautés pastorales et sahariennes.</p>
+      </div>
+      <div class="value-card">
+        <div class="v-num">06</div>
+        <h4>Long terme</h4>
+        <p>Contrats CDI · retraite complémentaire · couverture santé famille · prêt logement. Nous pensons en décennies, pas en trimestres.</p>
+      </div>
+      <div class="value-card">
+        <div class="v-num">07</div>
+        <h4>Terrain</h4>
+        <p>Deux semaines de mission terrain obligatoires pour chaque corporate chaque année. Un Directeur reste un opérateur.</p>
+      </div>
+      <div class="value-card">
+        <div class="v-num">08</div>
+        <h4>Transparence</h4>
+        <p>Politique salariale explicite. Accès au plan stratégique pour tous. Réunion trimestrielle DG · tous salariés.</p>
       </div>
     </div>
-  </section>
-
-  <!-- ═══ OPEN POSITIONS ═══ -->
-  <section class="section" id="offres" style="background:var(--bg-mid)">
-    <div class="ctn" id="candidature">
-      <div class="section-header reveal" data-up-scrub data-up-scrub-mode="rise">
-        <div class="section-label" data-i18n data-en="Open Positions">Postes ouverts</div>
-        <h2 data-i18n data-en="Join our team">Rejoignez notre équipe</h2>
-        <p data-i18n data-en="Current openings across all subsidiaries. Apply by sending your CV and cover letter.">
-          Postes ouverts sur l'ensemble des pôle. Postulez en envoyant votre CV et lettre de motivation.
-        </p>
-      </div>
-
-      <div class="services-grid">
-        <!-- Job 1 -->
-        <div class="service-card reveal" style="border-left:3px solid var(--amont)">
-          <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:var(--sp-md)">
-            <div class="seg-badge seg-badge--amont" style="margin:0;font-size:0.7rem;padding:4px 10px">Amont</div>
-            <span style="font-size:0.75rem;color:var(--text-muted)">N'Djaména</span>
-          </div>
-          <h4 data-i18n data-en="Drilling Engineer">Ingénieur Forage</h4>
-          <p data-i18n data-en="5+ years experience. Support drilling operations on Doba and Bongor basins. Rig site supervision, well planning.">5+ ans d'expérience. Soutien aux opérations de forage sur les bassins de Doba et Bongor. Supervision de site, planification de puits.</p>
-          <a href="mailto:talents@enertchad.td?subject=Candidature%20-%20Ingénieur%20Forage" class="vc-link" style="color:var(--amont);margin-top:var(--sp-md);display:inline-flex;align-items:center;gap:6px;font-size:0.85rem;font-weight:600" data-i18n data-en="Apply"><span>Postuler</span> <i class="fas fa-arrow-right"></i></a>
-        </div>
-        <!-- Job 2 -->
-        <div class="service-card reveal" style="border-left:3px solid var(--aval)">
-          <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:var(--sp-md)">
-            <div class="seg-badge seg-badge--aval" style="margin:0;font-size:0.7rem;padding:4px 10px">Aval</div>
-            <span style="font-size:0.75rem;color:var(--text-muted)">National</span>
-          </div>
-          <h4 data-i18n data-en="Distribution Manager">Responsable Distribution</h4>
-          <p data-i18n data-en="Manage B2B fuel supply operations. Fleet coordination, inventory management, client relationship management across provinces.">Gestion des opérations B2B. Coordination de flotte, gestion des stocks, relation client sur les provinces.</p>
-          <a href="mailto:talents@enertchad.td?subject=Candidature%20-%20Responsable%20Distribution" class="vc-link" style="color:var(--aval);margin-top:var(--sp-md);display:inline-flex;align-items:center;gap:6px;font-size:0.85rem;font-weight:600" data-i18n data-en="Apply"><span>Postuler</span> <i class="fas fa-arrow-right"></i></a>
-        </div>
-        <!-- Job 3 -->
-        <div class="service-card reveal" style="border-left:3px solid var(--midstream)">
-          <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:var(--sp-md)">
-            <div class="seg-badge seg-badge--mid" style="margin:0;font-size:0.7rem;padding:4px 10px">Midstream</div>
-            <span style="font-size:0.75rem;color:var(--text-muted)">Doba</span>
-          </div>
-          <h4 data-i18n data-en="Pipeline Integrity Inspector">Inspecteur Intégrité Pipeline</h4>
-          <p data-i18n data-en="NDT inspections, corrosion monitoring, integrity assessments. 3+ years pipeline experience. ASNT certification preferred.">Inspections NDT, monitoring corrosion, évaluations d'intégrité. 3+ ans d'expérience pipeline. Certification ASNT souhaitée.</p>
-          <a href="mailto:talents@enertchad.td?subject=Candidature%20-%20Inspecteur%20Pipeline" class="vc-link" style="color:var(--midstream);margin-top:var(--sp-md);display:inline-flex;align-items:center;gap:6px;font-size:0.85rem;font-weight:600" data-i18n data-en="Apply"><span>Postuler</span> <i class="fas fa-arrow-right"></i></a>
-        </div>
-        <!-- Job 4 -->
-        <div class="service-card reveal" style="border-left:3px solid var(--tech)">
-          <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:var(--sp-md)">
-            <div class="seg-badge" style="margin:0;font-size:0.7rem;padding:4px 10px;background:var(--tech-dim);color:var(--tech);border:1px solid rgba(139,92,246,0.2)">Technologies</div>
-            <span style="font-size:0.75rem;color:var(--text-muted)">N'Djaména</span>
-          </div>
-          <h4 data-i18n data-en="SCADA / IoT Engineer">Ingénieur SCADA / IoT</h4>
-          <p data-i18n data-en="Design and deploy SCADA monitoring systems for oilfield operations. IoT sensor networks, dashboard development, data analytics.">Conception et déploiement de systèmes SCADA. Réseaux de capteurs IoT, développement de dashboards, analyse de données.</p>
-          <a href="mailto:talents@enertchad.td?subject=Candidature%20-%20Ingénieur%20SCADA" class="vc-link" style="color:var(--tech);margin-top:var(--sp-md);display:inline-flex;align-items:center;gap:6px;font-size:0.85rem;font-weight:600" data-i18n data-en="Apply"><span>Postuler</span> <i class="fas fa-arrow-right"></i></a>
-        </div>
-        <!-- Job 5 -->
-        <div class="service-card reveal" style="border-left:3px solid var(--amont)">
-          <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:var(--sp-md)">
-            <div class="seg-badge seg-badge--amont" style="margin:0;font-size:0.7rem;padding:4px 10px">Amont</div>
-            <span style="font-size:0.75rem;color:var(--text-muted)">Bongor</span>
-          </div>
-          <h4 data-i18n data-en="HSE Supervisor">Superviseur HSE</h4>
-          <p data-i18n data-en="HSE management on operational sites. Safety audits, emergency response planning, environmental monitoring, training delivery.">Gestion HSE sur les sites opérationnels. Audits sécurité, planification d'urgence, monitoring environnemental, formation.</p>
-          <a href="mailto:talents@enertchad.td?subject=Candidature%20-%20Superviseur%20HSE" class="vc-link" style="color:var(--amont);margin-top:var(--sp-md);display:inline-flex;align-items:center;gap:6px;font-size:0.85rem;font-weight:600" data-i18n data-en="Apply"><span>Postuler</span> <i class="fas fa-arrow-right"></i></a>
-        </div>
-        <!-- Job 6 - Graduate -->
-        <span id="graduate" aria-hidden="true" style="display:block;position:relative;top:-80px"></span>
-        <div class="service-card reveal" style="border-left:3px solid var(--gold)">
-          <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:var(--sp-md)">
-            <div class="hero-badge" style="margin:0;font-size:0.7rem;padding:4px 10px">Graduate</div>
-            <span style="font-size:0.75rem;color:var(--text-muted)">National</span>
-          </div>
-          <h4 data-i18n data-en="Graduate Trainee Program">Programme Graduate Trainee</h4>
-          <p data-i18n data-en="Fresh graduates in engineering, geology, finance, or IT. 18-month rotational program across subsidiaries with mentorship and fast-track career path.">Jeunes diplômés en ingénierie, géologie, finance ou IT. Programme rotatif de 18 mois avec mentorat et accélération de carrière.</p>
-          <a href="mailto:talents@enertchad.td?subject=Candidature%20-%20Graduate%20Trainee" class="vc-link" style="color:var(--gold);margin-top:var(--sp-md);display:inline-flex;align-items:center;gap:6px;font-size:0.85rem;font-weight:600" data-i18n data-en="Apply"><span>Postuler</span> <i class="fas fa-arrow-right"></i></a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══ ACADEMY ═══ -->
-  <section class="section" id="academy">
-    <div class="ctn">
-      <div class="section-header reveal" style="text-align:center" id="stages" data-up-scrub data-up-scrub-mode="rise">
-        <div class="section-label" style="justify-content:center" data-i18n data-en="EnerTchad Academy">EnerTchad Academy</div>
-        <h2 data-i18n data-en="Investing in Chadian expertise">Investir dans l'expertise tchadienne</h2>
-        <p style="margin:0 auto" data-i18n data-en="2,400+ professionals trained, 40+ programs, 3 training centers. Certifications: IWCF, API, NACE, ASME, NEBOSH, BOSIET, H2S, ISO 45001. 20-30 young engineers in alternance per year.">
-          2 400+ professionnels formés, 40+ programmes, 3 centres de formation. Certifications : IWCF, API, NACE, ASME, NEBOSH, BOSIET, H2S, ISO 45001. 20-30 jeunes ingénieurs en alternance par an.
-        </p>
-      </div>
-      <div class="vc-grid" id="competences">
-        <div class="service-card reveal" style="text-align:center;padding:var(--sp-2xl)">
-          <div style="width:64px;height:64px;border-radius:50%;background:var(--amont-dim);display:flex;align-items:center;justify-content:center;margin:0 auto var(--sp-lg);font-size:1.4rem;color:var(--amont)">
-            <i class="fas fa-hard-hat"></i>
-          </div>
-          <h4 data-i18n data-en="Technical Programs">Formations techniques</h4>
-          <p style="margin-top:var(--sp-sm)" data-i18n data-en="Well control, NDT inspection, SCADA operations, HSE certification, pipeline integrity, drilling technology.">
-            Contrôle de puits, inspection NDT, opérations SCADA, certification HSE, intégrité pipeline, technologie de forage.
-          </p>
-        </div>
-        <div class="service-card reveal" style="text-align:center;padding:var(--sp-2xl)">
-          <div style="width:64px;height:64px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;margin:0 auto var(--sp-lg);font-size:1.4rem;color:var(--gold)">
-            <i class="fas fa-briefcase"></i>
-          </div>
-          <h4 data-i18n data-en="Management Track">Parcours management</h4>
-          <p style="margin-top:var(--sp-sm)" data-i18n data-en="Project management, leadership development, financial management, contract negotiation, stakeholder management.">
-            Gestion de projet, développement du leadership, gestion financière, négociation de contrats, gestion des parties prenantes.
-          </p>
-        </div>
-        <div class="service-card reveal" style="text-align:center;padding:var(--sp-2xl)">
-          <div style="width:64px;height:64px;border-radius:50%;background:var(--energy-dim);display:flex;align-items:center;justify-content:center;margin:0 auto var(--sp-lg);font-size:1.4rem;color:var(--energy)">
-            <i class="fas fa-handshake"></i>
-          </div>
-          <h4 data-i18n data-en="University Partnerships" id="partenariats">Partenariats universitaires</h4>
-          <p style="margin-top:var(--sp-sm)" data-i18n data-en="Collaboration with Chadian universities for internships, research projects, and curriculum development aligned with industry needs.">
-            Collaboration avec les universités tchadiennes pour stages, projets de recherche et développement de cursus alignés sur l'industrie.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══ CTA ═══ -->
-  <section class="cta-band">
-    <div class="ctn">
-      <h2 class="reveal" data-i18n data-en="Ready to apply?">Prêt à postuler ?</h2>
-      <p class="reveal" data-i18n data-en="Send your CV and cover letter to talents@enertchad.td — we'll get back to you within 5 business days.">
-        Envoyez votre CV et lettre de motivation à talents@enertchad.td — nous vous répondrons sous 5 jours ouvrés.
-      </p>
-      <div class="cta-actions reveal">
-        <a href="mailto:talents@enertchad.td" class="btn btn-primary"><i class="fas fa-paper-plane"></i> <span data-i18n data-en="Send Application">Envoyer ma candidature</span></a>
-        <a href="/" class="btn btn-outline"><i class="fas fa-arrow-left"></i> <span data-i18n data-en="Back to Home">Retour à l'accueil</span></a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══ ENERACADEMY PROGRAMS ═══ -->
-  <section class="section" style="background:linear-gradient(135deg,rgba(8,14,26,0.8),rgba(15,26,46,0.6))">
-    <div class="ctn">
-      <div class="section-header reveal" style="text-align:center">
-        <div class="section-label" style="justify-content:center" data-i18n data-en="EnerAcademy">EnerAcademy — Centre de Formation</div>
-        <h2 data-i18n data-en="Comprehensive Training Programs">Programmes de formation complets</h2>
-        <p style="margin:0 auto" data-i18n data-en="2,400 hours of training annually across 5 specialized tracks with international certifications.">
-          2 400 heures de formation par an sur 5 domaines spécialisés avec certifications internationales.
-        </p>
-      </div>
-      <div class="vc-grid reveal" style="margin-top:var(--sp-2xl)">
-        <!-- Well Control -->
-        <div class="service-card" style="text-align:center;padding:var(--sp-2xl);background:rgba(15,26,46,0.8);border-radius:14px;border:1px solid rgba(217,168,79,0.2)">
-          <div style="width:64px;height:64px;border-radius:50%;background:rgba(217,168,79,0.15);display:flex;align-items:center;justify-content:center;margin:0 auto var(--sp-lg);font-size:1.4rem;color:var(--gold)">
-            <i class="fas fa-shield-alt"></i>
-          </div>
-          <h4 data-i18n data-en="Well Control (IWCF)">Contrôle de puits (IWCF)</h4>
-          <p style="margin-top:var(--sp-sm);color:var(--text-secondary)" data-i18n data-en="International Well Control Forum certification. Blowout prevention, well monitoring, emergency response procedures.">
-            Certification IWCF. Prévention des éruptions, monitoring de puits, procédures d'urgence.
-          </p>
-        </div>
-        <!-- Drilling Operations -->
-        <div class="service-card" style="text-align:center;padding:var(--sp-2xl);background:rgba(15,26,46,0.8);border-radius:14px;border:1px solid rgba(217,168,79,0.2)">
-          <div style="width:64px;height:64px;border-radius:50%;background:rgba(217,168,79,0.15);display:flex;align-items:center;justify-content:center;margin:0 auto var(--sp-lg);font-size:1.4rem;color:var(--gold)">
-            <i class="fas fa-hammer"></i>
-          </div>
-          <h4 data-i18n data-en="Drilling Operations">Opérations de forage</h4>
-          <p style="margin-top:var(--sp-sm);color:var(--text-secondary)" data-i18n data-en="Drill floor management, mud systems, directional drilling, well design optimization, pressure control.">
-            Gestion du plancher de forage, systèmes de fluide, forage directionnel, optimisation des puits.
-          </p>
-        </div>
-        <!-- SCADA/Digital -->
-        <div class="service-card" style="text-align:center;padding:var(--sp-2xl);background:rgba(15,26,46,0.8);border-radius:14px;border:1px solid rgba(217,168,79,0.2)">
-          <div style="width:64px;height:64px;border-radius:50%;background:rgba(217,168,79,0.15);display:flex;align-items:center;justify-content:center;margin:0 auto var(--sp-lg);font-size:1.4rem;color:var(--gold)">
-            <i class="fas fa-microchip"></i>
-          </div>
-          <h4 data-i18n data-en="SCADA & Digital Systems">SCADA & Systèmes numériques</h4>
-          <p style="margin-top:var(--sp-sm);color:var(--text-secondary)" data-i18n data-en="SCADA configuration, IoT sensors, remote operations, real-time data analytics, cybersecurity basics.">
-            Configuration SCADA, capteurs IoT, opérations distantes, analytique temps réel, cyber-sécurité.
-          </p>
-        </div>
-        <!-- HSE Certification -->
-        <div class="service-card" style="text-align:center;padding:var(--sp-2xl);background:rgba(15,26,46,0.8);border-radius:14px;border:1px solid rgba(217,168,79,0.2)">
-          <div style="width:64px;height:64px;border-radius:50%;background:rgba(217,168,79,0.15);display:flex;align-items:center;justify-content:center;margin:0 auto var(--sp-lg);font-size:1.4rem;color:var(--gold)">
-            <i class="fas fa-heart-pulse"></i>
-          </div>
-          <h4 data-i18n data-en="HSE Certification">Certification HSE</h4>
-          <p style="margin-top:var(--sp-sm);color:var(--text-secondary)" data-i18n data-en="ISO 45001, NEBOSH, H2S awareness, hazard management, incident reporting, safety culture.">
-            ISO 45001, NEBOSH, sensibilisation H2S, gestion des risques, culture de sécurité.
-          </p>
-        </div>
-        <!-- Field Supervision -->
-        <div class="service-card" style="text-align:center;padding:var(--sp-2xl);background:rgba(15,26,46,0.8);border-radius:14px;border:1px solid rgba(217,168,79,0.2)">
-          <div style="width:64px;height:64px;border-radius:50%;background:rgba(217,168,79,0.15);display:flex;align-items:center;justify-content:center;margin:0 auto var(--sp-lg);font-size:1.4rem;color:var(--gold)">
-            <i class="fas fa-users-gear"></i>
-          </div>
-          <h4 data-i18n data-en="Field Supervision">Supervision terrain</h4>
-          <p style="margin-top:var(--sp-sm);color:var(--text-secondary)" data-i18n data-en="Team leadership, field reporting, quality control, logistics management, field safety protocols.">
-            Leadership d'équipe, rapports terrain, contrôle qualité, gestion de la logistique.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══ TÉMOIGNAGES ═══ -->
-  <section class="section" id="temoignages" style="background:var(--bg-mid)">
-    <div class="ctn">
-      <div class="section-header reveal" style="text-align:center">
-        <div class="section-label" style="justify-content:center" data-i18n data-en="Employee Stories">Témoignages collaborateurs</div>
-        <h2 data-i18n data-en="Voices from the team">Voix de l'équipe</h2>
-        <p style="margin:0 auto" data-i18n data-en="Discover what our team members love about working at EnerTchad.">
-          Découvrez pourquoi nos collaborateurs aiment travailler chez EnerTchad.
-        </p>
-      </div>
-      <div class="vc-grid reveal" style="margin-top:var(--sp-2xl)">
-        <!-- Testimonial 1: Ahmed M. -->
-        <div class="glass-card" style="display:flex;flex-direction:column;gap:var(--sp-md);padding:var(--sp-2xl)">
-          <div style="display:flex;align-items:center;gap:var(--sp-md)">
-            <div style="width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,var(--well),var(--well-dim));display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--white);font-size:1.2rem">AM</div>
-            <div>
-              <h4 style="margin:0;color:var(--white)" data-i18n data-en="Ahmed M.">Ahmed M.</h4>
-              <p style="margin:var(--sp-xs) 0 0 0;color:var(--text-secondary);font-size:0.85rem" data-i18n data-en="Well Services Engineer">Ingénieur Well Services</p>
-              <span style="display:inline-block;margin-top:4px;padding:2px 8px;background:var(--well-dim);color:var(--well);border-radius:4px;font-size:0.7rem;font-weight:600" data-i18n data-en="Well Services">Well Services</span>
-            </div>
-          </div>
-          <blockquote style="margin:0;padding:var(--sp-md);background:rgba(46,134,222,0.08);border-left:3px solid var(--well);border-radius:6px;font-style:italic;color:var(--text-secondary);line-height:1.6" data-i18n data-en="&quot;Working here, I feel like part of a real team pushing toward a shared goal. The technical challenges keep me sharp, and the mentorship from senior engineers is invaluable. This is where I want to build my career.&quot;">
-            « Ici, je me sens vraiment partie d'une équipe avec un objectif commun. Les défis techniques me maintiennent au sommet de mon art, et le mentorat des ingénieurs seniors est inestimable. C'est là que je veux construire ma carrière. »
-          </blockquote>
-        </div>
-        <!-- Testimonial 2: Fatima D. -->
-        <div class="glass-card" style="display:flex;flex-direction:column;gap:var(--sp-md);padding:var(--sp-2xl)">
-          <div style="display:flex;align-items:center;gap:var(--sp-md)">
-            <div style="width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,var(--digital),var(--digital-dim));display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--white);font-size:1.2rem">FD</div>
-            <div>
-              <h4 style="margin:0;color:var(--white)" data-i18n data-en="Fatima D.">Fatima D.</h4>
-              <p style="margin:var(--sp-xs) 0 0 0;color:var(--text-secondary);font-size:0.85rem" data-i18n data-en="SCADA Data Analyst">Analyste SCADA</p>
-              <span style="display:inline-block;margin-top:4px;padding:2px 8px;background:var(--digital-dim);color:var(--digital);border-radius:4px;font-size:0.7rem;font-weight:600" data-i18n data-en="Digital">Digital</span>
-            </div>
-          </div>
-          <blockquote style="margin:0;padding:var(--sp-md);background:rgba(139,92,246,0.08);border-left:3px solid var(--digital);border-radius:6px;font-style:italic;color:var(--text-secondary);line-height:1.6" data-i18n data-en="&quot;The innovation here is electric. We're building real-time monitoring systems that directly impact field safety and productivity. My ideas are heard and implemented. That's what keeps me engaged every day.&quot;">
-            « L'innovation ici est impressionnante. On construit des systèmes de monitoring temps réel qui impactent directement la sécurité et la productivité. Mes idées sont écoutées et mises en œuvre. C'est cela qui me motive chaque jour. »
-          </blockquote>
-        </div>
-        <!-- Testimonial 3: Ibrahim K. -->
-        <div class="glass-card" style="display:flex;flex-direction:column;gap:var(--sp-md);padding:var(--sp-2xl)">
-          <div style="display:flex;align-items:center;gap:var(--sp-md)">
-            <div style="width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,var(--drilling),var(--drilling-dim));display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--white);font-size:1.2rem">IK</div>
-            <div>
-              <h4 style="margin:0;color:var(--white)" data-i18n data-en="Ibrahim K.">Ibrahim K.</h4>
-              <p style="margin:var(--sp-xs) 0 0 0;color:var(--text-secondary);font-size:0.85rem" data-i18n data-en="Drilling Supervisor">Superviseur Forage</p>
-              <span style="display:inline-block;margin-top:4px;padding:2px 8px;background:var(--drilling-dim);color:var(--drilling);border-radius:4px;font-size:0.7rem;font-weight:600" data-i18n data-en="Drilling">Drilling</span>
-            </div>
-          </div>
-          <blockquote style="margin:0;padding:var(--sp-md);background:rgba(14,165,233,0.08);border-left:3px solid var(--drilling);border-radius:6px;font-style:italic;color:var(--text-secondary);line-height:1.6" data-i18n data-en="&quot;I've been in this industry for 15 years, and I've never seen a Chadian company operate at this level. We're proving that talent and commitment matter more than company size. My growth trajectory here is exciting.&quot;">
-            « J'ai 15 ans d'expérience, et jamais je n'ai vu une entreprise tchadienne opérer à ce niveau. On prouve que le talent et l'engagement comptent plus que la taille. Ma trajectoire de croissance ici est exaltante. »
-          </blockquote>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══ CAREER PATHWAY & TRAINING ═══ -->
-  <section class="section" id="parcours">
-    <div class="ctn">
-      <div class="section-header reveal" style="text-align:center">
-        <div class="section-label" style="justify-content:center" data-i18n data-en="Career Pathway">Parcours de carrière</div>
-        <h2 data-i18n data-en="EnerAcademy: Your Growth Journey">EnerAcademy : Votre parcours de croissance</h2>
-        <p style="margin:0 auto" data-i18n data-en="From onboarding to leadership: a structured path for continuous professional development.">
-          De l'intégration au leadership : un parcours structuré pour votre développement professionnel continu.
-        </p>
-      </div>
-
-      <!-- Career Pathway Steps -->
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:var(--sp-lg);margin-top:var(--sp-2xl);margin-bottom:var(--sp-3xl)">
-        <!-- Step 1 -->
-        <div class="reveal" style="text-align:center;padding:var(--sp-xl);background:rgba(15,26,46,0.8);border-radius:12px;border:1px solid rgba(217,168,79,0.2);position:relative">
-          <div style="width:48px;height:48px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;margin:0 auto var(--sp-md);font-weight:700;color:var(--gold);font-size:1.1rem">1</div>
-          <h4 style="color:var(--white);margin:0 0 var(--sp-sm) 0" data-i18n data-en="Onboarding">Intégration</h4>
-          <p style="color:var(--text-secondary);margin:0;font-size:0.9rem" data-i18n data-en="Company induction, team integration, safety certifications, technical overview.">
-            Induction, intégration d'équipe, certifications sécurité, aperçu technique.
-          </p>
-        </div>
-        <!-- Step 2 -->
-        <div class="reveal" style="text-align:center;padding:var(--sp-xl);background:rgba(15,26,46,0.8);border-radius:12px;border:1px solid rgba(217,168,79,0.2);position:relative">
-          <div style="width:48px;height:48px;border-radius:50%;background:var(--drilling-dim);display:flex;align-items:center;justify-content:center;margin:0 auto var(--sp-md);font-weight:700;color:var(--drilling);font-size:1.1rem">2</div>
-          <h4 style="color:var(--white);margin:0 0 var(--sp-sm) 0" data-i18n data-en="Specialized Training">Formation spécialisée</h4>
-          <p style="color:var(--text-secondary);margin:0;font-size:0.9rem" data-i18n data-en="IWCF, API, IMCA certifications. Hands-on field training. Technical depth building.">
-            Certifications IWCF, API, IMCA. Formation terrain pratique. Approfondissement technique.
-          </p>
-        </div>
-        <!-- Step 3 -->
-        <div class="reveal" style="text-align:center;padding:var(--sp-xl);background:rgba(15,26,46,0.8);border-radius:12px;border:1px solid rgba(217,168,79,0.2);position:relative">
-          <div style="width:48px;height:48px;border-radius:50%;background:var(--digital-dim);display:flex;align-items:center;justify-content:center;margin:0 auto var(--sp-md);font-weight:700;color:var(--digital);font-size:1.1rem">3</div>
-          <h4 style="color:var(--white);margin:0 0 var(--sp-sm) 0" data-i18n data-en="International Cert.">Certification internat.</h4>
-          <p style="color:var(--text-secondary);margin:0;font-size:0.9rem" data-i18n data-en="IWCF well control, BOSIET, H2S, ISO 45001, NEBOSH HSE leadership.">
-            IWCF, BOSIET, H2S, ISO 45001, NEBOSH HSE. Leadership.
-          </p>
-        </div>
-        <!-- Step 4 -->
-        <div class="reveal" style="text-align:center;padding:var(--sp-xl);background:rgba(15,26,46,0.8);border-radius:12px;border:1px solid rgba(217,168,79,0.2);position:relative">
-          <div style="width:48px;height:48px;border-radius:50%;background:var(--consulting-dim);display:flex;align-items:center;justify-content:center;margin:0 auto var(--sp-md);font-weight:700;color:var(--consulting);font-size:1.1rem">4</div>
-          <h4 style="color:var(--white);margin:0 0 var(--sp-sm) 0" data-i18n data-en="Career Evolution">Évolution carrière</h4>
-          <p style="color:var(--text-secondary);margin:0;font-size:0.9rem" data-i18n data-en="Management track, subject matter expert, project leadership, internal mobility.">
-            Parcours management, expert technique, direction projet, mobilité interne.
-          </p>
-        </div>
-      </div>
-
-      <!-- Training KPIs -->
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:var(--sp-lg)">
-        <div class="reveal" style="text-align:center;padding:var(--sp-xl);background:rgba(217,168,79,0.08);border-radius:12px;border:1px solid rgba(217,168,79,0.2)">
-          <div style="font-size:2.2rem;font-weight:700;color:var(--gold);margin-bottom:var(--sp-sm)">2,400</div>
-          <p style="color:var(--text-secondary);margin:0;font-size:0.9rem" data-i18n data-en="Training hours/year">Heures formation/an</p>
-        </div>
-        <div class="reveal" style="text-align:center;padding:var(--sp-xl);background:rgba(139,92,246,0.08);border-radius:12px;border:1px solid rgba(139,92,246,0.2)">
-          <div style="font-size:2.2rem;font-weight:700;color:var(--digital);margin-bottom:var(--sp-sm)">15+</div>
-          <p style="color:var(--text-secondary);margin:0;font-size:0.9rem" data-i18n data-en="Certifications">Certifications</p>
-        </div>
-        <div class="reveal" style="text-align:center;padding:var(--sp-xl);background:rgba(16,185,129,0.08);border-radius:12px;border:1px solid rgba(16,185,129,0.2)">
-          <div style="font-size:2.2rem;font-weight:700;color:var(--consulting);margin-bottom:var(--sp-sm)">4</div>
-          <p style="color:var(--text-secondary);margin:0;font-size:0.9rem" data-i18n data-en="Career Paths">Parcours métiers</p>
-        </div>
-        <div class="reveal" style="text-align:center;padding:var(--sp-xl);background:rgba(16,185,129,0.08);border-radius:12px;border:1px solid rgba(16,185,129,0.2)">
-          <div style="font-size:2.2rem;font-weight:700;color:var(--consulting);margin-bottom:var(--sp-sm)">95%</div>
-          <p style="color:var(--text-secondary);margin:0;font-size:0.9rem" data-i18n data-en="Satisfaction">Taux satisfaction</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══ BENEFITS & PERKS ═══ -->
-  <section class="section" id="avantages" style="background:var(--bg-mid)">
-    <div class="ctn">
-      <div class="section-header reveal" style="text-align:center">
-        <div class="section-label" style="justify-content:center" data-i18n data-en="Benefits & Perks">Avantages & Bénéfices</div>
-        <h2 data-i18n data-en="Why join us?">Pourquoi nous rejoindre ?</h2>
-        <p style="margin:0 auto" data-i18n data-en="Competitive compensation plus world-class benefits designed for your wellbeing.">
-          Rémunération compétitive plus avantages de classe mondiale pour votre bien-être.
-        </p>
-      </div>
-
-      <div class="vc-grid reveal" style="margin-top:var(--sp-2xl)">
-        <!-- Benefit 1: Formation Continue -->
-        <div class="glass-card" style="display:flex;flex-direction:column;gap:var(--sp-md);text-align:center;padding:var(--sp-2xl)">
-          <div style="width:64px;height:64px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;margin:0 auto;font-size:1.5rem;color:var(--gold)">
-            <i class="fas fa-book-open"></i>
-          </div>
-          <h4 style="margin:0;color:var(--white)" data-i18n data-en="Continuous Learning">Formation continue</h4>
-          <p style="color:var(--text-secondary);margin:0;font-size:0.9rem" data-i18n data-en="Unlimited access to EnerAcademy programs, international certifications, and professional development budgets.">
-            Accès illimité à EnerAcademy, certifications internationales, budget développement professionnel.
-          </p>
-        </div>
-        <!-- Benefit 2: Rémunération Compétitive -->
-        <div class="glass-card" style="display:flex;flex-direction:column;gap:var(--sp-md);text-align:center;padding:var(--sp-2xl)">
-          <div style="width:64px;height:64px;border-radius:50%;background:var(--drilling-dim);display:flex;align-items:center;justify-content:center;margin:0 auto;font-size:1.5rem;color:var(--drilling)">
-            <i class="fas fa-coins"></i>
-          </div>
-          <h4 style="margin:0;color:var(--white)" data-i18n data-en="Competitive Salary">Rémunération compétitive</h4>
-          <p style="color:var(--text-secondary);margin:0;font-size:0.9rem" data-i18n data-en="Market-aligned salaries, performance bonuses, profit-sharing, and benefits on par with international majors.">
-            Salaires alignés marché, primes de performance, partage des résultats, avantages comparables aux majors.
-          </p>
-        </div>
-        <!-- Benefit 3: Environnement International -->
-        <div class="glass-card" style="display:flex;flex-direction:column;gap:var(--sp-md);text-align:center;padding:var(--sp-2xl)">
-          <div style="width:64px;height:64px;border-radius:50%;background:var(--digital-dim);display:flex;align-items:center;justify-content:center;margin:0 auto;font-size:1.5rem;color:var(--digital)">
-            <i class="fas fa-globe"></i>
-          </div>
-          <h4 style="margin:0;color:var(--white)" data-i18n data-en="International Environment">Environnement international</h4>
-          <p style="color:var(--text-secondary);margin:0;font-size:0.9rem" data-i18n data-en="Work with major operators, international technical standards, cross-border knowledge sharing, global exposure.">
-            Collaboration avec majors, standards techniques internationaux, partage de connaissances global.
-          </p>
-        </div>
-        <!-- Benefit 4: Évolution Rapide -->
-        <div class="glass-card" style="display:flex;flex-direction:column;gap:var(--sp-md);text-align:center;padding:var(--sp-2xl)">
-          <div style="width:64px;height:64px;border-radius:50%;background:var(--consulting-dim);display:flex;align-items:center;justify-content:center;margin:0 auto;font-size:1.5rem;color:var(--consulting)">
-            <i class="fas fa-arrow-trend-up"></i>
-          </div>
-          <h4 style="margin:0;color:var(--white)" data-i18n data-en="Fast Promotion">Évolution rapide</h4>
-          <p style="color:var(--text-secondary);margin:0;font-size:0.9rem" data-i18n data-en="High-growth company = accelerated career progression. Move from graduate to management in 5-7 years.">
-            Entreprise en croissance = progression de carrière rapide. Graduate à manager en 5-7 ans.
-          </p>
-        </div>
-        <!-- Benefit 5: Assurance Santé -->
-        <div class="glass-card" style="display:flex;flex-direction:column;gap:var(--sp-md);text-align:center;padding:var(--sp-2xl)">
-          <div style="width:64px;height:64px;border-radius:50%;background:rgba(16,185,129,0.15);display:flex;align-items:center;justify-content:center;margin:0 auto;font-size:1.5rem;color:var(--success)">
-            <i class="fas fa-heart-pulse"></i>
-          </div>
-          <h4 style="margin:0;color:var(--white)" data-i18n data-en="Health Insurance">Assurance santé</h4>
-          <p style="color:var(--text-secondary);margin:0;font-size:0.9rem" data-i18n data-en="Comprehensive medical, dental, vision coverage for you and family. Preventive health programs included.">
-            Couverture médicale, dentaire, optique complète. Programmes prévention santé inclus.
-          </p>
-        </div>
-        <!-- Benefit 6: Transport & Logement -->
-        <div class="glass-card" style="display:flex;flex-direction:column;gap:var(--sp-md);text-align:center;padding:var(--sp-2xl)">
-          <div style="width:64px;height:64px;border-radius:50%;background:rgba(16,185,129,0.15);display:flex;align-items:center;justify-content:center;margin:0 auto;font-size:1.5rem;color:var(--success)">
-            <i class="fas fa-car"></i>
-          </div>
-          <h4 style="margin:0;color:var(--white)" data-i18n data-en="Transport & Housing">Transport & Logement</h4>
-          <p style="color:var(--text-secondary);margin:0;font-size:0.9rem" data-i18n data-en="Company transportation to offices, field sites, and remote work flexibility. Housing assistance for relocated staff.">
-            Transport entreprise, sites terrain, télétravail flexible. Aide au logement pour personnels relocalisés.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══ TALENT FIGURES (KPI) ═══ -->
-  <section class="section" style="background:linear-gradient(180deg,rgba(8,14,26,0.9),rgba(10,18,32,0.95))">
-    <div class="ctn">
-      <div class="section-header reveal" style="text-align:center">
-        <div class="section-label" style="justify-content:center" data-i18n data-en="Talent Figures">Chiffres Talents</div>
-      </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:var(--sp-xl);margin-top:var(--sp-2xl)">
-        <!-- KPI: Collaborateurs -->
-        <div class="reveal" style="text-align:center;padding:var(--sp-xl);background:rgba(15,26,46,0.8);border-radius:14px;border:1px solid rgba(217,168,79,0.15)">
-          <div style="font-size:2.5rem;font-weight:700;color:var(--gold);margin-bottom:var(--sp-sm)">1,240</div>
-          <p style="color:var(--text-secondary);margin:0" data-i18n data-en="Collaborators">Collaborateurs</p>
-        </div>
-        <!-- KPI: Local workforce -->
-        <div class="reveal" style="text-align:center;padding:var(--sp-xl);background:rgba(15,26,46,0.8);border-radius:14px;border:1px solid rgba(217,168,79,0.15)">
-          <div style="font-size:2.5rem;font-weight:700;color:var(--gold);margin-bottom:var(--sp-sm)">85%</div>
-          <p style="color:var(--text-secondary);margin:0" data-i18n data-en="Local workforce">Main-d'œuvre locale</p>
-        </div>
-        <!-- KPI: Days without accident -->
-        <div class="reveal" style="text-align:center;padding:var(--sp-xl);background:rgba(15,26,46,0.8);border-radius:14px;border:1px solid rgba(217,168,79,0.15)">
-          <div style="font-size:2.5rem;font-weight:700;color:var(--success);margin-bottom:var(--sp-sm)">842</div>
-          <p style="color:var(--text-secondary);margin:0" data-i18n data-en="Days without incident">Jours sans accident</p>
-        </div>
-        <!-- KPI: Training hours -->
-        <div class="reveal" style="text-align:center;padding:var(--sp-xl);background:rgba(15,26,46,0.8);border-radius:14px;border:1px solid rgba(217,168,79,0.15)">
-          <div style="font-size:2.5rem;font-weight:700;color:var(--gold);margin-bottom:var(--sp-sm)">2,400</div>
-          <p style="color:var(--text-secondary);margin:0" data-i18n data-en="Training hours/year">Heures formation/an</p>
-        </div>
-        <!-- KPI: Connected schools -->
-        <div class="reveal" style="text-align:center;padding:var(--sp-xl);background:rgba(15,26,46,0.8);border-radius:14px;border:1px solid rgba(217,168,79,0.15)">
-          <div style="font-size:2.5rem;font-weight:700;color:var(--gold);margin-bottom:var(--sp-sm)">42</div>
-          <p style="color:var(--text-secondary);margin:0" data-i18n data-en="Connected schools">Écoles connectées</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══ CULTURE & VALUES ═══ -->
-  <section class="section">
-    <div class="ctn">
-      <div class="section-header reveal" style="text-align:center">
-        <div class="section-label" style="justify-content:center" data-i18n data-en="Our Culture">Culture & Valeurs</div>
-        <h2 data-i18n data-en="What drives us">Ce qui nous anime</h2>
-        <p style="margin:0 auto" data-i18n data-en="Four core pillars shaping our organization and team spirit.">
-          Quatre piliers fondamentaux qui façonnent notre organisation et notre esprit d'équipe.
-        </p>
-      </div>
-      <div class="vc-grid reveal" style="margin-top:var(--sp-2xl)">
-        <!-- Excellence Technique -->
-        <div class="service-card" style="text-align:center;padding:var(--sp-2xl);background:rgba(15,26,46,0.8);border-radius:14px;border:1px solid rgba(217,168,79,0.2)">
-          <div style="width:64px;height:64px;border-radius:50%;background:rgba(217,168,79,0.15);display:flex;align-items:center;justify-content:center;margin:0 auto var(--sp-lg);font-size:1.4rem;color:var(--gold)">
-            <i class="fas fa-star"></i>
-          </div>
-          <h4 data-i18n data-en="Technical Excellence">Excellence technique</h4>
-          <p style="margin-top:var(--sp-sm);color:var(--text-secondary)" data-i18n data-en="Major-level expertise with rigorous standards. Continuous learning and technical mastery in every discipline.">
-            Expertise de niveau majors. Apprentissage continu et maîtrise technique dans chaque domaine.
-          </p>
-        </div>
-        <!-- Souveraineté -->
-        <div class="service-card" style="text-align:center;padding:var(--sp-2xl);background:rgba(15,26,46,0.8);border-radius:14px;border:1px solid rgba(217,168,79,0.2)">
-          <div style="width:64px;height:64px;border-radius:50%;background:rgba(217,168,79,0.15);display:flex;align-items:center;justify-content:center;margin:0 auto var(--sp-lg);font-size:1.4rem;color:var(--gold)">
-            <i class="fas fa-flag"></i>
-          </div>
-          <h4 data-i18n data-en="Sovereignty">Souveraineté</h4>
-          <p style="margin-top:var(--sp-sm);color:var(--text-secondary)" data-i18n data-en="100% Chadian-led company. Building national capacity and pride in African oil services.">
-            Entreprise 100% tchadienne. Construire la capacité nationale et la fierté des services pétroliers africains.
-          </p>
-        </div>
-        <!-- Innovation -->
-        <div class="service-card" style="text-align:center;padding:var(--sp-2xl);background:rgba(15,26,46,0.8);border-radius:14px;border:1px solid rgba(217,168,79,0.2)">
-          <div style="width:64px;height:64px;border-radius:50%;background:rgba(217,168,79,0.15);display:flex;align-items:center;justify-content:center;margin:0 auto var(--sp-lg);font-size:1.4rem;color:var(--gold)">
-            <i class="fas fa-lightbulb"></i>
-          </div>
-          <h4 data-i18n data-en="Innovation">Innovation</h4>
-          <p style="margin-top:var(--sp-sm);color:var(--text-secondary)" data-i18n data-en="Digital-first mindset. Adopting latest technologies, automation, and data-driven decision making.">
-            Mentalité digital-first. Adoption des dernières technologies, automatisation et décisions basées sur les données.
-          </p>
-        </div>
-        <!-- Responsabilité -->
-        <div class="service-card" style="text-align:center;padding:var(--sp-2xl);background:rgba(15,26,46,0.8);border-radius:14px;border:1px solid rgba(217,168,79,0.2)">
-          <div style="width:64px;height:64px;border-radius:50%;background:rgba(217,168,79,0.15);display:flex;align-items:center;justify-content:center;margin:0 auto var(--sp-lg);font-size:1.4rem;color:var(--gold)">
-            <i class="fas fa-handshake"></i>
-          </div>
-          <h4 data-i18n data-en="Responsibility">Responsabilité</h4>
-          <p style="margin-top:var(--sp-sm);color:var(--text-secondary)" data-i18n data-en="ESG commitment integrated throughout operations. Safe, ethical, and sustainable practices.">
-            Engagement ESG intégré à toutes les opérations. Pratiques sûres, éthiques et durables.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══ APPLICATION PROCESS ═══ -->
-  <section class="section" style="background:linear-gradient(135deg,rgba(8,14,26,0.8),rgba(15,26,46,0.6))">
-    <div class="ctn">
-      <div class="section-header reveal" style="text-align:center">
-        <div class="section-label" style="justify-content:center" data-i18n data-en="Application Process">Processus de candidature</div>
-        <h2 data-i18n data-en="4-Step Journey to Join Us">Votre parcours vers EnerTchad</h2>
-        <p style="margin:0 auto" data-i18n data-en="A transparent, efficient recruitment process designed to find the right fit.">
-          Un processus transparent et efficace pour trouver le bon match.
-        </p>
-      </div>
-      <div style="margin-top:var(--sp-2xl);position:relative">
-        <!-- Timeline -->
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:var(--sp-xl)">
-          <!-- Step 1 -->
-          <div class="reveal" style="position:relative">
-            <div style="background:rgba(15,26,46,0.8);border-radius:14px;padding:var(--sp-2xl);text-align:center;border:2px solid rgba(217,168,79,0.3)">
-              <div style="width:60px;height:60px;border-radius:50%;background:var(--gold);color:var(--bg);display:flex;align-items:center;justify-content:center;margin:0 auto var(--sp-lg);font-size:1.2rem;font-weight:700">
-                1
-              </div>
-              <h4 data-i18n data-en="Apply Online">Candidature en ligne</h4>
-              <p style="color:var(--text-secondary);margin-top:var(--sp-sm)" data-i18n data-en="Submit your CV and cover letter via our application portal or email talents@enertchad.td">
-                Envoyez votre CV et lettre de motivation via le portail ou talents@enertchad.td
-              </p>
-            </div>
-          </div>
-          <!-- Step 2 -->
-          <div class="reveal" style="position:relative">
-            <div style="background:rgba(15,26,46,0.8);border-radius:14px;padding:var(--sp-2xl);text-align:center;border:2px solid rgba(217,168,79,0.3)">
-              <div style="width:60px;height:60px;border-radius:50%;background:var(--gold);color:var(--bg);display:flex;align-items:center;justify-content:center;margin:0 auto var(--sp-lg);font-size:1.2rem;font-weight:700">
-                2
-              </div>
-              <h4 data-i18n data-en="Technical Interview">Entretien technique</h4>
-              <p style="color:var(--text-secondary);margin-top:var(--sp-sm)" data-i18n data-en="Discuss your experience, technical skills, and alignment with EnerTchad culture with our team (30-45 min).">
-                Discussion de votre expérience et compétences techniques (30-45 min).
-              </p>
-            </div>
-          </div>
-          <!-- Step 3 -->
-          <div class="reveal" style="position:relative">
-            <div style="background:rgba(15,26,46,0.8);border-radius:14px;padding:var(--sp-2xl);text-align:center;border:2px solid rgba(217,168,79,0.3)">
-              <div style="width:60px;height:60px;border-radius:50%;background:var(--gold);color:var(--bg);display:flex;align-items:center;justify-content:center;margin:0 auto var(--sp-lg);font-size:1.2rem;font-weight:700">
-                3
-              </div>
-              <h4 data-i18n data-en="Field Assessment">Évaluation terrain</h4>
-              <p style="color:var(--text-secondary);margin-top:var(--sp-sm)" data-i18n data-en="Site visit or practical assessment to evaluate field readiness and operational knowledge (1-2 days).">
-                Visite de site ou évaluation pratique pour évaluer la préparation terrain (1-2 jours).
-              </p>
-            </div>
-          </div>
-          <!-- Step 4 -->
-          <div class="reveal" style="position:relative">
-            <div style="background:rgba(15,26,46,0.8);border-radius:14px;padding:var(--sp-2xl);text-align:center;border:2px solid rgba(217,168,79,0.3)">
-              <div style="width:60px;height:60px;border-radius:50%;background:var(--gold);color:var(--bg);display:flex;align-items:center;justify-content:center;margin:0 auto var(--sp-lg);font-size:1.2rem;font-weight:700">
-                4
-              </div>
-              <h4 data-i18n data-en="Onboarding">Intégration</h4>
-              <p style="color:var(--text-secondary);margin-top:var(--sp-sm)" data-i18n data-en="Welcome to the team! Safety induction, mentorship setup, and role-specific training.">
-                Bienvenue en équipe ! Induction sécurité, mise en place du mentorat et formation spécifique.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<!-- ═══ MODERN MEGA FOOTER 2026 ═══ -->
-<footer class="footer modern-footer" role="contentinfo">
-  <!-- Animated Top Border -->
-  <div class="footer-top-accent" aria-hidden="true">
-    <div class="footer-accent-line"></div>
   </div>
+</section>
 
-  <!-- KPI Strip -->
-  <div class="footer-kpi-strip">
-    <div class="ctn">
-      <div class="kpi-ticker">
-        <div class="kpi-item">
-          <span class="kpi-num" data-count="1240">1 240</span>
-          <span class="kpi-tag" data-i18n data-en="Employees">Collaborateurs</span>
+<!-- Ce qu'on offre -->
+<section>
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="kicker">Package &amp; bénéfices</span>
+      <h2>Un pacte de travail à la hauteur de l'exigence.</h2>
+      <p class="lead">Nos grilles salariales sont auditées chaque année pour s'assurer d'une équité interne et d'une compétitivité externe par rapport aux majors internationales opérant en Afrique centrale.</p>
+    </div>
+    <div class="grid grid-3">
+      <div class="feature-card reveal">
+        <div class="icon-wrap"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+        <h4>Rémunération</h4>
+        <p>Grille alignée majors pétrolières Afrique centrale. Intéressement collectif &amp; plan de participation. Prime de terrain.</p>
+      </div>
+      <div class="feature-card reveal" style="--delay:.06s;">
+        <div class="icon-wrap"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-4 9-8 10-4-1-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h4>Santé &amp; prévoyance</h4>
+        <p>Mutuelle famille 100 % · évacuation sanitaire internationale · assurance invalidité · suivi médical annuel.</p>
+      </div>
+      <div class="feature-card reveal" style="--delay:.12s;">
+        <div class="icon-wrap"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21V10l9-7 9 7v11M9 21V14h6v7"/></svg></div>
+        <h4>Logement &amp; transport</h4>
+        <p>Prêt immobilier bonifié jusqu'à 40 Md XAF encours. Navette corporate quotidienne. Base vie Doba équipée.</p>
+      </div>
+      <div class="feature-card reveal" style="--delay:.18s;">
+        <div class="icon-wrap"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 21V10h16v11M2 10l10-7 10 7M10 21v-7h4v7"/></svg></div>
+        <h4>Retraite</h4>
+        <p>Régime complémentaire Groupe · cotisation employeur 8 % · pérennité des droits en cas de mobilité interne.</p>
+      </div>
+      <div class="feature-card reveal" style="--delay:.24s;">
+        <div class="icon-wrap"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h6"/></svg></div>
+        <h4>Développement</h4>
+        <p>Budget formation 5 % de la masse salariale. Parcours certifiants (IFP School, Heriot-Watt, ESSEC). Mobilité internationale.</p>
+      </div>
+      <div class="feature-card reveal" style="--delay:.3s;">
+        <div class="icon-wrap"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M12 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+        <h4>Parentalité</h4>
+        <p>Congé maternité 18 semaines rémunérées 100 % · congé paternité 4 semaines · crèche d'entreprise à N'Djamena.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CFE -->
+<section id="cfe" style="background: var(--cream-2);">
+  <div class="container">
+    <div class="split">
+      <div class="split-text reveal">
+        <span class="kicker">Centre de Formation EnerTchad · CFE</span>
+        <h2>Former les Tchadiens aux métiers de l'énergie, sans compromis.</h2>
+        <p class="lead">Notre CFE, agréé par le Ministère de la Formation professionnelle et de l'Emploi, dispense quatre parcours certifiants couvrant l'ensemble du cycle du baril. 162 diplômés en 2025 ; 94 % d'insertion à 6 mois.</p>
+        <div class="stat-tiles" style="margin-top: 28px;">
+          <div class="stat-tile"><div class="value">4</div><div class="label">Parcours certifiants</div></div>
+          <div class="stat-tile"><div class="value">1 100+</div><div class="label">Apprentis formés</div></div>
+          <div class="stat-tile"><div class="value">94 %</div><div class="label">Taux d'insertion</div></div>
+          <div class="stat-tile"><div class="value">100 %</div><div class="label">Frais pris en charge</div></div>
         </div>
-        <div class="kpi-divider" aria-hidden="true"></div>
-        <div class="kpi-item">
-          <span class="kpi-num" data-count="144000">144K</span>
-          <span class="kpi-tag" data-i18n data-en="bbl/day">bbl/jour</span>
-        </div>
-        <div class="kpi-divider" aria-hidden="true"></div>
-        <div class="kpi-item">
-          <span class="kpi-num">24</span>
-          <span class="kpi-tag" data-i18n data-en="Stations">Stations</span>
-        </div>
-        <div class="kpi-divider" aria-hidden="true"></div>
-        <div class="kpi-item">
-          <span class="kpi-num" data-count="4">4</span>
-          <span class="kpi-tag" data-i18n data-en="OFS Divisions">Pôles OFS</span>
-        </div>
-        <div class="kpi-divider" aria-hidden="true"></div>
-        <div class="kpi-item">
-          <span class="kpi-num" data-count="1070">1 070</span>
-          <span class="kpi-tag" data-i18n data-en="km pipeline">km pipeline</span>
+      </div>
+      <div class="reveal" style="--delay:.1s;">
+        <div class="gov-list">
+          <div class="gov-item">
+            <div class="g-num">01</div>
+            <div><h4>Opérations E&amp;P · 18 mois</h4><p>Forage, production, maintenance · BP certifié IFP School</p></div>
+            <div class="g-count">Terrain</div>
+          </div>
+          <div class="gov-item">
+            <div class="g-num">02</div>
+            <div><h4>Ingénierie pipeline · 12 mois</h4><p>Intégrité, SCADA, inspection · API 1160 ready</p></div>
+            <div class="g-count">Moundou</div>
+          </div>
+          <div class="gov-item">
+            <div class="g-num">03</div>
+            <div><h4>Procédés raffinage · 15 mois</h4><p>Conduite d'unités, contrôle qualité, sécurité</p></div>
+            <div class="g-count">Djarmaya</div>
+          </div>
+          <div class="gov-item">
+            <div class="g-num">04</div>
+            <div><h4>Commerce &amp; distribution · 9 mois</h4><p>Gestion de station, compliance carburants, parc commercial</p></div>
+            <div class="g-count">N'Djamena</div>
+          </div>
         </div>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- Main Content -->
-  <div class="ctn footer-body">
-    <div class="footer-grid-modern">
-      <!-- Brand Column -->
-      <div class="footer-brand-col">
-        <a href="/" class="footer-logo-link" aria-label="EnerTchad Groupe — Accueil">
-          <div class="footer-logo-mark">
-            <img loading="lazy" src="/logo-enertchad.svg" alt="" width="32" height="32" class="logo-img" decoding="async"/>
-          </div>
-          <span class="footer-wordmark">EnerTchad<em>Groupe</em></span>
-        </a>
-        <p class="footer-desc" data-i18n data-en="Oilfield services &amp; petroleum distribution across Chad. Major expertise, local agility.">Services pétroliers &amp; distribution au Tchad. L'expertise des majors, l'agilité locale.</p>
-        <div class="footer-badges">
-          <span class="f-badge" title="IWCF">IWCF</span>
-          <span class="f-badge" title="API">API</span>
-          <span class="f-badge" title="ISO 14001">ISO 14001</span>
-          <span class="f-badge" title="ITIE/EITI">ITIE</span>
-        </div>
+<!-- Offres d'emploi -->
+<section id="offres">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="kicker">Offres ouvertes · 14 postes</span>
+      <h2>Postulez aux missions qui définiront la prochaine décennie.</h2>
+      <p class="lead">Les recrutements sont ouverts à tous les profils éligibles, avec priorité aux candidats tchadiens à compétences équivalentes conformément à la politique de contenu local.</p>
+    </div>
+
+    <div class="reveal" style="display:flex; flex-wrap:wrap; gap: 10px; margin-bottom: 32px;">
+      <span class="badge" style="background: var(--ink); color:white;">Tous (14)</span>
+      <span class="badge" style="background: var(--cream-2); color: var(--ink-2);">Ingénierie (5)</span>
+      <span class="badge" style="background: var(--cream-2); color: var(--ink-2);">Opérations (4)</span>
+      <span class="badge" style="background: var(--cream-2); color: var(--ink-2);">Support (3)</span>
+      <span class="badge" style="background: var(--cream-2); color: var(--ink-2);">HSE (2)</span>
+    </div>
+
+    <div class="job-list">
+      <a href="#" class="job-card reveal">
+        <div><div class="j-title">Ingénieur réservoir senior</div><div class="j-dept">Direction Amont · Bassin de Doba</div></div>
+        <div class="j-meta">Doba · CDI</div>
+        <div class="j-meta">8+ ans</div>
+        <div class="j-cta">Postuler</div>
+      </a>
+      <a href="#" class="job-card reveal" style="--delay:.04s;">
+        <div><div class="j-title">Superviseur forage</div><div class="j-dept">Opérations Amont · Bongor-Sud</div></div>
+        <div class="j-meta">Bongor · Rotation 28/28</div>
+        <div class="j-meta">5+ ans</div>
+        <div class="j-cta">Postuler</div>
+      </a>
+      <a href="#" class="job-card reveal" style="--delay:.08s;">
+        <div><div class="j-title">Ingénieur intégrité pipeline</div><div class="j-dept">EnerTchad Midstream</div></div>
+        <div class="j-meta">Moundou · CDI</div>
+        <div class="j-meta">4+ ans</div>
+        <div class="j-cta">Postuler</div>
+      </a>
+      <a href="#" class="job-card reveal" style="--delay:.12s;">
+        <div><div class="j-title">Chef de quart raffinerie</div><div class="j-dept">EnerTchad Downstream · Djarmaya</div></div>
+        <div class="j-meta">Djarmaya · CDI</div>
+        <div class="j-meta">6+ ans</div>
+        <div class="j-cta">Postuler</div>
+      </a>
+      <a href="#" class="job-card reveal" style="--delay:.16s;">
+        <div><div class="j-title">Responsable réseau stations-service</div><div class="j-dept">Direction Distribution</div></div>
+        <div class="j-meta">N'Djamena · CDI</div>
+        <div class="j-meta">7+ ans</div>
+        <div class="j-cta">Postuler</div>
+      </a>
+      <a href="#" class="job-card reveal" style="--delay:.2s;">
+        <div><div class="j-title">Analyste Investor Relations</div><div class="j-dept">Direction Financière</div></div>
+        <div class="j-meta">N'Djamena · CDI</div>
+        <div class="j-meta">3+ ans</div>
+        <div class="j-cta">Postuler</div>
+      </a>
+      <a href="#" class="job-card reveal" style="--delay:.24s;">
+        <div><div class="j-title">Contrôleur de gestion amont</div><div class="j-dept">Direction Financière</div></div>
+        <div class="j-meta">N'Djamena · CDI</div>
+        <div class="j-meta">5+ ans</div>
+        <div class="j-cta">Postuler</div>
+      </a>
+      <a href="#" class="job-card reveal" style="--delay:.28s;">
+        <div><div class="j-title">Responsable HSE · sites Amont</div><div class="j-dept">Direction HSE &amp; Durabilité</div></div>
+        <div class="j-meta">Doba · CDI</div>
+        <div class="j-meta">10+ ans</div>
+        <div class="j-cta">Postuler</div>
+      </a>
+      <a href="#" class="job-card reveal" style="--delay:.32s;">
+        <div><div class="j-title">Chargé de conformité &amp; anti-corruption</div><div class="j-dept">Direction Juridique</div></div>
+        <div class="j-meta">N'Djamena · CDI</div>
+        <div class="j-meta">4+ ans</div>
+        <div class="j-cta">Postuler</div>
+      </a>
+      <a href="#" class="job-card reveal" style="--delay:.36s;">
+        <div><div class="j-title">Ingénieur géologue</div><div class="j-dept">Direction Amont · Explo</div></div>
+        <div class="j-meta">N'Djamena / Terrain</div>
+        <div class="j-meta">3+ ans</div>
+        <div class="j-cta">Postuler</div>
+      </a>
+      <a href="#" class="job-card reveal" style="--delay:.4s;">
+        <div><div class="j-title">Technicien instrumentation SCADA</div><div class="j-dept">EnerTchad Midstream</div></div>
+        <div class="j-meta">Moundou · CDI</div>
+        <div class="j-meta">2+ ans</div>
+        <div class="j-cta">Postuler</div>
+      </a>
+      <a href="#" class="job-card reveal" style="--delay:.44s;">
+        <div><div class="j-title">Responsable reboisement &amp; biodiversité</div><div class="j-dept">Direction Durabilité</div></div>
+        <div class="j-meta">N'Djamena · CDI</div>
+        <div class="j-meta">5+ ans</div>
+        <div class="j-cta">Postuler</div>
+      </a>
+      <a href="#" class="job-card reveal" style="--delay:.48s;">
+        <div><div class="j-title">Community Liaison Officer</div><div class="j-dept">Direction Durabilité · communautés</div></div>
+        <div class="j-meta">Doba · CDI</div>
+        <div class="j-meta">3+ ans</div>
+        <div class="j-cta">Postuler</div>
+      </a>
+      <a href="#" class="job-card reveal" style="--delay:.52s;">
+        <div><div class="j-title">Formateur opérations — CFE</div><div class="j-dept">Centre de Formation EnerTchad</div></div>
+        <div class="j-meta">N'Djamena · CDI</div>
+        <div class="j-meta">8+ ans</div>
+        <div class="j-cta">Postuler</div>
+      </a>
+    </div>
+
+    <div class="reveal" style="text-align:center; margin-top:48px;">
+      <a href="mailto:candidature@enertchad.td" class="btn btn-outline">Candidature spontanée <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- Témoignages -->
+<section class="dark">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="kicker">Ils racontent</span>
+      <h2>Trois parcours, une même conviction.</h2>
+    </div>
+    <div class="grid grid-3">
+      <div class="feature-card reveal" style="background: var(--navy-3); border-color: var(--hairline);">
+        <div class="icon-wrap" style="background: rgba(217,168,79,.14); color: var(--gold);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a5 5 0 015 5v4a5 5 0 01-10 0V7a5 5 0 015-5zM20 21v-2a7 7 0 00-14 0v2"/></svg></div>
+        <h4 style="color:white;">Nadjiel · DGA Opérations</h4>
+        <p style="color:rgba(255,255,255,.72);">« J'ai démarré comme technicien forage sur Komé en 2006. Vingt ans plus tard, je supervise 420 puits. Personne ne m'a demandé de partir en Europe pour monter : j'ai monté ici. »</p>
       </div>
-
-      <!-- Nav Columns -->
-      <nav class="footer-nav-col" aria-label="Services des Champs">
-        <h6 data-i18n data-en="Services">Services</h6>
-        <ul>
-          <li><a href="/services/well-services" data-i18n data-en="Well Services">Well Services</a></li>
-          <li><a href="/services/drilling" data-i18n data-en="Drilling &amp; Engineering">Drilling &amp; Engineering</a></li>
-          <li><a href="/services/digital" data-i18n data-en="Digital &amp; SCADA">Digital &amp; SCADA</a></li>
-          <li><a href="/services/consulting" data-i18n data-en="Consulting &amp; Training">Consulting &amp; Formation</a></li>
-          <li><a href="/distribution/" data-i18n data-en="Distribution">Distribution &amp; Négoce</a></li>
-        </ul>
-      </nav>
-      <nav class="footer-nav-col" aria-label="Société Pétrolière">
-        <h6 data-i18n data-en="Energy">Énergies</h6>
-        <ul>
-          <li><a href="/operations/amont" data-i18n data-en="Upstream — E&amp;P">Amont — E&amp;P</a></li>
-          <li><a href="/operations/intermediaire" data-i18n data-en="Midstream">Intermédiaire</a></li>
-          <li><a href="/operations/aval" data-i18n data-en="Downstream">Aval — Raffinage</a></li>
-          <li><a href="/services/technologies" data-i18n data-en="Technologies &amp; AI">Technologies &amp; IA</a></li>
-          <li><a href="/maps" data-i18n data-en="Operations Map">Carte des Opérations</a></li>
-          <li><a href="/operations/greentech" data-i18n data-en="Renewables">Énergies Renouvelables</a></li>
-        </ul>
-      </nav>
-      <nav class="footer-nav-col" aria-label="Entreprise">
-        <h6 data-i18n data-en="Company">Entreprise</h6>
-        <ul>
-          <li><a href="/groupe/" data-i18n data-en="About">À propos</a></li>
-          <li><a href="/durabilite" data-i18n data-en="ESG &amp; Sustainability">Durabilité &amp; ESG</a></li>
-          <li><a href="/investisseurs" data-i18n data-en="Investors">Investisseurs</a></li>
-          <li><a href="/talents" data-i18n data-en="Careers">Talents &amp; Carrières</a></li>
-          <li><a href="/actualites" data-i18n data-en="Media">Médias</a></li><li><a href="/newsletter" data-i18n data-en="Newsletter">Newsletter</a></li>
-        </ul>
-      </nav>
-      <div class="footer-nav-col footer-cta-col">
-        <h6 data-i18n data-en="Get in Touch">Nous Contacter</h6>
-        <div class="footer-contact-stack">
-          <a href="/contact" class="footer-cta-btn" data-i18n data-en="Contact Us"><i class="fas fa-arrow-right"></i> Contactez-nous</a>
-          <a href="/contact#devis" class="footer-cta-link" data-i18n data-en="Request a Quote"><i class="fas fa-file-invoice"></i> Demander un devis</a>
-          <a href="tel:+23599298696" class="footer-cta-link"><i class="fas fa-phone"></i> +235 99 29 86 96</a>
-          <a href="mailto:contact@enertchad.td" class="footer-cta-link"><i class="fas fa-envelope"></i> contact@enertchad.td</a>
-        </div>
-        <div class="footer-hours">
-          <i class="fas fa-clock"></i>
-          <span data-i18n data-en="Mon–Fri 7:30–17:30 · 24/7 emergencies">Lun–Ven 7h30–17h30 · Urgences 24/7</span>
-        </div>
+      <div class="feature-card reveal" style="background: var(--navy-3); border-color: var(--hairline); --delay:.08s;">
+        <div class="icon-wrap" style="background: rgba(217,168,79,.14); color: var(--gold);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a5 5 0 015 5v4a5 5 0 01-10 0V7a5 5 0 015-5zM20 21v-2a7 7 0 00-14 0v2"/></svg></div>
+        <h4 style="color:white;">Fatimé · Directrice Financière</h4>
+        <p style="color:rgba(255,255,255,.72);">« J'ai choisi EnerTchad après sept ans dans un cabinet Big Four à Paris. Ici, je construis un bilan qui finance un pays, pas un reporting trimestriel pour des actionnaires lointains. »</p>
+      </div>
+      <div class="feature-card reveal" style="background: var(--navy-3); border-color: var(--hairline); --delay:.16s;">
+        <div class="icon-wrap" style="background: rgba(217,168,79,.14); color: var(--gold);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a5 5 0 015 5v4a5 5 0 01-10 0V7a5 5 0 015-5zM20 21v-2a7 7 0 00-14 0v2"/></svg></div>
+        <h4 style="color:white;">Aïcha · Apprentie promo 2024</h4>
+        <p style="color:rgba(255,255,255,.72);">« J'ai intégré le CFE après mon bac sciences à Abéché. En deux ans j'ai été formée, logée, rémunérée. Aujourd'hui je suis opératrice de conduite à Djarmaya. Je n'aurais jamais rêvé mieux. »</p>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- Newsletter Band -->
-  <div class="footer-newsletter-band">
-    <div class="ctn">
-      <div class="newsletter-inner">
-        <div class="newsletter-text">
-          <strong data-i18n data-en="Industry Intelligence">Veille Sectorielle</strong>
-          <span data-i18n data-en="Monthly insights on energy &amp; oilfield services.">Analyses mensuelles énergie &amp; services pétroliers.</span>
-        </div>
-        <form class="newsletter-modern newsletter-modern-linked" aria-label="Newsletter" data-redirect="/newsletter">
-          <input type="email" placeholder="nom@entreprise.td" required aria-label="Email"/>
-          <button type="submit" data-i18n data-en="Subscribe">S'abonner</button>
-        </form>
+<!-- CTA -->
+<section class="cta-band">
+  <div class="container">
+    <div class="inner reveal">
+      <div>
+        <span class="kicker">Recrutement</span>
+        <h2>Votre prochain poste change le Tchad.</h2>
+        <p class="lead">Équipe talents disponible du lundi au vendredi, 8h–17h. Réponse à toutes les candidatures sous 14 jours ouvrés.</p>
+      </div>
+      <div class="ctas">
+        <a href="#offres" class="btn btn-primary">Voir les offres <span class="arrow">↑</span></a>
+        <a href="mailto:candidature@enertchad.td" class="btn btn-ghost">candidature@enertchad.td</a>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- Bottom Bar -->
-  <div class="footer-bottom-bar">
-    <div class="ctn">
-      <div class="bottom-bar-inner">
-        <span class="footer-copy" data-i18n data-en="&copy; 2026 EnerTchad Groupe SA/CA">&copy; 2026 EnerTchad Groupe SA/CA</span>
-        <div class="footer-legal-links">
-          <a href="/mentions-legales" data-i18n data-en="Legal">Mentions légales</a>
-          <a href="/confidentialite" data-i18n data-en="Privacy">Confidentialité</a>
-          <a href="/cookies" data-i18n data-en="Cookies">Cookies</a>
-        </div>
-        <div class="footer-social-row">
-          <a href="https://www.linkedin.com/company/enertchad" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://x.com/EnerTchad" target="_blank" rel="noopener noreferrer" aria-label="X"><i class="fab fa-x-twitter"></i></a>
-          <a href="https://www.facebook.com/EnerTchad" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://www.youtube.com/@EnerTchad" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-        </div>
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="brand"><span class="brand-mark">E</span><span>Ener<span class="accent">Tchad</span> Groupe</span></div>
+        <p>Société Anonyme à Conseil d'Administration · OHADA / AUSCGIE. Siège social : N'Djamena, République du Tchad.</p>
+        <p style="font-size:.82rem; margin-top:16px;">RCCM : TD-NDJ-03-2022-B-00518<br/>Capital : 50 000 000 000 XAF</p>
+      </div>
+      <div><h5>Opérations</h5><ul>
+        <li><a href="operations/amont.html">Amont · E&amp;P</a></li><li><a href="operations/intermediaire.html">Intermédiaire</a></li>
+        <li><a href="operations/aval.html">Aval · Distribution</a></li><li><a href="operations/services.html">Services</a></li>
+      </ul></div>
+      <div><h5>Groupe</h5><ul>
+        <li><a href="groupe.html">À propos</a></li><li><a href="groupe.html#gouvernance">Gouvernance</a></li>
+        <li><a href="groupe.html#leadership">Leadership</a></li><li><a href="investisseurs.html">Investisseurs</a></li>
+      </ul></div>
+      <div><h5>Engagement</h5><ul>
+        <li><a href="durabilite.html">Durabilité &amp; ESG</a></li><li><a href="durabilite.html#local">Contenu local</a></li>
+        <li><a href="durabilite.html#itie">ITIE</a></li><li><a href="durabilite.html#hse">HSE</a></li>
+      </ul></div>
+      <div><h5>Contact</h5><ul>
+        <li>Av. Charles de Gaulle<br/>N'Djamena · Tchad</li>
+        <li><a href="tel:+23599298696">+235 99 29 86 96</a></li>
+        <li><a href="mailto:candidature@enertchad.td">candidature@enertchad.td</a></li>
+      </ul></div>
+    </div>
+    <div class="foot-bottom">
+      <div>© <span data-year>2026</span> EnerTchad Groupe SA/CA. Tous droits réservés.</div>
+      <div class="legal">
+        <a href="mentions-legales.html">Mentions légales</a>
+        <a href="confidentialite.html">Confidentialité</a>
+        <a href="cookies.html">Cookies</a>
+        <a href="contact.html#alerte">Lanceurs d'alerte</a>
       </div>
     </div>
   </div>
-
-  <!-- Address (structured data) -->
-  <address class="footer-address" hidden>
-    <span data-i18n data-en="Radisson Blu, Block D, Office 23 — N'Djamena, Chad">Radisson Blu, Bloc D, Bureau 23 — N'Djaména, Tchad</span>
-  </address>
 </footer>
 
-<!-- ═══ COOKIE CONSENT ═══ -->
-<div class="cookie-consent" id="cookieConsent">
-  <div class="ctn" style="display:flex;align-items:center;justify-content:space-between;gap:var(--sp-lg)">
-    <p style="margin:0;font-size:0.9rem" data-i18n data-en="We use cookies to improve your experience. By continuing to browse, you accept our use of cookies.">
-      Nous utilisons les cookies pour améliorer votre expérience. En continuant, vous acceptez notre utilisation de cookies.
-    </p>
-    <div style="display:flex;gap:var(--sp-sm)">
-      <button id="cookieAccept" class="btn btn--brand btn--sm" data-i18n data-en="Accept">Accepter</button>
-      <a href="/cookies" class="btn btn--outline btn--sm" data-i18n data-en="Learn more">En savoir plus</a>
-    </div>
+<script src="assets/js/main.js"></script>
+<!-- Cookie consent banner -->
+<div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Consentement cookies">
+  <p style="margin:0 0 12px 0; font-size:.92rem; line-height:1.55;">Nous utilisons uniquement des cookies techniques essentiels (préférences, session) et une mesure d'audience anonyme sans cookie. Aucun traceur publicitaire.</p>
+  <div class="cb-actions">
+    <a class="cb-btn" href="cookies.html">En savoir plus</a>
+    <button type="button" class="cb-btn primary" id="cookie-accept">J'ai compris</button>
   </div>
 </div>
-
-<script defer src="/js/premium.js"></script>
+<script>
+(function(){
+  function getCookie(n){var m=document.cookie.match(new RegExp('(?:^|; )'+n+'=([^;]*)'));return m?decodeURIComponent(m[1]):null;}
+  function setCookie(n,v,d){var e=new Date();e.setTime(e.getTime()+d*864e5);document.cookie=n+'='+encodeURIComponent(v)+'; expires='+e.toUTCString()+'; path=/; SameSite=Lax';}
+  var b=document.getElementById('cookie-banner'); if(!b) return;
+  if(!getCookie('consent_v1')){ setTimeout(function(){b.classList.add('show');}, 900); }
+  var btn=document.getElementById('cookie-accept');
+  if(btn){ btn.addEventListener('click', function(){ setCookie('consent_v1','accepted-technical',180); b.classList.remove('show'); }); }
+})();
+</script>
+<!-- /Cookie consent banner -->
 </body>
 </html>

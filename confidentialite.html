@@ -1,393 +1,200 @@
-<!DOCTYPE html>
-<html lang="fr" class="no-js">
+<!doctype html>
+<html lang="fr">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://plausible.io; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://plausible.io; frame-src 'none'; object-src 'none'; base-uri 'self';"/>
-  <title><em class="lux-em">Politique</em> de confidentialité | EnerTchad Groupe</title>
-  <meta name="description" content="Politique de Confidentialité EnerTchad — Protection des données personnelles et vie privée."/>
-  <meta name="robots" content="noindex,follow"/>
-  <link href="/manifest.json" rel="manifest"/>
-  <meta name="theme-color" content="#080E1A"/>
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
-  <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
-  <link rel="preload" href="/logo-enertchad.svg" as="image" type="image/svg+xml"/>
-
-  <meta property="og:title" content="Politique de confidentialité | EnerTchad Groupe"/>
-  <meta property="og:description" content="Politique de confidentialité d'EnerTchad Groupe SA/CA — Protection des données personnelles et droits des utilisateurs."/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:url" content="https://enertchad-groupe.vercel.app/confidentialite"/>
-  <meta property="og:locale" content="fr_TD"/>
-  <meta property="og:site_name" content="EnerTchad Groupe"/>
-  <meta property="og:image" content="https://enertchad-groupe.vercel.app/images/og-enertchad.png"/>
-  <meta property="og:image:width" content="1200"/>
-  <meta property="og:image:height" content="630"/>
-  <meta property="og:image:alt" content="EnerTchad Groupe"/>
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:site" content="@EnerTchad"/>
-  <meta name="twitter:title" content="Politique de confidentialité | EnerTchad Groupe"/>
-  <meta name="twitter:description" content="Politique de confidentialité d'EnerTchad Groupe SA/CA — Protection des données personnelles et."/>
-  <meta name="twitter:image" content="https://enertchad-groupe.vercel.app/images/og-enertchad.png"/>
-
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://enertchad-groupe.vercel.app/"},{"@type":"ListItem","position":2,"name":"Confidentialité","item":"https://enertchad-groupe.vercel.app/confidentialite"}]}
-  </script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Space+Grotesk:wght@400..700&display=swap" rel="stylesheet"/>
-  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
-  <noscript><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/></noscript>
-    <link rel="stylesheet" href="/css/premium.css"/>
-<link rel="preload" href="/css/style.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
-  <noscript><link rel="stylesheet" href="/css/style.min.css"/></noscript>
-
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="></script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="></script>
-  <script defer src="/js/app.min.js"></script>
-  <link rel="canonical" href="https://enertchad-groupe.vercel.app/confidentialite"/>
-
-  <script defer data-domain="enertchad-groupe.vercel.app" src="https://plausible.io/js/script.tagged-events.js"></script>
-  <script>window.plausible=window.plausible||function(){(window.plausible.q=window.plausible.q||[]).push(arguments)}</script>
-  <!-- Sentry — DSN injecté via data-sentry-dsn (fail-silent si absent). Configurer en build-time (Vercel env SENTRY_DSN). -->
-  <script defer src="https://browser.sentry-cdn.com/7.120.0/bundle.min.js" crossorigin="anonymous" data-sentry-dsn=""></script>
-  <script>
-    window.addEventListener("load", function(){
-      var s = document.querySelector("script[data-sentry-dsn]");
-      var dsn = s && s.getAttribute("data-sentry-dsn");
-      if (window.Sentry && dsn && dsn.length > 10) {
-        try { Sentry.init({ dsn: dsn, environment: "production", tracesSampleRate: 0.1, release: (window.__BUILD_SHA__ || "unknown") }); } catch(e) { /* fail-silent */ }
-      }
-    });
-  </script>
-
-  <!-- Hreflang -->
-  <link rel="alternate" hreflang="fr" href="https://enertchad-groupe.vercel.app/confidentialite"/>
-  <link rel="alternate" hreflang="en" href="https://enertchad-groupe.vercel.app/confidentialite?lang=en"/>
-  <link rel="alternate" hreflang="x-default" href="https://enertchad-groupe.vercel.app/confidentialite"/>
-
-  <script type="application/ld+json">
-  {"@context": "https://schema.org", "@type": "WebPage", "name": "Politique de Confidentialité", "description": "Politique de confidentialité du site EnerTchad Groupe.", "publisher": {"@type": "Organization", "name": "EnerTchad Groupe", "url": "https://enertchad-groupe.vercel.app"}}
-  </script>
-  <script defer src="/js/lang.js"></script>
-  <script defer src="/js/nav-premium.js"></script>
-  <script defer src="/js/ultra-premium.js"></script>
-  <link rel="stylesheet" href="/css/nav-premium.css"/>
-  <!-- Ultra-Premium layer (UP-P1 · 2026-04-20) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap">
-  <link rel="stylesheet" href="/css/ultra-premium.css"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#080E1A" />
+  <title>Politique de confidentialité — EnerTchad Groupe</title>
+  <meta name="description" content="Politique de confidentialité d'EnerTchad Groupe : données collectées, finalités, durée de conservation, vos droits (RGPD + droit tchadien), contact DPO." />
+  <link rel="canonical" href="https://www.enertchad.td/confidentialite.html" />
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="EnerTchad Groupe" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:url" content="https://www.enertchad.td/confidentialite.html" />
+  <meta property="og:title" content="Politique de confidentialité — EnerTchad Groupe" />
+  <meta property="og:description" content="Comment nous protégeons vos données personnelles : RGPD, droits utilisateur, contact DPO." />
+  <meta property="og:image" content="https://www.enertchad.td/assets/img/og-cover.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23D9A84F'/%3E%3Ctext x='16' y='22' font-family='Space Grotesk, sans-serif' font-weight='700' font-size='16' text-anchor='middle' fill='%23080E1A'%3EE%3C/text%3E%3C/svg%3E" />
+  <link rel="manifest" href="manifest.json" />
+  <script>if('serviceWorker' in navigator){window.addEventListener('load',()=>{navigator.serviceWorker.register('/sw.js').catch(()=>{});});}</script>
 </head>
 <body>
-<a href="#main" class="skip-link" data-i18n data-en="Skip to content">Aller au contenu</a>
-
-<!-- ═══ LOADING SCREEN ═══ -->
-<div class="page-loader" id="pageLoader" aria-hidden="true">
-  <div class="loader-inner">
-    <div class="loader-logo"><img src="/logo-enertchad.svg" alt="EnerTchad" width="60" height="60" style="filter:drop-shadow(0 0 20px rgba(217,168,79,0.4))"/></div>
-    <div class="loader-bar"><div class="loader-bar-fill"></div></div>
-  </div>
-</div>
-
-<div class="reading-progress" id="readingProgress" aria-hidden="true"></div>
-<noscript><style>.reveal,.reveal-left{opacity:1!important;transform:none!important}</style></noscript>
-
-<header class="header" id="header">
-  <a class="logo-wrap" href="/" aria-label="EnerTchad Groupe — Accueil">
-    <img loading="lazy" class="logo-img" src="/logo-enertchad.svg" alt="EnerTchad" width="40" height="40" decoding="async"/>
-    <div class="logo-text">Ener<span>Tchad</span></div>
-  </a>
-
-    <nav class="nav" role="navigation" aria-label="Navigation principale">
-    <button class="nav-link" data-mega="oilfield" aria-expanded="false" aria-haspopup="true" data-i18n data-en="Operations">
-      Opérations <i class="fas fa-chevron-down chevron"></i>
-    </button>
-    <button class="nav-link" data-mega="groupe" aria-expanded="false" aria-haspopup="true" data-i18n data-en="Group">
-      Groupe <i class="fas fa-chevron-down chevron"></i>
-    </button>
-    <button class="nav-link" data-mega="durabilite" aria-expanded="false" aria-haspopup="true" data-i18n data-en="Commitment">
-      Engagement <i class="fas fa-chevron-down chevron"></i>
-    </button>
-    <button class="nav-link" data-mega="talents" aria-expanded="false" aria-haspopup="true" data-i18n data-en="Careers">
-      Talents <i class="fas fa-chevron-down chevron"></i>
-    </button>
-    <button class="nav-link" data-mega="actualites" aria-expanded="false" aria-haspopup="true" data-i18n data-en="Media">
-      Médias <i class="fas fa-chevron-down chevron"></i>
-    </button>
-    <a class="nav-link" href="/investisseurs" data-i18n data-en="Investors"><i class="fas fa-chart-pie" style="font-size:0.72rem;opacity:0.7"></i> Investisseurs</a>
-  </nav>
-
-  <div class="header-actions">
-    <a href="/contact" class="header-cta" data-i18n data-en="Request a quote">Demander un devis</a>
-    <button class="lang-btn" id="langToggle" aria-label="Changer de langue">
-      <i class="fas fa-globe"></i> <span class="lang-label">FR</span>
-    </button>
-    <button class="mobile-toggle" id="mobileToggle" aria-label="Ouvrir le menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+<div class="pagewrap">
+<header class="topbar">
+  <div class="container topbar-inner">
+    <a class="brand" href="index.html"><span class="brand-mark">E</span><span>Ener<span class="accent">Tchad</span> Groupe</span></a>
+    <nav class="nav" aria-label="Navigation principale">
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Menu"><span></span><span></span><span></span></button>
+      <ul id="primary-nav" class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="groupe.html">Groupe</a></li>
+        <li>
+          <div class="nav-dropdown">
+            <button class="nav-drop-trigger" type="button" aria-haspopup="true" aria-expanded="false">Opérations <svg class="chev" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4"/></svg></button>
+            <div class="nav-drop-menu" role="menu">
+              <a href="operations/amont.html" class="amont" role="menuitem"><span class="nd-num">01</span><span class="nd-body"><strong>Amont · E&amp;P</strong><span>Exploration &amp; production · 5 bassins</span></span></a>
+              <a href="operations/intermediaire.html" class="inter" role="menuitem"><span class="nd-num">02</span><span class="nd-body"><strong>Intermédiaire</strong><span>Pipeline Doba–Kribi · 1 070 km</span></span></a>
+              <a href="operations/aval.html" class="aval" role="menuitem"><span class="nd-num">03</span><span class="nd-body"><strong>Aval · Distribution</strong><span>Raffinage · 24 stations</span></span></a>
+              <a href="operations/services.html" class="svc" role="menuitem"><span class="nd-num">04</span><span class="nd-body"><strong>Services</strong><span>Oilfield · ingénierie · conseil</span></span></a>
+            </div>
+          </div>
+        </li>
+        <li><a href="investisseurs.html">Investisseurs</a></li>
+        <li><a href="durabilite.html">Durabilité</a></li>
+        <li><a href="talents.html">Talents</a></li>
+        <li><a href="actualites.html">Actualités</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a class="btn btn-primary btn-nav" href="contact.html">Espace investisseurs</a>
+    </nav>
   </div>
 </header>
 
-<main data-category="legal" data-segment="entreprise" data-tags="Confidentialité, RGPD, Données personnelles" id="main">
-<nav class="breadcrumb" aria-label="Fil d'Ariane">
-  <div class="ctn">
-    <ol class="breadcrumb-list">
-      <li><a href="/" data-i18n data-en="Home">Accueil</a></li>
-      <li class="sep"><i class="fas fa-chevron-right"></i></li>
-      <li class="current" data-i18n data-en="Privacy Policy">Politique de confidentialité</li>
-    </ol>
-  </div>
-</nav>
-
-  <!-- ═══ HERO ═══ -->
-  <section class="page-hero" style="background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(217,168,79,0.08),transparent)">
-    <div class="ctn">
-      <div class="hero-inner">
-        <div class="breadcrumb reveal">
-          <a href="/" data-i18n data-en="Home">Accueil</a>
-          <span class="sep">/</span>
-          <span style="color:var(--gold)" data-i18n data-en="Privacy Policy">Confidentialité</span>
-        </div>
-        <h1 class="reveal" data-i18n data-en="<em class='lux-em'>Privacy</em> Policy">
-          Politique de <span class="gold">confidentialité</span>
-        </h1>
-      </div>
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">Données personnelles</p>
+      <h1>Politique de confidentialité</h1>
+      <p class="lead">EnerTchad Groupe s'engage à protéger la vie privée de tous les visiteurs du site, en conformité avec le droit tchadien et les normes internationales (RGPD).</p>
     </div>
   </section>
 
-  <!-- ═══ PRIVACY CONTENT ═══ -->
-  <section class="section">
-    <div class="ctn" style="max-width:900px">
+  <section class="legal-section">
+    <div class="container legal-wrap">
+      <article class="legal-article reveal">
+        <h2>1. Responsable du traitement</h2>
+        <p>Le responsable du traitement des données collectées via le site est <strong>EnerTchad Groupe SA/CA</strong>, dont le siège social est situé à N'Djaména, République du Tchad. Le Délégué à la Protection des Données peut être contacté à <a href="mailto:dpo@enertchad.td">dpo@enertchad.td</a>.</p>
+      </article>
 
-      <div class="info-card reveal" style="padding:var(--sp-2xl);margin-bottom:var(--sp-xl)">
-        <h3 style="color:var(--gold);margin-bottom:var(--sp-lg)" data-i18n data-en="Introduction">1. Introduction</h3>
-        <p style="color:var(--text-sec);line-height:1.8" data-i18n data-en="EnerTchad Groupe SA/CA is committed to protecting the privacy of visitors to this website. This policy describes how we collect, use and protect your personal data in accordance with Chadian law and international best practices.">
-          EnerTchad Groupe SA/CA s'engage à protéger la vie privée des visiteurs de ce site web. Cette politique décrit la manière dont nous collectons, utilisons et protégeons vos données personnelles conformément au droit tchadien et aux meilleures pratiques internationales.
-        </p>
-      </div>
+      <article class="legal-article reveal">
+        <h2>2. Données que nous collectons</h2>
+        <ul class="legal-list">
+          <li><strong>Formulaire de contact</strong> — nom, prénom, adresse email, organisation, pays, sujet et contenu du message.</li>
+          <li><strong>Inscription newsletter</strong> — adresse email, prénom, fonction, thématiques d'intérêt.</li>
+          <li><strong>Analytics</strong> — mesure d'audience via <em>Plausible Analytics</em> (outil respectueux de la vie privée, sans cookies ni identifiants personnels).</li>
+          <li><strong>Candidatures</strong> — données du CV transmises via <a href="talents.html">talents.enertchad.td</a> (stockage sécurisé, accès restreint RH).</li>
+        </ul>
+      </article>
 
-      <div class="info-card reveal" style="padding:var(--sp-2xl);margin-bottom:var(--sp-xl)">
-        <h3 style="color:var(--gold);margin-bottom:var(--sp-lg)" data-i18n data-en="Data Collected">2. Données collectées</h3>
-        <p style="color:var(--text-sec);line-height:1.8" data-i18n data-en="We may collect the following data: contact information (name, email, phone) submitted via our contact form; anonymous navigation data via Plausible Analytics (no cookies, no personal data, GDPR compliant); newsletter subscription email if voluntarily provided.">
-          Nous pouvons collecter les données suivantes :<br><br>
-          <strong>Formulaire de contact :</strong> nom, email, téléphone — soumis volontairement.<br>
-          <strong>Analytics :</strong> données de navigation anonymes via Plausible Analytics (aucun cookie, aucune donnée personnelle, conforme RGPD).<br>
-          <strong>Newsletter :</strong> adresse email si volontairement souscrite.
-        </p>
-      </div>
+      <article class="legal-article reveal">
+        <h2>3. Finalités du traitement</h2>
+        <ul class="legal-list">
+          <li>Répondre aux demandes de contact et gérer la relation avec les parties prenantes</li>
+          <li>Envoyer la newsletter <em>EnerTchad Insights</em> aux abonnés volontaires</li>
+          <li>Mesurer l'audience du site de manière anonyme et en améliorer la performance</li>
+          <li>Gérer les candidatures et le processus de recrutement</li>
+          <li>Respecter les obligations légales et réglementaires applicables</li>
+        </ul>
+        <p class="legal-note"><strong>Engagement ferme</strong> : EnerTchad Groupe ne vend, ne loue ni ne partage jamais vos données personnelles avec des tiers à des fins commerciales.</p>
+      </article>
 
-      <div class="info-card reveal" style="padding:var(--sp-2xl);margin-bottom:var(--sp-xl)">
-        <h3 style="color:var(--gold);margin-bottom:var(--sp-lg)" data-i18n data-en="Use of Data">3. Utilisation des données</h3>
-        <p style="color:var(--text-sec);line-height:1.8" data-i18n data-en="Your data is used exclusively to: respond to your contact requests; send our newsletter (with your consent); improve our website's performance and content; comply with legal obligations. We never sell, rent, or share your personal data with third parties for commercial purposes.">
-          Vos données sont utilisées exclusivement pour :<br><br>
-          — Répondre à vos demandes de contact<br>
-          — Envoyer notre newsletter (avec votre consentement)<br>
-          — Améliorer les performances et le contenu de notre site<br>
-          — Respecter nos obligations légales<br><br>
-          Nous ne vendons, louons ni ne partageons jamais vos données personnelles avec des tiers à des fins commerciales.
-        </p>
-      </div>
+      <article class="legal-article reveal">
+        <h2>4. Base légale &amp; durée de conservation</h2>
+        <ul class="legal-list">
+          <li><strong>Contact</strong> : consentement · conservé 3 ans après le dernier échange</li>
+          <li><strong>Newsletter</strong> : consentement · jusqu'à désinscription</li>
+          <li><strong>Candidatures</strong> : intérêt légitime + consentement · 2 ans maximum</li>
+          <li><strong>Analytics</strong> : intérêt légitime · données agrégées, sans identification</li>
+        </ul>
+      </article>
 
-      <div class="info-card reveal" style="padding:var(--sp-2xl);margin-bottom:var(--sp-xl)">
-        <h3 style="color:var(--gold);margin-bottom:var(--sp-lg)" data-i18n data-en="Cookies">4. Cookies</h3>
-        <p style="color:var(--text-sec);line-height:1.8" data-i18n data-en="This site uses Plausible Analytics, a privacy-first analytics tool that does not use cookies and does not collect personal data. No tracking cookies are placed on your device. A single localStorage key stores your cookie consent preference.">
-          Ce site utilise Plausible Analytics, un outil d'analyse respectueux de la vie privée qui n'utilise pas de cookies et ne collecte aucune donnée personnelle.<br><br>
-          Aucun cookie de suivi n'est déposé sur votre appareil. Une seule clé localStorage enregistre votre préférence de consentement cookies.
-        </p>
-      </div>
+      <article class="legal-article reveal">
+        <h2>5. Vos droits</h2>
+        <p>Conformément au RGPD et au droit tchadien applicable, vous disposez des droits suivants :</p>
+        <ul class="legal-list">
+          <li><strong>Accès</strong> — obtenir la confirmation que vos données sont traitées et en recevoir copie</li>
+          <li><strong>Rectification</strong> — corriger toute donnée inexacte ou incomplète</li>
+          <li><strong>Effacement</strong> — demander la suppression de vos données</li>
+          <li><strong>Portabilité</strong> — recevoir vos données dans un format structuré, lisible par machine</li>
+          <li><strong>Opposition</strong> — vous opposer au traitement pour motifs légitimes</li>
+          <li><strong>Limitation</strong> — demander la suspension temporaire du traitement</li>
+          <li><strong>Retrait du consentement</strong> — à tout moment, sans affecter la licéité du traitement antérieur</li>
+        </ul>
+        <p>Pour exercer ces droits, écrivez à <a href="mailto:dpo@enertchad.td">dpo@enertchad.td</a> en précisant votre demande et en joignant une copie de votre pièce d'identité.</p>
+      </article>
 
-      <div class="info-card reveal" style="padding:var(--sp-2xl);margin-bottom:var(--sp-xl)">
-        <h3 style="color:var(--gold);margin-bottom:var(--sp-lg)" data-i18n data-en="Your Rights">5. Vos droits</h3>
-        <p style="color:var(--text-sec);line-height:1.8" data-i18n data-en="You have the right to access, rectify, delete and port your personal data. You may also object to or restrict the processing of your data. To exercise these rights, contact us at: dpo@enertchad.td or by mail at our head office.">
-          Vous disposez des droits suivants sur vos données personnelles :<br><br>
-          — Droit d'accès et de rectification<br>
-          — Droit à l'effacement (« droit à l'oubli »)<br>
-          — Droit à la portabilité<br>
-          — Droit d'opposition et de limitation du traitement<br><br>
-          Pour exercer ces droits, contactez-nous à : <a href="mailto:dpo@enertchad.td" style="color:var(--gold)">dpo@enertchad.td</a> ou par courrier à notre siège social.
-        </p>
-      </div>
+      <article class="legal-article reveal">
+        <h2>6. Sécurité</h2>
+        <p>Toutes les communications avec le site sont chiffrées via <strong>HTTPS / TLS 1.3</strong>. Les données sont stockées sur des serveurs sécurisés dotés de contrôles d'accès, de sauvegardes régulières et d'un plan de reprise d'activité. L'accès aux données personnelles est strictement limité aux personnels ayant un besoin opérationnel légitime.</p>
+      </article>
 
-      <div class="info-card reveal" style="padding:var(--sp-2xl)">
-        <h3 style="color:var(--gold);margin-bottom:var(--sp-lg)" data-i18n data-en="Data Security">6. Sécurité des données</h3>
-        <p style="color:var(--text-sec);line-height:1.8" data-i18n data-en="We implement appropriate technical and organizational measures to protect your personal data against unauthorized access, alteration, disclosure or destruction. Our site uses HTTPS encryption for all communications.">
-          Nous mettons en œuvre des mesures techniques et organisationnelles appropriées pour protéger vos données personnelles contre tout accès non autorisé, altération, divulgation ou destruction.<br><br>
-          Notre site utilise le chiffrement HTTPS pour toutes les communications.
-        </p>
-      </div>
+      <article class="legal-article reveal">
+        <h2>7. Cookies</h2>
+        <p>Le site n'utilise que des cookies techniques strictement nécessaires au fonctionnement (préférence de langue, consentement). Consultez notre <a href="cookies.html">Politique de cookies</a> pour le détail.</p>
+      </article>
 
+      <article class="legal-article reveal">
+        <h2>8. Modifications</h2>
+        <p>Cette politique peut être mise à jour ponctuellement pour refléter l'évolution de nos pratiques ou de la réglementation. La version en vigueur est celle publiée sur cette page.</p>
+      </article>
+
+      <p class="legal-meta">Version en vigueur au 20 avril 2026. Contact DPO : <a href="mailto:dpo@enertchad.td">dpo@enertchad.td</a>.</p>
     </div>
   </section>
-
 </main>
 
-<!-- ═══ MODERN MEGA FOOTER 2026 ═══ -->
-<footer class="footer modern-footer" role="contentinfo">
-  <!-- Animated Top Border -->
-  <div class="footer-top-accent" aria-hidden="true">
-    <div class="footer-accent-line"></div>
-  </div>
-
-  <!-- KPI Strip -->
-  <div class="footer-kpi-strip">
-    <div class="ctn">
-      <div class="kpi-ticker">
-        <div class="kpi-item">
-          <span class="kpi-num" data-count="1240">1 240</span>
-          <span class="kpi-tag" data-i18n data-en="Employees">Collaborateurs</span>
-        </div>
-        <div class="kpi-divider" aria-hidden="true"></div>
-        <div class="kpi-item">
-          <span class="kpi-num" data-count="144000">144K</span>
-          <span class="kpi-tag" data-i18n data-en="bbl/day">bbl/jour</span>
-        </div>
-        <div class="kpi-divider" aria-hidden="true"></div>
-        <div class="kpi-item">
-          <span class="kpi-num">24</span>
-          <span class="kpi-tag" data-i18n data-en="Stations">Stations</span>
-        </div>
-        <div class="kpi-divider" aria-hidden="true"></div>
-        <div class="kpi-item">
-          <span class="kpi-num" data-count="4">4</span>
-          <span class="kpi-tag" data-i18n data-en="OFS Divisions">Pôles OFS</span>
-        </div>
-        <div class="kpi-divider" aria-hidden="true"></div>
-        <div class="kpi-item">
-          <span class="kpi-num" data-count="1070">1 070</span>
-          <span class="kpi-tag" data-i18n data-en="km pipeline">km pipeline</span>
-        </div>
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="brand"><span class="brand-mark">E</span><span>Ener<span class="accent">Tchad</span> Groupe</span></div>
+        <p>Société Anonyme à Conseil d'Administration · OHADA / AUSCGIE. Siège : N'Djamena, République du Tchad.</p>
+        <p style="font-size:.82rem; margin-top:16px;">RCCM : N'DJ/RC/2026-A-0001<br/>Capital : 50 000 000 000 XAF</p>
+      </div>
+      <div>
+        <h5>Opérations</h5>
+        <ul><li><a href="operations/amont.html">Amont · E&amp;P</a></li><li><a href="operations/intermediaire.html">Intermédiaire</a></li><li><a href="operations/aval.html">Aval</a></li><li><a href="operations/services.html">Services</a></li></ul>
+      </div>
+      <div>
+        <h5>Groupe</h5>
+        <ul><li><a href="groupe.html">À propos</a></li><li><a href="investisseurs.html">Investisseurs</a></li><li><a href="talents.html">Carrières</a></li><li><a href="maps.html">Implantations</a></li></ul>
+      </div>
+      <div>
+        <h5>Engagement</h5>
+        <ul><li><a href="durabilite.html">Durabilité &amp; ESG</a></li><li><a href="durabilite.html#itie">ITIE</a></li><li><a href="newsletter.html">Newsletter</a></li><li><a href="actualites.html">Actualités</a></li></ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul><li>Av. Charles de Gaulle<br/>N'Djamena · Tchad</li><li><a href="tel:+23599298696">+235 99 29 86 96</a></li><li><a href="mailto:contact@enertchad.td">contact@enertchad.td</a></li></ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>© <span data-year>2026</span> EnerTchad Groupe SA/CA. Tous droits réservés.</div>
+      <div class="legal">
+        <a href="mentions-legales.html">Mentions légales</a>
+        <a href="confidentialite.html">Confidentialité</a>
+        <a href="cookies.html">Cookies</a>
+        <a href="contact.html#alerte">Lanceurs d'alerte</a>
       </div>
     </div>
   </div>
-
-  <!-- Main Content -->
-  <div class="ctn footer-body">
-    <div class="footer-grid-modern">
-      <!-- Brand Column -->
-      <div class="footer-brand-col">
-        <a href="/" class="footer-logo-link" aria-label="EnerTchad Groupe — Accueil">
-          <div class="footer-logo-mark">
-            <img loading="lazy" src="/logo-enertchad.svg" alt="" width="32" height="32" class="logo-img" decoding="async"/>
-          </div>
-          <span class="footer-wordmark">EnerTchad<em>Groupe</em></span>
-        </a>
-        <p class="footer-desc" data-i18n data-en="Oilfield services &amp; petroleum distribution across Chad. Major expertise, local agility.">Services pétroliers &amp; distribution au Tchad. L'expertise des majors, l'agilité locale.</p>
-        <div class="footer-badges">
-          <span class="f-badge" title="IWCF">IWCF</span>
-          <span class="f-badge" title="API">API</span>
-          <span class="f-badge" title="ISO 14001">ISO 14001</span>
-          <span class="f-badge" title="ITIE/EITI">ITIE</span>
-        </div>
-      </div>
-
-      <!-- Nav Columns -->
-      <nav class="footer-nav-col" aria-label="Services des Champs">
-        <h6 data-i18n data-en="Services">Services</h6>
-        <ul>
-          <li><a href="/services/well-services" data-i18n data-en="Well Services">Well Services</a></li>
-          <li><a href="/services/drilling" data-i18n data-en="Drilling &amp; Engineering">Drilling &amp; Engineering</a></li>
-          <li><a href="/services/digital" data-i18n data-en="Digital &amp; SCADA">Digital &amp; SCADA</a></li>
-          <li><a href="/services/consulting" data-i18n data-en="Consulting &amp; Training">Consulting &amp; Formation</a></li>
-          <li><a href="/distribution/" data-i18n data-en="Distribution">Distribution &amp; Négoce</a></li>
-        </ul>
-      </nav>
-      <nav class="footer-nav-col" aria-label="Société Pétrolière">
-        <h6 data-i18n data-en="Energy">Énergies</h6>
-        <ul>
-          <li><a href="/operations/amont" data-i18n data-en="Upstream — E&amp;P">Amont — E&amp;P</a></li>
-          <li><a href="/operations/intermediaire" data-i18n data-en="Midstream">Intermédiaire</a></li>
-          <li><a href="/operations/aval" data-i18n data-en="Downstream">Aval — Raffinage</a></li>
-          <li><a href="/services/technologies" data-i18n data-en="Technologies &amp; AI">Technologies &amp; IA</a></li>
-          <li><a href="/maps" data-i18n data-en="Operations Map">Carte des Opérations</a></li>
-          <li><a href="/operations/greentech" data-i18n data-en="Renewables">Énergies Renouvelables</a></li>
-        </ul>
-      </nav>
-      <nav class="footer-nav-col" aria-label="Entreprise">
-        <h6 data-i18n data-en="Company">Entreprise</h6>
-        <ul>
-          <li><a href="/groupe/" data-i18n data-en="About">À propos</a></li>
-          <li><a href="/durabilite" data-i18n data-en="ESG &amp; Sustainability">Durabilité &amp; ESG</a></li>
-          <li><a href="/investisseurs" data-i18n data-en="Investors">Investisseurs</a></li>
-          <li><a href="/talents" data-i18n data-en="Careers">Talents &amp; Carrières</a></li>
-          <li><a href="/actualites" data-i18n data-en="Media">Médias</a></li><li><a href="/newsletter" data-i18n data-en="Newsletter">Newsletter</a></li>
-        </ul>
-      </nav>
-      <div class="footer-nav-col footer-cta-col">
-        <h6 data-i18n data-en="Get in Touch">Nous Contacter</h6>
-        <div class="footer-contact-stack">
-          <a href="/contact" class="footer-cta-btn" data-i18n data-en="Contact Us"><i class="fas fa-arrow-right"></i> Contactez-nous</a>
-          <a href="/contact#devis" class="footer-cta-link" data-i18n data-en="Request a Quote"><i class="fas fa-file-invoice"></i> Demander un devis</a>
-          <a href="tel:+23599298696" class="footer-cta-link"><i class="fas fa-phone"></i> +235 99 29 86 96</a>
-          <a href="mailto:contact@enertchad.td" class="footer-cta-link"><i class="fas fa-envelope"></i> contact@enertchad.td</a>
-        </div>
-        <div class="footer-hours">
-          <i class="fas fa-clock"></i>
-          <span data-i18n data-en="Mon–Fri 7:30–17:30 · 24/7 emergencies">Lun–Ven 7h30–17h30 · Urgences 24/7</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Newsletter Band -->
-  <div class="footer-newsletter-band">
-    <div class="ctn">
-      <div class="newsletter-inner">
-        <div class="newsletter-text">
-          <strong data-i18n data-en="Industry Intelligence">Veille Sectorielle</strong>
-          <span data-i18n data-en="Monthly insights on energy &amp; oilfield services.">Analyses mensuelles énergie &amp; services pétroliers.</span>
-        </div>
-        <form class="newsletter-modern newsletter-modern-linked" aria-label="Newsletter" data-redirect="/newsletter">
-          <input type="email" placeholder="nom@entreprise.td" required aria-label="Email"/>
-          <button type="submit" data-i18n data-en="Subscribe">S'abonner</button>
-        </form>
-      </div>
-    </div>
-  </div>
-
-  <!-- Bottom Bar -->
-  <div class="footer-bottom-bar">
-    <div class="ctn">
-      <div class="bottom-bar-inner">
-        <span class="footer-copy" data-i18n data-en="&copy; 2026 EnerTchad Groupe SA/CA">&copy; 2026 EnerTchad Groupe SA/CA</span>
-        <div class="footer-legal-links">
-          <a href="/mentions-legales" data-i18n data-en="Legal">Mentions légales</a>
-          <a href="/confidentialite" data-i18n data-en="Privacy">Confidentialité</a>
-          <a href="/cookies" data-i18n data-en="Cookies">Cookies</a>
-        </div>
-        <div class="footer-social-row">
-          <a href="https://www.linkedin.com/company/enertchad" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://x.com/EnerTchad" target="_blank" rel="noopener noreferrer" aria-label="X"><i class="fab fa-x-twitter"></i></a>
-          <a href="https://www.facebook.com/EnerTchad" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://www.youtube.com/@EnerTchad" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Address (structured data) -->
-  <address class="footer-address" hidden>
-    <span data-i18n data-en="Radisson Blu, Block D, Office 23 — N'Djamena, Chad">Radisson Blu, Bloc D, Bureau 23 — N'Djaména, Tchad</span>
-  </address>
 </footer>
-
-<!-- ═══ COOKIE CONSENT ═══ -->
-<div class="cookie-consent" id="cookieConsent">
-  <div class="ctn" style="display:flex;align-items:center;justify-content:space-between;gap:var(--sp-lg)">
-    <p style="margin:0;font-size:0.9rem" data-i18n data-en="We use cookies to improve your experience. By continuing to browse, you accept our use of cookies.">
-      Nous utilisons les cookies pour améliorer votre expérience. En continuant, vous acceptez notre utilisation de cookies.
-    </p>
-    <div style="display:flex;gap:var(--sp-sm)">
-      <button id="cookieAccept" class="btn btn--brand btn--sm" data-i18n data-en="Accept">Accepter</button>
-      <a href="/cookies" class="btn btn--outline btn--sm" data-i18n data-en="Learn more">En savoir plus</a>
-    </div>
+</div>
+<script src="assets/js/main.js"></script>
+<!-- Cookie consent banner -->
+<div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Consentement cookies">
+  <p style="margin:0 0 12px 0; font-size:.92rem; line-height:1.55;">Nous utilisons uniquement des cookies techniques essentiels (préférences, session) et une mesure d'audience anonyme sans cookie. Aucun traceur publicitaire.</p>
+  <div class="cb-actions">
+    <a class="cb-btn" href="cookies.html">En savoir plus</a>
+    <button type="button" class="cb-btn primary" id="cookie-accept">J'ai compris</button>
   </div>
 </div>
-
-<script defer src="/js/premium.js"></script>
+<script>
+(function(){
+  function getCookie(n){var m=document.cookie.match(new RegExp('(?:^|; )'+n+'=([^;]*)'));return m?decodeURIComponent(m[1]):null;}
+  function setCookie(n,v,d){var e=new Date();e.setTime(e.getTime()+d*864e5);document.cookie=n+'='+encodeURIComponent(v)+'; expires='+e.toUTCString()+'; path=/; SameSite=Lax';}
+  var b=document.getElementById('cookie-banner'); if(!b) return;
+  if(!getCookie('consent_v1')){ setTimeout(function(){b.classList.add('show');}, 900); }
+  var btn=document.getElementById('cookie-accept');
+  if(btn){ btn.addEventListener('click', function(){ setCookie('consent_v1','accepted-technical',180); b.classList.remove('show'); }); }
+})();
+</script>
+<!-- /Cookie consent banner -->
 </body>
 </html>

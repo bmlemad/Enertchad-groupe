@@ -1,19 +1,50 @@
 {
   "name": "EnerTchad Groupe",
   "short_name": "EnerTchad",
-  "description": "Groupe pétrolier & gazier souverain du Tchad — 6 filiales, de l'exploration à la distribution",
+  "description": "EnerTchad Groupe SA/CA — Acteur énergétique intégré du Tchad : exploration, pipeline, raffinage, distribution, services.",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
+  "orientation": "any",
   "background_color": "#080E1A",
   "theme_color": "#080E1A",
-  "orientation": "any",
-  "icons": [
-    { "src": "/logo-enertchad.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
-    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
-    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
-    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
-  ],
-  "categories": ["business"],
   "lang": "fr",
-  "dir": "ltr"
+  "dir": "ltr",
+  "categories": ["business", "news", "finance"],
+  "icons": [
+    {
+      "src": "/assets/img/favicon-32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/img/apple-touch-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/img/apple-touch-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Investisseurs",
+      "url": "/investisseurs.html",
+      "description": "IR, résultats, documents"
+    },
+    {
+      "name": "Actualités",
+      "url": "/actualites.html",
+      "description": "Salle de presse"
+    },
+    {
+      "name": "Contact",
+      "url": "/contact.html",
+      "description": "Formulaire et équipes"
+    }
+  ]
 }

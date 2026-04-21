@@ -1,154 +1,81 @@
-/**
- * EnerTchad Groupe — Service Worker v3.0
- * Production-ready with cache-first for static assets, network-first for HTML
- * Offline fallback support with offline.html
+/* EnerTchad Groupe — Service Worker
+ * Stratégie : stale-while-revalidate pour HTML, cache-first pour /assets/*
+ * Fallback offline sur offline.html
  */
 
-const CACHE_NAME = 'enertchad-groupe-v5';
-const OFFLINE_URL = '/offline.html';
+const CACHE_VERSION = 'enertchad-v1.0.0';
+const STATIC_CACHE = `${CACHE_VERSION}-static`;
+const RUNTIME_CACHE = `${CACHE_VERSION}-runtime`;
 
-// Critical static assets to pre-cache on install
-const STATIC_ASSETS = [
+// Précache critique : shell + offline fallback
+const PRECACHE_URLS = [
   '/',
   '/index.html',
   '/offline.html',
   '/404.html',
-  '/css/style.min.css',
-  '/css/main.v1.css',
-  '/css/premium.css',
-  '/css/nav-premium.css',
-  '/css/ultra-premium.css',
-  '/css/enhance.css',
-  '/css/shared-hero-a.css',
-  '/js/app.min.js',
-  '/js/nav-premium.js',
-  '/js/enhance.js',
-  '/js/lang.js',
-  '/js/premium.js',
-  '/js/chad-map.js',
-  '/logo-enertchad.svg',
-  '/favicon.svg',
+  '/assets/css/main.css',
+  '/assets/js/main.js',
+  '/assets/img/favicon-32.png',
+  '/assets/img/apple-touch-icon.png',
+  '/assets/img/og-cover.png',
   '/manifest.json'
 ];
 
-/**
- * Install event: pre-cache critical assets
- */
-self.addEventListener('install', (event) => {
+self.addEventListener('install', event => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll(STATIC_ASSETS);
-    })
+    caches.open(STATIC_CACHE)
+      .then(cache => cache.addAll(PRECACHE_URLS))
+      .then(() => self.skipWaiting())
   );
-  self.skipWaiting();
 });
 
-/**
- * Activate event: clean up old cache versions
- */
-self.addEventListener('activate', (event) => {
+self.addEventListener('activate', event => {
   event.waitUntil(
-    caches.keys().then((keys) => {
-      return Promise.all(
-        keys
-          .filter((key) => key !== CACHE_NAME)
-          .map((key) => caches.delete(key))
-      );
-    })
+    caches.keys().then(keys => Promise.all(
+      keys.filter(key => !key.startsWith(CACHE_VERSION)).map(key => caches.delete(key))
+    )).then(() => self.clients.claim())
   );
-  self.clients.claim();
 });
 
-/**
- * Fetch event: implement caching strategies
- */
-self.addEventListener('fetch', (event) => {
-  const { request } = event;
-  const url = new URL(request.url);
+self.addEventListener('fetch', event => {
+  const req = event.request;
 
-  // Only handle same-origin requests
+  // Only GET requests
+  if (req.method !== 'GET') return;
+
+  const url = new URL(req.url);
+
+  // Skip cross-origin (Google Fonts etc.)
   if (url.origin !== self.location.origin) return;
 
-  // Skip non-GET requests
-  if (request.method !== 'GET') return;
-
-  /**
-   * HTML pages: network-first strategy
-   * Always fetch fresh content, fall back to cache, then offline page
-   */
-  if (request.headers.get('accept')?.includes('text/html')) {
+  // Assets — cache-first (immutable with 1y cache anyway)
+  if (url.pathname.startsWith('/assets/')) {
     event.respondWith(
-      fetch(request)
-        .then((response) => {
-          // Cache successful page loads
-          if (response.ok) {
-            const clone = response.clone();
-            caches.open(CACHE_NAME).then((cache) => {
-              cache.put(request, clone);
-            });
-          }
-          return response;
-        })
-        .catch(() => {
-          return caches.match(request).then((cached) => {
-            return cached || caches.match(OFFLINE_URL);
-          });
-        })
+      caches.match(req).then(cached => cached || fetch(req).then(res => {
+        const clone = res.clone();
+        caches.open(RUNTIME_CACHE).then(c => c.put(req, clone));
+        return res;
+      }))
     );
     return;
   }
 
-  /**
-   * Static assets (CSS, JS, images, SVGs, fonts): cache-first strategy
-   * Serve from cache first, fetch from network if not cached
-   */
-  if (
-    url.pathname.startsWith('/css/') ||
-    url.pathname.startsWith('/js/') ||
-    url.pathname.startsWith('/images/') ||
-    url.pathname.startsWith('/fonts/') ||
-    url.pathname.endsWith('.svg') ||
-    url.pathname.endsWith('.png') ||
-    url.pathname.endsWith('.jpg') ||
-    url.pathname.endsWith('.jpeg') ||
-    url.pathname.endsWith('.gif') ||
-    url.pathname.endsWith('.webp') ||
-    url.pathname.endsWith('.woff') ||
-    url.pathname.endsWith('.woff2') ||
-    url.pathname.endsWith('.ttf') ||
-    url.pathname.endsWith('.eot')
-  ) {
+  // HTML — network-first with offline fallback
+  if (req.headers.get('accept')?.includes('text/html')) {
     event.respondWith(
-      caches.match(request).then((cached) => {
-        if (cached) return cached;
-        return fetch(request).then((response) => {
-          if (response.ok) {
-            const clone = response.clone();
-            caches.open(CACHE_NAME).then((cache) => {
-              cache.put(request, clone);
-            });
-          }
-          return response;
-        });
-      })
+      fetch(req).then(res => {
+        const clone = res.clone();
+        caches.open(RUNTIME_CACHE).then(c => c.put(req, clone));
+        return res;
+      }).catch(() =>
+        caches.match(req).then(cached => cached || caches.match('/offline.html'))
+      )
     );
     return;
   }
 
-  /**
-   * Other assets (PDFs, docs, etc): network-first with cache fallback
-   */
+  // Default : network-first
   event.respondWith(
-    fetch(request)
-      .then((response) => {
-        if (response.ok) {
-          const clone = response.clone();
-          caches.open(CACHE_NAME).then((cache) => {
-            cache.put(request, clone);
-          });
-        }
-        return response;
-      })
-      .catch(() => caches.match(request))
+    fetch(req).catch(() => caches.match(req))
   );
 });

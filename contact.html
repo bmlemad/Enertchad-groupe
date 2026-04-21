@@ -1,592 +1,408 @@
-<!DOCTYPE html>
-<html lang="fr" class="no-js">
+<!doctype html>
+<html lang="fr">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://plausible.io; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://plausible.io; frame-src 'none'; object-src 'none'; base-uri 'self';"/>
-  <title>Contact | EnerTchad Groupe</title>
-  <meta name="description" content="Contact EnerTchad — Coordonnées et formulaire pour nous joindre."/>
-  <meta name="robots" content="index,follow"/>
-  <link href="/manifest.json" rel="manifest"/>
-  <meta name="theme-color" content="#080E1A"/>
-  <meta name="apple-mobile-web-app-capable" content="yes"/>
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
-  <meta name="apple-mobile-web-app-title" content="EnerTchad"/>
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
-  <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
-  <link rel="preload" href="/logo-enertchad.svg" as="image" type="image/svg+xml"/>
-
-  <!-- OG -->
-  <meta property="og:title" content="Contact | EnerTchad Groupe"/>
-  <meta property="og:description" content="Contactez EnerTchad Groupe à N'Djaména. Formulaire, adresse, téléphone et carte. Réponse sous 24h."/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:url" content="https://enertchad-groupe.vercel.app/contact"/>
-  <meta property="og:locale" content="fr_TD"/>
-  <meta property="og:site_name" content="EnerTchad Groupe"/>
-  <meta property="og:image" content="https://enertchad-groupe.vercel.app/images/og-enertchad.png"/>
-  <meta property="og:image:width" content="1200"/>
-  <meta property="og:image:height" content="630"/>
-  <meta property="og:image:alt" content="EnerTchad Groupe — Contact"/>
-
-  <!-- Twitter Card (QW-02) -->
-  <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:site" content="@EnerTchad"/>
-  <meta name="twitter:title" content="Contact | EnerTchad Groupe"/>
-  <meta name="twitter:description" content="Contactez EnerTchad Groupe à N'Djaména. Formulaire, adresse, téléphone et carte. Réponse sous 24h."/>
-  <meta name="twitter:image" content="https://enertchad-groupe.vercel.app/images/og-enertchad.png"/>
-
-  <!-- JSON-LD -->
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Organization","name":"EnerTchad Groupe","legalName":"EnerTchad Groupe SA/CA","description":"Société de services pétroliers (OFS) au Tchad. 4 pôles : Well Services, Drilling, Digital & SCADA, Consulting. Première OFS tchadienne de cette envergure.","url":"https://enertchad-groupe.vercel.app","address":{"@type":"PostalAddress","streetAddress":"Cité du 1er Décembre, Radisson Blu, Bloc D, Bureau 23, Quartier Sabangali","addressLocality":"N'Djaména","addressRegion":"N'Djaména","postalCode":"BP 0000","addressCountry":"TD"},"telephone":"+235-99-29-86-96","email":"contact@enertchad.td","foundingDate":"2026","numberOfEmployees":{"@type":"QuantitativeValue","value":1240},"sameAs":["https://www.linkedin.com/company/enertchad"],"areaServed":{"@type":"Country","name":"Chad"},"industry":"Oilfield Services"}
-  </script>
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://enertchad-groupe.vercel.app/"},{"@type":"ListItem","position":2,"name":"Contact","item":"https://enertchad-groupe.vercel.app/contact"}]}
-  </script>
-  <!-- WebSite JSON-LD (QW-01) -->
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"WebSite","name":"EnerTchad Groupe","url":"https://enertchad-groupe.vercel.app/","inLanguage":["fr-TD","en"],"publisher":{"@type":"Organization","name":"EnerTchad Groupe"}}
-  </script>
-  <!-- ContactPage JSON-LD (QW-01) -->
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"ContactPage","url":"https://enertchad-groupe.vercel.app/contact","name":"Contact — EnerTchad Groupe","about":{"@type":"Organization","name":"EnerTchad Groupe","email":"contact@enertchad.td","telephone":"+235-99-29-86-96"}}
-  </script>
-
-  <!-- FAQPage JSON-LD -->
-  <script type="application/ld+json">
-  {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Comment contacter EnerTchad Groupe ?", "acceptedAnswer": {"@type": "Answer", "text": "Vous pouvez nous contacter par téléphone au +235 99 29 86 96, par email à contact@enertchad.td, ou via le formulaire de contact sur notre site web."}}, {"@type": "Question", "name": "Où se trouve le siège d'EnerTchad ?", "acceptedAnswer": {"@type": "Answer", "text": "Le siège social d'EnerTchad Groupe se situe à la Cité du 1er Décembre, Radisson Blu, Bloc D, Bureau 23, Quartier Sabangali, N'Djaména, Tchad."}}]}
-  </script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Space+Grotesk:wght@400..700&display=swap" rel="preload"/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Space+Grotesk:wght@400..700&display=swap" media="print" onload="this.media='all'" rel="stylesheet"/>
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Space+Grotesk:wght@400..700&display=swap" rel="stylesheet"/></noscript>
-<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
-  <noscript><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/></noscript>
-    <link rel="stylesheet" href="/css/premium.css"/>
-<link rel="preload" href="/css/style.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
-  <noscript><link rel="stylesheet" href="/css/style.min.css"/></noscript>
-
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="></script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="></script>
-  <script defer src="/js/app.min.js"></script>
-  <link rel="canonical" href="https://enertchad-groupe.vercel.app/contact"/>
-  <link rel="alternate" hreflang="fr" href="https://enertchad-groupe.vercel.app/contact"/>
-  <link rel="alternate" hreflang="en" href="https://enertchad-groupe.vercel.app/contact?lang=en"/>
-
-  <!-- Analytics — Plausible (QW-10) -->
-  <script defer data-domain="enertchad-groupe.vercel.app" src="https://plausible.io/js/script.tagged-events.js"></script>
-  <script>window.plausible=window.plausible||function(){(window.plausible.q=window.plausible.q||[]).push(arguments)}</script>
-  <!-- Sentry — DSN injecté via data-sentry-dsn (fail-silent si absent). Configurer en build-time (Vercel env SENTRY_DSN). -->
-  <script defer src="https://browser.sentry-cdn.com/7.120.0/bundle.min.js" crossorigin="anonymous" data-sentry-dsn=""></script>
-  <script>
-    window.addEventListener("load", function(){
-      var s = document.querySelector("script[data-sentry-dsn]");
-      var dsn = s && s.getAttribute("data-sentry-dsn");
-      if (window.Sentry && dsn && dsn.length > 10) {
-        try { Sentry.init({ dsn: dsn, environment: "production", tracesSampleRate: 0.1, release: (window.__BUILD_SHA__ || "unknown") }); } catch(e) { /* fail-silent */ }
-      }
-    });
-  </script>
-
-  <script defer src="/js/lang.js"></script>
-  <script defer src="/js/nav-premium.js"></script>
-  <script defer src="/js/ultra-premium.js"></script>
-  <link rel="stylesheet" href="/css/nav-premium.css"/>
-  <!-- Ultra-Premium layer (UP-P1 · 2026-04-20) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap">
-  <link rel="stylesheet" href="/css/ultra-premium.css"/>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#080E1A" />
+<title>Contact — Équipes, implantations, formulaire | EnerTchad Groupe</title>
+<meta name="description" content="Nous contacter : siège N'Djamena, relations investisseurs, presse, candidatures, communautés, HSE, achats. Formulaire, téléphone, e-mail et implantations." />
+  <link rel="canonical" href="https://www.enertchad.td/contact.html" />
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="EnerTchad Groupe" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:url" content="https://www.enertchad.td/contact.html" />
+  <meta property="og:title" content="Contact — Équipes, implantations, formulaire | EnerTchad Groupe" />
+  <meta property="og:description" content="Nous contacter : siège N'Djamena, relations investisseurs, presse, candidatures, communautés, HSE, achats. Formulaire, téléphone, e-mail et implantations." />
+  <meta property="og:image" content="https://www.enertchad.td/assets/img/og-cover.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Contact — Équipes, implantations, formulaire | EnerTchad Groupe" />
+  <meta name="twitter:description" content="Nous contacter : siège N'Djamena, relations investisseurs, presse, candidatures, communautés, HSE, achats. Formulaire, téléphone, e-mail et implantations." />
+  <meta name="twitter:image" content="https://www.enertchad.td/assets/img/og-cover.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" />
+<link rel="stylesheet" href="assets/css/main.css" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23D9A84F'/%3E%3Ctext x='16' y='22' font-family='Space Grotesk, sans-serif' font-weight='700' font-size='16' text-anchor='middle' fill='%23080E1A'%3EE%3C/text%3E%3C/svg%3E" />
+  <link rel="manifest" href="manifest.json" />
+  <script>if('serviceWorker' in navigator){window.addEventListener('load',()=>{navigator.serviceWorker.register('/sw.js').catch(()=>{});});}</script>
+<script type="application/ld+json">{
+  "@context":"https://schema.org",
+  "@type":"ContactPage",
+  "name":"Contact — EnerTchad",
+  "url":"https://www.enertchad.td/contact.html",
+  "about":{"@type":"Organization","name":"EnerTchad Groupe SA/CA","telephone":"+235 99 29 86 96","email":"contact@enertchad.td","address":{"@type":"PostalAddress","streetAddress":"Avenue Charles de Gaulle","addressLocality":"N'Djamena","addressCountry":"TD"}}
+}</script>
 </head>
 <body>
-<a href="#main" class="skip-link" data-i18n data-en="Skip to content">Aller au contenu</a>
 
-<!-- ═══ LOADING SCREEN ═══ -->
-<div class="page-loader" id="pageLoader" aria-hidden="true">
-  <div class="loader-inner">
-    <div class="loader-logo"><img src="/logo-enertchad.svg" alt="EnerTchad" width="60" height="60" style="filter:drop-shadow(0 0 20px rgba(217,168,79,0.4))"/></div>
-    <div class="loader-bar"><div class="loader-bar-fill"></div></div>
-  </div>
+<div class="nav-wrap">
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand"><span class="brand-mark">E</span><span>Ener<span class="accent">Tchad</span> Groupe</span></a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Accueil</a>
+        <a href="groupe.html">Groupe</a>
+        <div class="nav-dropdown">
+          <button class="nav-drop-trigger" type="button" aria-haspopup="true" aria-expanded="false">Opérations
+            <svg class="chev" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4"/></svg>
+          </button>
+          <div class="nav-drop-menu" role="menu">
+            <a href="operations/amont.html" class="amont" role="menuitem">
+              <span class="nd-num">01</span>
+              <span class="nd-body"><strong>Amont · E&amp;P</strong><span>Exploration &amp; production · 5 bassins</span></span>
+            </a>
+            <a href="operations/intermediaire.html" class="inter" role="menuitem">
+              <span class="nd-num">02</span>
+              <span class="nd-body"><strong>Intermédiaire</strong><span>Pipeline Doba–Kribi · 1 070 km</span></span>
+            </a>
+            <a href="operations/aval.html" class="aval" role="menuitem">
+              <span class="nd-num">03</span>
+              <span class="nd-body"><strong>Aval · Distribution</strong><span>Raffinage &amp; réseau stations</span></span>
+            </a>
+            <a href="operations/services.html" class="svc" role="menuitem">
+              <span class="nd-num">04</span>
+              <span class="nd-body"><strong>Services</strong><span>Oilfield · formation · ingénierie</span></span>
+            </a>
+          </div>
+        </div>
+        <a href="investisseurs.html">Investisseurs</a>
+        <a href="durabilite.html">Durabilité</a>
+        <a href="talents.html">Talents</a>
+        <a href="actualites.html">Actualités</a>
+        <a href="contact.html" class="active">Contact</a>
+      </div>
+      <div class="nav-cta">
+        <span class="lang-pill"><span class="on">FR</span>·<span>EN</span></span>
+        <a href="#formulaire" class="btn btn-primary">Écrivez-nous <span class="arrow">→</span></a>
+        <button class="nav-toggle" aria-label="Menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      </div>
+    </div>
+  </nav>
 </div>
 
-<div class="reading-progress" id="readingProgress" aria-hidden="true"></div>
-<noscript><style>.reveal,.reveal-left{opacity:1!important;transform:none!important}</style></noscript>
-
-<header class="header" id="header">
-  <a class="logo-wrap" href="/" aria-label="EnerTchad Groupe — Accueil">
-    <img loading="lazy" class="logo-img" src="/logo-enertchad.svg" alt="EnerTchad" width="40" height="40" decoding="async"/>
-    <div class="logo-text">Ener<span>Tchad</span></div>
-  </a>
-
-    <nav class="nav" role="navigation" aria-label="Navigation principale">
-    <button class="nav-link" data-mega="oilfield" aria-expanded="false" aria-haspopup="true" data-i18n data-en="Operations">
-      Opérations <i class="fas fa-chevron-down chevron"></i>
-    </button>
-    <button class="nav-link" data-mega="groupe" aria-expanded="false" aria-haspopup="true" data-i18n data-en="Group">
-      Groupe <i class="fas fa-chevron-down chevron"></i>
-    </button>
-    <button class="nav-link" data-mega="durabilite" aria-expanded="false" aria-haspopup="true" data-i18n data-en="Commitment">
-      Engagement <i class="fas fa-chevron-down chevron"></i>
-    </button>
-    <button class="nav-link" data-mega="talents" aria-expanded="false" aria-haspopup="true" data-i18n data-en="Careers">
-      Talents <i class="fas fa-chevron-down chevron"></i>
-    </button>
-    <button class="nav-link" data-mega="actualites" aria-expanded="false" aria-haspopup="true" data-i18n data-en="Media">
-      Médias <i class="fas fa-chevron-down chevron"></i>
-    </button>
-    <a class="nav-link" href="/investisseurs" data-i18n data-en="Investors"><i class="fas fa-chart-pie" style="font-size:0.72rem;opacity:0.7"></i> Investisseurs</a>
-  </nav>
-
-  <div class="header-actions">
-    <a href="/contact" class="header-cta" data-i18n data-en="Request a quote">Demander un devis</a>
-    <button class="lang-btn" id="langToggle" aria-label="Changer de langue">
-      <i class="fas fa-globe"></i> <span class="lang-label">FR</span>
-    </button>
-    <button class="mobile-toggle" id="mobileToggle" aria-label="Ouvrir le menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+<header class="hero hero-sub">
+  <div class="container hero-inner">
+    <span class="kicker reveal">Contact</span>
+    <h1 class="reveal">Parlons ensemble de <span class="gold">votre projet.</span></h1>
+    <p class="lead reveal" style="--delay:.1s;">Investisseurs, journalistes, candidats, fournisseurs, partenaires communautaires, autorités : chaque demande est routée vers l'équipe compétente. Nous nous engageons sur un premier retour sous 48 heures ouvrées.</p>
   </div>
 </header>
 
-<main data-category="corporate" data-segment="entreprise" data-tags="Contact, Formulaire, Adresse, Téléphone" id="main">
-<nav class="breadcrumb" aria-label="Fil d'Ariane">
-  <div class="ctn">
-    <ol class="breadcrumb-list">
-      <li><a href="/" data-i18n data-en="Home">Accueil</a></li>
-      <li class="sep"><i class="fas fa-chevron-right"></i></li>
-      <li class="current" data-i18n data-en="Contact">Contact</li>
-    </ol>
-  </div>
-</nav>
-
-  <!-- ═══ HERO ═══ -->
-  <section class="page-hero" style="background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(217,168,79,0.08),transparent)">
-    <div class="ctn">
-      <div class="hero-inner">
-        <div class="breadcrumb reveal">
-          <a href="/" data-i18n data-en="Home">Accueil</a>
-          <span class="sep">/</span>
-          <span style="color:var(--gold)" data-i18n data-en="Contact">Contact</span>
-        </div>
-        <h1 class="reveal" data-i18n data-en="Let's <em class='lux-em'>talk</em>">
-          <em class="lux-em">Parlons</em> <span class="gold">ensemble</span>
-        </h1>
-        <p class="hero-desc reveal" data-i18n data-en="Whether you're an operator, investor, distributor, or talent — we're ready to listen. Choose the right channel below.">
-          Que vous soyez opérateur, investisseur, distributeur ou talent — nous sommes à votre écoute. Choisissez le bon canal ci-dessous.
-        </p>
-      </div>
-      <img src="images/contact-hero.svg" alt="Contact EnerTchad" class="hero-illustration reveal-right" aria-hidden="true" loading="lazy" decoding="async"/>
+<!-- Équipes dédiées -->
+<section>
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="kicker">Équipes dédiées</span>
+      <h2>Un point de contact spécialisé pour chaque sujet.</h2>
+      <p class="lead">Écrivez directement à l'équipe concernée pour une prise en charge accélérée, ou utilisez le formulaire général si vous hésitez sur le destinataire.</p>
     </div>
-  </section>
 
-  <!-- ═══ CONTACT FORM + INFO ═══ -->
-  <span id="devis" aria-hidden="true" style="display:block;position:relative;top:-80px"></span>
-  <section class="section" id="formulaire">
-    <div class="ctn">
-      <div class="grid-contact">
-        <!-- Form -->
-        <div class="info-card reveal" style="padding:var(--sp-2xl)">
-          <h3 style="margin-bottom:var(--sp-xl)" data-i18n data-en="Send us a message">Envoyez-nous un message</h3>
+    <div class="grid grid-3">
+      <div class="contact-card reveal">
+        <div class="c-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18M7 15l4-4 4 4 5-8"/></svg></div>
+        <h4>Relations investisseurs</h4>
+        <div class="c-line">Rapports financiers, roadshows, NDA</div>
+        <a href="mailto:ir@enertchad.td">ir@enertchad.td</a>
+        <div class="c-line" style="margin-top:8px;"><strong>+235 22 52 80 14</strong></div>
+      </div>
+      <div class="contact-card reveal" style="--delay:.06s;">
+        <div class="c-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8l9 6 9-6M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div>
+        <h4>Presse &amp; médias</h4>
+        <div class="c-line">Interviews, images, kit presse</div>
+        <a href="mailto:presse@enertchad.td">presse@enertchad.td</a>
+        <div class="c-line" style="margin-top:8px;"><strong>+235 22 52 80 22</strong></div>
+      </div>
+      <div class="contact-card reveal" style="--delay:.12s;">
+        <div class="c-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M12 11a4 4 0 100-8 4 4 0 000 8z"/></svg></div>
+        <h4>Recrutement &amp; RH</h4>
+        <div class="c-line">Offres d'emploi, candidatures spontanées, stages</div>
+        <a href="mailto:candidature@enertchad.td">candidature@enertchad.td</a>
+        <div class="c-line" style="margin-top:8px;"><strong>+235 22 52 80 40</strong></div>
+      </div>
+      <div class="contact-card reveal" style="--delay:.18s;">
+        <div class="c-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg></div>
+        <h4>Achats &amp; fournisseurs</h4>
+        <div class="c-line">Référencement PME, appels d'offres, qualification</div>
+        <a href="mailto:achats@enertchad.td">achats@enertchad.td</a>
+        <div class="c-line" style="margin-top:8px;"><strong>+235 22 52 80 55</strong></div>
+      </div>
+      <div class="contact-card reveal" style="--delay:.24s;">
+        <div class="c-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-4 9-8 10-4-1-8-5-8-10V6z"/></svg></div>
+        <h4>HSE &amp; communautés</h4>
+        <div class="c-line">Incidents, riverains, signalement environnemental</div>
+        <a href="mailto:hse@enertchad.td">hse@enertchad.td</a>
+        <div class="c-line" style="margin-top:8px;"><strong>+235 22 52 80 77</strong></div>
+      </div>
+      <div class="contact-card reveal" style="--delay:.3s;">
+        <div class="c-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg></div>
+        <h4>Lanceurs d'alerte</h4>
+        <div class="c-line">Canal confidentiel · accueil par cabinet externe</div>
+        <a href="mailto:alerte@enertchad.td">alerte@enertchad.td</a>
+        <div class="c-line" style="margin-top:8px;"><strong>+235 22 52 80 99</strong></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-          <!-- Live region for form-level status (QW-03) -->
-          <div id="cf-status" class="form-error" role="alert" aria-live="assertive" aria-atomic="true" style="margin-bottom:var(--sp-md)"></div>
-
-          <form id="contactForm" onsubmit="return false;" novalidate aria-describedby="cf-status" style="display:flex;flex-direction:column;gap:var(--sp-lg)">
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-md)" class="form-row-two">
-              <div>
-                <label for="cf-name" class="form-label" data-i18n data-en="Full name">Nom complet<span class="required" aria-hidden="true">*</span></label>
-                <input id="cf-name" class="form-input" type="text" name="name" required aria-required="true" aria-describedby="cf-name-err" autocomplete="name" placeholder="Bignéro Moïalbéi"/>
-                <div id="cf-name-err" class="form-error" role="alert" aria-live="assertive" data-i18n data-en="Please enter your name.">Veuillez saisir votre nom.</div>
-              </div>
-              <div>
-                <label for="cf-email" class="form-label" data-i18n data-en="Email">Email<span class="required" aria-hidden="true">*</span></label>
-                <input id="cf-email" class="form-input" type="email" name="email" required aria-required="true" aria-describedby="cf-email-err" autocomplete="email" placeholder="nom@entreprise.td"/>
-                <div id="cf-email-err" class="form-error" role="alert" aria-live="assertive" data-i18n data-en="Please enter a valid email address.">Veuillez saisir une adresse email valide.</div>
-              </div>
+<!-- Formulaire -->
+<section id="formulaire" style="background: var(--cream-2);">
+  <div class="container">
+    <div class="split">
+      <div class="split-text reveal">
+        <span class="kicker">Formulaire général</span>
+        <h2>Écrivez-nous directement.</h2>
+        <p class="lead">Nous routons votre demande vers l'équipe compétente sous 24 heures ouvrées et assurons un premier retour sous 48 heures.</p>
+        <div style="margin-top:32px;">
+          <div style="display:flex; gap:14px; margin-bottom:18px;">
+            <div style="width:44px; height:44px; border-radius:10px; background: var(--gold-dust); color: var(--gold-deep); display:grid; place-items:center; flex-shrink:0;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.5-7-12a7 7 0 0114 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
             </div>
             <div>
-              <label for="cf-dept" class="form-label" data-i18n data-en="Department">Service concerné</label>
-              <select id="cf-dept" class="form-select" name="department">
-                <option data-i18n data-en="General Inquiry">Demande générale</option>
-                <option data-i18n data-en="Oilfield Services (Upstream)">Services des champs (Amont)</option>
-                <option data-i18n data-en="Logistics (Midstream)">Logistique (Intermédiaire)</option>
-                <option data-i18n data-en="Distribution / B2B Order">Distribution / Commande B2B</option>
-                <option data-i18n data-en="Investment / Partnership">Investissement / Partenariat</option>
-                <option data-i18n data-en="Careers / Recruitment">Carrières / Recrutement</option>
-                <option data-i18n data-en="Press / Media">Presse / Média</option>
+              <div style="font-weight:600; color: var(--ink); margin-bottom:4px;">Siège social</div>
+              <div style="font-size:.92rem; color: var(--muted);">Avenue Charles de Gaulle<br/>BP 4725 · N'Djamena · République du Tchad</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:14px; margin-bottom:18px;">
+            <div style="width:44px; height:44px; border-radius:10px; background: var(--gold-dust); color: var(--gold-deep); display:grid; place-items:center; flex-shrink:0;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92V21a2 2 0 01-2.18 2 20 20 0 01-8.63-3.07 20 20 0 01-6-6A20 20 0 012.12 5.18 2 2 0 014.11 3h4.09a2 2 0 012 1.72c.12.88.34 1.74.66 2.56a2 2 0 01-.45 2.11l-1.73 1.73a16 16 0 006 6l1.73-1.73a2 2 0 012.11-.45c.82.32 1.68.54 2.56.66a2 2 0 011.72 2z"/></svg>
+            </div>
+            <div>
+              <div style="font-weight:600; color: var(--ink); margin-bottom:4px;">Standard</div>
+              <div style="font-size:.92rem; color: var(--muted);"><a href="tel:+23599298696" style="color: var(--ink-2);">+235 99 29 86 96</a><br/>Lundi–vendredi · 8h–17h (TU)</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:14px;">
+            <div style="width:44px; height:44px; border-radius:10px; background: var(--gold-dust); color: var(--gold-deep); display:grid; place-items:center; flex-shrink:0;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8l9 6 9-6M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </div>
+            <div>
+              <div style="font-weight:600; color: var(--ink); margin-bottom:4px;">Général</div>
+              <div style="font-size:.92rem; color: var(--muted);"><a href="mailto:contact@enertchad.td" style="color: var(--ink-2);">contact@enertchad.td</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal" style="--delay:.1s;">
+        <form class="form-wrap" onsubmit="event.preventDefault(); this.querySelector('.form-success').classList.add('show'); this.querySelector('.form-failure').classList.remove('show'); this.reset();" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="cf-fn">Prénom<span class="req">*</span></label>
+              <input type="text" id="cf-fn" name="firstName" required autocomplete="given-name" />
+            </div>
+            <div class="form-group">
+              <label for="cf-ln">Nom<span class="req">*</span></label>
+              <input type="text" id="cf-ln" name="lastName" required autocomplete="family-name" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="cf-em">E-mail<span class="req">*</span></label>
+              <input type="email" id="cf-em" name="email" required autocomplete="email" placeholder="vous@organisation.com" />
+            </div>
+            <div class="form-group">
+              <label for="cf-or">Organisation</label>
+              <input type="text" id="cf-or" name="organisation" autocomplete="organization" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="cf-ty">Type de demande<span class="req">*</span></label>
+              <select id="cf-ty" name="type" required>
+                <option value="" disabled selected>Sélectionnez…</option>
+                <option>Relations investisseurs</option>
+                <option>Presse &amp; médias</option>
+                <option>Recrutement</option>
+                <option>Achats / fournisseur</option>
+                <option>Communautés &amp; riverains</option>
+                <option>Partenariat commercial</option>
+                <option>HSE / environnement</option>
+                <option>Lanceur d'alerte</option>
+                <option>Autre</option>
               </select>
             </div>
-            <div>
-              <label for="cf-phone" class="form-label" data-i18n data-en="Phone (optional)">Téléphone (optionnel)</label>
-              <input id="cf-phone" class="form-input" type="tel" name="phone" autocomplete="tel" placeholder="+235 ..."/>
-            </div>
-            <div>
-              <label for="cf-subject" class="form-label" data-i18n data-en="Subject">Sujet<span class="required" aria-hidden="true">*</span></label>
-              <select id="cf-subject" class="form-select" name="subject" required aria-required="true">
-                <option data-i18n data-en="Choose a subject..." selected disabled>Choisir un sujet...</option>
-                <option data-i18n data-en="Commercial Partnership">Partenariat commercial</option>
-                <option data-i18n data-en="Quote Request">Demande de devis</option>
-                <option data-i18n data-en="Careers & Recruitment">Carrières & recrutement</option>
-                <option data-i18n data-en="Press & Media">Presse & médias</option>
-                <option data-i18n data-en="Other">Autre</option>
-              </select>
-            </div>
-            <div>
-              <label for="cf-message" class="form-label" data-i18n data-en="Message">Message<span class="required" aria-hidden="true">*</span></label>
-              <textarea id="cf-message" class="form-textarea" name="message" required aria-required="true" aria-describedby="cf-message-err" rows="5" data-i18n-placeholder data-en-placeholder="Describe your request..." placeholder="Décrivez votre demande..."></textarea>
-              <div id="cf-message-err" class="form-error" role="alert" aria-live="assertive" data-i18n data-en="Please describe your request (minimum 10 characters).">Merci de décrire votre demande (minimum 10 caractères).</div>
-            </div>
-            <button type="submit" class="btn btn--brand" style="align-self:flex-start" data-i18n data-en="Send message">
-              <i class="fas fa-paper-plane"></i> Envoyer le message
-            </button>
-          </form>
-        </div>
-
-        <!-- Contact Info -->
-        <div>
-          <!-- Headquarters -->
-          <div class="info-card reveal" style="margin-bottom:var(--sp-lg)">
-            <h4 style="margin-bottom:var(--sp-lg)" data-i18n data-en="Headquarters">Siège social</h4>
-            <div style="display:flex;flex-direction:column;gap:var(--sp-lg)">
-              <div style="display:flex;gap:var(--sp-md);align-items:flex-start">
-                <i class="fas fa-map-marker-alt" style="color:var(--gold);font-size:1.1rem;margin-top:3px;width:20px;text-align:center"></i>
-                <div>
-                  <p style="color:var(--white);font-weight:500;margin:0">Cité du 1er Décembre</p>
-                  <p style="margin:0">Radisson Blu, Bloc D, Bureau 23</p>
-                  <p style="margin:0">Quartier Sabangali, N'Djaména, Tchad</p>
-                </div>
-              </div>
-              <div style="display:flex;gap:var(--sp-md);align-items:center">
-                <i class="fas fa-phone" style="color:var(--gold);width:20px;text-align:center"></i>
-                <a href="tel:+23599298696" style="color:var(--text)">+235 99 29 86 96</a>
-              </div>
-              <div style="display:flex;gap:var(--sp-md);align-items:center">
-                <i class="fas fa-envelope" style="color:var(--gold);width:20px;text-align:center"></i>
-                <a href="mailto:contact@enertchad.td">contact@enertchad.td</a>
-              </div>
-              <div style="display:flex;gap:var(--sp-md);align-items:center">
-                <i class="fab fa-linkedin-in" style="color:var(--gold);width:20px;text-align:center"></i>
-                <a href="https://www.linkedin.com/company/enertchad" target="_blank" rel="noopener">linkedin.com/company/enertchad</a>
-              </div>
+            <div class="form-group">
+              <label for="cf-cc">Pays</label>
+              <input type="text" id="cf-cc" name="country" placeholder="Tchad" autocomplete="country-name" />
             </div>
           </div>
 
-          <!-- Contact by department -->
-          <div class="info-card reveal">
-            <h4 style="margin-bottom:var(--sp-lg)" data-i18n data-en="Direct Contacts">Contacts directs</h4>
-            <table class="data-table" style="margin:0">
-              <tbody>
-                <tr>
-                  <td style="color:var(--amont);font-weight:600;width:45%" data-i18n data-en="Upstream Services">Services Amont</td>
-                  <td><a href="mailto:amont@enertchad.td" style="font-size:0.85rem">amont@enertchad.td</a></td>
-                </tr>
-                <tr>
-                  <td style="color:var(--midstream);font-weight:600" data-i18n data-en="Midstream Logistics">Logistique Midstream</td>
-                  <td><a href="mailto:midstream@enertchad.td" style="font-size:0.85rem">midstream@enertchad.td</a></td>
-                </tr>
-                <tr>
-                  <td style="color:var(--aval);font-weight:600" data-i18n data-en="Distribution / B2B">Distribution / B2B</td>
-                  <td><a href="mailto:aval@enertchad.td" style="font-size:0.85rem">aval@enertchad.td</a></td>
-                </tr>
-                <tr>
-                  <td style="color:var(--gold);font-weight:600" data-i18n data-en="Investment / IR">Investissement / IR</td>
-                  <td><a href="mailto:ir@enertchad.td" style="font-size:0.85rem">ir@enertchad.td</a></td>
-                </tr>
-                <tr>
-                  <td style="color:var(--gold);font-weight:600" data-i18n data-en="Careers">Carrières</td>
-                  <td><a href="mailto:talents@enertchad.td" style="font-size:0.85rem">talents@enertchad.td</a></td>
-                </tr>
-                <tr>
-                  <td style="color:var(--text-sec);font-weight:600" data-i18n data-en="Press / Media">Presse / Média</td>
-                  <td><a href="mailto:presse@enertchad.td" style="font-size:0.85rem">presse@enertchad.td</a></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══ INTERACTIVE LOCATION MAP ═══ -->
-  <section class="section" style="background:var(--bg-mid);padding:var(--sp-3xl) 0">
-    <div class="ctn">
-      <div class="map-container reveal" id="location-map">
-        <div class="map-inner">
-          <div class="map-header">
-            <h4 class="map-title"><i class="fas fa-location-dot" style="color:var(--gold)"></i> <span data-i18n data-en="EnerTchad Groupe — Headquarters">EnerTchad Groupe — Siège social</span></h4>
-            <div class="map-legend">
-              <div class="map-legend-item"><span class="map-legend-dot" style="background:var(--gold);color:var(--gold)"></span> <span data-i18n data-en="Headquarters">Siège</span></div>
-              <div class="map-legend-item"><span class="map-legend-dot" style="background:var(--amont);color:var(--amont)"></span> <span data-i18n data-en="Operational base">Base opérationnelle</span></div>
-            </div>
+          <div class="form-group">
+            <label for="cf-sb">Sujet<span class="req">*</span></label>
+            <input type="text" id="cf-sb" name="subject" required placeholder="En quelques mots, l'objet de votre demande" />
           </div>
 
-          <!-- SVG — N'Djaména city-level focus -->
-          <svg class="map-svg" viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Carte de localisation du siège EnerTchad">
-            <title>Siège EnerTchad — N'Djaména, Tchad</title>
-            <defs>
-              <radialGradient id="hq-glow" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="var(--gold)" stop-opacity="0.15"/><stop offset="100%" stop-color="var(--gold)" stop-opacity="0"/></radialGradient>
-            </defs>
-
-            <!-- N'Djaména city schematic (simplified street grid) -->
-            <!-- Major roads -->
-            <line x1="100" y1="200" x2="400" y2="200" stroke="rgba(255,255,255,0.06)" stroke-width="2"/>
-            <line x1="250" y1="60" x2="250" y2="340" stroke="rgba(255,255,255,0.06)" stroke-width="2"/>
-            <line x1="130" y1="120" x2="370" y2="280" stroke="rgba(255,255,255,0.04)" stroke-width="1.5"/>
-            <line x1="130" y1="280" x2="370" y2="120" stroke="rgba(255,255,255,0.04)" stroke-width="1.5"/>
-            <!-- Ring road -->
-            <circle cx="250" cy="200" r="120" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1.5"/>
-
-            <!-- Chari River (west side) -->
-            <path d="M80,80 C90,120 85,160 80,200 C75,240 80,280 85,320" fill="none" stroke="rgba(14,165,233,0.2)" stroke-width="4" stroke-linecap="round"/>
-            <path d="M80,80 C90,120 85,160 80,200 C75,240 80,280 85,320" fill="none" stroke="rgba(14,165,233,0.08)" stroke-width="12" stroke-linecap="round"/>
-            <text x="60" y="205" text-anchor="middle" style="font-size:7px;fill:var(--midstream);opacity:0.4;font-style:italic" transform="rotate(-90,60,205)">Fleuve Chari</text>
-
-            <!-- City quarter labels -->
-            <text x="300" y="140" style="font-size:7px;fill:rgba(255,255,255,0.08);font-family:var(--font-d);letter-spacing:2px">SABANGALI</text>
-            <text x="170" y="260" style="font-size:6px;fill:rgba(255,255,255,0.06);font-family:var(--font-d);letter-spacing:1.5px">FARCHA</text>
-            <text x="310" y="270" style="font-size:6px;fill:rgba(255,255,255,0.06);font-family:var(--font-d);letter-spacing:1.5px">MOURSAL</text>
-            <text x="160" y="165" style="font-size:6px;fill:rgba(255,255,255,0.06);font-family:var(--font-d);letter-spacing:1.5px">CENTRE-VILLE</text>
-
-            <!-- HQ glow area -->
-            <circle cx="310" cy="158" r="50" fill="url(#hq-glow)"/>
-
-            <!-- ─── HQ MARKER ─── -->
-            <g class="hq-marker">
-              <circle class="hq-ring" cx="310" cy="158" r="16" style="stroke-width:2"/>
-              <circle class="hq-ring" cx="310" cy="158" r="24" style="stroke-width:1;opacity:0.2;animation-delay:1.5s"/>
-              <circle class="hq-dot" cx="310" cy="158" r="7" style="filter:drop-shadow(0 0 10px var(--gold))"/>
-              <!-- Building icon inside -->
-              <rect x="306" y="153" width="8" height="8" rx="1" fill="var(--bg)" stroke="none"/>
-              <rect x="307.5" y="154.5" width="2" height="2" rx="0.3" fill="var(--gold)"/>
-              <rect x="310.5" y="154.5" width="2" height="2" rx="0.3" fill="var(--gold)"/>
-              <rect x="307.5" y="157.5" width="2" height="2" rx="0.3" fill="var(--gold)"/>
-              <rect x="310.5" y="157.5" width="2" height="2" rx="0.3" fill="var(--gold)"/>
-            </g>
-            <text class="hq-label" x="330" y="148" style="font-size:10px">EnerTchad Groupe</text>
-            <text x="330" y="160" style="font-size:7px;fill:var(--text-sec);font-family:var(--font-b)">Cité du 1er Décembre</text>
-            <text x="330" y="170" style="font-size:6.5px;fill:var(--text-muted);font-family:var(--font-b)">Radisson Blu, Bloc D, Bureau 23</text>
-            <text x="330" y="180" style="font-size:6.5px;fill:var(--text-muted);font-family:var(--font-b)">Quartier Sabangali</text>
-
-            <!-- Operational bases -->
-            <!-- Doba base -->
-            <g class="station-marker" transform="translate(390,290)">
-              <circle r="4" fill="var(--amont)" stroke="rgba(46,134,222,0.2)" stroke-width="2"/>
-              <text class="station-label" x="8" y="-2" style="fill:var(--amont)">Base Doba</text>
-              <text class="infra-label" x="8" y="8" data-i18n data-en="Upstream ops center">Centre ops Amont</text>
-            </g>
-
-            <!-- Djarmaya base -->
-            <g class="station-marker" transform="translate(200,135)">
-              <circle r="3.5" fill="var(--aval)" stroke="rgba(217,119,6,0.2)" stroke-width="2"/>
-              <text class="station-label" x="-8" y="-4" text-anchor="end" style="fill:var(--aval)">Djarmaya</text>
-              <text class="infra-label" x="-8" y="6" text-anchor="end" data-i18n data-en="Refinery base">Base raffinerie</text>
-            </g>
-
-            <!-- Connecting lines to operational bases (subtle) -->
-            <line x1="310" y1="170" x2="390" y2="285" stroke="rgba(255,255,255,0.04)" stroke-width="0.8" stroke-dasharray="4 3"/>
-            <line x1="305" y1="158" x2="204" y2="138" stroke="rgba(255,255,255,0.04)" stroke-width="0.8" stroke-dasharray="4 3"/>
-
-            <!-- City label -->
-            <text x="250" y="370" text-anchor="middle" style="font-size:12px;fill:rgba(255,255,255,0.06);font-family:var(--font-d);font-weight:700;letter-spacing:6px">N'DJAMÉNA</text>
-            <text x="250" y="385" text-anchor="middle" style="font-size:7px;fill:rgba(255,255,255,0.04);font-family:var(--font-d);letter-spacing:3px">RÉPUBLIQUE DU TCHAD</text>
-          </svg>
-
-          <!-- Info Panel -->
-          <div class="map-info-panel">
-            <div class="map-info-card">
-              <div class="info-label" data-i18n data-en="Address">Adresse</div>
-              <div class="info-value" style="color:var(--gold);font-size:0.85rem">Cité du 1er Décembre</div>
-              <div class="info-detail">Radisson Blu, Bloc D, Bureau 23, Sabangali</div>
-            </div>
-            <div class="map-info-card">
-              <div class="info-label" data-i18n data-en="Headquarters">Siège</div>
-              <div class="info-value">N'Djaména</div>
-              <div class="info-detail" data-i18n data-en="SA/CA — OHADA law">SA/CA — Droit OHADA</div>
-            </div>
-            <div class="map-info-card">
-              <div class="info-label" data-i18n data-en="Employees">Effectifs</div>
-              <div class="info-value" style="color:var(--energy)">1 240</div>
-              <div class="info-detail" data-i18n data-en="85% local workforce">85 % main-d'œuvre locale</div>
-            </div>
-            <div class="map-info-card">
-              <div class="info-label" data-i18n data-en="Subsidiaries">pôle</div>
-              <div class="info-value">6</div>
-              <div class="info-detail">Amont · Midstream · Aval · Tech · Energy · Petro</div>
-            </div>
+          <div class="form-group">
+            <label for="cf-ms">Message<span class="req">*</span></label>
+            <textarea id="cf-ms" name="message" required placeholder="Décrivez votre demande. Vous pouvez mentionner les délais, documents attendus, interlocuteurs privilégiés."></textarea>
+            <div class="hint">Ne transmettez aucune donnée confidentielle via ce formulaire. Pour les sujets sensibles, contactez directement l'équipe dédiée.</div>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-</main>
-
-<!-- ═══ MODERN MEGA FOOTER 2026 ═══ -->
-<footer class="footer modern-footer" role="contentinfo">
-  <!-- Animated Top Border -->
-  <div class="footer-top-accent" aria-hidden="true">
-    <div class="footer-accent-line"></div>
-  </div>
-
-  <!-- KPI Strip -->
-  <div class="footer-kpi-strip">
-    <div class="ctn">
-      <div class="kpi-ticker">
-        <div class="kpi-item">
-          <span class="kpi-num" data-count="1240">1 240</span>
-          <span class="kpi-tag" data-i18n data-en="Employees">Collaborateurs</span>
-        </div>
-        <div class="kpi-divider" aria-hidden="true"></div>
-        <div class="kpi-item">
-          <span class="kpi-num" data-count="144000">144K</span>
-          <span class="kpi-tag" data-i18n data-en="bbl/day">bbl/jour</span>
-        </div>
-        <div class="kpi-divider" aria-hidden="true"></div>
-        <div class="kpi-item">
-          <span class="kpi-num">24</span>
-          <span class="kpi-tag" data-i18n data-en="Stations">Stations</span>
-        </div>
-        <div class="kpi-divider" aria-hidden="true"></div>
-        <div class="kpi-item">
-          <span class="kpi-num" data-count="4">4</span>
-          <span class="kpi-tag" data-i18n data-en="OFS Divisions">Pôles OFS</span>
-        </div>
-        <div class="kpi-divider" aria-hidden="true"></div>
-        <div class="kpi-item">
-          <span class="kpi-num" data-count="1070">1 070</span>
-          <span class="kpi-tag" data-i18n data-en="km pipeline">km pipeline</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Main Content -->
-  <div class="ctn footer-body">
-    <div class="footer-grid-modern">
-      <!-- Brand Column -->
-      <div class="footer-brand-col">
-        <a href="/" class="footer-logo-link" aria-label="EnerTchad Groupe — Accueil">
-          <div class="footer-logo-mark">
-            <img loading="lazy" src="/logo-enertchad.svg" alt="" width="32" height="32" class="logo-img" decoding="async"/>
+          <div class="check-group">
+            <input type="checkbox" id="cf-cs" name="consent" required />
+            <label for="cf-cs">J'accepte que mes données soient traitées par EnerTchad Groupe dans le cadre du traitement de ma demande, conformément à la <a href="#">politique de confidentialité</a>. Les données sont conservées 24 mois maximum.</label>
           </div>
-          <span class="footer-wordmark">EnerTchad<em>Groupe</em></span>
-        </a>
-        <p class="footer-desc" data-i18n data-en="Oilfield services &amp; petroleum distribution across Chad. Major expertise, local agility.">Services pétroliers &amp; distribution au Tchad. L'expertise des majors, l'agilité locale.</p>
-        <div class="footer-badges">
-          <span class="f-badge" title="IWCF">IWCF</span>
-          <span class="f-badge" title="API">API</span>
-          <span class="f-badge" title="ISO 14001">ISO 14001</span>
-          <span class="f-badge" title="ITIE/EITI">ITIE</span>
-        </div>
-      </div>
 
-      <!-- Nav Columns -->
-      <nav class="footer-nav-col" aria-label="Services des Champs">
-        <h6 data-i18n data-en="Services">Services</h6>
-        <ul>
-          <li><a href="/services/well-services" data-i18n data-en="Well Services">Well Services</a></li>
-          <li><a href="/services/drilling" data-i18n data-en="Drilling &amp; Engineering">Drilling &amp; Engineering</a></li>
-          <li><a href="/services/digital" data-i18n data-en="Digital &amp; SCADA">Digital &amp; SCADA</a></li>
-          <li><a href="/services/consulting" data-i18n data-en="Consulting &amp; Training">Consulting &amp; Formation</a></li>
-          <li><a href="/distribution/" data-i18n data-en="Distribution">Distribution &amp; Négoce</a></li>
-        </ul>
-      </nav>
-      <nav class="footer-nav-col" aria-label="Société Pétrolière">
-        <h6 data-i18n data-en="Energy">Énergies</h6>
-        <ul>
-          <li><a href="/operations/amont" data-i18n data-en="Upstream — E&amp;P">Amont — E&amp;P</a></li>
-          <li><a href="/operations/intermediaire" data-i18n data-en="Midstream">Intermédiaire</a></li>
-          <li><a href="/operations/aval" data-i18n data-en="Downstream">Aval — Raffinage</a></li>
-          <li><a href="/services/technologies" data-i18n data-en="Technologies &amp; AI">Technologies &amp; IA</a></li>
-          <li><a href="/maps" data-i18n data-en="Operations Map">Carte des Opérations</a></li>
-          <li><a href="/operations/greentech" data-i18n data-en="Renewables">Énergies Renouvelables</a></li>
-        </ul>
-      </nav>
-      <nav class="footer-nav-col" aria-label="Entreprise">
-        <h6 data-i18n data-en="Company">Entreprise</h6>
-        <ul>
-          <li><a href="/groupe/" data-i18n data-en="About">À propos</a></li>
-          <li><a href="/durabilite" data-i18n data-en="ESG &amp; Sustainability">Durabilité &amp; ESG</a></li>
-          <li><a href="/investisseurs" data-i18n data-en="Investors">Investisseurs</a></li>
-          <li><a href="/talents" data-i18n data-en="Careers">Talents &amp; Carrières</a></li>
-          <li><a href="/actualites" data-i18n data-en="Media">Médias</a></li><li><a href="/newsletter" data-i18n data-en="Newsletter">Newsletter</a></li>
-        </ul>
-      </nav>
-      <div class="footer-nav-col footer-cta-col">
-        <h6 data-i18n data-en="Get in Touch">Nous Contacter</h6>
-        <div class="footer-contact-stack">
-          <a href="/contact" class="footer-cta-btn" data-i18n data-en="Contact Us"><i class="fas fa-arrow-right"></i> Contactez-nous</a>
-          <a href="/contact#devis" class="footer-cta-link" data-i18n data-en="Request a Quote"><i class="fas fa-file-invoice"></i> Demander un devis</a>
-          <a href="tel:+23599298696" class="footer-cta-link"><i class="fas fa-phone"></i> +235 99 29 86 96</a>
-          <a href="mailto:contact@enertchad.td" class="footer-cta-link"><i class="fas fa-envelope"></i> contact@enertchad.td</a>
-        </div>
-        <div class="footer-hours">
-          <i class="fas fa-clock"></i>
-          <span data-i18n data-en="Mon–Fri 7:30–17:30 · 24/7 emergencies">Lun–Ven 7h30–17h30 · Urgences 24/7</span>
-        </div>
-      </div>
-    </div>
-  </div>
+          <button type="submit" class="form-submit primary">Envoyer ma demande <span style="font-size:1.1em;">→</span></button>
 
-  <!-- Newsletter Band -->
-  <div class="footer-newsletter-band">
-    <div class="ctn">
-      <div class="newsletter-inner">
-        <div class="newsletter-text">
-          <strong data-i18n data-en="Industry Intelligence">Veille Sectorielle</strong>
-          <span data-i18n data-en="Monthly insights on energy &amp; oilfield services.">Analyses mensuelles énergie &amp; services pétroliers.</span>
-        </div>
-        <form class="newsletter-modern newsletter-modern-linked" aria-label="Newsletter" data-redirect="/newsletter">
-          <input type="email" placeholder="nom@entreprise.td" required aria-label="Email"/>
-          <button type="submit" data-i18n data-en="Subscribe">S'abonner</button>
+          <div class="form-success">
+            <strong>Merci.</strong> Votre message a été transmis aux équipes concernées. Nous vous répondrons sous 48 heures ouvrées.
+          </div>
+          <div class="form-failure">
+            <strong>Oups.</strong> Une erreur est survenue. Merci de réessayer ou d'écrire directement à <a href="mailto:contact@enertchad.td">contact@enertchad.td</a>.
+          </div>
         </form>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- Bottom Bar -->
-  <div class="footer-bottom-bar">
-    <div class="ctn">
-      <div class="bottom-bar-inner">
-        <span class="footer-copy" data-i18n data-en="&copy; 2026 EnerTchad Groupe SA/CA">&copy; 2026 EnerTchad Groupe SA/CA</span>
-        <div class="footer-legal-links">
-          <a href="/mentions-legales" data-i18n data-en="Legal">Mentions légales</a>
-          <a href="/confidentialite" data-i18n data-en="Privacy">Confidentialité</a>
-          <a href="/cookies" data-i18n data-en="Cookies">Cookies</a>
-        </div>
-        <div class="footer-social-row">
-          <a href="https://www.linkedin.com/company/enertchad" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://x.com/EnerTchad" target="_blank" rel="noopener noreferrer" aria-label="X"><i class="fab fa-x-twitter"></i></a>
-          <a href="https://www.facebook.com/EnerTchad" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://www.youtube.com/@EnerTchad" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-        </div>
+<!-- Implantations -->
+<section>
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="kicker">Implantations</span>
+      <h2>Quatre sites clés au Tchad et un relais à Kribi.</h2>
+      <p class="lead">Le Groupe opère depuis cinq adresses principales réparties sur l'ensemble de la chaîne de valeur. Les visites de site sont organisées sur demande justifiée.</p>
+    </div>
+
+    <div class="grid grid-3">
+      <div class="contact-card reveal">
+        <div class="c-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.5-7-12a7 7 0 0114 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
+        <h4>N'Djamena · Siège</h4>
+        <div class="c-line">Av. Charles de Gaulle · BP 4725</div>
+        <div class="c-line"><strong>+235 22 52 80 00</strong></div>
+        <a href="mailto:contact@enertchad.td">contact@enertchad.td</a>
+      </div>
+      <div class="contact-card reveal" style="--delay:.06s;">
+        <div class="c-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M6 21V10M18 21V10M4 10h16l-2-5H6z"/></svg></div>
+        <h4>Doba · Base Amont</h4>
+        <div class="c-line">Base de Komé · Logone-Oriental</div>
+        <div class="c-line"><strong>+235 66 28 41 02</strong></div>
+        <a href="mailto:amont@enertchad.td">amont@enertchad.td</a>
+      </div>
+      <div class="contact-card reveal" style="--delay:.12s;">
+        <div class="c-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/></svg></div>
+        <h4>Moundou · Midstream</h4>
+        <div class="c-line">Centre SCADA · 260 km du Doba</div>
+        <div class="c-line"><strong>+235 69 33 10 78</strong></div>
+        <a href="mailto:midstream@enertchad.td">midstream@enertchad.td</a>
+      </div>
+      <div class="contact-card reveal" style="--delay:.18s;">
+        <div class="c-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17h18M3 13h18M3 9h18M3 5h18"/></svg></div>
+        <h4>Djarmaya · Raffinerie</h4>
+        <div class="c-line">40 km N'Djamena · 20 000 b/j</div>
+        <div class="c-line"><strong>+235 66 40 22 19</strong></div>
+        <a href="mailto:aval@enertchad.td">aval@enertchad.td</a>
+      </div>
+      <div class="contact-card reveal" style="--delay:.24s;">
+        <div class="c-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 21h16l-1-13H5zM9 8V5a3 3 0 016 0v3"/></svg></div>
+        <h4>N'Djamena · CFE</h4>
+        <div class="c-line">Centre de formation · Chagoua</div>
+        <div class="c-line"><strong>+235 22 52 80 40</strong></div>
+        <a href="mailto:cfe@enertchad.td">cfe@enertchad.td</a>
+      </div>
+      <div class="contact-card reveal" style="--delay:.3s;">
+        <div class="c-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3L4 7v7c0 4 3 7 8 7s8-3 8-7V7z"/></svg></div>
+        <h4>Kribi · Cameroun</h4>
+        <div class="c-line">Terminal d'export · supervision logistique</div>
+        <div class="c-line"><strong>+237 233 46 08 11</strong></div>
+        <a href="mailto:shipping@enertchad.td">shipping@enertchad.td</a>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- Address (structured data) -->
-  <address class="footer-address" hidden>
-    <span data-i18n data-en="Radisson Blu, Block D, Office 23 — N'Djamena, Chad">Radisson Blu, Bloc D, Bureau 23 — N'Djaména, Tchad</span>
-  </address>
-</footer>
-
-<!-- ═══ COOKIE CONSENT ═══ -->
-<div class="cookie-consent" id="cookieConsent">
-  <div class="ctn" style="display:flex;align-items:center;justify-content:space-between;gap:var(--sp-lg)">
-    <p style="margin:0;font-size:0.9rem" data-i18n data-en="We use cookies to improve your experience. By continuing to browse, you accept our use of cookies.">
-      Nous utilisons les cookies pour améliorer votre expérience. En continuant, vous acceptez notre utilisation de cookies.
-    </p>
-    <div style="display:flex;gap:var(--sp-sm)">
-      <button id="cookieAccept" class="btn btn--brand btn--sm" data-i18n data-en="Accept">Accepter</button>
-      <a href="/cookies" class="btn btn--outline btn--sm" data-i18n data-en="Learn more">En savoir plus</a>
+<!-- FAQ mini -->
+<section class="dark">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="kicker">Questions fréquentes</span>
+      <h2>Ce qu'on nous demande le plus souvent.</h2>
+    </div>
+    <div class="grid grid-2" style="max-width: 1040px;">
+      <div class="feature-card reveal" style="background: var(--navy-3); border-color: var(--hairline);">
+        <h4 style="color:white;">Quels sont vos horaires d'ouverture ?</h4>
+        <p style="color:rgba(255,255,255,.72);">Le siège reçoit du lundi au vendredi, 8h–17h (TU). En dehors de ces horaires, un numéro HSE d'astreinte fonctionne 24/7.</p>
+      </div>
+      <div class="feature-card reveal" style="background: var(--navy-3); border-color: var(--hairline); --delay:.06s;">
+        <h4 style="color:white;">Organisez-vous des visites de site ?</h4>
+        <p style="color:rgba(255,255,255,.72);">Oui, sur demande justifiée (analystes, presse, partenaires, étudiants). Une fiche HSE et un planning sécurisé sont fournis au préalable.</p>
+      </div>
+      <div class="feature-card reveal" style="background: var(--navy-3); border-color: var(--hairline); --delay:.12s;">
+        <h4 style="color:white;">Comment postuler sans offre ouverte ?</h4>
+        <p style="color:rgba(255,255,255,.72);">Envoyez une candidature spontanée à <a href="mailto:candidature@enertchad.td" style="color: var(--gold);">candidature@enertchad.td</a>. Elle est conservée 12 mois et activée dès qu'un poste correspond.</p>
+      </div>
+      <div class="feature-card reveal" style="background: var(--navy-3); border-color: var(--hairline); --delay:.18s;">
+        <h4 style="color:white;">Où trouver les documents officiels ?</h4>
+        <p style="color:rgba(255,255,255,.72);">Tous nos rapports annuels, ITIE, ESG et le plan stratégique 2030 sont téléchargeables sur la page <a href="investisseurs.html#rapports" style="color: var(--gold);">Investisseurs</a>.</p>
+      </div>
     </div>
   </div>
-</div>
+</section>
 
-<script defer src="/js/premium.js"></script>
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="brand"><span class="brand-mark">E</span><span>Ener<span class="accent">Tchad</span> Groupe</span></div>
+        <p>Société Anonyme à Conseil d'Administration · OHADA / AUSCGIE. Siège social : N'Djamena, République du Tchad.</p>
+        <p style="font-size:.82rem; margin-top:16px;">RCCM : TD-NDJ-03-2022-B-00518<br/>Capital : 50 000 000 000 XAF</p>
+      </div>
+      <div><h5>Opérations</h5><ul>
+        <li><a href="operations/amont.html">Amont · E&amp;P</a></li><li><a href="operations/intermediaire.html">Intermédiaire</a></li>
+        <li><a href="operations/aval.html">Aval · Distribution</a></li><li><a href="operations/services.html">Services</a></li>
+      </ul></div>
+      <div><h5>Groupe</h5><ul>
+        <li><a href="groupe.html">À propos</a></li><li><a href="groupe.html#gouvernance">Gouvernance</a></li>
+        <li><a href="groupe.html#leadership">Leadership</a></li><li><a href="investisseurs.html">Investisseurs</a></li>
+      </ul></div>
+      <div><h5>Engagement</h5><ul>
+        <li><a href="durabilite.html">Durabilité &amp; ESG</a></li><li><a href="durabilite.html#local">Contenu local</a></li>
+        <li><a href="durabilite.html#itie">ITIE</a></li><li><a href="durabilite.html#hse">HSE</a></li>
+      </ul></div>
+      <div><h5>Contact</h5><ul>
+        <li>Av. Charles de Gaulle<br/>N'Djamena · Tchad</li>
+        <li><a href="tel:+23599298696">+235 99 29 86 96</a></li>
+        <li><a href="mailto:contact@enertchad.td">contact@enertchad.td</a></li>
+      </ul></div>
+    </div>
+    <div class="foot-bottom">
+      <div>© <span data-year>2026</span> EnerTchad Groupe SA/CA. Tous droits réservés.</div>
+      <div class="legal">
+        <a href="mentions-legales.html">Mentions légales</a>
+        <a href="confidentialite.html">Confidentialité</a>
+        <a href="cookies.html">Cookies</a>
+        <a href="contact.html#alerte">Lanceurs d'alerte</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<!-- Cookie consent banner -->
+<div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Consentement cookies">
+  <p style="margin:0 0 12px 0; font-size:.92rem; line-height:1.55;">Nous utilisons uniquement des cookies techniques essentiels (préférences, session) et une mesure d'audience anonyme sans cookie. Aucun traceur publicitaire.</p>
+  <div class="cb-actions">
+    <a class="cb-btn" href="cookies.html">En savoir plus</a>
+    <button type="button" class="cb-btn primary" id="cookie-accept">J'ai compris</button>
+  </div>
+</div>
+<script>
+(function(){
+  function getCookie(n){var m=document.cookie.match(new RegExp('(?:^|; )'+n+'=([^;]*)'));return m?decodeURIComponent(m[1]):null;}
+  function setCookie(n,v,d){var e=new Date();e.setTime(e.getTime()+d*864e5);document.cookie=n+'='+encodeURIComponent(v)+'; expires='+e.toUTCString()+'; path=/; SameSite=Lax';}
+  var b=document.getElementById('cookie-banner'); if(!b) return;
+  if(!getCookie('consent_v1')){ setTimeout(function(){b.classList.add('show');}, 900); }
+  var btn=document.getElementById('cookie-accept');
+  if(btn){ btn.addEventListener('click', function(){ setCookie('consent_v1','accepted-technical',180); b.classList.remove('show'); }); }
+})();
+</script>
+<!-- /Cookie consent banner -->
 </body>
 </html>
