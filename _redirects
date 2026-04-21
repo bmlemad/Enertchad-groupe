@@ -18,5 +18,11 @@
 /actualites       /actualites.html         200
 /contact          /contact.html            200
 
+# Pôles intégrés (ex-sous-domaines Vercel)
+/energies         /energies/               301
+/technologies     /technologies/           301
+/enertech         /technologies/           301
+/greentech        /energies/               301
+
 # Custom 404 (fallback)
 /*    /404.html   404
