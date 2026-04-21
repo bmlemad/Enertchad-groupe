@@ -1,0 +1,845 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#080E1A" />
+<title>EnerTchad Groupe — Dashboard Exécutif</title>
+<meta name="description" content="Cockpit de direction EnerTchad Groupe : production consolidée 6 pôles, CAPEX, ESG, deal-flow, HSE." />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" />
+
+<!-- Tailwind CDN (standalone) -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          display: ['Space Grotesk', 'sans-serif'],
+          body: ['Inter', 'sans-serif'],
+          mono: ['JetBrains Mono', 'monospace'],
+        },
+        colors: {
+          navy: { DEFAULT: '#080E1A', 2: '#0B1424', 3: '#121C30', 4: '#1A2540', 5: '#243150' },
+          gold: { DEFAULT: '#D9A84F', light: '#E8C36A', deep: '#B8892E' },
+          pole: {
+            amont: '#2C7AE0',
+            inter: '#10B981',
+            aval: '#F59E0B',
+            svc: '#8B5CF6',
+            energies: '#0891B2',
+            tech: '#BE185D',
+          },
+        },
+      },
+    },
+  };
+</script>
+
+<style>
+  html, body { background: #05080F; color: #E8EAED; font-family: 'Inter', sans-serif; }
+  body { min-height: 100vh; background:
+    radial-gradient(1400px 600px at 10% 0%, rgba(217,168,79,.08), transparent 60%),
+    radial-gradient(1100px 500px at 90% 100%, rgba(44,122,224,.06), transparent 60%),
+    linear-gradient(180deg, #05080F 0%, #080E1A 100%);
+  }
+  .font-display { font-family: 'Space Grotesk', sans-serif; }
+  .font-mono { font-family: 'JetBrains Mono', monospace; }
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 8px; height: 8px; }
+  ::-webkit-scrollbar-track { background: #0B1424; }
+  ::-webkit-scrollbar-thumb { background: #243150; border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: #D9A84F; }
+  /* Animated gradient border */
+  .gradient-border {
+    position: relative;
+    border-radius: 16px;
+    background: linear-gradient(180deg, rgba(18,28,48,.85), rgba(11,20,36,.9));
+  }
+  .gradient-border::before {
+    content: ""; position: absolute; inset: 0; padding: 1px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(217,168,79,.5), rgba(217,168,79,.08) 40%, transparent 70%);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor; mask-composite: exclude;
+    pointer-events: none;
+  }
+  /* Pulse dot */
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; box-shadow: 0 0 0 0 currentColor; }
+    50% { opacity: .6; box-shadow: 0 0 0 6px rgba(16,185,129,0); }
+  }
+  .pulse-dot { animation: pulse-dot 2s infinite; }
+  /* Fade in */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .fade-up { animation: fadeUp .5s cubic-bezier(.2,.8,.3,1) both; }
+  .fade-up-delay-1 { animation-delay: .05s; }
+  .fade-up-delay-2 { animation-delay: .1s; }
+  .fade-up-delay-3 { animation-delay: .15s; }
+  .fade-up-delay-4 { animation-delay: .2s; }
+  /* Chart tooltip */
+  .recharts-tooltip-wrapper { outline: none; }
+</style>
+
+<!-- React 18 UMD -->
+<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<!-- PropTypes (Recharts peer dep) -->
+<script crossorigin src="https://unpkg.com/prop-types@15/prop-types.min.js"></script>
+<!-- Recharts -->
+<script crossorigin src="https://unpkg.com/recharts@2.12.7/umd/Recharts.js"></script>
+<!-- Babel (for JSX) -->
+<script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+
+<script type="text/babel" data-presets="react">
+const { useState, useMemo, useEffect } = React;
+const {
+  ResponsiveContainer, LineChart, Line, BarChart, Bar, AreaChart, Area,
+  RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar,
+  PieChart, Pie, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ReferenceLine
+} = Recharts;
+
+/* ============================================================
+   DATA LAYER — EnerTchad Groupe canonical dataset
+   ============================================================ */
+
+const POLES = [
+  { id: 'amont',        name: 'Amont · E&P',        short: 'Amont',        color: '#2C7AE0' },
+  { id: 'inter',        name: 'Intermédiaire',      short: 'Inter.',       color: '#10B981' },
+  { id: 'aval',         name: 'Aval · Distribution',short: 'Aval',         color: '#F59E0B' },
+  { id: 'svc',          name: 'Services',           short: 'Services',     color: '#8B5CF6' },
+  { id: 'energies',     name: 'Énergies · GreenTech', short: 'GreenTech',  color: '#0891B2' },
+  { id: 'tech',         name: 'Technologies · EnerTech', short: 'EnerTech', color: '#BE185D' },
+];
+
+const YEARS = [2022, 2023, 2024, 2025, 2026];
+
+// Monthly production (Q1 2026 actual + 2025 full year) — kboe/j
+const PRODUCTION_SERIES_2025_2026 = [
+  { month: 'Jan 25', amont: 132.1, inter: 128.4, aval: 121.2, total: 132.1 },
+  { month: 'Fév 25', amont: 133.8, inter: 129.2, aval: 122.0, total: 133.8 },
+  { month: 'Mar 25', amont: 135.4, inter: 131.8, aval: 124.5, total: 135.4 },
+  { month: 'Avr 25', amont: 136.9, inter: 133.2, aval: 126.1, total: 136.9 },
+  { month: 'Mai 25', amont: 138.2, inter: 134.5, aval: 127.8, total: 138.2 },
+  { month: 'Juin 25',amont: 139.0, inter: 135.1, aval: 128.4, total: 139.0 },
+  { month: 'Juil 25',amont: 140.1, inter: 136.2, aval: 129.5, total: 140.1 },
+  { month: 'Août 25',amont: 141.3, inter: 137.4, aval: 130.8, total: 141.3 },
+  { month: 'Sep 25', amont: 142.0, inter: 138.1, aval: 131.4, total: 142.0 },
+  { month: 'Oct 25', amont: 142.8, inter: 138.9, aval: 132.1, total: 142.8 },
+  { month: 'Nov 25', amont: 143.5, inter: 139.4, aval: 132.7, total: 143.5 },
+  { month: 'Déc 25', amont: 143.9, inter: 139.8, aval: 133.1, total: 143.9 },
+  { month: 'Jan 26', amont: 144.2, inter: 140.1, aval: 133.5, total: 144.2 },
+  { month: 'Fév 26', amont: 144.6, inter: 140.5, aval: 133.9, total: 144.6 },
+  { month: 'Mar 26', amont: 144.8, inter: 140.8, aval: 134.2, total: 144.8 },
+];
+
+// KPIs high-level (current = Q1 2026, prev = FY 2025)
+const KPIS = {
+  production:   { value: 144.8, unit: 'kboe/j', label: 'Production Groupe', prev: 139.2,  target: 150, fmt: 'num1' },
+  revenue:      { value: 3.84,  unit: 'Md USD', label: 'CA annualisé',      prev: 3.42,   target: 4.2, fmt: 'num2' },
+  capex:        { value: 642,   unit: 'M USD',  label: 'CAPEX YTD',         prev: 580,    target: 1200,fmt: 'int' },
+  ebitda_mgn:   { value: 41.8,  unit: '%',      label: 'Marge EBITDA',      prev: 39.4,   target: 44,  fmt: 'num1' },
+  hse_trir:     { value: 0.42,  unit: '/Mh',    label: 'TRIR · HSE',        prev: 0.58,   target: 0.3, fmt: 'num2', inverse: true },
+  local_content:{ value: 68,    unit: '%',      label: 'Contenu local',     prev: 62,     target: 75,  fmt: 'int' },
+  ghg_int:      { value: 18.4,  unit: 'kgCO₂/boe', label: 'Intensité GES',  prev: 21.1,   target: 15,  fmt: 'num1', inverse: true },
+  transmission: { value: 624,   unit: 'GWh',    label: 'Énergie verte',     prev: 412,    target: 900, fmt: 'int' },
+};
+
+// Mix de production par pôle (Q1 2026, kboe/j équivalent + services/tech en USD M revenue)
+const POLE_MIX = [
+  { pole: 'Amont',     value: 144.8, unit: 'kboe/j',  color: '#2C7AE0', delta: 4.0  },
+  { pole: 'Intermédiaire', value: 140.8, unit: 'kboe/j', color: '#10B981', delta: 2.4 },
+  { pole: 'Aval',      value: 134.2, unit: 'kboe/j',  color: '#F59E0B', delta: 2.8 },
+  { pole: 'Services',  value: 186,   unit: 'M USD',   color: '#8B5CF6', delta: 14.2 },
+  { pole: 'GreenTech', value: 624,   unit: 'GWh',     color: '#0891B2', delta: 51.5 },
+  { pole: 'EnerTech',  value: 42,    unit: 'M USD',   color: '#BE185D', delta: 88.0 },
+];
+
+// CAPEX stacked per year, per pôle (M USD)
+const CAPEX_STACKED = [
+  { year: '2022', amont: 220, inter: 140, aval: 82,  svc: 38,  energies: 12, tech: 4 },
+  { year: '2023', amont: 285, inter: 165, aval: 98,  svc: 52,  energies: 46, tech: 12 },
+  { year: '2024', amont: 340, inter: 190, aval: 115, svc: 68,  energies: 112, tech: 24 },
+  { year: '2025', amont: 410, inter: 220, aval: 135, svc: 88,  energies: 240, tech: 48 },
+  { year: '2026', amont: 480, inter: 260, aval: 155, svc: 110, energies: 380, tech: 95 },
+];
+
+// ESG radar — Groupe vs industry benchmark (score 0-100)
+const ESG_RADAR = [
+  { axis: 'GHG mgmt',       groupe: 72, benchmark: 61 },
+  { axis: 'Water stewardship', groupe: 68, benchmark: 58 },
+  { axis: 'Biodiversity',   groupe: 64, benchmark: 52 },
+  { axis: 'Contenu local',  groupe: 84, benchmark: 54 },
+  { axis: 'Gouvernance',    groupe: 81, benchmark: 66 },
+  { axis: 'HSE',            groupe: 89, benchmark: 70 },
+  { axis: 'Transparence ITIE', groupe: 92, benchmark: 58 },
+];
+
+// Deal flow pipeline (M USD)
+const DEAL_FLOW = [
+  { id: 1, project: 'Extension raffinerie Djermaya',       pole: 'aval',     stage: 'FID',        capex: 280, country: 'TD', status: 'on-track', risk: 'low'    },
+  { id: 2, project: 'Solaire Mongo 150 MW',                pole: 'energies', stage: 'Construction', capex: 185, country: 'TD', status: 'ahead',   risk: 'low'    },
+  { id: 3, project: 'Pipeline extension Bongor → Doba',    pole: 'inter',    stage: 'FID',        capex: 420, country: 'TD', status: 'on-track', risk: 'medium' },
+  { id: 4, project: 'Bloc exploration Grand-Lac',          pole: 'amont',    stage: 'Exploration',capex: 95,  country: 'TD', status: 'at-risk',  risk: 'high'   },
+  { id: 5, project: 'EnerTech Data Center Tier III',       pole: 'tech',     stage: 'Construction', capex: 38,country: 'TD', status: 'ahead',   risk: 'low'    },
+  { id: 6, project: 'Wind farm Lac-Tchad 80 MW',           pole: 'energies', stage: 'FEED',       capex: 142, country: 'TD', status: 'on-track', risk: 'medium' },
+  { id: 7, project: 'Upgrade terminal export Kribi',       pole: 'inter',    stage: 'Ingénierie', capex: 210, country: 'CM', status: 'on-track', risk: 'medium' },
+  { id: 8, project: 'Programme maintenance digitale IA',   pole: 'svc',      stage: 'Déploiement', capex: 28, country: 'TD', status: 'ahead',   risk: 'low'    },
+];
+
+// Implantations
+const SITES = [
+  { name: 'Doba (siège Amont)',  pole: 'amont',     status: 'active', staff: 380 },
+  { name: 'Djermaya (raffinerie)', pole: 'aval',   status: 'active', staff: 245 },
+  { name: 'N\'Djamena (HQ)',      pole: 'groupe',  status: 'active', staff: 420 },
+  { name: 'Bongor (pipeline)',   pole: 'inter',    status: 'active', staff: 95  },
+  { name: 'Mongo (solaire)',     pole: 'energies', status: 'build',  staff: 48  },
+  { name: 'Kribi (export term.)',pole: 'inter',    status: 'active', staff: 62  },
+];
+
+/* ============================================================
+   FORMATTERS
+   ============================================================ */
+
+const formatFR = {
+  num1: (n) => Number(n).toFixed(1).replace('.', ','),
+  num2: (n) => Number(n).toFixed(2).replace('.', ','),
+  int:  (n) => Math.round(Number(n)).toLocaleString('fr-FR').replace(/,/g, '\u202F'),
+};
+const fmtVal = (kpi) => formatFR[kpi.fmt || 'num1'](kpi.value);
+const fmtPct = (curr, prev, inverse = false) => {
+  const raw = ((curr - prev) / prev) * 100;
+  const delta = inverse ? -raw : raw;
+  return { value: delta, label: (delta >= 0 ? '+' : '') + delta.toFixed(1).replace('.', ',') + '%' };
+};
+
+/* ============================================================
+   COMPONENTS
+   ============================================================ */
+
+function Logo() {
+  return (
+    <div className="flex items-center gap-3">
+      <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-gold to-gold-deep flex items-center justify-center font-display font-bold text-navy text-lg shadow-lg shadow-gold/20">E</div>
+      <div className="flex flex-col leading-none">
+        <span className="font-display text-[1.05rem] font-semibold tracking-tight text-white">Ener<span className="text-gold">Tchad</span></span>
+        <span className="text-[.62rem] font-semibold tracking-[.2em] uppercase text-gold/80">Dashboard Exécutif</span>
+      </div>
+    </div>
+  );
+}
+
+function Topbar({ currentDate, onExport, onRefresh, refreshing }) {
+  return (
+    <header className="border-b border-gold/10 bg-navy-2/70 backdrop-blur-lg sticky top-0 z-40">
+      <div className="max-w-[1600px] mx-auto px-6 py-3 flex items-center justify-between gap-4">
+        <Logo />
+        <div className="hidden md:flex items-center gap-5 text-xs">
+          <span className="inline-flex items-center gap-1.5 px-2 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/25">
+            <svg className="w-3 h-3 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4">
+              <path d="M20 6L9 17l-5-5"/>
+            </svg>
+            <span className="text-emerald-400 font-semibold tracking-wider uppercase text-[.62rem]">Snapshot validé</span>
+          </span>
+          <div className="h-4 w-px bg-white/10"></div>
+          <div className="text-white/65">
+            MAJ : <span className="text-gold font-mono">{currentDate}</span>
+          </div>
+          <div className="h-4 w-px bg-white/10"></div>
+          <div className="text-white/55">
+            Source : <span className="text-gold font-mono">canonical-data.yaml</span>
+          </div>
+        </div>
+        <div className="flex items-center gap-2">
+          <button onClick={onRefresh} disabled={refreshing}
+            className="h-9 px-3 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-white/70 text-xs font-medium transition-all flex items-center gap-2 disabled:opacity-50">
+            <svg className={`w-3.5 h-3.5 ${refreshing ? 'animate-spin' : ''}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M21 12a9 9 0 0 1-9 9 9 9 0 0 1-9-9 9 9 0 0 1 9-9c2.8 0 5.4 1.3 7.1 3.4"/>
+              <path d="M21 3v6h-6"/>
+            </svg>
+            Actualiser
+          </button>
+          <button onClick={onExport}
+            className="h-9 px-4 rounded-lg bg-gold text-navy text-xs font-semibold transition-all hover:bg-gold-light flex items-center gap-2 shadow-lg shadow-gold/20">
+            <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+            </svg>
+            Export
+          </button>
+        </div>
+      </div>
+    </header>
+  );
+}
+
+function FilterBar({ selectedPoles, onTogglePole, year, onYearChange, period, onPeriodChange }) {
+  return (
+    <div className="max-w-[1600px] mx-auto px-6 py-5 flex flex-wrap items-center gap-3 border-b border-white/5">
+      <div className="flex items-center gap-2 mr-2">
+        <svg className="w-4 h-4 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <path d="M22 3H2l8 9.46V19l4 2v-8.54z"/>
+        </svg>
+        <span className="text-xs font-semibold tracking-[.16em] uppercase text-gold">Filtres</span>
+      </div>
+
+      <div className="flex flex-wrap gap-2">
+        <button onClick={() => onTogglePole('all')}
+          className={`h-8 px-3 rounded-full text-xs font-medium border transition-all ${selectedPoles.size === POLES.length ? 'bg-gold text-navy border-gold' : 'bg-white/5 text-white/70 border-white/10 hover:bg-white/10'}`}>
+          Tous les pôles ({POLES.length})
+        </button>
+        {POLES.map(p => (
+          <button key={p.id} onClick={() => onTogglePole(p.id)}
+            className={`h-8 px-3 rounded-full text-xs font-medium border transition-all flex items-center gap-1.5 ${selectedPoles.has(p.id) ? 'text-white border-transparent' : 'bg-white/5 text-white/60 border-white/10 hover:bg-white/10'}`}
+            style={selectedPoles.has(p.id) ? { background: p.color + '22', borderColor: p.color + '66' } : {}}>
+            <span className="w-1.5 h-1.5 rounded-full" style={{ background: p.color }}></span>
+            {p.short}
+          </button>
+        ))}
+      </div>
+
+      <div className="ml-auto flex items-center gap-2">
+        <div className="flex rounded-lg bg-white/5 border border-white/10 p-1">
+          {['YTD', '12M', '5Y'].map(p => (
+            <button key={p} onClick={() => onPeriodChange(p)}
+              className={`px-3 h-7 rounded-md text-xs font-semibold transition-all ${period === p ? 'bg-gold text-navy' : 'text-white/60 hover:text-white'}`}>
+              {p}
+            </button>
+          ))}
+        </div>
+        <select value={year} onChange={(e) => onYearChange(Number(e.target.value))}
+          className="h-8 px-3 rounded-lg bg-white/5 border border-white/10 text-white/80 text-xs font-semibold cursor-pointer hover:bg-white/10">
+          {YEARS.slice().reverse().map(y => <option key={y} value={y} className="bg-navy-2">{y}</option>)}
+        </select>
+      </div>
+    </div>
+  );
+}
+
+function KPICard({ kpi, icon, accent = '#D9A84F', delay = 0 }) {
+  const delta = fmtPct(kpi.value, kpi.prev, kpi.inverse);
+  const positive = delta.value >= 0;
+  const targetPct = kpi.inverse
+    ? Math.min(100, Math.max(0, ((kpi.prev - kpi.value) / (kpi.prev - kpi.target)) * 100))
+    : Math.min(100, Math.max(0, (kpi.value / kpi.target) * 100));
+
+  return (
+    <div className={`gradient-border p-5 fade-up`} style={{ animationDelay: `${delay}s` }}>
+      <div className="flex items-start justify-between mb-4">
+        <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ background: accent + '1A', color: accent }}>
+          {icon}
+        </div>
+        <div className={`text-xs font-semibold px-2 py-1 rounded-full flex items-center gap-1 ${positive ? 'bg-emerald-500/10 text-emerald-400' : 'bg-rose-500/10 text-rose-400'}`}>
+          <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+            <path d={positive ? 'M7 17L17 7M7 7h10v10' : 'M17 7L7 17M17 17H7V7'}/>
+          </svg>
+          {delta.label}
+        </div>
+      </div>
+      <div className="text-[.7rem] tracking-[.12em] uppercase text-white/50 font-semibold mb-1">{kpi.label}</div>
+      <div className="flex items-baseline gap-1.5 mb-3">
+        <span className="font-display text-3xl font-semibold text-white tracking-tight">{fmtVal(kpi)}</span>
+        <span className="text-sm text-white/55 font-medium">{kpi.unit}</span>
+      </div>
+      <div className="flex items-center justify-between text-[.68rem] text-white/55 mb-1.5">
+        <span>Objectif {kpi.fmt === 'int' ? formatFR.int(kpi.target) : formatFR.num1(kpi.target)} {kpi.unit}</span>
+        <span className="font-mono font-semibold" style={{ color: accent }}>{targetPct.toFixed(0)}%</span>
+      </div>
+      <div className="h-1.5 rounded-full bg-white/5 overflow-hidden">
+        <div className="h-full rounded-full transition-all" style={{ width: `${targetPct}%`, background: `linear-gradient(90deg, ${accent}, ${accent}cc)` }}></div>
+      </div>
+    </div>
+  );
+}
+
+const ICONS = {
+  oil: <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M12 2.5l5 6a7 7 0 1 1-10 0z"/></svg>,
+  money: <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>,
+  trend: <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M3 17l6-6 4 4 8-8M14 7h7v7"/></svg>,
+  shield:<svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M12 2L4 6v6c0 5 3.5 9 8 10 4.5-1 8-5 8-10V6z"/><path d="M9 12l2 2 4-4"/></svg>,
+  users: <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/><circle cx="9" cy="7" r="4"/></svg>,
+  leaf:  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M11 20A7 7 0 0 1 4 13V7a7 7 0 0 1 14 0c0 6-7 13-7 13zM9 13a4 4 0 1 1 8 0"/></svg>,
+  bolt:  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M13 2L3 14h9l-1 8 10-12h-9z"/></svg>,
+  factory: <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M2 20V8l7 4V8l7 4V4h6v16z"/></svg>,
+};
+
+/* ---------- Chart tooltip ---------- */
+function CustomTooltip({ active, payload, label, unit = '' }) {
+  if (!active || !payload || !payload.length) return null;
+  return (
+    <div className="bg-navy-2 border border-gold/30 rounded-lg p-3 shadow-2xl text-xs min-w-[180px]">
+      <div className="font-display font-semibold text-white mb-2 text-[.82rem]">{label}</div>
+      {payload.map((p, i) => (
+        <div key={i} className="flex items-center justify-between gap-3 py-0.5">
+          <div className="flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full" style={{ background: p.color }}></span>
+            <span className="text-white/70 capitalize">{p.name}</span>
+          </div>
+          <span className="font-mono font-semibold text-white">
+            {typeof p.value === 'number' ? p.value.toLocaleString('fr-FR', { maximumFractionDigits: 1 }) : p.value} {unit}
+          </span>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function EmptyChart({ height = 260, message = "Aucune donnée pour les filtres actifs" }) {
+  return (
+    <div className="flex flex-col items-center justify-center gap-3 text-center" style={{ height }}>
+      <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
+        <svg className="w-5 h-5 text-white/55" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M8 12h8"/>
+        </svg>
+      </div>
+      <div className="text-sm text-white/60 max-w-[260px]">{message}</div>
+      <div className="text-[.68rem] text-white/55 uppercase tracking-wider">Astuce · cliquez sur « Tous les pôles »</div>
+    </div>
+  );
+}
+
+function ChartCard({ title, subtitle, eyebrow, right, children, className = '', delay = 0 }) {
+  return (
+    <div className={`gradient-border p-5 fade-up ${className}`} style={{ animationDelay: `${delay}s` }}>
+      <div className="flex items-start justify-between mb-5">
+        <div>
+          {eyebrow && <div className="text-[.68rem] font-semibold tracking-[.16em] uppercase text-gold mb-1">{eyebrow}</div>}
+          <h3 className="font-display font-semibold text-white text-lg tracking-tight">{title}</h3>
+          {subtitle && <p className="text-xs text-white/50 mt-1">{subtitle}</p>}
+        </div>
+        {right}
+      </div>
+      {children}
+    </div>
+  );
+}
+
+function ProductionChart({ selectedPoles }) {
+  const data = PRODUCTION_SERIES_2025_2026;
+  const avg = data.reduce((s, d) => s + d.total, 0) / data.length;
+
+  return (
+    <ChartCard
+      eyebrow="Production consolidée"
+      title="Évolution production Groupe · 15 mois glissants"
+      subtitle="Q1 2026 actual · kboe/j équivalent"
+      delay={0.15}
+      right={
+        <div className="text-right">
+          <div className="text-[.68rem] text-white/55 uppercase tracking-wider">Moyenne</div>
+          <div className="font-mono font-semibold text-gold">{avg.toFixed(1).replace('.', ',')} kboe/j</div>
+        </div>
+      }>
+      <ResponsiveContainer width="100%" height={260}>
+        <AreaChart data={data} margin={{ top: 8, right: 8, left: -18, bottom: 0 }}>
+          <defs>
+            <linearGradient id="gradTotal" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="#D9A84F" stopOpacity={0.35}/>
+              <stop offset="100%" stopColor="#D9A84F" stopOpacity={0}/>
+            </linearGradient>
+          </defs>
+          <CartesianGrid stroke="#1A2540" strokeDasharray="3 3" vertical={false} />
+          <XAxis dataKey="month" tick={{ fill: '#CBD5E1', fontSize: 10 }} axisLine={{ stroke: '#243150' }} tickLine={false} />
+          <YAxis tick={{ fill: '#CBD5E1', fontSize: 10 }} axisLine={false} tickLine={false} />
+          <Tooltip content={<CustomTooltip unit="kboe/j" />} cursor={{ stroke: '#D9A84F', strokeDasharray: '3 3', strokeOpacity: .4 }} />
+          <ReferenceLine y={150} stroke="#10B981" strokeDasharray="4 4" strokeOpacity={.6} label={{ value: 'Target 150', fill: '#10B981', fontSize: 10, position: 'right' }} />
+          <Area type="monotone" dataKey="total" name="Total Groupe" stroke="#D9A84F" strokeWidth={2.5} fill="url(#gradTotal)" />
+        </AreaChart>
+      </ResponsiveContainer>
+    </ChartCard>
+  );
+}
+
+function PoleMixChart({ selectedPoles }) {
+  const filtered = POLE_MIX.filter(p => {
+    const key = p.pole.toLowerCase();
+    const map = { 'amont': 'amont', 'intermédiaire': 'inter', 'aval': 'aval', 'services': 'svc', 'greentech': 'energies', 'enertech': 'tech' };
+    return selectedPoles.has(map[key]);
+  });
+
+  return (
+    <ChartCard
+      eyebrow="Mix par pôle"
+      title="Contribution & croissance"
+      subtitle="Q1 2026 vs Q1 2025 · unités hétérogènes (normalisées visuellement)"
+      delay={0.2}
+    >
+      {filtered.length === 0 ? (
+        <EmptyChart height={220} message="Aucun pôle sélectionné — le mix est vide" />
+      ) : (
+      <div className="space-y-3">
+        {filtered.map((p, i) => {
+          const max = Math.max(...POLE_MIX.map(x => x.value));
+          const pct = (p.value / max) * 100;
+          return (
+            <div key={i} className="group">
+              <div className="flex items-center justify-between mb-1.5">
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full" style={{ background: p.color }}></span>
+                  <span className="text-sm text-white/85 font-medium">{p.pole}</span>
+                </div>
+                <div className="flex items-baseline gap-2">
+                  <span className="font-mono text-sm text-white font-semibold">
+                    {p.value.toLocaleString('fr-FR').replace(/,/g, '\u202F')} <span className="text-white/50 text-xs">{p.unit}</span>
+                  </span>
+                  <span className={`text-[.68rem] font-semibold ${p.delta >= 0 ? 'text-emerald-400' : 'text-rose-400'}`}>
+                    {p.delta >= 0 ? '+' : ''}{p.delta.toFixed(1).replace('.', ',')}%
+                  </span>
+                </div>
+              </div>
+              <div className="h-2 rounded-full bg-white/5 overflow-hidden">
+                <div className="h-full rounded-full transition-all duration-700 group-hover:scale-x-[1.01] origin-left"
+                  style={{ width: `${pct}%`, background: `linear-gradient(90deg, ${p.color}, ${p.color}bb)` }}></div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+      )}
+    </ChartCard>
+  );
+}
+
+function CapexChart({ selectedPoles }) {
+  const poleKeys = ['amont', 'inter', 'aval', 'svc', 'energies', 'tech'];
+  const data = useMemo(() => CAPEX_STACKED.map(d => {
+    const o = { year: d.year };
+    poleKeys.forEach(k => { if (selectedPoles.has(k)) o[k] = d[k]; });
+    return o;
+  }), [selectedPoles]);
+
+  // Dynamic 2026 total based on currently-selected pôles
+  const total2026 = useMemo(() => {
+    const row = CAPEX_STACKED[CAPEX_STACKED.length - 1];
+    return poleKeys.reduce((s, k) => s + (selectedPoles.has(k) ? row[k] : 0), 0);
+  }, [selectedPoles]);
+
+  // Find last visible pôle (for radius top corners)
+  const lastVisiblePoleId = useMemo(() => {
+    for (let i = poleKeys.length - 1; i >= 0; i--) {
+      if (selectedPoles.has(poleKeys[i])) return poleKeys[i];
+    }
+    return null;
+  }, [selectedPoles]);
+
+  const hasData = selectedPoles.size > 0;
+
+  return (
+    <ChartCard
+      eyebrow="CAPEX"
+      title="Investissements par pôle · 5 ans"
+      subtitle="M USD · 2022-2026"
+      delay={0.25}
+      right={
+        <div className="text-right">
+          <div className="text-[.68rem] text-white/55 uppercase tracking-wider">
+            2026 {selectedPoles.size < POLES.length && <span className="text-gold/70 normal-case">· filtré</span>}
+          </div>
+          <div className="font-mono font-semibold text-gold">
+            {total2026.toLocaleString('fr-FR').replace(/,/g, '\u202F')} M$
+          </div>
+        </div>
+      }
+    >
+      {hasData ? (
+        <ResponsiveContainer width="100%" height={260}>
+          <BarChart data={data} margin={{ top: 8, right: 8, left: -18, bottom: 0 }}>
+            <CartesianGrid stroke="#1A2540" strokeDasharray="3 3" vertical={false} />
+            <XAxis dataKey="year" tick={{ fill: '#CBD5E1', fontSize: 11 }} axisLine={{ stroke: '#243150' }} tickLine={false} />
+            <YAxis tick={{ fill: '#CBD5E1', fontSize: 10 }} axisLine={false} tickLine={false} />
+            <Tooltip content={<CustomTooltip unit="M$" />} cursor={{ fill: 'rgba(217,168,79,.05)' }} />
+            {POLES.map(p => selectedPoles.has(p.id) && (
+              <Bar key={p.id} dataKey={p.id} stackId="a" name={p.short} fill={p.color} radius={p.id === lastVisiblePoleId ? [4, 4, 0, 0] : 0} />
+            ))}
+          </BarChart>
+        </ResponsiveContainer>
+      ) : <EmptyChart height={260} message="Sélectionnez au moins un pôle pour afficher le CAPEX" />}
+    </ChartCard>
+  );
+}
+
+function ESGRadar() {
+  return (
+    <ChartCard
+      eyebrow="Performance ESG"
+      title="Scoring multicritères"
+      subtitle="Groupe vs benchmark industrie · Q1 2026"
+      delay={0.3}
+    >
+      <ResponsiveContainer width="100%" height={300}>
+        <RadarChart data={ESG_RADAR}>
+          <PolarGrid stroke="#243150" strokeOpacity={.5} />
+          <PolarAngleAxis dataKey="axis" tick={{ fill: '#CBD5E1', fontSize: 10.5, fontWeight: 500 }} />
+          <PolarRadiusAxis angle={30} domain={[0, 100]} tick={{ fill: '#64748B', fontSize: 9 }} stroke="#243150" />
+          <Radar name="Industrie" dataKey="benchmark" stroke="#64748B" fill="#64748B" fillOpacity={0.12} strokeDasharray="4 4" />
+          <Radar name="EnerTchad" dataKey="groupe" stroke="#D9A84F" fill="#D9A84F" fillOpacity={0.28} strokeWidth={2} />
+          <Legend wrapperStyle={{ fontSize: 11, paddingTop: 8 }} iconSize={8} />
+        </RadarChart>
+      </ResponsiveContainer>
+    </ChartCard>
+  );
+}
+
+function DealFlowTable({ selectedPoles }) {
+  const [sortKey, setSortKey] = useState('capex');
+  const [sortDir, setSortDir] = useState('desc');
+
+  const sorted = useMemo(() => {
+    const filtered = DEAL_FLOW.filter(d => selectedPoles.has(d.pole));
+    return filtered.slice().sort((a, b) => {
+      const va = a[sortKey], vb = b[sortKey];
+      const cmp = typeof va === 'number' ? va - vb : String(va).localeCompare(String(vb));
+      return sortDir === 'asc' ? cmp : -cmp;
+    });
+  }, [sortKey, sortDir, selectedPoles]);
+
+  const totalCapex = sorted.reduce((s, d) => s + d.capex, 0);
+  const statusColors = {
+    'ahead':    { bg: 'bg-emerald-500/10', text: 'text-emerald-400', label: 'En avance' },
+    'on-track': { bg: 'bg-blue-500/10',    text: 'text-blue-400',    label: 'Sur plan' },
+    'at-risk':  { bg: 'bg-amber-500/10',   text: 'text-amber-400',   label: 'À risque' },
+  };
+  const riskDots = { low: 1, medium: 2, high: 3 };
+
+  const toggleSort = (k) => {
+    if (k === sortKey) setSortDir(d => d === 'asc' ? 'desc' : 'asc');
+    else { setSortKey(k); setSortDir('desc'); }
+  };
+
+  return (
+    <ChartCard
+      eyebrow="Deal-flow"
+      title="Portefeuille projets stratégiques"
+      subtitle={`${sorted.length} projets · ${totalCapex.toLocaleString('fr-FR').replace(/,/g, '\u202F')} M$ CAPEX cumulés`}
+      delay={0.35}
+      className="xl:col-span-2"
+    >
+      <div className="overflow-x-auto -mx-5 px-5">
+        <table className="w-full text-sm min-w-[700px]">
+          <thead>
+            <tr className="text-[.68rem] font-semibold tracking-[.12em] uppercase text-white/55 border-b border-white/5">
+              <th className="text-left py-3 pr-3">Projet</th>
+              <th className="text-left py-3 pr-3">Pôle</th>
+              <th className="text-left py-3 pr-3">Stage</th>
+              <th className="text-left py-3 pr-3">Pays</th>
+              <th className="text-right py-3 pr-3 cursor-pointer hover:text-gold" onClick={() => toggleSort('capex')}>
+                CAPEX {sortKey === 'capex' && (sortDir === 'desc' ? '↓' : '↑')}
+              </th>
+              <th className="text-left py-3 pr-3">Risque</th>
+              <th className="text-left py-3">Statut</th>
+            </tr>
+          </thead>
+          <tbody>
+            {sorted.map(d => {
+              const pole = POLES.find(p => p.id === d.pole);
+              const st = statusColors[d.status];
+              return (
+                <tr key={d.id} className="border-b border-white/5 hover:bg-white/3 transition-colors">
+                  <td className="py-3.5 pr-3 text-white/90 font-medium">{d.project}</td>
+                  <td className="py-3.5 pr-3">
+                    <span className="inline-flex items-center gap-1.5 text-xs">
+                      <span className="w-1.5 h-1.5 rounded-full" style={{ background: pole.color }}></span>
+                      <span className="text-white/70">{pole.short}</span>
+                    </span>
+                  </td>
+                  <td className="py-3.5 pr-3 text-white/65 text-xs">{d.stage}</td>
+                  <td className="py-3.5 pr-3">
+                    <span className="inline-block px-2 py-0.5 rounded-md bg-white/5 text-white/60 text-xs font-mono">{d.country}</span>
+                  </td>
+                  <td className="py-3.5 pr-3 text-right font-mono font-semibold text-white">{d.capex.toLocaleString('fr-FR').replace(/,/g, '\u202F')} M$</td>
+                  <td className="py-3.5 pr-3">
+                    <div className="flex items-center gap-0.5">
+                      {[1, 2, 3].map(i => (
+                        <span key={i} className={`w-1.5 h-4 rounded-sm ${i <= riskDots[d.risk] ? (d.risk === 'high' ? 'bg-rose-500' : d.risk === 'medium' ? 'bg-amber-500' : 'bg-emerald-500') : 'bg-white/10'}`}></span>
+                      ))}
+                    </div>
+                  </td>
+                  <td className="py-3.5">
+                    <span className={`inline-flex items-center gap-1.5 text-[.7rem] font-semibold px-2.5 py-1 rounded-full ${st.bg} ${st.text}`}>
+                      <span className="w-1 h-1 rounded-full bg-current"></span>
+                      {st.label}
+                    </span>
+                  </td>
+                </tr>
+              );
+            })}
+            {sorted.length === 0 && (
+              <tr><td colSpan={7} className="py-8 text-center text-white/55">Aucun projet pour les pôles sélectionnés.</td></tr>
+            )}
+          </tbody>
+        </table>
+      </div>
+    </ChartCard>
+  );
+}
+
+function SitesCard() {
+  const totalStaff = SITES.reduce((s, x) => s + x.staff, 0);
+  return (
+    <ChartCard
+      eyebrow="Implantations"
+      title="Sites opérationnels"
+      subtitle={`${SITES.length} sites · ${totalStaff.toLocaleString('fr-FR').replace(/,/g, '\u202F')} collaborateurs`}
+      delay={0.4}
+    >
+      <div className="space-y-2">
+        {SITES.map((s, i) => (
+          <div key={i} className="flex items-center justify-between p-2.5 rounded-lg hover:bg-white/5 transition-colors">
+            <div className="flex items-center gap-3">
+              <span className={`w-2 h-2 rounded-full ring-4 ${s.status === 'active' ? 'bg-emerald-400 ring-emerald-500/10' : 'bg-amber-400 ring-amber-500/10'}`}></span>
+              <div>
+                <div className="text-sm text-white/90 font-medium">{s.name}</div>
+                <div className="text-[.7rem] text-white/55">{s.status === 'active' ? 'Opérationnel' : 'En construction'}</div>
+              </div>
+            </div>
+            <div className="text-right">
+              <div className="font-mono text-sm text-white font-semibold">{s.staff}</div>
+              <div className="text-[.65rem] text-white/55 uppercase tracking-wider">staff</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </ChartCard>
+  );
+}
+
+/* ============================================================
+   MAIN APP
+   ============================================================ */
+
+function App() {
+  const [selectedPoles, setSelectedPoles] = useState(new Set(POLES.map(p => p.id)));
+  const [year, setYear] = useState(2026);
+  const [period, setPeriod] = useState('YTD');
+  const [refreshing, setRefreshing] = useState(false);
+  const [currentDate, setCurrentDate] = useState('');
+
+  useEffect(() => {
+    const d = new Date();
+    setCurrentDate(d.toLocaleDateString('fr-FR', { day: '2-digit', month: 'short', year: 'numeric' }) + ' · ' + d.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' }));
+  }, []);
+
+  const togglePole = (id) => {
+    setSelectedPoles(prev => {
+      if (id === 'all') {
+        return prev.size === POLES.length ? new Set() : new Set(POLES.map(p => p.id));
+      }
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id); else next.add(id);
+      return next;
+    });
+  };
+
+  const onRefresh = () => {
+    setRefreshing(true);
+    setTimeout(() => setRefreshing(false), 1200);
+  };
+
+  const onExport = () => {
+    const rows = [['Projet', 'Pôle', 'Stage', 'Pays', 'CAPEX (M$)', 'Risque', 'Statut']];
+    DEAL_FLOW.forEach(d => {
+      const pole = POLES.find(p => p.id === d.pole);
+      rows.push([d.project, pole.short, d.stage, d.country, d.capex, d.risk, d.status]);
+    });
+    const csv = rows.map(r => r.map(c => `"${c}"`).join(',')).join('\n');
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = 'enertchad-deal-flow-q1-2026.csv';
+    a.click(); URL.revokeObjectURL(url);
+  };
+
+  return (
+    <div className="min-h-screen">
+      <Topbar currentDate={currentDate} onExport={onExport} onRefresh={onRefresh} refreshing={refreshing} />
+
+      <FilterBar
+        selectedPoles={selectedPoles}
+        onTogglePole={togglePole}
+        year={year}
+        onYearChange={setYear}
+        period={period}
+        onPeriodChange={setPeriod}
+      />
+
+      <main className="max-w-[1600px] mx-auto px-6 py-6 space-y-6">
+
+        {/* Executive summary banner */}
+        <div className="gradient-border p-5 flex flex-wrap items-center justify-between gap-4 fade-up">
+          <div>
+            <div className="text-[.68rem] font-semibold tracking-[.18em] uppercase text-gold mb-1">Performance Q1 2026</div>
+            <h2 className="font-display text-xl text-white font-semibold tracking-tight">
+              Production <span className="text-gold">+4,0%</span> vs Q1 2025 · Objectif annuel consolidé en bonne voie
+            </h2>
+          </div>
+          <div className="flex items-center gap-6">
+            <div className="text-center">
+              <div className="font-display text-2xl font-semibold text-white">6</div>
+              <div className="text-[.68rem] text-white/50 uppercase tracking-wider">pôles actifs</div>
+            </div>
+            <div className="w-px h-8 bg-white/10"></div>
+            <div className="text-center">
+              <div className="font-display text-2xl font-semibold text-emerald-400">12</div>
+              <div className="text-[.68rem] text-white/50 uppercase tracking-wider">projets en cours</div>
+            </div>
+            <div className="w-px h-8 bg-white/10"></div>
+            <div className="text-center">
+              <div className="font-display text-2xl font-semibold text-gold">1 240</div>
+              <div className="text-[.68rem] text-white/50 uppercase tracking-wider">collaborateurs</div>
+            </div>
+          </div>
+        </div>
+
+        {/* KPI Grid */}
+        <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <KPICard kpi={KPIS.production}   icon={ICONS.oil}     accent="#D9A84F" delay={0.02} />
+          <KPICard kpi={KPIS.revenue}      icon={ICONS.money}   accent="#10B981" delay={0.04} />
+          <KPICard kpi={KPIS.capex}        icon={ICONS.trend}   accent="#2C7AE0" delay={0.06} />
+          <KPICard kpi={KPIS.ebitda_mgn}   icon={ICONS.factory} accent="#BE185D" delay={0.08} />
+          <KPICard kpi={KPIS.hse_trir}     icon={ICONS.shield}  accent="#F59E0B" delay={0.10} />
+          <KPICard kpi={KPIS.local_content}icon={ICONS.users}   accent="#8B5CF6" delay={0.12} />
+          <KPICard kpi={KPIS.ghg_int}      icon={ICONS.leaf}    accent="#0891B2" delay={0.14} />
+          <KPICard kpi={KPIS.transmission} icon={ICONS.bolt}    accent="#E8C36A" delay={0.16} />
+        </section>
+
+        {/* Main charts grid */}
+        <section className="grid grid-cols-1 xl:grid-cols-3 gap-5">
+          <div className="xl:col-span-2"><ProductionChart selectedPoles={selectedPoles} /></div>
+          <PoleMixChart selectedPoles={selectedPoles} />
+          <CapexChart selectedPoles={selectedPoles} />
+          <ESGRadar />
+          <SitesCard />
+        </section>
+
+        {/* Deal flow */}
+        <section className="grid grid-cols-1 gap-5">
+          <DealFlowTable selectedPoles={selectedPoles} />
+        </section>
+
+        {/* Footer strip */}
+        <footer className="pt-6 pb-2 flex flex-wrap items-center justify-between gap-3 text-[.72rem] text-white/55 border-t border-white/5">
+          <div>Source : EnerTchad Groupe SA/CA · Données internes · Conforme IFRS · Transparence ITIE</div>
+          <div className="flex items-center gap-4">
+            <span>Dashboard v2.0 · Prototype exécutif</span>
+            <span className="font-mono text-gold/70">2026 Q1</span>
+          </div>
+        </footer>
+      </main>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>
