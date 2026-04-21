@@ -287,7 +287,7 @@ footer a:hover{color:var(--pole)}
         <span>EnerTchad <span class="accent">Énergies</span></span>
       </a>
       <div class="nav-links" id="navLinks">
-        <a href="#vision" class="active" aria-current="page">Vision</a>
+        <a href="#vision">Vision</a>
         <a href="#solutions">Solutions</a>
         <a href="#sites">Sites &amp; Projets</a>
         <a href="#impact">Impact</a>
@@ -572,6 +572,22 @@ footer a:hover{color:var(--pole)}
 document.getElementById('navToggle')?.addEventListener('click',()=>{document.getElementById('navLinks')?.classList.toggle('open')});
 const io=new IntersectionObserver((e)=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}}),{rootMargin:'0px 0px -60px 0px',threshold:.08});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+/* Scrollspy: sync nav active + aria-current=location with currently in-view section */
+const navLinks=document.querySelectorAll('.nav-links a[href^="#"]');
+const sections=[...navLinks].map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
+if(sections.length){
+  const spy=new IntersectionObserver((ents)=>{
+    ents.forEach(e=>{
+      if(!e.isIntersecting)return;
+      navLinks.forEach(a=>{
+        const match=a.getAttribute('href')==='#'+e.target.id;
+        a.classList.toggle('active',match);
+        if(match){a.setAttribute('aria-current','location');}else{a.removeAttribute('aria-current');}
+      });
+    });
+  },{rootMargin:'-40% 0px -55% 0px',threshold:0});
+  sections.forEach(s=>spy.observe(s));
+}
 
 window.addEventListener('load',()=>{
   if(typeof Chart==='undefined')return;
