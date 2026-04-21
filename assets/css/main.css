@@ -28,10 +28,12 @@
   --white: #FFFFFF;
 
   /* Pôles */
-  --pole-amont: #2C7AE0;
-  --pole-inter: #10B981;
-  --pole-aval: #F59E0B;
-  --pole-svc: #8B5CF6;
+  --pole-amont: #2C7AE0;        /* 01 · bleu */
+  --pole-inter: #10B981;        /* 02 · vert émeraude (pipeline/flux) */
+  --pole-aval: #F59E0B;         /* 03 · orange */
+  --pole-svc: #8B5CF6;          /* 04 · violet (fusionné Amont depuis 2026) */
+  --pole-energies: #14B8A6;     /* 05 · teal (solaire/H₂ · distinct de inter) */
+  --pole-tech: #8B5CF6;         /* 06 · violet (IoT/cyber) */
 
   /* Feedback */
   --ok: #10B981;
@@ -741,6 +743,8 @@ footer .foot-bottom .legal a:hover { color: var(--gold); }
 .nav-drop-menu a.inter { --accent: var(--pole-inter); }
 .nav-drop-menu a.aval { --accent: var(--pole-aval); }
 .nav-drop-menu a.svc { --accent: var(--pole-svc); }
+.nav-drop-menu a.energies { --accent: var(--pole-energies); }
+.nav-drop-menu a.tech { --accent: var(--pole-tech); }
 
 @media (max-width: 960px) {
   .nav-drop-menu {

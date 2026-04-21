@@ -36,10 +36,10 @@ Chaque pôle conserve la palette navy/or du Groupe et ajoute **un seul accent de
 | 02 · Intermédiaire | Vert | `#10B981` | Pipeline, flux, indicateurs debit |
 | 03 · Aval | Orange | `#F59E0B` | Distribution, stations, carburants |
 | 04 · Services | Violet | `#8B5CF6` | Services intégrés (legacy — fusionné Amont) |
-| 05 · Énergies | Émeraude | `#10B981` | Renouvelable, transition, micro-grids |
+| 05 · Énergies | Teal | `#14B8A6` | Renouvelable, transition, micro-grids, H₂ |
 | 06 · Technologies | Violet | `#8B5CF6` | IoT, AI, edge, cyber |
 
-> Note : pôles 02 et 05 partagent le vert `#10B981`. Différenciation par contexte (pipeline vs. solaire).
+> Le pôle 04 (Services) est fusionné dans l'Amont depuis 2026 ; son violet est librement réutilisé par le pôle 06 Technologies sans conflit visuel.
 
 ## Typographie
 
