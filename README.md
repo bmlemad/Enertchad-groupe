@@ -157,15 +157,17 @@ Données issues du staging `enertchad-groupe.vercel.app` + enrichissement IR/ESG
 
 Ce hub est le site corporate du holding. Les 5 pôles opérationnels ont chacun leur repo + site déployé :
 
-| Pôle | Repository | Site déployé |
-|---|---|---|
-| 01 · Amont | [enertchad-amont.vercel.app](https://github.com/bmlemad/enertchad-amont.vercel.app) | https://enertchad-amont-vercel-app.vercel.app |
-| 02 · Intermédiaire | [enertchad-Midstream](https://github.com/bmlemad/enertchad-Midstream) | https://enertchad-midstream.vercel.app |
-| 03 · Aval | [enertchad-aval.vercel.app](https://github.com/bmlemad/enertchad-aval.vercel.app) | https://enertchad-aval-vercel-app.vercel.app |
-| 05 · Énergies | [Enertchad-energies](https://github.com/bmlemad/Enertchad-energies) | https://enertchad-energies.vercel.app |
-| 06 · Technologies | [Enertchad-technologies](https://github.com/bmlemad/Enertchad-technologies) | https://enertchad-technologies.vercel.app |
+| Pôle | Repository | Site déployé | Statut GitHub |
+|---|---|---|---|
+| 01 · Amont | [enertchad-amont.vercel.app](https://github.com/bmlemad/enertchad-amont.vercel.app) | https://enertchad-amont-vercel-app.vercel.app | actif |
+| 02 · Intermédiaire | [enertchad-Midstream](https://github.com/bmlemad/enertchad-Midstream) | https://enertchad-midstream.vercel.app | actif |
+| 03 · Aval | [enertchad-aval.vercel.app](https://github.com/bmlemad/enertchad-aval.vercel.app) | https://enertchad-aval-vercel-app.vercel.app | actif |
+| 05 · Énergies | [Enertchad-energies](https://github.com/bmlemad/Enertchad-energies) | https://enertchad-energies.vercel.app | **archivé** |
+| 06 · Technologies | [Enertchad-technologies](https://github.com/bmlemad/Enertchad-technologies) | https://enertchad-technologies.vercel.app | **archivé** |
 
 Le pôle 04 · Services est actuellement intégré à l'Amont (pas de repo dédié).
+
+> **Documentation des pôles consolidée** : tant que les repos `Enertchad-energies` et `Enertchad-technologies` restent archivés (read-only), leur documentation de référence est maintenue ici dans [`poles/`](./poles/) — source vivante, mirroire des READMEs des 3 autres pôles pour symétrie.
 
 La source unique de vérité pour les données consolidées (production, stations, effectifs, capital, certifications, etc.) est le fichier [`DATA_MASTER.yml`](./DATA_MASTER.yml) — à consulter avant toute publication externe.
 
