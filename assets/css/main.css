@@ -91,6 +91,16 @@ section.dark [tabindex]:focus-visible,
   --pole-energies: #14B8A6;     /* 05 · teal (solaire/H₂ · distinct de inter) */
   --pole-tech: #8B5CF6;         /* 06 · violet (IoT/cyber) */
 
+  /* Pôles · variantes deep (gradients, text-on-light) */
+  --pole-amont-deep: #1E5BB0;
+  --pole-amont-light: #7CB0FF;
+  --pole-inter-deep: #0E8F66;
+  --pole-aval-deep: #C47A08;
+  --pole-svc-deep: #6D3FC7;
+  --pole-svc-dark: #2A1A4E;     /* violet profond pour cards strategic */
+  --pole-sust: #2DB370;         /* durabilité · vert plus stable */
+  --pole-sust-deep: #1E7A4F;
+
   /* Feedback */
   --ok: #10B981;
   --warn: #F59E0B;
@@ -381,15 +391,104 @@ section { padding: var(--section-y) 0; position: relative; }
 .card-pole .pole-link::after { content: "→"; transition: transform .3s var(--ease); }
 .card-pole:hover .pole-link::after { transform: translateX(4px); }
 
-.card-pole.amont { --accent: var(--pole-amont); --accent-2: #1E5BB0; }
-.card-pole.inter { --accent: var(--pole-inter); --accent-2: #0E8F66; }
-.card-pole.aval { --accent: var(--pole-aval); --accent-2: #C47A08; }
-.card-pole.svc { --accent: var(--pole-svc); --accent-2: #6D3FC7; }
+.card-pole.amont { --accent: var(--pole-amont); --accent-2: var(--pole-amont-deep); }
+.card-pole.inter { --accent: var(--pole-inter); --accent-2: var(--pole-inter-deep); }
+.card-pole.aval { --accent: var(--pole-aval); --accent-2: var(--pole-aval-deep); }
+.card-pole.svc { --accent: var(--pole-svc); --accent-2: var(--pole-svc-deep); }
 .card-pole.energies { --accent: var(--pole-energies); --accent-2: #0D9488; }
 .card-pole.tech { --accent: var(--pole-tech); --accent-2: #7C3AED; }
 
 /* Accent H2 — remplace les <em style="color:var(--gold-deep)..."> inline */
 .h2-accent { color: var(--gold-deep); font-style: normal; }
+
+/* ---------- Utility classes — remplacent les style= inline ---------- */
+/* Scope nav-dots : pose --nd-accent sur un conteneur pour colorer un <li>/<a> qui consomme var(--nd-accent) */
+.nd-scope-energies { --nd-accent: var(--pole-energies); }
+.nd-scope-tech     { --nd-accent: var(--pole-tech); }
+.nd-scope-amont    { --nd-accent: var(--pole-amont); }
+.nd-scope-inter    { --nd-accent: var(--pole-inter); }
+.nd-scope-aval     { --nd-accent: var(--pole-aval); }
+.nd-scope-svc      { --nd-accent: var(--pole-svc); }
+
+/* Puces (dots) d'icônes de pôle : background = couleur pleine */
+.dot-amont    { background: var(--pole-amont); }
+.dot-inter    { background: var(--pole-inter); }
+.dot-aval     { background: var(--pole-aval); }
+.dot-svc      { background: var(--pole-svc); }
+.dot-energies { background: var(--pole-energies); }
+.dot-tech     { background: var(--pole-tech); }
+.dot-gold     { background: var(--gold); }
+.dot-navy     { background: var(--navy); }
+.dot-pipeline { background: transparent; border: 2px dashed var(--gold); }
+
+/* Chips colorées (label tinted sur fond pastel) */
+.chip-tint-amont    { background: rgba(44, 122, 224, 0.14); color: var(--pole-amont-deep); }
+.chip-tint-inter    { background: rgba(16, 185, 129, 0.14); color: var(--pole-inter-deep); }
+.chip-tint-aval     { background: rgba(245, 158, 11, 0.14); color: var(--pole-aval-deep); }
+.chip-tint-svc      { background: rgba(139, 92, 246, 0.14); color: var(--pole-svc-deep); }
+.chip-tint-energies { background: rgba(20, 184, 166, 0.14); color: #0D9488; }
+.chip-tint-sust     { background: rgba(45, 179, 112, 0.14); color: var(--pole-sust); }
+.chip-amont-soft    { --chip-bg: rgba(44, 122, 224, 0.18); --chip-fg: var(--pole-amont-light); }
+.chip-inter-soft    { --chip-bg: rgba(16, 185, 129, 0.18); --chip-fg: #6AE3B6; }
+.chip-aval-soft     { --chip-bg: rgba(245, 158, 11, 0.18); --chip-fg: #FBB640; }
+.chip-svc-soft      { --chip-bg: rgba(139, 92, 246, 0.20); --chip-fg: #B89FF3; }
+
+/* Texte blanc sur section sombre (remplace <strong style="color:#fff">) */
+.t-white  { color: var(--white); }
+.t-inter  { color: var(--pole-inter); }
+.h-720    { max-width: 720px; }
+
+/* Cadre-carte blanc simple (remplace style="background:#fff;border:...;border-radius:...;padding:36px;box-shadow:...") */
+.box-card {
+  background: var(--white);
+  border: 1px solid var(--hairline-dark);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  box-shadow: var(--shadow);
+}
+
+/* Liste Between (label à gauche / valeur à droite, ligne par ligne) */
+.li-between {
+  padding: 14px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+/* Titre de bande promotionnelle (executive dashboard teaser, etc.) */
+.promo-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(22px, 2.4vw, 30px);
+  color: var(--white);
+  margin: 0 0 10px;
+}
+
+/* Bars de répartition CA/filière — remplace les linear-gradient inline avec hex */
+.b-fill--amont { background: linear-gradient(90deg, var(--pole-amont-deep), var(--pole-amont)); }
+.b-fill--inter { background: linear-gradient(90deg, var(--pole-inter-deep), var(--pole-inter)); }
+.b-fill--aval  { background: linear-gradient(90deg, var(--pole-aval-deep), var(--pole-aval)); }
+.b-fill--svc   { background: linear-gradient(90deg, var(--pole-svc-deep), var(--pole-svc)); }
+.b-fill--sust  { background: linear-gradient(90deg, var(--pole-sust), var(--pole-sust-deep)); }
+
+/* Icon wrapper tinted sur background pastel (remplace style="background: rgba(...); color: ...;") */
+.icon-sust     { background: rgba(45, 179, 112, 0.14); color: var(--pole-sust); }
+.icon-inter    { background: rgba(16, 185, 129, 0.14); color: var(--pole-inter); }
+.icon-aval     { background: rgba(245, 158, 11, 0.14); color: var(--pole-aval); }
+.icon-svc      { background: rgba(139, 92, 246, 0.14); color: var(--pole-svc); }
+.icon-energies { background: rgba(20, 184, 166, 0.14); color: var(--pole-energies); }
+
+/* Bouton ghost sur fond sombre (404/500/offline) — remplace style="color:#fff;border-color:rgba(255,255,255,0.3);" */
+.btn-ghost.on-dark { color: var(--white); border-color: rgba(255, 255, 255, 0.3); }
+
+/* Portraits leader-card — dégradés par initiale de pôle */
+.l-portrait-amont { background: linear-gradient(135deg, var(--pole-amont) 0%, var(--pole-amont-deep) 100%); }
+.l-portrait-aval  { background: linear-gradient(135deg, var(--pole-aval) 0%, var(--pole-aval-deep) 100%); }
+.l-portrait-inter { background: linear-gradient(135deg, var(--pole-inter) 0%, var(--pole-inter-deep) 100%); }
+.l-portrait-svc   { background: linear-gradient(135deg, var(--pole-svc) 0%, var(--pole-svc-deep) 100%); }
+
+/* Card strategic — fond violet profond → navy (programme phare services) */
+.card-strategic-purple { background: linear-gradient(135deg, var(--pole-svc-dark) 0%, var(--navy) 100%); border-radius: var(--radius-lg); padding: 40px; color: white; position: relative; overflow: hidden; }
 
 /* ---------- Split ---------- */
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 72px); align-items: center; }

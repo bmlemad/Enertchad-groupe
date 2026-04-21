@@ -71,6 +71,14 @@
 .skip-link:focus{top:0;outline:3px solid #FFFFFF;outline-offset:2px}
 a:focus-visible,button:focus-visible,[tabindex]:focus-visible,[role="button"]:focus-visible,summary:focus-visible{outline:3px solid #D9A84F;outline-offset:3px;border-radius:6px}
 @media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}}
+/* Utilités réutilisables (parité avec main.css) */
+.t-white{color:#fff}
+.t-inter{color:var(--pole-inter, #10B981)}
+.h-720{max-width:720px}
+.box-card{background:#fff;border:1px solid var(--hairline-dark);border-radius:var(--radius-lg);padding:36px;box-shadow:var(--shadow)}
+.li-between{padding:14px 0;display:flex;justify-content:space-between;align-items:baseline}
+.nd-scope-energies{--nd-accent:#14B8A6}
+.nd-scope-tech{--nd-accent:#8B5CF6}
 :root{
   --gold:#D9A84F; --gold-light:#E8C36A; --gold-deep:#B8892E; --gold-dust:rgba(217,168,79,.12);
   --navy:#080E1A; --navy-2:#0B1424; --navy-3:#121C30; --navy-4:#1A2540;
@@ -304,7 +312,7 @@ footer a:hover{color:var(--pole)}
     <div class="reveal">
       <span class="kicker">Pôle Technologies &middot; SA/CA</span>
       <h1>Le <em>cœur numérique</em> du Groupe.</h1>
-      <p class="lead">EnerTech instrumente, modélise, sécurise et optimise chaque actif industriel du Groupe. <strong style="color:#fff">12 840 capteurs IoT</strong>, <strong style="color:#fff">24 Digital Twins</strong> actifs, <strong style="color:#fff">1,2 M prédictions/jour</strong>, <strong style="color:#fff">47 ms</strong> de latence SCADA, <strong style="color:#fff">99,97 %</strong> d'uptime — sur une infrastructure <strong style="color:#fff">souveraine</strong> et <strong style="color:#fff">Zero-trust</strong>.</p>
+      <p class="lead">EnerTech instrumente, modélise, sécurise et optimise chaque actif industriel du Groupe. <strong class="t-white">12 840 capteurs IoT</strong>, <strong class="t-white">24 Digital Twins</strong> actifs, <strong class="t-white">1,2 M prédictions/jour</strong>, <strong class="t-white">47 ms</strong> de latence SCADA, <strong class="t-white">99,97 %</strong> d'uptime — sur une infrastructure <strong class="t-white">souveraine</strong> et <strong class="t-white">Zero-trust</strong>.</p>
       <div class="hero-cta">
         <a href="#architecture" class="btn btn-primary">Découvrir l'architecture</a>
         <a href="https://www.enertchad.td/dashboard.html" class="btn btn-ghost">Dashboard Groupe</a>
@@ -361,7 +369,7 @@ footer a:hover{color:var(--pole)}
   <div class="container">
     <div class="section-head reveal">
       <span class="kicker" style="color:var(--pole)">Telemetry 2025</span>
-      <h2 style="color:#fff;max-width:720px">Huit indicateurs live exposés via l'API privée du Groupe.</h2>
+      <h2 class="t-white h-720">Huit indicateurs live exposés via l'API privée du Groupe.</h2>
     </div>
     <div class="kpi-grid reveal">
       <div class="kpi"><div class="l">Capteurs IoT</div><div class="n mono-n">12 840<span class="u">pts</span></div><div class="s">Amont, Intermédiaire, Aval, Énergies — tous pôles instrumentés</div></div>
@@ -473,7 +481,7 @@ footer a:hover{color:var(--pole)}
           <li style="padding:10px 0;display:flex;justify-content:space-between"><span>Bug bounty interne</span><strong style="color:var(--pole)">Ouvert salariés</strong></li>
         </ul>
       </div>
-      <div class="reveal" style="background:#fff;border:1px solid var(--hairline-dark);border-radius:var(--radius-lg);padding:36px;box-shadow:var(--shadow)">
+      <div class="reveal box-card">
         <span class="kicker" style="color:var(--pole-3)">SOC &amp; MTTD</span>
         <h3 style="margin-bottom:20px">Réponse incidents 24/7</h3>
         <ul style="list-style:none;padding:0;margin:0">
@@ -481,7 +489,7 @@ footer a:hover{color:var(--pole)}
           <li style="padding:14px 0;border-bottom:1px solid var(--hairline-dark);display:flex;justify-content:space-between"><span>MTTR moyen</span><strong>&lt; 4 h</strong></li>
           <li style="padding:14px 0;border-bottom:1px solid var(--hairline-dark);display:flex;justify-content:space-between"><span>Playbooks documentés</span><strong>42</strong></li>
           <li style="padding:14px 0;border-bottom:1px solid var(--hairline-dark);display:flex;justify-content:space-between"><span>Exercices table-top / an</span><strong>8</strong></li>
-          <li style="padding:14px 0;display:flex;justify-content:space-between"><span>Incidents critiques 2025</span><strong style="color:#10B981">0</strong></li>
+          <li class="li-between"><span>Incidents critiques 2025</span><strong class="t-inter">0</strong></li>
         </ul>
         <p style="font-size:.86rem;color:var(--muted);margin-top:22px;margin-bottom:0">SOC opéré en tandem avec un partenaire certifié ISO 27001 + CIS disposant de l'agrément cybersécurité national.</p>
       </div>

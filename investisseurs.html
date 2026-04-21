@@ -75,11 +75,11 @@
               <span class="nd-num">04</span>
               <span class="nd-body"><strong>Services</strong><span>Oilfield · formation · ingénierie</span></span>
             </a>
-            <a href="/energies/" class="energies" role="menuitem" style="--nd-accent:#14B8A6;">
+            <a href="/energies/" class="energies nd-scope-energies" role="menuitem">
               <span class="nd-num">05</span>
               <span class="nd-body"><strong>Énergies · Transition</strong><span>Solaire · micro-grids · H₂ vert</span></span>
             </a>
-            <a href="/technologies/" class="tech" role="menuitem" style="--nd-accent:#8B5CF6;">
+            <a href="/technologies/" class="tech nd-scope-tech" role="menuitem">
               <span class="nd-num">06</span>
               <span class="nd-body"><strong>Technologies · EnerTech</strong><span>IoT · jumeaux numériques · cyber</span></span>
             </a>
@@ -132,7 +132,7 @@
     <div class="reveal" style="background: linear-gradient(145deg, rgba(217,168,79,0.08), rgba(217,168,79,0.02)); border: 1px solid rgba(217,168,79,0.3); border-radius: 16px; padding: 32px 36px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;">
       <div style="flex: 1 1 380px;">
         <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px;">Nouveau · Interactif</div>
-        <h3 style="font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: clamp(22px, 2.4vw, 30px); color: #fff; margin: 0 0 10px;">Executive Dashboard · vue consolidée</h3>
+        <h3 class="promo-title">Executive Dashboard · vue consolidée</h3>
         <p style="color: rgba(255,255,255,0.72); font-size: 15px; line-height: 1.6; margin: 0;">Tableau de bord interactif multi-pôles — revenus, opérations, finance et technologies. Graphiques live, filtres temporels et vue par filiale (Amont, Intermédiaire, Aval, Énergies, Pétrochimie, Technologies).</p>
       </div>
       <a href="dashboard.html" class="btn btn-primary" style="white-space: nowrap;">Ouvrir le dashboard <span class="arrow">→</span></a>
@@ -190,10 +190,10 @@
       <p class="lead">L'aval pèse désormais près du quart du revenu, lissant la volatilité liée au prix du brut et alignant nos marges sur la structure d'une major intégrée.</p>
     </div>
     <div class="bar-chart reveal" style="max-width: 900px;">
-      <div class="bar-row"><span class="b-label">Amont · E&amp;P</span><span class="b-track"><span class="b-fill reveal" style="--w:54%; background: linear-gradient(90deg, #1E5BB0, var(--pole-amont));"></span></span><span class="b-value">54 %</span></div>
-      <div class="bar-row"><span class="b-label">Intermédiaire</span><span class="b-track"><span class="b-fill reveal" style="--w:12%; background: linear-gradient(90deg, #0E8F66, var(--pole-inter));"></span></span><span class="b-value">12 %</span></div>
-      <div class="bar-row"><span class="b-label">Aval · Distribution</span><span class="b-track"><span class="b-fill reveal" style="--w:24%; background: linear-gradient(90deg, #C47A08, var(--pole-aval));"></span></span><span class="b-value">24 %</span></div>
-      <div class="bar-row"><span class="b-label">Services</span><span class="b-track"><span class="b-fill reveal" style="--w:10%; background: linear-gradient(90deg, #6D3FC7, var(--pole-svc));"></span></span><span class="b-value">10 %</span></div>
+      <div class="bar-row"><span class="b-label">Amont · E&amp;P</span><span class="b-track"><span class="b-fill b-fill--amont reveal" style="--w:54%;"></span></span><span class="b-value">54 %</span></div>
+      <div class="bar-row"><span class="b-label">Intermédiaire</span><span class="b-track"><span class="b-fill b-fill--inter reveal" style="--w:12%;"></span></span><span class="b-value">12 %</span></div>
+      <div class="bar-row"><span class="b-label">Aval · Distribution</span><span class="b-track"><span class="b-fill b-fill--aval reveal" style="--w:24%;"></span></span><span class="b-value">24 %</span></div>
+      <div class="bar-row"><span class="b-label">Services</span><span class="b-track"><span class="b-fill b-fill--svc reveal" style="--w:10%;"></span></span><span class="b-value">10 %</span></div>
     </div>
   </div>
 </section>

@@ -72,6 +72,13 @@
 .skip-link:focus{top:0;outline:3px solid #FFFFFF;outline-offset:2px}
 a:focus-visible,button:focus-visible,[tabindex]:focus-visible,[role="button"]:focus-visible,summary:focus-visible{outline:3px solid #D9A84F;outline-offset:3px;border-radius:6px}
 @media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}}
+/* Utilités réutilisables (parité avec main.css) */
+.t-white{color:#fff}
+.h-720{max-width:720px}
+.box-card{background:#fff;border:1px solid var(--hairline-dark);border-radius:var(--radius-lg);padding:36px;box-shadow:var(--shadow)}
+.li-between{padding:14px 0;display:flex;justify-content:space-between;align-items:baseline}
+.nd-scope-energies{--nd-accent:#14B8A6}
+.nd-scope-tech{--nd-accent:#8B5CF6}
 :root{
   --gold:#D9A84F; --gold-light:#E8C36A; --gold-deep:#B8892E; --gold-dust:rgba(217,168,79,.12);
   --navy:#080E1A; --navy-2:#0B1424; --navy-3:#121C30; --navy-4:#1A2540;
@@ -302,7 +309,7 @@ footer a:hover{color:var(--pole)}
     <div class="reveal">
       <span class="kicker">Pôle Énergies &middot; SA/CA</span>
       <h1>De la <em>torchère</em> à l'<em>interrupteur</em>.</h1>
-      <p class="lead">EnerTchad Énergies valorise chaque molécule et chaque rayon de soleil du Tchad pour éclairer foyers, écoles et industries. <strong style="color:#fff">125 MW installés</strong>, <strong style="color:#fff">28 micro-grids villageois</strong>, <strong style="color:#fff">624 GWh livrés</strong> en 2025 — et une trajectoire hydrogène vert à l'horizon 2028.</p>
+      <p class="lead">EnerTchad Énergies valorise chaque molécule et chaque rayon de soleil du Tchad pour éclairer foyers, écoles et industries. <strong class="t-white">125 MW installés</strong>, <strong class="t-white">28 micro-grids villageois</strong>, <strong class="t-white">624 GWh livrés</strong> en 2025 — et une trajectoire hydrogène vert à l'horizon 2028.</p>
       <div class="hero-cta">
         <a href="#solutions" class="btn btn-primary">Découvrir nos 8 solutions</a>
         <a href="https://www.enertchad.td/dashboard.html" class="btn btn-ghost">KPIs live du Groupe</a>
@@ -344,7 +351,7 @@ footer a:hover{color:var(--pole)}
   <div class="container">
     <div class="section-head reveal">
       <span class="kicker" style="color:var(--pole)">Indicateurs clés 2025</span>
-      <h2 style="color:#fff;max-width:720px">Une filiale cash-flow positive, mesurée à la kWh livrée et à la tonne de CO₂ évitée.</h2>
+      <h2 class="t-white h-720">Une filiale cash-flow positive, mesurée à la kWh livrée et à la tonne de CO₂ évitée.</h2>
     </div>
     <div class="kpi-grid reveal">
       <div class="kpi"><div class="l">Production Gaz</div><div class="n">85<span class="u">MW</span></div><div class="s">Cycle combiné · valorisation du gaz associé amont</div></div>
@@ -419,7 +426,7 @@ footer a:hover{color:var(--pole)}
       <h2>Sites en exploitation &amp; en construction.</h2>
       <p class="lead">Trois types d'actifs en rotation : base-load gaz, solaire hybride et micro-grids communautaires — répartis sur 6 régions.</p>
     </div>
-    <div class="reveal" style="background:#fff;border:1px solid var(--hairline-dark);border-radius:var(--radius-lg);padding:4px 4px 28px;box-shadow:var(--shadow);overflow-x:auto">
+    <div class="reveal box-card" style="padding:4px 4px 28px;overflow-x:auto">
       <table class="sites-tbl">
         <thead><tr><th>Site</th><th>Type</th><th>Capacité</th><th>Localisation</th><th>Statut</th></tr></thead>
         <tbody>
@@ -466,7 +473,7 @@ footer a:hover{color:var(--pole)}
           <div class="tl-item"><div class="tl-year">2030</div><h4>400 MW &middot; 1 500 GWh</h4><p>Doublement du parc, 60 micro-grids, 200 bornes IRVE, 30 % de renouvelables nationales.</p></div>
         </div>
       </div>
-      <div class="reveal" style="background:#fff;border:1px solid var(--hairline-dark);border-radius:var(--radius-lg);padding:36px;box-shadow:var(--shadow);align-self:start">
+      <div class="reveal box-card" style="align-self:start">
         <span class="kicker" style="color:var(--pole-3)">Financement</span>
         <h3 style="margin-bottom:20px">Structuration financière 2025-2030</h3>
         <ul style="list-style:none;padding:0;margin:0">
