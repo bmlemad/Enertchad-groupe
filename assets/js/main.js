@@ -215,4 +215,108 @@
     });
   });
 
+  /* ==========================================================================
+     RUM — Core Web Vitals → Plausible custom events
+     Sends CLS, LCP, INP, TTFB using navigator.sendBeacon. No cookies, no PII.
+     Whitelisted in CSP via connect-src https://plausible.io.
+     ========================================================================== */
+  (function initRUM() {
+    if (!('PerformanceObserver' in window) || !navigator.sendBeacon) return;
+
+    const PLAUSIBLE_DOMAIN = location.hostname.replace(/^www\./, '');
+    const PLAUSIBLE_ENDPOINT = 'https://plausible.io/api/event';
+
+    const sendMetric = (name, value, id) => {
+      try {
+        const payload = JSON.stringify({
+          name: 'web-vitals',
+          url: location.href,
+          domain: PLAUSIBLE_DOMAIN,
+          props: {
+            metric: name,
+            value: Math.round(name === 'CLS' ? value * 1000 : value),
+            rating: rate(name, value),
+            id: id || '',
+            path: location.pathname
+          }
+        });
+        const blob = new Blob([payload], { type: 'application/json' });
+        navigator.sendBeacon(PLAUSIBLE_ENDPOINT, blob);
+      } catch (_) { /* fail silently — RUM must never break the page */ }
+    };
+
+    // Thresholds from https://web.dev/vitals/
+    const rate = (name, v) => {
+      if (name === 'LCP')  return v <= 2500 ? 'good' : v <= 4000 ? 'ni'   : 'poor';
+      if (name === 'CLS')  return v <= 0.1  ? 'good' : v <= 0.25 ? 'ni'   : 'poor';
+      if (name === 'INP')  return v <= 200  ? 'good' : v <= 500  ? 'ni'   : 'poor';
+      if (name === 'FCP')  return v <= 1800 ? 'good' : v <= 3000 ? 'ni'   : 'poor';
+      if (name === 'TTFB') return v <= 800  ? 'good' : v <= 1800 ? 'ni'   : 'poor';
+      return 'n/a';
+    };
+
+    // --- LCP (final on page hidden/unload) ---
+    let lcpValue = 0, lcpId = '';
+    try {
+      const po = new PerformanceObserver((list) => {
+        const entries = list.getEntries();
+        const last = entries[entries.length - 1];
+        lcpValue = last.renderTime || last.loadTime || last.startTime;
+        lcpId = last.id || (last.element && last.element.tagName) || '';
+      });
+      po.observe({ type: 'largest-contentful-paint', buffered: true });
+    } catch (_) {}
+
+    // --- CLS (cumulative since page load; reported at pagehide) ---
+    let clsValue = 0;
+    try {
+      const poCls = new PerformanceObserver((list) => {
+        list.getEntries().forEach((entry) => {
+          if (!entry.hadRecentInput) clsValue += entry.value;
+        });
+      });
+      poCls.observe({ type: 'layout-shift', buffered: true });
+    } catch (_) {}
+
+    // --- INP (highest-latency event, approx via longest event entry >40ms) ---
+    let inpValue = 0;
+    try {
+      const poEvt = new PerformanceObserver((list) => {
+        list.getEntries().forEach((entry) => {
+          // Interaction = entries with interactionId (Chromium 106+)
+          if (entry.interactionId && entry.duration > inpValue) inpValue = entry.duration;
+        });
+      });
+      poEvt.observe({ type: 'event', buffered: true, durationThreshold: 40 });
+    } catch (_) {}
+
+    // --- FCP (one-shot) ---
+    try {
+      const poFcp = new PerformanceObserver((list) => {
+        const fcp = list.getEntries().find((e) => e.name === 'first-contentful-paint');
+        if (fcp) sendMetric('FCP', fcp.startTime);
+      });
+      poFcp.observe({ type: 'paint', buffered: true });
+    } catch (_) {}
+
+    // --- TTFB (from Navigation Timing) ---
+    try {
+      const nav = performance.getEntriesByType('navigation')[0];
+      if (nav && nav.responseStart > 0) sendMetric('TTFB', nav.responseStart);
+    } catch (_) {}
+
+    // Flush LCP / CLS / INP on page hidden (bfcache-safe)
+    const flush = () => {
+      if (lcpValue > 0) sendMetric('LCP', lcpValue, lcpId);
+      if (clsValue > 0) sendMetric('CLS', clsValue);
+      if (inpValue > 0) sendMetric('INP', inpValue);
+      lcpValue = clsValue = inpValue = 0;
+    };
+    addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'hidden') flush();
+    }, { capture: true });
+    // Fallback for older browsers
+    addEventListener('pagehide', flush, { capture: true });
+  })();
+
 })();

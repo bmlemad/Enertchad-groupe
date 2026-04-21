@@ -3,11 +3,13 @@
  * Fallback offline sur offline.html
  */
 
-const CACHE_VERSION = 'enertchad-v1.3.5';
+const CACHE_VERSION = 'enertchad-v1.3.6';
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const RUNTIME_CACHE = `${CACHE_VERSION}-runtime`;
 
-// Précache critique : shell + offline fallback
+// Précache critique : shell + offline fallback + fonts latin (préchargées sur toutes les pages)
+// Note : fonts latin-ext + vendor JS dashboard + Recharts exclus volontairement
+// — seraient mis en cache à la 1re visite via le handler /assets/ cache-first.
 const PRECACHE_URLS = [
   '/',
   '/index.html',
@@ -15,6 +17,8 @@ const PRECACHE_URLS = [
   '/404.html',
   '/assets/css/main.css',
   '/assets/js/main.js',
+  '/assets/fonts/Inter-latin.woff2',
+  '/assets/fonts/SpaceGrotesk-latin.woff2',
   '/assets/img/favicon-32.png',
   '/assets/img/apple-touch-icon.png',
   '/assets/img/og-cover.png',

@@ -21,3 +21,15 @@
 
 /*.html
   Cache-Control: public, max-age=600, must-revalidate
+  Link: </assets/fonts/Inter-latin.woff2>; rel=preload; as=font; type=font/woff2; crossorigin
+  Link: </assets/fonts/SpaceGrotesk-latin.woff2>; rel=preload; as=font; type=font/woff2; crossorigin
+
+# Dashboard page: preload its dedicated vendor scripts (self-hosted UMD, fixed URLs).
+# Promoted to 103 Early Hints on Netlify/Vercel for earliest possible fetch.
+/dashboard-executif.html
+  Cache-Control: public, max-age=600, must-revalidate
+  Link: </assets/js/vendor/react.18.3.1.min.js>; rel=preload; as=script
+  Link: </assets/js/vendor/react-dom.18.3.1.min.js>; rel=preload; as=script
+  Link: </assets/js/vendor/recharts.2.12.7.min.js>; rel=preload; as=script
+  Link: </assets/fonts/Inter-latin.woff2>; rel=preload; as=font; type=font/woff2; crossorigin
+  Link: </assets/fonts/SpaceGrotesk-latin.woff2>; rel=preload; as=font; type=font/woff2; crossorigin
