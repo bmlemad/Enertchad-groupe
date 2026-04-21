@@ -296,7 +296,7 @@ footer a:hover{color:var(--pole)}
       </div>
       <div class="nav-cta">
         <a class="btn btn-primary" href="https://www.enertchad.td/dashboard.html">Dashboard Groupe</a>
-        <button class="nav-toggle" id="navToggle" aria-label="Menu"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h14M3 10h14M3 14h14"/></svg></button>
+        <button class="nav-toggle" type="button" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navLinks"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h14M3 10h14M3 14h14"/></svg></button>
       </div>
     </div>
   </nav>
@@ -569,7 +569,7 @@ footer a:hover{color:var(--pole)}
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" defer></script>
 <script>
-document.getElementById('navToggle')?.addEventListener('click',()=>{document.getElementById('navLinks')?.classList.toggle('open')});
+const nt=document.getElementById('navToggle'),nl=document.getElementById('navLinks');nt?.addEventListener('click',()=>{const open=nl?.classList.toggle('open');nt.setAttribute('aria-expanded',open?'true':'false');});
 const io=new IntersectionObserver((e)=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}}),{rootMargin:'0px 0px -60px 0px',threshold:.08});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 /* Scrollspy: sync nav active + aria-current=location with currently in-view section */
