@@ -1953,6 +1953,20 @@ footer .foot-bottom .legal a:hover { color: var(--gold); }
   letter-spacing: .02em;
 }
 .mf-ctas { display: flex; flex-direction: column; gap: 8px; }
+.nav-new-badge {
+  display: inline-block;
+  padding: 1px 7px;
+  margin: 0 4px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #0B1424;
+  background: linear-gradient(135deg, #E8C36A, #D9A84F);
+  border-radius: 999px;
+  vertical-align: middle;
+  box-shadow: 0 1px 3px rgba(217, 168, 79, 0.35);
+}
 .mf-cta {
   display: flex;
   align-items: center;

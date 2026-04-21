@@ -135,7 +135,7 @@ Données issues du staging `enertchad-groupe.vercel.app` + enrichissement IR/ESG
 - D/EBITDA : 0.8× · Dividende : +22 % YoY
 - Effectif : 1 240 collaborateurs (85 % tchadiens, 42 % femmes en maîtrise)
 - Pipeline Doba–Kribi : 1 070 km · Raffinerie Djarmaya : 20 000 b/j
-- Stations-service : 24 dans 14 villes
+- Stations-service : 45 dans 6 villes principales
 - Bassins opérés : 5 (Doba, Bongor, Madiago, Doseo, Lac Tchad)
 - Contrats ITIE publiés : 53 · Paiements État 2025 : 374.2 Md XAF
 - Émissions scope 1&2 : 28.4 → 17.6 tCO₂e/kboe (trajectoire 14.2 en 2030)
@@ -153,10 +153,33 @@ Données issues du staging `enertchad-groupe.vercel.app` + enrichissement IR/ESG
 7. **Espace investisseurs** : rapports PDF réels à héberger dans `/assets/docs/`
 8. **Photos campus + Centre de formation énergétique** (page Talents)
 
-## Contact technique
+## Écosystème EnerTchad
 
-`digital@enertchad.td` (boîte à créer)
+Ce hub est le site corporate du holding. Les 5 pôles opérationnels ont chacun leur repo + site déployé :
+
+| Pôle | Repository | Site déployé |
+|---|---|---|
+| 01 · Amont | [enertchad-amont.vercel.app](https://github.com/bmlemad/enertchad-amont.vercel.app) | https://enertchad-amont-vercel-app.vercel.app |
+| 02 · Intermédiaire | [enertchad-Midstream](https://github.com/bmlemad/enertchad-Midstream) | https://enertchad-midstream.vercel.app |
+| 03 · Aval | [enertchad-aval.vercel.app](https://github.com/bmlemad/enertchad-aval.vercel.app) | https://enertchad-aval-vercel-app.vercel.app |
+| 05 · Énergies | [Enertchad-energies](https://github.com/bmlemad/Enertchad-energies) | https://enertchad-energies.vercel.app |
+| 06 · Technologies | [Enertchad-technologies](https://github.com/bmlemad/Enertchad-technologies) | https://enertchad-technologies.vercel.app |
+
+Le pôle 04 · Services est actuellement intégré à l'Amont (pas de repo dédié).
+
+La source unique de vérité pour les données consolidées (production, stations, effectifs, capital, certifications, etc.) est le fichier [`DATA_MASTER.yml`](./DATA_MASTER.yml) — à consulter avant toute publication externe.
+
+Le référentiel design partagé par les 6 sites est documenté dans [`DESIGN_SYSTEM.md`](./DESIGN_SYSTEM.md).
+
+## Contact
+
+- **Groupe** : contact@enertchad.td · +235 99 29 86 96
+- **Technique** : digital@enertchad.td (boîte à créer)
+- **Direction Générale** : Bignéro Moïalbéi Le Madang
+- **Président du Conseil d'Administration** : Théophile Gag Pinabei
+
+Siège : Radisson, Block D, Bureau 23, Sabangali, N'Djamena, République du Tchad.
 
 ---
 
-© 2026 EnerTchad Groupe SA/CA · Prototype ultra-premium.
+© 2026 EnerTchad Groupe SA/CA · Propriété exclusive.

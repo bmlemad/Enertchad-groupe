@@ -1,0 +1,358 @@
+# ==============================================================================
+# EnerTchad Groupe — DATA MASTER
+# ==============================================================================
+# Source unique de vérité pour toutes les données affichées sur les sites,
+# documents officiels, MCP servers et communications externes du groupe.
+#
+# Toute divergence entre ce fichier et un contenu publié doit être corrigée
+# sur le contenu publié — jamais sur ce fichier sans validation Direction.
+#
+# Dernière mise à jour : 2026-04-21
+# Contact : bignero@gmail.com (Bignéro Moïalbéi Le Madang, DG)
+# Licence : Interne Groupe — propriété EnerTchad SA/CA
+# ==============================================================================
+
+meta:
+  version: "1.0.0"
+  updated: "2026-04-21"
+  validated_by: "Direction Générale"
+  next_review: "2026-07-21"
+
+# ------------------------------------------------------------------------------
+# IDENTITÉ JURIDIQUE
+# ------------------------------------------------------------------------------
+groupe:
+  nom_legal: "EnerTchad Groupe SA/CA"
+  nom_commercial: "EnerTchad"
+  nom_court: "EnerTchad Groupe"
+  forme: "Société Anonyme à Conseil d'Administration"
+  referentiel: "OHADA"
+  pays: "République du Tchad"
+  date_creation_sa_ca: "2026"  # Date officielle de constitution SA/CA (choisie 21/04/2026)
+  # Note : Les activités opérationnelles des entités pré-groupe sont antérieures
+  # mais la date d'incorporation officielle du groupe est 2026. Ne pas utiliser
+  # "depuis 1998" ni "20+ ans d'expérience" dans les communications externes.
+  rccm: "à compléter"
+  nif: "à compléter"
+  capital_social: "10 000 000 FCFA"
+  actionnaires_fondateurs: 10
+
+# ------------------------------------------------------------------------------
+# GOUVERNANCE
+# ------------------------------------------------------------------------------
+gouvernance:
+  dg:
+    nom: "Bignéro Moïalbéi Le Madang"
+    titre: "Directeur Général & Fondateur"
+    email: "bignero@gmail.com"
+  pca:
+    nom: "Théophile Gag Pinabei"
+    titre: "Président du Conseil d'Administration"
+  auditeur_externe: "KPMG (audit IFRS en cours)"
+
+# ------------------------------------------------------------------------------
+# COORDONNÉES
+# ------------------------------------------------------------------------------
+siege:
+  adresse: "Radisson, Block D, Bureau 23, Sabangali"
+  ville: "N'Djamena"
+  pays: "Tchad"
+  telephone_principal: "+235 99 29 86 96"
+  email_contact: "contact@enertchad.td"
+
+telephones_poles:
+  groupe: "+235 99 29 86 96"
+  amont: "+235 99 29 86 96"
+  midstream: "+235 66 38 42 15"  # Ligne dédiée Midstream
+  aval: "+235 99 29 86 96"
+  energies: "+235 99 29 86 96"
+  technologies: "+235 99 29 86 96"
+
+emails_poles:
+  amont: "amont@enertchad.td"
+  midstream: "midstream@enertchad.td"
+  aval: "distribution@enertchad.td"
+  energies: "energies@enertchad.td"
+  technologies: "tech@enertchad.td"
+  contact: "contact@enertchad.td"
+
+# ------------------------------------------------------------------------------
+# EFFECTIFS
+# ------------------------------------------------------------------------------
+effectifs:
+  total: 1240
+  contenu_local_pct: 80
+  note: "80 % de Tchadiens (contenu local). Sous-filiales : fourchettes 50-200 par pôle."
+
+# ------------------------------------------------------------------------------
+# STRUCTURE EN 6 PÔLES INTÉGRÉS (modèle officiel retenu)
+# ------------------------------------------------------------------------------
+# Purge de l'ancien modèle OFS 7-divisions (Amont / Intermédiaire / Aval / GreenTech /
+# Well Services / Drilling & Engineering / Digital & SCADA). Ces appellations ne doivent
+# plus apparaître sur les sites corporate. GreenTech → Énergies. Digital & SCADA → Technologies.
+# Well Services et Drilling & Engineering sont regroupés dans le pôle Services (sous-Amont).
+
+poles:
+
+  # -- PÔLE 01 ----------------------------------------------------------------
+  amont:
+    id: "01"
+    nom_court: "Amont"
+    nom_complet: "EnerTchad Amont · Exploration & Production"
+    repo: "https://github.com/bmlemad/enertchad-amont.vercel.app"
+    site: "https://enertchad-amont-vercel-app.vercel.app"
+    email: "amont@enertchad.td"
+    couleur_hex: "#C48848"
+    metier_principal: "Exploration & production d'hydrocarbures"
+    bassins: ["Doba", "Bongor", "Doseo", "Salamat", "Termit"]
+    bassins_count: 5
+    champs_doba: ["Doba", "Komé", "Gam", "Miandou"]
+    champs_bongor: ["Bongor"]
+    qualite_brut: "API 28-32° · light/medium · bas soufre"
+    capacite_actuelle_kbd: 144  # kilo-barils/jour (b/d) — UNITÉ OFFICIELLE
+    capacite_unit: "kb/d"
+    objectif_2030_kbd: 250
+    # NOTE : ne plus utiliser "178 kboe/j" — harmoniser partout sur 144 kb/d.
+    metiers:
+      - "Drilling"
+      - "Géosciences"
+      - "Artificial Lift"
+      - "Integrity"
+      - "Chimie / EOR"
+      - "Water-to-Value"
+      - "SCADA"
+      - "Engineering"
+
+  # -- PÔLE 02 ----------------------------------------------------------------
+  intermediaire:
+    id: "02"
+    nom_court: "Intermédiaire"
+    nom_complet: "EnerTchad Midstream · Pipeline & Stockage"
+    repo: "https://github.com/bmlemad/enertchad-Midstream"
+    site: "https://enertchad-midstream.vercel.app"
+    email: "midstream@enertchad.td"
+    couleur_hex: "#5F7596"
+    corridor: "Doba → Komé → Kribi"
+    longueur_km: 1070
+    diametre_mm: 760
+    diametre_pouces: 30
+    acier_specification: "API 5L X65"
+    capacite_nominale_kbd: 225       # Capacité théorique
+    debit_actuel_kbd: 90             # Débit observé 2026
+    taux_utilisation_pct: 40         # 90/225 ≈ 40 %
+    # NOTE : ne plus utiliser "154 kb/d" (MCP legacy) — harmoniser sur 225/90.
+    stockage_mb: 2.8
+    fso: "Komé Kribi 1 (2,4 Mb ULCC) + 22 km subsea"
+    stations_pompage: ["Komé", "Dompta", "Belabo"]
+    vannes_sectionnement: 48
+    operateurs_utilisateurs:
+      - nom: "SHT"
+        debit_kbd: 68
+      - nom: "CNPC"
+        debit_kbd: null
+      - nom: "Perenco"
+        debit_kbd: 18
+      - nom: "OPIC/CPC"
+        debit_kbd: 3.3
+    precision_custody_transfer: "0,05 % (API MPMS)"
+    certifications_sectorielles: ["OIML R117", "ASME B31.4", "API 1160", "IEC 62443"]
+
+  # -- PÔLE 03 ----------------------------------------------------------------
+  aval:
+    id: "03"
+    nom_court: "Aval"
+    nom_complet: "EnerTchad Aval · Raffinage & Distribution"
+    repo: "https://github.com/bmlemad/enertchad-aval.vercel.app"
+    site: "https://enertchad-aval-vercel-app.vercel.app"
+    email: "distribution@enertchad.td"
+    couleur_hex: "#CF6E4E"
+    capital_filiale: "1 000 000 000 FCFA"  # 1 milliard FCFA (ne pas confondre avec capital Groupe 10M)
+    stations: 45                            # Valeur officielle (ne plus afficher 24 ni 47)
+    villes: 6
+    villes_noms: ["N'Djamena", "Moundou", "Sarh", "Bongor", "Mongo", "Abéché"]
+    raffinerie:
+      nom: "Raffinerie de Djermaya"
+      capacite_kbd: 20
+      actionnariat: "CNPC 60 % / SHT 40 %"
+    pipeline_amont_raffinerie:
+      corridor: "Ronier → Djermaya"
+      longueur_km: 300
+    depots: 4
+    depots_noms: ["N'Djamena", "Moundou", "Abéché"]
+    autonomie_stockage_jours: 30
+    produits:
+      gasoil_50ppm_Ml_an: 300
+      super_ron95_Ml_an: 240
+      gpl_t_an: 60000
+      fuel_lourd_t_an: 40000
+    programme_fidelite: "EnerClub · Bronze / Argent / Or"
+    apps: ["Mon Espace", "eBoutique"]
+    innovations:
+      - "Mobile Station™ containerisée (48h, ATEX Zone 1, Starlink-ready)"
+      - "IRVE pilote Q1 2027"
+      - "Intégration pétrochimique polypropylène 25 000 t/an"
+    certifications_sectorielles: ["ISO 9001", "ISO 14001", "ISO 45001", "ATEX", "EN 590", "EN 228", "EN 589", "Bureau Veritas"]
+
+  # -- PÔLE 04 ----------------------------------------------------------------
+  services:
+    id: "04"
+    nom_court: "Services"
+    nom_complet: "EnerTchad Services · Oilfield & Ingénierie"
+    repo: null  # Pas de repo dédié à ce jour — fusionné dans Amont
+    site: null
+    email: "amont@enertchad.td"
+    couleur_hex: "#79838F"
+    metiers: ["Workover", "Well Services", "Drilling & Engineering", "HSE", "Formation"]
+    note: "Regroupe les anciennes divisions Well Services et Drilling & Engineering."
+
+  # -- PÔLE 05 ----------------------------------------------------------------
+  energies:
+    id: "05"
+    nom_court: "Énergies"
+    nom_complet: "EnerTchad Énergies · Électricité & Transition"
+    repo: "https://github.com/bmlemad/Enertchad-energies"
+    site: "https://enertchad-energies.vercel.app"
+    email: "energies@enertchad.td"
+    couleur_hex: "#10B981"
+    anciennement_nomme: "GreenTech (à purger des sites corporate)"
+    puissance_installee_mw: 125
+    gas_to_power_mw: 85
+    solaire_mwp: 60
+    solaire_projet: "Djermaya PV"
+    microgrids_villages: 28
+    bornes_irve_points: 45
+    co2_evite_t_an: 42000
+    electrification_tchad_pct: 11
+    potentiel_solaire_kwh_m2_j: "4,5-6,5"
+    heures_ensoleillement_an: 3250
+    impact_social:
+      ecoles: 42
+      centres_sante: 18
+      micro_entreprises: 350
+    hydrogene_vert:
+      pilote_mw: 5
+      horizon: 2028
+      type: "électrolyseur"
+    certifications: ["ISO 14001", "ISO 50001", "IEC 61850", "IEEE 1547", "Gold Standard", "CDM"]
+    slogan: "De la Torchère à l'Interrupteur"
+
+  # -- PÔLE 06 ----------------------------------------------------------------
+  technologies:
+    id: "06"
+    nom_court: "Technologies"
+    nom_complet: "EnerTchad Technologies · Digital, IoT, IA & Cyber"
+    repo: "https://github.com/bmlemad/Enertchad-technologies"
+    site: "https://enertchad-technologies.vercel.app"
+    email: "tech@enertchad.td"
+    couleur_hex: "#8B5CF6"
+    anciennement_nomme: "Digital & SCADA (à purger des sites corporate)"
+    capteurs_iot: 12840
+    digital_twins_actifs: 24
+    edge_nodes: 86
+    modeles_ml_prod: 18
+    predictions_par_jour: 1200000
+    debit_donnees_tb_j: 4.8
+    latence_scada_ms: 50
+    uptime_cyber_pct: 99.97
+    solutions:
+      - "Digital Twin"
+      - "SCADA / IoT"
+      - "IA prédictive"
+      - "Cybersécurité OT/IoT (Zero-trust · IEC 62443)"
+      - "Cloud & Edge souverain"
+      - "Data Analytics & BI"
+      - "Automation & Robotique (drones · RPA 65 % réduction)"
+      - "Connectivité (VSAT · 4G/5G privé · fibre)"
+    architecture_couches: ["Edge", "Data", "AI", "Security"]
+    palette_primary: "#0D0A1A"
+    palette_accent: "#8B5CF6"
+    palette_gold: "#C8962E"
+
+# ------------------------------------------------------------------------------
+# CERTIFICATIONS GROUPE (s'appliquent à toutes les filiales)
+# ------------------------------------------------------------------------------
+certifications_groupe:
+  - "ISO 9001 (qualité)"
+  - "ISO 14001 (environnement)"
+  - "ISO 45001 (SST)"
+  - "ISO 27001 (sécurité information)"
+  - "ISO 37001 (anti-corruption)"
+  - "ISO 26000 (responsabilité sociétale)"
+  - "IWCF"
+  - "API"
+  - "IMCA"
+
+# ------------------------------------------------------------------------------
+# CONFORMITÉ & TRANSPARENCE
+# ------------------------------------------------------------------------------
+conformite:
+  itie: true            # Extractive Industries Transparency Initiative
+  ohada: true
+  ifrs: true
+  ifc_performance_standards: true
+  cemac_membre: true
+  audit_externe: "KPMG (IFRS en cours)"
+
+# ------------------------------------------------------------------------------
+# MARQUES (à déclarer OAPI/INPI — Priorité 6 de l'audit)
+# ------------------------------------------------------------------------------
+marques:
+  - nom: "Mobile Station™"
+    pole: "aval"
+    statut: "à déclarer OAPI"
+  - nom: "EnerClub"
+    pole: "aval"
+    statut: "à déclarer OAPI"
+  - nom: "NRJ+"
+    pole: "aval"
+    statut: "à déclarer OAPI"
+  - nom: "Water-to-Value™"
+    pole: "amont"
+    statut: "à déclarer OAPI"
+
+# ------------------------------------------------------------------------------
+# INITIATIVES STRATÉGIQUES
+# ------------------------------------------------------------------------------
+initiatives:
+  - nom: "EOR"
+    description: "Enhanced Oil Recovery sur les bassins matures Doba/Bongor"
+  - nom: "Complexe pétrochimique Djarmaya"
+    description: "Polypropylène 25 000 t/an, intégration aval"
+  - nom: "350+ capteurs SCADA"
+    description: "Couverture opérationnelle temps réel"
+  - nom: "Cybersécurité OT/IoT"
+    description: "Zero-trust, IEC 62443, uptime 99,97 %"
+
+# ------------------------------------------------------------------------------
+# ÉCARTS HISTORIQUES À PURGER
+# ------------------------------------------------------------------------------
+# Liste des valeurs obsolètes qui pourraient encore apparaître dans les sources
+# legacy (MCP server, artefacts internes, présentations antérieures).
+purger:
+  - valeur: "178 kboe/j"
+    remplacer_par: "144 kb/d"
+    motif: "Harmonisation unité Amont (audit 2026-04-21)"
+  - valeur: "154 kb/d (Midstream)"
+    remplacer_par: "225 capacité · 90 actuel"
+    motif: "Alignement sur chiffres site Midstream"
+  - valeur: "47 stations (Aval)"
+    remplacer_par: "45 stations"
+    motif: "Alignement sur site Aval"
+  - valeur: "24 stations (Aval sur hub)"
+    remplacer_par: "45 stations"
+    motif: "Alignement sur site Aval"
+  - valeur: "1998 (fondation)"
+    remplacer_par: "2026 (création SA/CA)"
+    motif: "Décision Direction 2026-04-21"
+  - valeur: "20+ années d'expérience"
+    remplacer_par: "Énergéticien intégré · chaîne nationale"
+    motif: "Cohérence narrative avec fondation 2026"
+  - valeur: "GreenTech"
+    remplacer_par: "Énergies"
+    motif: "Modèle 6-pôles intégrés"
+  - valeur: "Digital & SCADA"
+    remplacer_par: "Technologies"
+    motif: "Modèle 6-pôles intégrés"
+  - valeur: "7 divisions (OFS)"
+    remplacer_par: "6 pôles intégrés"
+    motif: "Unification architecture"
