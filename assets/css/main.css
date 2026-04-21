@@ -26,6 +26,39 @@
   outline-offset: 2px;
 }
 
+/* ---------- Focus visible (a11y · WCAG 2.4.7) ---------- */
+/* Indicateur focus clavier globalement uniforme.
+   Appliqué à tous les éléments interactifs sauf ceux qui définissent
+   déjà leur propre style (inputs formulaires ont un ring dédié). */
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible,
+[role="button"]:focus-visible,
+[role="menuitem"]:focus-visible,
+summary:focus-visible {
+  outline: 3px solid var(--gold, #D9A84F);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+/* Sur fond sombre (hero, map, footer premium), ajouter un halo contrasté */
+.hero a:focus-visible,
+.hero button:focus-visible,
+section.dark a:focus-visible,
+section.dark button:focus-visible,
+section.dark [tabindex]:focus-visible,
+.nav a:focus-visible,
+.nav button:focus-visible,
+.foot-premium a:focus-visible,
+.foot-premium button:focus-visible {
+  outline: 3px solid #FFFFFF;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px rgba(217, 168, 79, .35);
+}
+/* Réduire mouvements pour reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+}
+
 /* ---------- Tokens ---------- */
 :root {
   /* Brand */
@@ -1584,14 +1617,22 @@ footer .foot-bottom .legal a:hover { color: var(--gold); }
   box-shadow: 0 0 6px rgba(217, 168, 79, .8);
 }
 .tb-social {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 24px;
-  height: 24px;
+  width: 28px;              /* visuel compact */
+  height: 28px;
   border-radius: 50%;
-  color: rgba(255, 255, 255, .55);
+  color: rgba(255, 255, 255, .65);
   transition: all .2s ease;
+}
+/* Hit area étendue à 44×44 pour WCAG 2.5.5 (invisible, pas d'impact visuel) */
+.tb-social::before {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
 }
 .tb-social:hover { color: var(--gold); background: rgba(217, 168, 79, .08); transform: translateY(-1px); }
 .tb-social svg { width: 14px; height: 14px; }
