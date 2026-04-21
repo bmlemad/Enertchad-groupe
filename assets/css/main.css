@@ -366,19 +366,6 @@ section { padding: var(--section-y) 0; position: relative; }
 .hero h1 .gold { color: var(--gold); }
 .hero .lead { color: rgba(255,255,255,0.78); margin-top: 1rem; max-width: 58ch; }
 .hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 2.5rem; }
-.hero-footstrip {
-  position: absolute; left: 0; right: 0; bottom: 0;
-  border-top: 1px solid var(--hairline);
-  background: rgba(8,14,26,0.35);
-}
-.hero-footstrip .strip-inner {
-  display: flex; gap: clamp(24px, 5vw, 80px); align-items: center;
-  padding: 22px var(--gutter);
-  max-width: 1440px; margin: 0 auto;
-  overflow-x: auto;
-}
-.hero-footstrip .strip-inner span { font-size: .78rem; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,0.46); white-space: nowrap; }
-.hero-footstrip .strip-inner .sep { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
 
 /* Hero sub for interior pages */
 .hero-sub {
@@ -3071,8 +3058,6 @@ footer .foot-bottom .legal a:hover { color: var(--gold); }
     linear-gradient(180deg, rgba(8, 14, 26, 0) 0%, rgba(8, 14, 26, 0.35) 100%);
   pointer-events: none;
 }
-.hero-footstrip { position: relative; z-index: 3; }
-
 /* Hero headline gold glow (subtle) */
 .hero h1 .gold {
   background: linear-gradient(90deg, #E8C667, #D9A84F, #E8C667);
