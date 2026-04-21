@@ -1,0 +1,232 @@
+{
+  "meta": {
+    "title": "Pétrochimie au Tchad — État des lieux et opportunités",
+    "version": "1.0.0",
+    "published": "2026-04-21",
+    "scope": "Tchad · downstream et potentiel pétrochimique",
+    "methodology": "Synthèse de sources publiques autoritaires (2020–2026). Les valeurs marquées 'estimé' sont dérivées par analogie ou pro rata. Aucune donnée n'est fabriquée.",
+    "contact": "documentation@enertchad.td"
+  },
+
+  "kpis": [
+    {
+      "id": "raf_capacite",
+      "value": "20 000",
+      "unit": "bbl/jour",
+      "equivalent": "~1 Mt/an",
+      "label": "Capacité raffinerie Djermaya",
+      "note": "Seule raffinerie en opération au Tchad",
+      "source": "CNPC · Offshore Technology"
+    },
+    {
+      "id": "ownership",
+      "value": "60 / 40",
+      "unit": "%",
+      "label": "Actionnariat SRN",
+      "note": "CNPC International 60 % · SHT (État tchadien) 40 %",
+      "source": "Oil & Gas Journal · AidData China Eximbank"
+    },
+    {
+      "id": "commissioning",
+      "value": "2011",
+      "unit": "",
+      "label": "Inauguration raffinerie",
+      "note": "CAPEX initial ~1 Md USD (financement CNPC + China Exim)",
+      "source": "AidData · Offshore Technology"
+    },
+    {
+      "id": "feedstock_pipeline",
+      "value": "311",
+      "unit": "km",
+      "label": "Pipeline Rônier–Djermaya",
+      "note": "Alimente la raffinerie en brut Rônier/Mimosa/Koudalwa",
+      "source": "Global Energy Monitor"
+    },
+    {
+      "id": "cible_2030",
+      "value": "250 000",
+      "unit": "bbl/jour",
+      "label": "Cible production 2030",
+      "note": "+73 % vs 144 000 bpj en 2024 (Plan national 2025–2030)",
+      "source": "Ecofin Agency · Enerdata"
+    },
+    {
+      "id": "sahel_urée",
+      "value": "2–3",
+      "unit": "Mt/an",
+      "label": "Demande régionale urée Sahel",
+      "note": "Estimé · Mali, Mauritanie, Burkina, Niger, Tchad",
+      "source": "IFASTAT · FAO · analyse EnerTchad"
+    },
+    {
+      "id": "caps",
+      "value": "6 500",
+      "unit": "km",
+      "label": "Central African Pipeline System",
+      "note": "7 pays CEMAC/Afrique centrale · cible opérationnelle 2030",
+      "source": "CAPS official · African Energy Chamber"
+    }
+  ],
+
+  "etat_des_lieux": {
+    "resume": "Le Tchad dispose d'une base de raffinage opérationnelle (Djermaya, 20 000 bbl/jour) mais n'a pas encore développé de filière pétrochimique intégrée : pas de vapocraqueur, pas d'unité ammoniaque-urée, pas de chaîne polymères à grande échelle. Les plastiques, engrais et solvants consommés localement sont importés quasi intégralement.",
+    "points": [
+      {
+        "titre": "Raffinerie SRN Djermaya",
+        "statut": "Opérationnelle",
+        "detail": "Distillation atmosphérique + reformage catalytique + hydrotraitement. Produits : essence, gazole, kérosène, GPL, polypropylène de base, bitume.",
+        "source": "CNPC · Offshore Technology · Wikipedia"
+      },
+      {
+        "titre": "Vapocraqueur naphta → éthylène/propylène",
+        "statut": "Absent",
+        "detail": "Aucune unité de craquage vapeur. Le potentiel naphta du brut Rônier (~5–8 % de 1 Mt/an) est actuellement orienté carburants.",
+        "source": "Analyse Digital Refining · OPIS"
+      },
+      {
+        "titre": "Complexe ammoniaque–urée",
+        "statut": "Non construit",
+        "detail": "Aucune annonce officielle FID. Le gaz associé (~30–50 000 t/an estimé) reste peu monétisé malgré le potentiel engrais Sahel.",
+        "source": "World Bank Gas Flaring Tracker 2024 · analyse"
+      },
+      {
+        "titre": "Plastiques, peintures, solvants, lubrifiants",
+        "statut": "~100 % importés",
+        "detail": "Pas de production locale PE/PP en volume. Dépendance Asie + Afrique du Nord + Afrique de l'Ouest. Données douanières CEMAC non ventilées publiquement.",
+        "source": "Inférence structurelle · UN Comtrade"
+      }
+    ]
+  },
+
+  "opportunites": [
+    {
+      "id": "urée_sahel",
+      "titre": "Complexe ammoniaque–urée pour le marché Sahel",
+      "description": "Un complexe ammoniaque–urée alimenté par le gaz associé et visant les 5 pays du Sahel offrirait une opportunité de substitution aux importations depuis l'Égypte, l'Algérie et le Moyen-Orient.",
+      "capacite_visee": "0,5 – 1,5 Mt/an urée",
+      "capex_indicatif": "1,5 – 2,5 Md USD",
+      "marche_adressable": "2 – 3 Mt/an (Sahel)",
+      "benchmark": "Dangote Fertiliser (Nigeria) 3 Mt/an · AOA Arzew (Algérie) 3 500 t/j urée · Abu Qir (Égypte) 4–5 Mt/an",
+      "source": "Dangote · Saipem · Offshore Technology · Suhail Bahwan Group"
+    },
+    {
+      "id": "caps_integration",
+      "titre": "Intégration au Central African Pipeline System (CAPS)",
+      "description": "Le CAPS (6 500 km, 7 pays, opérabilité cible 2030) ouvrira des débouchés régionaux pour les carburants Djermaya et un accès potentiel à du feedstock gaz régional (Gabon, Guinée Équatoriale).",
+      "horizon": "Phase 2–3 · 2028–2030",
+      "source": "CAPS · African Energy Chamber · Pan African Visions"
+    },
+    {
+      "id": "polymers_compounding",
+      "titre": "Compounding polymères d'emballage agricole",
+      "description": "Unités small-scale (20 000–50 000 t/an) de transformation PE/PP pour l'emballage agricole, le coton et les films irrigation. Capex contenu, time-to-market court.",
+      "capacite_visee": "20–50 kt/an",
+      "capex_indicatif": "60–120 M USD",
+      "source": "Benchmarking Afrique de l'Ouest"
+    },
+    {
+      "id": "green_ammonia",
+      "titre": "Ammoniac vert (horizon post-2030)",
+      "description": "Le potentiel solaire sahélien (DNI > 2 200 kWh/m²/an) permet d'envisager une production d'ammoniac via électrolyse renouvelable, décarbonée, pour des marchés premium (Europe, soutage maritime).",
+      "horizon": "2030+",
+      "source": "Nature Food 2024 · IRENA"
+    }
+  ],
+
+  "swot": {
+    "forces": [
+      "Brut Rônier/Mimosa léger (34–40° API · faible soufre ~0,2 %) · excellente feedstock pour craquage naphta",
+      "Gaz associé estimé 30–50 kt/an · pertinent pour unité ammoniaque",
+      "Localisation centrale Sahel · marché engrais 2–3 Mt/an",
+      "Raffinerie opérationnelle depuis 2011 · base industrielle existante",
+      "Inclusion du raffinage dans le périmètre ITIE Tchad · crédibilité ESG"
+    ],
+    "faiblesses": [
+      "Accès électricité < 10 % hors capitale · industrie énergivore",
+      "Déficit d'expertise ingénierie pétrochimie locale · dépendance EPC externe",
+      "Enclavement · logistique routière lente vers ports CEMAC",
+      "Espace fiscal limité post-restructuration Glencore (2022–2024)",
+      "Marché intérieur de ~100 kt/an PE/PP · insuffisant à lui seul pour une usine world-scale"
+    ],
+    "opportunites": [
+      "Substitution des imports engrais Sahel · potentiel EBITDA annuel ordre de grandeur 700 M–1,2 Md USD (scénario 0,5–1 Mt urée)",
+      "CAPS 2028–2030 · débouchés régionaux carburants, LPG, naphta",
+      "Modèle Dangote démontre la faisabilité africaine de mega-projets engrais",
+      "Ammoniac vert post-2030 · premium export décarboné",
+      "Momentum politique Plan National 2025–2030 · appui IFC/AfDB potentiel"
+    ],
+    "menaces": [
+      "Concurrence Dangote (3 Mt/an urée opérationnel) · pression prix en Afrique de l'Ouest",
+      "Volatilité du prix du brut · compression des revenus pour financer le capex aval",
+      "Instabilité sahélienne · risque logistique exports",
+      "Gaz moyen-oriental et nord-africain bon marché · alternative compétitive pour les importateurs",
+      "Transition énergétique · ammoniac fossile possiblement stranded post-2035"
+    ]
+  },
+
+  "benchmarks_regionaux": [
+    {
+      "pays": "Nigeria",
+      "projet": "Dangote Fertiliser (Lagos)",
+      "capacite": "3 Mt/an urée · 1,25 Mt/an ammoniaque",
+      "capex": "2,5 Md USD (Phase 1)",
+      "statut": "Opérationnel (mars 2022)",
+      "expansion": "Objectif 9 Mt/an total · 6 nouvelles unités (Nigeria + Éthiopie)",
+      "source": "Dangote Fertiliser · CNN Business · Saipem"
+    },
+    {
+      "pays": "Algérie",
+      "projet": "AOA Arzew (Suhail Bahwan 51 % / Sonatrach 49 %)",
+      "capacite": "4 000 t/j ammoniaque · 3 500 t/j urée",
+      "capex": "2,4 Md USD",
+      "statut": "Opérationnel (décembre 2017)",
+      "source": "Offshore Technology · Suhail Bahwan Group"
+    },
+    {
+      "pays": "Égypte",
+      "projet": "Abu Qir Fertilizers (Alexandrie, 3 unités)",
+      "capacite": "3 000–4 500 t/j NH₃ · 4 500–5 500 t/j urée",
+      "statut": "Opérationnel depuis 1979 · Unit 3 rénovée 2018",
+      "source": "Abu Qir Fertilizers · Offshore Technology"
+    }
+  ],
+
+  "contexte_cemac": {
+    "capacites_raffinage": [
+      { "pays": "Tchad", "raffinerie": "Djermaya (SRN)", "capacite": "20 000 bpj", "statut": "Opérationnelle" },
+      { "pays": "Cameroun", "raffinerie": "SONARA (Limbé)", "capacite": "~40 000 bpj", "statut": "Dégradée post-incendie 2019" },
+      { "pays": "Gabon", "raffinerie": "SOGARA (Port-Gentil)", "capacite": "~25 000 bpj", "statut": "Opérationnelle" },
+      { "pays": "Congo", "raffinerie": "CORAF (Pointe-Noire)", "capacite": "< 25 000 bpj", "statut": "En déclin" },
+      { "pays": "RCA", "raffinerie": "—", "capacite": "—", "statut": "Importateur net" },
+      { "pays": "Guinée Équatoriale", "raffinerie": "—", "capacite": "—", "statut": "Exportateur brut" }
+    ],
+    "total_cemac_bpj_estime": "~100 000",
+    "comparaison_nigeria_bpj": "684 500 (dont Dangote 650 000 bpj)",
+    "source": "Energy Capital & Power · Wikipedia refinery list"
+  },
+
+  "sources": [
+    { "label": "CNPC International · Chad operations", "url": "https://www.cnpc.com.cn/en/Chad/country_index.shtml", "autorite": "Opérateur 60 % SRN" },
+    { "label": "Offshore Technology · N'Djamena Refinery profile", "url": "https://www.offshore-technology.com/marketdata/ndjamena-refinery-chad/", "autorite": "Base industrielle" },
+    { "label": "Oil & Gas Journal · CNPC-Chad deal 2007", "url": "https://www.ogj.com/refining-processing/refining-construction/article/17275687/cnpc-chad-sign-deal-for-ndjamena-refinery", "autorite": "Presse industrie" },
+    { "label": "AidData · China Eximbank Credit N'Djamena", "url": "https://china.aiddata.org/projects/72356/", "autorite": "Base finance développement" },
+    { "label": "Global Energy Monitor · Rônier–Djermaya Pipeline", "url": "https://www.gem.wiki/Ronier%E2%80%93Djermaya_Oil_Pipeline", "autorite": "Référence infrastructure" },
+    { "label": "EITI Chad · country page", "url": "https://eiti.org/countries/chad", "autorite": "Transparence institutionnelle" },
+    { "label": "World Bank · Chad Petroleum Sector Diagnostic", "url": "https://documents1.worldbank.org/curated/en/789141591073206166/pdf/Chad-Petroleum-Sector-Diagnostic-Report.pdf", "autorite": "Tier 1 multilatéral" },
+    { "label": "World Bank · Global Gas Flaring Tracker 2024", "url": "https://thedocs.worldbank.org/en/doc/d01b4aebd8a10513c0e341de5e1f652e-0400072024/original/Global-Gas-Flaring-Tracker-Report-June-20-2024.pdf", "autorite": "Tier 1" },
+    { "label": "IMF · Chad Article IV 2024", "url": "https://www.elibrary.imf.org/view/journals/002/2024/335/article-A001-en.xml", "autorite": "Tier 1" },
+    { "label": "US EIA · Chad country overview", "url": "https://www.eia.gov/international/overview/country/TCD", "autorite": "Tier 1" },
+    { "label": "Ecofin Agency · Chad 250 kb/d 2025-2030", "url": "https://www.ecofinagency.com/news-industry/0211-50063-chad-targets-250-000-barrels-a-day-under-new-2025-2030-oil-strategy", "autorite": "Presse africaine" },
+    { "label": "Enerdata · Chad 250 kb/d target", "url": "https://www.enerdata.net/publications/daily-energy-news/chad-sets-250-kbd-oil-production-target-2030.html", "autorite": "Presse énergie" },
+    { "label": "Energy Capital & Power · Top 10 refineries Africa", "url": "https://energycapitalpower.com/top-ten-oil-refineries-in-africa-by-capacity/", "autorite": "Presse énergie" },
+    { "label": "Dangote Fertiliser · official", "url": "https://fertiliser.dangote.com/", "autorite": "Benchmark opérateur" },
+    { "label": "Saipem · Dangote Fertilizer contracts 2025", "url": "https://www.saipem.com/en/media/press-releases/2025-12-01/saipem-new-contracts-awarded-dangote-fertilizer-nigeria-and-ethiopia-in-the-fertilizer-sector/", "autorite": "EPC contractor" },
+    { "label": "Offshore Technology · AOA Arzew complex", "url": "https://www.offshore-technology.com/data-insights/algeria-oman-fertilizer-company-arzew-complex-algeria/", "autorite": "Base industrielle" },
+    { "label": "Abu Qir Fertilizers · official", "url": "https://abuqir.net/", "autorite": "Benchmark opérateur" },
+    { "label": "IFASTAT (IFA) · Fertilizer consumption", "url": "https://ifastat.org/fertilizer-reports-analysis/fertilizer-consumption", "autorite": "Base FAO/IFA" },
+    { "label": "CAPS · Central African Pipeline System", "url": "https://capsprojects.com/", "autorite": "Entité projet" },
+    { "label": "African Energy Chamber · Regional pipelines", "url": "https://energychamber.org/regional-pipeline-systems-to-strengthen-energy-access-in-africa/", "autorite": "Association industrie" },
+    { "label": "Columbia CGEP · Oil and Politics of Energy Access in Chad", "url": "https://www.energypolicy.columbia.edu/wp-content/uploads/2024/02/Oil-and-energy-access-in-Chad-Commentary_CGEP_012224.pdf", "autorite": "Académique" },
+    { "label": "Nature Food · Ammonia production & food security 2024", "url": "https://www.nature.com/articles/s43016-025-01125-y", "autorite": "Peer-reviewed" }
+  ]
+}

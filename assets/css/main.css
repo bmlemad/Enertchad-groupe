@@ -3465,3 +3465,205 @@ footer .foot-bottom .legal a:hover { color: var(--gold); }
 @media (prefers-reduced-motion: reduce) {
   .cadastre-teaser .ct-stat { transition: none; }
 }
+
+/* ======================================================================
+   Pétrochimie section (operations/aval.html) — analysis & opportunities
+   ====================================================================== */
+.petrochimie-section {
+  background: linear-gradient(180deg, var(--cream) 0%, var(--cream-2) 100%);
+  padding-top: clamp(60px, 8vw, 96px);
+  padding-bottom: clamp(60px, 8vw, 96px);
+}
+.petrochimie-section h3 {
+  font-size: clamp(1.25rem, 1.9vw, 1.6rem);
+  margin: 0 0 18px;
+  color: var(--ink);
+}
+
+.petro-kpis {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 14px;
+  margin: clamp(28px, 3.4vw, 40px) 0;
+}
+.pk-card {
+  background: #fff;
+  border: 1px solid var(--hairline);
+  border-left: 3px solid var(--pole-aval, var(--gold));
+  border-radius: 14px;
+  padding: 18px 18px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.pk-card:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(8,14,26,.06); }
+.pk-card strong {
+  font-size: clamp(1.6rem, 2.6vw, 2.1rem);
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1;
+  font-family: var(--font-display, inherit);
+}
+.pk-card span {
+  font-size: .82rem;
+  color: var(--ink-soft, #6b7280);
+  line-height: 1.4;
+}
+
+.petro-etat { margin-top: clamp(36px, 4vw, 56px); }
+.petro-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+.pc-card {
+  background: #fff;
+  border: 1px solid var(--hairline);
+  border-radius: 16px;
+  padding: 22px 22px 18px;
+  position: relative;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.pc-card:hover { transform: translateY(-3px); box-shadow: 0 16px 32px rgba(8,14,26,.07); }
+.pc-head { display: flex; gap: 10px; align-items: center; margin-bottom: 8px; }
+.pc-head strong { color: var(--ink); font-size: 1rem; }
+.pc-dot {
+  width: 10px; height: 10px; border-radius: 50%;
+  flex-shrink: 0;
+  background: var(--gold);
+}
+.pc-ok .pc-dot  { background: #4FB355; box-shadow: 0 0 0 4px rgba(79,179,85,.12); }
+.pc-gap .pc-dot { background: #EB8C3F; box-shadow: 0 0 0 4px rgba(235,140,63,.12); }
+.pc-stat {
+  font-size: .85rem;
+  color: var(--ink-soft, #6b7280);
+  margin-bottom: 10px;
+  font-weight: 600;
+  letter-spacing: .01em;
+}
+.pc-card p { margin: 0 0 10px; color: var(--ink); line-height: 1.55; font-size: .93rem; }
+.pc-src { font-size: .72rem; color: var(--ink-soft, #94a3b8); border-top: 1px solid var(--hairline); padding-top: 8px; }
+
+.petro-opps { margin-top: clamp(40px, 4.5vw, 60px); }
+.po-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px;
+}
+.po-card {
+  background: #fff;
+  border: 1px solid var(--hairline);
+  border-radius: 18px;
+  padding: 24px 22px 20px;
+  position: relative;
+  overflow: hidden;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.po-card::before {
+  content: "";
+  position: absolute; inset: 0 auto 0 0; width: 4px;
+  background: var(--gold);
+}
+.po-accent-gold::before  { background: var(--gold, #D9A84F); }
+.po-accent-teal::before  { background: #3FA4B3; }
+.po-accent-olive::before { background: #8AA35C; }
+.po-accent-green::before { background: #4FB355; }
+.po-card:hover { transform: translateY(-3px); box-shadow: 0 18px 36px rgba(8,14,26,.08); }
+.po-card header { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; }
+.po-num {
+  font-family: var(--font-display, inherit);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--gold);
+  background: rgba(217,168,79,.1);
+  border-radius: 8px;
+  padding: 4px 10px;
+  flex-shrink: 0;
+  letter-spacing: .03em;
+}
+.po-card h4 { margin: 0; font-size: 1.05rem; color: var(--ink); line-height: 1.3; }
+.po-card p { color: var(--ink); line-height: 1.55; font-size: .92rem; margin: 0 0 12px; }
+.po-card dl {
+  display: grid; gap: 6px; margin: 0;
+  border-top: 1px solid var(--hairline); padding-top: 12px;
+}
+.po-card dl > div { display: flex; gap: 10px; justify-content: space-between; align-items: baseline; flex-wrap: wrap; }
+.po-card dl dt { font-size: .78rem; color: var(--ink-soft, #6b7280); text-transform: uppercase; letter-spacing: .04em; }
+.po-card dl dd { margin: 0; font-size: .88rem; color: var(--ink); font-weight: 600; text-align: right; }
+
+.petro-bench { margin-top: clamp(40px, 4.5vw, 60px); }
+.pb-table {
+  background: #fff;
+  border: 1px solid var(--hairline);
+  border-radius: 16px;
+  overflow: hidden;
+}
+.pb-row {
+  display: grid;
+  grid-template-columns: 120px 1fr 1.2fr 180px;
+  gap: 16px;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--hairline);
+  align-items: center;
+}
+.pb-row:last-child { border-bottom: none; }
+.pb-head {
+  background: var(--cream-2);
+  font-size: .74rem;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--ink-soft, #6b7280);
+  font-weight: 600;
+}
+.pb-row:not(.pb-head) { font-size: .92rem; color: var(--ink); }
+.pb-tchad { background: rgba(217,168,79,.06); font-weight: 500; }
+.pb-status {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: .78rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.pb-op   { background: rgba(79,179,85,.14); color: #2e7d34; }
+.pb-todo { background: rgba(217,168,79,.16); color: #8a6a1f; }
+
+.petro-sources {
+  margin-top: clamp(40px, 4.5vw, 60px);
+  background: var(--navy);
+  color: #fff;
+  border-radius: 18px;
+  padding: clamp(24px, 3vw, 36px);
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1.6fr 1fr;
+  align-items: center;
+}
+.petro-sources .ps-head h3 { color: #fff; margin: 0 0 10px; }
+.petro-sources .ps-head p { color: rgba(255,255,255,.78); line-height: 1.55; font-size: .92rem; margin: 0; }
+.petro-sources .ps-actions { display: flex; flex-direction: column; gap: 10px; }
+.petro-sources .ps-actions .btn { text-align: center; }
+
+@media (max-width: 900px) {
+  .petro-kpis { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .pb-row { grid-template-columns: 1fr; gap: 6px; padding: 16px 18px; }
+  .pb-head { display: none; }
+  .pb-row:not(.pb-head) > div { display: flex; gap: 10px; }
+  .pb-row:not(.pb-head) > div::before {
+    content: attr(data-label) ":";
+    font-size: .74rem;
+    text-transform: uppercase;
+    color: var(--ink-soft, #6b7280);
+    min-width: 90px;
+    font-weight: 600;
+  }
+  .petro-sources { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .petro-kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pk-card, .pc-card, .po-card { transition: none; }
+  .pk-card:hover, .pc-card:hover, .po-card:hover { transform: none; box-shadow: none; }
+}
