@@ -111,10 +111,10 @@
         <a href="/">Accueil</a>
         <a href="/groupe">Groupe</a>
         <div class="nav-dropdown nav-has-mega" data-mega>
-          <button class="nav-drop-trigger" type="button" aria-haspopup="true" aria-expanded="false" aria-current="true">Pôles
+          <button class="nav-drop-trigger" type="button" aria-controls="mega-poles" aria-expanded="false" aria-current="true">Pôles
             <svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2"/></svg>
           </button>
-          <div class="nav-mega" role="menu" aria-label="Nos pôles d'activité">
+          <div class="nav-mega" id="mega-poles" aria-label="Nos pôles d'activité">
             <div class="nav-mega-inner">
               <div class="mega-search">
                 <label class="mega-search-label">
@@ -126,7 +126,7 @@
               <div class="nav-mega-body" data-mega-grid>
                 <div class="mega-col">
                   <span class="mega-col-head">Oil &amp; Gas · chaîne intégrée</span>
-                  <a href="/operations/amont" class="mega-pole" role="menuitem" data-pole="amont" data-search="amont exploration production bassins sismique e&amp;p">
+                  <a href="/operations/amont" class="mega-pole" data-pole="amont" data-search="amont exploration production bassins sismique e&amp;p">
                     <span class="mp-icon" aria-hidden="true">01</span>
                     <div class="mp-body">
                       <strong>Amont · E&amp;P</strong>
@@ -134,7 +134,7 @@
                       <em>144 kb/j · 5 bassins · sismique 3D</em>
                     </div>
                   </a>
-                  <a href="/operations/intermediaire" class="mega-pole" role="menuitem" data-pole="inter" data-search="pipeline stockage scada doba kribi transport intermédiaire">
+                  <a href="/operations/intermediaire" class="mega-pole" data-pole="inter" data-search="pipeline stockage scada doba kribi transport intermédiaire">
                     <span class="mp-icon" aria-hidden="true">02</span>
                     <div class="mp-body">
                       <strong>Intermédiaire</strong>
@@ -142,7 +142,7 @@
                       <em>Doba–Kribi · 1 070 km · 24/7</em>
                     </div>
                   </a>
-                  <a href="/operations/aval" class="mega-pole" role="menuitem" data-pole="aval" data-search="raffinage lubrifiants gpl distribution stations djarmaya aval">
+                  <a href="/operations/aval" class="mega-pole" data-pole="aval" data-search="raffinage lubrifiants gpl distribution stations djarmaya aval">
                     <span class="mp-icon" aria-hidden="true">03</span>
                     <div class="mp-body">
                       <strong>Aval · Distribution</strong>
@@ -150,7 +150,7 @@
                       <em>Djarmaya · 45 stations · 6 villes</em>
                     </div>
                   </a>
-                  <a href="/operations/services" class="mega-pole" role="menuitem" data-pole="svc" data-search="services oilfield ingénierie digital workover hse formation">
+                  <a href="/operations/services" class="mega-pole" data-pole="svc" data-search="services oilfield ingénierie digital workover hse formation">
                     <span class="mp-icon" aria-hidden="true">04</span>
                     <div class="mp-body">
                       <strong>Services</strong>
@@ -161,7 +161,7 @@
                 </div>
                 <div class="mega-col">
                   <span class="mega-col-head">Énergies &amp; Digital</span>
-                  <a href="/energies/" class="mega-pole" role="menuitem" data-pole="energies" data-search="solaire micro-grids hydrogène vert transition énergétique village">
+                  <a href="/energies/" class="mega-pole" data-pole="energies" data-search="solaire micro-grids hydrogène vert transition énergétique village">
                     <span class="mp-icon" aria-hidden="true">05</span>
                     <div class="mp-body">
                       <strong>Énergies · Transition</strong>
@@ -169,7 +169,7 @@
                       <em>125 MW · 28 villages · 624 GWh</em>
                     </div>
                   </a>
-                  <a href="/technologies/" class="mega-pole" role="menuitem" data-pole="technologies" data-search="scada jumeaux numériques digital twin ia cyber capteurs enertech">
+                  <a href="/technologies/" class="mega-pole" data-pole="technologies" data-search="scada jumeaux numériques digital twin ia cyber capteurs enertech">
                     <span class="mp-icon" aria-hidden="true">06</span>
                     <div class="mp-body">
                       <strong>Technologies · EnerTech</strong>
@@ -177,7 +177,7 @@
                       <em>12 840 capteurs · 99,97 % uptime</em>
                     </div>
                   </a>
-                  <a href="/maps" class="mega-map" role="menuitem" data-search="carte interactive implantations bassins infrastructures">
+                  <a href="/maps" class="mega-map" data-search="carte interactive implantations bassins infrastructures">
                     <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.2a2.2 2.2 0 1 1 0-4.4 2.2 2.2 0 0 1 0 4.4z" fill="currentColor"/></svg>
                     <div>
                       <strong>Carte interactive</strong>
@@ -211,6 +211,7 @@
                 <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 20l-3.5-3.5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
                 <span>Aucun résultat. Essayez <em>pipeline</em>, <em>solaire</em>, <em>SCADA</em>…</span>
               </div>
+            <div role="status" aria-live="polite" aria-atomic="true" class="sr-only" data-mega-count></div>
             </div>
           </div>
         </div>
@@ -512,6 +513,67 @@
   </div>
 </section>
 
+<!-- ============================= EOR — ENHANCED OIL RECOVERY ============================= -->
+<section id="eor" class="page-section" aria-labelledby="eor-title" style="background: var(--cream-2);">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="kicker">Enhanced Oil Recovery · Champs matures</span>
+      <h2 id="eor-title">Prolonger la vie des bassins, libérer <span class="gold">10 à 18&nbsp;%</span> de réserves additionnelles.</h2>
+      <p class="lead">Après 25 ans d'exploitation primaire et d'injection d'eau secondaire, les bassins du Doba conservent 55 à 70 % du pétrole originel en place. L'Enhanced Oil Recovery (EOR) vise à récupérer une fraction de ces hydrocarbures résiduels via l'injection de fluides actifs, gaz miscibles ou vapeur. Un programme piloté par la Direction Amont, validé par le COMEX, avec des jalons 2027 → 2032.</p>
+    </div>
+
+    <div class="grid grid-4 reveal" style="margin-top: 40px;">
+      <div class="feature-card">
+        <div class="v-num" style="color: var(--gold); font-family: 'Space Grotesk', sans-serif; font-weight: 700;">01 · CO₂-EOR</div>
+        <h4>Injection CO₂ miscible</h4>
+        <p>Doba-Kome, Bolobo-Miandoum · gain 8–14 %. Synergie CCUS : stockage géologique CO₂, contribution NDC Tchad 2030.</p>
+      </div>
+      <div class="feature-card" style="--delay:.08s;">
+        <div class="v-num" style="color: var(--gold); font-family: 'Space Grotesk', sans-serif; font-weight: 700;">02 · Polymer-EOR</div>
+        <h4>Injection polymères</h4>
+        <p>Bongor-Sud, Nya · gain 6–10 %. RD en cours sur production locale de polymères à partir de gomme arabique tchadienne.</p>
+      </div>
+      <div class="feature-card" style="--delay:.16s;">
+        <div class="v-num" style="color: var(--gold); font-family: 'Space Grotesk', sans-serif; font-weight: 700;">03 · ASP</div>
+        <h4>Alkaline-Surfactant-Polymer</h4>
+        <p>Kome-Miandoum · gain 12–18 %. Partenariat Université de N'Djamena pour surfactants biosourcés (arachide, coton).</p>
+      </div>
+      <div class="feature-card" style="--delay:.24s;">
+        <div class="v-num" style="color: var(--gold); font-family: 'Space Grotesk', sans-serif; font-weight: 700;">04 · Thermal SAGD</div>
+        <h4>Steam-Assisted Gravity Drainage</h4>
+        <p>Mimosa (huiles lourdes) · gain 15–25 %. Vapeur par cogénération solaire CSP + gaz associé valorisé (bas-carbone).</p>
+      </div>
+    </div>
+
+    <div class="split" style="margin-top: 56px;">
+      <div class="split-text reveal">
+        <span class="kicker">Roadmap 2026–2032</span>
+        <h3 style="font-size: 1.5rem; margin: 12px 0 20px;">Quatre phases, cinq ans, deux bassins pilotes.</h3>
+        <ul class="foot-links" style="list-style: none; padding: 0;">
+          <li style="padding: 10px 0; border-bottom: 1px solid var(--hairline-dark);"><strong style="color: var(--gold);">P0 · Études labo</strong> <span style="color: var(--ink-2);">— Q3 2026 → Q1 2027</span><br/><small>Carottes réservoirs · tests compatibilité fluides-roche · modélisation numérique.</small></li>
+          <li style="padding: 10px 0; border-bottom: 1px solid var(--hairline-dark);"><strong style="color: var(--gold);">P1 · Pilote CO₂-EOR Kome</strong> <span style="color: var(--ink-2);">— Q2 2027 → Q4 2028</span><br/><small>1 puits injecteur + 2 producteurs · suivi 4D sismique · validation technique.</small></li>
+          <li style="padding: 10px 0; border-bottom: 1px solid var(--hairline-dark);"><strong style="color: var(--gold);">P2 · Extension ASP Bongor</strong> <span style="color: var(--ink-2);">— 2028 → 2029</span><br/><small>Pilote 3 patterns injection · évaluation économique · décision COMEX.</small></li>
+          <li style="padding: 10px 0;"><strong style="color: var(--gold);">P3 · Déploiement commercial</strong> <span style="color: var(--ink-2);">— 2029 → 2032</span><br/><small>Passage à grande échelle sur 2 bassins matures · +18 kb/j production additionnelle.</small></li>
+        </ul>
+      </div>
+      <div class="reveal" style="--delay:.1s;">
+        <div class="form-wrap" style="padding: 32px;">
+          <span class="kicker" style="padding-left:0;">KPIs cibles horizon 2032</span>
+          <div class="stat-tiles" style="margin-top: 18px;">
+            <div class="stat-tile"><div class="value">+18<sub>kb/j</sub></div><div class="label">Production additionnelle</div></div>
+            <div class="stat-tile"><div class="value">+64<sub>Mbbl</sub></div><div class="label">Réserves additionnelles</div></div>
+            <div class="stat-tile"><div class="value">2,4<sub>Mt</sub></div><div class="label">CO₂ stocké cumul 2032</div></div>
+            <div class="stat-tile"><div class="value">340<sub>M$</sub></div><div class="label">CAPEX cumul</div></div>
+            <div class="stat-tile"><div class="value">42<sub>$/bbl</sub></div><div class="label">Break-even projet</div></div>
+            <div class="stat-tile"><div class="value">35</div><div class="label">Ingénieurs à former d'ici 2028</div></div>
+          </div>
+          <p style="margin-top: 20px; font-size: .85rem; color: var(--ink-2);">Données techniques détaillées : <a href="../assets/data/eor-tchad.json" style="color: var(--gold);">eor-tchad.json</a> · Note technique Champs Matures : <a href="../documents/EnerTchad-Note-Technique-Champs-Matures-2026.docx" style="color: var(--gold);">télécharger</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============================= PARTNERSHIPS ============================= -->
 <section class="cta-band" id="partenariats">
   <div class="container">
@@ -538,6 +600,10 @@
       <div class="foot-brand">
         <div class="brand"><span class="brand-mark">E</span><span>Ener<span class="accent">Tchad</span> Groupe</span></div>
         <p>Société Anonyme à Conseil d'Administration · OHADA / AUSCGIE. Siège social : N'Djamena, République du Tchad.</p>
+        <div class="foot-brand-signatures" aria-label="Signatures EnerTchad Groupe">
+          <p class="fbs-main">Unité <em>·</em> Innovation <em>·</em> Durabilité</p>
+          <span class="fbs-sub">Accès aux Énergies</span>
+        </div>
         <p style="font-size:.82rem; margin-top:16px;">RCCM : N’DJ/RC/2026-A-0001<br/>Capital : 10 000 000 FCFA</p>
       </div>
       <div><h5>Opérations</h5><ul>

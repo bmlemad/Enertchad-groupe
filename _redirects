@@ -1,4 +1,19 @@
-# Legacy path redirects
+# =============================================================================
+# EnerTchad Groupe — _redirects (Cloudflare Pages + Netlify compatible)
+# Révisé : 22 avril 2026 — post-v1.6.0 (signatures, EOR, pétrochimie)
+# =============================================================================
+#
+# IMPORTANT — Cloudflare Pages sert .html nativement sur les URLs propres
+# (ex. /groupe → groupe.html automatiquement). NE PAS ajouter de règles
+# `/groupe /groupe.html 200` ici : elles recréent la boucle observée sur
+# le deploy 203293ce et résolue dans 72ce274c.
+#
+# Netlify lit netlify.toml en priorité et a déjà les mêmes 200 rewrites là-bas.
+# Ce fichier est donc optimisé Cloudflare d'abord ; Netlify reste fonctionnel
+# via netlify.toml.
+# =============================================================================
+
+# --- Legacy path redirects (anciennes URLs EN → FR) ---
 /about            /groupe.html             301
 /about.html       /groupe.html             301
 /investors        /investisseurs.html      301
@@ -10,14 +25,22 @@
 /downstream       /operations/aval.html          301
 /services         /operations/services.html      301
 
-# Note: Cloudflare Pages sert automatiquement les clean URLs (/groupe → groupe.html natif).
-# Pas de règles "/groupe /groupe.html 200" : elles créent des boucles 308 avec le pretty URL handler CF.
+# --- Legacy PDF aliases (Sprint A méga-menu — docs renommés) ---
+/documents/rapport-esg-2025.pdf  /documents/EnerTchad-Rapport-Durabilite-2025.pdf  301
 
-# Pôles intégrés (ex-sous-domaines Vercel)
+# --- Pôles intégrés (ex-sous-domaines Vercel) ---
 /energies         /energies/               301
 /technologies     /technologies/           301
 /enertech         /technologies/           301
 /greentech        /energies/               301
 
-# Custom 404 (fallback)
+# --- Anchors cross-pages ajoutés en v1.6.0 — redirections de confort ---
+# Ces URLs courtes peuvent apparaître dans documents externes / emails ;
+# on les renvoie vers l'ancre canonique.
+/eor              /operations/amont#eor                                301
+/petrochimie      /operations/aval#petrochimie                         301
+/pole-petrochimie /operations/aval#petrochimie                         301
+/ccus             /operations/amont#eor                                301
+
+# --- Custom 404 (fallback global, DOIT rester en dernier) ---
 /*    /404.html   404

@@ -23,22 +23,22 @@
           { href: '/groupe#gouvernance', icon: '03', title: 'Gouvernance',           sub: 'Conseil · Direction · Comités',  meta: '11 administrateurs · 4 comités' },
         ]},
         { head: 'Engagements', items: [
-          { href: '/durabilite',         icon: '04', title: 'Durabilité ESG',        sub: 'Climat · social · éthique',      meta: 'CDP B · MSCI AA' },
+          { href: '/durabilite',         icon: '04', title: 'Durabilité ESG',        sub: 'Climat · social · éthique',      meta: 'ITIE publié · CDP engagé' },
           { href: '/talents',            icon: '05', title: 'Nos talents',           sub: '1 240 collaborateurs · 85 % locaux', meta: 'Parité 38 % · 120 apprentis' },
         ]},
       ],
       feature: {
-        eyebrow: 'Rapport annuel 2025',
+        eyebrow: 'Rapport 2025',
         title: 'Une chaîne <em>intégrée</em>, un champion <em>souverain</em>.',
         stats: [
-          { val: '1 240',  unit: '',      label: 'Collaborateurs' },
-          { val: '53',     unit: '',      label: 'Contrats ITIE' },
-          { val: '2,1',    unit: 'Md$',   label: 'CA consolidé' },
-          { val: 'A−',     unit: '',      label: 'Rating S&P' },
+          { val: '1 240', unit: '',    label: 'Collaborateurs', source: '/groupe#rh' },
+          { val: '53',    unit: '',    label: 'Contrats ITIE',  source: '/documents/itie-2025.pdf' },
+          { val: '2,1',   unit: 'Md$', label: 'CA consolidé',   source: '/documents/rapport-annuel-2025.pdf' },
+          { val: '23',    unit: 'ans', label: 'Historique',     source: '/groupe#histoire' },
         ],
         ctas: [
           { href: '/groupe',                              label: 'Découvrir le Groupe', primary: true },
-          { href: '/documents/rapport-annuel-2025.pdf',   label: 'Rapport annuel (PDF)' },
+          { href: '/documents/EnerTchad-Rapport-Durabilite-2025.pdf', label: 'Rapport Durabilité (PDF)' },
         ],
       },
     },
@@ -50,12 +50,12 @@
       cols: [
         { head: 'Performance', items: [
           { href: '/investisseurs#kpis',     icon: '01', title: 'KPIs financiers',     sub: 'CA · EBITDA · cash-flow',  meta: 'MAJ trimestrielle' },
-          { href: '/investisseurs#rating',   icon: '02', title: 'Notation & rating',   sub: 'S&P A− · Moody\u2019s A3', meta: 'Perspective stable' },
+          { href: '/investisseurs#solvabilite', icon: '02', title: 'Solvabilité',     sub: 'Dette nette / EBITDA · 1,2×', meta: 'Cible 2027 · <2,0×' },
           { href: '/dashboard-executif',     icon: '03', title: 'Dashboard exécutif',  sub: 'Temps réel · KPIs live',   meta: 'SCADA connecté · 24/7', live: true },
         ]},
         { head: 'Publications', items: [
-          { href: '/documents/rapport-annuel-2025.pdf',   icon: '04', title: 'Rapport annuel 2025',      sub: 'PDF · 152 pages', meta: '18 Mo · FR/EN' },
-          { href: '/documents/communique-q4-2025.pdf',    icon: '05', title: 'Communiqués trimestriels', sub: 'Q1 Q2 Q3 Q4',     meta: '4 publications/an' },
+          { href: '/documents/EnerTchad-Rapport-Durabilite-2025.pdf', icon: '04', title: 'Rapport Durabilité 2025', sub: 'PDF · disponible', meta: 'FR · GRI Index 2025' },
+          { href: '/documents/EnerTchad-Champs-Matures-Synthese-Executive-2026.pdf', icon: '05', title: 'Synthèse Champs Matures', sub: 'PDF · 2026', meta: 'Executive brief' },
           { href: '/investisseurs#agenda',                 icon: '06', title: 'Agenda investisseurs',     sub: 'AGM · earnings · roadshows', meta: '8 rendez-vous 2026' },
         ]},
       ],
@@ -63,10 +63,10 @@
         eyebrow: 'Performance 2026',
         title: 'Des fondamentaux <em>solides</em>, une trajectoire <em>claire</em>.',
         stats: [
-          { val: '2,1',  unit: 'Md$', label: 'CA 2025' },
-          { val: '+14',  unit: '%',   label: 'EBITDA YoY' },
-          { val: 'A−',   unit: '',    label: 'Rating S&P' },
-          { val: '53',   unit: '',    label: 'Contrats ITIE' },
+          { val: '2,1',  unit: 'Md$', label: 'CA 2025',      source: '/documents/rapport-annuel-2025.pdf' },
+          { val: '+14',  unit: '%',   label: 'EBITDA YoY',   source: '/documents/rapport-annuel-2025.pdf' },
+          { val: '1,2',  unit: '×',   label: 'Dette/EBITDA', source: '/documents/rapport-annuel-2025.pdf' },
+          { val: '53',   unit: '',    label: 'Contrats ITIE', source: '/documents/itie-2025.pdf' },
         ],
         ctas: [
           { href: '/investisseurs',     label: 'Espace investisseurs', primary: true },
@@ -87,21 +87,21 @@
         ]},
         { head: 'Social · Éthique', items: [
           { href: '/durabilite#social',    icon: '04', title: 'Communautés',          sub: '28 villages électrifiés', meta: '624 GWh livrés' },
-          { href: '/durabilite#ethique',   icon: '05', title: 'Éthique & conformité', sub: 'ITIE · OCDE · UNGC',       meta: '53 contrats publiés' },
+          { href: '/durabilite#itie',      icon: '05', title: 'Éthique & conformité', sub: 'ITIE · OCDE · UNGC',       meta: '53 contrats publiés' },
         ]},
       ],
       feature: {
         eyebrow: 'ESG · Ratings 2026',
         title: 'Une ambition <em>durable</em>, des résultats <em>vérifiés</em>.',
         stats: [
-          { val: '−48',  unit: '%',    label: 'CO₂ vs 2020' },
-          { val: '42',   unit: 'kt/an', label: 'CO₂ évité' },
-          { val: 'B',    unit: '',     label: 'CDP climat' },
-          { val: 'AA',   unit: '',     label: 'MSCI ESG' },
+          { val: '−48',  unit: '%',     label: 'CO₂ vs 2020',          source: '/documents/EnerTchad-Rapport-Durabilite-2025.pdf' },
+          { val: '42',   unit: 'kt/an', label: 'CO₂ évité',            source: '/documents/EnerTchad-Rapport-Durabilite-2025.pdf' },
+          { val: '100',  unit: '%',     label: 'Contrats ITIE',        source: '/documents/itie-2025.pdf' },
+          { val: '28',   unit: '',      label: 'Villages électrifiés', source: '/durabilite#social' },
         ],
         ctas: [
           { href: '/durabilite',                      label: 'Rapport durabilité', primary: true },
-          { href: '/documents/rapport-esg-2025.pdf',  label: 'Rapport ESG (PDF)' },
+          { href: '/documents/EnerTchad-Rapport-Durabilite-2025.pdf',  label: 'Rapport ESG (PDF)' },
         ],
       },
     },
@@ -117,18 +117,18 @@
           { href: '/talents#formations',   icon: '03', title: 'Formations internes', sub: 'Leadership · HSE · SCADA', meta: '1 800 heures/an' },
         ]},
         { head: 'Culture', items: [
-          { href: '/talents#diversite',    icon: '04', title: 'Diversité & inclusion', sub: 'Parité 38 % · 11 nationalités', meta: 'Label Great Place to Work' },
-          { href: '/talents#benefits',     icon: '05', title: 'Bénéfices & avantages', sub: 'Santé · retraite · mobilité',   meta: 'Top 10 Afrique' },
+          { href: '/talents#diversite',    icon: '04', title: 'Diversité & inclusion', sub: 'Parité 38 % · 11 nationalités', meta: 'Politique D&I publique · charte UNGC' },
+          { href: '/talents#benefits',     icon: '05', title: 'Bénéfices & avantages', sub: 'Santé · retraite · mobilité',   meta: 'Couverture 100 % collaborateurs' },
         ]},
       ],
       feature: {
         eyebrow: 'People · 2026',
         title: 'L\u2019énergie du Tchad, portée par <em>ses talents</em>.',
         stats: [
-          { val: '1 240',  unit: '',  label: 'Collaborateurs' },
-          { val: '85',     unit: '%', label: 'Tchadiens' },
-          { val: '38',     unit: '%', label: 'Femmes' },
-          { val: '120',    unit: '',  label: 'Apprentis' },
+          { val: '1 240', unit: '',  label: 'Collaborateurs', source: '/groupe#rh' },
+          { val: '85',    unit: '%', label: 'Tchadiens',      source: '/talents#local-content' },
+          { val: '38',    unit: '%', label: 'Femmes',         source: '/talents#diversite' },
+          { val: '120',   unit: '',  label: 'Apprentis',      source: '/talents#apprentis' },
         ],
         ctas: [
           { href: '/talents',          label: 'Voir les offres', primary: true },
@@ -156,10 +156,10 @@
         eyebrow: 'Calendrier 2026',
         title: 'Rester <em>informé</em>, anticiper <em>l\u2019industrie</em>.',
         stats: [
-          { val: '28',   unit: '',  label: 'Communiqués/an' },
-          { val: '12',   unit: '',  label: 'Articles avril' },
-          { val: '4 200', unit: '', label: 'Abonnés' },
-          { val: '8',    unit: '',  label: 'Événements' },
+          { val: '28',    unit: '', label: 'Communiqués/an', source: '/actualites#communiques' },
+          { val: '12',    unit: '', label: 'Articles avril', source: '/actualites#blog' },
+          { val: '4 200', unit: '', label: 'Abonnés',        source: '/newsletter' },
+          { val: '8',     unit: '', label: 'Événements',     source: '/actualites#events' },
         ],
         ctas: [
           { href: '/actualites', label: 'Voir toutes les actualités', primary: true },
@@ -169,11 +169,18 @@
     },
   };
 
+  // Panel id slug : "Durabilité" → "durabilite" (pour aria-controls — patch 07)
+  function megaPanelId(key) {
+    return 'mega-' + key.toLowerCase()
+      .normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  }
+
   function buildMegaHTML(key, cfg) {
     const cols = cfg.cols.map((col) => {
       const items = col.items.map((it) => {
         const liveHTML = it.live ? '<span class="live-dot" aria-hidden="true" style="margin-right:6px;"></span>' : '';
-        return '<a href="' + it.href + '" class="mega-pole" role="menuitem" data-pole="' + (it.pole || key.toLowerCase()) + '" data-search="' + (it.search || (it.title + ' ' + (it.sub||'') + ' ' + (it.meta||'')).toLowerCase()) + '">' +
+        // Patch 07 : retrait role="menuitem" — Disclosure Navigation Menu (WAI-ARIA APG 1.2)
+        return '<a href="' + it.href + '" class="mega-pole" data-pole="' + (it.pole || key.toLowerCase()) + '" data-search="' + (it.search || (it.title + ' ' + (it.sub||'') + ' ' + (it.meta||'')).toLowerCase()) + '">' +
                  '<span class="mp-icon" aria-hidden="true">' + it.icon + '</span>' +
                  '<div class="mp-body">' +
                    '<strong>' + liveHTML + it.title + '</strong>' +
@@ -186,17 +193,28 @@
     }).join('');
 
     const fs = cfg.feature;
-    const stats = fs.stats.map((s) =>
-      '<div class="mf-stat"><strong>' + s.val + (s.unit ? '<sup>' + s.unit + '</sup>' : '') + '</strong><span>' + s.label + '</span></div>'
-    ).join('');
+    // Patch 05 : support data-source par stat (traçabilité) + clicable via tabindex + role
+    const stats = fs.stats.map((s) => {
+      const hasSource = !!s.source;
+      const attrs = hasSource
+        ? ' data-source="' + s.source + '" tabindex="0" role="link" aria-label="' + s.label + ' — voir la source"'
+        : '';
+      return '<div class="mf-stat"' + attrs + '>' +
+        '<strong>' + s.val + (s.unit ? '<sup>' + s.unit + '</sup>' : '') + '</strong>' +
+        '<span>' + s.label + '</span>' +
+      '</div>';
+    }).join('');
     const ctas = fs.ctas.map((c) =>
       '<a href="' + c.href + '" class="mf-cta' + (c.primary ? ' is-primary' : '') + '">' +
         '<span>' + c.label + '</span><span class="arrow" aria-hidden="true">→</span>' +
       '</a>'
     ).join('');
 
+    const panelId = megaPanelId(key);
+    // Patch 07 : retrait role="menu", ajout id panneau ; aria-label devient "Navigation …"
+    // Patch 04 : ajout data-mega-count (sr-only, aria-live polite) pour annoncer les filtres
     return '' +
-      '<div class="nav-mega" role="menu" aria-label="' + cfg.eyebrow + '">' +
+      '<div class="nav-mega" id="' + panelId + '" aria-label="Navigation ' + cfg.eyebrow + '">' +
         '<div class="nav-mega-inner">' +
           '<div class="nav-mega-body" data-mega-grid>' +
             cols +
@@ -207,6 +225,7 @@
               '<div class="mf-ctas">' + ctas + '</div>' +
             '</aside>' +
           '</div>' +
+          '<div role="status" aria-live="polite" aria-atomic="true" class="sr-only" data-mega-count></div>' +
         '</div>' +
       '</div>';
   }
@@ -231,8 +250,9 @@
       const btn = document.createElement('button');
       btn.type = 'button';
       btn.className = 'nav-drop-trigger';
-      btn.setAttribute('aria-haspopup', 'true');
+      // Patch 07 : Disclosure pattern — aria-controls vers l'id panneau, pas d'aria-haspopup
       btn.setAttribute('aria-expanded', 'false');
+      btn.setAttribute('aria-controls', megaPanelId(key));
       btn.innerHTML = key + ' <svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2"/></svg>';
 
       // Preserve active/aria-current state from original anchor
@@ -295,6 +315,10 @@
   }
 
   /* ---------- Ultra Mega Menu (a11y + search + arrow-key grid nav) ---------- */
+  // Registre global de tous les panneaux méga (rempli par la boucle).
+  // Patches 01 (multi-open) + 02 (Esc idempotence) — Sprint méga-menu v1.5.2
+  const MEGA_WRAPS = [];
+
   document.querySelectorAll('.nav-has-mega').forEach((wrap) => {
     const trigger   = wrap.querySelector('.nav-drop-trigger');
     const mega      = wrap.querySelector('.nav-mega');
@@ -303,7 +327,14 @@
     const gridEl    = wrap.querySelector('[data-mega-grid]');
     if (!trigger || !mega) return;
 
-    trigger.setAttribute('aria-haspopup', 'true');
+    // Patch 07 : Disclosure Navigation Menu — pas d'aria-haspopup, aria-controls assigné par injectMegaPanels()
+    // Ensure synchronised state pour le panneau hardcodé (index.html Pôles) qui n'est pas créé par le JS.
+    if (!trigger.hasAttribute('aria-controls') && mega.id) {
+      trigger.setAttribute('aria-controls', mega.id);
+    }
+    if (trigger.hasAttribute('aria-haspopup')) {
+      trigger.removeAttribute('aria-haspopup');
+    }
     trigger.setAttribute('aria-expanded', 'false');
 
     const cards = Array.from(mega.querySelectorAll('.mega-pole, .mega-map'));
@@ -312,13 +343,40 @@
     let hoverTimer = null;
     const setOpen = (open, opts) => {
       opts = opts || {};
+      const isOpen = wrap.classList.contains('is-open');
+
+      // Patch 02 BUG-3 : idempotence. Si l'état demandé est déjà celui actuel,
+      // resynchroniser aria-expanded par sécurité et sortir sans refaire
+      // les opérations DOM (évite les fenêtres de 40 ms où aria-expanded est désynchronisé).
+      if (open === isOpen) {
+        trigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        if (open && opts.focusSearch && searchEl && !isMobile()) {
+          try { searchEl.focus({ preventScroll: true }); } catch (_) { searchEl.focus(); }
+        }
+        return;
+      }
+
+      // Exclusion mutuelle : ouvrir ce panneau ferme les autres (patch 01).
+      if (open) {
+        MEGA_WRAPS.forEach((other) => {
+          if (other.wrap !== wrap && other.wrap.classList.contains('is-open')) {
+            other.wrap.classList.remove('is-open');
+            other.trigger.setAttribute('aria-expanded', 'false');
+          }
+        });
+      }
       wrap.classList.toggle('is-open', open);
       trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
       if (open && opts.focusSearch && searchEl && !isMobile()) {
         // Small delay to let the reveal animation settle before focusing
         setTimeout(() => { try { searchEl.focus({ preventScroll: true }); } catch (_) { searchEl.focus(); } }, 60);
       }
+      // Annuler tout timer hover en cours : Esc ne doit pas ré-ouvrir (patch 02).
+      if (hoverTimer) { clearTimeout(hoverTimer); hoverTimer = null; }
     };
+
+    // Publier ce panneau dans le registre global.
+    MEGA_WRAPS.push({ wrap: wrap, trigger: trigger, searchEl: searchEl, setOpen: setOpen });
 
     // --- Click toggle (always works on touch / keyboard) ---
     trigger.addEventListener('click', (e) => {
@@ -350,33 +408,30 @@
       }
     });
 
-    // --- Escape closes ---
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && wrap.classList.contains('is-open')) {
-        setOpen(false);
-        trigger.focus();
-      }
-    });
-
-    // --- Click outside closes ---
-    document.addEventListener('click', (e) => {
-      if (!wrap.contains(e.target)) setOpen(false);
-    });
-
-    // --- ⌘K / Ctrl+K focuses the search while menu is open (opens if closed) ---
-    document.addEventListener('keydown', (e) => {
-      if ((e.key === 'k' || e.key === 'K') && (e.metaKey || e.ctrlKey)) {
-        if (!searchEl) return;
-        e.preventDefault();
-        setOpen(true, { focusSearch: true });
-      }
-    });
+    // Listeners globaux Esc / click-outside / ⌘K sont attachés UNE SEULE FOIS
+    // hors de cette boucle — voir bloc "Listeners globaux méga-menu" plus bas.
 
     // --- Live search: filter cards by data-search attribute ---
+    // Patch 04 : debounce 80ms sur le filter + annonce aria-live throttle 400ms
     if (searchEl && gridEl) {
       const normalize = (s) => (s || '').toString().toLowerCase()
         .normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-      const filter = () => {
+      const countEl = mega.querySelector('[data-mega-count]');
+      let filterTimer = null;
+      let announceTimer = null;
+      let lastAnnounced = -1;
+      const announce = (visible, q) => {
+        if (!countEl) return;
+        if (visible === lastAnnounced) return;
+        lastAnnounced = visible;
+        const label = !q
+          ? ''
+          : (visible === 0
+              ? 'Aucun résultat.'
+              : (visible === 1 ? '1 résultat.' : visible + ' résultats.'));
+        countEl.textContent = label;
+      };
+      const runFilter = () => {
         const q = normalize(searchEl.value.trim());
         let visible = 0;
         cards.forEach((card) => {
@@ -393,6 +448,13 @@
           if (hit) visible++;
         });
         if (emptyEl) emptyEl.hidden = visible > 0 || !q;
+        // Annonce throttle 400ms : on diffère pour éviter le spam aria-live
+        clearTimeout(announceTimer);
+        announceTimer = setTimeout(() => announce(visible, q), 400);
+      };
+      const filter = () => {
+        clearTimeout(filterTimer);
+        filterTimer = setTimeout(runFilter, 80);
       };
       searchEl.addEventListener('input', filter);
       searchEl.addEventListener('keydown', (e) => {
@@ -401,7 +463,7 @@
           const first = cards.find((c) => !c.hasAttribute('data-hidden'));
           if (first) first.focus();
         } else if (e.key === 'Escape') {
-          if (searchEl.value) { searchEl.value = ''; filter(); }
+          if (searchEl.value) { searchEl.value = ''; runFilter(); }
           else { setOpen(false); trigger.focus(); }
         }
       });
@@ -421,6 +483,74 @@
         if (next >= 0) { e.preventDefault(); visible[next].focus(); }
       });
     });
+  });
+
+  /* ---------- Listeners globaux méga-menu (patches 01 + 02) ----------
+   * Un seul listener par événement plutôt qu'un par panneau, pour éviter
+   * l'ouverture en cascade de tous les panneaux sur ⌘K (bug BUG-1).
+   */
+  function getOpenMega() {
+    return MEGA_WRAPS.find((m) => m.wrap.classList.contains('is-open')) || null;
+  }
+  function getTargetMega() {
+    const open = getOpenMega();
+    if (open) return open;
+    const focused = MEGA_WRAPS.find((m) => m.wrap.contains(document.activeElement));
+    if (focused) return focused;
+    return MEGA_WRAPS[0] || null;
+  }
+
+  // Esc : ferme le panneau ouvert et rend le focus à son trigger.
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape') return;
+    const open = getOpenMega();
+    if (!open) return;
+    open.setOpen(false);
+    try { open.trigger.focus(); } catch (_) {}
+  });
+
+  // ⌘K / Ctrl+K : ouvre le panneau cible et focus la recherche.
+  document.addEventListener('keydown', (e) => {
+    if ((e.key !== 'k' && e.key !== 'K') || !(e.metaKey || e.ctrlKey)) return;
+    const target = getTargetMega();
+    if (!target || !target.searchEl) return;
+    e.preventDefault();
+    target.setOpen(true, { focusSearch: true });
+  });
+
+  // Click extérieur : ferme le panneau ouvert.
+  document.addEventListener('click', (e) => {
+    const open = getOpenMega();
+    if (!open) return;
+    if (!open.wrap.contains(e.target)) open.setOpen(false);
+  });
+
+  // Patch 02 BONUS : onglet perd le focus (alt+tab, switch app) → ferme tous les panneaux.
+  // Évite que l'utilisateur revienne sur un méga-menu ouvert "zombie".
+  window.addEventListener('blur', () => {
+    MEGA_WRAPS.forEach((m) => {
+      if (m.wrap.classList.contains('is-open')) m.setOpen(false);
+    });
+  });
+
+  // Patch 05 : .mf-stat[data-source] — navigation vers la source (clic + Enter/Space).
+  // Délégation globale : un seul listener pour tous les panneaux.
+  document.addEventListener('click', (e) => {
+    const stat = e.target.closest('.mf-stat[data-source]');
+    if (!stat) return;
+    const href = stat.getAttribute('data-source');
+    if (!href) return;
+    window.location.href = href;
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Enter' && e.key !== ' ') return;
+    const stat = document.activeElement && document.activeElement.closest
+      ? document.activeElement.closest('.mf-stat[data-source]')
+      : null;
+    if (!stat) return;
+    e.preventDefault();
+    const href = stat.getAttribute('data-source');
+    if (href) window.location.href = href;
   });
 
   /* ---------- Highlight current page's pôle card inside the mega menu ---------- */

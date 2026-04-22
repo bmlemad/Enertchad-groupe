@@ -1,0 +1,42 @@
+# =============================================================================
+# EnerTchad Groupe — Cloudflare Wrangler Pages config
+# Créé : 22 avril 2026 (v1.6.0-signatures-eor-petrochimie)
+# =============================================================================
+#
+# Usage :
+#   npx wrangler pages deploy . --project-name=enertchad-groupe --branch=main
+#   npx wrangler pages deploy . --project-name=enertchad-groupe --branch=preview
+#
+# Ou avec GitHub auto-deploy branché (voir CLOUDFLARE_SETUP.md §"Prochaine étape").
+# =============================================================================
+
+name                = "enertchad-groupe"
+compatibility_date  = "2026-04-22"
+pages_build_output_dir = "."
+
+[vars]
+SITE_VERSION = "1.6.0"
+DEPLOYED_BY  = "wrangler-cli"
+
+# --- Fichiers à exclure du déploiement Pages ---
+# (Wrangler Pages n'a pas de .cfignore natif — utiliser .gitignore ou
+# pages_build_output_dir = "./dist" avec un step de build ; pour l'instant
+# le dossier `.` est publié tel quel. Les éléments ci-dessous doivent donc
+# rester hors du repo public ou dans un dossier ignoré au niveau Git.)
+#
+# Hors dépôt / .gitignore :
+#   - ACTIONS_CADASTRE/
+#   - ASSETS_IMAGES_HD/
+#   - PATCHES_MEGA_MENU/
+#   - PUSH_GUIDES/
+#   - MASTER_ACTIONS_TRACKER.md
+#   - site/ (snapshot historique)
+#   - enertchad-*.bundle
+
+# --- Pas de Worker / Functions pour l'instant ---
+# Ce projet est 100% statique. Si on ajoute des Pages Functions plus tard,
+# elles iront dans `./functions/` et Cloudflare les détectera automatiquement.
+
+# --- Preview branches ---
+# Cloudflare Pages crée des URL preview pour chaque branche ≠ main :
+# https://<branch>.enertchad-groupe.pages.dev

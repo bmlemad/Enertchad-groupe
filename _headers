@@ -1,11 +1,20 @@
+# =============================================================================
+# EnerTchad Groupe — _headers (Cloudflare Pages + Netlify compatible)
+# Révisé : 22 avril 2026 — post-v1.6.0 (signatures, EOR, pétrochimie)
+# =============================================================================
+
+# --- Security + baseline pour toutes les pages ---
 /*
   X-Frame-Options: SAMEORIGIN
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
-  Permissions-Policy: geolocation=(), camera=(), microphone=(), payment=()
+  Permissions-Policy: geolocation=(), camera=(), microphone=(), payment=(), usb=()
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: https:; connect-src 'self' https://plausible.io; frame-ancestors 'self'; base-uri 'self'; form-action 'self'
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://plausible.io; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: https:; connect-src 'self' https://plausible.io; frame-ancestors 'self'; base-uri 'self'; form-action 'self'; manifest-src 'self'; worker-src 'self'
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Resource-Policy: same-site
 
+# --- Assets statiques : cache 1 an immutable (hash dans le nom côté build) ---
 /assets/css/*
   Cache-Control: public, max-age=31536000, immutable
 
@@ -15,17 +24,21 @@
 /assets/img/*
   Cache-Control: public, max-age=31536000, immutable
 
+/assets/data/*
+  Cache-Control: public, max-age=3600
+
 /assets/fonts/*
   Cache-Control: public, max-age=31536000, immutable
   Access-Control-Allow-Origin: *
 
+# --- HTML : cache court + preload fonts latin sur toutes les pages ---
 /*.html
   Cache-Control: public, max-age=600, must-revalidate
   Link: </assets/fonts/Inter-latin.woff2>; rel=preload; as=font; type=font/woff2; crossorigin
   Link: </assets/fonts/SpaceGrotesk-latin.woff2>; rel=preload; as=font; type=font/woff2; crossorigin
 
-# Dashboard page: preload its dedicated vendor scripts (self-hosted UMD, fixed URLs).
-# Promoted to 103 Early Hints on Netlify/Vercel for earliest possible fetch.
+# --- Dashboard exécutif : preload vendor scripts (self-hosted UMD) ---
+# Sur Netlify/Vercel ces Link sont promus en 103 Early Hints.
 /dashboard-executif.html
   Cache-Control: public, max-age=600, must-revalidate
   Link: </assets/js/vendor/react.18.3.1.min.js>; rel=preload; as=script
@@ -33,3 +46,32 @@
   Link: </assets/js/vendor/recharts.2.12.7.min.js>; rel=preload; as=script
   Link: </assets/fonts/Inter-latin.woff2>; rel=preload; as=font; type=font/woff2; crossorigin
   Link: </assets/fonts/SpaceGrotesk-latin.woff2>; rel=preload; as=font; type=font/woff2; crossorigin
+
+# --- Service Worker : JAMAIS en cache (sinon rollout bloqué) ---
+/sw.js
+  Cache-Control: no-cache, no-store, must-revalidate
+  Service-Worker-Allowed: /
+
+# --- PWA manifest : revalider à chaque visite ---
+/manifest.json
+  Cache-Control: public, max-age=0, must-revalidate
+  Content-Type: application/manifest+json; charset=utf-8
+
+# --- Offline fallback : doit rester frais côté SW ---
+/offline.html
+  Cache-Control: public, max-age=3600, must-revalidate
+
+# --- 404 / 500 : pas de cache agressif ---
+/404.html
+  Cache-Control: public, max-age=300, must-revalidate
+
+/500.html
+  Cache-Control: public, max-age=300, must-revalidate
+
+# --- robots.txt / sitemap.xml : 1 h ---
+/robots.txt
+  Cache-Control: public, max-age=3600
+
+/sitemap.xml
+  Cache-Control: public, max-age=3600
+  Content-Type: application/xml; charset=utf-8

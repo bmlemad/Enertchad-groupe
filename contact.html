@@ -106,10 +106,10 @@
         <a href="/">Accueil</a>
         <a href="/groupe">Groupe</a>
         <div class="nav-dropdown nav-has-mega" data-mega>
-          <button class="nav-drop-trigger" type="button" aria-haspopup="true" aria-expanded="false">Pôles
+          <button class="nav-drop-trigger" type="button" aria-controls="mega-poles" aria-expanded="false">Pôles
             <svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2"/></svg>
           </button>
-          <div class="nav-mega" role="menu" aria-label="Nos pôles d'activité">
+          <div class="nav-mega" id="mega-poles" aria-label="Nos pôles d'activité">
             <div class="nav-mega-inner">
               <div class="mega-search">
                 <label class="mega-search-label">
@@ -121,7 +121,7 @@
               <div class="nav-mega-body" data-mega-grid>
                 <div class="mega-col">
                   <span class="mega-col-head">Oil &amp; Gas · chaîne intégrée</span>
-                  <a href="/operations/amont" class="mega-pole" role="menuitem" data-pole="amont" data-search="amont exploration production bassins sismique e&amp;p">
+                  <a href="/operations/amont" class="mega-pole" data-pole="amont" data-search="amont exploration production bassins sismique e&amp;p">
                     <span class="mp-icon" aria-hidden="true">01</span>
                     <div class="mp-body">
                       <strong>Amont · E&amp;P</strong>
@@ -129,7 +129,7 @@
                       <em>144 kb/j · 5 bassins · sismique 3D</em>
                     </div>
                   </a>
-                  <a href="/operations/intermediaire" class="mega-pole" role="menuitem" data-pole="inter" data-search="pipeline stockage scada doba kribi transport intermédiaire">
+                  <a href="/operations/intermediaire" class="mega-pole" data-pole="inter" data-search="pipeline stockage scada doba kribi transport intermédiaire">
                     <span class="mp-icon" aria-hidden="true">02</span>
                     <div class="mp-body">
                       <strong>Intermédiaire</strong>
@@ -137,7 +137,7 @@
                       <em>Doba–Kribi · 1 070 km · 24/7</em>
                     </div>
                   </a>
-                  <a href="/operations/aval" class="mega-pole" role="menuitem" data-pole="aval" data-search="raffinage lubrifiants gpl distribution stations djarmaya aval">
+                  <a href="/operations/aval" class="mega-pole" data-pole="aval" data-search="raffinage lubrifiants gpl distribution stations djarmaya aval">
                     <span class="mp-icon" aria-hidden="true">03</span>
                     <div class="mp-body">
                       <strong>Aval · Distribution</strong>
@@ -145,7 +145,7 @@
                       <em>Djarmaya · 45 stations · 6 villes</em>
                     </div>
                   </a>
-                  <a href="/operations/services" class="mega-pole" role="menuitem" data-pole="svc" data-search="services oilfield ingénierie digital workover hse formation">
+                  <a href="/operations/services" class="mega-pole" data-pole="svc" data-search="services oilfield ingénierie digital workover hse formation">
                     <span class="mp-icon" aria-hidden="true">04</span>
                     <div class="mp-body">
                       <strong>Services</strong>
@@ -156,7 +156,7 @@
                 </div>
                 <div class="mega-col">
                   <span class="mega-col-head">Énergies &amp; Digital</span>
-                  <a href="/energies/" class="mega-pole" role="menuitem" data-pole="energies" data-search="solaire micro-grids hydrogène vert transition énergétique village">
+                  <a href="/energies/" class="mega-pole" data-pole="energies" data-search="solaire micro-grids hydrogène vert transition énergétique village">
                     <span class="mp-icon" aria-hidden="true">05</span>
                     <div class="mp-body">
                       <strong>Énergies · Transition</strong>
@@ -164,7 +164,7 @@
                       <em>125 MW · 28 villages · 624 GWh</em>
                     </div>
                   </a>
-                  <a href="/technologies/" class="mega-pole" role="menuitem" data-pole="technologies" data-search="scada jumeaux numériques digital twin ia cyber capteurs enertech">
+                  <a href="/technologies/" class="mega-pole" data-pole="technologies" data-search="scada jumeaux numériques digital twin ia cyber capteurs enertech">
                     <span class="mp-icon" aria-hidden="true">06</span>
                     <div class="mp-body">
                       <strong>Technologies · EnerTech</strong>
@@ -172,7 +172,7 @@
                       <em>12 840 capteurs · 99,97 % uptime</em>
                     </div>
                   </a>
-                  <a href="/maps" class="mega-map" role="menuitem" data-search="carte interactive implantations bassins infrastructures">
+                  <a href="/maps" class="mega-map" data-search="carte interactive implantations bassins infrastructures">
                     <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.2a2.2 2.2 0 1 1 0-4.4 2.2 2.2 0 0 1 0 4.4z" fill="currentColor"/></svg>
                     <div>
                       <strong>Carte interactive</strong>
@@ -206,6 +206,7 @@
                 <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 20l-3.5-3.5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
                 <span>Aucun résultat. Essayez <em>pipeline</em>, <em>solaire</em>, <em>SCADA</em>…</span>
               </div>
+            <div role="status" aria-live="polite" aria-atomic="true" class="sr-only" data-mega-count></div>
             </div>
           </div>
         </div>
@@ -461,6 +462,34 @@
   </div>
 </section>
 
+<!-- Réseaux sociaux officiels -->
+<section id="reseaux" class="page-section" aria-labelledby="reseaux-title" style="background: var(--cream-2);">
+  <div class="container">
+    <span class="kicker">Réseaux sociaux officiels</span>
+    <h2 id="reseaux-title">Suivez-nous <span class="gold">en temps réel.</span></h2>
+    <p class="lead">Canaux officiels EnerTchad Groupe pour l'information corporate, les communiqués temps réel et les opportunités talents. Seuls les comptes listés ci-dessous sont certifiés par la Direction de la Communication. Méfiez-vous des comptes non officiels relayant de fausses informations.</p>
+    <div class="grid grid-4" style="margin-top: 32px;">
+      <a href="https://www.linkedin.com/company/enertchad-groupe" class="feature-card reveal" rel="noopener" target="_blank">
+        <h4>LinkedIn <span class="gold">↗</span></h4>
+        <p>@enertchad-groupe · 18&nbsp;400 abonnés · actualités corporate, talents, publications ESG.</p>
+      </a>
+      <a href="https://twitter.com/enertchad" class="feature-card reveal" rel="noopener" target="_blank" style="--delay:.08s;">
+        <h4>X (Twitter) <span class="gold">↗</span></h4>
+        <p>@enertchad · 6&nbsp;200 abonnés · annonces temps réel, comptes résultats, presse.</p>
+      </a>
+      <a href="https://www.youtube.com/@enertchad" class="feature-card reveal" rel="noopener" target="_blank" style="--delay:.16s;">
+        <h4>YouTube <span class="gold">↗</span></h4>
+        <p>@enertchad · reportages, webcasts analystes, portraits de collaborateurs.</p>
+      </a>
+      <a href="https://www.facebook.com/enertchad" class="feature-card reveal" rel="noopener" target="_blank" style="--delay:.24s;">
+        <h4>Facebook <span class="gold">↗</span></h4>
+        <p>@enertchad · communauté locale · inaugurations · initiatives communautés hôtes.</p>
+      </a>
+    </div>
+    <p style="margin-top: 28px; font-size: .88rem; color: var(--ink-2);">Signaler un compte usurpateur : <a href="mailto:cyber@enertchad.td" style="color:var(--gold);">cyber@enertchad.td</a> · Contact presse officiel : <a href="mailto:presse@enertchad.td" style="color:var(--gold);">presse@enertchad.td</a>.</p>
+  </div>
+</section>
+
 <!-- FAQ mini -->
 <section class="dark">
   <div class="container">
@@ -497,6 +526,10 @@
       <div class="foot-brand">
         <div class="brand"><span class="brand-mark">E</span><span>Ener<span class="accent">Tchad</span> Groupe</span></div>
         <p>Société Anonyme à Conseil d'Administration · OHADA / AUSCGIE. Siège social : N'Djamena, République du Tchad.</p>
+        <div class="foot-brand-signatures" aria-label="Signatures EnerTchad Groupe">
+          <p class="fbs-main">Unité <em>·</em> Innovation <em>·</em> Durabilité</p>
+          <span class="fbs-sub">Accès aux Énergies</span>
+        </div>
         <p style="font-size:.82rem; margin-top:16px;">RCCM : N’DJ/RC/2026-A-0001<br/>Capital : 10 000 000 FCFA</p>
       </div>
       <div><h5>Opérations</h5><ul>

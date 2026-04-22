@@ -112,6 +112,19 @@ section.dark [tabindex]:focus-visible,
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
 }
 
+/* Patch 03 : utilitaire .sr-only pour regions aria-live invisibles (screen readers only) */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
 /* ---------- Tokens ---------- */
 :root {
   /* Brand */
@@ -1995,7 +2008,8 @@ footer .foot-bottom .legal a:hover { color: var(--gold); }
 .mp-body span {
   display: block;
   font-size: .82rem;
-  color: rgba(255, 255, 255, .62);
+  /* Patch 03 : contrast WCAG 2.1 AA (ratio 4.5:1 sur fond obsidienne) */
+  color: rgba(255, 255, 255, .78);
   line-height: 1.45;
   margin-bottom: 5px;
 }
@@ -2071,6 +2085,7 @@ footer .foot-bottom .legal a:hover { color: var(--gold); }
   margin-bottom: 20px;
 }
 .mf-stat {
+  position: relative;
   padding: 10px 12px;
   border-radius: 8px;
   background: rgba(0, 0, 0, .25);
@@ -2088,8 +2103,39 @@ footer .foot-bottom .legal a:hover { color: var(--gold); }
 .mf-stat span {
   display: block;
   font-size: .72rem;
-  color: rgba(255, 255, 255, .6);
+  /* Patch 03 : contrast WCAG 2.1 AA sur fond obsidien */
+  color: rgba(255, 255, 255, .75);
   letter-spacing: .02em;
+}
+
+/* Patch 05 : indicateur visuel de sourcing cliquable (ancre ou PDF) */
+.mf-stat[data-source]::after {
+  content: "↗";
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  font-size: .72rem;
+  line-height: 1;
+  color: rgba(217, 168, 79, .6);
+  transition: color .18s ease, transform .18s ease;
+  pointer-events: none;
+}
+.mf-stat[data-source]:hover::after,
+.mf-stat[data-source]:focus-within::after {
+  color: var(--gold-light);
+  transform: translate(1px, -1px);
+}
+/* Rendre la mf-stat cliquable quand data-source présent (wrap JS side) */
+.mf-stat[data-source] {
+  cursor: pointer;
+}
+.mf-stat[data-source]:hover {
+  border-color: rgba(217, 168, 79, .2);
+  background: rgba(0, 0, 0, .35);
+}
+.mf-stat[data-source]:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
 }
 .mf-ctas { display: flex; flex-direction: column; gap: 8px; }
 .nav-new-badge {
@@ -2358,6 +2404,71 @@ footer .foot-bottom .legal a:hover { color: var(--gold); }
   color: rgba(255, 255, 255, .65);
   margin: 16px 0 20px;
   max-width: 380px;
+}
+
+/* EnerTchad — signatures brand (slogans officiels)
+   Slogan principal : « Unité — Innovation — Durabilité »
+   Slogan secondaire : « Accès aux Énergies » */
+.foot-brand-signatures {
+  margin: 18px 0 22px;
+  padding: 14px 16px;
+  border-left: 2px solid var(--gold, #D9A84F);
+  background: rgba(255, 255, 255, .03);
+  border-radius: 0 6px 6px 0;
+  max-width: 380px;
+}
+.foot-brand-signatures .fbs-main {
+  display: block;
+  font-family: "Space Grotesk", Inter, system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: .02em;
+  color: #fff;
+  margin: 0;
+  line-height: 1.35;
+}
+.foot-brand-signatures .fbs-main em {
+  font-style: normal;
+  color: var(--gold, #D9A84F);
+  font-weight: 700;
+}
+.foot-brand-signatures .fbs-sub {
+  display: block;
+  font-family: "Space Grotesk", Inter, system-ui, sans-serif;
+  font-weight: 500;
+  font-size: .82rem;
+  text-transform: uppercase;
+  letter-spacing: .22em;
+  color: rgba(255, 255, 255, .75);
+  margin: 8px 0 0;
+}
+.foot-brand-signatures .fbs-sub::before {
+  content: "› ";
+  color: var(--gold, #D9A84F);
+  font-weight: 700;
+  margin-right: 2px;
+}
+
+/* Hero variant pour mise en avant du slogan secondaire */
+.hero-brand-signature {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Space Grotesk", Inter, system-ui, sans-serif;
+  font-size: .76rem;
+  font-weight: 700;
+  letter-spacing: .26em;
+  text-transform: uppercase;
+  color: var(--gold, #D9A84F);
+  margin-bottom: 14px;
+}
+.hero-brand-signature::before {
+  content: "";
+  display: inline-block;
+  width: 28px;
+  height: 1px;
+  background: var(--gold, #D9A84F);
+  opacity: .9;
 }
 .foot-legal-data {
   margin: 0 0 22px;
@@ -2729,16 +2840,22 @@ footer .foot-bottom .legal a:hover { color: var(--gold); }
   outline: 0;
   min-width: 0;
 }
-.mega-search-label input::placeholder { color: rgba(255, 255, 255, 0.42); }
+/* Patch 03 : placeholder contraste WCAG 2.1 AA */
+.mega-search-label input::placeholder { color: rgba(255, 255, 255, 0.58); }
 .mega-kbd {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 2px;
   padding: 3px 7px;
+  /* Patch 03 : WCAG 2.5.5 enhanced — kbd cible 24×24 (et target 32px min en desktop) */
+  min-width: 32px;
+  min-height: 24px;
   border-radius: 5px;
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.12);
-  color: rgba(255, 255, 255, 0.55);
+  /* Patch 03 : contrast 4.5:1 sur obsidienne */
+  color: rgba(255, 255, 255, 0.72);
   font-family: var(--font-display, inherit);
   font-size: .7rem;
   font-weight: 600;
@@ -2912,6 +3029,14 @@ footer .foot-bottom .legal a:hover { color: var(--gold); }
   .mega-kbd { display: none; }
   .mega-feature { padding: 20px; }
   .mf-stats { gap: 10px; }
+
+  /* Patch 03 : WCAG 2.5.5 Target Size (niveau AAA) — mobile touch 44×44 min */
+  .mega-pole,
+  .mega-map {
+    min-height: 44px;
+    padding: 14px 16px;
+  }
+  .mega-search-label { min-height: 44px; }
 
   /* Disable stagger on mobile (keep it snappy) */
   .nav-has-mega.is-open .mega-pole,
