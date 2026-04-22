@@ -113,6 +113,14 @@ section.dark [tabindex]:focus-visible,
 }
 
 /* Patch 03 : utilitaire .sr-only pour regions aria-live invisibles (screen readers only) */
+/* v1.9.0 — Alias d'ancre invisible pour liens de fragments (nav / footer) */
+.anchor-alias {
+  position: absolute;
+  top: -96px; /* offset pour compenser la nav sticky à l'arrivée */
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+}
 .sr-only {
   position: absolute !important;
   width: 1px !important;
@@ -1946,6 +1954,33 @@ footer .foot-bottom .legal a:hover { color: var(--gold); }
 .lang-menu a.is-active { background: rgba(217, 168, 79, .14); color: var(--gold); }
 .lang-menu a .lm-flag { font-size: 1rem; }
 
+/* v1.9.0 — EN/AR locked : "Bientôt" state (P1 #5) */
+.lang-menu .lm-disabled {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  border-radius: 6px;
+  color: rgba(255, 255, 255, .42);
+  font-size: .82rem;
+  font-weight: 500;
+  cursor: not-allowed;
+  opacity: .72;
+}
+.lang-menu .lm-disabled:hover { background: transparent; }
+.lang-menu .lm-soon {
+  font-size: .66rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: rgba(217, 168, 79, .72);
+  background: rgba(217, 168, 79, .12);
+  border: 1px solid rgba(217, 168, 79, .24);
+  padding: 2px 6px;
+  border-radius: 10px;
+  margin-left: 10px;
+}
+
 /* Nav wrap + brand lockup */
 .nav-wrap {
   background: rgba(8, 14, 26, .88);
@@ -2056,6 +2091,8 @@ footer .foot-bottom .legal a:hover { color: var(--gold); }
   transition: width .08s linear;
   box-shadow: 0 0 8px rgba(217, 168, 79, .6);
 }
+/* v1.9.0 — P2 #10 : Masquer la progress bar sur les pages utilitaires courtes */
+body.page-legal .nav-progress { display: none; }
 
 /* ============ FULL-WIDTH MEGA MENU ============ */
 .nav-has-mega { position: static; }

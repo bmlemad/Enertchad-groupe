@@ -295,12 +295,43 @@
   onScroll();
 
   /* ---------- Mobile nav toggle ---------- */
+  // v1.9.0 — P2 #9 : focus trap dans #navLinks quand ouvert (mobile drawer a11y)
   const toggle = document.querySelector('.nav-toggle');
   const links = document.querySelector('.nav-links');
   if (toggle && links) {
+    const FOCUSABLE_SEL = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"]), input:not([disabled])';
+    const getFocusables = () => Array.from(links.querySelectorAll(FOCUSABLE_SEL))
+      .filter((el) => !el.hasAttribute('aria-hidden') && el.offsetParent !== null);
+
+    const trapHandler = (e) => {
+      if (e.key !== 'Tab' || !links.classList.contains('open')) return;
+      const items = getFocusables();
+      if (!items.length) return;
+      const first = items[0];
+      const last = items[items.length - 1];
+      const active = document.activeElement;
+      if (e.shiftKey && active === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && active === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    };
+
     const setNavOpen = (open) => {
       links.classList.toggle('open', open);
       toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if (open) {
+        // Focus le premier élément tabulable + armer le piège
+        const items = getFocusables();
+        if (items.length) {
+          try { items[0].focus({ preventScroll: true }); } catch (_) { items[0].focus(); }
+        }
+        document.addEventListener('keydown', trapHandler);
+      } else {
+        document.removeEventListener('keydown', trapHandler);
+      }
     };
     toggle.addEventListener('click', () => setNavOpen(!links.classList.contains('open')));
     // Close on Esc, and close when a nav link is activated (mobile UX)

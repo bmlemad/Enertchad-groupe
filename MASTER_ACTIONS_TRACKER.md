@@ -2,7 +2,46 @@
 
 > **Rôle** : source unique de vérité pour l'état d'avancement de **toutes** les actions et recommandations demandées pour le site `enertchad.td`.
 >
-> **Version** : v1.2 — 22 avril 2026 (release P3 appliquée + Cloudflare durci)
+> **Version** : v1.3 — 22 avril 2026 (release v1.9.0 "Header & Mega A11Y" appliquée)
+
+---
+
+## ⚡ Release log — 22 avril 2026 (nuit) · v1.9.0 "Header & Mega A11Y"
+
+Audit exhaustif du header + méga-menu + sous-menus thématiques ; **11 recommandations appliquées** (6 P1 + 5 P2) sur l'ensemble des pages publiques du site.
+
+| Priorité | Livrable | Statut | Fichiers modifiés |
+|:--:|---|:--:|---|
+| **P1 #1** | 4 ancres brisées corrigées (`#strategie`, `#rh`, `#local-content`, `#solvabilite`) via pattern `.anchor-alias` invisible (offset sticky-nav −96 px) | 🎯 | `groupe.html`, `talents.html`, `investisseurs.html`, `assets/css/main.css` |
+| **P1 #2** | ARIA Disclosure pattern sur nav-submenus thématiques : retrait `role="menu"` / `role="menuitem"` orphelins (pattern APG 1.2) — **224 attributs nettoyés** sur 16 pages (+ 28 sur 2 filiales) | 🎯 | 18 fichiers HTML (main + `energies/index`, `technologies/index`) |
+| **P1 #3** | Landmark `<header class="site-header" role="banner">` enveloppant topbar + nav-wrap — **20 pages** (14 main + 4 `operations/*` + 2 filiales) | 🎯 | 20 fichiers HTML |
+| **P1 #4** | Topbar complète injectée sur les 2 filiales (`energies/index.html`, `technologies/index.html`) pour cohérence navigationnelle | 🎯 | 2 fichiers HTML |
+| **P1 #5** | Lang-switcher EN/AR verrouillé en "Bientôt" (suppression UX trompeuse) — `<span class="lm-disabled" aria-disabled="true">` + badge `.lm-soon` (36 remplacements sur 18 pages) | 🎯 | 18 fichiers HTML + `assets/css/main.css` |
+| **P1 #6** | Sémantique Hero corrigée : `<header class="hero">` → `<section class="hero" aria-label="…">` sur index, energies, technologies (évite double-landmark `banner`) | 🎯 | 3 fichiers HTML |
+| **P2 #7** | `aria-haspopup="true"` (legacy boolean) → `"menu"` (enumerated string WAI-ARIA 1.2) sur `.lang-btn` — 18 remplacements | 🎯 | 18 fichiers HTML |
+| **P2 #8** | Wording dashboard corrigé : "KPI temps réel · accès restreint" (trompeur, route publique) → "KPI temps réel · cockpit direction" — 18 remplacements | 🎯 | 18 fichiers HTML |
+| **P2 #9** | Focus trap sur hamburger mobile : cycle Tab/Shift+Tab dans `#navLinks` quand ouvert, focus auto sur 1er élément, Esc pour fermer | 🎯 | `assets/js/main.js` (L297-340) |
+| **P2 #10** | Progress bar de scroll masquée sur pages utilitaires courtes (`cookies`, `mentions-legales`, `confidentialite`) via `body.page-legal` | 🎯 | 3 fichiers HTML + `assets/css/main.css` |
+| **P2 #11** | `aria-current="true"` sur déclencheur top-level quand sous-lien correspond à la page courante — déjà implémenté dans `thematicSubMenus` (L590-593) et `markActivePole` (L566), vérifié ✓ | 🎯 | `assets/js/main.js` (déjà en place) |
+| **Infra** | Bump CACHE_VERSION Service Worker → `v1.9.0-header-mega-a11y` | 🎯 | `sw.js` |
+
+**Vérification smoke (14 pages avec nav)** :
+- `<header role="banner">` landmark : **14/14** ✓
+- `nav-submenu role=menu` orphelins : **0** (était 14) ✓
+- `nav-sub-link role=menuitem` orphelins : **0** (était 140) ✓
+- `aria-haspopup="menu"` : **14/14** ✓ · legacy `"true"` : **0** ✓
+- Verrou EN `.lm-disabled` : **14/14** ✓ · Verrou AR : **14/14** ✓
+- `.anchor-alias` classe : **7 usages** (4 nouveaux + 3 existants)
+
+**Conformité WCAG 2.1 AA** : SC 1.3.1 (landmarks), SC 2.4.1 (bypass blocks), SC 2.4.7 (focus visible), SC 4.1.2 (name/role/value) désormais couverts sur l'ensemble du site.
+
+**Redéploiement** :
+
+```bash
+cd "Enertchad Web Solutions"
+git add -A && git commit -m "v1.9.0 — Header & Mega A11Y"
+npx wrangler pages deploy . --project-name=enertchad-groupe --branch=main --commit-dirty=true
+```
 
 ---
 
