@@ -14,3 +14,6 @@ Thumbs.db
 # Python bytecode (scripts/)
 __pycache__/
 *.pyc
+
+# HD image originals (re-downloadable from CREDITS.md)
+assets/images/_raw/

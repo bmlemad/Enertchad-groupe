@@ -395,6 +395,30 @@ section { padding: var(--section-y) 0; position: relative; }
 }
 .hero-sub h1 { font-size: clamp(2.2rem, 5vw, 4rem); }
 
+/* ---------- Hero background image (optional, per-page via --hero-bg) ----------
+   Subtle photographic backdrop layered behind the brand gradient. Set via inline
+   style on the hero element : style="--hero-bg: url('/assets/images/foo.jpg');"
+   Opacity tuned to preserve contrast for hero copy (AA @ .88/22). */
+.hero[style*="--hero-bg"]::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--hero-bg);
+  background-size: cover;
+  background-position: var(--hero-bg-pos, center);
+  opacity: var(--hero-bg-opacity, 0.22);
+  z-index: 0;
+  pointer-events: none;
+}
+.hero[style*="--hero-bg"] .hero-inner,
+.hero[style*="--hero-bg"] .container { position: relative; z-index: 3; }
+.hero[style*="--hero-bg"]::after { z-index: 1; }
+@media (prefers-reduced-motion: no-preference) {
+  .hero[style*="--hero-bg"]::before {
+    transition: opacity .6s ease;
+  }
+}
+
 /* ---------- KPI Board ---------- */
 .kpi-board {
   background: var(--navy-2);
