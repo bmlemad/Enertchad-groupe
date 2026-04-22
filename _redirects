@@ -14,16 +14,16 @@
 # =============================================================================
 
 # --- Legacy path redirects (anciennes URLs EN → FR) ---
-/about            /groupe.html             301
-/about.html       /groupe.html             301
-/investors        /investisseurs.html      301
-/careers          /talents.html            301
-/sustainability   /durabilite.html         301
-/news             /actualites.html         301
-/upstream         /operations/amont.html         301
-/midstream        /operations/intermediaire.html 301
-/downstream       /operations/aval.html          301
-/services         /operations/services.html      301
+/about            /groupe             301
+/about.html       /groupe             301
+/investors        /investisseurs      301
+/careers          /talents            301
+/sustainability   /durabilite         301
+/news             /actualites         301
+/upstream         /operations/amont         301
+/midstream        /operations/intermediaire 301
+/downstream       /operations/aval          301
+/services         /operations/services      301
 
 # --- Legacy PDF aliases (Sprint A méga-menu — docs renommés) ---
 /documents/rapport-esg-2025.pdf  /documents/EnerTchad-Rapport-Durabilite-2025.pdf  301
