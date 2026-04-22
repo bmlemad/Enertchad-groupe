@@ -2,7 +2,34 @@
 
 > **Rôle** : source unique de vérité pour l'état d'avancement de **toutes** les actions et recommandations demandées pour le site `enertchad.td`.
 >
-> **Version** : v1.4 — 22 avril 2026 (release v1.9.1 "Canonicals clean-URL" appliquée)
+> **Version** : v1.5 — 22 avril 2026 (release v1.9.2 "Internal hrefs clean-URL" appliquée)
+
+---
+
+## ⚡ Release log — 22 avril 2026 (nuit, 22h35) · v1.9.2 "Internal hrefs clean-URL"
+
+Optimisation réseau post-v1.9.1 : toutes les URLs internes pointaient vers `/page.html` alors que Cloudflare Pages sert les URLs canoniques **sans** `.html` (308 → `/page`). Chaque clic interne payait donc un round-trip de redirection. Alignement des `href` internes sur la forme clean.
+
+| Item | Livrable | Statut | Impact |
+|:--:|---|:--:|---|
+| **H1** | 20 pages HTML : `href="…/foo.html"` → `href="…/foo"` (site public) | 🎯 | ~600 liens internes réécrits |
+| **H2** | `404.html` + `offline.html` : nav interne cleanée | 🎯 | +15 liens |
+| **H3** | `energies/index.html` + `technologies/index.html` : absolute URLs `https://www.enertchad.td/*.html` aussi | 🎯 | +19 liens |
+| **H4** | `assets/partials/footer-premium.html` : footer partagé aligné | 🎯 | +28 liens |
+| **H5** | `sitemap.xml` : 17 `<loc>` URLs en clean-URL — Google indexera directement l'URL canonique | 🎯 | SEO |
+| **H6** | `_redirects` : 10 cibles de redirections legacy 301 (`/about → /groupe.html`) pointent désormais vers clean URLs (pas de double-hop) | 🎯 | Redirect chain |
+| **Infra** | Bump CACHE_VERSION Service Worker → `v1.9.2-internal-hrefs-clean` | 🎯 | — |
+
+**Audit live post-déploiement** (31 liens internes testés) :
+| Code | Avant v1.9.2 | Après v1.9.2 |
+|---|---|---|
+| 200 | 28 | **31** ✓ |
+| 308 | 18 | **0** ✓ |
+| 404 | 0 | 0 ✓ |
+
+Plus aucun 308 dans la navigation interne. Seul `<link rel="canonical" href="…/404.html">` subsiste dans `404.html` lui-même (intentionnel, page utilitaire non-indexable servie en `.html`).
+
+**Commit** : `22ca6e0` (27 fichiers, +613/−613 lignes) · **Deploy** : `https://416cd734.enertchad-groupe.pages.dev`
 
 ---
 
