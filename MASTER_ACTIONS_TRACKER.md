@@ -2,7 +2,36 @@
 
 > **Rôle** : source unique de vérité pour l'état d'avancement de **toutes** les actions et recommandations demandées pour le site `enertchad.td`.
 >
-> **Version** : v1.3 — 22 avril 2026 (release v1.9.0 "Header & Mega A11Y" appliquée)
+> **Version** : v1.4 — 22 avril 2026 (release v1.9.1 "Canonicals clean-URL" appliquée)
+
+---
+
+## ⚡ Release log — 22 avril 2026 (nuit, 22h12) · v1.9.1 "Canonicals clean-URL"
+
+Post-audit v1.9.0 : un seul point mineur détecté — 17 balises `<link rel="canonical">` pointaient vers `…/page.html` alors que Cloudflare Pages sert les URLs canoniques **sans** `.html` (308 → `/page`). Alignement canonical déclaré ↔ URL servie pour cohérence SEO.
+
+| Item | Livrable | Statut | Fichiers modifiés |
+|:--:|---|:--:|---|
+| **C1** | Strip `.html` de `<link rel="canonical">` sur 17 pages (hors `404.html`, page utilitaire non-indexable) | 🎯 | 17 HTML |
+| **C2** | Strip `.html` de `<meta property="og:url">` sur 17 pages (alignement Open Graph) | 🎯 | 17 HTML |
+| **Infra** | Bump CACHE_VERSION Service Worker → `v1.9.1-canonicals-clean` | 🎯 | `sw.js` |
+
+**Audit post-déploiement v1.9.0** (resolver `urljoin` corrigé) :
+- Statut HTTP : **22/22 pages 200** ✓
+- A11Y landmarks : `banner=1, main=1, nav=1, footer=1, contentinfo=1` sur 8 pages échantillon ✓
+- SEO meta : `title + description + canonical + og:title` complets ✓
+- H1 unique par page ✓
+- `<img>` sans alt : **0** · `<button>` sans nom accessible : **0** · `<input>` sans label : **0** ✓
+- 404 réels : **0** (le "404 services.html" du premier scan était un faux positif de resolver naïf)
+- 308 Cloudflare `.html` → URL clean : **18** (comportement normal, éliminable en utilisant les URLs clean dans les `href` internes — optimisation P3 future)
+
+**Smoke test live v1.9.1** :
+- `/groupe` : canonical `https://www.enertchad.td/groupe` ✓ · og:url `…/groupe` ✓
+- `/investisseurs` : canonical `…/investisseurs` ✓ · og:url `…/investisseurs` ✓
+- `/talents`, `/contact`, `/operations/amont` : idem ✓
+- SW version live : `enertchad-v1.9.1-canonicals-clean` ✓
+
+**Commit** : `83a5ce5` (18 fichiers, +35/−35) · **Deploy** : `https://7db7e772.enertchad-groupe.pages.dev`
 
 ---
 
