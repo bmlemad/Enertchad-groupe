@@ -3818,3 +3818,53 @@ footer .foot-bottom .legal a:hover { color: var(--gold); }
   .pk-card, .pc-card, .po-card { transition: none; }
   .pk-card:hover, .pc-card:hover, .po-card:hover { transform: none; box-shadow: none; }
 }
+
+/* ============================================================
+   LEAD-GEN FORMS · Batch 4
+   Honeypot (.hp-field) + conditional fields (.form-cond)
+   ============================================================ */
+.hp-field {
+  position: absolute !important;
+  left: -9999px !important;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.hp-field label,
+.hp-field input { visibility: hidden; }
+
+.form-cond[hidden] { display: none !important; }
+.form-cond {
+  display: block;
+  margin: 0 0 8px;
+  padding: 18px 20px 6px;
+  background: rgba(217, 168, 79, 0.06);
+  border: 1px solid rgba(217, 168, 79, 0.28);
+  border-radius: 12px;
+  animation: formCondReveal .28s ease-out;
+}
+.form-cond .hint a { color: var(--gold-deep); }
+.form-cond::before {
+  content: "";
+  display: block;
+  width: 28px;
+  height: 2px;
+  background: var(--gold);
+  margin: 0 0 10px;
+  border-radius: 2px;
+}
+@keyframes formCondReveal {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .form-cond { animation: none; }
+}
+.form-submit[disabled] {
+  opacity: .6;
+  cursor: progress;
+  transform: none !important;
+}

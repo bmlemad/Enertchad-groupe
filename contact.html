@@ -331,7 +331,26 @@
       </div>
 
       <div class="reveal" style="--delay:.1s;">
-        <form class="form-wrap" onsubmit="event.preventDefault(); this.querySelector('.form-success').classList.add('show'); this.querySelector('.form-failure').classList.remove('show'); this.reset();" novalidate>
+        <!--
+          FORMULAIRE DE CONTACT ENRICHI · Batch 4 Lead-gen
+          - Honeypot (.hp-field) invisible anti-spam
+          - Timing anti-bot (JS side, soumission <2s = rejet)
+          - Champs conditionnels selon <select name="type">
+          - Submission hook data-endpoint : configurer pour
+            Formspree / Getform / Worker endpoint en prod.
+          - Fallback : envoi mailto: si endpoint absent.
+        -->
+        <form class="form-wrap"
+              id="contact-form"
+              data-endpoint=""
+              method="post"
+              novalidate>
+          <!-- Honeypot : champ caché piège à bots -->
+          <div class="hp-field" aria-hidden="true">
+            <label for="cf-website">Website (laisser vide)</label>
+            <input type="text" id="cf-website" name="website" tabindex="-1" autocomplete="off" />
+          </div>
+
           <div class="form-row">
             <div class="form-group">
               <label for="cf-fn">Prénom<span class="req">*</span></label>
@@ -376,6 +395,101 @@
             </div>
           </div>
 
+          <!-- Bloc conditionnel : Relations investisseurs -->
+          <div class="form-cond" data-show-if="Relations investisseurs" hidden>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="cf-ir-type">Type d'investisseur</label>
+                <select id="cf-ir-type" name="investorType">
+                  <option value="">—</option>
+                  <option>Institutionnel · fonds</option>
+                  <option>Analyste sell-side / buy-side</option>
+                  <option>Presse financière</option>
+                  <option>Agence de notation</option>
+                  <option>Actionnaire de référence</option>
+                  <option>Individuel qualifié</option>
+                  <option>Autre</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="cf-ir-aum">AUM / portefeuille (optionnel)</label>
+                <input type="text" id="cf-ir-aum" name="investorAUM" placeholder="Ex. 500 M€ · énergies émergentes" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Bloc conditionnel : Recrutement / Talents -->
+          <div class="form-cond" data-show-if="Recrutement" hidden>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="cf-hr-role">Poste visé / domaine d'expertise</label>
+                <input type="text" id="cf-hr-role" name="targetRole" placeholder="Ex. Ingénieur réservoir · E&amp;P · 8 ans exp." />
+              </div>
+              <div class="form-group">
+                <label for="cf-hr-lvl">Niveau d'expérience</label>
+                <select id="cf-hr-lvl" name="experienceLevel">
+                  <option value="">—</option>
+                  <option>Stage / alternance</option>
+                  <option>Junior · 0-3 ans</option>
+                  <option>Confirmé · 3-8 ans</option>
+                  <option>Senior · 8-15 ans</option>
+                  <option>Expert · 15+ ans</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="cf-hr-cv">Lien CV / LinkedIn (optionnel)</label>
+              <input type="url" id="cf-hr-cv" name="cvLink" placeholder="https://linkedin.com/in/votre-profil" />
+              <div class="hint">N'attachez pas de pièce jointe ici. Envoyez votre CV à <strong>recrutement@enertchad.td</strong> après validation du contact.</div>
+            </div>
+          </div>
+
+          <!-- Bloc conditionnel : Achats / fournisseur -->
+          <div class="form-cond" data-show-if="Achats / fournisseur" hidden>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="cf-sp-domain">Domaine fournisseur</label>
+                <select id="cf-sp-domain" name="supplierDomain">
+                  <option value="">—</option>
+                  <option>Forage · well services</option>
+                  <option>Équipements pétroliers</option>
+                  <option>Logistique · transport</option>
+                  <option>IT / SCADA / télécoms</option>
+                  <option>HSE / environnement</option>
+                  <option>Catering · base vie</option>
+                  <option>Ingénierie · EPC</option>
+                  <option>Services généraux · facility</option>
+                  <option>Autre</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="cf-sp-country">Pays d'origine</label>
+                <select id="cf-sp-country" name="supplierCountry">
+                  <option value="">—</option>
+                  <option>Tchad</option>
+                  <option>Cameroun</option>
+                  <option>Autre CEMAC</option>
+                  <option>International</option>
+                </select>
+              </div>
+            </div>
+            <div class="hint">Privilégiez les entreprises locales et CEMAC. Voir notre <a href="/operations/services.html#local-content" style="color: var(--gold-deep);">politique de contenu local</a>.</div>
+          </div>
+
+          <!-- Bloc conditionnel : Presse & médias -->
+          <div class="form-cond" data-show-if="Presse &amp; médias" hidden>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="cf-pr-outlet">Média / publication</label>
+                <input type="text" id="cf-pr-outlet" name="pressOutlet" placeholder="Ex. Jeune Afrique · Africa Oil &amp; Power" />
+              </div>
+              <div class="form-group">
+                <label for="cf-pr-deadline">Deadline éditoriale</label>
+                <input type="text" id="cf-pr-deadline" name="pressDeadline" placeholder="Ex. 15/05/2026" />
+              </div>
+            </div>
+          </div>
+
           <div class="form-group">
             <label for="cf-sb">Sujet<span class="req">*</span></label>
             <input type="text" id="cf-sb" name="subject" required placeholder="En quelques mots, l'objet de votre demande" />
@@ -389,7 +503,7 @@
 
           <div class="check-group">
             <input type="checkbox" id="cf-cs" name="consent" required />
-            <label for="cf-cs">J'accepte que mes données soient traitées par EnerTchad Groupe dans le cadre du traitement de ma demande, conformément à la <a href="#">politique de confidentialité</a>. Les données sont conservées 24 mois maximum.</label>
+            <label for="cf-cs">J'accepte que mes données soient traitées par EnerTchad Groupe dans le cadre du traitement de ma demande, conformément à la <a href="/confidentialite.html">politique de confidentialité</a>. Les données sont conservées 24 mois maximum.</label>
           </div>
 
           <button type="submit" class="form-submit primary">Envoyer ma demande <span style="font-size:1.1em;">→</span></button>

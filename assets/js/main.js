@@ -1191,4 +1191,132 @@
     if (subjectEl) { subjectEl.value = entry.subject; }
   })();
 
+  /* ---------- Enhanced contact form (Batch 4 lead-gen) ----------
+     - Révèle des blocs <.form-cond data-show-if="…"> selon <select name="type">
+     - Honeypot anti-spam (input name="website" dans .hp-field)
+     - Timing anti-bot : rejette les soumissions en moins de 2s
+     - Soumission fetch() vers data-endpoint (Formspree / Getform / Worker)
+     - Fallback mailto: si aucun endpoint configuré
+  */
+  (function enhancedContactForm(){
+    const form = document.getElementById('contact-form');
+    if (!form) return;
+
+    const typeSelect = form.querySelector('select[name="type"]');
+    const condBlocks = form.querySelectorAll('.form-cond');
+    const successEl  = form.querySelector('.form-success');
+    const failureEl  = form.querySelector('.form-failure');
+    const submitBtn  = form.querySelector('button[type="submit"]');
+    const loadTime   = Date.now();
+
+    /* 1) Reveal/hide conditional blocks based on <select name="type"> value. */
+    function applyCondState() {
+      const val = typeSelect ? (typeSelect.value || '').trim() : '';
+      condBlocks.forEach(block => {
+        const trigger = (block.dataset.showIf || '').trim();
+        const shouldShow = trigger && trigger === val;
+        block.hidden = !shouldShow;
+      });
+    }
+    if (typeSelect) {
+      typeSelect.addEventListener('change', applyCondState);
+      applyCondState();
+    }
+
+    /* 2) Submission handler with honeypot, timing check, fetch + mailto fallback. */
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      // Masquer messages antérieurs
+      if (successEl) successEl.classList.remove('show');
+      if (failureEl) failureEl.classList.remove('show');
+
+      // Anti-spam — honeypot : champ "website" rempli => bot probable
+      const hp = form.querySelector('input[name="website"]');
+      if (hp && hp.value.trim() !== '') {
+        // Silencieux : on feint le succès pour ne pas révéler le piège
+        if (successEl) {
+          successEl.classList.add('show');
+          successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+        return;
+      }
+
+      // Anti-spam — timing : <2s = soumission trop rapide (bot)
+      if (Date.now() - loadTime < 2000) {
+        if (failureEl) {
+          failureEl.classList.add('show');
+          failureEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+        return;
+      }
+
+      // Validation HTML5 native
+      if (typeof form.checkValidity === 'function' && !form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      // UI feedback pendant envoi
+      let originalLabel = null;
+      if (submitBtn) {
+        originalLabel = submitBtn.innerHTML;
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = 'Envoi en cours…';
+      }
+
+      // Collecte des données
+      const formData = new FormData(form);
+      formData.delete('website'); // Ne jamais transmettre le honeypot
+      const endpoint = (form.dataset.endpoint || '').trim();
+
+      try {
+        if (endpoint) {
+          // Submission via endpoint (Formspree / Getform / Cloudflare Worker)
+          const resp = await fetch(endpoint, {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+          });
+          if (!resp.ok) throw new Error('endpoint error ' + resp.status);
+        } else {
+          // Fallback : compose un mailto: avec le contenu en clair.
+          const lines = [];
+          for (const [k, v] of formData.entries()) {
+            if (v && String(v).trim() !== '') {
+              lines.push(k + ': ' + v);
+            }
+          }
+          const subject = '[EnerTchad · ' +
+            (formData.get('type') || 'Contact') + '] ' +
+            (formData.get('subject') || '');
+          const mailto = 'mailto:contact@enertchad.td' +
+            '?subject=' + encodeURIComponent(subject) +
+            '&body=' + encodeURIComponent(lines.join('\n'));
+          // Laisser 250 ms pour que l'UX soit visible avant le switch de client mail
+          setTimeout(() => { window.location.href = mailto; }, 250);
+        }
+
+        // Succès
+        if (successEl) {
+          successEl.classList.add('show');
+          successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+        form.reset();
+        applyCondState();
+      } catch (err) {
+        if (window.console && console.warn) console.warn('[contact-form]', err);
+        if (failureEl) {
+          failureEl.classList.add('show');
+          failureEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          if (originalLabel !== null) submitBtn.innerHTML = originalLabel;
+        }
+      }
+    });
+  })();
+
 })();
