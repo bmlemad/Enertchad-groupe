@@ -2,7 +2,79 @@
 
 > **Rôle** : source unique de vérité pour l'état d'avancement de **toutes** les actions et recommandations demandées pour le site `enertchad.td`.
 >
-> **Version** : v1.5 — 22 avril 2026 (release v1.9.2 "Internal hrefs clean-URL" appliquée)
+> **Version** : v1.6 — 22 avril 2026 (release v1.10.0 "HD images V1" appliquée)
+
+---
+
+## ⚡ Release log — 22 avril 2026 (nuit, 23h05) · v1.10.0 "HD images V1"
+
+Exécution du **Workstream E** — Images HD libres. Catalogue V1 de 10 photos Unsplash + Pexels téléchargées, optimisées (JPG+WebP) et intégrées en backdrop subtil sur 7 héros de pages clés.
+
+### E1 · Catalogue V1 (10 images · Shortlist `02_CATALOGUE_IMAGES.md §16`)
+
+| # | Fichier | Source / ID | Usage | Licence |
+|:--:|---|---|---|---|
+| 01 | `enertchad-accueil-hero-01` | Unsplash `1516199423456-1f1e91b06f25` | hero index.html | Unsplash License |
+| 02 | `enertchad-amont-hero-01` | Unsplash `1513295202663-54cd69dd2b43` | hero operations/amont.html | Unsplash License |
+| 03 | `enertchad-aval-hero-01` | Unsplash `1uvJa08dNfQ` (industrial night) | hero operations/aval.html | Unsplash License |
+| 04 | `enertchad-energies-hero-01` | Unsplash `E4XEBPEkgUs` (Priamo Mendez — desert solar) | hero energies/index.html | Unsplash License |
+| 05 | `enertchad-eor-acacia-01` | Unsplash `ptqvPlL7okc` (acacia savanna) | réservé section EOR | Unsplash License |
+| 06 | `enertchad-eor-microscope-01` | Unsplash `1511174511562-5f7f18b874f8` | réservé EOR Bloc 4 | Unsplash License |
+| 07 | `enertchad-durabilite-acacia-01` | Unsplash `kDaRjhplz_w` (solitary acacia) | hero durabilite.html | Unsplash License |
+| 08 | `enertchad-talents-engineer-01` | Unsplash `1567954970774-58d6aa6c50dc` | hero talents.html | Unsplash License |
+| 09 | `enertchad-energies-eolien-01` | Pexels `19185783` (wind turbines sunset) | réservé section Éolien | Pexels License |
+| 10 | `enertchad-intermediaire-pipeline-01` | Unsplash `1507823690283-48b0929e727b` | hero operations/intermediaire.html | Unsplash License |
+
+**Optimisation** : JPG (quality 82, progressive, metadata stripped) + WebP variants (quality 78). Total bundle committed = ~6.5 MB (JPG 4.2 MB + WebP 2.5 MB).
+
+**Originaux** : conservés dans `assets/images/_raw/` (gitignoré) — re-téléchargeables depuis les URLs listées dans `assets/images/CREDITS.md`.
+
+### E2 · Intégration héros (7 pages) · technique CSS custom property
+
+Nouveau bloc CSS dans `assets/css/main.css` (§Hero background image) : `.hero[style*="--hero-bg"]::before` applique `background-image: var(--hero-bg)` avec opacité variable et `z-index: 0` (derrière la gradient + le pattern SVG existants).
+
+Inline style par page :
+
+| Page | Image | Opacity |
+|---|---|---:|
+| `index.html` | accueil-hero-01 | 0.24 |
+| `operations/amont.html` | amont-hero-01 | 0.22 |
+| `operations/aval.html` | aval-hero-01 | 0.28 |
+| `operations/intermediaire.html` | intermediaire-pipeline-01 | 0.22 |
+| `energies/index.html` | energies-hero-01 | 0.18 |
+| `durabilite.html` | durabilite-acacia-01 | 0.26 |
+| `talents.html` | talents-engineer-01 | 0.24 |
+
+**Principe design** : l'image vit derrière la radial-gradient navy + pattern SVG existants. Le système de marque reste dominant ; la photo ajoute une profondeur chromatique sans créer de compétition visuelle. Opacités calibrées pour préserver le contraste AA du hero copy (h1 + lead blanc).
+
+### E3 · CREDITS.md
+
+Fichier `assets/images/CREDITS.md` documentant pour chaque image : source, URL originale, auteur (si identifiable), licence, résolution, alt FR + alt EN.
+
+### E4 · Smoke tests post-déploiement
+
+**Intégration HTML** (7/7 pages servent la bonne image) :
+```
+/                          → enertchad-accueil-hero-01   ✓
+/operations/amont          → enertchad-amont-hero-01     ✓
+/operations/aval           → enertchad-aval-hero-01      ✓
+/operations/intermediaire  → enertchad-intermediaire-pipeline-01 ✓
+/energies/                 → enertchad-energies-hero-01  ✓
+/durabilite                → enertchad-durabilite-acacia-01 ✓
+/talents                   → enertchad-talents-engineer-01 ✓
+```
+
+**HTTP status images** (10/10) : toutes les 10 JPG retournent 200 depuis `https://enertchad-groupe.pages.dev/assets/images/*.jpg`.
+
+**Service Worker live** : `enertchad-v1.10.0-hd-images` ✓
+
+### E5 · Réserve v1.10.1 (à intégrer en second passage)
+
+- `enertchad-eor-acacia-01` → `operations/amont.html` §EOR Bloc 2a (polymère gomme arabique)
+- `enertchad-eor-microscope-01` → `operations/amont.html` §EOR Bloc 4 (partenaires laboratoires)
+- `enertchad-energies-eolien-01` → `energies/index.html` section éolien
+
+**Commit** : `c4f17ef` (31 fichiers, +204/−8 lignes) · **Deploy CF Pages** : `https://f17c2fb8.enertchad-groupe.pages.dev` (prod live : `https://enertchad-groupe.pages.dev`) · **GitHub** : `4054ded..c4f17ef main -> main` ✓
 
 ---
 
