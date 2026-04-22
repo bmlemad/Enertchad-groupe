@@ -146,11 +146,11 @@
 
     <div>
       <div class="dash-controls">
-        <div class="dash-tabs" role="tablist">
-          <button class="dash-tab active" data-view="overview" role="tab">Vue consolidée</button>
-          <button class="dash-tab" data-view="operations" role="tab">Opérations</button>
-          <button class="dash-tab" data-view="finance" role="tab">Finance</button>
-          <button class="dash-tab" data-view="tech" role="tab">Technologies</button>
+        <div class="dash-tabs" role="tablist" aria-label="Vues du dashboard">
+          <button class="dash-tab active" data-view="overview" role="tab" id="tab-overview" aria-selected="true" aria-controls="view-overview" tabindex="0">Vue consolidée</button>
+          <button class="dash-tab" data-view="operations" role="tab" id="tab-operations" aria-selected="false" aria-controls="view-operations" tabindex="-1">Opérations</button>
+          <button class="dash-tab" data-view="finance" role="tab" id="tab-finance" aria-selected="false" aria-controls="view-finance" tabindex="-1">Finance</button>
+          <button class="dash-tab" data-view="tech" role="tab" id="tab-tech" aria-selected="false" aria-controls="view-tech" tabindex="-1">Technologies</button>
         </div>
         <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
           <span class="dash-filter-label">Période</span>
@@ -163,7 +163,7 @@
 
       <main id="main-content" class="dash-main">
         <!-- OVERVIEW -->
-        <section class="view active" id="view-overview">
+        <section class="view active" id="view-overview" role="tabpanel" aria-labelledby="tab-overview" tabindex="0">
           <div class="kpi-grid">
             <div class="kpi-tile acc-groupe">
               <div class="kpi-label">Chiffre d'affaires Groupe</div>
@@ -207,19 +207,19 @@
             <div class="dash-panel">
               <h3>Revenus trimestriels par pôle</h3>
               <div class="panel-sub">M USD · 8 derniers trimestres</div>
-              <div class="chart-wrap"><canvas id="chart-rev"></canvas></div>
+              <div class="chart-wrap"><canvas id="chart-rev" role="img" aria-label="Graphique à barres empilées des revenus trimestriels par pôle, Q1 2024 à Q4 2025, en millions USD"></canvas></div>
             </div>
             <div class="dash-panel">
               <h3>Contribution au CA</h3>
               <div class="panel-sub">FY 2025 · pourcentage</div>
-              <div class="chart-wrap sm"><canvas id="chart-mix"></canvas></div>
+              <div class="chart-wrap sm"><canvas id="chart-mix" role="img" aria-label="Diagramme en anneau de la contribution au chiffre d'affaires 2025 par pôle d'activité"></canvas></div>
               <ul class="legend-list" id="legend-mix"></ul>
             </div>
           </div>
         </section>
 
         <!-- OPERATIONS -->
-        <section class="view" id="view-operations">
+        <section class="view" id="view-operations" role="tabpanel" aria-labelledby="tab-operations" tabindex="0">
           <div class="kpi-grid">
             <div class="kpi-tile acc-amont">
               <div class="kpi-label">Taux de disponibilité Amont</div>
@@ -251,18 +251,18 @@
             <div class="dash-panel">
               <h3>Production quotidienne · Amont</h3>
               <div class="panel-sub">kboe/j · courbe 90 jours</div>
-              <div class="chart-wrap"><canvas id="chart-prod"></canvas></div>
+              <div class="chart-wrap"><canvas id="chart-prod" role="img" aria-label="Courbe de la production quotidienne amont sur 90 jours, en kboe par jour"></canvas></div>
             </div>
             <div class="dash-panel">
               <h3>Sécurité · LTIF par pôle</h3>
               <div class="panel-sub">Lost-Time Injury Frequency · cible &lt; 0.5</div>
-              <div class="chart-wrap sm"><canvas id="chart-ltif"></canvas></div>
+              <div class="chart-wrap sm"><canvas id="chart-ltif" role="img" aria-label="Graphique à barres du taux LTIF par pôle, cible inférieure à 0,5"></canvas></div>
             </div>
           </div>
         </section>
 
         <!-- FINANCE -->
-        <section class="view" id="view-finance">
+        <section class="view" id="view-finance" role="tabpanel" aria-labelledby="tab-finance" tabindex="0">
           <div class="kpi-grid">
             <div class="kpi-tile acc-groupe">
               <div class="kpi-label">EBITDA Groupe</div>
@@ -294,18 +294,18 @@
             <div class="dash-panel">
               <h3>EBITDA & Résultat net</h3>
               <div class="panel-sub">2021 — 2025 · M USD</div>
-              <div class="chart-wrap"><canvas id="chart-ebitda"></canvas></div>
+              <div class="chart-wrap"><canvas id="chart-ebitda" role="img" aria-label="Double courbe EBITDA et résultat net de 2021 à 2025, en millions USD"></canvas></div>
             </div>
             <div class="dash-panel">
               <h3>Structure du capital</h3>
               <div class="panel-sub">Actionnariat au 31/12/2025</div>
-              <div class="chart-wrap sm"><canvas id="chart-cap"></canvas></div>
+              <div class="chart-wrap sm"><canvas id="chart-cap" role="img" aria-label="Diagramme polar area de la structure du capital au 31 décembre 2025"></canvas></div>
             </div>
           </div>
         </section>
 
         <!-- TECH -->
-        <section class="view" id="view-tech">
+        <section class="view" id="view-tech" role="tabpanel" aria-labelledby="tab-tech" tabindex="0">
           <div class="kpi-grid">
             <div class="kpi-tile acc-tech">
               <div class="kpi-label">Prédictions IA / jour</div>
@@ -337,12 +337,12 @@
             <div class="dash-panel">
               <h3>Données traitées quotidiennement</h3>
               <div class="panel-sub">TB/j sur 90 jours glissants</div>
-              <div class="chart-wrap"><canvas id="chart-data"></canvas></div>
+              <div class="chart-wrap"><canvas id="chart-data" role="img" aria-label="Courbe du volume de données traitées quotidiennement sur 90 jours, en téraoctets par jour"></canvas></div>
             </div>
             <div class="dash-panel">
               <h3>Mix technologique</h3>
               <div class="panel-sub">Répartition charge compute</div>
-              <div class="chart-wrap sm"><canvas id="chart-tech"></canvas></div>
+              <div class="chart-wrap sm"><canvas id="chart-tech" role="img" aria-label="Radar de la répartition de la charge compute par type de technologie"></canvas></div>
             </div>
           </div>
         </section>
@@ -385,24 +385,48 @@
     }
     animateAll(document.getElementById('view-overview'));
 
-    // --- Tabs ---
+    // --- Tabs (a11y: aria-selected, tabindex roving, arrow keys) ---
     var views = document.querySelectorAll('.view');
-    document.querySelectorAll('.dash-tab').forEach(function(btn){
-      btn.addEventListener('click', function(){
-        document.querySelectorAll('.dash-tab').forEach(function(b){ b.classList.remove('active'); });
-        btn.classList.add('active');
-        var target = btn.getAttribute('data-view');
-        views.forEach(function(v){ v.classList.remove('active'); });
-        var active = document.getElementById('view-' + target);
-        if (active){
-          active.classList.add('active');
-          animateAll(active);
-          // trigger chart recalculation if canvas already exists
-          setTimeout(function(){
-            active.querySelectorAll('canvas').forEach(function(c){
-              if (c._chart) c._chart.resize();
-            });
-          }, 120);
+    var tabs = Array.prototype.slice.call(document.querySelectorAll('.dash-tab'));
+
+    function activateTab(btn, setFocus){
+      tabs.forEach(function(b){
+        var isActive = (b === btn);
+        b.classList.toggle('active', isActive);
+        b.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        b.setAttribute('tabindex', isActive ? '0' : '-1');
+      });
+      var target = btn.getAttribute('data-view');
+      views.forEach(function(v){ v.classList.remove('active'); });
+      var active = document.getElementById('view-' + target);
+      if (active){
+        active.classList.add('active');
+        animateAll(active);
+        setTimeout(function(){
+          active.querySelectorAll('canvas').forEach(function(c){
+            if (c._chart) c._chart.resize();
+          });
+        }, 120);
+      }
+      if (setFocus) btn.focus();
+    }
+
+    tabs.forEach(function(btn, idx){
+      btn.addEventListener('click', function(){ activateTab(btn, false); });
+      btn.addEventListener('keydown', function(e){
+        var k = e.key;
+        if (k === 'ArrowRight' || k === 'ArrowDown'){
+          e.preventDefault();
+          activateTab(tabs[(idx + 1) % tabs.length], true);
+        } else if (k === 'ArrowLeft' || k === 'ArrowUp'){
+          e.preventDefault();
+          activateTab(tabs[(idx - 1 + tabs.length) % tabs.length], true);
+        } else if (k === 'Home'){
+          e.preventDefault();
+          activateTab(tabs[0], true);
+        } else if (k === 'End'){
+          e.preventDefault();
+          activateTab(tabs[tabs.length - 1], true);
         }
       });
     });
