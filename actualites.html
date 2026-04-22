@@ -39,7 +39,8 @@
   "@type":"BreadcrumbList",
   "itemListElement":[
     {"@type":"ListItem","position":1,"name":"Accueil","item":"https://www.enertchad.td/"},
-    {"@type":"ListItem","position":2,"name":"Actualités","item":"https://www.enertchad.td/actualites.html"}
+    {"@type":"ListItem","position":2,"name":"Actualités","item":"https://www.enertchad.td/actualites.html"},
+    {"@type":"ListItem","position":3,"name":"Newsroom","item":"https://www.enertchad.td/actualites.html"}
   ]
 }</script>
 </head>
@@ -103,18 +104,40 @@
         </span>
       </a>
       <div class="nav-links" id="navLinks">
-        <a href="/">Accueil</a>
-        <a href="/groupe">Groupe</a>
-        <div class="nav-dropdown nav-has-mega" data-mega>
-          <button class="nav-drop-trigger" type="button" aria-controls="mega-poles" aria-expanded="false">Pôles
+        <a href="/" data-nav-home>Accueil</a>
+
+        <!-- LE GROUPE (thème : Qui sommes-nous) -->
+        <div class="nav-dropdown nav-has-sub" data-sub data-theme="groupe">
+          <button class="nav-drop-trigger" type="button" aria-controls="sub-groupe" aria-expanded="false">Le Groupe
             <svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2"/></svg>
           </button>
-          <div class="nav-mega" id="mega-poles" aria-label="Nos pôles d'activité">
+          <div class="nav-submenu" id="sub-groupe" role="menu" aria-label="Le Groupe">
+            <a href="/groupe" role="menuitem" class="nav-sub-link" data-nav-href="/groupe">
+              <span class="ns-title">Présentation</span>
+              <span class="ns-desc">Histoire, mission, chiffres-clés</span>
+            </a>
+            <a href="/groupe#gouvernance" role="menuitem" class="nav-sub-link">
+              <span class="ns-title">Gouvernance</span>
+              <span class="ns-desc">Conseil, direction, comités</span>
+            </a>
+            <a href="/groupe#strategie" role="menuitem" class="nav-sub-link">
+              <span class="ns-title">Stratégie 2026–2030</span>
+              <span class="ns-desc">Plan directeur · priorités</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- ACTIVITÉS (mega-menu existant, renommé) -->
+        <div class="nav-dropdown nav-has-mega" data-mega data-theme="activites">
+          <button class="nav-drop-trigger" type="button" aria-controls="mega-poles" aria-expanded="false">Activités
+            <svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+          </button>
+          <div class="nav-mega" id="mega-poles" aria-label="Nos activités">
             <div class="nav-mega-inner">
               <div class="mega-search">
                 <label class="mega-search-label">
                   <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 20l-3.5-3.5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
-                  <input type="search" data-mega-search placeholder="Rechercher un pôle, service, site…" aria-label="Rechercher dans les pôles" autocomplete="off" />
+                  <input type="search" data-mega-search placeholder="Rechercher un pôle, service, site…" aria-label="Rechercher dans les activités" autocomplete="off" />
                   <kbd class="mega-kbd" aria-hidden="true"><span>⌘</span>K</kbd>
                 </label>
               </div>
@@ -161,7 +184,7 @@
                     <div class="mp-body">
                       <strong>Énergies · Transition</strong>
                       <span>Solaire · micro-grids · H₂ vert</span>
-                      <em>125 MW · 28 villages · 624 GWh</em>
+                      <em>125 MW · 28 micro-grids villageois · 624 GWh</em>
                     </div>
                   </a>
                   <a href="/technologies/" class="mega-pole" data-pole="technologies" data-search="scada jumeaux numériques digital twin ia cyber capteurs enertech">
@@ -185,10 +208,10 @@
                   <span class="mf-eyebrow">Performance 2026</span>
                   <h4 class="mf-title">Une chaîne énergétique <em>intégrée</em>.</h4>
                   <div class="mf-stats">
-                    <div class="mf-stat"><strong>144<sup>kb/j</sup></strong><span>Production Amont</span></div>
-                    <div class="mf-stat"><strong>1 070<sup>km</sup></strong><span>Pipeline Doba–Kribi</span></div>
-                    <div class="mf-stat"><strong>624<sup>GWh</sup></strong><span>Électricité livrée</span></div>
-                    <div class="mf-stat"><strong>42<sup>kt/an</sup></strong><span>CO₂ évité</span></div>
+                    <div class="mf-stat" data-source="Plan stratégique 2026–2030" title="Cible 2026 : Doba 88 + Bongor 32 + Madiago 18 + 6 kb/j optimisation Komé · Source : Plan stratégique EnerTchad 2026–2030"><strong>144<sup>kb/j</sup></strong><span>Production Amont</span></div>
+                    <div class="mf-stat" data-source="COTCo / EnerTchad Intermédiaire 2024" title="Pipeline Doba–Kribi, section tchadienne · 1 070 km · Source : COTCo / EnerTchad Intermédiaire 2024"><strong>1 070<sup>km</sup></strong><span>Pipeline Doba–Kribi</span></div>
+                    <div class="mf-stat" data-source="EnerTchad Énergies · Rapport 2025" title="Production nette consolidée gaz+solaire · Source : EnerTchad Énergies · Rapport annuel 2025"><strong>624<sup>GWh</sup></strong><span>Électricité livrée</span></div>
+                    <div class="mf-stat" data-source="ESG Report 2025 · scope 1+2" title="Émissions CO₂ évitées vs. baseline fossile 2019 · Scope 1+2 · Source : EnerTchad ESG Report 2025"><strong>42<sup>kt/an</sup></strong><span>CO₂ évité</span></div>
                   </div>
                   <div class="mf-ctas">
                     <a href="/dashboard-executif" class="mf-cta is-primary">
@@ -210,10 +233,61 @@
             </div>
           </div>
         </div>
-        <a href="/investisseurs">Investisseurs</a>
-        <a href="/durabilite">Durabilité</a>
-        <a href="/talents">Talents</a>
-        <a href="/actualites" class="active" aria-current="page">Actualités</a>
+
+        <!-- FINANCE & PERFORMANCE -->
+        <div class="nav-dropdown nav-has-sub" data-sub data-theme="finance">
+          <button class="nav-drop-trigger" type="button" aria-controls="sub-finance" aria-expanded="false">Finance &amp; Performance
+            <svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+          </button>
+          <div class="nav-submenu" id="sub-finance" role="menu" aria-label="Finance et performance">
+            <a href="/investisseurs" role="menuitem" class="nav-sub-link" data-nav-href="/investisseurs">
+              <span class="ns-title">Espace Investisseurs</span>
+              <span class="ns-desc">Rapports, obligations, data room</span>
+            </a>
+            <a href="/dashboard-executif" role="menuitem" class="nav-sub-link" data-nav-href="/dashboard-executif">
+              <span class="ns-title"><span class="live-dot" aria-hidden="true"></span>Dashboard exécutif</span>
+              <span class="ns-desc">KPI temps réel · accès restreint</span>
+            </a>
+            <a href="/dashboard" role="menuitem" class="nav-sub-link" data-nav-href="/dashboard">
+              <span class="ns-title">Synthèse publique</span>
+              <span class="ns-desc">Chiffres-clés consolidés 2025</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- ENGAGEMENT -->
+        <div class="nav-dropdown nav-has-sub" data-sub data-theme="engagement">
+          <button class="nav-drop-trigger" type="button" aria-controls="sub-engagement" aria-expanded="false">Engagement
+            <svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+          </button>
+          <div class="nav-submenu" id="sub-engagement" role="menu" aria-label="Engagement">
+            <a href="/durabilite" role="menuitem" class="nav-sub-link" data-nav-href="/durabilite">
+              <span class="ns-title">Durabilité · ESG</span>
+              <span class="ns-desc">Climat, eau, communautés, gouvernance</span>
+            </a>
+            <a href="/talents" role="menuitem" class="nav-sub-link" data-nav-href="/talents">
+              <span class="ns-title">Talents &amp; Carrières</span>
+              <span class="ns-desc">Postes ouverts, programmes jeunes</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- ACTUALITÉS -->
+        <div class="nav-dropdown nav-has-sub" data-sub data-theme="news">
+          <button class="nav-drop-trigger" type="button" aria-controls="sub-news" aria-expanded="false">Actualités
+            <svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+          </button>
+          <div class="nav-submenu" id="sub-news" role="menu" aria-label="Actualités">
+            <a href="/actualites" role="menuitem" class="nav-sub-link" data-nav-href="/actualites">
+              <span class="ns-title">Newsroom</span>
+              <span class="ns-desc">Communiqués, annonces, presse</span>
+            </a>
+            <a href="/newsletter" role="menuitem" class="nav-sub-link" data-nav-href="/newsletter">
+              <span class="ns-title">Newsletter</span>
+              <span class="ns-desc">S'abonner aux publications mensuelles</span>
+            </a>
+          </div>
+        </div>
       </div>
       <div class="nav-cta">
         <a href="/contact" class="btn btn-primary btn-sm nav-cta-btn">Investir avec nous <span class="arrow" aria-hidden="true">→</span></a>
@@ -225,7 +299,6 @@
     <div class="nav-progress" aria-hidden="true"><span></span></div>
   </nav>
 </div>
-
 <main id="main-content" tabindex="-1">
 <header class="hero hero-sub" style="min-height: 48vh;">
   <div class="container hero-inner">
@@ -408,17 +481,34 @@
         </div>
         <p style="font-size:.82rem; margin-top:16px;">RCCM : N’DJ/RC/2026-A-0001<br/>Capital : 10 000 000 FCFA</p>
       </div>
-      <div><h5>Opérations</h5><ul>
-        <li><a href="operations/amont.html">Amont · E&amp;P</a></li><li><a href="operations/intermediaire.html">Intermédiaire</a></li>
-        <li><a href="operations/aval.html">Aval · Distribution</a></li><li><a href="operations/services.html">Services</a></li>
+      <div><h5>Activités</h5><ul>
+        <li><a href="operations/amont.html">Amont · E&amp;P</a></li>
+        <li><a href="operations/intermediaire.html">Intermédiaire</a></li>
+        <li><a href="operations/aval.html">Aval · Distribution</a></li>
+        <li><a href="operations/services.html">Services</a></li>
+        <li><a href="energies/">Énergies · Transition</a></li>
+        <li><a href="technologies/">Technologies · EnerTech</a></li>
+        <li><a href="maps.html">Carte interactive</a></li>
       </ul></div>
-      <div><h5>Groupe</h5><ul>
-        <li><a href="groupe.html">À propos</a></li><li><a href="groupe.html#gouvernance">Gouvernance</a></li>
-        <li><a href="groupe.html#leadership">Leadership</a></li><li><a href="maps.html">Implantations</a></li>
+      <div><h5>Le Groupe</h5><ul>
+        <li><a href="groupe.html">Présentation</a></li>
+        <li><a href="groupe.html#gouvernance">Gouvernance</a></li>
+        <li><a href="groupe.html#strategie">Stratégie 2026–2030</a></li>
+      </ul>
+      <h5 style="margin-top:18px;">Finance &amp; Performance</h5><ul>
+        <li><a href="investisseurs.html">Espace investisseurs</a></li>
+        <li><a href="dashboard-executif.html">Dashboard exécutif</a></li>
+        <li><a href="dashboard.html">Synthèse publique</a></li>
       </ul></div>
       <div><h5>Engagement</h5><ul>
-        <li><a href="durabilite.html">Durabilité &amp; ESG</a></li><li><a href="durabilite.html#local">Contenu local</a></li>
-        <li><a href="durabilite.html#itie">ITIE</a></li><li><a href="durabilite.html#hse">HSE</a></li>
+        <li><a href="durabilite.html">Durabilité &amp; ESG</a></li>
+        <li><a href="durabilite.html#local">Contenu local</a></li>
+        <li><a href="durabilite.html#itie">ITIE · Transparence</a></li>
+        <li><a href="talents.html">Talents &amp; Carrières</a></li>
+      </ul>
+      <h5 style="margin-top:18px;">Actualités</h5><ul>
+        <li><a href="actualites.html">Newsroom</a></li>
+        <li><a href="newsletter.html">Newsletter</a></li>
       </ul></div>
       <div><h5>Contact</h5><ul>
         <li>Radisson, Block D, Bureau 23<br/>Sabangali · N&#8217;Djamena</li>

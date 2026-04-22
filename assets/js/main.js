@@ -568,6 +568,80 @@
     });
   })();
 
+  /* ---------- Thematic sub-menus (IA v1.6.8) — active state + click toggle ---------- */
+  (function thematicSubMenus() {
+    const path = (location.pathname || '').replace(/\/$/, '') || '/';
+    const filename = path.split('/').pop() || '';
+
+    // 1. Active state on sub-links and triggers
+    document.querySelectorAll('.nav-has-sub').forEach((wrap) => {
+      const links = wrap.querySelectorAll('.nav-sub-link');
+      let activeCount = 0;
+      links.forEach((link) => {
+        const href = link.getAttribute('data-nav-href') || link.getAttribute('href') || '';
+        if (!href || href.indexOf('#') === 0) return;
+        const cleanHref = href.replace(/\/$/, '').split('#')[0] || '/';
+        if (cleanHref !== '/' && (path === cleanHref || path.startsWith(cleanHref + '/'))) {
+          link.classList.add('is-active');
+          link.setAttribute('aria-current', 'page');
+          activeCount++;
+        }
+      });
+      if (activeCount > 0) {
+        const trigger = wrap.querySelector('.nav-drop-trigger');
+        if (trigger) trigger.setAttribute('aria-current', 'true');
+      }
+    });
+
+    // 2. Also highlight home link when on home page
+    if (path === '/' || /^\/?index(\.html)?$/.test(filename) || filename === '') {
+      document.querySelectorAll('[data-nav-home]').forEach((a) => {
+        a.classList.add('active');
+        a.setAttribute('aria-current', 'page');
+      });
+    }
+
+    // 3. Click-to-toggle (keyboard a11y + mobile)
+    const wraps = Array.from(document.querySelectorAll('.nav-has-sub'));
+    wraps.forEach((wrap) => {
+      const trigger = wrap.querySelector('.nav-drop-trigger');
+      const menu = wrap.querySelector('.nav-submenu');
+      if (!trigger || !menu) return;
+      trigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        const open = wrap.classList.toggle('is-open');
+        trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+        // Close sibling sub-menus
+        wraps.forEach((w) => {
+          if (w !== wrap) {
+            w.classList.remove('is-open');
+            const t = w.querySelector('.nav-drop-trigger');
+            if (t) t.setAttribute('aria-expanded', 'false');
+          }
+        });
+      });
+      // Escape closes
+      wrap.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          wrap.classList.remove('is-open');
+          trigger.setAttribute('aria-expanded', 'false');
+          trigger.focus();
+        }
+      });
+    });
+    // Click outside closes all
+    document.addEventListener('click', (e) => {
+      const inside = e.target.closest && e.target.closest('.nav-has-sub');
+      if (!inside) {
+        wraps.forEach((w) => {
+          w.classList.remove('is-open');
+          const t = w.querySelector('.nav-drop-trigger');
+          if (t) t.setAttribute('aria-expanded', 'false');
+        });
+      }
+    });
+  })();
+
   /* ---------- Language switcher ---------- */
   document.querySelectorAll('[data-lang-switch]').forEach((sw) => {
     const btn = sw.querySelector('.lang-btn');

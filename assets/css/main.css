@@ -905,6 +905,137 @@ footer .foot-bottom .legal a:hover { color: var(--gold); }
 /* Legacy .nav-drop-menu block removed — all pages now use the unified Ultra Mega Menu (.nav-mega).
    Mobile accordion for the mega menu is handled in the Ultra section at end of file. */
 
+/* ============================================================
+   THEMATIC SUB-MENUS · IA restructure v1.6.8
+   Compact dropdowns for Le Groupe / Finance / Engagement / Actualités
+   ============================================================ */
+.nav-has-sub { position: relative; }
+.nav-has-sub .nav-submenu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-6px);
+  min-width: 280px;
+  background: #0F1629;
+  border: 1px solid rgba(217, 168, 79, 0.25);
+  border-radius: 10px;
+  padding: 10px 8px;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity .22s var(--ease), transform .22s var(--ease), visibility 0s .22s;
+  z-index: 200;
+}
+.nav-has-sub:hover .nav-submenu,
+.nav-has-sub:focus-within .nav-submenu,
+.nav-has-sub.is-open .nav-submenu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+  transition: opacity .22s var(--ease), transform .22s var(--ease);
+}
+.nav-has-sub .nav-submenu::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 10px;
+  height: 10px;
+  background: #0F1629;
+  border-left: 1px solid rgba(217, 168, 79, 0.25);
+  border-top: 1px solid rgba(217, 168, 79, 0.25);
+}
+.nav-sub-link {
+  display: block;
+  padding: 10px 14px;
+  border-radius: 7px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.85);
+  transition: background .18s var(--ease), transform .18s var(--ease);
+}
+.nav-sub-link:hover,
+.nav-sub-link:focus-visible {
+  background: rgba(217, 168, 79, 0.12);
+  color: #fff;
+  transform: translateX(2px);
+}
+.nav-sub-link.is-active {
+  background: rgba(217, 168, 79, 0.18);
+  color: var(--gold, #D9A84F);
+}
+.nav-sub-link.is-active::after {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold, #D9A84F);
+  margin-left: 8px;
+  vertical-align: middle;
+}
+.nav-sub-link .ns-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--ff-display, 'Space Grotesk', sans-serif);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: -0.005em;
+  color: inherit;
+}
+.nav-sub-link .ns-desc {
+  display: block;
+  margin-top: 3px;
+  font-size: 11.5px;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.4;
+}
+.nav-sub-link:hover .ns-desc,
+.nav-sub-link:focus-visible .ns-desc {
+  color: rgba(255, 255, 255, 0.72);
+}
+.nav-sub-link .live-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10B981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.22);
+  animation: liveDotPulse 2s ease-in-out infinite;
+}
+@keyframes liveDotPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.55; transform: scale(0.85); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nav-sub-link .live-dot { animation: none; }
+  .nav-has-sub .nav-submenu { transition: none; }
+}
+
+/* Mobile: collapse sub-menus into accordion */
+@media (max-width: 960px) {
+  .nav-has-sub .nav-submenu {
+    position: static;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    min-width: 0;
+    width: 100%;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    padding: 6px 0 10px 14px;
+    display: none;
+  }
+  .nav-has-sub .nav-submenu::before { display: none; }
+  .nav-has-sub.is-open .nav-submenu { display: block; }
+  .nav-has-sub .nav-drop-trigger { width: 100%; justify-content: space-between; }
+}
+
 /* ---------- Forms ---------- */
 .form-wrap {
   background: var(--white);

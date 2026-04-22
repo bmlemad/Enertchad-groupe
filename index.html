@@ -107,18 +107,40 @@
         </span>
       </a>
       <div class="nav-links" id="navLinks">
-        <a href="/" class="active" aria-current="page">Accueil</a>
-        <a href="/groupe">Groupe</a>
-        <div class="nav-dropdown nav-has-mega" data-mega>
-          <button class="nav-drop-trigger" type="button" aria-controls="mega-poles" aria-expanded="false">Pôles
+        <a href="/" data-nav-home>Accueil</a>
+
+        <!-- LE GROUPE (thème : Qui sommes-nous) -->
+        <div class="nav-dropdown nav-has-sub" data-sub data-theme="groupe">
+          <button class="nav-drop-trigger" type="button" aria-controls="sub-groupe" aria-expanded="false">Le Groupe
             <svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2"/></svg>
           </button>
-          <div class="nav-mega" id="mega-poles" aria-label="Nos pôles d'activité">
+          <div class="nav-submenu" id="sub-groupe" role="menu" aria-label="Le Groupe">
+            <a href="/groupe" role="menuitem" class="nav-sub-link" data-nav-href="/groupe">
+              <span class="ns-title">Présentation</span>
+              <span class="ns-desc">Histoire, mission, chiffres-clés</span>
+            </a>
+            <a href="/groupe#gouvernance" role="menuitem" class="nav-sub-link">
+              <span class="ns-title">Gouvernance</span>
+              <span class="ns-desc">Conseil, direction, comités</span>
+            </a>
+            <a href="/groupe#strategie" role="menuitem" class="nav-sub-link">
+              <span class="ns-title">Stratégie 2026–2030</span>
+              <span class="ns-desc">Plan directeur · priorités</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- ACTIVITÉS (mega-menu existant, renommé) -->
+        <div class="nav-dropdown nav-has-mega" data-mega data-theme="activites">
+          <button class="nav-drop-trigger" type="button" aria-controls="mega-poles" aria-expanded="false">Activités
+            <svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+          </button>
+          <div class="nav-mega" id="mega-poles" aria-label="Nos activités">
             <div class="nav-mega-inner">
               <div class="mega-search">
                 <label class="mega-search-label">
                   <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 20l-3.5-3.5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
-                  <input type="search" data-mega-search placeholder="Rechercher un pôle, service, site…" aria-label="Rechercher dans les pôles" autocomplete="off" />
+                  <input type="search" data-mega-search placeholder="Rechercher un pôle, service, site…" aria-label="Rechercher dans les activités" autocomplete="off" />
                   <kbd class="mega-kbd" aria-hidden="true"><span>⌘</span>K</kbd>
                 </label>
               </div>
@@ -214,10 +236,61 @@
             </div>
           </div>
         </div>
-        <a href="/investisseurs">Investisseurs</a>
-        <a href="/durabilite">Durabilité</a>
-        <a href="/talents">Talents</a>
-        <a href="/actualites">Actualités</a>
+
+        <!-- FINANCE & PERFORMANCE -->
+        <div class="nav-dropdown nav-has-sub" data-sub data-theme="finance">
+          <button class="nav-drop-trigger" type="button" aria-controls="sub-finance" aria-expanded="false">Finance &amp; Performance
+            <svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+          </button>
+          <div class="nav-submenu" id="sub-finance" role="menu" aria-label="Finance et performance">
+            <a href="/investisseurs" role="menuitem" class="nav-sub-link" data-nav-href="/investisseurs">
+              <span class="ns-title">Espace Investisseurs</span>
+              <span class="ns-desc">Rapports, obligations, data room</span>
+            </a>
+            <a href="/dashboard-executif" role="menuitem" class="nav-sub-link" data-nav-href="/dashboard-executif">
+              <span class="ns-title"><span class="live-dot" aria-hidden="true"></span>Dashboard exécutif</span>
+              <span class="ns-desc">KPI temps réel · accès restreint</span>
+            </a>
+            <a href="/dashboard" role="menuitem" class="nav-sub-link" data-nav-href="/dashboard">
+              <span class="ns-title">Synthèse publique</span>
+              <span class="ns-desc">Chiffres-clés consolidés 2025</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- ENGAGEMENT -->
+        <div class="nav-dropdown nav-has-sub" data-sub data-theme="engagement">
+          <button class="nav-drop-trigger" type="button" aria-controls="sub-engagement" aria-expanded="false">Engagement
+            <svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+          </button>
+          <div class="nav-submenu" id="sub-engagement" role="menu" aria-label="Engagement">
+            <a href="/durabilite" role="menuitem" class="nav-sub-link" data-nav-href="/durabilite">
+              <span class="ns-title">Durabilité · ESG</span>
+              <span class="ns-desc">Climat, eau, communautés, gouvernance</span>
+            </a>
+            <a href="/talents" role="menuitem" class="nav-sub-link" data-nav-href="/talents">
+              <span class="ns-title">Talents &amp; Carrières</span>
+              <span class="ns-desc">Postes ouverts, programmes jeunes</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- ACTUALITÉS -->
+        <div class="nav-dropdown nav-has-sub" data-sub data-theme="news">
+          <button class="nav-drop-trigger" type="button" aria-controls="sub-news" aria-expanded="false">Actualités
+            <svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+          </button>
+          <div class="nav-submenu" id="sub-news" role="menu" aria-label="Actualités">
+            <a href="/actualites" role="menuitem" class="nav-sub-link" data-nav-href="/actualites">
+              <span class="ns-title">Newsroom</span>
+              <span class="ns-desc">Communiqués, annonces, presse</span>
+            </a>
+            <a href="/newsletter" role="menuitem" class="nav-sub-link" data-nav-href="/newsletter">
+              <span class="ns-title">Newsletter</span>
+              <span class="ns-desc">S'abonner aux publications mensuelles</span>
+            </a>
+          </div>
+        </div>
       </div>
       <div class="nav-cta">
         <a href="/contact" class="btn btn-primary btn-sm nav-cta-btn">Investir avec nous <span class="arrow" aria-hidden="true">→</span></a>
@@ -229,7 +302,6 @@
     <div class="nav-progress" aria-hidden="true"><span></span></div>
   </nav>
 </div>
-
 <!-- ============================= MAIN ============================= -->
 <main id="main-content" tabindex="-1">
 
@@ -686,9 +758,9 @@
           </div>
         </div>
 
-        <!-- Colonne 2 : Pôles -->
+        <!-- Colonne 2 : Activités (ex-Pôles) + Le Groupe -->
         <div class="foot-col">
-          <h5 class="foot-head">Pôles opérationnels</h5>
+          <h5 class="foot-head">Activités</h5>
           <ul class="foot-links foot-links-numbered">
             <li><a href="operations/amont.html"><span class="fl-num">01</span> Amont · E&amp;P</a></li>
             <li><a href="operations/intermediaire.html"><span class="fl-num">02</span> Intermédiaire</a></li>
@@ -696,28 +768,30 @@
             <li><a href="operations/services.html"><span class="fl-num">04</span> Services</a></li>
             <li><a href="/energies/"><span class="fl-num">05</span> Énergies · Transition</a></li>
             <li><a href="/technologies/"><span class="fl-num">06</span> Technologies · EnerTech</a></li>
+            <li><a href="maps.html"><span class="fl-num">★</span> Carte interactive</a></li>
           </ul>
         </div>
 
-        <!-- Colonne 3 : Groupe & Investisseurs -->
+        <!-- Colonne 3 : Le Groupe + Finance & Performance -->
         <div class="foot-col">
-          <h5 class="foot-head">Groupe</h5>
+          <h5 class="foot-head">Le Groupe</h5>
           <ul class="foot-links">
-            <li><a href="groupe.html">À propos</a></li>
+            <li><a href="groupe.html">Présentation</a></li>
             <li><a href="groupe.html#gouvernance">Gouvernance</a></li>
             <li><a href="groupe.html#leadership">Leadership</a></li>
-            <li><a href="maps.html">Implantations</a></li>
-            <li><a href="actualites.html">Actualités &amp; presse</a></li>
+            <li><a href="groupe.html#strategie">Stratégie 2026–2030</a></li>
           </ul>
-          <h5 class="foot-head foot-head-mt">Investisseurs</h5>
+          <h5 class="foot-head foot-head-mt">Finance &amp; Performance</h5>
           <ul class="foot-links">
             <li><a href="investisseurs.html">Espace investisseurs</a></li>
             <li><a href="investisseurs.html#rapports">Rapports annuels</a></li>
             <li><a href="investisseurs.html#calendar">Calendrier financier</a></li>
+            <li><a href="dashboard-executif.html">Dashboard exécutif</a></li>
+            <li><a href="dashboard.html">Synthèse publique</a></li>
           </ul>
         </div>
 
-        <!-- Colonne 4 : Engagement ESG + Talents -->
+        <!-- Colonne 4 : Engagement + Actualités -->
         <div class="foot-col">
           <h5 class="foot-head">Engagement</h5>
           <ul class="foot-links">
@@ -726,11 +800,12 @@
             <li><a href="durabilite.html#itie">ITIE · Transparence</a></li>
             <li><a href="durabilite.html#hse">HSE · Sécurité</a></li>
             <li><a href="durabilite.html#climat">Trajectoire climat</a></li>
+            <li><a href="talents.html">Talents &amp; Carrières</a></li>
           </ul>
-          <h5 class="foot-head foot-head-mt">Talents</h5>
+          <h5 class="foot-head foot-head-mt">Actualités</h5>
           <ul class="foot-links">
-            <li><a href="talents.html">Carrières</a></li>
-            <li><a href="talents.html#programmes">Programmes jeunes</a></li>
+            <li><a href="actualites.html">Newsroom &amp; presse</a></li>
+            <li><a href="newsletter.html">Newsletter</a></li>
           </ul>
         </div>
 

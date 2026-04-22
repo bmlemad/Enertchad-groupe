@@ -1,0 +1,21 @@
+# Cloudflare Pages upload ignore — généré pour deploy v1.6.1
+# Docs / admin — pas servis
+.git
+.github
+.gitignore
+.wrangler
+.perf-budget.md
+.DS_Store
+CLOUDFLARE_SETUP.md
+DESIGN_SYSTEM.md
+MASTER_ACTIONS_TRACKER.md
+README.md
+DATA_MASTER.yml
+.cfignore
+wrangler.toml
+# Dashboard sources (non-dist)
+dashboard-src
+# Backups / scratch
+*.bak
+*.tmp
+*~
