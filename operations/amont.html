@@ -24,6 +24,7 @@
 <link rel="preload" href="/assets/fonts/Inter-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/assets/fonts/SpaceGrotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="stylesheet" href="../assets/css/main.css" />
+<link rel="stylesheet" href="/assets/css/nav-premium.css" />
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23D9A84F'/%3E%3Ctext x='16' y='22' font-family='Space Grotesk, sans-serif' font-weight='700' font-size='16' text-anchor='middle' fill='%23080E1A'%3EE%3C/text%3E%3C/svg%3E" />
   <link rel="manifest" href="../manifest.json" />
   <script>if('serviceWorker' in navigator){window.addEventListener('load',()=>{navigator.serviceWorker.register('/sw.js').catch(()=>{});});}</script>
@@ -295,6 +296,11 @@
         </div>
       </div>
       <div class="nav-cta">
+          <button type="button" class="cmd-k-trigger" data-cmd-k-trigger aria-label="Rechercher (Cmd K)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+            <span class="cmd-k-label">Rechercher</span>
+            <span class="cmd-k-kbd"><span aria-hidden="true">⌘</span>K</span>
+          </button>
         <a href="/contact" class="btn btn-primary btn-sm nav-cta-btn">Investir avec nous <span class="arrow" aria-hidden="true">→</span></a>
         <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navLinks">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
@@ -305,6 +311,7 @@
   </nav>
 </div>
 </header>
+<nav class="breadcrumbs" data-breadcrumbs aria-label="Fil d'Ariane"></nav>
 <!-- ============================= HERO SUB ============================= -->
 <main id="main-content" tabindex="-1">
 <header class="hero hero-sub" data-pole-pattern="amont" style="--hero-bg: url('/assets/images/enertchad-amont-hero-01.jpg'); --hero-bg-opacity: 0.22;">
@@ -870,6 +877,7 @@
 </footer>
 
 <script src="../assets/js/main.js"></script>
+<script src="/assets/js/nav-premium.js" defer></script>
 <!-- Cookie consent banner -->
 <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Consentement cookies">
   <p style="margin:0 0 12px 0; font-size:.92rem; line-height:1.55;">Nous utilisons uniquement des cookies techniques essentiels (préférences, session) et une mesure d'audience anonyme sans cookie. Aucun traceur publicitaire.</p>

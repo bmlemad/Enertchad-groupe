@@ -3,7 +3,7 @@
  * Fallback offline sur offline.html
  */
 
-const CACHE_VERSION = 'enertchad-v1.10.3-a11y-touch-targets';
+const CACHE_VERSION = 'enertchad-v1.11.0-nav-modernisation';
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const RUNTIME_CACHE = `${CACHE_VERSION}-runtime`;
 
@@ -16,7 +16,9 @@ const PRECACHE_URLS = [
   '/offline.html',
   '/404.html',
   '/assets/css/main.css',
+  '/assets/css/nav-premium.css',
   '/assets/js/main.js',
+  '/assets/js/nav-premium.js',
   '/assets/fonts/Inter-latin.woff2',
   '/assets/fonts/SpaceGrotesk-latin.woff2',
   '/assets/img/favicon-32.png',
