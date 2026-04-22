@@ -3868,3 +3868,167 @@ footer .foot-bottom .legal a:hover { color: var(--gold); }
   cursor: progress;
   transform: none !important;
 }
+
+/* ============================================================
+   INTERACTIVE LEAFLET MAP · Batch 6
+   Progressive-enhancement over SVG schematic fallback
+   ============================================================ */
+.map-frame[data-map-frame] {
+  position: relative;
+  min-height: 540px;
+}
+.leaflet-container-enertchad {
+  width: 100%;
+  height: 540px;
+  min-height: 540px;
+  border-radius: 14px;
+  background: #F7F6F1;
+  box-shadow: 0 4px 20px rgba(8, 14, 26, 0.08);
+  border: 1px solid rgba(217, 168, 79, 0.25);
+  z-index: 1;
+}
+.map-frame[data-map-frame] > [data-map-svg-fallback] {
+  width: 100%;
+  height: auto;
+}
+.map-loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(217, 168, 79, 0.3);
+  border-radius: 10px;
+  font-family: var(--ff-sans, 'Inter', sans-serif);
+  font-size: 13px;
+  color: var(--navy, #080E1A);
+  z-index: 2;
+  box-shadow: 0 2px 10px rgba(8, 14, 26, 0.06);
+}
+.map-loader-spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(217, 168, 79, 0.25);
+  border-top-color: var(--gold, #D9A84F);
+  border-radius: 50%;
+  animation: mapSpin 0.8s linear infinite;
+}
+@keyframes mapSpin {
+  to { transform: rotate(360deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .map-loader-spinner { animation: none; }
+}
+
+/* Custom divIcon site markers */
+.et-marker-wrap { background: transparent; border: none; }
+.et-marker {
+  display: block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--c, #080E1A);
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 2px var(--c, #080E1A), 0 2px 6px rgba(8, 14, 26, 0.35);
+  transition: transform .18s ease;
+}
+.et-marker-wrap:hover .et-marker {
+  transform: scale(1.2);
+}
+
+/* Branded popups */
+.leaflet-container-enertchad .leaflet-popup-content-wrapper {
+  background: #fff;
+  color: var(--navy, #080E1A);
+  border-radius: 10px;
+  border: 1px solid rgba(217, 168, 79, 0.35);
+  box-shadow: 0 6px 22px rgba(8, 14, 26, 0.18);
+  padding: 2px;
+}
+.leaflet-container-enertchad .leaflet-popup-tip {
+  background: #fff;
+  border: 1px solid rgba(217, 168, 79, 0.35);
+  box-shadow: 0 6px 22px rgba(8, 14, 26, 0.18);
+}
+.leaflet-container-enertchad .leaflet-popup-content {
+  margin: 12px 14px;
+  line-height: 1.45;
+  font-family: var(--ff-sans, 'Inter', sans-serif);
+}
+.et-popup {
+  min-width: 180px;
+  max-width: 260px;
+}
+.et-popup-head {
+  font-family: var(--ff-display, 'Space Grotesk', sans-serif);
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--navy, #080E1A);
+  border-bottom: 2px solid var(--gold, #D9A84F);
+  padding-bottom: 5px;
+  margin-bottom: 6px;
+  letter-spacing: -0.01em;
+}
+.et-popup-role {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gold, #D9A84F);
+  margin-bottom: 4px;
+}
+.et-popup-note {
+  font-size: 12px;
+  color: #444;
+  margin-bottom: 4px;
+}
+.et-popup-meta {
+  font-size: 11px;
+  color: #777;
+  margin-bottom: 6px;
+}
+.et-popup-link {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  background: var(--navy, #080E1A);
+  color: var(--gold, #D9A84F);
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background .18s ease;
+}
+.et-popup-link:hover {
+  background: #12203A;
+}
+
+/* Layers control — brand polish */
+.leaflet-container-enertchad .leaflet-control-layers {
+  border-radius: 8px;
+  border: 1px solid rgba(217, 168, 79, 0.3);
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 3px 12px rgba(8, 14, 26, 0.1);
+  font-family: var(--ff-sans, 'Inter', sans-serif);
+  font-size: 12px;
+}
+.leaflet-container-enertchad .leaflet-control-layers-expanded {
+  padding: 10px 12px;
+}
+.leaflet-container-enertchad .leaflet-control-layers label {
+  color: var(--navy, #080E1A);
+  font-weight: 500;
+  line-height: 1.7;
+}
+.leaflet-container-enertchad .leaflet-control-attribution {
+  font-size: 10px;
+  background: rgba(255, 255, 255, 0.85);
+}
+
+@media (max-width: 760px) {
+  .leaflet-container-enertchad { height: 420px; min-height: 420px; }
+  .map-frame[data-map-frame] { min-height: 420px; }
+}

@@ -24,6 +24,9 @@
 <link rel="preload" href="/assets/fonts/Inter-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/assets/fonts/SpaceGrotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="assets/css/main.css" />
+  <!-- Preconnect to Leaflet CDN + tile server (Batch 6 interactive map) -->
+  <link rel="preconnect" href="https://unpkg.com" crossorigin />
+  <link rel="preconnect" href="https://tile.openstreetmap.org" crossorigin />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23D9A84F'/%3E%3Ctext x='16' y='22' font-family='Space Grotesk, sans-serif' font-weight='700' font-size='16' text-anchor='middle' fill='%23080E1A'%3EE%3C/text%3E%3C/svg%3E" />
   <link rel="manifest" href="manifest.json" />
   <script>if('serviceWorker' in navigator){window.addEventListener('load',()=>{navigator.serviceWorker.register('/sw.js').catch(()=>{});});}</script>
@@ -243,8 +246,21 @@
   <section class="section light">
     <div class="container">
       <div class="map-layout">
-        <div class="map-frame reveal">
-          <svg viewBox="0 0 800 600" role="img" aria-label="Carte schématique du Tchad avec implantations EnerTchad">
+        <div class="map-frame reveal" data-map-frame>
+          <!-- Interactive Leaflet map (progressive enhancement, Batch 6) -->
+          <div id="leaflet-map"
+               class="leaflet-container-enertchad"
+               role="region"
+               aria-label="Carte interactive des implantations EnerTchad"
+               data-geojson="/assets/data/infrastructure.geojson"
+               data-cadastre="/assets/data/cadastre-2025.json"
+               hidden></div>
+          <div class="map-loader" data-map-loader hidden>
+            <span class="map-loader-spinner" aria-hidden="true"></span>
+            <span>Chargement de la carte interactive…</span>
+          </div>
+          <!-- SVG schematic fallback (affiché si Leaflet ne charge pas) -->
+          <svg data-map-svg-fallback viewBox="0 0 800 600" role="img" aria-label="Carte schématique du Tchad avec implantations EnerTchad">
             <defs>
               <linearGradient id="gbg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F7F6F1"/><stop offset="1" stop-color="#EFECE0"/></linearGradient>
             </defs>

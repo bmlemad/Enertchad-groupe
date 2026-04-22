@@ -1319,4 +1319,276 @@
     });
   })();
 
+  /* ==============================================================
+     INTERACTIVE LEAFLET MAP · Batch 6
+     Lazy-loads Leaflet 1.9.4 via IntersectionObserver, reads
+     /assets/data/infrastructure.geojson + /assets/data/cadastre-2025.json,
+     renders pipelines + sites + cadastre blocks with branded popups.
+     Progressive enhancement: falls back to SVG if Leaflet unavailable.
+     ============================================================== */
+  (function initLeafletMap(){
+    const mapEl = document.getElementById('leaflet-map');
+    if (!mapEl) return;
+    const frame = mapEl.closest('[data-map-frame]') || mapEl.parentElement;
+    const svgFallback = frame ? frame.querySelector('[data-map-svg-fallback]') : null;
+    const loader = frame ? frame.querySelector('[data-map-loader]') : null;
+
+    const LEAFLET_CSS = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+    const LEAFLET_JS  = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+
+    let loaded = false;
+    let loading = false;
+
+    function showLoader(show){
+      if (loader) loader.hidden = !show;
+    }
+    function handleFailure(err){
+      if (window.console && console.warn) console.warn('[leaflet-map] fallback SVG', err);
+      showLoader(false);
+      mapEl.hidden = true;
+      if (svgFallback) svgFallback.hidden = false;
+    }
+
+    function loadLeaflet(){
+      return new Promise((resolve, reject) => {
+        if (window.L) return resolve(window.L);
+        // CSS
+        if (!document.querySelector('link[data-leaflet]')){
+          const link = document.createElement('link');
+          link.rel = 'stylesheet';
+          link.href = LEAFLET_CSS;
+          link.setAttribute('data-leaflet', '1');
+          link.crossOrigin = '';
+          document.head.appendChild(link);
+        }
+        // JS
+        const script = document.createElement('script');
+        script.src = LEAFLET_JS;
+        script.async = true;
+        script.defer = true;
+        script.crossOrigin = '';
+        script.onload = () => window.L ? resolve(window.L) : reject(new Error('Leaflet loaded but window.L undefined'));
+        script.onerror = () => reject(new Error('Leaflet script failed to load'));
+        document.head.appendChild(script);
+      });
+    }
+
+    function siteIcon(L, category){
+      const palette = {
+        siege:     '#080E1A',
+        aval:      '#F59E0B',
+        amont:     '#2C7AE0',
+        inter:     '#10B981',
+        export:    '#8B5CF6',
+        microgrid: '#D9A84F'
+      };
+      const color = palette[category] || '#080E1A';
+      const html = '<span class="et-marker" style="--c:' + color + '"></span>';
+      return L.divIcon({
+        className: 'et-marker-wrap',
+        html: html,
+        iconSize: [22, 22],
+        iconAnchor: [11, 11],
+        popupAnchor: [0, -10]
+      });
+    }
+
+    function sitePopup(p){
+      const lines = ['<div class="et-popup">'];
+      lines.push('<div class="et-popup-head">' + (p.name || 'Site') + '</div>');
+      if (p.role) lines.push('<div class="et-popup-role">' + p.role + '</div>');
+      if (p.note) lines.push('<div class="et-popup-note">' + p.note + '</div>');
+      if (p.address) lines.push('<div class="et-popup-meta">' + p.address + '</div>');
+      if (p.url) lines.push('<a class="et-popup-link" href="' + p.url + '">Voir la page →</a>');
+      lines.push('</div>');
+      return lines.join('');
+    }
+
+    function pipelinePopup(p){
+      const lines = ['<div class="et-popup">'];
+      lines.push('<div class="et-popup-head">' + (p.name || 'Pipeline') + '</div>');
+      if (p.from && p.to) lines.push('<div class="et-popup-role">' + p.from + ' → ' + p.to + '</div>');
+      const stats = [];
+      if (p.length_km) stats.push(p.length_km + ' km');
+      if (p.diameter_inches) stats.push(p.diameter_inches + '″');
+      if (p.capacity_kbd) stats.push(p.capacity_kbd + ' kb/j');
+      if (stats.length) lines.push('<div class="et-popup-note">' + stats.join(' · ') + '</div>');
+      if (p.note) lines.push('<div class="et-popup-meta">' + p.note + '</div>');
+      lines.push('</div>');
+      return lines.join('');
+    }
+
+    function blockColor(status){
+      const map = {
+        'attribué':    '#1F6AE5',
+        'attribue':    '#1F6AE5',
+        'libre':       '#10B981',
+        'changement':  '#F59E0B',
+        'concession':  '#8B5CF6',
+        'en changement': '#F59E0B'
+      };
+      return map[(status || '').toLowerCase()] || '#7A7A7A';
+    }
+
+    function blockPopup(b){
+      const lines = ['<div class="et-popup">'];
+      lines.push('<div class="et-popup-head">Bloc ' + (b.id || b.name || '') + '</div>');
+      if (b.status) lines.push('<div class="et-popup-role">Statut : ' + b.status + '</div>');
+      if (b.basin) lines.push('<div class="et-popup-note">Bassin : ' + b.basin + '</div>');
+      if (b.operator || b.licensee) lines.push('<div class="et-popup-meta">' + (b.operator || b.licensee) + '</div>');
+      lines.push('</div>');
+      return lines.join('');
+    }
+
+    async function renderMap(){
+      if (loaded || loading) return;
+      loading = true;
+      showLoader(true);
+      try {
+        const L = await loadLeaflet();
+        mapEl.hidden = false;
+        const map = L.map(mapEl, {
+          center: [10.5, 15.5],
+          zoom: 5,
+          minZoom: 4,
+          maxZoom: 10,
+          scrollWheelZoom: false,
+          attributionControl: true
+        });
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: '© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>',
+          maxZoom: 10
+        }).addTo(map);
+
+        // Layer groups (for later layer-control toggling)
+        const sitesLayer     = L.layerGroup().addTo(map);
+        const pipelinesLayer = L.layerGroup().addTo(map);
+        const microgridLayer = L.layerGroup();
+        const blocksLayer    = L.layerGroup();
+
+        // Fetch infrastructure GeoJSON
+        const infraUrl = mapEl.getAttribute('data-geojson') || '/assets/data/infrastructure.geojson';
+        try {
+          const resp = await fetch(infraUrl, { credentials: 'same-origin' });
+          if (!resp.ok) throw new Error('infra fetch ' + resp.status);
+          const geo = await resp.json();
+          (geo.features || []).forEach(f => {
+            const p = f.properties || {};
+            const g = f.geometry || {};
+            if (g.type === 'LineString') {
+              const latlngs = (g.coordinates || []).map(c => [c[1], c[0]]);
+              const line = L.polyline(latlngs, {
+                color: p.color || '#D9A84F',
+                weight: 3.5,
+                opacity: 0.85,
+                dashArray: p.category === 'interne' ? '6 6' : null
+              });
+              line.bindPopup(pipelinePopup(p));
+              line.addTo(pipelinesLayer);
+            } else if (g.type === 'Point' && p.type === 'site') {
+              const [lon, lat] = g.coordinates;
+              const m = L.marker([lat, lon], { icon: siteIcon(L, p.category || 'siege') });
+              m.bindPopup(sitePopup(p));
+              m.addTo(sitesLayer);
+            } else if (g.type === 'MultiPoint') {
+              (g.coordinates || []).forEach(coord => {
+                const [lon, lat] = coord;
+                const m = L.circleMarker([lat, lon], {
+                  radius: 6,
+                  color: p.color || '#D9A84F',
+                  weight: 2,
+                  fillColor: p.color || '#D9A84F',
+                  fillOpacity: 0.55
+                });
+                m.bindPopup(sitePopup({
+                  name: p.name || 'Micro-grid solaire',
+                  role: p.role,
+                  note: p.note
+                }));
+                m.addTo(microgridLayer);
+              });
+            }
+          });
+        } catch (err) {
+          if (window.console && console.warn) console.warn('[leaflet-map] infra load', err);
+        }
+
+        // Fetch cadastre blocks (best-effort)
+        const cadastreUrl = mapEl.getAttribute('data-cadastre') || '/assets/data/cadastre-2025.json';
+        try {
+          const resp = await fetch(cadastreUrl, { credentials: 'same-origin' });
+          if (resp.ok) {
+            const cad = await resp.json();
+            const blocks = cad.blocks || [];
+            blocks.forEach(b => {
+              const c = b.center_lat_lon || b.center || null;
+              if (!c || c.length < 2) return;
+              const lat = c[0], lon = c[1];
+              const circle = L.circleMarker([lat, lon], {
+                radius: 7,
+                color: blockColor(b.status),
+                weight: 1.5,
+                fillColor: blockColor(b.status),
+                fillOpacity: 0.45
+              });
+              circle.bindPopup(blockPopup(b));
+              circle.addTo(blocksLayer);
+            });
+          }
+        } catch (err) {
+          if (window.console && console.warn) console.warn('[leaflet-map] cadastre load', err);
+        }
+
+        // Layer control
+        const overlays = {
+          'Sites': sitesLayer,
+          'Pipelines': pipelinesLayer,
+          'Micro-grids solaires': microgridLayer,
+          'Cadastre (42 blocs)': blocksLayer
+        };
+        L.control.layers(null, overlays, { position: 'topright', collapsed: false }).addTo(map);
+
+        // Enable scroll zoom on user click (a11y pattern)
+        map.on('click', () => map.scrollWheelZoom.enable());
+        map.on('mouseout', () => map.scrollWheelZoom.disable());
+
+        // Fit all visible site markers to get a nice initial frame
+        const allLatLngs = [];
+        sitesLayer.eachLayer(l => { if (l.getLatLng) allLatLngs.push(l.getLatLng()); });
+        pipelinesLayer.eachLayer(l => { if (l.getLatLngs) l.getLatLngs().forEach(ll => allLatLngs.push(ll)); });
+        if (allLatLngs.length) {
+          map.fitBounds(L.latLngBounds(allLatLngs).pad(0.25));
+        }
+
+        if (svgFallback) svgFallback.hidden = true;
+        showLoader(false);
+        loaded = true;
+
+        // Invalidate size after any late layout shifts
+        setTimeout(() => { try { map.invalidateSize(); } catch(e){} }, 200);
+      } catch (err) {
+        handleFailure(err);
+      } finally {
+        loading = false;
+      }
+    }
+
+    // Lazy-load via IntersectionObserver
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            io.disconnect();
+            renderMap();
+          }
+        });
+      }, { rootMargin: '200px' });
+      io.observe(mapEl);
+    } else {
+      // Fallback: load on idle
+      if ('requestIdleCallback' in window) requestIdleCallback(renderMap);
+      else setTimeout(renderMap, 400);
+    }
+  })();
+
 })();

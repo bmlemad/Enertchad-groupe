@@ -1,0 +1,212 @@
+{
+  "type": "FeatureCollection",
+  "name": "EnerTchad Groupe — Infrastructure opérationnelle",
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2026-04-22",
+    "coordinateOrder": "GeoJSON standard [lon, lat]",
+    "projection": "WGS84 (EPSG:4326)",
+    "sources": [
+      "Cadastre Pétrolier 2025 · Ministère du Pétrole (MPMG)",
+      "Plan stratégique EnerTchad 2026–2030",
+      "World Bank IPIECA study · Chad-Cameroon pipeline"
+    ]
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "id": "pipeline-doba-kribi",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [16.85, 8.65],
+          [16.10, 8.50],
+          [15.60, 8.30],
+          [15.00, 7.80],
+          [14.50, 7.00],
+          [14.00, 6.20],
+          [13.50, 5.50],
+          [13.00, 4.80],
+          [12.20, 4.10],
+          [11.30, 3.70],
+          [10.50, 3.30],
+          [9.91, 2.95]
+        ]
+      },
+      "properties": {
+        "name": "Pipeline Doba–Kribi",
+        "type": "pipeline",
+        "category": "export",
+        "status": "exploitation",
+        "length_km": 1070,
+        "diameter_inches": 28,
+        "capacity_kbd": 250,
+        "from": "Doba (Tchad)",
+        "to": "Terminal FSO Kribi (Cameroun)",
+        "note": "Corridor d'export principal · traversée Tchad–Cameroun",
+        "color": "#D9A84F"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pipeline-ronier-djermaya",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [15.40, 10.25],
+          [15.38, 10.80],
+          [15.35, 11.35],
+          [15.32, 11.85],
+          [15.40, 12.20]
+        ]
+      },
+      "properties": {
+        "name": "Pipeline Ronier–Djermaya",
+        "type": "pipeline",
+        "category": "interne",
+        "status": "exploitation",
+        "length_km": 311,
+        "diameter_inches": 16,
+        "capacity_kbd": 22,
+        "from": "Ronier (Bongor basin)",
+        "to": "Raffinerie SRN Djermaya",
+        "note": "Corridor interne · alimentation raffinerie nationale",
+        "color": "#B8892E"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "site-ndjamena",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [15.03, 12.10]
+      },
+      "properties": {
+        "name": "N'Djaména",
+        "type": "site",
+        "category": "siege",
+        "role": "Siège social · Direction générale",
+        "address": "Radisson, Block D, Bureau 23 · Sabangali",
+        "url": "/contact.html",
+        "color": "#080E1A"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "site-djermaya",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [15.40, 12.20]
+      },
+      "properties": {
+        "name": "Djermaya · Raffinerie SRN",
+        "type": "site",
+        "category": "aval",
+        "role": "Raffinage · 20 kb/j",
+        "note": "Production essence, diesel, Jet A1, GPL, lubrifiants",
+        "url": "/operations/aval.html",
+        "color": "#F59E0B"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "site-doba",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [16.85, 8.65]
+      },
+      "properties": {
+        "name": "Doba · Base opérationnelle sud",
+        "type": "site",
+        "category": "amont",
+        "role": "Amont · E&P · bassins Doba/Doseo/Salamat",
+        "note": "Hub logistique sud · services forage + extraction",
+        "url": "/operations/amont.html",
+        "color": "#2C7AE0"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "site-bongor",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [15.37, 10.28]
+      },
+      "properties": {
+        "name": "Bongor · Base opérationnelle ouest",
+        "type": "site",
+        "category": "amont",
+        "role": "Amont · bassin occidental",
+        "note": "Proximité frontière camerounaise · champ Ronier",
+        "url": "/operations/amont.html",
+        "color": "#2C7AE0"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "site-moundou",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [16.08, 8.57]
+      },
+      "properties": {
+        "name": "Moundou · Hub distribution sud",
+        "type": "site",
+        "category": "inter",
+        "role": "Midstream · centre SCADA · hub logistique",
+        "note": "Dépôt carburants + bureau commercial sud",
+        "url": "/operations/intermediaire.html",
+        "color": "#10B981"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "site-kribi",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [9.91, 2.95]
+      },
+      "properties": {
+        "name": "Terminal Kribi (Cameroun)",
+        "type": "site",
+        "category": "export",
+        "role": "FSO Komé Kribi 1 · 2,4 Mbbl",
+        "note": "Point d'embarquement du pipeline Doba–Kribi",
+        "url": "/operations/intermediaire.html",
+        "color": "#8B5CF6"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "zone-microgrids",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [15.03, 12.10],
+          [16.08, 8.57],
+          [18.39, 8.64],
+          [18.31, 9.14],
+          [15.98, 10.85],
+          [14.87, 12.40],
+          [17.60, 9.75],
+          [15.50, 11.10],
+          [14.62, 11.45],
+          [15.10, 13.48],
+          [16.50, 11.95],
+          [17.20, 10.45],
+          [14.55, 9.25],
+          [16.40, 13.85],
+          [19.15, 12.00]
+        ]
+      },
+      "properties": {
+        "name": "Micro-grids solaires · zones rurales",
+        "type": "energy",
+        "category": "microgrid",
+        "role": "125 MW cumulé · 28 villages électrifiés · 624 GWh livrés",
+        "note": "Zone indicative — positionnement détaillé sur demande",
+        "color": "#D9A84F"
+      }
+    }
+  ]
+}
