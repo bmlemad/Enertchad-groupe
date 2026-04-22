@@ -3,7 +3,7 @@
  * Fallback offline sur offline.html
  */
 
-const CACHE_VERSION = 'enertchad-v1.11.1-dead-code-cleanup';
+const CACHE_VERSION = 'enertchad-v1.11.2-seo-coherence';
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const RUNTIME_CACHE = `${CACHE_VERSION}-runtime`;
 
