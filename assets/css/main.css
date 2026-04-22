@@ -1118,6 +1118,47 @@ footer .foot-bottom .legal a:hover { color: var(--gold); }
 .doc-card .d-meta { font-size: .82rem; color: var(--muted); }
 .doc-card .d-dl { color: var(--gold-deep); font-weight: 600; font-size: .88rem; margin-top: auto; }
 
+/* Badges de statut documents IR — Batch 2 Investor Resource Center */
+.doc-card .d-status {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: .68rem; letter-spacing: .06em; text-transform: uppercase;
+  font-weight: 700;
+  padding: 3px 8px; border-radius: 999px;
+  align-self: flex-start;
+  line-height: 1.3;
+}
+.doc-card .d-status::before {
+  content: ""; display: inline-block;
+  width: 6px; height: 6px; border-radius: 50%;
+  background: currentColor;
+}
+.doc-card .d-status[data-status="live"]      { color: #046C3A; background: rgba(4, 108, 58, .1); }
+.doc-card .d-status[data-status="scheduled"] { color: #8B5A1A; background: rgba(217, 168, 79, .14); }
+.doc-card .d-status[data-status="on-request"]{ color: #1F3A8A; background: rgba(31, 58, 138, .1); }
+.doc-card .d-status[data-status="draft"]     { color: #6B6E73; background: rgba(107, 110, 115, .1); }
+
+/* Panel FAQ IR — Batch 2 */
+.ir-faq { display: grid; gap: 8px; margin-top: 12px; }
+.ir-faq details {
+  background: var(--white); border: 1px solid var(--hairline-dark);
+  border-radius: var(--radius); padding: 14px 20px;
+  transition: border-color .22s var(--ease);
+}
+.ir-faq details[open] { border-color: var(--gold); box-shadow: var(--shadow); }
+.ir-faq summary {
+  cursor: pointer; font-family: var(--font-display); font-weight: 600;
+  color: var(--ink); font-size: .98rem; list-style: none;
+  display: flex; justify-content: space-between; align-items: center; gap: 12px;
+}
+.ir-faq summary::-webkit-details-marker { display: none; }
+.ir-faq summary::after {
+  content: "+"; font-size: 1.4rem; color: var(--gold-deep);
+  transition: transform .25s var(--ease);
+  line-height: 1;
+}
+.ir-faq details[open] summary::after { content: "−"; }
+.ir-faq details p { margin-top: 10px; color: var(--muted); font-size: .92rem; line-height: 1.6; }
+
 /* ---------- Calendar list (IR events) ---------- */
 .cal-list { display: grid; gap: 10px; }
 .cal-item {

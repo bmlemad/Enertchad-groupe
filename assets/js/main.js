@@ -1149,4 +1149,46 @@
     }
   })();
 
+  /* ---------- Contact form prefill (Batch 2 IR) ----------
+     Lit ?sujet=<slug> sur /contact.html et pré-remplit
+     <select name="type"> + <input name="subject"> avec
+     le libellé long correspondant.
+  */
+  (function prefillContactForm(){
+    if (!/\/contact(\.html)?$/i.test(location.pathname)) return;
+    const params = new URLSearchParams(location.search);
+    const slug = params.get('sujet');
+    if (!slug) return;
+
+    const catalog = {
+      // Documents IR — type "Relations investisseurs"
+      'ir-rapport-annuel-2025':  { type: 'Relations investisseurs', subject: 'Demande — Rapport annuel 2025 (à paraître T2 2026)' },
+      'ir-resultats-2025':       { type: 'Relations investisseurs', subject: 'Inscription webcast — Résultats 2025' },
+      'ir-ifrs-2025':            { type: 'Relations investisseurs', subject: 'Demande — États financiers IFRS 2025' },
+      'ir-communique-q4-2025':   { type: 'Relations investisseurs', subject: 'Alertes IR — Communiqué Q4 2025' },
+      'ir-itie-2025':            { type: 'Relations investisseurs', subject: 'Demande — Rapport ITIE 2025' },
+      'ir-esg-2025':             { type: 'Relations investisseurs', subject: 'Demande — Rapport ESG / Développement durable 2025' },
+      'ir-plan-2030':            { type: 'Relations investisseurs', subject: 'Demande — Plan stratégique « Énergie souveraine 2030 »' },
+      'ir-gouvernance':          { type: 'Relations investisseurs', subject: 'Demande — Rapport de gouvernance CA' },
+      'ir-fact-sheet':           { type: 'Relations investisseurs', subject: 'Demande — Fact sheet EnerTchad' },
+      // Presse
+      'presse-kit':              { type: 'Presse & médias',          subject: 'Demande — Kit presse 2026 (logos, photos, bios)' },
+      // Autres (templates lead-gen futurs)
+      'talents-spontane':        { type: 'Recrutement',              subject: 'Candidature spontanée' },
+      'achats-sourcing':         { type: 'Achats / fournisseur',     subject: 'Référencement fournisseur — Sourcing achats' }
+    };
+
+    const entry = catalog[slug];
+    if (!entry) return;
+
+    const selectEl = document.querySelector('select[name="type"]');
+    const subjectEl = document.querySelector('input[name="subject"]');
+    if (selectEl) {
+      const opts = Array.from(selectEl.options);
+      const match = opts.find(o => o.textContent.trim() === entry.type);
+      if (match) { selectEl.value = match.value || match.textContent.trim(); }
+    }
+    if (subjectEl) { subjectEl.value = entry.subject; }
+  })();
+
 })();
