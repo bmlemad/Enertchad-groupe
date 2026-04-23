@@ -418,11 +418,10 @@ services_catalog:
     resume: "Services d'exploration, d'analyse et de mise en production des ressources pétrolières du Tchad."
     description: "EnerTchad intervient sur toute la chaîne amont : géosciences, forage, complétions, tests et optimisation de production."
     sous_services:
-      - "Études géologiques & sismiques"
-      - "Modélisation & simulation réservoir"
-      - "Forage vertical & directionnel"
-      - "Complétions mécaniques & intelligentes"
-      - "Tests de puits & mise en production"
+      - "Reporting ESG & durabilité"
+      - "Suivi environnemental par drones"
+      - "EnerAcademy (formations Oil & Gas)"
+      - "Conformité OHADA & anticorruption"
     technologies:
       - "IA réservoir"
       - "Jumeaux numériques"
@@ -451,11 +450,10 @@ services_catalog:
     resume: "Solutions avancées pour maximiser la récupération des champs matures."
     description: "EnerTchad propose des programmes EOR complets, des produits chimiques spécialisés et un support technique de haut niveau."
     sous_services:
-      - "Polymères, surfactants, gels"
+      - "Solutions EOR (polymères, surfactants, gels)"
+      - "Programmes d'injection & stimulation"
       - "Diagnostic réservoir"
-      - "Design d'injection"
-      - "Stimulation & acidification"
-      - "Boues de forage & additifs"
+      - "Boues de forage & additifs spécialisés"
     technologies:
       - "SCADA injection"
       - "Analyse chimique avancée"
@@ -484,12 +482,11 @@ services_catalog:
     resume: "Transport, intégrité et supervision du pipeline Doba–Kribi et des infrastructures associées."
     description: "EnerTchad assure la sécurité, la performance et la conformité du pipeline national et des terminaux pétroliers."
     sous_services:
-      - "Transport brut & dispatching"
+      - "Transport brut & Dispatching"
       - "Comptage fiscal"
-      - "Inspection ILI"
-      - "Pigging"
+      - "Inspection ILI & Pigging"
       - "Intégrité pipeline (API 1160)"
-      - "Stockage & terminaux"
+      - "Stockage & Terminaux pétroliers"
     technologies:
       - "SCADA pipeline"
       - "Drones thermiques & LIDAR"
@@ -520,9 +517,9 @@ services_catalog:
     description: "EnerTchad opère un réseau de stations-service et des solutions mobiles innovantes pour zones isolées."
     sous_services:
       - "Stations-service EnerTchad"
-      - "Mobile Station™ (S/M/L)"
-      - "Livraison carburants"
-      - "Solutions flottes & cartes carburant"
+      - "Mobile Station™ (S / M / L)"
+      - "Livraison carburants & Solutions flottes"
+      - "Cartes carburant intelligentes"
     technologies:
       - "SCADA mobile"
       - "Caméras IA stations"
@@ -558,7 +555,6 @@ services_catalog:
       - "Bitume & PMB"
       - "Engrais (urée, ammoniac, NPK)"
       - "Méthanol & dérivés"
-      - "Formulation & contrôle qualité"
     technologies:
       - "IoT process"
       - "IA contrôle qualité"
@@ -590,10 +586,10 @@ services_catalog:
     description: "EnerTchad intègre SCADA, IoT, IA, drones et cybersécurité pour moderniser ses opérations."
     sous_services:
       - "SCADA pipeline / champs / stations"
-      - "IoT industriel"
-      - "Drones & robots industriels"
-      - "Jumeaux numériques"
-      - "IA & data analytics"
+      - "IoT industriel (pression, corrosion, gaz)"
+      - "Drones & Robots industriels"
+      - "Digital Twins (pipeline, champs, pétrochimie)"
+      - "IA & Data Analytics"
     technologies:
       - "SCADA 4.0"
       - "IoT hydrocarbures"
@@ -626,11 +622,10 @@ services_catalog:
     resume: "Protection des systèmes industriels critiques d'EnerTchad."
     description: "Sécurisation des infrastructures OT, SCADA et pipeline selon les standards internationaux."
     sous_services:
-      - "IEC 62443"
-      - "Monitoring OT"
-      - "Pare-feu industriels"
-      - "Gestion des accès privilégiés"
-      - "Plans de reprise (DRP)"
+      - "IEC 62443 & NIST ICS"
+      - "Monitoring OT & pare-feu industriels"
+      - "Gestion des accès privilégiés (PAM)"
+      - "Plans de reprise & résilience"
     technologies:
       - "IDS/IPS OT"
       - "Segmentation réseau"
@@ -660,10 +655,10 @@ services_catalog:
     resume: "Sécurisation avancée des sites pétroliers et infrastructures critiques."
     description: "Combinaison de caméras IA, drones, contrôle d'accès et capteurs périmétriques."
     sous_services:
-      - "Vidéosurveillance 4K/8K"
-      - "Caméras thermiques"
+      - "Caméras 4K/8K & thermiques"
+      - "Caméras IA & PTZ 360°"
       - "Contrôle d'accès biométrique"
-      - "Anti-intrusion"
+      - "Capteurs périmétriques & anti-intrusion"
       - "Drones de sécurité"
     technologies:
       - "IA sécurité"
@@ -695,10 +690,10 @@ services_catalog:
     resume: "Solutions énergétiques pour réduire les coûts et renforcer la fiabilité des opérations pétrolières."
     description: "Les énergies nouvelles sont utilisées pour alimenter, sécuriser et optimiser les infrastructures pétrolières."
     sous_services:
-      - "Solaire industriel"
+      - "Solaire industriel (stations, pipeline, SCADA)"
       - "Hybridation Mobile Station™"
       - "Mini-grids pour sites isolés"
-      - "Efficacité énergétique"
+      - "Efficacité énergétique & réduction CO₂"
     technologies:
       - "IoT énergie"
       - "Monitoring solaire"
