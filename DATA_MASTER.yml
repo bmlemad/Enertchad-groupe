@@ -418,10 +418,10 @@ services_catalog:
     resume: "Services d'exploration, d'analyse et de mise en production des ressources pétrolières du Tchad."
     description: "EnerTchad intervient sur toute la chaîne amont : géosciences, forage, complétions, tests et optimisation de production."
     sous_services:
-      - "Reporting ESG & durabilité"
-      - "Suivi environnemental par drones"
-      - "EnerAcademy (formations Oil & Gas)"
-      - "Conformité OHADA & anticorruption"
+      - "Géosciences & Réservoir"
+      - "Forage & Complétions"
+      - "Tests de puits & Mise en production"
+      - "Optimisation des débits"
     technologies:
       - "IA réservoir"
       - "Jumeaux numériques"
@@ -723,7 +723,7 @@ services_catalog:
     resume: "Standards internationaux pour crédibiliser EnerTchad auprès des investisseurs."
     description: "Programmes ESG, formation technique et gouvernance conforme aux meilleures pratiques."
     sous_services:
-      - "Reporting ESG"
+      - "Reporting ESG & durabilité"
       - "Suivi environnemental par drones"
       - "EnerAcademy (formations Oil & Gas)"
       - "Conformité OHADA & anticorruption"
