@@ -23,7 +23,34 @@
 /upstream         /operations/amont         301
 /midstream        /operations/intermediaire 301
 /downstream       /operations/aval          301
-/services         /operations/services      301
+# NOTE v1.1.0 : ligne `/services → /operations/services 301` retirée pour libérer
+# la nouvelle page master /services.html (10 services harmonisés). Les anciens
+# liens externes vers /services pointent maintenant vers la page master — les
+# services oilfield restent accessibles via /operations/services (lien direct).
+
+# --- Clean URLs v1.1.0 : /services/<slug> → ancre sur la master page ---
+/services/exploration-production         /services#section-ep                 301
+/services/eor-chimie-petroliere          /services#section-eor                301
+/services/pipeline-midstream             /services#section-pipeline           301
+/services/distribution-mobilite          /services#section-distribution       301
+/services/petrochimie-transformation     /services#section-petrochimie        301
+/services/digital-cyber-energy           /services#section-digital            301
+/services/ics-security-cybersecurite-industrielle  /services#section-ics-security       301
+/services/securite-physique-intelligente           /services#section-physical-security  301
+/services/energies-nouvelles-au-service-du-petrole /services#section-energies 301
+/services/esg-formation-gouvernance      /services#section-esg                301
+# Aliases courts (mnémo) pour emails / docs externes
+/services/ep           /services#section-ep                 301
+/services/eor-chimie   /services#section-eor                301
+/services/pipeline     /services#section-pipeline           301
+/services/distribution /services#section-distribution       301
+/services/petrochimie  /services#section-petrochimie        301
+/services/digital      /services#section-digital            301
+/services/ics          /services#section-ics-security       301
+/services/cybersecurite /services#section-ics-security      301
+/services/securite     /services#section-physical-security  301
+/services/solaire      /services#section-energies           301
+/services/esg          /services#section-esg                301
 
 # --- Legacy PDF aliases (Sprint A méga-menu — docs renommés) ---
 /documents/rapport-esg-2025.pdf  /documents/EnerTchad-Rapport-Durabilite-2025.pdf  301
