@@ -1,0 +1,167 @@
+{
+  "source": {
+    "title": "Cadastre Pétrolier 2025 · République du Tchad",
+    "authority": "Ministère du Pétrole, des Mines et de la Géologie",
+    "publication": "14 mars 2025",
+    "publicationIso": "2025-03-14",
+    "version": "v6 · 12-03-2025",
+    "pdfUrl": "/documents/cadastre-petrolier-2025.pdf",
+    "imageUrl": "/assets/img/cadastre-petrolier-2025.webp",
+    "imageFallback": "/assets/img/cadastre-petrolier-2025.jpg",
+    "projection": "Esri ArcMap 10.9.1 · lat/lon WGS84",
+    "coverage": "12°E–24°E · 7°N–24°N",
+    "note": "Données officielles extraites du cadastre pétrolier publié par le Ministère. Les coordonnées de centre de bloc sont approximatives (lecture de grille). Les polygones exacts restent dans le PDF source."
+  },
+  "legend": {
+    "status": {
+      "attribue":     { "label": "Bloc attribué",              "color": "#F4B23E", "description": "Bloc sous licence active, opérateur désigné" },
+      "libre":        { "label": "Bloc libre",                 "color": "#D4E6C0", "description": "Bloc disponible pour attribution" },
+      "changement":   { "label": "Bloc en cours de changement", "color": "#EB8C3F", "description": "Transfert / cession / renouvellement en cours" },
+      "hors_bloc":    { "label": "Zone hors bloc",             "color": "#FFFFFF", "description": "Zone non couverte par un bloc" },
+      "concession":   { "label": "Concession active",          "color": "#4FB355", "description": "Champ en exploitation / concession d'exploitation" }
+    },
+    "pipelines": {
+      "existant_non_exploite":    { "label": "Pipeline existant non exploité", "stroke": "#808080", "style": "solid" },
+      "existant_en_exploitation": { "label": "Pipeline existant en exploitation", "stroke": "#C8A03A", "style": "solid" },
+      "tchad_cameroun":           { "label": "Pipeline Tchad–Cameroun",       "stroke": "#1C6FB8", "style": "solid" },
+      "en_projet":                { "label": "Pipeline en projet",             "stroke": "#1C6FB8", "style": "dashed" }
+    },
+    "geography": {
+      "limites_admin": { "label": "Limites administratives", "color": "#C94B4B" },
+      "lac_tchad":     { "label": "Lac Tchad",               "color": "#82BEDB" },
+      "capitale":      { "label": "Capitale (N'Djaména)",    "marker": "square" },
+      "localite":      { "label": "Localité",                "marker": "dot" },
+      "raffinerie":    { "label": "Raffinerie",              "marker": "refinery_icon" }
+    }
+  },
+
+  "regions": [
+    { "id": "nord",    "name": "Nord · Sahara",        "bounds": "17°N–24°N",   "blocks": 18 },
+    { "id": "centre",  "name": "Centre · Sahel",       "bounds": "13°N–17°N",   "blocks": 8 },
+    { "id": "sud",     "name": "Sud · Bassins productifs", "bounds": "7°N–13°N",  "blocks": 16 }
+  ],
+
+  "blocks": [
+    { "name": "DJADO I",        "region": "nord",  "status": "attribue",   "center_lat_lon": [22.0, 16.0], "note": "Extrême nord · proche frontière Libye/Niger" },
+    { "name": "DJADO II",       "region": "nord",  "status": "libre",      "center_lat_lon": [20.5, 16.0] },
+    { "name": "DJADO III GP",   "region": "nord",  "status": "attribue",   "center_lat_lon": [19.0, 16.0] },
+    { "name": "MANGA",          "region": "nord",  "status": "libre",      "center_lat_lon": [18.5, 15.8] },
+
+    { "name": "ERDIS I",        "region": "nord",  "status": "libre",      "center_lat_lon": [21.5, 20.5] },
+    { "name": "ERDIS II",       "region": "nord",  "status": "libre",      "center_lat_lon": [20.0, 19.5] },
+    { "name": "ERDIS III",      "region": "nord",  "status": "libre",      "center_lat_lon": [18.8, 20.0] },
+    { "name": "ERDIS IV",       "region": "nord",  "status": "libre",      "center_lat_lon": [20.0, 22.0] },
+    { "name": "ERDIS V",        "region": "nord",  "status": "libre",      "center_lat_lon": [19.0, 22.0] },
+    { "name": "ERDIS VI",       "region": "nord",  "status": "libre",      "center_lat_lon": [19.0, 23.0] },
+    { "name": "ERDIS VII",      "region": "nord",  "status": "libre",      "center_lat_lon": [17.5, 23.0] },
+
+    { "name": "LARGEAU I",      "region": "nord",  "status": "libre",      "center_lat_lon": [18.5, 17.5] },
+    { "name": "LARGEAU II",     "region": "nord",  "status": "libre",      "center_lat_lon": [18.0, 18.3] },
+    { "name": "LARGEAU III BIS","region": "nord",  "status": "libre",      "center_lat_lon": [17.0, 17.8] },
+    { "name": "LARGEAU IV",     "region": "nord",  "status": "libre",      "center_lat_lon": [16.5, 18.0] },
+    { "name": "LARGEAU V",      "region": "nord",  "status": "libre",      "center_lat_lon": [18.0, 20.0] },
+    { "name": "LARGEAU VII",    "region": "nord",  "status": "libre",      "center_lat_lon": [16.0, 20.0] },
+    { "name": "LARGEAU MEIGE",  "region": "centre","status": "changement", "center_lat_lon": [13.5, 19.0], "note": "Vaste zone en transition · grand bloc" },
+
+    { "name": "UHCL",           "region": "nord",  "status": "attribue",   "center_lat_lon": [17.0, 16.5] },
+    { "name": "UHCL BLOC H",    "region": "centre","status": "attribue",   "center_lat_lon": [14.5, 14.5] },
+
+    { "name": "SILTOU I",       "region": "centre","status": "libre",      "center_lat_lon": [16.0, 15.5] },
+    { "name": "SILTOU II",      "region": "centre","status": "libre",      "center_lat_lon": [15.5, 16.0] },
+
+    { "name": "BLT I",          "region": "centre","status": "libre",      "center_lat_lon": [15.5, 14.5] },
+    { "name": "BLT II",         "region": "centre","status": "libre",      "center_lat_lon": [15.0, 14.5] },
+    { "name": "BLT",            "region": "centre","status": "attribue",   "center_lat_lon": [14.0, 14.0], "note": "Proche frontière Nigeria · zone Lac" },
+
+    { "name": "MOUSSORO",       "region": "centre","status": "libre",      "center_lat_lon": [13.8, 17.0] },
+
+    { "name": "MANGO OUEST",    "region": "sud",   "status": "changement", "center_lat_lon": [11.5, 15.5] },
+    { "name": "MANGO EST",      "region": "sud",   "status": "changement", "center_lat_lon": [11.5, 16.2] },
+
+    { "name": "BONGOR",         "region": "sud",   "status": "attribue",   "center_lat_lon": [10.3, 15.5], "note": "Bassin de Bongor · historique productif" },
+
+    { "name": "BCO III",        "region": "sud",   "status": "attribue",   "center_lat_lon": [9.6, 16.0] },
+    { "name": "DOBA OUEST I",   "region": "sud",   "status": "changement", "center_lat_lon": [9.2, 15.6] },
+    { "name": "DOBA OUEST II",  "region": "sud",   "status": "changement", "center_lat_lon": [8.6, 16.0] },
+    { "name": "BOROGOP",        "region": "sud",   "status": "attribue",   "center_lat_lon": [9.0, 16.8] },
+
+    { "name": "BCS I",          "region": "sud",   "status": "libre",      "center_lat_lon": [8.0, 16.0] },
+    { "name": "BCS II",         "region": "sud",   "status": "attribue",   "center_lat_lon": [8.5, 16.8] },
+
+    { "name": "DS I",           "region": "sud",   "status": "attribue",   "center_lat_lon": [9.0, 19.0] },
+    { "name": "DS II",          "region": "sud",   "status": "attribue",   "center_lat_lon": [9.5, 19.5] },
+    { "name": "DS III",         "region": "sud",   "status": "attribue",   "center_lat_lon": [10.0, 20.0] },
+    { "name": "DOSSEO",         "region": "sud",   "status": "attribue",   "center_lat_lon": [9.0, 19.5], "note": "Bassin du Dosséo" },
+    { "name": "BDS2008",        "region": "sud",   "status": "attribue",   "center_lat_lon": [10.0, 19.0] },
+    { "name": "RAPKIA S CHP2",  "region": "sud",   "status": "attribue",   "center_lat_lon": [9.0, 20.5] },
+    { "name": "RAPKIA CHP2",    "region": "sud",   "status": "attribue",   "center_lat_lon": [9.5, 20.3] }
+  ],
+
+  "pipelines": [
+    {
+      "name": "Pipeline Tchad–Cameroun",
+      "type": "tchad_cameroun",
+      "status": "exploitation",
+      "length_km": 1070,
+      "from": "Doba (Tchad)",
+      "to":   "Kribi (Cameroun)",
+      "operator_note": "Corridor d'export principal · 1 070 km · bitumes sud → terminal FSO Kribi"
+    },
+    {
+      "name": "Pipeline Ronier–Djermaya",
+      "type": "existant_en_exploitation",
+      "status": "exploitation",
+      "length_km": 311,
+      "from": "Ronier (bassin de Bongor)",
+      "to":   "Raffinerie SRN · Djermaya",
+      "operator_note": "Alimente la raffinerie Société de Raffinage de N'Djaména"
+    },
+    {
+      "name": "Pipeline en projet · extension nord",
+      "type": "en_projet",
+      "status": "projet",
+      "length_km": null,
+      "from": "Zone BLT / UHCL BLOC H",
+      "to":   "Réseau existant",
+      "operator_note": "Tracé indicatif · en cours d'étude"
+    }
+  ],
+
+  "sites": [
+    { "name": "N'Djaména",   "role": "Capitale · Siège social", "lat_lon": [12.1, 15.03] },
+    { "name": "Djermaya",    "role": "Raffinerie SRN · 20 kb/j", "lat_lon": [12.35, 15.25] },
+    { "name": "Doba",        "role": "Base sud · bassins Doba/Doseo", "lat_lon": [8.65, 16.85] },
+    { "name": "Bongor",      "role": "Base ouest · bassin Bongor", "lat_lon": [10.28, 15.38] },
+    { "name": "Moundou",     "role": "Hub distribution sud", "lat_lon": [8.57, 16.08] },
+    { "name": "Kribi",       "role": "Terminal export FSO (Cameroun)", "lat_lon": [2.95, 9.91] },
+    { "name": "Lac Tchad",   "role": "Plan d'eau · frontière NG/NE/CM", "lat_lon": [13.5, 14.0] }
+  ],
+
+  "borders": [
+    { "country": "Libye",                  "direction": "nord" },
+    { "country": "Soudan",                 "direction": "est" },
+    { "country": "République Centrafricaine", "direction": "sud" },
+    { "country": "Cameroun",               "direction": "sud-ouest" },
+    { "country": "Nigeria",                "direction": "ouest" },
+    { "country": "Niger",                  "direction": "nord-ouest" }
+  ],
+
+  "statistics": {
+    "total_blocks": 42,
+    "by_status": {
+      "attribue":   16,
+      "libre":      21,
+      "changement":  5,
+      "hors_bloc":   0
+    },
+    "by_region": {
+      "nord":    18,
+      "centre":   8,
+      "sud":     16
+    },
+    "pipelines_total": 3,
+    "pipelines_in_operation": 2,
+    "pipelines_planned": 1,
+    "last_updated": "2025-03-14"
+  }
+}

@@ -1,0 +1,12 @@
+# Dossiers source internes — ne pas déployer sur Vercel
+_sources/
+poles/
+dashboard-src/
+
+# Documentation projet (markdown à la racine)
+AUDIT_TECHNIQUE_2026-04-22.md
+CLOUDFLARE_SETUP.md
+DATA_MASTER.yml
+DESIGN_SYSTEM.md
+DOMAIN_SETUP.md
+README.md

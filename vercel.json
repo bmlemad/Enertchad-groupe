@@ -1,0 +1,72 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/amont",              "destination": "/operations/amont.html",         "permanent": true },
+    { "source": "/intermediaire",      "destination": "/operations/intermediaire.html", "permanent": true },
+    { "source": "/aval",               "destination": "/operations/aval.html",          "permanent": true },
+    { "source": "/services",           "destination": "/operations/services.html",      "permanent": true },
+    { "source": "/investors",          "destination": "/investisseurs.html",            "permanent": true },
+    { "source": "/sustainability",     "destination": "/durabilite.html",               "permanent": true },
+    { "source": "/careers",            "destination": "/talents.html",                  "permanent": true },
+    { "source": "/news",               "destination": "/actualites.html",               "permanent": true },
+    { "source": "/legal",              "destination": "/mentions-legales.html",         "permanent": true },
+    { "source": "/privacy",            "destination": "/confidentialite.html",          "permanent": true },
+    { "source": "/energies",           "destination": "/energies/",                     "permanent": true },
+    { "source": "/technologies",       "destination": "/technologies/",                 "permanent": true },
+    { "source": "/enertech",           "destination": "/technologies/",                 "permanent": true },
+    { "source": "/greentech",          "destination": "/energies/",                     "permanent": true },
+    { "source": "/documents/rapport-esg-2025.pdf", "destination": "/documents/EnerTchad-Rapport-Durabilite-2025.pdf", "permanent": true },
+    { "source": "/_sources/:path*",    "destination": "/404.html",                      "permanent": false },
+    { "source": "/poles/:path*",       "destination": "/404.html",                      "permanent": false },
+    { "source": "/dashboard-src/:path*","destination": "/404.html",                     "permanent": false }
+  ],
+  "rewrites": [
+    { "source": "/groupe",                  "destination": "/groupe.html" },
+    { "source": "/investisseurs",           "destination": "/investisseurs.html" },
+    { "source": "/durabilite",              "destination": "/durabilite.html" },
+    { "source": "/talents",                 "destination": "/talents.html" },
+    { "source": "/actualites",              "destination": "/actualites.html" },
+    { "source": "/contact",                 "destination": "/contact.html" },
+    { "source": "/maps",                    "destination": "/maps.html" },
+    { "source": "/newsletter",              "destination": "/newsletter.html" },
+    { "source": "/dashboard",               "destination": "/dashboard.html" },
+    { "source": "/dashboard-executif",      "destination": "/dashboard-executif.html" },
+    { "source": "/operations/amont",        "destination": "/operations/amont.html" },
+    { "source": "/operations/intermediaire","destination": "/operations/intermediaire.html" },
+    { "source": "/operations/aval",         "destination": "/operations/aval.html" },
+    { "source": "/operations/services",     "destination": "/operations/services.html" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Frame-Options",        "value": "SAMEORIGIN" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy",        "value": "strict-origin-when-cross-origin" },
+        { "key": "Permissions-Policy",     "value": "geolocation=(), microphone=(), camera=(), payment=(), usb=()" },
+        { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" },
+        { "key": "Content-Security-Policy", "value": "default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: https:; script-src 'self' 'unsafe-inline' https://plausible.io; connect-src 'self' https://plausible.io; frame-ancestors 'self'; base-uri 'self'; form-action 'self'; manifest-src 'self'; worker-src 'self'" }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/sw.js",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/(.*\\.html)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+      ]
+    }
+  ]
+}

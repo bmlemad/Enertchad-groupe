@@ -1,0 +1,89 @@
+{
+  "meta": {
+    "title": "Enhanced Oil Recovery (EOR) — Tchad",
+    "version": "1.0.0",
+    "last_updated": "2026-04-22",
+    "owner": "Direction Amont · Département Réservoirs",
+    "approval": {
+      "by": "Dir Amont + DSI",
+      "status": "draft",
+      "date_target": "2026-05-15"
+    },
+    "source_docs": [
+      "EnerTchad-Note-Technique-Champs-Matures-2026.docx",
+      "EnerTchad-Deck-CODIR-Champs-Matures-2026.pptx"
+    ]
+  },
+  "overview": {
+    "tagline": "Prolonger la vie des champs matures, libérer 10 à 18 % de réserves additionnelles.",
+    "lead": "Après 25 ans d'exploitation primaire et secondaire (injection d'eau), les bassins matures du Doba conservent 55 à 70 % du pétrole originel en place. L'Enhanced Oil Recovery (EOR) vise à récupérer une fraction de ces hydrocarbures résiduels par injection de fluides actifs ou gaz miscibles.",
+    "maturity": "Pilote terrain 2027 · déploiement commercial 2029–2032"
+  },
+  "techniques": [
+    {
+      "code": "CO2-EOR",
+      "nom": "Injection de CO₂ miscible",
+      "principe": "Injection de CO₂ supercritique dans le réservoir pour réduire la tension interfaciale huile/eau et mobiliser l'huile résiduelle.",
+      "applicabilite": "Réservoirs profonds (>800 m), pression >75 bar, huile légère (>30° API).",
+      "bassins_cibles": ["Doba-Kome", "Bolobo-Miandoum"],
+      "gain_rec_esperee_pct": "8–14",
+      "synergie_esg": "Stockage géologique CO₂ permanent (CCUS) — contribution NDC Tchad 2030.",
+      "ingredients_locaux": "CO₂ capté sur raffinerie Djarmaya + future unité ammoniac-urée."
+    },
+    {
+      "code": "Polymer-EOR",
+      "nom": "Injection de polymères",
+      "principe": "Ajout de polyacrylamides hydrosolubles à l'eau injectée pour augmenter sa viscosité et améliorer la mobilité de l'huile (M-ratio).",
+      "applicabilite": "Huiles lourdes à moyennes (18–28° API), réservoirs peu profonds à moyens.",
+      "bassins_cibles": ["Bongor-Sud", "Nya"],
+      "gain_rec_esperee_pct": "6–10",
+      "synergie_esg": "Consommation d'eau maîtrisée via recyclage produits d'eau.",
+      "ingredients_locaux": "Étude de faisabilité pour production locale de polymères à partir de gomme arabique (RD en cours)."
+    },
+    {
+      "code": "ASP",
+      "nom": "Alkaline-Surfactant-Polymer",
+      "principe": "Cocktail combinant désorption (alcalin), abaissement de tension interfaciale (surfactant) et contrôle de la mobilité (polymère).",
+      "applicabilite": "Champs à haute hétérogénéité, huiles de 18–35° API.",
+      "bassins_cibles": ["Kome-Miandoum"],
+      "gain_rec_esperee_pct": "12–18",
+      "synergie_esg": "Surfactants biosourcés sélectionnés selon norme OSPAR PLONOR.",
+      "ingredients_locaux": "RD en partenariat avec Université de N'Djamena (extraction tensioactifs à partir de sous-produits agricoles tchadiens : arachide, coton)."
+    },
+    {
+      "code": "Thermal-SAGD",
+      "nom": "Steam-Assisted Gravity Drainage",
+      "principe": "Injection de vapeur haute pression pour réduire la viscosité des huiles lourdes, suivie d'un drainage gravitaire vers puits producteurs horizontaux.",
+      "applicabilite": "Huiles lourdes (<18° API), réservoirs peu profonds bien connectés verticalement.",
+      "bassins_cibles": ["Mimosa"],
+      "gain_rec_esperee_pct": "15–25",
+      "synergie_esg": "Vapeur produite par cogénération solaire + gaz associé (bas-carbone).",
+      "ingredients_locaux": "Gaz associé valorisé plutôt que torché · champ solaire CSP Djarmaya-Est en étude."
+    }
+  ],
+  "roadmap": [
+    { "phase": "P0 · Études labo", "période": "Q3 2026 – Q1 2027", "jalons": "Carottes réservoirs, tests de compatibilité fluides/roche, modélisation numérique." },
+    { "phase": "P1 · Pilote terrain CO₂-EOR", "période": "Q2 2027 – Q4 2028", "jalons": "Puits injecteur + 2 producteurs, bassin de Kome, suivi 4D sismique." },
+    { "phase": "P2 · Extension ASP Bongor", "période": "2028 – 2029", "jalons": "Pilote 3 patterns injection, évaluation économique, validation COMEX." },
+    { "phase": "P3 · Déploiement commercial", "période": "2029 – 2032", "jalons": "Passage à grande échelle sur 2 bassins matures, contribution production +18 kb/j." }
+  ],
+  "kpis_cibles": {
+    "production_additionnelle_kbpj": 18,
+    "réserves_additionnelles_mbbl": 64,
+    "co2_stocké_mt_cumul_2032": 2.4,
+    "capex_cumul_musd": 340,
+    "breakeven_usd_bbl": 42
+  },
+  "risques": [
+    "Prix Brent < 40 USD/bbl pendant >18 mois consécutifs → viabilité économique menacée",
+    "Pénurie surfactants/polymères sur marchés internationaux (concurrence Golfe arabique)",
+    "Compétence EOR locale à structurer : formation 35 ingénieurs réservoirs d'ici 2028",
+    "Arbitrage CO₂ : injection EOR vs exportation future CCUS transfrontalier"
+  ],
+  "partenariats_cibles": [
+    "IFP Energies Nouvelles (France) — modélisation & pilotes",
+    "Université de N'Djamena + UNDT — RD surfactants locaux",
+    "Banque Africaine de Développement — financement blended",
+    "Chinese National Offshore (CNOOC) — retour d'expérience SAGD"
+  ]
+}

@@ -1,0 +1,38 @@
+# =============================================================================
+# EnerTchad Groupe — .gitignore
+# =============================================================================
+
+# macOS / Windows cruft
+.DS_Store
+Thumbs.db
+.~lock.*
+
+# Node / build artifacts
+node_modules/
+.npm-global/
+dist/
+.cache/
+.wrangler/
+
+# Cowork/agent scratchpads
+sessions/
+.claude/
+
+# Historical artifacts déjà exclus du périmètre courant
+ACTIONS_CADASTRE/
+ACTIONS_INTEGRATION/
+AUDIT_ACTIONS/
+PATCHES_MEGA_MENU/
+ASSETS_IMAGES_HD/
+patches/
+patches-cadastre/
+deliverables/
+reports/
+site/
+enertchad-*.bundle
+*.patch
+
+# Local env / secrets
+.env
+.env.local
+.env.*.local

@@ -1,0 +1,488 @@
+{
+  "meta": {
+    "source": "DATA_MASTER.yml v1.1.0",
+    "updated": "2026-04-23",
+    "schema_version": "2",
+    "count": 10,
+    "license": "Interne Groupe — propriété EnerTchad SA/CA",
+    "canonical_url": "https://www.enertchad.td/services.html"
+  },
+  "groups": [
+    {
+      "id": "operations",
+      "nom": "Services pétroliers",
+      "description": "Chaîne de valeur intégrée E&P → Pétrochimie",
+      "items": [
+        "ep",
+        "eor",
+        "pipeline",
+        "distribution",
+        "petrochimie"
+      ],
+      "accent_hex": "#C48848"
+    },
+    {
+      "id": "technologies",
+      "nom": "Technologies avancées (au service du pétrole)",
+      "description": "Digital industriel, cybersécurité OT et sécurité physique intelligente",
+      "items": [
+        "digital",
+        "ics-security",
+        "physical-security"
+      ],
+      "accent_hex": "#8B5CF6"
+    },
+    {
+      "id": "energies",
+      "nom": "Énergies nouvelles (au service des opérations pétrolières)",
+      "description": "Solaire industriel, mini-grids, efficacité énergétique",
+      "items": [
+        "renewables"
+      ],
+      "accent_hex": "#10B981"
+    },
+    {
+      "id": "esg",
+      "nom": "ESG, Formation & Gouvernance",
+      "description": "Reporting ESG, EnerAcademy, conformité OHADA",
+      "items": [
+        "esg"
+      ],
+      "accent_hex": "#B45309"
+    }
+  ],
+  "services": [
+    {
+      "id": "ep",
+      "slug": "exploration-production",
+      "numero": "01",
+      "nom": "Exploration & Production (E&P)",
+      "nom_court": "E&P",
+      "pole_parent": "amont",
+      "group": "operations",
+      "anchor": "section-ep",
+      "accent_hex": "#1E3A8A",
+      "accent_hex_light": "#3B82F6",
+      "resume": "Services d'exploration, d'analyse et de mise en production des ressources pétrolières du Tchad.",
+      "description": "EnerTchad intervient sur toute la chaîne amont : géosciences, forage, complétions, tests et optimisation de production.",
+      "sous_services": [
+        "Études géologiques & sismiques",
+        "Modélisation & simulation réservoir",
+        "Forage vertical & directionnel",
+        "Complétions mécaniques & intelligentes",
+        "Tests de puits & mise en production"
+      ],
+      "technologies": [
+        "IA réservoir",
+        "Jumeaux numériques",
+        "SCADA champs",
+        "IoT puits"
+      ],
+      "secteurs": [
+        "Bassins pétroliers du sud & ouest du Tchad"
+      ],
+      "ctas": [
+        {
+          "label": "Demander une étude de réservoir",
+          "href": "/contact#etude-reservoir",
+          "variant": "primary"
+        },
+        {
+          "label": "Accéder à nos capacités E&P",
+          "href": "/operations/amont",
+          "variant": "ghost"
+        }
+      ]
+    },
+    {
+      "id": "eor",
+      "slug": "eor-chimie-petroliere",
+      "numero": "02",
+      "nom": "EOR & Chimie Pétrolière",
+      "nom_court": "EOR",
+      "pole_parent": "amont",
+      "group": "operations",
+      "anchor": "section-eor",
+      "accent_hex": "#C2410C",
+      "accent_hex_light": "#F97316",
+      "resume": "Solutions avancées pour maximiser la récupération des champs matures.",
+      "description": "EnerTchad propose des programmes EOR complets, des produits chimiques spécialisés et un support technique de haut niveau.",
+      "sous_services": [
+        "Polymères, surfactants, gels",
+        "Diagnostic réservoir",
+        "Design d'injection",
+        "Stimulation & acidification",
+        "Boues de forage & additifs"
+      ],
+      "technologies": [
+        "SCADA injection",
+        "Analyse chimique avancée",
+        "Drones pour surveillance zones d'injection"
+      ],
+      "secteurs": [
+        "Champs matures",
+        "Nouveaux blocs pétroliers"
+      ],
+      "ctas": [
+        {
+          "label": "Découvrir nos solutions EOR",
+          "href": "/contact#eor",
+          "variant": "primary"
+        },
+        {
+          "label": "Planifier un diagnostic réservoir",
+          "href": "/contact#diagnostic-reservoir",
+          "variant": "ghost"
+        }
+      ]
+    },
+    {
+      "id": "pipeline",
+      "slug": "pipeline-midstream",
+      "numero": "03",
+      "nom": "Pipeline & Midstream",
+      "nom_court": "Pipeline",
+      "pole_parent": "intermediaire",
+      "group": "operations",
+      "anchor": "section-pipeline",
+      "accent_hex": "#15803D",
+      "accent_hex_light": "#22C55E",
+      "resume": "Transport, intégrité et supervision du pipeline Doba–Kribi et des infrastructures associées.",
+      "description": "EnerTchad assure la sécurité, la performance et la conformité du pipeline national et des terminaux pétroliers.",
+      "sous_services": [
+        "Transport brut & dispatching",
+        "Comptage fiscal",
+        "Inspection ILI",
+        "Pigging",
+        "Intégrité pipeline (API 1160)",
+        "Stockage & terminaux"
+      ],
+      "technologies": [
+        "SCADA pipeline",
+        "Drones thermiques & LIDAR",
+        "IoT corrosion",
+        "IA prédictive"
+      ],
+      "secteurs": [
+        "Pipeline national",
+        "Terminaux & dépôts"
+      ],
+      "ctas": [
+        {
+          "label": "Consulter nos services pipeline",
+          "href": "/operations/intermediaire",
+          "variant": "primary"
+        },
+        {
+          "label": "Demander un audit d'intégrité",
+          "href": "/contact#audit-integrite",
+          "variant": "ghost"
+        }
+      ]
+    },
+    {
+      "id": "distribution",
+      "slug": "distribution-mobilite",
+      "numero": "04",
+      "nom": "Distribution & Mobilité",
+      "nom_court": "Distribution",
+      "pole_parent": "aval",
+      "group": "operations",
+      "anchor": "section-distribution",
+      "accent_hex": "#CA8A04",
+      "accent_hex_light": "#EAB308",
+      "resume": "Solutions de distribution pétrolière modernes pour entreprises, flottes et grand public.",
+      "description": "EnerTchad opère un réseau de stations-service et des solutions mobiles innovantes pour zones isolées.",
+      "sous_services": [
+        "Stations-service EnerTchad",
+        "Mobile Station™ (S/M/L)",
+        "Livraison carburants",
+        "Solutions flottes & cartes carburant"
+      ],
+      "technologies": [
+        "SCADA mobile",
+        "Caméras IA stations",
+        "Anti-fraude carburant",
+        "Drones de surveillance"
+      ],
+      "secteurs": [
+        "Mobilité",
+        "BTP",
+        "Humanitaire",
+        "Zones isolées"
+      ],
+      "ctas": [
+        {
+          "label": "Trouver une station EnerTchad",
+          "href": "/maps",
+          "variant": "primary"
+        },
+        {
+          "label": "Commander une Mobile Station™",
+          "href": "/contact#mobile-station",
+          "variant": "ghost"
+        }
+      ]
+    },
+    {
+      "id": "petrochimie",
+      "slug": "petrochimie-transformation",
+      "numero": "05",
+      "nom": "Pétrochimie & Transformation",
+      "nom_court": "Pétrochimie",
+      "pole_parent": "aval",
+      "group": "operations",
+      "anchor": "section-petrochimie",
+      "accent_hex": "#78350F",
+      "accent_hex_light": "#A16207",
+      "resume": "Production et transformation de produits pétrochimiques stratégiques.",
+      "description": "EnerTchad développe des solutions bitume, polymères, engrais et dérivés pour l'industrie et l'agriculture.",
+      "sous_services": [
+        "Polymères (PE, PP, PVC)",
+        "Bitume & PMB",
+        "Engrais (urée, ammoniac, NPK)",
+        "Méthanol & dérivés",
+        "Formulation & contrôle qualité"
+      ],
+      "technologies": [
+        "IoT process",
+        "IA contrôle qualité",
+        "Drones inspection unités"
+      ],
+      "secteurs": [
+        "Construction",
+        "Agriculture",
+        "Industrie"
+      ],
+      "ctas": [
+        {
+          "label": "Télécharger nos fiches produits",
+          "href": "/contact#fiches-produits",
+          "variant": "primary"
+        },
+        {
+          "label": "Demander un devis pétrochimie",
+          "href": "/contact#devis-petrochimie",
+          "variant": "ghost"
+        }
+      ]
+    },
+    {
+      "id": "digital",
+      "slug": "digital-cyber-energy",
+      "numero": "06",
+      "nom": "Digital & Cyber-Energy Systems (OT + IT)",
+      "nom_court": "Digital",
+      "pole_parent": "technologies",
+      "group": "technologies",
+      "anchor": "section-digital",
+      "accent_hex": "#1D4ED8",
+      "accent_hex_light": "#60A5FA",
+      "dark_section": true,
+      "resume": "Technologies avancées dédiées à la performance et à la sécurité des opérations pétrolières.",
+      "description": "EnerTchad intègre SCADA, IoT, IA, drones et cybersécurité pour moderniser ses opérations.",
+      "sous_services": [
+        "SCADA pipeline / champs / stations",
+        "IoT industriel",
+        "Drones & robots industriels",
+        "Jumeaux numériques",
+        "IA & data analytics"
+      ],
+      "technologies": [
+        "SCADA 4.0",
+        "IoT hydrocarbures",
+        "IA prédictive",
+        "Digital Twins",
+        "Edge computing"
+      ],
+      "secteurs": [
+        "Pipeline",
+        "E&P",
+        "Pétrochimie",
+        "Distribution"
+      ],
+      "ctas": [
+        {
+          "label": "Explorer nos technologies industrielles",
+          "href": "/technologies/",
+          "variant": "primary"
+        },
+        {
+          "label": "Planifier une démonstration SCADA",
+          "href": "/contact#demo-scada",
+          "variant": "ghost"
+        }
+      ]
+    },
+    {
+      "id": "ics-security",
+      "slug": "ics-security-cybersecurite-industrielle",
+      "numero": "07",
+      "nom": "ICS Security — Cybersécurité Industrielle",
+      "nom_court": "ICS Security",
+      "pole_parent": "technologies",
+      "group": "technologies",
+      "anchor": "section-ics-security",
+      "accent_hex": "#6B21A8",
+      "accent_hex_light": "#A855F7",
+      "resume": "Protection des systèmes industriels critiques d'EnerTchad.",
+      "description": "Sécurisation des infrastructures OT, SCADA et pipeline selon les standards internationaux.",
+      "sous_services": [
+        "IEC 62443",
+        "Monitoring OT",
+        "Pare-feu industriels",
+        "Gestion des accès privilégiés",
+        "Plans de reprise (DRP)"
+      ],
+      "technologies": [
+        "IDS/IPS OT",
+        "Segmentation réseau",
+        "Audit digitalisé"
+      ],
+      "secteurs": [
+        "Pipeline",
+        "Pétrochimie",
+        "E&P"
+      ],
+      "ctas": [
+        {
+          "label": "Demander un audit de cybersécurité",
+          "href": "/contact#audit-cyber",
+          "variant": "primary"
+        },
+        {
+          "label": "Découvrir nos solutions ICS",
+          "href": "/technologies/#ics-security",
+          "variant": "ghost"
+        }
+      ]
+    },
+    {
+      "id": "physical-security",
+      "slug": "securite-physique-intelligente",
+      "numero": "08",
+      "nom": "Sécurité Physique Intelligente",
+      "nom_court": "Sécurité Physique",
+      "pole_parent": "technologies",
+      "group": "technologies",
+      "anchor": "section-physical-security",
+      "accent_hex": "#7C2D12",
+      "accent_hex_light": "#EA580C",
+      "resume": "Sécurisation avancée des sites pétroliers et infrastructures critiques.",
+      "description": "Combinaison de caméras IA, drones, contrôle d'accès et capteurs périmétriques.",
+      "sous_services": [
+        "Vidéosurveillance 4K/8K",
+        "Caméras thermiques",
+        "Contrôle d'accès biométrique",
+        "Anti-intrusion",
+        "Drones de sécurité"
+      ],
+      "technologies": [
+        "IA sécurité",
+        "Drones autonomes",
+        "Capteurs périmétriques"
+      ],
+      "secteurs": [
+        "Pipeline",
+        "Dépôts",
+        "Stations-service",
+        "Champs pétroliers"
+      ],
+      "ctas": [
+        {
+          "label": "Demander un audit de sécurité physique",
+          "href": "/contact#audit-securite-physique",
+          "variant": "primary"
+        },
+        {
+          "label": "Découvrir nos solutions de protection",
+          "href": "/technologies/#physical-security",
+          "variant": "ghost"
+        }
+      ]
+    },
+    {
+      "id": "renewables",
+      "slug": "energies-nouvelles-au-service-du-petrole",
+      "numero": "09",
+      "nom": "Renouvelables & Énergies Nouvelles (au service du pétrole)",
+      "nom_court": "Énergies Nouvelles",
+      "pole_parent": "energies",
+      "group": "energies",
+      "anchor": "section-energies",
+      "accent_hex": "#047857",
+      "accent_hex_light": "#10B981",
+      "resume": "Solutions énergétiques pour réduire les coûts et renforcer la fiabilité des opérations pétrolières.",
+      "description": "Les énergies nouvelles sont utilisées pour alimenter, sécuriser et optimiser les infrastructures pétrolières.",
+      "sous_services": [
+        "Solaire industriel",
+        "Hybridation Mobile Station™",
+        "Mini-grids pour sites isolés",
+        "Efficacité énergétique"
+      ],
+      "technologies": [
+        "IoT énergie",
+        "Monitoring solaire",
+        "IA optimisation"
+      ],
+      "secteurs": [
+        "Pipeline",
+        "Stations-service",
+        "Sites isolés"
+      ],
+      "ctas": [
+        {
+          "label": "Étudier une solution solaire pour vos opérations",
+          "href": "/contact#solaire-industriel",
+          "variant": "primary"
+        },
+        {
+          "label": "Optimiser votre consommation énergétique",
+          "href": "/energies/",
+          "variant": "ghost"
+        }
+      ]
+    },
+    {
+      "id": "esg",
+      "slug": "esg-formation-gouvernance",
+      "numero": "10",
+      "nom": "ESG, Formation & Gouvernance",
+      "nom_court": "ESG",
+      "pole_parent": null,
+      "group": "esg",
+      "anchor": "section-esg",
+      "accent_hex": "#B45309",
+      "accent_hex_light": "#D97706",
+      "resume": "Standards internationaux pour crédibiliser EnerTchad auprès des investisseurs.",
+      "description": "Programmes ESG, formation technique et gouvernance conforme aux meilleures pratiques.",
+      "sous_services": [
+        "Reporting ESG",
+        "Suivi environnemental par drones",
+        "EnerAcademy (formations Oil & Gas)",
+        "Conformité OHADA & anticorruption"
+      ],
+      "technologies": [
+        "Drones environnement",
+        "Plateformes digitales ESG"
+      ],
+      "secteurs": [
+        "Institutions",
+        "Investisseurs",
+        "Partenaires"
+      ],
+      "ctas": [
+        {
+          "label": "Accéder à nos engagements ESG",
+          "href": "/durabilite",
+          "variant": "primary"
+        },
+        {
+          "label": "Découvrir EnerAcademy",
+          "href": "/talents#academy",
+          "variant": "ghost"
+        }
+      ]
+    }
+  ]
+}

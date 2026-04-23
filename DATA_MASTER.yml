@@ -1,0 +1,789 @@
+# ==============================================================================
+# EnerTchad Groupe — DATA MASTER
+# ==============================================================================
+# Source unique de vérité pour toutes les données affichées sur les sites,
+# documents officiels, MCP servers et communications externes du groupe.
+#
+# Toute divergence entre ce fichier et un contenu publié doit être corrigée
+# sur le contenu publié — jamais sur ce fichier sans validation Direction.
+#
+# Dernière mise à jour : 2026-04-21
+# Contact : bignero@gmail.com (Bignéro Moïalbéi Le Madang, DG)
+# Licence : Interne Groupe — propriété EnerTchad SA/CA
+# ==============================================================================
+
+meta:
+  version: "1.1.0"
+  updated: "2026-04-23"
+  validated_by: "Direction Générale"
+  next_review: "2026-07-21"
+  changelog:
+    - version: "1.1.0"
+      date: "2026-04-23"
+      changes:
+        - "Ajout services_catalog (10 services harmonisés, schéma v2)"
+        - "Ajout services_groups (4 macro-catégories pour UI)"
+        - "Ajout cta_routes (registre central des routes de contact)"
+    - version: "1.0.0"
+      date: "2026-04-21"
+      changes:
+        - "Initialisation DATA_MASTER (identité, 6 pôles, certifications, marques)"
+
+# ------------------------------------------------------------------------------
+# IDENTITÉ JURIDIQUE
+# ------------------------------------------------------------------------------
+groupe:
+  nom_legal: "EnerTchad Groupe SA/CA"
+  nom_commercial: "EnerTchad"
+  nom_court: "EnerTchad Groupe"
+  forme: "Société Anonyme à Conseil d'Administration"
+  referentiel: "OHADA"
+  pays: "République du Tchad"
+  date_creation_sa_ca: "2026"  # Date officielle de constitution SA/CA (choisie 21/04/2026)
+  # Note : Les activités opérationnelles des entités pré-groupe sont antérieures
+  # mais la date d'incorporation officielle du groupe est 2026. Ne pas utiliser
+  # "depuis 1998" ni "20+ ans d'expérience" dans les communications externes.
+  rccm: "à compléter"
+  nif: "à compléter"
+  capital_social: "10 000 000 FCFA"
+  actionnaires_fondateurs: 10
+
+# ------------------------------------------------------------------------------
+# GOUVERNANCE
+# ------------------------------------------------------------------------------
+gouvernance:
+  dg:
+    nom: "Bignéro Moïalbéi Le Madang"
+    titre: "Directeur Général & Fondateur"
+    email: "bignero@gmail.com"
+  pca:
+    nom: "Théophile Gag Pinabei"
+    titre: "Président du Conseil d'Administration"
+  auditeur_externe: "KPMG (audit IFRS en cours)"
+
+# ------------------------------------------------------------------------------
+# COORDONNÉES
+# ------------------------------------------------------------------------------
+siege:
+  adresse: "Radisson, Block D, Bureau 23, Sabangali"
+  ville: "N'Djamena"
+  pays: "Tchad"
+  telephone_principal: "+235 99 29 86 96"
+  email_contact: "contact@enertchad.td"
+
+telephones_poles:
+  groupe: "+235 99 29 86 96"
+  amont: "+235 99 29 86 96"
+  midstream: "+235 66 38 42 15"  # Ligne dédiée Midstream
+  aval: "+235 99 29 86 96"
+  energies: "+235 99 29 86 96"
+  technologies: "+235 99 29 86 96"
+
+emails_poles:
+  amont: "amont@enertchad.td"
+  midstream: "midstream@enertchad.td"
+  aval: "distribution@enertchad.td"
+  energies: "energies@enertchad.td"
+  technologies: "tech@enertchad.td"
+  contact: "contact@enertchad.td"
+
+# ------------------------------------------------------------------------------
+# EFFECTIFS
+# ------------------------------------------------------------------------------
+effectifs:
+  total: 1240
+  contenu_local_pct: 80
+  note: "80 % de Tchadiens (contenu local). Sous-filiales : fourchettes 50-200 par pôle."
+
+# ------------------------------------------------------------------------------
+# STRUCTURE EN 6 PÔLES INTÉGRÉS (modèle officiel retenu)
+# ------------------------------------------------------------------------------
+# Purge de l'ancien modèle OFS 7-divisions (Amont / Intermédiaire / Aval / GreenTech /
+# Well Services / Drilling & Engineering / Digital & SCADA). Ces appellations ne doivent
+# plus apparaître sur les sites corporate. GreenTech → Énergies. Digital & SCADA → Technologies.
+# Well Services et Drilling & Engineering sont regroupés dans le pôle Services (sous-Amont).
+
+poles:
+
+  # -- PÔLE 01 ----------------------------------------------------------------
+  amont:
+    id: "01"
+    nom_court: "Amont"
+    nom_complet: "EnerTchad Amont · Exploration & Production"
+    repo: "https://github.com/bmlemad/enertchad-amont.vercel.app"
+    site: "https://enertchad-amont-vercel-app.vercel.app"
+    email: "amont@enertchad.td"
+    couleur_hex: "#C48848"
+    metier_principal: "Exploration & production d'hydrocarbures"
+    bassins: ["Doba", "Bongor", "Doseo", "Salamat", "Termit"]
+    bassins_count: 5
+    champs_doba: ["Doba", "Komé", "Gam", "Miandou"]
+    champs_bongor: ["Bongor"]
+    qualite_brut: "API 28-32° · light/medium · bas soufre"
+    capacite_actuelle_kbd: 144  # kilo-barils/jour (b/d) — UNITÉ OFFICIELLE
+    capacite_unit: "kb/d"
+    objectif_2030_kbd: 250
+    # NOTE : ne plus utiliser "178 kboe/j" — harmoniser partout sur 144 kb/d.
+    metiers:
+      - "Drilling"
+      - "Géosciences"
+      - "Artificial Lift"
+      - "Integrity"
+      - "Chimie / EOR"
+      - "Water-to-Value"
+      - "SCADA"
+      - "Engineering"
+
+  # -- PÔLE 02 ----------------------------------------------------------------
+  intermediaire:
+    id: "02"
+    nom_court: "Intermédiaire"
+    nom_complet: "EnerTchad Midstream · Pipeline & Stockage"
+    repo: "https://github.com/bmlemad/enertchad-Midstream"
+    site: "https://enertchad-midstream.vercel.app"
+    email: "midstream@enertchad.td"
+    couleur_hex: "#5F7596"
+    corridor: "Doba → Komé → Kribi"
+    longueur_km: 1070
+    diametre_mm: 760
+    diametre_pouces: 30
+    acier_specification: "API 5L X65"
+    capacite_nominale_kbd: 225       # Capacité théorique
+    debit_actuel_kbd: 90             # Débit observé 2026
+    taux_utilisation_pct: 40         # 90/225 ≈ 40 %
+    # NOTE : ne plus utiliser "154 kb/d" (MCP legacy) — harmoniser sur 225/90.
+    stockage_mb: 2.8
+    fso: "Komé Kribi 1 (2,4 Mb ULCC) + 22 km subsea"
+    stations_pompage: ["Komé", "Dompta", "Belabo"]
+    vannes_sectionnement: 48
+    operateurs_utilisateurs:
+      - nom: "SHT"
+        debit_kbd: 68
+      - nom: "CNPC"
+        debit_kbd: null
+      - nom: "Perenco"
+        debit_kbd: 18
+      - nom: "OPIC/CPC"
+        debit_kbd: 3.3
+    precision_custody_transfer: "0,05 % (API MPMS)"
+    certifications_sectorielles: ["OIML R117", "ASME B31.4", "API 1160", "IEC 62443"]
+
+  # -- PÔLE 03 ----------------------------------------------------------------
+  aval:
+    id: "03"
+    nom_court: "Aval"
+    nom_complet: "EnerTchad Aval · Raffinage & Distribution"
+    repo: "https://github.com/bmlemad/enertchad-aval.vercel.app"
+    site: "https://enertchad-aval-vercel-app.vercel.app"
+    email: "distribution@enertchad.td"
+    couleur_hex: "#CF6E4E"
+    capital_filiale: "1 000 000 000 FCFA"  # 1 milliard FCFA (ne pas confondre avec capital Groupe 10M)
+    stations: 45                            # Valeur officielle (ne plus afficher 24 ni 47)
+    villes: 6
+    villes_noms: ["N'Djamena", "Moundou", "Sarh", "Bongor", "Mongo", "Abéché"]
+    raffinerie:
+      nom: "Raffinerie de Djermaya"
+      capacite_kbd: 20
+      actionnariat: "CNPC 60 % / SHT 40 %"
+    pipeline_amont_raffinerie:
+      corridor: "Ronier → Djermaya"
+      longueur_km: 300
+    depots: 4
+    depots_noms: ["N'Djamena", "Moundou", "Abéché"]
+    autonomie_stockage_jours: 30
+    produits:
+      gasoil_50ppm_Ml_an: 300
+      super_ron95_Ml_an: 240
+      gpl_t_an: 60000
+      fuel_lourd_t_an: 40000
+    programme_fidelite: "EnerClub · Bronze / Argent / Or"
+    apps: ["Mon Espace", "eBoutique"]
+    innovations:
+      - "Mobile Station™ containerisée (48h, ATEX Zone 1, Starlink-ready)"
+      - "IRVE pilote Q1 2027"
+      - "Intégration pétrochimique polypropylène 25 000 t/an"
+    certifications_sectorielles: ["ISO 9001", "ISO 14001", "ISO 45001", "ATEX", "EN 590", "EN 228", "EN 589", "Bureau Veritas"]
+
+  # -- PÔLE 04 ----------------------------------------------------------------
+  services:
+    id: "04"
+    nom_court: "Services"
+    nom_complet: "EnerTchad Services · Oilfield & Ingénierie"
+    repo: null  # Pas de repo dédié à ce jour — fusionné dans Amont
+    site: null
+    email: "amont@enertchad.td"
+    couleur_hex: "#79838F"
+    metiers: ["Workover", "Well Services", "Drilling & Engineering", "HSE", "Formation"]
+    note: "Regroupe les anciennes divisions Well Services et Drilling & Engineering."
+
+  # -- PÔLE 05 ----------------------------------------------------------------
+  energies:
+    id: "05"
+    nom_court: "Énergies"
+    nom_complet: "EnerTchad Énergies · Électricité & Transition"
+    repo: "https://github.com/bmlemad/Enertchad-energies"
+    site: "https://enertchad-energies.vercel.app"
+    email: "energies@enertchad.td"
+    couleur_hex: "#10B981"
+    anciennement_nomme: "GreenTech (à purger des sites corporate)"
+    puissance_installee_mw: 125
+    gas_to_power_mw: 85
+    solaire_mwp: 60
+    solaire_projet: "Djermaya PV"
+    microgrids_villages: 28
+    bornes_irve_points: 45
+    co2_evite_t_an: 42000
+    electrification_tchad_pct: 11
+    potentiel_solaire_kwh_m2_j: "4,5-6,5"
+    heures_ensoleillement_an: 3250
+    impact_social:
+      ecoles: 42
+      centres_sante: 18
+      micro_entreprises: 350
+    hydrogene_vert:
+      pilote_mw: 5
+      horizon: 2028
+      type: "électrolyseur"
+    certifications: ["ISO 14001", "ISO 50001", "IEC 61850", "IEEE 1547", "Gold Standard", "CDM"]
+    slogan: "De la Torchère à l'Interrupteur"
+
+  # -- PÔLE 06 ----------------------------------------------------------------
+  technologies:
+    id: "06"
+    nom_court: "Technologies"
+    nom_complet: "EnerTchad Technologies · Digital, IoT, IA & Cyber"
+    repo: "https://github.com/bmlemad/Enertchad-technologies"
+    site: "https://enertchad-technologies.vercel.app"
+    email: "tech@enertchad.td"
+    couleur_hex: "#8B5CF6"
+    anciennement_nomme: "Digital & SCADA (à purger des sites corporate)"
+    capteurs_iot: 12840
+    digital_twins_actifs: 24
+    edge_nodes: 86
+    modeles_ml_prod: 18
+    predictions_par_jour: 1200000
+    debit_donnees_tb_j: 4.8
+    latence_scada_ms: 50
+    uptime_cyber_pct: 99.97
+    solutions:
+      - "Digital Twin"
+      - "SCADA / IoT"
+      - "IA prédictive"
+      - "Cybersécurité OT/IoT (Zero-trust · IEC 62443)"
+      - "Cloud & Edge souverain"
+      - "Data Analytics & BI"
+      - "Automation & Robotique (drones · RPA 65 % réduction)"
+      - "Connectivité (VSAT · 4G/5G privé · fibre)"
+    architecture_couches: ["Edge", "Data", "AI", "Security"]
+    palette_primary: "#0D0A1A"
+    palette_accent: "#8B5CF6"
+    palette_gold: "#C8962E"
+
+# ------------------------------------------------------------------------------
+# CERTIFICATIONS GROUPE (s'appliquent à toutes les filiales)
+# ------------------------------------------------------------------------------
+certifications_groupe:
+  - "ISO 9001 (qualité)"
+  - "ISO 14001 (environnement)"
+  - "ISO 45001 (SST)"
+  - "ISO 27001 (sécurité information)"
+  - "ISO 37001 (anti-corruption)"
+  - "ISO 26000 (responsabilité sociétale)"
+  - "IWCF"
+  - "API"
+  - "IMCA"
+
+# ------------------------------------------------------------------------------
+# CONFORMITÉ & TRANSPARENCE
+# ------------------------------------------------------------------------------
+conformite:
+  itie: true            # Extractive Industries Transparency Initiative
+  ohada: true
+  ifrs: true
+  ifc_performance_standards: true
+  cemac_membre: true
+  audit_externe: "KPMG (IFRS en cours)"
+
+# ------------------------------------------------------------------------------
+# MARQUES (à déclarer OAPI/INPI — Priorité 6 de l'audit)
+# ------------------------------------------------------------------------------
+marques:
+  - nom: "Mobile Station™"
+    pole: "aval"
+    statut: "à déclarer OAPI"
+  - nom: "EnerClub"
+    pole: "aval"
+    statut: "à déclarer OAPI"
+  - nom: "NRJ+"
+    pole: "aval"
+    statut: "à déclarer OAPI"
+  - nom: "Water-to-Value™"
+    pole: "amont"
+    statut: "à déclarer OAPI"
+
+# ------------------------------------------------------------------------------
+# INITIATIVES STRATÉGIQUES
+# ------------------------------------------------------------------------------
+initiatives:
+  - nom: "EOR"
+    description: "Enhanced Oil Recovery sur les bassins matures Doba/Bongor"
+  - nom: "Complexe pétrochimique Djarmaya"
+    description: "Polypropylène 25 000 t/an, intégration aval"
+  - nom: "350+ capteurs SCADA"
+    description: "Couverture opérationnelle temps réel"
+  - nom: "Cybersécurité OT/IoT"
+    description: "Zero-trust, IEC 62443, uptime 99,97 %"
+
+# ------------------------------------------------------------------------------
+# ÉCARTS HISTORIQUES À PURGER
+# ------------------------------------------------------------------------------
+# Liste des valeurs obsolètes qui pourraient encore apparaître dans les sources
+# legacy (MCP server, artefacts internes, présentations antérieures).
+purger:
+  - valeur: "178 kboe/j"
+    remplacer_par: "144 kb/d"
+    motif: "Harmonisation unité Amont (audit 2026-04-21)"
+  - valeur: "154 kb/d (Midstream)"
+    remplacer_par: "225 capacité · 90 actuel"
+    motif: "Alignement sur chiffres site Midstream"
+  - valeur: "47 stations (Aval)"
+    remplacer_par: "45 stations"
+    motif: "Alignement sur site Aval"
+  - valeur: "24 stations (Aval sur hub)"
+    remplacer_par: "45 stations"
+    motif: "Alignement sur site Aval"
+  - valeur: "1998 (fondation)"
+    remplacer_par: "2026 (création SA/CA)"
+    motif: "Décision Direction 2026-04-21"
+  - valeur: "20+ années d'expérience"
+    remplacer_par: "Énergéticien intégré · chaîne nationale"
+    motif: "Cohérence narrative avec fondation 2026"
+  - valeur: "GreenTech"
+    remplacer_par: "Énergies"
+    motif: "Modèle 6-pôles intégrés"
+  - valeur: "Digital & SCADA"
+    remplacer_par: "Technologies"
+    motif: "Modèle 6-pôles intégrés"
+  - valeur: "7 divisions (OFS)"
+    remplacer_par: "6 pôles intégrés"
+    motif: "Unification architecture"
+
+# ==============================================================================
+# SERVICES CATALOG — 10 services harmonisés (v1.1.0 · 2026-04-23)
+# ==============================================================================
+# Schéma unifié : chaque service est caractérisé par
+#   id · slug · numero · nom · resume · description · sous_services[] ·
+#   technologies[] · secteurs[] · ctas[] · accent_hex · anchor · group · pole_parent
+#
+# Source utilisée pour : /services.html · JSON-LD · /assets/data/services.json ·
+# future version Next.js/React · documents commerciaux · décks investisseurs.
+#
+# Règle d'or : toute modif du contenu services se fait ICI, puis régénération
+# des artefacts. Ne jamais modifier /services.html sans sync descendant.
+# ------------------------------------------------------------------------------
+
+services_groups:
+  - id: "operations"
+    nom: "Services pétroliers"
+    description: "Chaîne de valeur intégrée E&P → Pétrochimie"
+    items: ["ep", "eor", "pipeline", "distribution", "petrochimie"]
+    accent_hex: "#C48848"
+  - id: "technologies"
+    nom: "Technologies avancées (au service du pétrole)"
+    description: "Digital industriel, cybersécurité OT et sécurité physique intelligente"
+    items: ["digital", "ics-security", "physical-security"]
+    accent_hex: "#8B5CF6"
+  - id: "energies"
+    nom: "Énergies nouvelles (au service des opérations pétrolières)"
+    description: "Solaire industriel, mini-grids, efficacité énergétique"
+    items: ["renewables"]
+    accent_hex: "#10B981"
+  - id: "esg"
+    nom: "ESG, Formation & Gouvernance"
+    description: "Reporting ESG, EnerAcademy, conformité OHADA"
+    items: ["esg"]
+    accent_hex: "#B45309"
+
+services_catalog:
+  - id: "ep"
+    slug: "exploration-production"
+    numero: "01"
+    nom: "Exploration & Production (E&P)"
+    nom_court: "E&P"
+    pole_parent: "amont"
+    group: "operations"
+    anchor: "section-ep"
+    accent_hex: "#1E3A8A"
+    accent_hex_light: "#3B82F6"
+    resume: "Services d'exploration, d'analyse et de mise en production des ressources pétrolières du Tchad."
+    description: "EnerTchad intervient sur toute la chaîne amont : géosciences, forage, complétions, tests et optimisation de production."
+    sous_services:
+      - "Études géologiques & sismiques"
+      - "Modélisation & simulation réservoir"
+      - "Forage vertical & directionnel"
+      - "Complétions mécaniques & intelligentes"
+      - "Tests de puits & mise en production"
+    technologies:
+      - "IA réservoir"
+      - "Jumeaux numériques"
+      - "SCADA champs"
+      - "IoT puits"
+    secteurs:
+      - "Bassins pétroliers du sud & ouest du Tchad"
+    ctas:
+      - label: "Demander une étude de réservoir"
+        href: "/contact#etude-reservoir"
+        variant: "primary"
+      - label: "Accéder à nos capacités E&P"
+        href: "/operations/amont"
+        variant: "ghost"
+
+  - id: "eor"
+    slug: "eor-chimie-petroliere"
+    numero: "02"
+    nom: "EOR & Chimie Pétrolière"
+    nom_court: "EOR"
+    pole_parent: "amont"
+    group: "operations"
+    anchor: "section-eor"
+    accent_hex: "#C2410C"
+    accent_hex_light: "#F97316"
+    resume: "Solutions avancées pour maximiser la récupération des champs matures."
+    description: "EnerTchad propose des programmes EOR complets, des produits chimiques spécialisés et un support technique de haut niveau."
+    sous_services:
+      - "Polymères, surfactants, gels"
+      - "Diagnostic réservoir"
+      - "Design d'injection"
+      - "Stimulation & acidification"
+      - "Boues de forage & additifs"
+    technologies:
+      - "SCADA injection"
+      - "Analyse chimique avancée"
+      - "Drones pour surveillance zones d'injection"
+    secteurs:
+      - "Champs matures"
+      - "Nouveaux blocs pétroliers"
+    ctas:
+      - label: "Découvrir nos solutions EOR"
+        href: "/contact#eor"
+        variant: "primary"
+      - label: "Planifier un diagnostic réservoir"
+        href: "/contact#diagnostic-reservoir"
+        variant: "ghost"
+
+  - id: "pipeline"
+    slug: "pipeline-midstream"
+    numero: "03"
+    nom: "Pipeline & Midstream"
+    nom_court: "Pipeline"
+    pole_parent: "intermediaire"
+    group: "operations"
+    anchor: "section-pipeline"
+    accent_hex: "#15803D"
+    accent_hex_light: "#22C55E"
+    resume: "Transport, intégrité et supervision du pipeline Doba–Kribi et des infrastructures associées."
+    description: "EnerTchad assure la sécurité, la performance et la conformité du pipeline national et des terminaux pétroliers."
+    sous_services:
+      - "Transport brut & dispatching"
+      - "Comptage fiscal"
+      - "Inspection ILI"
+      - "Pigging"
+      - "Intégrité pipeline (API 1160)"
+      - "Stockage & terminaux"
+    technologies:
+      - "SCADA pipeline"
+      - "Drones thermiques & LIDAR"
+      - "IoT corrosion"
+      - "IA prédictive"
+    secteurs:
+      - "Pipeline national"
+      - "Terminaux & dépôts"
+    ctas:
+      - label: "Consulter nos services pipeline"
+        href: "/operations/intermediaire"
+        variant: "primary"
+      - label: "Demander un audit d'intégrité"
+        href: "/contact#audit-integrite"
+        variant: "ghost"
+
+  - id: "distribution"
+    slug: "distribution-mobilite"
+    numero: "04"
+    nom: "Distribution & Mobilité"
+    nom_court: "Distribution"
+    pole_parent: "aval"
+    group: "operations"
+    anchor: "section-distribution"
+    accent_hex: "#CA8A04"
+    accent_hex_light: "#EAB308"
+    resume: "Solutions de distribution pétrolière modernes pour entreprises, flottes et grand public."
+    description: "EnerTchad opère un réseau de stations-service et des solutions mobiles innovantes pour zones isolées."
+    sous_services:
+      - "Stations-service EnerTchad"
+      - "Mobile Station™ (S/M/L)"
+      - "Livraison carburants"
+      - "Solutions flottes & cartes carburant"
+    technologies:
+      - "SCADA mobile"
+      - "Caméras IA stations"
+      - "Anti-fraude carburant"
+      - "Drones de surveillance"
+    secteurs:
+      - "Mobilité"
+      - "BTP"
+      - "Humanitaire"
+      - "Zones isolées"
+    ctas:
+      - label: "Trouver une station EnerTchad"
+        href: "/maps"
+        variant: "primary"
+      - label: "Commander une Mobile Station™"
+        href: "/contact#mobile-station"
+        variant: "ghost"
+
+  - id: "petrochimie"
+    slug: "petrochimie-transformation"
+    numero: "05"
+    nom: "Pétrochimie & Transformation"
+    nom_court: "Pétrochimie"
+    pole_parent: "aval"
+    group: "operations"
+    anchor: "section-petrochimie"
+    accent_hex: "#78350F"
+    accent_hex_light: "#A16207"
+    resume: "Production et transformation de produits pétrochimiques stratégiques."
+    description: "EnerTchad développe des solutions bitume, polymères, engrais et dérivés pour l'industrie et l'agriculture."
+    sous_services:
+      - "Polymères (PE, PP, PVC)"
+      - "Bitume & PMB"
+      - "Engrais (urée, ammoniac, NPK)"
+      - "Méthanol & dérivés"
+      - "Formulation & contrôle qualité"
+    technologies:
+      - "IoT process"
+      - "IA contrôle qualité"
+      - "Drones inspection unités"
+    secteurs:
+      - "Construction"
+      - "Agriculture"
+      - "Industrie"
+    ctas:
+      - label: "Télécharger nos fiches produits"
+        href: "/contact#fiches-produits"
+        variant: "primary"
+      - label: "Demander un devis pétrochimie"
+        href: "/contact#devis-petrochimie"
+        variant: "ghost"
+
+  - id: "digital"
+    slug: "digital-cyber-energy"
+    numero: "06"
+    nom: "Digital & Cyber-Energy Systems (OT + IT)"
+    nom_court: "Digital"
+    pole_parent: "technologies"
+    group: "technologies"
+    anchor: "section-digital"
+    accent_hex: "#1D4ED8"
+    accent_hex_light: "#60A5FA"
+    dark_section: true
+    resume: "Technologies avancées dédiées à la performance et à la sécurité des opérations pétrolières."
+    description: "EnerTchad intègre SCADA, IoT, IA, drones et cybersécurité pour moderniser ses opérations."
+    sous_services:
+      - "SCADA pipeline / champs / stations"
+      - "IoT industriel"
+      - "Drones & robots industriels"
+      - "Jumeaux numériques"
+      - "IA & data analytics"
+    technologies:
+      - "SCADA 4.0"
+      - "IoT hydrocarbures"
+      - "IA prédictive"
+      - "Digital Twins"
+      - "Edge computing"
+    secteurs:
+      - "Pipeline"
+      - "E&P"
+      - "Pétrochimie"
+      - "Distribution"
+    ctas:
+      - label: "Explorer nos technologies industrielles"
+        href: "/technologies/"
+        variant: "primary"
+      - label: "Planifier une démonstration SCADA"
+        href: "/contact#demo-scada"
+        variant: "ghost"
+
+  - id: "ics-security"
+    slug: "ics-security-cybersecurite-industrielle"
+    numero: "07"
+    nom: "ICS Security — Cybersécurité Industrielle"
+    nom_court: "ICS Security"
+    pole_parent: "technologies"
+    group: "technologies"
+    anchor: "section-ics-security"
+    accent_hex: "#6B21A8"
+    accent_hex_light: "#A855F7"
+    resume: "Protection des systèmes industriels critiques d'EnerTchad."
+    description: "Sécurisation des infrastructures OT, SCADA et pipeline selon les standards internationaux."
+    sous_services:
+      - "IEC 62443"
+      - "Monitoring OT"
+      - "Pare-feu industriels"
+      - "Gestion des accès privilégiés"
+      - "Plans de reprise (DRP)"
+    technologies:
+      - "IDS/IPS OT"
+      - "Segmentation réseau"
+      - "Audit digitalisé"
+    secteurs:
+      - "Pipeline"
+      - "Pétrochimie"
+      - "E&P"
+    ctas:
+      - label: "Demander un audit de cybersécurité"
+        href: "/contact#audit-cyber"
+        variant: "primary"
+      - label: "Découvrir nos solutions ICS"
+        href: "/technologies/#ics-security"
+        variant: "ghost"
+
+  - id: "physical-security"
+    slug: "securite-physique-intelligente"
+    numero: "08"
+    nom: "Sécurité Physique Intelligente"
+    nom_court: "Sécurité Physique"
+    pole_parent: "technologies"
+    group: "technologies"
+    anchor: "section-physical-security"
+    accent_hex: "#7C2D12"
+    accent_hex_light: "#EA580C"
+    resume: "Sécurisation avancée des sites pétroliers et infrastructures critiques."
+    description: "Combinaison de caméras IA, drones, contrôle d'accès et capteurs périmétriques."
+    sous_services:
+      - "Vidéosurveillance 4K/8K"
+      - "Caméras thermiques"
+      - "Contrôle d'accès biométrique"
+      - "Anti-intrusion"
+      - "Drones de sécurité"
+    technologies:
+      - "IA sécurité"
+      - "Drones autonomes"
+      - "Capteurs périmétriques"
+    secteurs:
+      - "Pipeline"
+      - "Dépôts"
+      - "Stations-service"
+      - "Champs pétroliers"
+    ctas:
+      - label: "Demander un audit de sécurité physique"
+        href: "/contact#audit-securite-physique"
+        variant: "primary"
+      - label: "Découvrir nos solutions de protection"
+        href: "/technologies/#physical-security"
+        variant: "ghost"
+
+  - id: "renewables"
+    slug: "energies-nouvelles-au-service-du-petrole"
+    numero: "09"
+    nom: "Renouvelables & Énergies Nouvelles (au service du pétrole)"
+    nom_court: "Énergies Nouvelles"
+    pole_parent: "energies"
+    group: "energies"
+    anchor: "section-energies"
+    accent_hex: "#047857"
+    accent_hex_light: "#10B981"
+    resume: "Solutions énergétiques pour réduire les coûts et renforcer la fiabilité des opérations pétrolières."
+    description: "Les énergies nouvelles sont utilisées pour alimenter, sécuriser et optimiser les infrastructures pétrolières."
+    sous_services:
+      - "Solaire industriel"
+      - "Hybridation Mobile Station™"
+      - "Mini-grids pour sites isolés"
+      - "Efficacité énergétique"
+    technologies:
+      - "IoT énergie"
+      - "Monitoring solaire"
+      - "IA optimisation"
+    secteurs:
+      - "Pipeline"
+      - "Stations-service"
+      - "Sites isolés"
+    ctas:
+      - label: "Étudier une solution solaire pour vos opérations"
+        href: "/contact#solaire-industriel"
+        variant: "primary"
+      - label: "Optimiser votre consommation énergétique"
+        href: "/energies/"
+        variant: "ghost"
+
+  - id: "esg"
+    slug: "esg-formation-gouvernance"
+    numero: "10"
+    nom: "ESG, Formation & Gouvernance"
+    nom_court: "ESG"
+    pole_parent: null
+    group: "esg"
+    anchor: "section-esg"
+    accent_hex: "#B45309"
+    accent_hex_light: "#D97706"
+    resume: "Standards internationaux pour crédibiliser EnerTchad auprès des investisseurs."
+    description: "Programmes ESG, formation technique et gouvernance conforme aux meilleures pratiques."
+    sous_services:
+      - "Reporting ESG"
+      - "Suivi environnemental par drones"
+      - "EnerAcademy (formations Oil & Gas)"
+      - "Conformité OHADA & anticorruption"
+    technologies:
+      - "Drones environnement"
+      - "Plateformes digitales ESG"
+    secteurs:
+      - "Institutions"
+      - "Investisseurs"
+      - "Partenaires"
+    ctas:
+      - label: "Accéder à nos engagements ESG"
+        href: "/durabilite"
+        variant: "primary"
+      - label: "Découvrir EnerAcademy"
+        href: "/talents#academy"
+        variant: "ghost"
+
+# ------------------------------------------------------------------------------
+# CTA ROUTES — registre central des ancres de contact
+# ------------------------------------------------------------------------------
+# Permet de router proprement les CTA depuis les services_catalog.ctas.
+# Chaque route doit exister en tant qu'ancre sur /contact (section formulaire
+# avec champ "Type de demande" pré-rempli).
+cta_routes:
+  - slug: "etude-reservoir"
+    libelle_formulaire: "Étude de réservoir"
+    service_id: "ep"
+  - slug: "eor"
+    libelle_formulaire: "Solution EOR"
+    service_id: "eor"
+  - slug: "diagnostic-reservoir"
+    libelle_formulaire: "Diagnostic réservoir"
+    service_id: "eor"
+  - slug: "audit-integrite"
+    libelle_formulaire: "Audit d'intégrité pipeline"
+    service_id: "pipeline"
+  - slug: "mobile-station"
+    libelle_formulaire: "Commande Mobile Station™"
+    service_id: "distribution"
+  - slug: "fiches-produits"
+    libelle_formulaire: "Fiches produits pétrochimie"
+    service_id: "petrochimie"
+  - slug: "devis-petrochimie"
+    libelle_formulaire: "Devis pétrochimie"
+    service_id: "petrochimie"
+  - slug: "demo-scada"
+    libelle_formulaire: "Démonstration SCADA"
+    service_id: "digital"
+  - slug: "audit-cyber"
+    libelle_formulaire: "Audit cybersécurité industrielle"
+    service_id: "ics-security"
+  - slug: "audit-securite-physique"
+    libelle_formulaire: "Audit sécurité physique"
+    service_id: "physical-security"
+  - slug: "solaire-industriel"
+    libelle_formulaire: "Solaire industriel"
+    service_id: "renewables"

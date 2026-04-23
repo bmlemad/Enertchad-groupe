@@ -1,0 +1,216 @@
+[build]
+  publish = "."
+
+# Dossiers source internes — anti-leak (cf. audit 2026-04-22 — P1-7/P2-1)
+[[redirects]]
+  from = "/_sources/*"
+  to = "/404.html"
+  status = 404
+
+[[redirects]]
+  from = "/poles/*"
+  to = "/404.html"
+  status = 404
+
+[[redirects]]
+  from = "/dashboard-src/*"
+  to = "/404.html"
+  status = 404
+
+# Legacy path redirects (anciennes URLs → nouvelles)
+[[redirects]]
+  from = "/about"
+  to = "/groupe.html"
+  status = 301
+
+[[redirects]]
+  from = "/about.html"
+  to = "/groupe.html"
+  status = 301
+
+[[redirects]]
+  from = "/investors"
+  to = "/investisseurs.html"
+  status = 301
+
+[[redirects]]
+  from = "/careers"
+  to = "/talents.html"
+  status = 301
+
+[[redirects]]
+  from = "/sustainability"
+  to = "/durabilite.html"
+  status = 301
+
+[[redirects]]
+  from = "/news"
+  to = "/actualites.html"
+  status = 301
+
+[[redirects]]
+  from = "/privacy"
+  to = "/confidentialite.html"
+  status = 301
+
+[[redirects]]
+  from = "/legal"
+  to = "/mentions-legales.html"
+  status = 301
+
+[[redirects]]
+  from = "/upstream"
+  to = "/operations/amont.html"
+  status = 301
+
+[[redirects]]
+  from = "/midstream"
+  to = "/operations/intermediaire.html"
+  status = 301
+
+[[redirects]]
+  from = "/downstream"
+  to = "/operations/aval.html"
+  status = 301
+
+[[redirects]]
+  from = "/services"
+  to = "/operations/services.html"
+  status = 301
+
+# Clean URL rewrites (optionnel — .html masqué)
+[[redirects]]
+  from = "/groupe"
+  to = "/groupe.html"
+  status = 200
+
+[[redirects]]
+  from = "/investisseurs"
+  to = "/investisseurs.html"
+  status = 200
+
+[[redirects]]
+  from = "/durabilite"
+  to = "/durabilite.html"
+  status = 200
+
+[[redirects]]
+  from = "/talents"
+  to = "/talents.html"
+  status = 200
+
+[[redirects]]
+  from = "/actualites"
+  to = "/actualites.html"
+  status = 200
+
+[[redirects]]
+  from = "/contact"
+  to = "/contact.html"
+  status = 200
+
+[[redirects]]
+  from = "/maps"
+  to = "/maps.html"
+  status = 200
+
+[[redirects]]
+  from = "/newsletter"
+  to = "/newsletter.html"
+  status = 200
+
+[[redirects]]
+  from = "/dashboard"
+  to = "/dashboard.html"
+  status = 200
+
+[[redirects]]
+  from = "/dashboard-executif"
+  to = "/dashboard-executif.html"
+  status = 200
+
+[[redirects]]
+  from = "/operations/amont"
+  to = "/operations/amont.html"
+  status = 200
+
+[[redirects]]
+  from = "/operations/intermediaire"
+  to = "/operations/intermediaire.html"
+  status = 200
+
+[[redirects]]
+  from = "/operations/aval"
+  to = "/operations/aval.html"
+  status = 200
+
+[[redirects]]
+  from = "/operations/services"
+  to = "/operations/services.html"
+  status = 200
+
+# Legacy PDF aliases (Sprint A méga-menu)
+[[redirects]]
+  from = "/documents/rapport-esg-2025.pdf"
+  to = "/documents/EnerTchad-Rapport-Durabilite-2025.pdf"
+  status = 301
+
+# Pôles intégrés (ex-sous-domaines Vercel)
+[[redirects]]
+  from = "/energies"
+  to = "/energies/"
+  status = 301
+
+[[redirects]]
+  from = "/technologies"
+  to = "/technologies/"
+  status = 301
+
+[[redirects]]
+  from = "/enertech"
+  to = "/technologies/"
+  status = 301
+
+[[redirects]]
+  from = "/greentech"
+  to = "/energies/"
+  status = 301
+
+# Security + performance headers — all pages
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), camera=(), microphone=(), payment=(), usb=()"
+    Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://plausible.io; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: https:; connect-src 'self' https://plausible.io; frame-ancestors 'self'; base-uri 'self'; form-action 'self'; manifest-src 'self'; worker-src 'self'"
+
+# Long-lived cache for static assets
+[[headers]]
+  for = "/assets/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/assets/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/assets/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# HTML — shorter cache
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=600, must-revalidate"
+
+# Custom 404 (fallback global, DOIT rester en dernier)
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404

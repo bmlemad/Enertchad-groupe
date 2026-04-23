@@ -1,0 +1,616 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#080E1A" />
+  <title>Executive Dashboard — EnerTchad Groupe SA/CA</title>
+  <meta name="description" content="Tableau de bord exécutif interactif EnerTchad Groupe : production, finances, pipeline, aval, énergie, pétrochimie et technologies. Données temps quasi-réel." />
+  <link rel="canonical" href="https://www.enertchad.td/dashboard" />
+
+  <!-- OG / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="EnerTchad Groupe" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:url" content="https://www.enertchad.td/dashboard" />
+  <meta property="og:title" content="Executive Dashboard — EnerTchad Groupe" />
+  <meta property="og:description" content="Vue consolidée de l'écosystème EnerTchad : 7 filiales, KPIs, graphiques interactifs." />
+  <meta property="og:image" content="https://www.enertchad.td/assets/img/og-cover.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Executive Dashboard — EnerTchad Groupe" />
+  <meta name="twitter:description" content="Vue consolidée de l'écosystème EnerTchad : 7 filiales, KPIs, graphiques interactifs." />
+  <meta name="twitter:image" content="https://www.enertchad.td/assets/img/og-cover.png" />
+
+  <!-- Icons / PWA -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23D9A84F'/%3E%3Ctext x='16' y='22' font-family='Space Grotesk, sans-serif' font-weight='700' font-size='16' text-anchor='middle' fill='%23080E1A'%3EE%3C/text%3E%3C/svg%3E" />
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
+  <link rel="manifest" href="manifest.json" />
+
+  <!-- Fonts + stylesheet -->
+<link rel="preload" href="/assets/fonts/Inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/assets/fonts/SpaceGrotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="assets/css/main.css" />
+
+  <!-- Chart.js auto-hébergé (anciennement CDN, cf. audit 2026-04-22 — P0-2) -->
+  <script src="/assets/js/vendor/chart.4.4.1.umd.min.js" defer></script>
+
+  <style>
+    body.dash-body { background: #05080f; color: var(--cream); }
+    .dash-shell { min-height: 100vh; display: grid; grid-template-rows: auto 1fr; }
+
+    /* Top bar */
+    .dash-top { background: linear-gradient(180deg, #080E1A 0%, #0b1324 100%); border-bottom: 1px solid rgba(217,168,79,0.18); padding: 14px 28px; display: flex; align-items: center; gap: 20px; position: sticky; top: 0; z-index: 50; backdrop-filter: blur(10px); }
+    .dash-brand { display: flex; align-items: center; gap: 10px; color: var(--cream); text-decoration: none; }
+    .dash-brand-dot { width: 30px; height: 30px; border-radius: 8px; background: linear-gradient(145deg, var(--gold) 0%, #9c7935 100%); display: grid; place-items: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: var(--navy); font-size: 14px; }
+    .dash-brand-text { font-family: 'Space Grotesk', sans-serif; font-weight: 600; letter-spacing: 0.02em; }
+    .dash-brand-sub { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: rgba(255,255,255,0.55); letter-spacing: 0.12em; text-transform: uppercase; margin-top: 2px; }
+    .dash-live { display: inline-flex; align-items: center; gap: 8px; padding: 5px 12px; border-radius: 999px; background: rgba(30, 185, 128, 0.12); border: 1px solid rgba(30, 185, 128, 0.35); color: #6ee2b2; font-size: 11px; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.08em; text-transform: uppercase; margin-left: auto; }
+    .dash-live-dot { width: 7px; height: 7px; border-radius: 50%; background: #1EB980; box-shadow: 0 0 10px #1EB980; animation: pulseLive 1.6s ease-in-out infinite; }
+    @keyframes pulseLive { 0%,100% { opacity:1; } 50% { opacity: 0.35; } }
+    .dash-time { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: rgba(255,255,255,0.7); letter-spacing: 0.05em; }
+    .dash-home { color: rgba(255,255,255,0.6); font-size: 13px; text-decoration: none; margin-left: 16px; padding: 6px 12px; border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; transition: 0.2s; }
+    .dash-home:hover { color: var(--gold); border-color: rgba(217,168,79,0.4); }
+
+    /* Control bar */
+    .dash-controls { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; padding: 20px 28px; border-bottom: 1px solid rgba(255,255,255,0.06); background: rgba(255,255,255,0.02); }
+    .dash-tabs { display: inline-flex; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 4px; }
+    .dash-tab { background: transparent; border: 0; color: rgba(255,255,255,0.65); padding: 8px 18px; font-family: inherit; font-size: 13px; font-weight: 500; cursor: pointer; border-radius: 7px; letter-spacing: 0.02em; transition: 0.2s; }
+    .dash-tab.active { background: var(--gold); color: var(--navy); font-weight: 600; }
+    .dash-tab:hover:not(.active) { color: #fff; background: rgba(255,255,255,0.06); }
+    .dash-filter-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(255,255,255,0.5); margin-right: 6px; font-family: 'JetBrains Mono', monospace; }
+    .dash-chip { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.75); padding: 6px 12px; border-radius: 999px; font-size: 12px; cursor: pointer; transition: 0.15s; font-family: inherit; }
+    .dash-chip:hover { border-color: rgba(217,168,79,0.4); color: #fff; }
+    .dash-chip.active { background: rgba(217,168,79,0.18); border-color: var(--gold); color: var(--gold); }
+
+    /* Grid */
+    .dash-main { padding: 24px 28px 60px; }
+    .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-bottom: 24px; }
+    .kpi-tile { background: linear-gradient(145deg, rgba(255,255,255,0.035), rgba(255,255,255,0.01)); border: 1px solid rgba(255,255,255,0.07); border-radius: 14px; padding: 20px 22px; position: relative; overflow: hidden; }
+    .kpi-tile::before { content: ""; position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--accent, var(--gold)); opacity: 0.85; }
+    .kpi-label { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.55); font-family: 'JetBrains Mono', monospace; margin-bottom: 10px; }
+    .kpi-value { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 34px; line-height: 1; letter-spacing: -0.02em; color: #fff; margin-bottom: 6px; }
+    .kpi-unit { font-size: 14px; color: rgba(255,255,255,0.55); font-weight: 400; margin-left: 6px; }
+    .kpi-delta { font-size: 12px; font-family: 'JetBrains Mono', monospace; color: #6ee2b2; display: inline-flex; align-items: center; gap: 4px; }
+    .kpi-delta.down { color: #ff9a8a; }
+    .kpi-foot { font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 8px; }
+
+    .panel-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 14px; }
+    @media (max-width: 960px) { .panel-grid { grid-template-columns: 1fr; } }
+    .dash-panel { background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.07); border-radius: 14px; padding: 22px 24px; }
+    .dash-panel h3 { font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 600; letter-spacing: 0.01em; color: #fff; margin: 0 0 4px; }
+    .dash-panel .panel-sub { font-size: 12px; color: rgba(255,255,255,0.5); margin-bottom: 18px; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.04em; }
+    .chart-wrap { position: relative; height: 280px; }
+    .chart-wrap.sm { height: 220px; }
+
+    .legend-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+    .legend-list li { display: flex; align-items: center; justify-content: space-between; font-size: 13px; color: rgba(255,255,255,0.8); padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
+    .legend-list li:last-child { border-bottom: 0; }
+    .legend-name { display: flex; align-items: center; gap: 10px; }
+    .legend-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .legend-val { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #fff; }
+
+    .view { display: none; }
+    .view.active { display: block; animation: fadeView 0.45s var(--ease-out); }
+    @keyframes fadeView { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+    .dash-footer { text-align: center; padding: 30px 20px; font-size: 12px; color: rgba(255,255,255,0.35); border-top: 1px solid rgba(255,255,255,0.05); }
+    .dash-footer a { color: var(--gold); text-decoration: none; }
+
+    /* Color tokens for KPIs per pôle */
+    .acc-amont      { --accent: #D9A84F; }
+    .acc-midstream  { --accent: #4FA3D9; }
+    .acc-aval       { --accent: #E07A5F; }
+    .acc-energies   { --accent: #6EE2B2; }
+    .acc-petrochem  { --accent: #B28DFF; }
+    .acc-tech       { --accent: #8B5CF6; }
+    .acc-groupe     { --accent: #F7F6F1; }
+  </style>
+<script type="application/ld+json">{
+  "@context":"https://schema.org",
+  "@type":"Organization",
+  "name":"EnerTchad Groupe SA/CA",
+  "alternateName":"EnerTchad",
+  "url":"https://www.enertchad.td/",
+  "logo":"https://www.enertchad.td/assets/img/apple-touch-icon.png",
+  "address":{"@type":"PostalAddress","streetAddress":"Radisson, Block D, Bureau 23, Sabangali","addressLocality":"N'Djamena","addressCountry":"TD"},
+  "telephone":"+235 99 29 86 96",
+  "email":"contact@enertchad.td"
+}</script>
+<script type="application/ld+json">{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Accueil","item":"https://www.enertchad.td/"},
+    {"@type":"ListItem","position":2,"name":"Finance & Performance","item":"https://www.enertchad.td/investisseurs.html"},
+    {"@type":"ListItem","position":3,"name":"Synthèse publique","item":"https://www.enertchad.td/dashboard.html"}
+  ]
+}</script>
+</head>
+<body class="dash-body">
+  <a class="skip-link" href="#main-content">Aller au contenu principal</a>
+  <div class="dash-shell">
+    <header class="dash-top">
+      <a href="./" class="dash-brand">
+        <div class="dash-brand-dot">E</div>
+        <div>
+          <div class="dash-brand-text">EnerTchad Groupe</div>
+          <div class="dash-brand-sub">Executive Dashboard · v2.4</div>
+        </div>
+      </a>
+      <a href="./" class="dash-home">← Retour site</a>
+      <div class="dash-live" aria-live="polite"><span class="dash-live-dot"></span><span>Live</span></div>
+      <div class="dash-time" id="live-clock">—</div>
+    </header>
+
+    <div>
+      <div class="dash-controls">
+        <div class="dash-tabs" role="tablist" aria-label="Vues du dashboard">
+          <button class="dash-tab active" data-view="overview" role="tab" id="tab-overview" aria-selected="true" aria-controls="view-overview" tabindex="0">Vue consolidée</button>
+          <button class="dash-tab" data-view="operations" role="tab" id="tab-operations" aria-selected="false" aria-controls="view-operations" tabindex="-1">Opérations</button>
+          <button class="dash-tab" data-view="finance" role="tab" id="tab-finance" aria-selected="false" aria-controls="view-finance" tabindex="-1">Finance</button>
+          <button class="dash-tab" data-view="tech" role="tab" id="tab-tech" aria-selected="false" aria-controls="view-tech" tabindex="-1">Technologies</button>
+        </div>
+        <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+          <span class="dash-filter-label">Période</span>
+          <button class="dash-chip" data-period="7">7J</button>
+          <button class="dash-chip" data-period="30">30J</button>
+          <button class="dash-chip active" data-period="90">90J</button>
+          <button class="dash-chip" data-period="365">12M</button>
+        </div>
+      </div>
+
+      <main id="main-content" class="dash-main">
+        <!-- OVERVIEW -->
+        <section class="view active" id="view-overview" role="tabpanel" aria-labelledby="tab-overview" tabindex="0">
+          <div class="kpi-grid">
+            <div class="kpi-tile acc-groupe">
+              <div class="kpi-label">Chiffre d'affaires Groupe</div>
+              <div class="kpi-value" data-animate="2847">0<span class="kpi-unit">M USD</span></div>
+              <div class="kpi-delta">▲ +12,4% a/a</div>
+              <div class="kpi-foot">FY 2025 consolidé</div>
+            </div>
+            <div class="kpi-tile acc-amont">
+              <div class="kpi-label">Production Amont</div>
+              <div class="kpi-value" data-animate="144">0<span class="kpi-unit">kb/d</span></div>
+              <div class="kpi-delta">▲ +4,1%</div>
+              <div class="kpi-foot">5 bassins · objectif 250 kb/d en 2030</div>
+            </div>
+            <div class="kpi-tile acc-midstream">
+              <div class="kpi-label">Pipeline · débit actuel</div>
+              <div class="kpi-value" data-animate="90">0<span class="kpi-unit">kb/d</span></div>
+              <div class="kpi-delta">▲ +1,9%</div>
+              <div class="kpi-foot">Intermédiaire · 1 070 km</div>
+            </div>
+            <div class="kpi-tile acc-aval">
+              <div class="kpi-label">Stations réseau aval</div>
+              <div class="kpi-value" data-animate="45">0<span class="kpi-unit">sites</span></div>
+              <div class="kpi-delta">▲ +3 sites YTD</div>
+              <div class="kpi-foot">6 villes · 6 régions</div>
+            </div>
+            <div class="kpi-tile acc-energies">
+              <div class="kpi-label">Puissance installée</div>
+              <div class="kpi-value" data-animate="125">0<span class="kpi-unit">MW</span></div>
+              <div class="kpi-delta">▲ +22 MW (2025)</div>
+              <div class="kpi-foot">Gas-to-power + solaire</div>
+            </div>
+            <div class="kpi-tile acc-tech">
+              <div class="kpi-label">Capteurs IoT actifs</div>
+              <div class="kpi-value" data-animate="12840">0<span class="kpi-unit">unités</span></div>
+              <div class="kpi-delta">99,97% uptime</div>
+              <div class="kpi-foot">Technologies · SCADA/IoT</div>
+            </div>
+          </div>
+
+          <div class="panel-grid">
+            <div class="dash-panel">
+              <h3>Revenus trimestriels par pôle</h3>
+              <div class="panel-sub">M USD · 8 derniers trimestres</div>
+              <div class="chart-wrap"><canvas id="chart-rev" role="img" aria-label="Graphique à barres empilées des revenus trimestriels par pôle, Q1 2024 à Q4 2025, en millions USD"></canvas></div>
+            </div>
+            <div class="dash-panel">
+              <h3>Contribution au CA</h3>
+              <div class="panel-sub">FY 2025 · pourcentage</div>
+              <div class="chart-wrap sm"><canvas id="chart-mix" role="img" aria-label="Diagramme en anneau de la contribution au chiffre d'affaires 2025 par pôle d'activité"></canvas></div>
+              <ul class="legend-list" id="legend-mix"></ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- OPERATIONS -->
+        <section class="view" id="view-operations" role="tabpanel" aria-labelledby="tab-operations" tabindex="0">
+          <div class="kpi-grid">
+            <div class="kpi-tile acc-amont">
+              <div class="kpi-label">Taux de disponibilité Amont</div>
+              <div class="kpi-value" data-animate="97.2">0<span class="kpi-unit">%</span></div>
+              <div class="kpi-delta">▲ +0,4 pt</div>
+              <div class="kpi-foot">Objectif 2026 : 98%</div>
+            </div>
+            <div class="kpi-tile acc-midstream">
+              <div class="kpi-label">Débit pipeline (90j)</div>
+              <div class="kpi-value" data-animate="13.9">0<span class="kpi-unit">Mb</span></div>
+              <div class="kpi-delta">▲ +2,1%</div>
+              <div class="kpi-foot">Doba → Komé → Kribi</div>
+            </div>
+            <div class="kpi-tile acc-aval">
+              <div class="kpi-label">Volumes vendus retail</div>
+              <div class="kpi-value" data-animate="218">0<span class="kpi-unit">Ml</span></div>
+              <div class="kpi-delta">▲ +5,8%</div>
+              <div class="kpi-foot">Essence + gasoil + JET-A1</div>
+            </div>
+            <div class="kpi-tile acc-energies">
+              <div class="kpi-label">GWh livrés (Énergies)</div>
+              <div class="kpi-value" data-animate="624">0<span class="kpi-unit">GWh</span></div>
+              <div class="kpi-delta">▲ +18%</div>
+              <div class="kpi-foot">Contrats PPA + municipaux</div>
+            </div>
+          </div>
+
+          <div class="panel-grid">
+            <div class="dash-panel">
+              <h3>Production quotidienne · Amont</h3>
+              <div class="panel-sub">kboe/j · courbe 90 jours</div>
+              <div class="chart-wrap"><canvas id="chart-prod" role="img" aria-label="Courbe de la production quotidienne amont sur 90 jours, en kboe par jour"></canvas></div>
+            </div>
+            <div class="dash-panel">
+              <h3>Sécurité · LTIF par pôle</h3>
+              <div class="panel-sub">Lost-Time Injury Frequency · cible &lt; 0.5</div>
+              <div class="chart-wrap sm"><canvas id="chart-ltif" role="img" aria-label="Graphique à barres du taux LTIF par pôle, cible inférieure à 0,5"></canvas></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- FINANCE -->
+        <section class="view" id="view-finance" role="tabpanel" aria-labelledby="tab-finance" tabindex="0">
+          <div class="kpi-grid">
+            <div class="kpi-tile acc-groupe">
+              <div class="kpi-label">EBITDA Groupe</div>
+              <div class="kpi-value" data-animate="892">0<span class="kpi-unit">M USD</span></div>
+              <div class="kpi-delta">▲ +14,7%</div>
+              <div class="kpi-foot">Marge 31,3%</div>
+            </div>
+            <div class="kpi-tile acc-groupe">
+              <div class="kpi-label">Résultat net part Groupe</div>
+              <div class="kpi-value" data-animate="412">0<span class="kpi-unit">M USD</span></div>
+              <div class="kpi-delta">▲ +8,9%</div>
+              <div class="kpi-foot">FY 2025 audité PwC</div>
+            </div>
+            <div class="kpi-tile acc-groupe">
+              <div class="kpi-label">Free Cash-Flow</div>
+              <div class="kpi-value" data-animate="337">0<span class="kpi-unit">M USD</span></div>
+              <div class="kpi-delta">▲ +22%</div>
+              <div class="kpi-foot">Avant dividendes</div>
+            </div>
+            <div class="kpi-tile acc-groupe">
+              <div class="kpi-label">Gearing (dette nette/FP)</div>
+              <div class="kpi-value" data-animate="24.8">0<span class="kpi-unit">%</span></div>
+              <div class="kpi-delta down">▼ −3,1 pt</div>
+              <div class="kpi-foot">Notation BB+ Fitch</div>
+            </div>
+          </div>
+
+          <div class="panel-grid">
+            <div class="dash-panel">
+              <h3>EBITDA & Résultat net</h3>
+              <div class="panel-sub">2021 — 2025 · M USD</div>
+              <div class="chart-wrap"><canvas id="chart-ebitda" role="img" aria-label="Double courbe EBITDA et résultat net de 2021 à 2025, en millions USD"></canvas></div>
+            </div>
+            <div class="dash-panel">
+              <h3>Structure du capital</h3>
+              <div class="panel-sub">Actionnariat au 31/12/2025</div>
+              <div class="chart-wrap sm"><canvas id="chart-cap" role="img" aria-label="Diagramme polar area de la structure du capital au 31 décembre 2025"></canvas></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- TECH -->
+        <section class="view" id="view-tech" role="tabpanel" aria-labelledby="tab-tech" tabindex="0">
+          <div class="kpi-grid">
+            <div class="kpi-tile acc-tech">
+              <div class="kpi-label">Prédictions IA / jour</div>
+              <div class="kpi-value" data-animate="1.2">0<span class="kpi-unit">M</span></div>
+              <div class="kpi-delta">▲ +38% YTD</div>
+              <div class="kpi-foot">18 modèles en production</div>
+            </div>
+            <div class="kpi-tile acc-tech">
+              <div class="kpi-label">Digital Twins actifs</div>
+              <div class="kpi-value" data-animate="24">0<span class="kpi-unit">sites</span></div>
+              <div class="kpi-delta">▲ +6 vs 2024</div>
+              <div class="kpi-foot">Coverage upstream : 92%</div>
+            </div>
+            <div class="kpi-tile acc-tech">
+              <div class="kpi-label">Latence SCADA</div>
+              <div class="kpi-value" data-animate="47">0<span class="kpi-unit">ms</span></div>
+              <div class="kpi-delta">▲ −12 ms</div>
+              <div class="kpi-foot">SLA interne : &lt; 50 ms</div>
+            </div>
+            <div class="kpi-tile acc-tech">
+              <div class="kpi-label">Edge nodes déployés</div>
+              <div class="kpi-value" data-animate="86">0<span class="kpi-unit">nodes</span></div>
+              <div class="kpi-delta">▲ +14 sites</div>
+              <div class="kpi-foot">IEC 62443 compliant</div>
+            </div>
+          </div>
+
+          <div class="panel-grid">
+            <div class="dash-panel">
+              <h3>Données traitées quotidiennement</h3>
+              <div class="panel-sub">TB/j sur 90 jours glissants</div>
+              <div class="chart-wrap"><canvas id="chart-data" role="img" aria-label="Courbe du volume de données traitées quotidiennement sur 90 jours, en téraoctets par jour"></canvas></div>
+            </div>
+            <div class="dash-panel">
+              <h3>Mix technologique</h3>
+              <div class="panel-sub">Répartition charge compute</div>
+              <div class="chart-wrap sm"><canvas id="chart-tech" role="img" aria-label="Radar de la répartition de la charge compute par type de technologie"></canvas></div>
+            </div>
+          </div>
+        </section>
+
+        <div class="dash-footer">
+          Données consolidées, vue de démonstration · Source : Direction Pilotage Groupe · <a href="investisseurs">Voir rapport investisseurs complet</a>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script>
+  (function(){
+    // --- Live clock ---
+    function fmtTime(){ var d = new Date(); return d.toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit',second:'2-digit'}) + ' · N\'Djamena'; }
+    var clock = document.getElementById('live-clock');
+    function tick(){ if (clock) clock.textContent = fmtTime(); }
+    tick(); setInterval(tick, 1000);
+
+    // --- KPI counter animation ---
+    function animateValue(el, target){
+      var isFloat = String(target).indexOf('.') !== -1;
+      var start = 0, duration = 1400, t0 = performance.now();
+      var unitHTML = el.querySelector('.kpi-unit') ? el.querySelector('.kpi-unit').outerHTML : '';
+      function frame(now){
+        var p = Math.min(1, (now - t0) / duration);
+        var eased = 1 - Math.pow(1 - p, 3);
+        var v = start + (target - start) * eased;
+        var text = isFloat ? v.toFixed(1) : Math.round(v).toLocaleString('fr-FR');
+        el.innerHTML = text + unitHTML;
+        if (p < 1) requestAnimationFrame(frame);
+      }
+      requestAnimationFrame(frame);
+    }
+    function animateAll(scope){
+      scope.querySelectorAll('[data-animate]').forEach(function(el){
+        var target = parseFloat(el.getAttribute('data-animate'));
+        animateValue(el, target);
+      });
+    }
+    animateAll(document.getElementById('view-overview'));
+
+    // --- Tabs (a11y: aria-selected, tabindex roving, arrow keys) ---
+    var views = document.querySelectorAll('.view');
+    var tabs = Array.prototype.slice.call(document.querySelectorAll('.dash-tab'));
+
+    function activateTab(btn, setFocus){
+      tabs.forEach(function(b){
+        var isActive = (b === btn);
+        b.classList.toggle('active', isActive);
+        b.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        b.setAttribute('tabindex', isActive ? '0' : '-1');
+      });
+      var target = btn.getAttribute('data-view');
+      views.forEach(function(v){ v.classList.remove('active'); });
+      var active = document.getElementById('view-' + target);
+      if (active){
+        active.classList.add('active');
+        animateAll(active);
+        setTimeout(function(){
+          active.querySelectorAll('canvas').forEach(function(c){
+            if (c._chart) c._chart.resize();
+          });
+        }, 120);
+      }
+      if (setFocus) btn.focus();
+    }
+
+    tabs.forEach(function(btn, idx){
+      btn.addEventListener('click', function(){ activateTab(btn, false); });
+      btn.addEventListener('keydown', function(e){
+        var k = e.key;
+        if (k === 'ArrowRight' || k === 'ArrowDown'){
+          e.preventDefault();
+          activateTab(tabs[(idx + 1) % tabs.length], true);
+        } else if (k === 'ArrowLeft' || k === 'ArrowUp'){
+          e.preventDefault();
+          activateTab(tabs[(idx - 1 + tabs.length) % tabs.length], true);
+        } else if (k === 'Home'){
+          e.preventDefault();
+          activateTab(tabs[0], true);
+        } else if (k === 'End'){
+          e.preventDefault();
+          activateTab(tabs[tabs.length - 1], true);
+        }
+      });
+    });
+
+    // --- Period filter (visual only in this demo) ---
+    document.querySelectorAll('.dash-chip[data-period]').forEach(function(chip){
+      chip.addEventListener('click', function(){
+        document.querySelectorAll('.dash-chip[data-period]').forEach(function(c){ c.classList.remove('active'); });
+        chip.classList.add('active');
+      });
+    });
+
+    // --- Charts (wait for Chart.js) ---
+    function whenReady(cb){ if (window.Chart) return cb(); document.addEventListener('DOMContentLoaded', function(){ var t=setInterval(function(){ if(window.Chart){ clearInterval(t); cb(); }}, 60); }); }
+    whenReady(function(){
+      Chart.defaults.color = 'rgba(255,255,255,0.65)';
+      Chart.defaults.borderColor = 'rgba(255,255,255,0.08)';
+      Chart.defaults.font.family = 'Inter, system-ui, sans-serif';
+
+      var palette = { amont:'#D9A84F', mid:'#4FA3D9', aval:'#E07A5F', energies:'#6EE2B2', petrochem:'#B28DFF', tech:'#8B5CF6' };
+
+      function mkChart(id, cfg){
+        var el = document.getElementById(id);
+        if (!el) return;
+        var ctx = el.getContext('2d');
+        var c = new Chart(ctx, cfg);
+        el._chart = c;
+        return c;
+      }
+
+      // Sample synthetic series
+      function noisy(base, n, amp, trend){
+        var out = []; for (var i=0;i<n;i++){ out.push(+(base + trend*i/n + (Math.sin(i/3)+Math.cos(i/5))*amp).toFixed(1)); } return out;
+      }
+      var quarters = ['Q1·24','Q2·24','Q3·24','Q4·24','Q1·25','Q2·25','Q3·25','Q4·25'];
+
+      // Overview: stacked bar rev by pôle
+      mkChart('chart-rev', {
+        type: 'bar',
+        data: {
+          labels: quarters,
+          datasets: [
+            { label:'Amont', backgroundColor: palette.amont, data:[340,352,368,375,392,401,418,428], stack:'s' },
+            { label:'Intermédiaire', backgroundColor: palette.mid, data:[84,88,91,93,97,101,104,108], stack:'s' },
+            { label:'Aval', backgroundColor: palette.aval, data:[112,118,122,129,137,142,149,156], stack:'s' },
+            { label:'Énergies', backgroundColor: palette.energies, data:[38,42,47,55,62,68,74,82], stack:'s' },
+            { label:'Pétrochimie', backgroundColor: palette.petrochem, data:[22,25,27,31,33,36,39,42], stack:'s' },
+            { label:'Technologies', backgroundColor: palette.tech, data:[18,21,25,28,32,36,41,46], stack:'s' }
+          ]
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          scales: { x:{ grid:{display:false} }, y:{ grid:{color:'rgba(255,255,255,0.05)'}, stacked:true, beginAtZero:true, ticks:{ callback:function(v){return v+' M$';} } } },
+          plugins: { legend:{ position:'bottom', labels:{ boxWidth:10, boxHeight:10, padding:14 } } },
+          interaction: { mode:'index' }
+        }
+      });
+
+      // Overview doughnut
+      var mixData = [
+        {label:'Amont',         val:48, color:palette.amont},
+        {label:'Aval',          val:18, color:palette.aval},
+        {label:'Intermédiaire', val:12, color:palette.mid},
+        {label:'Énergies',      val:9,  color:palette.energies},
+        {label:'Pétrochimie',   val:7,  color:palette.petrochem},
+        {label:'Technologies',  val:6,  color:palette.tech}
+      ];
+      mkChart('chart-mix', {
+        type: 'doughnut',
+        data: {
+          labels: mixData.map(function(m){return m.label;}),
+          datasets: [{ data: mixData.map(function(m){return m.val;}), backgroundColor: mixData.map(function(m){return m.color;}), borderColor:'#080E1A', borderWidth:2 }]
+        },
+        options: { responsive:true, maintainAspectRatio:false, cutout:'68%', plugins:{ legend:{display:false} } }
+      });
+      var lm = document.getElementById('legend-mix');
+      if (lm) mixData.forEach(function(m){
+        var li = document.createElement('li');
+        li.innerHTML = '<span class="legend-name"><span class="legend-dot" style="background:'+m.color+'"></span>'+m.label+'</span><span class="legend-val">'+m.val+'%</span>';
+        lm.appendChild(li);
+      });
+
+      // Operations: production line
+      mkChart('chart-prod', {
+        type: 'line',
+        data: {
+          labels: Array.from({length:90},function(_,i){return 'J-'+(89-i);}),
+          datasets: [{
+            label:'Production kboe/j', data: noisy(175, 90, 4, 6), fill:true,
+            backgroundColor:'rgba(217,168,79,0.08)', borderColor: palette.amont, tension:0.35, borderWidth:2, pointRadius:0
+          }]
+        },
+        options: { responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}}, scales:{ x:{ grid:{display:false}, ticks:{ maxTicksLimit:8 } }, y:{ grid:{color:'rgba(255,255,255,0.05)'} } } }
+      });
+
+      // Operations: LTIF bar
+      mkChart('chart-ltif', {
+        type: 'bar',
+        data: {
+          labels: ['Amont','Intermédiaire','Aval','Énergies','Pétrochimie','Tech'],
+          datasets: [{ data:[0.32,0.21,0.44,0.18,0.28,0.09], backgroundColor: [palette.amont, palette.mid, palette.aval, palette.energies, palette.petrochem, palette.tech], borderRadius:6 }]
+        },
+        options: { responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}}, scales:{ x:{grid:{display:false}}, y:{ grid:{color:'rgba(255,255,255,0.05)'}, beginAtZero:true, max:0.6 } } }
+      });
+
+      // Finance: EBITDA line
+      mkChart('chart-ebitda', {
+        type: 'line',
+        data: {
+          labels: ['2021','2022','2023','2024','2025'],
+          datasets: [
+            { label:'EBITDA', data:[612,658,714,778,892], borderColor:palette.amont, backgroundColor:'rgba(217,168,79,0.12)', fill:true, tension:0.4, borderWidth:2.5, pointRadius:4, pointBackgroundColor:palette.amont },
+            { label:'Résultat net', data:[248,281,312,378,412], borderColor:palette.energies, backgroundColor:'rgba(110,226,178,0.08)', fill:true, tension:0.4, borderWidth:2.5, pointRadius:4, pointBackgroundColor:palette.energies }
+          ]
+        },
+        options: { responsive:true, maintainAspectRatio:false, plugins:{legend:{position:'bottom',labels:{boxWidth:10,boxHeight:10,padding:12}}}, scales:{ x:{grid:{display:false}}, y:{grid:{color:'rgba(255,255,255,0.05)'}, ticks:{ callback:function(v){return v+' M$';} } } } }
+      });
+
+      // Finance: cap structure
+      mkChart('chart-cap', {
+        type: 'polarArea',
+        data: {
+          labels: ['Famille fondatrice','État TD','Institutionnels','Salariés','Flottant'],
+          datasets: [{ data:[41,18,24,7,10], backgroundColor:['#D9A84F','#4FA3D9','#6EE2B2','#B28DFF','#E07A5F'], borderColor:'#080E1A', borderWidth:2 }]
+        },
+        options: { responsive:true, maintainAspectRatio:false, plugins:{legend:{position:'bottom',labels:{boxWidth:10,boxHeight:10,padding:10,font:{size:11}}}}, scales:{ r:{ grid:{color:'rgba(255,255,255,0.06)'}, ticks:{display:false} } } }
+      });
+
+      // Tech: data throughput
+      mkChart('chart-data', {
+        type: 'line',
+        data: {
+          labels: Array.from({length:90},function(_,i){return 'J-'+(89-i);}),
+          datasets: [{ label:'TB/j', data: noisy(4.4, 90, 0.25, 0.4), borderColor: palette.tech, backgroundColor:'rgba(139,92,246,0.1)', fill:true, tension:0.3, borderWidth:2, pointRadius:0 }]
+        },
+        options: { responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}}, scales:{ x:{grid:{display:false}, ticks:{maxTicksLimit:8}}, y:{grid:{color:'rgba(255,255,255,0.05)'}, ticks:{callback:function(v){return v+' TB';}}} } }
+      });
+
+      // Tech: compute mix radar
+      mkChart('chart-tech', {
+        type: 'radar',
+        data: {
+          labels: ['Edge','Cloud souverain','On-prem DC','HPC IA','Dev/test','Backup'],
+          datasets: [{ label:'Charge %', data:[34,28,14,12,8,4], borderColor: palette.tech, backgroundColor:'rgba(139,92,246,0.18)', pointBackgroundColor: palette.tech, borderWidth:2 }]
+        },
+        options: { responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}}, scales:{ r:{ angleLines:{color:'rgba(255,255,255,0.08)'}, grid:{color:'rgba(255,255,255,0.07)'}, pointLabels:{color:'rgba(255,255,255,0.75)', font:{size:11}}, ticks:{display:false, stepSize:10}, suggestedMin:0, suggestedMax:40 } } }
+      });
+    });
+  })();
+  </script>
+
+  <!-- Cookie consent banner -->
+  <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Consentement cookies">
+    <p style="margin:0 0 12px 0; font-size:.92rem; line-height:1.55;">Nous utilisons uniquement des cookies techniques essentiels (préférences, session) et une mesure d'audience anonyme sans cookie. Aucun traceur publicitaire.</p>
+    <div class="cb-actions">
+      <a class="cb-btn" href="cookies">En savoir plus</a>
+      <button type="button" class="cb-btn primary" id="cookie-accept">J'ai compris</button>
+    </div>
+  </div>
+  <script>
+  (function(){
+    function getCookie(n){var m=document.cookie.match(new RegExp('(?:^|; )'+n+'=([^;]*)'));return m?decodeURIComponent(m[1]):null;}
+    function setCookie(n,v,d){var e=new Date();e.setTime(e.getTime()+d*864e5);document.cookie=n+'='+encodeURIComponent(v)+'; expires='+e.toUTCString()+'; path=/; SameSite=Lax';}
+    var b=document.getElementById('cookie-banner'); if(!b) return;
+    if(!getCookie('consent_v1')){ setTimeout(function(){b.classList.add('show');}, 900); }
+    var btn=document.getElementById('cookie-accept');
+    if(btn){ btn.addEventListener('click', function(){ setCookie('consent_v1','accepted-technical',180); b.classList.remove('show'); }); }
+  })();
+  </script>
+
+  <script>if('serviceWorker' in navigator){window.addEventListener('load',()=>{navigator.serviceWorker.register('/sw.js').catch(()=>{});});}</script>
+
+  <footer role="contentinfo" class="foot-minimal" style="background:#05080f;border-top:1px solid rgba(217,168,79,0.18);padding:24px 28px;color:rgba(255,255,255,.72);font-size:.88rem;">
+    <div style="max-width:1400px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px;">
+      <div>© <span data-year>2026</span> <strong>EnerTchad Groupe SA/CA</strong> · Tous droits réservés · RCCM N&#8217;DJ/RC/2026-A-0001</div>
+      <div class="legal" style="display:flex;gap:18px;flex-wrap:wrap;">
+        <a href="/" style="color:rgba(255,255,255,.72);text-decoration:none;">Accueil</a>
+        <a href="/investisseurs" style="color:rgba(255,255,255,.72);text-decoration:none;">Investisseurs</a>
+        <a href="/mentions-legales" style="color:rgba(255,255,255,.72);text-decoration:none;">Mentions légales</a>
+        <a href="/confidentialite" style="color:rgba(255,255,255,.72);text-decoration:none;">Confidentialité</a>
+        <a href="/contact" style="color:rgba(255,255,255,.72);text-decoration:none;">Contact</a>
+      </div>
+    </div>
+  </footer>
+  <script>document.querySelectorAll('[data-year]').forEach(function(e){e.textContent=new Date().getFullYear();});</script>
+</body>
+</html>

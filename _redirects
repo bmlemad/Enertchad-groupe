@@ -1,0 +1,51 @@
+# =============================================================================
+# EnerTchad Groupe — _redirects (Cloudflare Pages + Netlify compatible)
+# Révisé : 22 avril 2026 — post-v1.6.0 (signatures, EOR, pétrochimie)
+# =============================================================================
+#
+# IMPORTANT — Cloudflare Pages sert .html nativement sur les URLs propres
+# (ex. /groupe → groupe.html automatiquement). NE PAS ajouter de règles
+# `/groupe /groupe.html 200` ici : elles recréent la boucle observée sur
+# le deploy 203293ce et résolue dans 72ce274c.
+#
+# Netlify lit netlify.toml en priorité et a déjà les mêmes 200 rewrites là-bas.
+# Ce fichier est donc optimisé Cloudflare d'abord ; Netlify reste fonctionnel
+# via netlify.toml.
+# =============================================================================
+
+# --- Legacy path redirects (anciennes URLs EN → FR) ---
+/about            /groupe             301
+/about.html       /groupe             301
+/investors        /investisseurs      301
+/careers          /talents            301
+/sustainability   /durabilite         301
+/news             /actualites         301
+/upstream         /operations/amont         301
+/midstream        /operations/intermediaire 301
+/downstream       /operations/aval          301
+/services         /operations/services      301
+
+# --- Legacy PDF aliases (Sprint A méga-menu — docs renommés) ---
+/documents/rapport-esg-2025.pdf  /documents/EnerTchad-Rapport-Durabilite-2025.pdf  301
+
+# --- Pôles intégrés (ex-sous-domaines Vercel) ---
+/energies         /energies/               301
+/technologies     /technologies/           301
+/enertech         /technologies/           301
+/greentech        /energies/               301
+
+# --- Dossiers source internes (anti-leak, cf. audit 2026-04-22 — P1-7/P2-1) ---
+/_sources/*       /404.html                                            404
+/poles/*          /404.html                                            404
+/dashboard-src/*  /404.html                                            404
+
+# --- Anchors cross-pages ajoutés en v1.6.0 — redirections de confort ---
+# Ces URLs courtes peuvent apparaître dans documents externes / emails ;
+# on les renvoie vers l'ancre canonique.
+/eor              /operations/amont#eor                                301
+/petrochimie      /operations/aval#petrochimie                         301
+/pole-petrochimie /operations/aval#petrochimie                         301
+/ccus             /operations/amont#eor                                301
+
+# --- Custom 404 (fallback global, DOIT rester en dernier) ---
+/*    /404.html   404

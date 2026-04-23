@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_sources/
+Disallow: /poles/
+
+Sitemap: https://www.enertchad.td/sitemap.xml
