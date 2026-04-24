@@ -1,39 +1,32 @@
-# =============================================================================
-# EnerTchad Groupe — .gitignore
-# =============================================================================
+# Git internals
+.git/
+.github/
 
-# macOS / Windows cruft
+# Build output (régénéré par build-cf.sh)
+dist/
+
+# Wrangler cache
+.wrangler/
+
+# Git bundle backups
+*.bundle
+
+# OS cruft
 .DS_Store
 Thumbs.db
 .~lock.*
 
-# Node / build artifacts
+# Backups / scratch
+*.bak
+*.tmp
+*~
+
+# Node
 node_modules/
-.npm-global/
-dist/
-.cache/
-.wrangler/
+package-lock.json
 
-# Cowork/agent scratchpads
-sessions/
-.claude/
-
-# Historical artifacts déjà exclus du périmètre courant
-ACTIONS_CADASTRE/
-ACTIONS_INTEGRATION/
-AUDIT_ACTIONS/
-PATCHES_MEGA_MENU/
-ASSETS_IMAGES_HD/
-patches/
-patches-cadastre/
-deliverables/
-reports/
-site/
-enertchad-*.bundle
-*.patch
-
-# Local env / secrets
+# Private / sensitive
+*.key
+*.pem
 .env
 .env.local
-.env.*.local
-__pycache__/
