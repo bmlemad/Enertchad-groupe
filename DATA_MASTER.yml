@@ -483,26 +483,28 @@ purger:
 # ------------------------------------------------------------------------------
 
 services_groups:
-  - id: "operations"
-    nom: "Services pétroliers"
-    description: "Chaîne de valeur intégrée E&P → Pétrochimie"
-    items: ["ep", "eor", "pipeline", "distribution", "petrochimie"]
-    accent_hex: "#C48848"
+  # Refonte v1.2.1 · 4 sections équilibrées 2-3-3-2 suivant la chaîne de valeur O&G
+  # Ordre : Amont → Chaîne aval → Technologies → Avenir (canonique Shell/Total/Aramco)
+  - id: "amont"
+    nom: "Amont pétrolier"
+    description: "Exploration, production et optimisation de réservoir"
+    items: ["ep", "eor"]
+    accent_hex: "#1E3A8A"     # Navy-blue · pôle amont industriel
+  - id: "chaine-aval"
+    nom: "Pipeline · Distribution · Pétrochimie"
+    description: "Transport, stations-service et transformation pétrochimique"
+    items: ["pipeline", "distribution", "petrochimie"]
+    accent_hex: "#C48848"     # Gold-brown · chaîne pétrolière
   - id: "technologies"
-    nom: "Technologies avancées (au service du pétrole)"
+    nom: "Technologies & Sécurité"
     description: "Digital industriel, cybersécurité OT et sécurité physique intelligente"
     items: ["digital", "ics-security", "physical-security"]
-    accent_hex: "#8B5CF6"
-  - id: "energies"
-    nom: "Énergies nouvelles (au service des opérations pétrolières)"
-    description: "Solaire industriel, mini-grids, efficacité énergétique"
-    items: ["renewables"]
-    accent_hex: "#10B981"
-  - id: "esg"
-    nom: "ESG, Formation & Gouvernance"
-    description: "Reporting ESG, EnerAcademy, conformité OHADA"
-    items: ["esg"]
-    accent_hex: "#B45309"
+    accent_hex: "#8B5CF6"     # Purple · tech & cyber
+  - id: "avenir-esg"
+    nom: "Énergies nouvelles & ESG"
+    description: "Solaire, efficacité énergétique, formation et gouvernance"
+    items: ["renewables", "esg"]
+    accent_hex: "#10B981"     # Green · durabilité
 
 services_catalog:
   - id: "ep"
@@ -511,7 +513,7 @@ services_catalog:
     nom: "Exploration & Production (E&P)"
     nom_court: "E&P"
     pole_parent: "amont"
-    group: "operations"
+    group: "amont"
     anchor: "section-ep"
     accent_hex: "#1E3A8A"
     accent_hex_light: "#3B82F6"
@@ -543,7 +545,7 @@ services_catalog:
     nom: "EOR & Chimie Pétrolière"
     nom_court: "EOR"
     pole_parent: "amont"
-    group: "operations"
+    group: "amont"
     anchor: "section-eor"
     accent_hex: "#C2410C"
     accent_hex_light: "#F97316"
@@ -575,7 +577,7 @@ services_catalog:
     nom: "Pipeline & Midstream"
     nom_court: "Pipeline"
     pole_parent: "intermediaire"
-    group: "operations"
+    group: "chaine-aval"
     anchor: "section-pipeline"
     accent_hex: "#15803D"
     accent_hex_light: "#22C55E"
@@ -609,7 +611,7 @@ services_catalog:
     nom: "Distribution & Mobilité"
     nom_court: "Distribution"
     pole_parent: "aval"
-    group: "operations"
+    group: "chaine-aval"
     anchor: "section-distribution"
     accent_hex: "#CA8A04"
     accent_hex_light: "#EAB308"
@@ -644,7 +646,7 @@ services_catalog:
     nom: "Pétrochimie & Transformation"
     nom_court: "Pétrochimie"
     pole_parent: "aval"
-    group: "operations"
+    group: "chaine-aval"
     anchor: "section-petrochimie"
     accent_hex: "#78350F"
     accent_hex_light: "#A16207"
@@ -783,7 +785,7 @@ services_catalog:
     nom: "Renouvelables & Énergies Nouvelles (au service du pétrole)"
     nom_court: "Énergies Nouvelles"
     pole_parent: "energies"
-    group: "energies"
+    group: "avenir-esg"
     anchor: "section-energies"
     accent_hex: "#047857"
     accent_hex_light: "#10B981"
@@ -816,7 +818,7 @@ services_catalog:
     nom: "ESG, Formation & Gouvernance"
     nom_court: "ESG"
     pole_parent: "transverse"    # ESG = fonction transverse au groupe (pas de pôle industriel parent)
-    group: "esg"
+    group: "avenir-esg"
     anchor: "section-esg"
     accent_hex: "#B45309"
     accent_hex_light: "#D97706"

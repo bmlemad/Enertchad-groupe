@@ -9,12 +9,20 @@
   },
   "groups": [
     {
-      "id": "operations",
-      "nom": "Services pétroliers",
-      "description": "Chaîne de valeur intégrée E&P → Pétrochimie",
+      "id": "amont",
+      "nom": "Amont pétrolier",
+      "description": "Exploration, production et optimisation de réservoir",
       "items": [
         "ep",
-        "eor",
+        "eor"
+      ],
+      "accent_hex": "#1E3A8A"
+    },
+    {
+      "id": "chaine-aval",
+      "nom": "Pipeline · Distribution · Pétrochimie",
+      "description": "Transport, stations-service et transformation pétrochimique",
+      "items": [
         "pipeline",
         "distribution",
         "petrochimie"
@@ -23,7 +31,7 @@
     },
     {
       "id": "technologies",
-      "nom": "Technologies avancées (au service du pétrole)",
+      "nom": "Technologies & Sécurité",
       "description": "Digital industriel, cybersécurité OT et sécurité physique intelligente",
       "items": [
         "digital",
@@ -33,22 +41,14 @@
       "accent_hex": "#8B5CF6"
     },
     {
-      "id": "energies",
-      "nom": "Énergies nouvelles (au service des opérations pétrolières)",
-      "description": "Solaire industriel, mini-grids, efficacité énergétique",
+      "id": "avenir-esg",
+      "nom": "Énergies nouvelles & ESG",
+      "description": "Solaire, efficacité énergétique, formation et gouvernance",
       "items": [
-        "renewables"
-      ],
-      "accent_hex": "#10B981"
-    },
-    {
-      "id": "esg",
-      "nom": "ESG, Formation & Gouvernance",
-      "description": "Reporting ESG, EnerAcademy, conformité OHADA",
-      "items": [
+        "renewables",
         "esg"
       ],
-      "accent_hex": "#B45309"
+      "accent_hex": "#10B981"
     }
   ],
   "services": [
@@ -59,7 +59,7 @@
       "nom": "Exploration & Production (E&P)",
       "nom_court": "E&P",
       "pole_parent": "amont",
-      "group": "operations",
+      "group": "amont",
       "anchor": "section-ep",
       "accent_hex": "#1E3A8A",
       "accent_hex_light": "#3B82F6",
@@ -100,7 +100,7 @@
       "nom": "EOR & Chimie Pétrolière",
       "nom_court": "EOR",
       "pole_parent": "amont",
-      "group": "operations",
+      "group": "amont",
       "anchor": "section-eor",
       "accent_hex": "#C2410C",
       "accent_hex_light": "#F97316",
@@ -141,7 +141,7 @@
       "nom": "Pipeline & Midstream",
       "nom_court": "Pipeline",
       "pole_parent": "intermediaire",
-      "group": "operations",
+      "group": "chaine-aval",
       "anchor": "section-pipeline",
       "accent_hex": "#15803D",
       "accent_hex_light": "#22C55E",
@@ -184,7 +184,7 @@
       "nom": "Distribution & Mobilité",
       "nom_court": "Distribution",
       "pole_parent": "aval",
-      "group": "operations",
+      "group": "chaine-aval",
       "anchor": "section-distribution",
       "accent_hex": "#CA8A04",
       "accent_hex_light": "#EAB308",
@@ -228,7 +228,7 @@
       "nom": "Pétrochimie & Transformation",
       "nom_court": "Pétrochimie",
       "pole_parent": "aval",
-      "group": "operations",
+      "group": "chaine-aval",
       "anchor": "section-petrochimie",
       "accent_hex": "#78350F",
       "accent_hex_light": "#A16207",
@@ -403,7 +403,7 @@
       "nom": "Renouvelables & Énergies Nouvelles (au service du pétrole)",
       "nom_court": "Énergies Nouvelles",
       "pole_parent": "energies",
-      "group": "energies",
+      "group": "avenir-esg",
       "anchor": "section-energies",
       "accent_hex": "#047857",
       "accent_hex_light": "#10B981",
@@ -445,7 +445,7 @@
       "nom": "ESG, Formation & Gouvernance",
       "nom_court": "ESG",
       "pole_parent": "transverse",
-      "group": "esg",
+      "group": "avenir-esg",
       "anchor": "section-esg",
       "accent_hex": "#B45309",
       "accent_hex_light": "#D97706",

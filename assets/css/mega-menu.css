@@ -142,14 +142,27 @@
   white-space: nowrap;
 }
 
-/* ═══ Body grid : 4 columns groups + feature ═══ */
+/* ═══ Body grid : 4 groups (2-3-3-2 services) + feature panel ═══ */
+/* v1.2.1 refonte : 4 groupes équilibrés suivant la chaîne de valeur O&G */
 .mm-body {
   display: grid;
-  grid-template-columns: 2fr 1.1fr 0.9fr 1.6fr;
-  gap: clamp(20px, 2vw, 32px);
+  grid-template-columns: repeat(4, minmax(200px, 1fr)) minmax(280px, 1.4fr);
+  gap: clamp(20px, 2vw, 28px);
   align-items: start;
 }
-@media (max-width: 1100px) {
+@media (max-width: 1280px) {
+  .mm-body {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .mm-feature {
+    grid-column: span 4;
+    margin-top: 8px;
+  }
+  .mm-stats {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (max-width: 900px) {
   .mm-body {
     grid-template-columns: 1fr 1fr;
   }
