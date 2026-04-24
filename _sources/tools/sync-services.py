@@ -91,6 +91,65 @@ def validate(data: dict[str, Any]) -> list[str]:
         if r.get("service_id") not in ids and r.get("service_id") is not None:
             errs.append(f"cta_route '{r.get('slug','?')}' references unknown service_id '{r.get('service_id')}'")
 
+    # v1.1.1 · Cross-contamination detection
+    # Canonical signatures (≥1 keyword qui DOIT être présent dans sous_services
+    # du bon service). Si absent → probablement corrompu/inversé avec un autre.
+    # NB : on évite les mots-clés ambigus (Mobile Station™ apparaît légitimement
+    # dans renewables via "Hybridation Mobile Station™"). On cible des tokens
+    # uniques au service cible.
+    CANONICAL_SIGNATURES = {
+        "ep":                "Géosciences & Réservoir",
+        "eor":               "Solutions EOR (polymères",
+        "pipeline":          "Transport brut & Dispatching",
+        "distribution":      "Cartes carburant intelligentes",
+        "petrochimie":       "Polymères (PE, PP, PVC)",
+        "digital":           "SCADA pipeline / champs / stations",
+        "ics-security":      "IEC 62443 & NIST ICS",
+        "physical-security": "Caméras 4K/8K & thermiques",
+        "renewables":        "Solaire industriel (stations, pipeline, SCADA)",
+        "esg":               "Reporting ESG & durabilité",
+    }
+    # Items "phares" qui sont EXCLUSIFS à leur service (full-match). Si détecté
+    # dans un autre service → corruption certaine.
+    EXCLUSIVE_MARKERS = {
+        "Géosciences & Réservoir": "ep",
+        "Forage & Complétions": "ep",
+        "Solutions EOR (polymères, surfactants, gels)": "eor",
+        "Boues de forage & additifs spécialisés": "eor",
+        "Transport brut & Dispatching": "pipeline",
+        "Inspection ILI & Pigging": "pipeline",
+        "Cartes carburant intelligentes": "distribution",
+        "Polymères (PE, PP, PVC)": "petrochimie",
+        "Engrais (urée, ammoniac, NPK)": "petrochimie",
+        "Digital Twins (pipeline, champs, pétrochimie)": "digital",
+        "IEC 62443 & NIST ICS": "ics-security",
+        "Monitoring OT & pare-feu industriels": "ics-security",
+        "Caméras 4K/8K & thermiques": "physical-security",
+        "Caméras IA & PTZ 360°": "physical-security",
+        "Solaire industriel (stations, pipeline, SCADA)": "renewables",
+        "Mini-grids pour sites isolés": "renewables",
+        "Reporting ESG & durabilité": "esg",
+        "EnerAcademy (formations Oil & Gas)": "esg",
+        "Conformité OHADA & anticorruption": "esg",
+    }
+    for s in cat:
+        sid = s.get("id")
+        own_ss = s.get("sous_services", [])
+        if sid in CANONICAL_SIGNATURES:
+            sig = CANONICAL_SIGNATURES[sid]
+            if not any(sig in item for item in own_ss):
+                errs.append(
+                    f"service '{sid}' missing canonical signature '{sig}' in sous_services "
+                    f"— possible cross-contamination (got {own_ss[:2]}...)"
+                )
+        for item in own_ss:
+            owner = EXCLUSIVE_MARKERS.get(item)
+            if owner and owner != sid:
+                errs.append(
+                    f"service '{sid}' contains exclusive marker '{item}' "
+                    f"which belongs to '{owner}' — cross-contamination detected"
+                )
+
     return errs
 
 

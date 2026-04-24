@@ -178,8 +178,27 @@ python3 _sources/tools/sync-services.py --apply
 Fonctions :
 - Valide la cohérence de `DATA_MASTER.yml > services_catalog`
 - Détecte les clés manquantes, duplicatas d'ID, références croisées cassées
+- **Détection cross-contamination (v1.1.1)** : vérifie que chaque service a sa
+  signature canonique dans `sous_services` et qu'aucun marker exclusif d'un
+  autre service n'y apparaît (prévient les bugs de swap comme ep↔esg de v1.1.0)
 - Génère `assets/data/services.json` à partir du YAML
 - Vérifie le drift entre `services.html` (anchors) et le catalogue
+
+### ⚠️ Gotcha — Scripts regex sur DATA_MASTER.yml
+
+**Ne JAMAIS faire :** `re.search(r'- id: "ep"...')` sans ancrer sur `services_catalog:`.
+
+Le fichier a deux zones où `- id: "<slug>"` apparaît :
+1. `services_groups[]` — définit les macro-catégories UI (operations, technologies, energies, **esg**)
+2. `services_catalog[]` — définit les vrais services (ep, eor, ..., **esg**)
+
+Il y a une **collision intentionnelle sur l'id `esg`**. Un regex naïf matchera le
+premier (dans services_groups) et propagera le `(?:.|\n)*?` jusqu'au premier
+`sous_services:` trouvé, qui sera celui d'un service adjacent dans
+`services_catalog:`. Incident v1.1.0 : ep a hérité des sous_services de esg.
+
+**Pattern correct** : ancrer le regex sur `services_catalog:\n[\s\S]*?- id: "<slug>"`
+ou charger le YAML via PyYAML et muter la structure Python avant de dump.
 
 ---
 
