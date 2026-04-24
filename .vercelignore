@@ -1,7 +1,17 @@
-# Dossiers source internes — ne pas déployer sur Vercel
+# =============================================================================
+# Vercel — fichiers à EXCLURE du deploy (v1.2.0 post-merge · 2026-04-24)
+# =============================================================================
+
+# Git internals
+.git/
+.github/
+.gitignore
+
+# Dossiers source internes (jamais servis)
 _sources/
 poles/
 dashboard-src/
+scripts/
 
 # Documentation projet (markdown à la racine)
 AUDIT_TECHNIQUE_2026-04-22.md
@@ -10,3 +20,34 @@ DATA_MASTER.yml
 DESIGN_SYSTEM.md
 DOMAIN_SETUP.md
 README.md
+ANALYSE_INCOHERENCES.md
+MASTER_ACTIONS_TRACKER.md
+.perf-budget.md
+
+# Ignore files (inutiles en prod)
+.cfignore
+.netlifyignore
+.vercelignore
+
+# Config deploy (non servis)
+wrangler.toml
+netlify.toml
+build-cf.sh
+
+# Build outputs staging (si lancé localement avant push)
+dist/
+
+# OS cruft
+.DS_Store
+Thumbs.db
+.~lock.*
+
+# Backups / scratch
+*.bak
+*.tmp
+*~
+*.bundle
+
+# Node
+node_modules/
+package-lock.json
