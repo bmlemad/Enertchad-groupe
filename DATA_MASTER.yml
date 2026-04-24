@@ -531,10 +531,10 @@ services_catalog:
       - "Bassins pétroliers du sud & ouest du Tchad"
     ctas:
       - label: "Demander une étude de réservoir"
-        href: "/contact#etude-reservoir"
+        href: "#etude-reservoir"
         variant: "primary"
       - label: "Accéder à nos capacités E&P"
-        href: "/operations/amont"
+        href: "#operations"
         variant: "ghost"
 
   - id: "eor"
@@ -563,10 +563,10 @@ services_catalog:
       - "Nouveaux blocs pétroliers"
     ctas:
       - label: "Découvrir nos solutions EOR"
-        href: "/contact#eor"
+        href: "#eor"
         variant: "primary"
       - label: "Planifier un diagnostic réservoir"
-        href: "/contact#diagnostic-reservoir"
+        href: "#diagnostic-reservoir"
         variant: "ghost"
 
   - id: "pipeline"
@@ -597,10 +597,10 @@ services_catalog:
       - "Terminaux & dépôts"
     ctas:
       - label: "Consulter nos services pipeline"
-        href: "/operations/intermediaire"
+        href: "#operations"
         variant: "primary"
       - label: "Demander un audit d'intégrité"
-        href: "/contact#audit-integrite"
+        href: "#audit-integrite"
         variant: "ghost"
 
   - id: "distribution"
@@ -632,10 +632,10 @@ services_catalog:
       - "Zones isolées"
     ctas:
       - label: "Trouver une station EnerTchad"
-        href: "/maps"
+        href: "#carte"
         variant: "primary"
       - label: "Commander une Mobile Station™"
-        href: "/contact#mobile-station"
+        href: "#mobile-station"
         variant: "ghost"
 
   - id: "petrochimie"
@@ -665,10 +665,10 @@ services_catalog:
       - "Industrie"
     ctas:
       - label: "Télécharger nos fiches produits"
-        href: "/contact#fiches-produits"
+        href: "#fiches-produits"
         variant: "primary"
       - label: "Demander un devis pétrochimie"
-        href: "/contact#devis-petrochimie"
+        href: "#devis-petrochimie"
         variant: "ghost"
 
   - id: "digital"
@@ -703,10 +703,10 @@ services_catalog:
       - "Distribution"
     ctas:
       - label: "Explorer nos technologies industrielles"
-        href: "/technologies/"
+        href: "#services-catalogue"
         variant: "primary"
       - label: "Planifier une démonstration SCADA"
-        href: "/contact#demo-scada"
+        href: "#demo-scada"
         variant: "ghost"
 
   - id: "ics-security"
@@ -736,10 +736,10 @@ services_catalog:
       - "E&P"
     ctas:
       - label: "Demander un audit de cybersécurité"
-        href: "/contact#audit-cyber"
+        href: "#audit-cyber"
         variant: "primary"
       - label: "Découvrir nos solutions ICS"
-        href: "/technologies/#ics-security"
+        href: "#section-ics-security"
         variant: "ghost"
 
   - id: "physical-security"
@@ -771,10 +771,10 @@ services_catalog:
       - "Champs pétroliers"
     ctas:
       - label: "Demander un audit de sécurité physique"
-        href: "/contact#audit-securite-physique"
+        href: "#audit-securite-physique"
         variant: "primary"
       - label: "Découvrir nos solutions de protection"
-        href: "/technologies/#physical-security"
+        href: "#section-physical-security"
         variant: "ghost"
 
   - id: "renewables"
@@ -804,10 +804,10 @@ services_catalog:
       - "Sites isolés"
     ctas:
       - label: "Étudier une solution solaire pour vos opérations"
-        href: "/contact#solaire-industriel"
+        href: "#solaire-industriel"
         variant: "primary"
       - label: "Optimiser votre consommation énergétique"
-        href: "/energies/"
+        href: "#section-energies"
         variant: "ghost"
 
   - id: "esg"
@@ -836,10 +836,10 @@ services_catalog:
       - "Partenaires"
     ctas:
       - label: "Accéder à nos engagements ESG"
-        href: "/durabilite"
+        href: "#durabilite-inline"
         variant: "primary"
       - label: "Découvrir EnerAcademy"
-        href: "/talents#academy"
+        href: "#talents-academy"
         variant: "ghost"
 
 # ------------------------------------------------------------------------------

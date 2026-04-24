@@ -30,6 +30,34 @@
 
 # --- Clean URLs v1.1.0 : /services/<slug> → ancre sur la master page ---
 /services                                 /                                    301
+
+# ═══ MONOPAGE v1.2.0 — pages supprimées → ancres monopage ═══
+/groupe                                            /#hero                                   301
+/groupe/*                                          /#hero                                   301
+/operations/amont                                  /#operations                             301
+/operations/intermediaire                          /#operations                             301
+/operations/aval                                   /#operations                             301
+/operations/services                               /#services-catalogue                     301
+/operations                                        /#operations                             301
+/operations/*                                      /#operations                             301
+/energies                                          /#section-energies                       301
+/energies/*                                        /#section-energies                       301
+/technologies                                      /#services-catalogue                     301
+/technologies/*                                    /#services-catalogue                     301
+/maps                                              /#carte                                  301
+/durabilite                                        /#durabilite-inline                      301
+/durabilite/*                                      /#durabilite-inline                      301
+/talents                                           /#talents-academy                        301
+/talents/*                                         /#talents-academy                        301
+/actualites                                        /#actualites-preview                     301
+/actualites/*                                      /#actualites-preview                     301
+/investisseurs                                     /#investisseurs-cta                      301
+/investisseurs/*                                   /#investisseurs-cta                      301
+/newsletter                                        /#contact-form                           301
+/contact                                           /#contact-form                           301
+/contact/*                                         /#contact-form                           301
+/services.html                                     /                                        301
+
 /services/exploration-production         /#section-ep                 301
 /services/eor-chimie-petroliere          /#section-eor                301
 /services/pipeline-midstream             /#section-pipeline           301
@@ -57,8 +85,8 @@
 /documents/rapport-esg-2025.pdf  /documents/EnerTchad-Rapport-Durabilite-2025.pdf  301
 
 # --- Pôles intégrés (ex-sous-domaines Vercel) ---
-/energies         /energies/               301
-/technologies     /technologies/           301
+
+
 /enertech         /technologies/           301
 /greentech        /energies/               301
 

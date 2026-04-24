@@ -174,7 +174,7 @@ def build_durabilite_section(d):
     </div>
 
     <div class="dur-cta reveal">
-      <a href="/durabilite" class="btn btn-primary">Rapport RSE complet <span class="arrow">→</span></a>
+      <a href="#contact-form" class="btn btn-primary">Demander le rapport RSE <span class="arrow">→</span></a>
       <a href="#contact-form" class="btn btn-ghost">Demander l'engagement ESG <span class="arrow">→</span></a>
     </div>
   </div>
@@ -263,8 +263,8 @@ def build_talents_section(d):
     </div>
 
     <div class="acad-cta reveal">
-      <a href="/talents" class="btn btn-primary">Découvrir tous les programmes <span class="arrow">→</span></a>
-      <a href="/talents#candidature" class="btn btn-ghost">Candidature spontanée <span class="arrow">→</span></a>
+      <a href="#contact-form" class="btn btn-primary">Candidater à EnerAcademy <span class="arrow">→</span></a>
+      <a href="#contact-form" class="btn btn-ghost">Candidature spontanée <span class="arrow">→</span></a>
     </div>
   </div>
 </section>'''

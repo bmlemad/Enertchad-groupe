@@ -159,16 +159,6 @@
       "permanent": true
     },
     {
-      "source": "/energies",
-      "destination": "/energies/",
-      "permanent": true
-    },
-    {
-      "source": "/technologies",
-      "destination": "/technologies/",
-      "permanent": true
-    },
-    {
       "source": "/enertech",
       "destination": "/technologies/",
       "permanent": true
@@ -197,6 +187,131 @@
       "source": "/dashboard-src/:path*",
       "destination": "/404.html",
       "permanent": false
+    },
+    {
+      "source": "/groupe",
+      "destination": "/#hero",
+      "permanent": true
+    },
+    {
+      "source": "/groupe/:path*",
+      "destination": "/#hero",
+      "permanent": true
+    },
+    {
+      "source": "/operations/amont",
+      "destination": "/#operations",
+      "permanent": true
+    },
+    {
+      "source": "/operations/intermediaire",
+      "destination": "/#operations",
+      "permanent": true
+    },
+    {
+      "source": "/operations/aval",
+      "destination": "/#operations",
+      "permanent": true
+    },
+    {
+      "source": "/operations/services",
+      "destination": "/#services-catalogue",
+      "permanent": true
+    },
+    {
+      "source": "/operations",
+      "destination": "/#operations",
+      "permanent": true
+    },
+    {
+      "source": "/operations/:path*",
+      "destination": "/#operations",
+      "permanent": true
+    },
+    {
+      "source": "/energies",
+      "destination": "/#section-energies",
+      "permanent": true
+    },
+    {
+      "source": "/energies/:path*",
+      "destination": "/#section-energies",
+      "permanent": true
+    },
+    {
+      "source": "/technologies",
+      "destination": "/#services-catalogue",
+      "permanent": true
+    },
+    {
+      "source": "/technologies/:path*",
+      "destination": "/#services-catalogue",
+      "permanent": true
+    },
+    {
+      "source": "/maps",
+      "destination": "/#carte",
+      "permanent": true
+    },
+    {
+      "source": "/durabilite",
+      "destination": "/#durabilite-inline",
+      "permanent": true
+    },
+    {
+      "source": "/durabilite/:path*",
+      "destination": "/#durabilite-inline",
+      "permanent": true
+    },
+    {
+      "source": "/talents",
+      "destination": "/#talents-academy",
+      "permanent": true
+    },
+    {
+      "source": "/talents/:path*",
+      "destination": "/#talents-academy",
+      "permanent": true
+    },
+    {
+      "source": "/actualites",
+      "destination": "/#actualites-preview",
+      "permanent": true
+    },
+    {
+      "source": "/actualites/:path*",
+      "destination": "/#actualites-preview",
+      "permanent": true
+    },
+    {
+      "source": "/investisseurs",
+      "destination": "/#investisseurs-cta",
+      "permanent": true
+    },
+    {
+      "source": "/investisseurs/:path*",
+      "destination": "/#investisseurs-cta",
+      "permanent": true
+    },
+    {
+      "source": "/newsletter",
+      "destination": "/#contact-form",
+      "permanent": true
+    },
+    {
+      "source": "/contact",
+      "destination": "/#contact-form",
+      "permanent": true
+    },
+    {
+      "source": "/contact/:path*",
+      "destination": "/#contact-form",
+      "permanent": true
+    },
+    {
+      "source": "/services.html",
+      "destination": "/",
+      "permanent": true
     }
   ],
   "rewrites": [

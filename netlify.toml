@@ -197,46 +197,6 @@
   status = 200
 
 [[redirects]]
-  from = "/groupe"
-  to = "/groupe.html"
-  status = 200
-
-[[redirects]]
-  from = "/investisseurs"
-  to = "/investisseurs.html"
-  status = 200
-
-[[redirects]]
-  from = "/durabilite"
-  to = "/durabilite.html"
-  status = 200
-
-[[redirects]]
-  from = "/talents"
-  to = "/talents.html"
-  status = 200
-
-[[redirects]]
-  from = "/actualites"
-  to = "/actualites.html"
-  status = 200
-
-[[redirects]]
-  from = "/contact"
-  to = "/contact.html"
-  status = 200
-
-[[redirects]]
-  from = "/maps"
-  to = "/maps.html"
-  status = 200
-
-[[redirects]]
-  from = "/newsletter"
-  to = "/newsletter.html"
-  status = 200
-
-[[redirects]]
   from = "/dashboard"
   to = "/dashboard.html"
   status = 200
@@ -247,42 +207,11 @@
   status = 200
 
 [[redirects]]
-  from = "/operations/amont"
-  to = "/operations/amont.html"
-  status = 200
-
-[[redirects]]
-  from = "/operations/intermediaire"
-  to = "/operations/intermediaire.html"
-  status = 200
-
-[[redirects]]
-  from = "/operations/aval"
-  to = "/operations/aval.html"
-  status = 200
-
-[[redirects]]
-  from = "/operations/services"
-  to = "/operations/services.html"
-  status = 200
-
-# Legacy PDF aliases (Sprint A méga-menu)
-[[redirects]]
   from = "/documents/rapport-esg-2025.pdf"
   to = "/documents/EnerTchad-Rapport-Durabilite-2025.pdf"
   status = 301
 
 # Pôles intégrés (ex-sous-domaines Vercel)
-[[redirects]]
-  from = "/energies"
-  to = "/energies/"
-  status = 301
-
-[[redirects]]
-  from = "/technologies"
-  to = "/technologies/"
-  status = 301
-
 [[redirects]]
   from = "/enertech"
   to = "/technologies/"
@@ -294,6 +223,158 @@
   status = 301
 
 # Security + performance headers — all pages
+
+# ═══ MONOPAGE v1.2.0 — pages supprimées → ancres monopage ═══
+[[redirects]]
+  from = "/groupe"
+  to = "/#hero"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/groupe/*"
+  to = "/#hero"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/operations/amont"
+  to = "/#operations"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/operations/intermediaire"
+  to = "/#operations"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/operations/aval"
+  to = "/#operations"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/operations/services"
+  to = "/#services-catalogue"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/operations"
+  to = "/#operations"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/operations/*"
+  to = "/#operations"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/energies"
+  to = "/#section-energies"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/energies/*"
+  to = "/#section-energies"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/technologies"
+  to = "/#services-catalogue"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/technologies/*"
+  to = "/#services-catalogue"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/maps"
+  to = "/#carte"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/durabilite"
+  to = "/#durabilite-inline"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/durabilite/*"
+  to = "/#durabilite-inline"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/talents"
+  to = "/#talents-academy"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/talents/*"
+  to = "/#talents-academy"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/actualites"
+  to = "/#actualites-preview"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/actualites/*"
+  to = "/#actualites-preview"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/investisseurs"
+  to = "/#investisseurs-cta"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/investisseurs/*"
+  to = "/#investisseurs-cta"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/newsletter"
+  to = "/#contact-form"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/contact"
+  to = "/#contact-form"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/contact/*"
+  to = "/#contact-form"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/services.html"
+  to = "/"
+  status = 301
+  force = true
+
 [[headers]]
   for = "/*"
   [headers.values]

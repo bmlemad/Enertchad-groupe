@@ -39,18 +39,23 @@
   "shortcuts": [
     {
       "name": "Investisseurs",
-      "url": "/investisseurs.html",
-      "description": "IR, résultats, documents"
+      "url": "/#investisseurs-cta",
+      "description": "Espace investisseurs · dataroom"
     },
     {
-      "name": "Actualités",
-      "url": "/actualites.html",
-      "description": "Salle de presse"
+      "name": "Services",
+      "url": "/#services-catalogue",
+      "description": "Catalogue des 10 services"
     },
     {
       "name": "Contact",
-      "url": "/contact.html",
-      "description": "Formulaire et équipes"
+      "url": "/#contact-form",
+      "description": "Formulaire pré-rempli 24h ouvrées"
+    },
+    {
+      "name": "Dashboard",
+      "url": "/dashboard",
+      "description": "Synthèse publique"
     }
   ]
 }

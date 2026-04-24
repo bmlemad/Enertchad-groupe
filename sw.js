@@ -3,7 +3,7 @@
  * Fallback offline sur offline.html
  */
 
-const CACHE_VERSION = 'enertchad-v1.9.2-internal-hrefs-clean';
+const CACHE_VERSION = 'enertchad-v1.2.0-monopage';
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const RUNTIME_CACHE = `${CACHE_VERSION}-runtime`;
 
@@ -16,7 +16,9 @@ const PRECACHE_URLS = [
   '/offline.html',
   '/404.html',
   '/assets/css/main.css',
+  '/assets/css/monopage.css',
   '/assets/js/main.js',
+  '/assets/data/services.json',
   '/assets/fonts/Inter-latin.woff2',
   '/assets/fonts/SpaceGrotesk-latin.woff2',
   '/assets/img/favicon-32.png',
