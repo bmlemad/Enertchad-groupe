@@ -426,6 +426,75 @@ def build_nav_links():
 # ─────────────────────────────────────────────────────────────────────
 # MEGA-MENU v2 (premium, data-driven from DATA_MASTER.yml)
 # ─────────────────────────────────────────────────────────────────────
+
+# P1 · SVG icons par service — 24×24, stroke currentColor, inline paths
+# Map service_id → SVG inner markup (path/g elements, no <svg> wrapper)
+SERVICE_ICONS = {
+    "ep": (
+        # Oil derrick + drop
+        '<path d="M12 3v4M8 7h8l-2 14h-4z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>'
+        '<circle cx="12" cy="17" r="1.2" fill="currentColor"/>'
+    ),
+    "eor": (
+        # Flask with bubbles (chemistry)
+        '<path d="M9 3v5l-4.5 10a2 2 0 0 0 1.8 2.9h11.4a2 2 0 0 0 1.8-2.9L15 8V3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>'
+        '<path d="M8 3h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>'
+        '<circle cx="11" cy="15" r="0.8" fill="currentColor"/><circle cx="14" cy="18" r="0.6" fill="currentColor"/>'
+    ),
+    "pipeline": (
+        # Pipe segments
+        '<path d="M2 12h20M6 8v8M18 8v8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>'
+        '<circle cx="6" cy="12" r="1.2" fill="currentColor"/><circle cx="18" cy="12" r="1.2" fill="currentColor"/>'
+    ),
+    "distribution": (
+        # Fuel pump
+        '<rect x="4" y="4" width="9" height="16" rx="1" fill="none" stroke="currentColor" stroke-width="1.6"/>'
+        '<path d="M4 9h9M13 8l4 3v7a2 2 0 0 0 2 2v-9l-3-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>'
+    ),
+    "petrochimie": (
+        # Molecule (3 atoms)
+        '<circle cx="7" cy="7" r="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/>'
+        '<circle cx="17" cy="9" r="2" fill="none" stroke="currentColor" stroke-width="1.6"/>'
+        '<circle cx="12" cy="17" r="2.2" fill="none" stroke="currentColor" stroke-width="1.6"/>'
+        '<path d="M9 9l4 5M9 8l7 1" stroke="currentColor" stroke-width="1.4"/>'
+    ),
+    "digital": (
+        # CPU chip
+        '<rect x="6" y="6" width="12" height="12" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.6"/>'
+        '<rect x="9.5" y="9.5" width="5" height="5" fill="none" stroke="currentColor" stroke-width="1.4"/>'
+        '<path d="M9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3" stroke="currentColor" stroke-width="1.4"/>'
+    ),
+    "ics-security": (
+        # Shield with lock icon
+        '<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>'
+        '<rect x="9.5" y="11" width="5" height="4" rx="0.5" fill="none" stroke="currentColor" stroke-width="1.4"/>'
+        '<path d="M10 11v-1.5a2 2 0 1 1 4 0V11" fill="none" stroke="currentColor" stroke-width="1.4"/>'
+    ),
+    "physical-security": (
+        # Shield with eye
+        '<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>'
+        '<ellipse cx="12" cy="12" rx="3.5" ry="2.2" fill="none" stroke="currentColor" stroke-width="1.4"/>'
+        '<circle cx="12" cy="12" r="1" fill="currentColor"/>'
+    ),
+    "renewables": (
+        # Sun with rays (solar)
+        '<circle cx="12" cy="12" r="3.5" fill="none" stroke="currentColor" stroke-width="1.6"/>'
+        '<path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M5 19l2-2M17 7l2-2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>'
+    ),
+    "esg": (
+        # Leaf (sustainability)
+        '<path d="M20 4c-5 0-10 2-13 5s-4 7-2 11c4 2 8 1 11-2s5-8 4-14z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>'
+        '<path d="M6 18c2-4 5-7 9-10" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>'
+    ),
+}
+
+
+def svc_icon_svg(service_id):
+    """Return the SVG markup for a given service id (used in mega-menu items)."""
+    inner = SERVICE_ICONS.get(service_id, '<circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="1.6"/>')
+    return f'<svg class="mm-item-icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">{inner}</svg>'
+
+
 def build_mega_menu(d):
     services = d.get("services_catalog", [])
     groups = d.get("services_groups", [])
@@ -449,13 +518,17 @@ def build_mega_menu(d):
             resume = s.get("resume", "")
             anchor = s.get("anchor", f"section-{sid}")
             svc_accent = s.get("accent_hex", accent)
+            icon_svg = svc_icon_svg(sid)
             # data-search keywords = id + nom_court + sous_services joined
             keywords = " ".join([sid, nom_court] + [str(x) for x in (s.get("sous_services") or [])]).lower()
             rows.append(f'''
           <a href="#{esc(anchor)}" class="mm-item" data-mm-item data-search="{esc(keywords)}" style="--svc-accent: {esc(svc_accent)};">
-            <div class="mm-item-num">{esc(numero)}</div>
+            <div class="mm-item-icon-wrap">{icon_svg}</div>
             <div class="mm-item-body">
-              <div class="mm-item-title">{esc(nom_court)}</div>
+              <div class="mm-item-head">
+                <span class="mm-item-num">{esc(numero)}</span>
+                <h4 class="mm-item-title">{esc(nom_court)}</h4>
+              </div>
               <p class="mm-item-sub">{esc(resume)}</p>
             </div>
           </a>''')
@@ -467,15 +540,19 @@ def build_mega_menu(d):
           </div>
         </div>''')
 
-    # Feature panel — KPI stats + CTAs
+    # Feature panel — P2 editorial block + 3 KPI stats + CTAs
     feature = '''
         <aside class="mm-feature" aria-label="Performance Groupe 2026">
-          <div class="mm-feature-eyebrow">Groupe 2026</div>
-          <h3 class="mm-feature-title">10 services harmonisés, <em>une chaîne intégrée</em>.</h3>
+          <div class="mm-feature-eyebrow">Actualités · Avril 2026</div>
+          <h3 class="mm-feature-title">Pitch deck Enerfrica v1.0 <em>publié</em>.</h3>
+          <a href="#actualites-preview" class="mm-editorial" data-mm-close>
+            <div class="mm-editorial-tag">Publication récente</div>
+            <div class="mm-editorial-title">17 slides · stratégie Enerfrica African Energy Holdings</div>
+            <div class="mm-editorial-meta">24 avril 2026 · <span class="mm-editorial-arrow">→</span></div>
+          </a>
           <div class="mm-stats">
             <div class="mm-stat"><strong>144<span class="mm-stat-unit">kb/j</span></strong><span>Production Amont</span></div>
             <div class="mm-stat"><strong>125<span class="mm-stat-unit">MW</span></strong><span>Énergies installées</span></div>
-            <div class="mm-stat"><strong>45<span class="mm-stat-unit"></span></strong><span>Stations-service</span></div>
             <div class="mm-stat"><strong>500<span class="mm-stat-unit">+/an</span></strong><span>Formés EnerAcademy</span></div>
           </div>
           <div class="mm-feature-ctas">
@@ -487,6 +564,27 @@ def build_mega_menu(d):
             </a>
           </div>
         </aside>'''
+
+    # P4 · Quick actions row (4 pills at top of panel)
+    quick_actions = '''
+    <nav class="mm-quick" aria-label="Accès rapides">
+      <a href="#section-distribution" class="mm-quick-pill" data-mm-close>
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9" r="2.4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+        <span>Nos 45 stations</span>
+      </a>
+      <a href="#investisseurs-cta" class="mm-quick-pill" data-mm-close>
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 7h7v7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Espace investisseurs</span>
+      </a>
+      <a href="#talents-academy" class="mm-quick-pill" data-mm-close>
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M3 10l9-5 9 5-9 5z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M7 12v5c1.5 1 3 1.5 5 1.5s3.5-.5 5-1.5v-5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        <span>Carrières · EnerAcademy</span>
+      </a>
+      <a href="#contact-form" class="mm-quick-pill" data-mm-close>
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        <span>Demande de devis</span>
+      </a>
+    </nav>'''
 
     return f'''
 {MM_BEGIN}
@@ -503,6 +601,7 @@ def build_mega_menu(d):
         <kbd class="mm-search-kbd" aria-hidden="true">⌘ K</kbd>
       </div>
     </div>
+    {quick_actions}
     <div class="mm-body">
       {"".join(group_columns)}
       {feature}
