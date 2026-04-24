@@ -13,11 +13,23 @@
 # ==============================================================================
 
 meta:
-  version: "1.1.0"
-  updated: "2026-04-23"
+  version: "1.2.0"
+  updated: "2026-04-24"
   validated_by: "Direction Générale"
   next_review: "2026-07-21"
+  is_canonical: true   # Ce fichier est la SEULE source de vérité (décision 2026-04-24)
   changelog:
+    - version: "1.2.0"
+      date: "2026-04-24"
+      changes:
+        - "Ajout champ is_canonical=true (statue sur arbitrage sites Netlify obsolètes)"
+        - "Ajout history.creation (EnerTchad créé EN 2026 · pas d'antécédent antérieur)"
+        - "Ajout whatsapp + telephone_secondaire (ancien numéro redirigé)"
+        - "Ajout langues (FR actif · EN/AR placeholder v2.0.0)"
+        - "Ajout partenaires_operationnels (SHT, COTCO, TOTCO + clients CNPCIC, Perenco, TPC)"
+        - "Ajout formation (EnerAcademy : 500+ formés/an · 1100 apprentis cumulés)"
+        - "Purge étendue : RCCM 2019, capital 500M, fondée 2019, tel 98 98 37 37, 520 MW, 126 kbbl/j"
+        - "Déclaration : les sites Netlify (enchanting-dragon, transcendent-profiterole) sont OBSOLÈTES et diffusent des données ERRONÉES à NE PAS REPRENDRE"
     - version: "1.1.0"
       date: "2026-04-23"
       changes:
@@ -28,6 +40,30 @@ meta:
       date: "2026-04-21"
       changes:
         - "Initialisation DATA_MASTER (identité, 6 pôles, certifications, marques)"
+
+# ------------------------------------------------------------------------------
+# HISTORIQUE & CONTINUITÉ (v1.2.0 · corrigé 2026-04-24)
+# ------------------------------------------------------------------------------
+# DÉCISION DIRECTION 2026-04-24 :
+# EnerTchad est créé EN 2026. Il n'existe PAS d'entité antérieure EnerTchad.
+# Les sites Netlify (enchanting-dragon, transcendent-profiterole) contenaient
+# des données erronées (RCCM 2019, capital 500 M FCFA) — ce sont des prototypes
+# ou placeholder. Ces données sont désormais à purger de toute communication.
+
+history:
+  creation:
+    annee: 2026
+    date_exacte: "2026-04-21"
+    forme_initiale: "Société Anonyme à Conseil d'Administration (SA/CA)"
+    referentiel: "OHADA (AUSCGIE)"
+    rccm: "N'DJ/RC/2026-A-0001"
+    capital: "10 000 000 FCFA (initial, libération progressive)"
+    actionnaires_fondateurs: 10
+    motif: "Première major intégrée tchadienne · gouvernance moderne · standards IFRS"
+  note_publique: >
+    EnerTchad Groupe SA/CA est un acteur NOUVELLEMENT constitué en 2026.
+    Aucune mention de RCCM antérieur, capital historique différent ou date de
+    création avant 2026 ne doit apparaître dans les communications publiques.
 
 # ------------------------------------------------------------------------------
 # IDENTITÉ JURIDIQUE
@@ -69,7 +105,53 @@ siege:
   ville: "N'Djamena"
   pays: "Tchad"
   telephone_principal: "+235 99 29 86 96"
+  telephone_secondaire: "+235 98 98 37 37"  # Ancien numéro legacy — redirection actif jusqu'à fin 2026
+  whatsapp: "+23599298696"                   # WhatsApp Business : https://wa.me/23599298696
   email_contact: "contact@enertchad.td"
+
+# ------------------------------------------------------------------------------
+# INTERNATIONALISATION (v1.2.0)
+# ------------------------------------------------------------------------------
+langues:
+  default: "fr"
+  disponibles: ["fr"]
+  en_preparation: ["en", "ar"]
+  note: "Site publié en FR uniquement. Traduction EN/AR prévue pour v2.0.0."
+
+# ------------------------------------------------------------------------------
+# PARTENAIRES OPÉRATIONNELS (v1.2.0 · publics)
+# ------------------------------------------------------------------------------
+partenaires_operationnels:
+  institutionnels:
+    - nom: "SHT (Société des Hydrocarbures du Tchad)"
+      role: "Opérateur pétrolier national · partenaire institutionnel"
+    - nom: "COTCO (Cameroon Oil Transportation Company)"
+      role: "Opérateur pipeline section Cameroun"
+    - nom: "TOTCO (Tchad Oil Transportation Company)"
+      role: "Opérateur pipeline section Tchad"
+  clients_b2b:
+    - nom: "CNPCIC"
+      type: "Major internationale"
+    - nom: "Perenco"
+      type: "Opérateur international"
+    - nom: "TPC"
+      type: "Opérateur régional"
+
+# ------------------------------------------------------------------------------
+# FORMATION — ENERACADEMY (v1.2.0)
+# ------------------------------------------------------------------------------
+formation:
+  nom: "EnerAcademy"
+  description: "Centre de formation professionnelle Oil & Gas agréé"
+  forme_an: 500             # 500+ formés/an
+  apprentis_a_date: 1100    # total depuis création
+  programmes: 4
+  programmes_liste:
+    - "Opérateur SCADA pipeline"
+    - "Technicien Artificial Lift (ESP, gas-lift)"
+    - "Cybersécurité OT (IEC 62443)"
+    - "HSE industriel (ISO 45001, API RP 75)"
+  localisation: "N'Djamena, Quartier Chagoua"
 
 telephones_poles:
   groupe: "+235 99 29 86 96"
@@ -367,6 +449,24 @@ purger:
   - valeur: "7 divisions (OFS)"
     remplacer_par: "6 pôles intégrés"
     motif: "Unification architecture"
+  - valeur: "RCCM TC/NDJ/2019/A/1245"
+    remplacer_par: "N'DJ/RC/2026-A-0001"
+    motif: "Décision Direction 2026-04-24 — EnerTchad créé en 2026, RCCM 2019 erroné (sites Netlify obsolètes)"
+  - valeur: "Capital 500 000 000 FCFA"
+    remplacer_par: "Capital 10 000 000 FCFA"
+    motif: "Capital initial 2026 SA/CA · ancien montant erroné (sites Netlify obsolètes)"
+  - valeur: "Fondée en 2019"
+    remplacer_par: "Créée en 2026"
+    motif: "Date officielle de constitution — aucun antécédent entité antérieure"
+  - valeur: "+235 98 98 37 37"
+    remplacer_par: "+235 99 29 86 96"
+    motif: "Téléphone officiel EnerTchad 2026. L'ancien reste redirigé jusqu'à fin 2026 mais ne doit plus apparaître comme numéro principal."
+  - valeur: "520 MW"
+    remplacer_par: "125 MW installés + 85 MW gas-to-power"
+    motif: "Capacité Énergies réaliste · 520 MW était une cible 2030 confondue avec l'installé"
+  - valeur: "126 kbbl/jour"
+    remplacer_par: "144 kb/d"
+    motif: "Production Amont alignée sur plan stratégique 2026-2030"
 
 # ==============================================================================
 # SERVICES CATALOG — 10 services harmonisés (v1.1.0 · 2026-04-23)
