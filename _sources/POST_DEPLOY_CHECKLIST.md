@@ -1,6 +1,20 @@
-# Post-Deploy Checklist — EnerTchad v1.2.0
+# Post-Deploy Checklist — EnerTchad v1.2.1
 
 > **À exécuter après la première mise à jour de `enertchad-groupe.pages.dev` via auto-deploy Git.**
+
+## 📊 Statut actions (mis à jour 2026-04-24)
+
+| # | Action | Statut | Responsable |
+|---|---|---|---|
+| 0 | Déploiement auto-deploy Git CF Pages | ⏳ À faire (dashboard) | Utilisateur |
+| 1 | Smoke tests sur live | ⏳ Après deploy | Auto (script) |
+| 2 | Custom domain www.enertchad.td | ⏳ DNS OVH | Utilisateur |
+| 3 | Révoquer tokens temporaires | ⏳ | Utilisateur |
+| 4 | Dépublier 2 Netlify obsolètes | ⏳ | Utilisateur |
+| 5a | Templates emails partenaires | ✅ `_sources/email-templates/` | Fait |
+| 5b | Envoi effectif aux partenaires | ⏳ Après custom domain live | Utilisateur |
+| 6 | Analytics + Search Console | ⏳ Après custom domain | Utilisateur |
+| 7 | Parcours visiteurs QA | ⏳ Après deploy | Utilisateur |
 
 ---
 

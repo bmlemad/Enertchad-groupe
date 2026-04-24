@@ -4,6 +4,68 @@ Suit le format [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/) et [Sema
 
 ---
 
+## [1.2.1] — 2026-04-24 · Monopage + mega-menu ultra premium
+
+### Ajouts
+
+- **Monopage landing `/`** — 5 sections inline injectées depuis DATA_MASTER.yml : `#services-catalogue` (10 services full · 126/126 items) · `#durabilite-inline` · `#partenaires` · `#talents-academy` · `#contact-form`.
+- **Mega-menu v2 premium** (`assets/css/mega-menu.css` · namespace `.mm-*`) — panel full-width, backdrop blur, ⌘K search, grid 5 cols (4 groupes + feature), keyboard nav complète.
+- **Icons SVG distinctifs** par service (10 icônes 24×24 inline).
+- **Editorial block** dans feature panel (card "Publication récente" border-left gold).
+- **Quick actions row** — 4 pills (Stations · Investisseurs · EnerAcademy · Devis).
+- **Sticky scroll-spy** (9 ancres) + **smooth scroll** + **back-to-top** auto.
+- **`_sources/tools/build-monopage.py`** — générateur idempotent data-driven.
+
+### Changements
+
+- **Refonte sections mega-menu 2-3-3-2** (chaîne de valeur O&G) : `amont`(2) · `chaine-aval`(3) · `technologies`(3) · `avenir-esg`(2) · conforme TotalEnergies/Shell/Aramco.
+- **Consolidation monopage** — 13 pages content supprimées + copies `dist/` : 25 → 9 HTML sources (−64%).
+- **Header lean** — 4 dropdowns + mega-menu legacy retirés. Nav : 9 scroll-spy + 1 trigger mega-menu + CTA.
+- **Footer allégé** — 29 liens externes → ancres monopage.
+- **Redirects 3 plateformes** — 75 nouveaux 301 (`/groupe`, `/services/*`, `/operations/*`, `/durabilite`, `/talents`, `/actualites`, `/investisseurs`, `/contact`, `/maps`, etc. → `/#<anchor>`).
+- **Cache SW** — `enertchad-v1.2.0-monopage` + PRECACHE étendu (monopage.css · services.json).
+- **DATA_MASTER CTAs** — `/contact#<slug>` → `#<slug>` purs (11 hrefs).
+
+### Corrigés
+
+- **Duplicate content SEO** `/services` + clean URLs `/services/<slug>` redirigent vers `/#section-<slug>`.
+- **Collision `id="contact"`** renommé `id="investisseurs-cta"`.
+- **Legal pages legacy headers** (3 × 2 = 6 fichiers) remplacés par header monopage → −71 KB.
+- **Data gap `esg.pole_parent`** était `null`, fixé à `"transverse"`.
+- **Badge NEW obsolète** sur Services retiré.
+
+### Supprimés
+
+- **132 règles CSS `.mega-*` / `.nav-dropdown*` / `.mf-*` / `.ns-*` / `.mp-*`** dans `main.css` (−18.1 KB · −13.2%).
+- **3 blocs JS** dans `main.js` : MEGA_PANELS + Ultra Mega Menu + Thematic sub-menus → −27.7 KB · −38% · −592 lignes.
+- **`services.html`** (remplacé par `#services-catalogue` inline).
+- **Partial `assets/partials/footer-premium.html`** non utilisé.
+- **READMEs orphelins** `energies/README.md` · `technologies/README.md`.
+
+### Metrics
+
+| Fichier | Avant | Après | Δ |
+|---|---|---|---|
+| HTML sources | 25 | 9 | −64% |
+| `main.css` | 141 KB | 122 KB | −13% |
+| `main.js` | 75 KB | 47 KB | −38% |
+| Legal pages (×6) | 42 KB ×6 | 30 KB ×6 | −71 KB |
+| **Total assets publics** | | | **−117 KB** |
+
+### Commits
+
+```
+54d3d4a refactor(sections)  — 2-3-3-2 value-chain layout
+d480c4e feat(mega-menu)     — P1+P2+P4 icons/editorial/quick-actions
+9048c40 feat(header)        — mega-menu v2 premium
+c3eb1c2 chore(cleanup)      — purge dead CSS + JS + legal pages
+6b330bc feat(monopage)      — consolidate to single index
+3129c2c fix(monopage)       — dedupe 3 actions
+fa0ee38 feat(monopage)      — transform / into one-page landing
+```
+
+---
+
 ## [1.2.0] — 2026-04-24
 
 ### Ajouts
