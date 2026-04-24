@@ -180,7 +180,7 @@ def build_json(data: dict[str, Any]) -> dict[str, Any]:
             "schema_version": "2",
             "count": len(data.get("services_catalog", [])),
             "license": "Interne Groupe — propriété EnerTchad SA/CA",
-            "canonical_url": "https://www.enertchad.td/services.html",
+            "canonical_url": "https://www.enertchad.td/#services-catalogue",
         },
         "groups": data.get("services_groups", []),
         "services": data.get("services_catalog", []),
