@@ -499,15 +499,25 @@ def build_mega_menu(d):
     services = d.get("services_catalog", [])
     groups = d.get("services_groups", [])
 
+    # Premium group-level tag labels (for eyebrow)
+    GROUP_TAGS = {
+        "amont": "Upstream · 02",
+        "chaine-aval": "Midstream + Downstream · 03",
+        "technologies": "Tech & Security · 03",
+        "avenir-esg": "Sustainability · 02",
+    }
+
     # Group → service cards rendering
     group_columns = []
+    global_i = 0  # stagger index across all items
     for g in groups:
         gid = g["id"]
-        nom = g.get("nom", "")
+        nom = g.get("nom", "").split(" (")[0]  # strip parenthetical
+        desc = g.get("description", "")
         accent = g.get("accent_hex", "#D9A84F")
+        tag = GROUP_TAGS.get(gid, nom.upper())
         items = g.get("items", [])
         services_in_group = [s for s in services if s["id"] in items]
-        n = len(services_in_group)
 
         rows = []
         for s in services_in_group:
@@ -519,10 +529,9 @@ def build_mega_menu(d):
             anchor = s.get("anchor", f"section-{sid}")
             svc_accent = s.get("accent_hex", accent)
             icon_svg = svc_icon_svg(sid)
-            # data-search keywords = id + nom_court + sous_services joined
             keywords = " ".join([sid, nom_court] + [str(x) for x in (s.get("sous_services") or [])]).lower()
             rows.append(f'''
-          <a href="#{esc(anchor)}" class="mm-item" data-mm-item data-search="{esc(keywords)}" style="--svc-accent: {esc(svc_accent)};">
+          <a href="#{esc(anchor)}" class="mm-item" data-mm-item data-search="{esc(keywords)}" style="--svc-accent: {esc(svc_accent)}; --mm-i: {global_i};">
             <div class="mm-item-icon-wrap">{icon_svg}</div>
             <div class="mm-item-body">
               <div class="mm-item-head">
@@ -531,11 +540,17 @@ def build_mega_menu(d):
               </div>
               <p class="mm-item-sub">{esc(resume)}</p>
             </div>
+            <svg class="mm-item-arrow" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>''')
+            global_i += 1
 
         group_columns.append(f'''
         <div class="mm-group" style="--group-accent: {esc(accent)};">
-          <div class="mm-group-head">{esc(nom.split(" (")[0])}<span class="mm-group-count"> · {n}</span></div>
+          <div class="mm-group-header">
+            <span class="mm-group-tag">{esc(tag)}</span>
+            <h3 class="mm-group-nom">{esc(nom)}</h3>
+            <p class="mm-group-desc">{esc(desc)}</p>
+          </div>
           <div class="mm-group-items">{"".join(rows)}
           </div>
         </div>''')
@@ -594,11 +609,17 @@ def build_mega_menu(d):
 <!-- Mega-menu panel -->
 <div id="mega-menu-panel" class="mm-panel" role="dialog" aria-modal="false" aria-label="Catalogue des 10 services EnerTchad" data-mm-panel hidden>
   <div class="mm-inner">
-    <div class="mm-search">
-      <div class="mm-search-wrap">
-        <svg class="mm-search-icon" viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><circle cx="9" cy="9" r="6" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M17 17l-3.5-3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"/></svg>
-        <input type="search" class="mm-search-input" data-mm-search placeholder="Rechercher un service, une technologie…" aria-label="Rechercher dans les services" autocomplete="off" />
-        <kbd class="mm-search-kbd" aria-hidden="true">⌘ K</kbd>
+    <div class="mm-header">
+      <div class="mm-title-block">
+        <h2>Nos 10 services intégrés</h2>
+        <p>Chaîne de valeur complète, de l'exploration au renouvelable — 4 sections, 10 expertises.</p>
+      </div>
+      <div class="mm-search">
+        <div class="mm-search-wrap">
+          <svg class="mm-search-icon" viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><circle cx="9" cy="9" r="6" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M17 17l-3.5-3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"/></svg>
+          <input type="search" class="mm-search-input" data-mm-search placeholder="Rechercher un service, une technologie…" aria-label="Rechercher dans les services" autocomplete="off" />
+          <kbd class="mm-search-kbd" aria-hidden="true">⌘ K</kbd>
+        </div>
       </div>
     </div>
     {quick_actions}
