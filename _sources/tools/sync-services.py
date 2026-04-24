@@ -187,9 +187,106 @@ def build_json(data: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+# -- HTML rebuild (partial, data-driven blocks only) --------------------------
+
+def _esc(s: str) -> str:
+    """Escape & for HTML. Does NOT touch other special chars (preserves unicode)."""
+    return s.replace("&", "&amp;")
+
+
+def _rebuild_section_block(section_html: str, svc: dict[str, Any]) -> tuple[str, int]:
+    """Rebuild the 3 data-driven blocks inside one service section:
+       1. <ul class="svc-list">   ← sous_services
+       2. <div class="svc-chips"> ← technologies
+       3. <div class="svc-ctas">  ← ctas
+       Hand-crafted copy (h2 headline, tagline, post-chip paragraph) is preserved.
+       Returns (new_html, mutations_count).
+    """
+    mutations = 0
+    accent = svc["accent_hex"]
+    accent_light = svc.get("accent_hex_light", accent)
+
+    # 1. svc-list (Services clés)
+    lis = []
+    for item in svc["sous_services"]:
+        lis.append(
+            f'          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" '
+            f'stroke="{accent}" stroke-width="2.5" aria-hidden="true">'
+            f'<path d="M20 6L9 17l-5-5"/></svg>{_esc(item)}</li>'
+        )
+    new_ul = "\n".join(lis)
+    p = re.compile(r'(<ul class="svc-list">\n)([\s\S]*?)(\n\s*</ul>)')
+    m = p.search(section_html)
+    if m:
+        new_section = section_html[:m.start(2)] + new_ul + section_html[m.end(2):]
+        if new_section != section_html:
+            section_html = new_section; mutations += 1
+
+    # 2. svc-chips (Technologies intégrées)
+    chips = [f'          <span class="svc-chip">{_esc(t)}</span>' for t in svc["technologies"]]
+    new_chips = "\n".join(chips)
+    p = re.compile(r'(<div class="svc-chips">\n)([\s\S]*?)(\n\s*</div>)')
+    m = p.search(section_html)
+    if m:
+        new_section = section_html[:m.start(2)] + new_chips + section_html[m.end(2):]
+        if new_section != section_html:
+            section_html = new_section; mutations += 1
+
+    # 3. svc-ctas (CTA row)
+    cta_lines = []
+    for cta in svc["ctas"]:
+        variant = cta.get("variant", "primary")
+        btn_class = "btn btn-primary" if variant == "primary" else "btn btn-ghost"
+        label = _esc(cta["label"])
+        href = cta["href"]
+        if variant == "primary":
+            cta_lines.append(f'      <a href="{href}" class="{btn_class}">{label} <span class="arrow">→</span></a>')
+        else:
+            cta_lines.append(f'      <a href="{href}" class="{btn_class}">{label}</a>')
+    new_ctas = "\n".join(cta_lines)
+    # The svc-ctas block has a "reveal" wrapper; match the inner <a>...</a> list
+    p = re.compile(r'(<div class="svc-ctas reveal"[^>]*>\n)([\s\S]*?)(\n\s*</div>\s*\n\s*</div>\s*\n</section>)')
+    m = p.search(section_html)
+    if m:
+        new_section = section_html[:m.start(2)] + new_ctas + section_html[m.end(2):]
+        if new_section != section_html:
+            section_html = new_section; mutations += 1
+
+    return section_html, mutations
+
+
+def rebuild_html(data: dict[str, Any], html_path: Path) -> tuple[str, int, int]:
+    """Regenerate data-driven blocks inside services.html.
+       Returns (new_html, sections_touched, total_mutations).
+    """
+    html = html_path.read_text(encoding="utf-8")
+    sections_touched = 0
+    total_mut = 0
+    services = {s["id"]: s for s in data["services_catalog"]}
+    for svc in data["services_catalog"]:
+        anchor = svc["anchor"]
+        # Match the section block by id, from `<section ... id="section-xyz"` until `</section>`
+        pat = re.compile(
+            r'(<section class="svc-section"[^>]*id="' + re.escape(anchor) + r'"[\s\S]*?</section>)',
+            re.MULTILINE
+        )
+        m = pat.search(html)
+        if not m:
+            continue
+        old_block = m.group(1)
+        new_block, muts = _rebuild_section_block(old_block, svc)
+        if muts > 0:
+            html = html[:m.start(1)] + new_block + html[m.end(1):]
+            sections_touched += 1
+            total_mut += muts
+    return html, sections_touched, total_mut
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--apply", action="store_true", help="Write files (default: dry-run)")
+    ap.add_argument("--rebuild-html", action="store_true",
+                    help="Also rebuild data-driven blocks inside services.html (svc-list, svc-chips, svc-ctas)")
     args = ap.parse_args()
 
     data = load_yaml(SRC_YAML)
@@ -233,6 +330,23 @@ def main() -> int:
         print(f"✓ wrote {OUT_JSON.relative_to(ROOT)} ({len(new_text):,} bytes)")
     else:
         print(f"  (dry-run — run with --apply to write)")
+
+    # Optional HTML rebuild
+    if args.rebuild_html:
+        if not HTML_PAGE.exists():
+            print(f"✘ {HTML_PAGE.name} not found — cannot rebuild HTML", file=sys.stderr)
+            return 1
+        current_html = HTML_PAGE.read_text(encoding="utf-8")
+        new_html, touched, muts = rebuild_html(data, HTML_PAGE)
+        if new_html == current_html:
+            print(f"✓ services.html already in sync (no rebuild needed)")
+        else:
+            print(f"△ services.html rebuild: {touched} sections, {muts} block mutations")
+            if args.apply:
+                HTML_PAGE.write_text(new_html, encoding="utf-8")
+                print(f"✓ wrote services.html ({len(new_html):,} bytes)")
+            else:
+                print(f"  (dry-run — run with --apply --rebuild-html to write)")
 
     return 0
 
