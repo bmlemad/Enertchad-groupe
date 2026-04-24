@@ -20,6 +20,88 @@
   border-top: 1px solid var(--hairline-dark, rgba(8, 14, 26, 0.08));
 }
 
+/* ═══ v1.2.3 · Hero H1 premium + stats row ═══ */
+.hero h1 {
+  font-family: var(--font-display, "Space Grotesk");
+  font-size: clamp(2.2rem, 5vw, 4.2rem);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  margin: 0 0 clamp(28px, 4vw, 44px);
+  color: var(--white, #fff);
+}
+.hero h1 .h1-accent {
+  color: #D9A84F;
+  font-style: normal;
+  font-weight: 600;
+  background: linear-gradient(135deg, #E8C36A 0%, #D9A84F 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/* Fallback for browsers without background-clip support */
+@supports not (-webkit-text-fill-color: transparent) {
+  .hero h1 .h1-accent {
+    color: #D9A84F;
+    -webkit-text-fill-color: #D9A84F;
+  }
+}
+
+.hero-stats {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 clamp(28px, 3.5vw, 40px);
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(16px, 2.5vw, 32px) clamp(24px, 4vw, 56px);
+  align-items: flex-end;
+  padding-top: clamp(16px, 2vw, 24px);
+  padding-bottom: clamp(20px, 2.5vw, 28px);
+  border-top: 1px solid rgba(217, 168, 79, 0.2);
+  border-bottom: 1px solid rgba(217, 168, 79, 0.12);
+  position: relative;
+}
+.hero-stats li {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.hero-stats strong {
+  font-family: var(--font-display, "Space Grotesk");
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-weight: 700;
+  line-height: 1;
+  color: #D9A84F;
+  letter-spacing: -0.02em;
+}
+.hero-stats span {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.62);
+  letter-spacing: 0.3px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+@media (max-width: 640px) {
+  .hero-stats {
+    gap: 16px 28px;
+    justify-content: space-between;
+  }
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.hero-cta-invest {
+  /* subtle tertiary — less visual weight than primary/ghost */
+  opacity: 0.82;
+  font-size: 0.9rem;
+  padding: 10px 18px;
+}
+.hero-cta-invest:hover { opacity: 1; }
+
 /* ═══ v1.2.2 · Header polish premium ═══ */
 .brand {
   position: relative;
