@@ -499,12 +499,12 @@ def build_mega_menu(d):
     services = d.get("services_catalog", [])
     groups = d.get("services_groups", [])
 
-    # Premium group-level tag labels (for eyebrow)
+    # Premium group-level tag labels (for eyebrow) — v1.2.3 corporate taxonomy
     GROUP_TAGS = {
-        "amont": "Upstream · 02",
-        "chaine-aval": "Midstream + Downstream · 03",
-        "technologies": "Tech & Security · 03",
-        "avenir-esg": "Sustainability · 02",
+        "activites": "ACTIVITIES · 5 SERVICES",
+        "technologies": "TECHNOLOGIES · 3 SOLUTIONS",
+        "engagements": "COMMITMENTS · ESG",
+        "projets": "PROJECTS · HORIZON 2030",
     }
 
     # Group → service cards rendering
