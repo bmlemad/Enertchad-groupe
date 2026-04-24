@@ -121,9 +121,9 @@ def build_services_section(d):
 <section id="services-catalogue" class="mp-section mp-services" aria-labelledby="services-catalogue-title">
   <div class="container">
     <div class="section-head reveal">
-      <span class="kicker">Catalogue complet · 10 services harmonisés</span>
-      <h2 id="services-catalogue-title">Nos 10 services · de la roche-mère aux <em class="h2-accent">énergies nouvelles</em>.</h2>
-      <p class="lead">Chaque service du Groupe est décliné en sous-prestations, technologies et secteurs d'application. Les CTA pointent directement vers le bon formulaire pré-rempli.</p>
+      <span class="kicker"><span class="kicker-dot">●</span> OUR EXPERTISE · 10 SERVICES · 4 PÔLES</span>
+      <h2 id="services-catalogue-title">De la roche-mère à la station-service, <em class="h2-accent">une chaîne de valeur intégrée</em>.</h2>
+      <p class="lead">Dix expertises déclinées en sous-prestations, technologies et secteurs d'application. Chaque service connecté à un formulaire pré-rempli pour une prise de contact en moins de 24 heures.</p>
     </div>
 
     <div class="mps-grid">{"".join(cards)}
@@ -141,9 +141,9 @@ def build_durabilite_section(d):
 <section id="durabilite-inline" class="mp-section mp-durabilite" aria-labelledby="durabilite-inline-title">
   <div class="container">
     <div class="section-head reveal">
-      <span class="kicker">ESG · Transparence · Climat</span>
-      <h2 id="durabilite-inline-title">La durabilité, <em class="h2-accent">au cœur du mandat opérationnel</em>.</h2>
-      <p class="lead">ITIE, HSE, contenu local, trajectoire climat : quatre engagements concrets, mesurables et publiés.</p>
+      <span class="kicker"><span class="kicker-dot">●</span> SUSTAINABILITY · ESG COMMITMENTS</span>
+      <h2 id="durabilite-inline-title">Transparence, climat, communautés : <em class="h2-accent">des engagements mesurables</em>.</h2>
+      <p class="lead">ITIE, HSE, contenu local, trajectoire climat — quatre piliers opérationnels publiés annuellement aux standards internationaux.</p>
     </div>
 
     <div class="dur-grid">
@@ -209,9 +209,9 @@ def build_partenaires_section(d):
 <section id="partenaires" class="mp-section mp-partenaires" aria-labelledby="partenaires-title">
   <div class="container">
     <div class="section-head reveal">
-      <span class="kicker">Écosystème · Partenaires opérationnels</span>
-      <h2 id="partenaires-title">Six partenaires <em class="h2-accent">institutionnels & B2B</em> au cœur de l'écosystème.</h2>
-      <p class="lead">Notre chaîne intégrée s'appuie sur les opérateurs de référence du Tchad et du corridor Cameroun. Institutionnels du secteur extractif et clients industriels majeurs.</p>
+      <span class="kicker"><span class="kicker-dot">●</span> ECOSYSTEM · OPERATIONAL PARTNERS</span>
+      <h2 id="partenaires-title">Six partenaires, <em class="h2-accent">une souveraineté énergétique</em> partagée.</h2>
+      <p class="lead">Trois opérateurs institutionnels du secteur extractif · trois clients industriels internationaux. Du bassin de Doba au terminal de Kribi, l'écosystème qui alimente la chaîne intégrée EnerTchad.</p>
     </div>
 
     <div class="part-grid">{cards}
@@ -250,9 +250,9 @@ def build_talents_section(d):
 <section id="talents-academy" class="mp-section mp-talents" aria-labelledby="talents-academy-title">
   <div class="container">
     <div class="section-head reveal">
-      <span class="kicker">EnerAcademy · Souveraineté des compétences</span>
-      <h2 id="talents-academy-title">Former les talents qui construisent <em class="h2-accent">l'énergie tchadienne</em>.</h2>
-      <p class="lead">{esc(eff)} apprentis formés par an · {esc(cum)} cumulés. Quatre programmes certifiants déployés depuis N'Djamena, Doba et Moundou — adossés aux standards OHADA et aux référentiels pétroliers internationaux.</p>
+      <span class="kicker"><span class="kicker-dot">●</span> TALENT DEVELOPMENT · ENERACADEMY</span>
+      <h2 id="talents-academy-title">{esc(eff)} talents par an. <em class="h2-accent">La souveraineté passe par les compétences</em>.</h2>
+      <p class="lead">Quatre programmes certifiants adossés aux standards OHADA et référentiels pétroliers internationaux. {esc(cum)} apprentis cumulés depuis la création du centre — la relève Oil & Gas tchadienne se construit ici.</p>
     </div>
 
     <div class="acad-stats">
@@ -290,9 +290,9 @@ def build_contact_section(d):
 <section id="contact-form" class="mp-section mp-contact" aria-labelledby="contact-form-title">
   <div class="container">
     <div class="section-head reveal">
-      <span class="kicker">Prendre contact · 24 h ouvrées</span>
+      <span class="kicker"><span class="kicker-dot">●</span> GET IN TOUCH · 24H RESPONSE GUARANTEE</span>
       <h2 id="contact-form-title">Un projet, une question, un partenariat — <em class="h2-accent">parlons-en</em>.</h2>
-      <p class="lead">Le formulaire est pré-rempli selon le service qui vous intéresse. Réponse sous 24 h ouvrées par un chargé de relation.</p>
+      <p class="lead">Formulaire pré-rempli selon votre besoin. Un chargé de relation dédié vous répond sous 24 heures ouvrées. Pour les dossiers urgents : WhatsApp Business · +235 99 29 86 96.</p>
     </div>
 
     <div class="cf-layout">

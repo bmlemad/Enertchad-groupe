@@ -20,6 +20,107 @@
   border-top: 1px solid var(--hairline-dark, rgba(8, 14, 26, 0.08));
 }
 
+/* ═══ v1.2.2 · Header polish premium ═══ */
+.brand {
+  position: relative;
+}
+.brand-mark {
+  position: relative;
+  overflow: visible;
+}
+.brand-pulse {
+  position: absolute;
+  top: 50%;
+  right: -2px;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10B981;  /* green live indicator */
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.25);
+  animation: brand-pulse 2.2s cubic-bezier(.4, 0, .2, 1) infinite;
+}
+@keyframes brand-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.25);
+    opacity: 1;
+  }
+  50% {
+    box-shadow: 0 0 0 5px rgba(16, 185, 129, 0.08);
+    opacity: 0.8;
+  }
+}
+.brand-sub em {
+  color: rgba(255, 255, 255, 0.72);
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+.brand-sep {
+  color: rgba(217, 168, 79, 0.5);
+  margin: 0 2px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .brand-pulse { animation: none; }
+}
+
+/* ═══ v1.2.2 · Ultra premium kicker avec dot gold animé ═══ */
+.mp-section .kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding-left: 0;  /* override default kicker 42px padding */
+}
+.mp-section .kicker::before {
+  display: none;  /* remove default horizontal bar */
+}
+.mp-section .kicker-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #D9A84F;
+  box-shadow: 0 0 0 3px rgba(217, 168, 79, 0.18);
+  font-size: 0;  /* hide the actual character */
+  flex-shrink: 0;
+  animation: kicker-pulse 2.4s cubic-bezier(.4, 0, .2, 1) infinite;
+}
+@keyframes kicker-pulse {
+  0%, 100% { box-shadow: 0 0 0 3px rgba(217, 168, 79, 0.18); }
+  50%      { box-shadow: 0 0 0 5px rgba(217, 168, 79, 0.08); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mp-section .kicker-dot { animation: none; }
+}
+
+/* Premium section-head : generous spacing + editorial typography */
+.mp-section .section-head {
+  max-width: 920px;
+  margin-bottom: clamp(40px, 5vw, 64px);
+}
+.mp-section .section-head h2 {
+  font-family: var(--font-display, "Space Grotesk");
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin: 0 0 clamp(16px, 2vw, 24px);
+  color: #080E1A;
+}
+.mp-section .section-head h2 em,
+.mp-section .section-head h2 .h2-accent {
+  color: var(--gold-deep, #B88838);
+  font-style: normal;
+  font-weight: 600;
+}
+.mp-section .section-head .lead {
+  font-size: clamp(1rem, 1.2vw, 1.12rem);
+  line-height: 1.65;
+  color: rgba(8, 14, 26, 0.68);
+  max-width: 68ch;
+  margin: 0;
+}
+
 /* ============================================================================
    1. SERVICES CATALOGUE
    ============================================================================ */
