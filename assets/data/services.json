@@ -444,7 +444,7 @@
       "numero": "10",
       "nom": "ESG, Formation & Gouvernance",
       "nom_court": "ESG",
-      "pole_parent": null,
+      "pole_parent": "transverse",
       "group": "esg",
       "anchor": "section-esg",
       "accent_hex": "#B45309",

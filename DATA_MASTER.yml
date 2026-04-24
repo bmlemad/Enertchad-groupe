@@ -815,7 +815,7 @@ services_catalog:
     numero: "10"
     nom: "ESG, Formation & Gouvernance"
     nom_court: "ESG"
-    pole_parent: null
+    pole_parent: "transverse"    # ESG = fonction transverse au groupe (pas de pôle industriel parent)
     group: "esg"
     anchor: "section-esg"
     accent_hex: "#B45309"
