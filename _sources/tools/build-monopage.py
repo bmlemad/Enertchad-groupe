@@ -589,9 +589,13 @@ def build_mega_menu(d):
           </div>
         </aside>'''
 
-    # P4 · Quick actions row (4 pills at top of panel)
+    # P4 · Quick actions row (5 pills at top of panel · incl. Explorer React)
     quick_actions = '''
     <nav class="mm-quick" aria-label="Accès rapides">
+      <a href="/explore" class="mm-quick-pill mm-quick-pill-featured" data-mm-close>
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M20 20l-3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <span>Explorer le catalogue <kbd style="font-size:0.7em;opacity:0.6;margin-left:4px;">NEW</kbd></span>
+      </a>
       <a href="#section-distribution" class="mm-quick-pill" data-mm-close>
         <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9" r="2.4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
         <span>Nos 45 stations</span>

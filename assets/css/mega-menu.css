@@ -243,6 +243,30 @@
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(8, 14, 26, 0.2);
 }
+/* Featured pill · gold tint pour l'explorer React */
+.mm-quick-pill-featured {
+  background: linear-gradient(135deg, #D9A84F 0%, #E8C36A 100%);
+  color: #080E1A;
+  border-color: #D9A84F;
+  font-weight: 600;
+}
+.mm-quick-pill-featured:hover,
+.mm-quick-pill-featured:focus-visible {
+  background: #080E1A;
+  color: #D9A84F;
+  border-color: #D9A84F;
+}
+.mm-quick-pill-featured kbd {
+  background: rgba(8, 14, 26, 0.1);
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: ui-monospace, "SF Mono", monospace;
+  letter-spacing: 0.5px;
+}
+.mm-quick-pill-featured:hover kbd {
+  background: rgba(217, 168, 79, 0.15);
+  color: #D9A84F;
+}
 .mm-quick-pill svg {
   flex-shrink: 0;
 }
