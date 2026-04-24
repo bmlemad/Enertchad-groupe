@@ -110,8 +110,10 @@ check_contains "/" "data-scrollspy" "Nav scroll-spy activée"
 # v1.2.1 — mega-menu v2 assertions
 check_contains "/" "data-mm-trigger" "Mega-menu trigger dans nav"
 check_contains "/" "mega-menu-panel" "Mega-menu panel présent"
-check_contains "/" "Amont pétrolier" "Section amont (refonte 2-3-3-2)"
-check_contains "/" "Pipeline · Distribution · Pétrochimie" "Section chaîne aval"
+# v1.2.3 — nouvelle taxonomie : Activités · Technologies · Engagements · Projets
+check_contains "/" "Activités" "Section Activités (5 services)"
+check_contains "/" "Engagements" "Section Engagements (ESG)"
+check_contains "/" "Projets" "Section Projets (Horizon 2030)"
 check_contains "/" "mm-item-icon" "Icons SVG par service (P1)"
 check_contains "/" "mm-quick-pill" "Quick actions row (P4)"
 check_contains "/" "mm-editorial" "Editorial block (P2)"

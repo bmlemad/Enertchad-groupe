@@ -82,11 +82,11 @@ Logo  Accueil · 6 pôles · [Services ▾ MEGA] · Cartographie
 
 - Backdrop blur + panel full-width glassmorphism
 - ⌘K / Ctrl+K search bar avec live filter
-- **4 sections équilibrées (2-3-3-2)** suivant la chaîne de valeur O&G :
-  - **Amont pétrolier** · E&P · EOR
-  - **Pipeline · Distribution · Pétrochimie**
-  - **Technologies & Sécurité** · Digital · ICS · Sécurité physique
-  - **Énergies nouvelles & ESG**
+- **4 sections corporate** (v1.2.3) :
+  - **Activités** · E&P · EOR · Pipeline · Distribution · Pétrochimie (5)
+  - **Technologies** · Digital · ICS Security · Sécurité physique (3)
+  - **Engagements** · ESG, formation, gouvernance (1)
+  - **Projets** · Énergies nouvelles · Horizon 2030 (1)
 - Icons SVG distinctifs par service
 - Quick actions row (Stations · Investisseurs · Carrières · Devis)
 - Editorial block · "Publication récente"
