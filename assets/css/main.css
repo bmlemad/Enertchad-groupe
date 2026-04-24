@@ -897,7 +897,6 @@ footer .foot-bottom .legal a:hover { color: var(--gold); }
   50% { opacity: 0.55; transform: scale(0.85); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .nav-sub-link .live-dot { animation: none; }
   
 }
 
@@ -1651,7 +1650,7 @@ footer .foot-bottom .legal a:hover { color: var(--gold); }
   .nav-topbar, .nav-wrap, footer, .cookie-banner, .nav-toggle,
   .btn, .hero-card, .reveal { all: revert; }
   body { background: white !important; color: #000 !important; font-size: 11pt; }
-  .nav-topbar, .nav-wrap, .cookie-banner, .nav-toggle, .btn, .form-wrap, .nav-dropdown,
+  .nav-topbar, .nav-wrap, .cookie-banner, .nav-toggle, .btn, .form-wrap,
   [role="menu"], .hero-card, .product-cta, .foot-bottom .legal { display: none !important; }
   footer { background: none !important; color: #000 !important; border-top: 1px solid #ccc; margin-top: 24pt; }
   .section { padding: 16pt 0 !important; background: white !important; color: #000 !important; }
@@ -1925,9 +1924,6 @@ body.page-legal .nav-progress { display: none; }
 
 /* ============ FULL-WIDTH MEGA MENU ============ */
 /* Pôle cards in mega menu */
-
-
-.mega-map-cta .arrow { color: var(--gold); }
 
 /* Mega feature panel (right aside) */
 /* Patch 05 : indicateur visuel de sourcing cliquable (ancre ou PDF) */
