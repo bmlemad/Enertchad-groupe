@@ -35,6 +35,9 @@ NAV_END = "<!-- ═══ MONOPAGE NAV-LINKS AUTO-GEN END ═══ -->"
 MM_BEGIN = "<!-- ═══ MEGA-MENU v2 AUTO-GEN BEGIN ═══ -->"
 MM_END = "<!-- ═══ MEGA-MENU v2 AUTO-GEN END ═══ -->"
 
+MM_INV_BEGIN = "<!-- ═══ MEGA-MENU INVESTORS AUTO-GEN BEGIN ═══ -->"
+MM_INV_END = "<!-- ═══ MEGA-MENU INVESTORS AUTO-GEN END ═══ -->"
+
 
 def esc(s):
     """HTML-escape a string value, handling None gracefully."""
@@ -418,8 +421,12 @@ def build_nav_links():
         {NAV_BEGIN}
         <a href="#hero" data-scrollspy>Accueil</a>
         <a href="#operations" data-scrollspy>Les 6 pôles</a>
-        <button type="button" class="mm-trigger" data-mm-trigger aria-expanded="false" aria-controls="mega-menu-panel" aria-haspopup="true">
+        <button type="button" class="mm-trigger" data-mm-trigger aria-expanded="false" aria-controls="mega-menu-services" aria-haspopup="true">
           Services
+          <svg class="mm-chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+        <button type="button" class="mm-trigger" data-mm-trigger aria-expanded="false" aria-controls="mega-menu-investors" aria-haspopup="true">
+          Investisseurs
           <svg class="mm-chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
         </button>
         <a href="#carte" data-scrollspy>Cartographie</a>
@@ -502,6 +509,178 @@ def svc_icon_svg(service_id):
     """Return the SVG markup for a given service id (used in mega-menu items)."""
     inner = SERVICE_ICONS.get(service_id, '<circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="1.6"/>')
     return f'<svg class="mm-item-icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">{inner}</svg>'
+
+
+def build_investor_mega():
+    """Mega-menu secondaire · Investisseurs · 3 colonnes + feature panel.
+    Hardcoded · pas de data-driven depuis DATA_MASTER (contenu IR statique).
+    """
+    # Col 1 · Finance & Performance
+    col1_items = [
+        ("investor-rapport-annuel", "Rapport annuel 2025",
+         "Résultats IFRS · production 139 kb/j moyen · CA consolidé",
+         "#investisseurs-cta", "rapport annuel ifrs 2025 résultats"),
+        ("investor-trimestriels", "Résultats trimestriels",
+         "Q1/Q2/Q3/Q4 · consolidé Groupe · pôles",
+         "#investisseurs-cta", "trimestriel q1 q2 q3 q4"),
+        ("investor-dashboard-live", "Dashboard exécutif live",
+         "KPI temps réel · production · énergies · ESG",
+         "/dashboard-executif", "dashboard live temps réel kpi"),
+        ("investor-dataroom", "Dataroom sécurisée",
+         "PSA · farm-in · franchise · NDA requis",
+         "#contact-form", "dataroom psa farm-in secure nda"),
+    ]
+    # Col 2 · Gouvernance & Transparence
+    col2_items = [
+        ("gov-conseil", "Conseil d'Administration",
+         "10 actionnaires fondateurs · présidé par Théophile Gag Pinabei",
+         "#hero", "conseil administration pca pinabei"),
+        ("gov-comites", "Comités spécialisés",
+         "Audit · Rémunération · Éthique · Développement",
+         "#durabilite-inline", "comités audit remuneration ethique"),
+        ("gov-kpmg", "Auditeur externe · KPMG",
+         "Audit IFRS en cours · transparence financière",
+         "#durabilite-inline", "kpmg audit ifrs transparence"),
+        ("gov-itie", "ITIE · 53 contrats publiés",
+         "Transparence extractive · paiements État divulgués",
+         "#durabilite-inline", "itie transparence 53 contrats extractive"),
+    ]
+    # Col 3 · Relations & Calendar
+    col3_items = [
+        ("cal-ag-2026", "Assemblée Générale 2026",
+         "14 avril 2026 · résultats approuvés · dividende +22%",
+         "#actualites-preview", "assemblée générale ag dividende 2026"),
+        ("cal-calls", "Calls investisseurs",
+         "Web conférences trimestrielles · Q&A direction",
+         "#contact-form", "calls web conférence trimestriel direction"),
+        ("cal-ir-direct", "Contact Investor Relations",
+         "Ligne directe IR · réponse 24h ouvrées",
+         "#contact-form", "ir investor relations contact direct 24h"),
+        ("cal-press", "Kit presse & médias",
+         "Communiqués · photos HD · briefings stratégiques",
+         "#actualites-preview", "presse médias communiqué briefing"),
+    ]
+
+    def render_items(items, accent):
+        rows = []
+        for i, (sid, title, sub, href, kw) in enumerate(items):
+            rows.append(f'''
+          <a href="{href}" class="mm-item" data-mm-item data-search="{esc(kw)}" style="--svc-accent: {accent}; --mm-i: {i};">
+            <div class="mm-item-icon-wrap">
+              <svg class="mm-item-icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 12l3 3 5-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div>
+            <div class="mm-item-body">
+              <div class="mm-item-head"><h4 class="mm-item-title">{esc(title)}</h4></div>
+              <p class="mm-item-sub">{esc(sub)}</p>
+            </div>
+            <svg class="mm-item-arrow" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </a>''')
+        return "".join(rows)
+
+    col1 = render_items(col1_items, "#1E3A8A")
+    col2 = render_items(col2_items, "#C48848")
+    col3 = render_items(col3_items, "#10B981")
+
+    return f'''
+{MM_INV_BEGIN}
+<!-- Mega-menu panel · Investisseurs (3 colonnes + feature) -->
+<div id="mega-menu-investors" class="mm-panel" role="dialog" aria-modal="false" aria-label="Espace investisseurs EnerTchad" data-mm-panel hidden>
+  <div class="mm-inner">
+    <div class="mm-header">
+      <div class="mm-title-block">
+        <h2>Espace Investisseurs</h2>
+        <p>Rapports financiers · gouvernance · relations investisseurs · calendrier 2026.</p>
+      </div>
+      <div class="mm-search">
+        <div class="mm-search-wrap">
+          <svg class="mm-search-icon" viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><circle cx="9" cy="9" r="6" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M17 17l-3.5-3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          <input type="search" class="mm-search-input" data-mm-search placeholder="Rechercher rapport, comité, date…" aria-label="Rechercher investisseurs" autocomplete="off"/>
+          <kbd class="mm-search-kbd" aria-hidden="true">⌘ K</kbd>
+        </div>
+      </div>
+    </div>
+
+    <nav class="mm-quick" aria-label="Accès rapides investisseurs">
+      <a href="/dashboard-executif" class="mm-quick-pill mm-quick-pill-featured" data-mm-close>
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M3 3v18h18" stroke="currentColor" stroke-width="1.6" fill="none"/><path d="M7 14l4-4 3 3 5-5" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+        <span>Dashboard live <kbd style="font-size:0.7em;opacity:0.6;margin-left:4px;">LIVE</kbd></span>
+      </a>
+      <a href="#investisseurs-cta" class="mm-quick-pill" data-mm-close>
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M4 4h16v16H4z" stroke="currentColor" stroke-width="1.6" fill="none"/><path d="M4 9h16M9 4v16" stroke="currentColor" stroke-width="1.6"/></svg>
+        <span>Rapports publics</span>
+      </a>
+      <a href="#contact-form" class="mm-quick-pill" data-mm-close>
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><rect x="4" y="7" width="16" height="13" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4 11l8 5 8-5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+        <span>Contact IR</span>
+      </a>
+      <a href="#durabilite-inline" class="mm-quick-pill" data-mm-close>
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+        <span>Gouvernance ITIE</span>
+      </a>
+    </nav>
+
+    <div class="mm-body">
+      <div class="mm-group" style="--group-accent: #1E3A8A;">
+        <div class="mm-group-header">
+          <span class="mm-group-tag">FINANCE · 4 DOCS</span>
+          <h3 class="mm-group-nom">Finance &amp; Performance</h3>
+          <p class="mm-group-desc">Rapports IFRS · résultats consolidés · dashboards live.</p>
+        </div>
+        <div class="mm-group-items">{col1}
+        </div>
+      </div>
+
+      <div class="mm-group" style="--group-accent: #C48848;">
+        <div class="mm-group-header">
+          <span class="mm-group-tag">GOVERNANCE · 4 AXES</span>
+          <h3 class="mm-group-nom">Gouvernance &amp; Transparence</h3>
+          <p class="mm-group-desc">Conseil · Comités · Audit externe · ITIE publiée.</p>
+        </div>
+        <div class="mm-group-items">{col2}
+        </div>
+      </div>
+
+      <div class="mm-group" style="--group-accent: #10B981;">
+        <div class="mm-group-header">
+          <span class="mm-group-tag">RELATIONS · 4 CANAUX</span>
+          <h3 class="mm-group-nom">Relations &amp; Calendar</h3>
+          <p class="mm-group-desc">AG · calls · contact IR direct · presse.</p>
+        </div>
+        <div class="mm-group-items">{col3}
+        </div>
+      </div>
+
+      <aside class="mm-feature" aria-label="IR highlights 2026">
+        <div class="mm-feature-eyebrow">INVESTOR RELATIONS · 2026</div>
+        <h3 class="mm-feature-title">10 M FCFA de capital initial.<br/>Une trajectoire <em>souveraine</em>.</h3>
+        <a href="#actualites-preview" class="mm-editorial" data-mm-close>
+          <div class="mm-editorial-tag">Dernière publication</div>
+          <div class="mm-editorial-title">AG 2026 · résultats 2025 approuvés · dividende +22%</div>
+          <div class="mm-editorial-meta">14 avril 2026 · <span class="mm-editorial-arrow">→</span></div>
+        </a>
+        <div class="mm-stats">
+          <div class="mm-stat"><strong>53<span class="mm-stat-unit"></span></strong><span>Contrats ITIE</span></div>
+          <div class="mm-stat"><strong>42<span class="mm-stat-unit">kt/an</span></strong><span>CO₂ évité</span></div>
+          <div class="mm-stat"><strong>80<span class="mm-stat-unit">%</span></strong><span>Contenu local</span></div>
+        </div>
+        <div class="mm-feature-ctas">
+          <a href="#investisseurs-cta" class="mm-feature-cta is-primary" data-mm-close>
+            Espace investisseurs <span class="arrow" aria-hidden="true">→</span>
+          </a>
+          <a href="/dashboard-executif" class="mm-feature-cta" data-mm-close>
+            Dashboard exécutif live <span class="arrow" aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </aside>
+
+      <div class="mm-empty" data-mm-empty>
+        Rien ne correspond. Essayez <em>audit</em>, <em>rapport</em>, <em>ITIE</em>…
+      </div>
+    </div>
+  </div>
+</div>
+{MM_INV_END}
+'''
 
 
 def build_mega_menu(d):
@@ -616,11 +795,11 @@ def build_mega_menu(d):
 
     return f'''
 {MM_BEGIN}
-<!-- Backdrop -->
+<!-- Backdrop (partagé entre tous les mega-menus) -->
 <div class="mm-backdrop" data-mm-backdrop hidden></div>
 
-<!-- Mega-menu panel -->
-<div id="mega-menu-panel" class="mm-panel" role="dialog" aria-modal="false" aria-label="Catalogue des 10 services EnerTchad" data-mm-panel hidden>
+<!-- Mega-menu panel · Services -->
+<div id="mega-menu-services" class="mm-panel" role="dialog" aria-modal="false" aria-label="Catalogue des 10 services EnerTchad" data-mm-panel hidden>
   <div class="mm-inner">
     <div class="mm-header">
       <div class="mm-title-block">
@@ -646,84 +825,113 @@ def build_mega_menu(d):
   </div>
 </div>
 
-<!-- Mega-menu behavior (open/close + search + keyboard) -->
+<!-- Multi-panel mega-menu behavior · v1.2.4 · supports N triggers/panels -->
 <script>
 (function(){{
-  var trigger = document.querySelector('[data-mm-trigger]');
-  var panel = document.querySelector('[data-mm-panel]');
+  var triggers = document.querySelectorAll('[data-mm-trigger]');
   var backdrop = document.querySelector('[data-mm-backdrop]');
-  var search = document.querySelector('[data-mm-search]');
-  var items = document.querySelectorAll('[data-mm-item]');
-  var emptyEl = document.querySelector('[data-mm-empty]');
-  var closers = document.querySelectorAll('[data-mm-close]');
-  if (!trigger || !panel) return;
+  if (!triggers.length || !backdrop) return;
 
-  function positionPanel(){{
+  function allPanels() {{ return document.querySelectorAll('[data-mm-panel]'); }}
+
+  function positionAll() {{
     var header = document.querySelector('.site-header');
     var top = header ? header.getBoundingClientRect().bottom : 70;
-    panel.style.top = top + 'px';
+    allPanels().forEach(function(p) {{ p.style.top = top + 'px'; }});
     backdrop.style.top = top + 'px';
   }}
 
-  function openMenu(){{
-    positionPanel();
+  function closeAll() {{
+    allPanels().forEach(function(p) {{
+      p.classList.remove('is-open');
+      setTimeout(function() {{ p.hidden = true; }}, 250);
+      var s = p.querySelector('[data-mm-search]');
+      if (s) s.value = '';
+      p.querySelectorAll('[data-mm-item]').forEach(function(it) {{ it.classList.remove('mm-dim'); }});
+      var empty = p.querySelector('[data-mm-empty]');
+      if (empty) empty.classList.remove('is-on');
+    }});
+    triggers.forEach(function(t) {{ t.setAttribute('aria-expanded', 'false'); }});
+    backdrop.classList.remove('is-open');
+    setTimeout(function() {{ backdrop.hidden = true; }}, 250);
+    document.body.style.overflow = '';
+  }}
+
+  function openPanel(panelId) {{
+    // Close any other panel first
+    allPanels().forEach(function(p) {{
+      if (p.id !== panelId && p.classList.contains('is-open')) p.classList.remove('is-open');
+    }});
+    var panel = document.getElementById(panelId);
+    var trigger = document.querySelector('[aria-controls="' + panelId + '"]');
+    if (!panel || !trigger) return;
+    positionAll();
     panel.hidden = false;
     backdrop.hidden = false;
-    requestAnimationFrame(function(){{
+    requestAnimationFrame(function() {{
       panel.classList.add('is-open');
       backdrop.classList.add('is-open');
     }});
     trigger.setAttribute('aria-expanded', 'true');
-    setTimeout(function(){{ if (search) search.focus(); }}, 150);
+    var search = panel.querySelector('[data-mm-search]');
+    setTimeout(function() {{ if (search) search.focus(); }}, 150);
     document.body.style.overflow = 'hidden';
   }}
-  function closeMenu(){{
-    panel.classList.remove('is-open');
-    backdrop.classList.remove('is-open');
-    trigger.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
-    setTimeout(function(){{
-      panel.hidden = true;
-      backdrop.hidden = true;
-      if (search) search.value = '';
-      items.forEach(function(it){{ it.classList.remove('mm-dim'); }});
-      if (emptyEl) emptyEl.classList.remove('is-on');
-    }}, 250);
-  }}
-  function toggleMenu(){{
-    if (panel.classList.contains('is-open')) closeMenu();
-    else openMenu();
-  }}
 
-  trigger.addEventListener('click', function(e){{ e.preventDefault(); toggleMenu(); }});
-  backdrop.addEventListener('click', closeMenu);
-  closers.forEach(function(el){{ el.addEventListener('click', function(){{ setTimeout(closeMenu, 50); }}); }});
-
-  // Close on Escape
-  document.addEventListener('keydown', function(e){{
-    if (e.key === 'Escape' && panel.classList.contains('is-open')){{
-      closeMenu();
-      trigger.focus();
-    }}
-    // ⌘K / Ctrl+K to open and focus search
-    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k'){{
+  // Wire each trigger to its panel
+  triggers.forEach(function(trigger) {{
+    trigger.addEventListener('click', function(e) {{
       e.preventDefault();
-      if (!panel.classList.contains('is-open')) openMenu();
-      else if (search) search.focus();
+      var panelId = trigger.getAttribute('aria-controls');
+      var panel = document.getElementById(panelId);
+      if (panel && panel.classList.contains('is-open')) {{
+        closeAll();
+      }} else {{
+        openPanel(panelId);
+      }}
+    }});
+  }});
+
+  backdrop.addEventListener('click', closeAll);
+
+  // Close on any anchor/CTA click inside panels
+  document.querySelectorAll('[data-mm-close], [data-mm-item]').forEach(function(el) {{
+    el.addEventListener('click', function() {{ setTimeout(closeAll, 50); }});
+  }});
+
+  // Escape key
+  document.addEventListener('keydown', function(e) {{
+    if (e.key === 'Escape') {{
+      var open = document.querySelector('[data-mm-panel].is-open');
+      if (open) {{
+        var trig = document.querySelector('[aria-controls="' + open.id + '"]');
+        closeAll();
+        if (trig) trig.focus();
+      }}
+    }}
+    // ⌘K / Ctrl+K opens first mega-menu (Services) if none open, else focus current search
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {{
+      e.preventDefault();
+      var openP = document.querySelector('[data-mm-panel].is-open');
+      if (openP) {{
+        var s = openP.querySelector('[data-mm-search]');
+        if (s) s.focus();
+      }} else {{
+        openPanel('mega-menu-services');
+      }}
     }}
   }});
 
-  // Close when anchor clicked (anchor navigation)
-  items.forEach(function(it){{
-    it.addEventListener('click', function(){{ setTimeout(closeMenu, 50); }});
-  }});
-
-  // Live search filter
-  if (search){{
-    search.addEventListener('input', function(){{
+  // Live search per panel
+  document.querySelectorAll('[data-mm-search]').forEach(function(search) {{
+    search.addEventListener('input', function() {{
+      var panel = search.closest('[data-mm-panel]');
+      if (!panel) return;
+      var items = panel.querySelectorAll('[data-mm-item]');
+      var emptyEl = panel.querySelector('[data-mm-empty]');
       var q = search.value.toLowerCase().trim();
       var matches = 0;
-      items.forEach(function(it){{
+      items.forEach(function(it) {{
         var keywords = it.getAttribute('data-search') || '';
         var match = !q || keywords.indexOf(q) !== -1;
         it.classList.toggle('mm-dim', !match);
@@ -731,24 +939,26 @@ def build_mega_menu(d):
       }});
       if (emptyEl) emptyEl.classList.toggle('is-on', matches === 0 && q.length > 0);
     }});
-  }}
+  }});
 
   // Reposition on resize
-  window.addEventListener('resize', function(){{
-    if (panel.classList.contains('is-open')) positionPanel();
+  window.addEventListener('resize', function() {{
+    if (document.querySelector('[data-mm-panel].is-open')) positionAll();
   }}, {{ passive: true }});
 
-  // Close on scroll (avoid panel floating awkwardly)
+  // Close on scroll
   var lastY = window.scrollY;
-  window.addEventListener('scroll', function(){{
-    if (panel.classList.contains('is-open') && Math.abs(window.scrollY - lastY) > 50){{
-      closeMenu();
+  window.addEventListener('scroll', function() {{
+    if (document.querySelector('[data-mm-panel].is-open') && Math.abs(window.scrollY - lastY) > 50) {{
+      closeAll();
     }}
     lastY = window.scrollY;
   }}, {{ passive: true }});
 }})();
 </script>
 {MM_END}
+
+{build_investor_mega()}
 '''
 
 
@@ -817,13 +1027,22 @@ def inject(html_text, d):
             1,
         )
 
-    # 6. Inject mega-menu panel right after </header> (and strip any previous)
-    mm_block = build_mega_menu(d)
+    # 6. Inject mega-menu panels (Services + Investors) right after </header>
+    #    (and strip any previous blocks for idempotence)
+    mm_block = build_mega_menu(d)  # includes embedded {build_investor_mega()} call
+    # Strip previous Services mega-menu
     mm_pattern = re.compile(
         re.escape(MM_BEGIN) + r".*?" + re.escape(MM_END),
         re.DOTALL,
     )
     html_text = mm_pattern.sub("", html_text)
+    # Strip previous Investors mega-menu (if re-run)
+    mm_inv_pattern = re.compile(
+        re.escape(MM_INV_BEGIN) + r".*?" + re.escape(MM_INV_END),
+        re.DOTALL,
+    )
+    html_text = mm_inv_pattern.sub("", html_text)
+    # Insert both (investor is appended inside mm_block as f-string expansion)
     html_text = html_text.replace(
         "</header>",
         "</header>\n" + mm_block.strip(),
