@@ -79,109 +79,115 @@
 
 # v1.1.0 · Clean URLs par service (slug complet)
 [[redirects]]
+  from = "/services"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/services/exploration-production"
-  to = "/services#section-ep"
+  to = "/#section-ep"
   status = 301
 
 [[redirects]]
   from = "/services/eor-chimie-petroliere"
-  to = "/services#section-eor"
+  to = "/#section-eor"
   status = 301
 
 [[redirects]]
   from = "/services/pipeline-midstream"
-  to = "/services#section-pipeline"
+  to = "/#section-pipeline"
   status = 301
 
 [[redirects]]
   from = "/services/distribution-mobilite"
-  to = "/services#section-distribution"
+  to = "/#section-distribution"
   status = 301
 
 [[redirects]]
   from = "/services/petrochimie-transformation"
-  to = "/services#section-petrochimie"
+  to = "/#section-petrochimie"
   status = 301
 
 [[redirects]]
   from = "/services/digital-cyber-energy"
-  to = "/services#section-digital"
+  to = "/#section-digital"
   status = 301
 
 [[redirects]]
   from = "/services/ics-security-cybersecurite-industrielle"
-  to = "/services#section-ics-security"
+  to = "/#section-ics-security"
   status = 301
 
 [[redirects]]
   from = "/services/securite-physique-intelligente"
-  to = "/services#section-physical-security"
+  to = "/#section-physical-security"
   status = 301
 
 [[redirects]]
   from = "/services/energies-nouvelles-au-service-du-petrole"
-  to = "/services#section-energies"
+  to = "/#section-energies"
   status = 301
 
 [[redirects]]
   from = "/services/esg-formation-gouvernance"
-  to = "/services#section-esg"
+  to = "/#section-esg"
   status = 301
 
 # v1.1.0 · Aliases courts (mnémo) pour emails / docs externes
 [[redirects]]
   from = "/services/ep"
-  to = "/services#section-ep"
+  to = "/#section-ep"
   status = 301
 
 [[redirects]]
   from = "/services/eor-chimie"
-  to = "/services#section-eor"
+  to = "/#section-eor"
   status = 301
 
 [[redirects]]
   from = "/services/pipeline"
-  to = "/services#section-pipeline"
+  to = "/#section-pipeline"
   status = 301
 
 [[redirects]]
   from = "/services/distribution"
-  to = "/services#section-distribution"
+  to = "/#section-distribution"
   status = 301
 
 [[redirects]]
   from = "/services/petrochimie"
-  to = "/services#section-petrochimie"
+  to = "/#section-petrochimie"
   status = 301
 
 [[redirects]]
   from = "/services/digital"
-  to = "/services#section-digital"
+  to = "/#section-digital"
   status = 301
 
 [[redirects]]
   from = "/services/ics"
-  to = "/services#section-ics-security"
+  to = "/#section-ics-security"
   status = 301
 
 [[redirects]]
   from = "/services/cybersecurite"
-  to = "/services#section-ics-security"
+  to = "/#section-ics-security"
   status = 301
 
 [[redirects]]
   from = "/services/securite"
-  to = "/services#section-physical-security"
+  to = "/#section-physical-security"
   status = 301
 
 [[redirects]]
   from = "/services/solaire"
-  to = "/services#section-energies"
+  to = "/#section-energies"
   status = 301
 
 [[redirects]]
   from = "/services/esg"
-  to = "/services#section-esg"
+  to = "/#section-esg"
   status = 301
 
 # Clean URL rewrites (optionnel — .html masqué)

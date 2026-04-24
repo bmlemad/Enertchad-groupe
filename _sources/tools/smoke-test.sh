@@ -43,7 +43,8 @@ echo "╚═══════════════════════�
 echo ""
 
 echo "━━━ [1/5] Pages principales (attendu 200) ━━━"
-for p in / /groupe /services /investisseurs /durabilite /talents /actualites \
+# Note : /services retiré de la liste — désormais redirect vers / (monopage v1.2.0)
+for p in / /groupe /investisseurs /durabilite /talents /actualites \
          /contact /maps /newsletter /dashboard /dashboard-executif \
          /operations/amont /operations/intermediaire /operations/aval /operations/services \
          /energies/ /technologies/ /confidentialite /mentions-legales /cookies; do
@@ -51,7 +52,8 @@ for p in / /groupe /services /investisseurs /durabilite /talents /actualites \
 done
 echo ""
 
-echo "━━━ [2/5] Clean URLs services (attendu 301) ━━━"
+echo "━━━ [2/5] Clean URLs services + /services → / (attendu 301 · monopage v1.2.0) ━━━"
+check_status "/services" 301
 for p in /services/ep /services/eor /services/pipeline /services/distribution \
          /services/petrochimie /services/digital /services/ics /services/cybersecurite \
          /services/securite /services/solaire /services/esg \
@@ -70,11 +72,16 @@ for p in /_sources/ /_sources/tools/sync-services.py /_sources/enerfrica-deck/bu
 done
 echo ""
 
-echo "━━━ [4/5] Contenu services.html (v1.2.0 anchors) ━━━"
+echo "━━━ [4/5] Contenu monopage / (10 services + 5 sections v1.2.0) ━━━"
+# Anchors des 10 services (désormais sur /)
 for anchor in section-ep section-eor section-pipeline section-distribution \
               section-petrochimie section-digital section-ics-security \
               section-physical-security section-energies section-esg; do
-  check_contains "/services" "id=\"$anchor\"" "Anchor $anchor"
+  check_contains "/" "id=\"$anchor\"" "Service anchor $anchor"
+done
+# Anchors des 5 sections monopage
+for anchor in services-catalogue durabilite-inline partenaires talents-academy contact-form; do
+  check_contains "/" "id=\"$anchor\"" "Monopage section $anchor"
 done
 echo ""
 
@@ -97,8 +104,9 @@ else
 fi
 
 check_contains "/" "Unité · Innovation · Durabilité" "Slogan homepage"
-check_contains "/contact" "wa.me/23599298696" "WhatsApp Business dans contact"
-check_contains "/services" "\"numberOfItems\":10" "JSON-LD 10 services"
+check_contains "/" "wa.me/23599298696" "WhatsApp Business dans monopage"
+check_contains "/" "id=\"contact-form\"" "Form contact inline monopage"
+check_contains "/" "data-scrollspy" "Nav scroll-spy activée"
 
 echo ""
 echo "╔════════════════════════════════════════════════════════════════╗"
