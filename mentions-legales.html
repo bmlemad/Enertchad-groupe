@@ -24,6 +24,7 @@
 <link rel="preload" href="/assets/fonts/Inter-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/assets/fonts/SpaceGrotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="assets/css/main.css" />
+<link rel="stylesheet" href="assets/css/monopage.css" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23D9A84F'/%3E%3Ctext x='16' y='22' font-family='Space Grotesk, sans-serif' font-weight='700' font-size='16' text-anchor='middle' fill='%23080E1A'%3EE%3C/text%3E%3C/svg%3E" />
   <link rel="manifest" href="manifest.json" />
   <script>if('serviceWorker' in navigator){window.addEventListener('load',()=>{navigator.serviceWorker.register('/sw.js').catch(()=>{});});}</script>
@@ -110,10 +111,10 @@
   <nav aria-label="Navigation principale" class="nav" data-nav>
     <div class="nav-inner">
       <a href="/" class="brand" aria-label="EnerTchad Groupe — Accueil">
-        <span class="brand-mark" aria-hidden="true">E</span>
+        <span class="brand-mark" aria-hidden="true">E<span class="brand-pulse" aria-hidden="true"></span></span>
         <span class="brand-lockup">
           <span class="brand-name">Ener<span class="accent">Tchad</span></span>
-          <span class="brand-sub">Groupe · SA/CA</span>
+          <span class="brand-sub">Groupe <span class="brand-sep">·</span> <em>Souveraineté énergétique</em></span>
         </span>
       </a>
       <div class="nav-links" id="navLinks">
@@ -263,7 +264,7 @@
             <span class="brand-mark">E</span>
             <span class="brand-lockup">
               <span class="brand-name">Ener<span class="accent">Tchad</span></span>
-              <span class="brand-sub">Groupe · SA/CA</span>
+              <span class="brand-sub">Groupe <span class="brand-sep">·</span> <em>Souveraineté énergétique</em></span>
             </span>
           </a>
           <p class="foot-brand-lead">Conglomérat énergétique intégré du Tchad — Amont, Intermédiaire, Aval, Services, Énergies renouvelables et Technologies. Opérateur de la souveraineté énergétique nationale.</p>
