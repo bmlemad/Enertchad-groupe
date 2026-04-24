@@ -1898,10 +1898,9 @@ footer .foot-bottom .legal a:hover { color: var(--gold); }
   flex: 1;
   justify-content: center;
 }
-.nav-links > a,
-.nav-links > a:hover,
-.nav-drop-trigger:hover,
 .nav-cta { display: flex; align-items: center; gap: 12px; }
+/* v1.2.1 · règle `.nav-links > a` retirée — orpheline après cleanup c3eb1c2,
+   cassait le flow inline des liens nav avec display:flex incorrect. */
 .btn-sm { padding: 9px 16px; font-size: .85rem; }
 .nav-cta-btn { white-space: nowrap; }
 
