@@ -32,6 +32,9 @@ MARKER_END = "<!-- ═══ MONOPAGE v1.2.0 AUTO-GEN END ═══ -->"
 NAV_BEGIN = "<!-- ═══ MONOPAGE NAV-LINKS AUTO-GEN BEGIN ═══ -->"
 NAV_END = "<!-- ═══ MONOPAGE NAV-LINKS AUTO-GEN END ═══ -->"
 
+MM_BEGIN = "<!-- ═══ MEGA-MENU v2 AUTO-GEN BEGIN ═══ -->"
+MM_END = "<!-- ═══ MEGA-MENU v2 AUTO-GEN END ═══ -->"
+
 
 def esc(s):
     """HTML-escape a string value, handling None gracefully."""
@@ -399,13 +402,17 @@ __OPTIONS_PLACEHOLDER__
 
 # ─────────────────────────────────────────────────────────────────────
 # NAV LINKS (scroll-spy anchors, injected between markers)
+# Note : "Services" n'est pas un scroll-spy ici — il déclenche le mega-menu.
 # ─────────────────────────────────────────────────────────────────────
 def build_nav_links():
     return f'''
         {NAV_BEGIN}
         <a href="#hero" data-scrollspy>Accueil</a>
         <a href="#operations" data-scrollspy>Les 6 pôles</a>
-        <a href="#services-catalogue" data-scrollspy>Services</a>
+        <button type="button" class="mm-trigger" data-mm-trigger aria-expanded="false" aria-controls="mega-menu-panel" aria-haspopup="true">
+          Services
+          <svg class="mm-chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
         <a href="#carte" data-scrollspy>Cartographie</a>
         <a href="#durabilite-inline" data-scrollspy>Durabilité</a>
         <a href="#talents-academy" data-scrollspy>EnerAcademy</a>
@@ -413,6 +420,202 @@ def build_nav_links():
         <a href="#actualites-preview" data-scrollspy>Actualités</a>
         <a href="#contact-form" data-scrollspy>Contact</a>
         {NAV_END}
+'''
+
+
+# ─────────────────────────────────────────────────────────────────────
+# MEGA-MENU v2 (premium, data-driven from DATA_MASTER.yml)
+# ─────────────────────────────────────────────────────────────────────
+def build_mega_menu(d):
+    services = d.get("services_catalog", [])
+    groups = d.get("services_groups", [])
+
+    # Group → service cards rendering
+    group_columns = []
+    for g in groups:
+        gid = g["id"]
+        nom = g.get("nom", "")
+        accent = g.get("accent_hex", "#D9A84F")
+        items = g.get("items", [])
+        services_in_group = [s for s in services if s["id"] in items]
+        n = len(services_in_group)
+
+        rows = []
+        for s in services_in_group:
+            sid = s["id"]
+            numero = s.get("numero", "")
+            nom_svc = s.get("nom", "")
+            nom_court = s.get("nom_court", nom_svc)
+            resume = s.get("resume", "")
+            anchor = s.get("anchor", f"section-{sid}")
+            svc_accent = s.get("accent_hex", accent)
+            # data-search keywords = id + nom_court + sous_services joined
+            keywords = " ".join([sid, nom_court] + [str(x) for x in (s.get("sous_services") or [])]).lower()
+            rows.append(f'''
+          <a href="#{esc(anchor)}" class="mm-item" data-mm-item data-search="{esc(keywords)}" style="--svc-accent: {esc(svc_accent)};">
+            <div class="mm-item-num">{esc(numero)}</div>
+            <div class="mm-item-body">
+              <div class="mm-item-title">{esc(nom_court)}</div>
+              <p class="mm-item-sub">{esc(resume)}</p>
+            </div>
+          </a>''')
+
+        group_columns.append(f'''
+        <div class="mm-group" style="--group-accent: {esc(accent)};">
+          <div class="mm-group-head">{esc(nom.split(" (")[0])}<span class="mm-group-count"> · {n}</span></div>
+          <div class="mm-group-items">{"".join(rows)}
+          </div>
+        </div>''')
+
+    # Feature panel — KPI stats + CTAs
+    feature = '''
+        <aside class="mm-feature" aria-label="Performance Groupe 2026">
+          <div class="mm-feature-eyebrow">Groupe 2026</div>
+          <h3 class="mm-feature-title">10 services harmonisés, <em>une chaîne intégrée</em>.</h3>
+          <div class="mm-stats">
+            <div class="mm-stat"><strong>144<span class="mm-stat-unit">kb/j</span></strong><span>Production Amont</span></div>
+            <div class="mm-stat"><strong>125<span class="mm-stat-unit">MW</span></strong><span>Énergies installées</span></div>
+            <div class="mm-stat"><strong>45<span class="mm-stat-unit"></span></strong><span>Stations-service</span></div>
+            <div class="mm-stat"><strong>500<span class="mm-stat-unit">+/an</span></strong><span>Formés EnerAcademy</span></div>
+          </div>
+          <div class="mm-feature-ctas">
+            <a href="#services-catalogue" class="mm-feature-cta is-primary" data-mm-close>
+              Voir les 10 services <span class="arrow" aria-hidden="true">→</span>
+            </a>
+            <a href="#contact-form" class="mm-feature-cta" data-mm-close>
+              Demander un devis <span class="arrow" aria-hidden="true">→</span>
+            </a>
+          </div>
+        </aside>'''
+
+    return f'''
+{MM_BEGIN}
+<!-- Backdrop -->
+<div class="mm-backdrop" data-mm-backdrop hidden></div>
+
+<!-- Mega-menu panel -->
+<div id="mega-menu-panel" class="mm-panel" role="dialog" aria-modal="false" aria-label="Catalogue des 10 services EnerTchad" data-mm-panel hidden>
+  <div class="mm-inner">
+    <div class="mm-search">
+      <div class="mm-search-wrap">
+        <svg class="mm-search-icon" viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><circle cx="9" cy="9" r="6" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M17 17l-3.5-3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"/></svg>
+        <input type="search" class="mm-search-input" data-mm-search placeholder="Rechercher un service, une technologie…" aria-label="Rechercher dans les services" autocomplete="off" />
+        <kbd class="mm-search-kbd" aria-hidden="true">⌘ K</kbd>
+      </div>
+    </div>
+    <div class="mm-body">
+      {"".join(group_columns)}
+      {feature}
+      <div class="mm-empty" data-mm-empty>
+        Aucun service ne correspond. Essayez <em>pipeline</em>, <em>SCADA</em>, <em>solaire</em>…
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Mega-menu behavior (open/close + search + keyboard) -->
+<script>
+(function(){{
+  var trigger = document.querySelector('[data-mm-trigger]');
+  var panel = document.querySelector('[data-mm-panel]');
+  var backdrop = document.querySelector('[data-mm-backdrop]');
+  var search = document.querySelector('[data-mm-search]');
+  var items = document.querySelectorAll('[data-mm-item]');
+  var emptyEl = document.querySelector('[data-mm-empty]');
+  var closers = document.querySelectorAll('[data-mm-close]');
+  if (!trigger || !panel) return;
+
+  function positionPanel(){{
+    var header = document.querySelector('.site-header');
+    var top = header ? header.getBoundingClientRect().bottom : 70;
+    panel.style.top = top + 'px';
+    backdrop.style.top = top + 'px';
+  }}
+
+  function openMenu(){{
+    positionPanel();
+    panel.hidden = false;
+    backdrop.hidden = false;
+    requestAnimationFrame(function(){{
+      panel.classList.add('is-open');
+      backdrop.classList.add('is-open');
+    }});
+    trigger.setAttribute('aria-expanded', 'true');
+    setTimeout(function(){{ if (search) search.focus(); }}, 150);
+    document.body.style.overflow = 'hidden';
+  }}
+  function closeMenu(){{
+    panel.classList.remove('is-open');
+    backdrop.classList.remove('is-open');
+    trigger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+    setTimeout(function(){{
+      panel.hidden = true;
+      backdrop.hidden = true;
+      if (search) search.value = '';
+      items.forEach(function(it){{ it.classList.remove('mm-dim'); }});
+      if (emptyEl) emptyEl.classList.remove('is-on');
+    }}, 250);
+  }}
+  function toggleMenu(){{
+    if (panel.classList.contains('is-open')) closeMenu();
+    else openMenu();
+  }}
+
+  trigger.addEventListener('click', function(e){{ e.preventDefault(); toggleMenu(); }});
+  backdrop.addEventListener('click', closeMenu);
+  closers.forEach(function(el){{ el.addEventListener('click', function(){{ setTimeout(closeMenu, 50); }}); }});
+
+  // Close on Escape
+  document.addEventListener('keydown', function(e){{
+    if (e.key === 'Escape' && panel.classList.contains('is-open')){{
+      closeMenu();
+      trigger.focus();
+    }}
+    // ⌘K / Ctrl+K to open and focus search
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k'){{
+      e.preventDefault();
+      if (!panel.classList.contains('is-open')) openMenu();
+      else if (search) search.focus();
+    }}
+  }});
+
+  // Close when anchor clicked (anchor navigation)
+  items.forEach(function(it){{
+    it.addEventListener('click', function(){{ setTimeout(closeMenu, 50); }});
+  }});
+
+  // Live search filter
+  if (search){{
+    search.addEventListener('input', function(){{
+      var q = search.value.toLowerCase().trim();
+      var matches = 0;
+      items.forEach(function(it){{
+        var keywords = it.getAttribute('data-search') || '';
+        var match = !q || keywords.indexOf(q) !== -1;
+        it.classList.toggle('mm-dim', !match);
+        if (match) matches++;
+      }});
+      if (emptyEl) emptyEl.classList.toggle('is-on', matches === 0 && q.length > 0);
+    }});
+  }}
+
+  // Reposition on resize
+  window.addEventListener('resize', function(){{
+    if (panel.classList.contains('is-open')) positionPanel();
+  }}, {{ passive: true }});
+
+  // Close on scroll (avoid panel floating awkwardly)
+  var lastY = window.scrollY;
+  window.addEventListener('scroll', function(){{
+    if (panel.classList.contains('is-open') && Math.abs(window.scrollY - lastY) > 50){{
+      closeMenu();
+    }}
+    lastY = window.scrollY;
+  }}, {{ passive: true }});
+}})();
+</script>
+{MM_END}
 '''
 
 
@@ -464,7 +667,7 @@ def inject(html_text, d):
                 1,
             )
 
-    # 5. Add CSS link for monopage styles (if not present)
+    # 5. Add CSS links for monopage + mega-menu styles (if not present)
     css_link = '<link rel="stylesheet" href="assets/css/monopage.css" />'
     if css_link not in html_text:
         html_text = html_text.replace(
@@ -472,6 +675,27 @@ def inject(html_text, d):
             '<link rel="stylesheet" href="assets/css/main.css" />\n' + css_link,
             1,
         )
+
+    mm_css_link = '<link rel="stylesheet" href="assets/css/mega-menu.css" />'
+    if mm_css_link not in html_text:
+        html_text = html_text.replace(
+            css_link,
+            css_link + "\n" + mm_css_link,
+            1,
+        )
+
+    # 6. Inject mega-menu panel right after </header> (and strip any previous)
+    mm_block = build_mega_menu(d)
+    mm_pattern = re.compile(
+        re.escape(MM_BEGIN) + r".*?" + re.escape(MM_END),
+        re.DOTALL,
+    )
+    html_text = mm_pattern.sub("", html_text)
+    html_text = html_text.replace(
+        "</header>",
+        "</header>\n" + mm_block.strip(),
+        1,
+    )
 
     # 6. Ensure hero has id="hero" for nav anchor
     if 'class="hero"' in html_text and 'id="hero"' not in html_text:

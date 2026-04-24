@@ -25,6 +25,7 @@
 <link rel="preload" href="/assets/fonts/SpaceGrotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="stylesheet" href="assets/css/main.css" />
 <link rel="stylesheet" href="assets/css/monopage.css" />
+<link rel="stylesheet" href="assets/css/mega-menu.css" />
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23D9A84F'/%3E%3Ctext x='16' y='22' font-family='Space Grotesk, sans-serif' font-weight='700' font-size='16' text-anchor='middle' fill='%23080E1A'%3EE%3C/text%3E%3C/svg%3E" />
   <link rel="manifest" href="manifest.json" />
   <script>if('serviceWorker' in navigator){window.addEventListener('load',()=>{navigator.serviceWorker.register('/sw.js').catch(()=>{});});}</script>
@@ -109,18 +110,20 @@
         </span>
       </a>
       <div class="nav-links" id="navLinks">
-        <!-- ═══ MONOPAGE NAV-LINKS v1.2.0 — 9 scroll-spy anchors only ═══ -->
+        <!-- ═══ MONOPAGE NAV-LINKS AUTO-GEN BEGIN ═══ -->
         <a href="#hero" data-scrollspy>Accueil</a>
         <a href="#operations" data-scrollspy>Les 6 pôles</a>
-        <a href="#services-catalogue" data-scrollspy>Services</a>
+        <button type="button" class="mm-trigger" data-mm-trigger aria-expanded="false" aria-controls="mega-menu-panel" aria-haspopup="true">
+          Services
+          <svg class="mm-chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
         <a href="#carte" data-scrollspy>Cartographie</a>
         <a href="#durabilite-inline" data-scrollspy>Durabilité</a>
         <a href="#talents-academy" data-scrollspy>EnerAcademy</a>
         <a href="#partenaires" data-scrollspy>Partenaires</a>
         <a href="#actualites-preview" data-scrollspy>Actualités</a>
         <a href="#contact-form" data-scrollspy>Contact</a>
-        <!-- ═══ END MONOPAGE NAV-LINKS ═══ -->
-
+        <!-- ═══ MONOPAGE NAV-LINKS AUTO-GEN END ═══ -->
       </div>
       <div class="nav-cta">
         <a href="#contact-form" class="btn btn-primary btn-sm nav-cta-btn" data-scrollspy>Investir avec nous <span class="arrow" aria-hidden="true">→</span></a>
@@ -133,6 +136,242 @@
   </nav>
 </div>
 </header>
+<!-- ═══ MEGA-MENU v2 AUTO-GEN BEGIN ═══ -->
+<!-- Backdrop -->
+<div class="mm-backdrop" data-mm-backdrop hidden></div>
+
+<!-- Mega-menu panel -->
+<div id="mega-menu-panel" class="mm-panel" role="dialog" aria-modal="false" aria-label="Catalogue des 10 services EnerTchad" data-mm-panel hidden>
+  <div class="mm-inner">
+    <div class="mm-search">
+      <div class="mm-search-wrap">
+        <svg class="mm-search-icon" viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><circle cx="9" cy="9" r="6" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M17 17l-3.5-3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"/></svg>
+        <input type="search" class="mm-search-input" data-mm-search placeholder="Rechercher un service, une technologie…" aria-label="Rechercher dans les services" autocomplete="off" />
+        <kbd class="mm-search-kbd" aria-hidden="true">⌘ K</kbd>
+      </div>
+    </div>
+    <div class="mm-body">
+      
+        <div class="mm-group" style="--group-accent: #C48848;">
+          <div class="mm-group-head">Services pétroliers<span class="mm-group-count"> · 5</span></div>
+          <div class="mm-group-items">
+          <a href="#section-ep" class="mm-item" data-mm-item data-search="ep e&amp;p géosciences &amp; réservoir forage &amp; complétions tests de puits &amp; mise en production optimisation des débits" style="--svc-accent: #1E3A8A;">
+            <div class="mm-item-num">01</div>
+            <div class="mm-item-body">
+              <div class="mm-item-title">E&amp;P</div>
+              <p class="mm-item-sub">Services d&#x27;exploration, d&#x27;analyse et de mise en production des ressources pétrolières du Tchad.</p>
+            </div>
+          </a>
+          <a href="#section-eor" class="mm-item" data-mm-item data-search="eor eor solutions eor (polymères, surfactants, gels) programmes d&#x27;injection &amp; stimulation diagnostic réservoir boues de forage &amp; additifs spécialisés" style="--svc-accent: #C2410C;">
+            <div class="mm-item-num">02</div>
+            <div class="mm-item-body">
+              <div class="mm-item-title">EOR</div>
+              <p class="mm-item-sub">Solutions avancées pour maximiser la récupération des champs matures.</p>
+            </div>
+          </a>
+          <a href="#section-pipeline" class="mm-item" data-mm-item data-search="pipeline pipeline transport brut &amp; dispatching comptage fiscal inspection ili &amp; pigging intégrité pipeline (api 1160) stockage &amp; terminaux pétroliers" style="--svc-accent: #15803D;">
+            <div class="mm-item-num">03</div>
+            <div class="mm-item-body">
+              <div class="mm-item-title">Pipeline</div>
+              <p class="mm-item-sub">Transport, intégrité et supervision du pipeline Doba–Kribi et des infrastructures associées.</p>
+            </div>
+          </a>
+          <a href="#section-distribution" class="mm-item" data-mm-item data-search="distribution distribution stations-service enertchad mobile station™ (s / m / l) livraison carburants &amp; solutions flottes cartes carburant intelligentes" style="--svc-accent: #CA8A04;">
+            <div class="mm-item-num">04</div>
+            <div class="mm-item-body">
+              <div class="mm-item-title">Distribution</div>
+              <p class="mm-item-sub">Solutions de distribution pétrolière modernes pour entreprises, flottes et grand public.</p>
+            </div>
+          </a>
+          <a href="#section-petrochimie" class="mm-item" data-mm-item data-search="petrochimie pétrochimie polymères (pe, pp, pvc) bitume &amp; pmb engrais (urée, ammoniac, npk) méthanol &amp; dérivés" style="--svc-accent: #78350F;">
+            <div class="mm-item-num">05</div>
+            <div class="mm-item-body">
+              <div class="mm-item-title">Pétrochimie</div>
+              <p class="mm-item-sub">Production et transformation de produits pétrochimiques stratégiques.</p>
+            </div>
+          </a>
+          </div>
+        </div>
+        <div class="mm-group" style="--group-accent: #8B5CF6;">
+          <div class="mm-group-head">Technologies avancées<span class="mm-group-count"> · 3</span></div>
+          <div class="mm-group-items">
+          <a href="#section-digital" class="mm-item" data-mm-item data-search="digital digital scada pipeline / champs / stations iot industriel (pression, corrosion, gaz) drones &amp; robots industriels digital twins (pipeline, champs, pétrochimie) ia &amp; data analytics" style="--svc-accent: #1D4ED8;">
+            <div class="mm-item-num">06</div>
+            <div class="mm-item-body">
+              <div class="mm-item-title">Digital</div>
+              <p class="mm-item-sub">Technologies avancées dédiées à la performance et à la sécurité des opérations pétrolières.</p>
+            </div>
+          </a>
+          <a href="#section-ics-security" class="mm-item" data-mm-item data-search="ics-security ics security iec 62443 &amp; nist ics monitoring ot &amp; pare-feu industriels gestion des accès privilégiés (pam) plans de reprise &amp; résilience" style="--svc-accent: #6B21A8;">
+            <div class="mm-item-num">07</div>
+            <div class="mm-item-body">
+              <div class="mm-item-title">ICS Security</div>
+              <p class="mm-item-sub">Protection des systèmes industriels critiques d&#x27;EnerTchad.</p>
+            </div>
+          </a>
+          <a href="#section-physical-security" class="mm-item" data-mm-item data-search="physical-security sécurité physique caméras 4k/8k &amp; thermiques caméras ia &amp; ptz 360° contrôle d&#x27;accès biométrique capteurs périmétriques &amp; anti-intrusion drones de sécurité" style="--svc-accent: #7C2D12;">
+            <div class="mm-item-num">08</div>
+            <div class="mm-item-body">
+              <div class="mm-item-title">Sécurité Physique</div>
+              <p class="mm-item-sub">Sécurisation avancée des sites pétroliers et infrastructures critiques.</p>
+            </div>
+          </a>
+          </div>
+        </div>
+        <div class="mm-group" style="--group-accent: #10B981;">
+          <div class="mm-group-head">Énergies nouvelles<span class="mm-group-count"> · 1</span></div>
+          <div class="mm-group-items">
+          <a href="#section-energies" class="mm-item" data-mm-item data-search="renewables énergies nouvelles solaire industriel (stations, pipeline, scada) hybridation mobile station™ mini-grids pour sites isolés efficacité énergétique &amp; réduction co₂" style="--svc-accent: #047857;">
+            <div class="mm-item-num">09</div>
+            <div class="mm-item-body">
+              <div class="mm-item-title">Énergies Nouvelles</div>
+              <p class="mm-item-sub">Solutions énergétiques pour réduire les coûts et renforcer la fiabilité des opérations pétrolières.</p>
+            </div>
+          </a>
+          </div>
+        </div>
+        <div class="mm-group" style="--group-accent: #B45309;">
+          <div class="mm-group-head">ESG, Formation &amp; Gouvernance<span class="mm-group-count"> · 1</span></div>
+          <div class="mm-group-items">
+          <a href="#section-esg" class="mm-item" data-mm-item data-search="esg esg reporting esg &amp; durabilité suivi environnemental par drones eneracademy (formations oil &amp; gas) conformité ohada &amp; anticorruption" style="--svc-accent: #B45309;">
+            <div class="mm-item-num">10</div>
+            <div class="mm-item-body">
+              <div class="mm-item-title">ESG</div>
+              <p class="mm-item-sub">Standards internationaux pour crédibiliser EnerTchad auprès des investisseurs.</p>
+            </div>
+          </a>
+          </div>
+        </div>
+      
+        <aside class="mm-feature" aria-label="Performance Groupe 2026">
+          <div class="mm-feature-eyebrow">Groupe 2026</div>
+          <h3 class="mm-feature-title">10 services harmonisés, <em>une chaîne intégrée</em>.</h3>
+          <div class="mm-stats">
+            <div class="mm-stat"><strong>144<span class="mm-stat-unit">kb/j</span></strong><span>Production Amont</span></div>
+            <div class="mm-stat"><strong>125<span class="mm-stat-unit">MW</span></strong><span>Énergies installées</span></div>
+            <div class="mm-stat"><strong>45<span class="mm-stat-unit"></span></strong><span>Stations-service</span></div>
+            <div class="mm-stat"><strong>500<span class="mm-stat-unit">+/an</span></strong><span>Formés EnerAcademy</span></div>
+          </div>
+          <div class="mm-feature-ctas">
+            <a href="#services-catalogue" class="mm-feature-cta is-primary" data-mm-close>
+              Voir les 10 services <span class="arrow" aria-hidden="true">→</span>
+            </a>
+            <a href="#contact-form" class="mm-feature-cta" data-mm-close>
+              Demander un devis <span class="arrow" aria-hidden="true">→</span>
+            </a>
+          </div>
+        </aside>
+      <div class="mm-empty" data-mm-empty>
+        Aucun service ne correspond. Essayez <em>pipeline</em>, <em>SCADA</em>, <em>solaire</em>…
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Mega-menu behavior (open/close + search + keyboard) -->
+<script>
+(function(){
+  var trigger = document.querySelector('[data-mm-trigger]');
+  var panel = document.querySelector('[data-mm-panel]');
+  var backdrop = document.querySelector('[data-mm-backdrop]');
+  var search = document.querySelector('[data-mm-search]');
+  var items = document.querySelectorAll('[data-mm-item]');
+  var emptyEl = document.querySelector('[data-mm-empty]');
+  var closers = document.querySelectorAll('[data-mm-close]');
+  if (!trigger || !panel) return;
+
+  function positionPanel(){
+    var header = document.querySelector('.site-header');
+    var top = header ? header.getBoundingClientRect().bottom : 70;
+    panel.style.top = top + 'px';
+    backdrop.style.top = top + 'px';
+  }
+
+  function openMenu(){
+    positionPanel();
+    panel.hidden = false;
+    backdrop.hidden = false;
+    requestAnimationFrame(function(){
+      panel.classList.add('is-open');
+      backdrop.classList.add('is-open');
+    });
+    trigger.setAttribute('aria-expanded', 'true');
+    setTimeout(function(){ if (search) search.focus(); }, 150);
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMenu(){
+    panel.classList.remove('is-open');
+    backdrop.classList.remove('is-open');
+    trigger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+    setTimeout(function(){
+      panel.hidden = true;
+      backdrop.hidden = true;
+      if (search) search.value = '';
+      items.forEach(function(it){ it.classList.remove('mm-dim'); });
+      if (emptyEl) emptyEl.classList.remove('is-on');
+    }, 250);
+  }
+  function toggleMenu(){
+    if (panel.classList.contains('is-open')) closeMenu();
+    else openMenu();
+  }
+
+  trigger.addEventListener('click', function(e){ e.preventDefault(); toggleMenu(); });
+  backdrop.addEventListener('click', closeMenu);
+  closers.forEach(function(el){ el.addEventListener('click', function(){ setTimeout(closeMenu, 50); }); });
+
+  // Close on Escape
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && panel.classList.contains('is-open')){
+      closeMenu();
+      trigger.focus();
+    }
+    // ⌘K / Ctrl+K to open and focus search
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k'){
+      e.preventDefault();
+      if (!panel.classList.contains('is-open')) openMenu();
+      else if (search) search.focus();
+    }
+  });
+
+  // Close when anchor clicked (anchor navigation)
+  items.forEach(function(it){
+    it.addEventListener('click', function(){ setTimeout(closeMenu, 50); });
+  });
+
+  // Live search filter
+  if (search){
+    search.addEventListener('input', function(){
+      var q = search.value.toLowerCase().trim();
+      var matches = 0;
+      items.forEach(function(it){
+        var keywords = it.getAttribute('data-search') || '';
+        var match = !q || keywords.indexOf(q) !== -1;
+        it.classList.toggle('mm-dim', !match);
+        if (match) matches++;
+      });
+      if (emptyEl) emptyEl.classList.toggle('is-on', matches === 0 && q.length > 0);
+    });
+  }
+
+  // Reposition on resize
+  window.addEventListener('resize', function(){
+    if (panel.classList.contains('is-open')) positionPanel();
+  }, { passive: true });
+
+  // Close on scroll (avoid panel floating awkwardly)
+  var lastY = window.scrollY;
+  window.addEventListener('scroll', function(){
+    if (panel.classList.contains('is-open') && Math.abs(window.scrollY - lastY) > 50){
+      closeMenu();
+    }
+    lastY = window.scrollY;
+  }, { passive: true });
+})();
+</script>
+<!-- ═══ MEGA-MENU v2 AUTO-GEN END ═══ -->
+
 <!-- ============================= MAIN ============================= -->
 <main id="main-content" tabindex="-1">
 
@@ -507,6 +746,10 @@
     </div>
   </div>
 </section>
+
+
+
+
 
 
 
