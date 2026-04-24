@@ -65,32 +65,40 @@
 }
 
 /* ═══ v1.2.2 · Ultra premium kicker avec dot gold animé ═══ */
-.mp-section .kicker {
+/* Applied to any .kicker that contains a .kicker-dot — works on both
+   .mp-section inline sections AND the hardcoded sections in index.html */
+.kicker:has(.kicker-dot) {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding-left: 0;  /* override default kicker 42px padding */
+  padding-left: 0;  /* override default 42px padding when dot present */
 }
-.mp-section .kicker::before {
-  display: none;  /* remove default horizontal bar */
+.kicker:has(.kicker-dot)::before {
+  display: none;
 }
-.mp-section .kicker-dot {
+.kicker-dot {
   display: inline-block;
   width: 7px;
   height: 7px;
   border-radius: 50%;
   background: #D9A84F;
   box-shadow: 0 0 0 3px rgba(217, 168, 79, 0.18);
-  font-size: 0;  /* hide the actual character */
+  font-size: 0;
   flex-shrink: 0;
   animation: kicker-pulse 2.4s cubic-bezier(.4, 0, .2, 1) infinite;
+}
+/* Dark sections : dot becomes slightly brighter gold */
+.dark .kicker-dot,
+.cta-band .kicker-dot {
+  background: #E8C36A;
+  box-shadow: 0 0 0 3px rgba(232, 195, 106, 0.22);
 }
 @keyframes kicker-pulse {
   0%, 100% { box-shadow: 0 0 0 3px rgba(217, 168, 79, 0.18); }
   50%      { box-shadow: 0 0 0 5px rgba(217, 168, 79, 0.08); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .mp-section .kicker-dot { animation: none; }
+  .kicker-dot { animation: none; }
 }
 
 /* Premium section-head : generous spacing + editorial typography */
