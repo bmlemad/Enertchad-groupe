@@ -282,11 +282,20 @@ def build_contact_section(d):
         f'            <option value="{esc(r["slug"])}" data-service="{esc(r.get("service_id", ""))}">{esc(r.get("libelle_formulaire", ""))}</option>'
         for r in cta_routes
     )
+    # Anchor aliases — route slugs used as hash targets by service CTAs
+    # (e.g. href="#etude-reservoir"). Browser scrolls to these empty anchors,
+    # then the pre-fill JS sets the select + scrolls to the form proper.
+    anchor_aliases = "\n".join(
+        f'    <span id="{esc(r["slug"])}" class="cf-anchor-alias" aria-hidden="true"></span>'
+        for r in cta_routes
+    )
 
     # Build the HTML/JS block WITHOUT f-string to avoid brace-escaping mess
     # (JS has literal { and } which would need to be doubled inside an f-string).
     html_block = '''
 <!-- ============================= CONTACT FORM INLINE ============================= -->
+<!-- Anchor aliases for service CTA hash targets (etude-reservoir, eor, etc.) -->
+__ANCHOR_ALIASES__
 <section id="contact-form" class="mp-section mp-contact" aria-labelledby="contact-form-title">
   <div class="container">
     <div class="section-head reveal">
@@ -397,7 +406,7 @@ __OPTIONS_PLACEHOLDER__
   applyHash();
 })();
 </script>'''
-    return html_block.replace("__OPTIONS_PLACEHOLDER__", options)
+    return html_block.replace("__OPTIONS_PLACEHOLDER__", options).replace("__ANCHOR_ALIASES__", anchor_aliases)
 
 
 # ─────────────────────────────────────────────────────────────────────

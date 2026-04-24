@@ -20,6 +20,17 @@
   border-top: 1px solid var(--hairline-dark, rgba(8, 14, 26, 0.08));
 }
 
+/* ═══ v1.2.3 · Contact form anchor aliases (route slugs) ═══ */
+/* Empty invisible spans positioned just above #contact-form.
+   When user clicks a service CTA like href="#etude-reservoir",
+   browser scrolls here; then JS pre-fills the select + scrolls to form. */
+.cf-anchor-alias {
+  display: block;
+  height: 0;
+  visibility: hidden;
+  scroll-margin-top: 100px;  /* header offset */
+}
+
 /* ═══ v1.2.3 · Hero H1 premium + stats row ═══ */
 .hero h1 {
   font-family: var(--font-display, "Space Grotesk");
