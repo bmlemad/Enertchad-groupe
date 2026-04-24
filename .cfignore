@@ -1,21 +1,57 @@
-# Cloudflare Pages upload ignore — généré pour deploy v1.6.1
-# Docs / admin — pas servis
+# =============================================================================
+# Cloudflare Pages — fichiers à EXCLURE du deploy
+# Version : v1.2.0 post-merge (2026-04-24)
+# =============================================================================
+#
+# NOTE : Cloudflare Pages Git integration ne lit PAS toujours .cfignore.
+# Le fichier `build-cf.sh` est la source de vérité pour l'exclusion — voir
+# la commande "Build command" dans CF Pages settings.
+# =============================================================================
+
+# Git internals
 .git
 .github
 .gitignore
 .wrangler
-.perf-budget.md
-.DS_Store
-CLOUDFLARE_SETUP.md
-DESIGN_SYSTEM.md
-MASTER_ACTIONS_TRACKER.md
+
+# Ignore files (inutiles en prod)
+.cfignore
+.netlifyignore
+.vercelignore
+
+# Docs projet (jamais servis)
 README.md
 DATA_MASTER.yml
-.cfignore
+AUDIT_TECHNIQUE_2026-04-22.md
+CLOUDFLARE_SETUP.md
+DESIGN_SYSTEM.md
+DOMAIN_SETUP.md
+MASTER_ACTIONS_TRACKER.md
+ANALYSE_INCOHERENCES.md
+.perf-budget.md
+
+# Sources internes (jamais servis)
+_sources/
+dashboard-src/
+scripts/
+poles/
+
+# Config deploy (non servis)
 wrangler.toml
-# Dashboard sources (non-dist)
-dashboard-src
+netlify.toml
+vercel.json
+
+# OS cruft
+.DS_Store
+Thumbs.db
+.~lock.*
+
 # Backups / scratch
 *.bak
 *.tmp
 *~
+*.bundle
+
+# Node
+node_modules/
+package-lock.json
