@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
-Disallow: /admin/
-Disallow: /api/
+Disallow: /_sources/
+Disallow: /backups/
 
 Sitemap: https://www.enertchad.td/sitemap.xml

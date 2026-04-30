@@ -1,187 +1,97 @@
-# EnerTchad Groupe — Site corporate ultra-premium
+# EnerTchad Groupe SA/CA — Site v2.0 (rebuild)
 
-Prototype HTML/CSS/JS 100 % statique — **12 pages, 0 dépendance build**, prêt pour déploiement drag-drop sur Netlify / Vercel / hébergeur classique.
+**Date** : 2026-04-28
+**Auteur** : DG · Bignéro Moïalbéi Le Madang
+**Objectif** : reconstruction propre du site corporate selon la taxonomie Doc 36 (5 univers thématiques), avec architecture clean, CSS unifié et performances optimales.
 
-## Arborescence
+## Architecture
 
 ```
-site/
-├── index.html                      Accueil (hub, KPIs, carte, pôles, news)
-├── groupe.html                     Histoire, gouvernance, Comex, implantations
-├── investisseurs.html              IR ticker, performance, documents, calendrier
-├── durabilite.html                 ESG, climat, ITIE, contenu local
-├── talents.html                    Culture, KPIs RH, 14 offres, témoignages
-├── actualites.html                 Salle de presse (9 articles)
-├── contact.html                    Formulaire, 6 équipes, 6 implantations, FAQ
-├── 404.html                        Page erreur branded
-├── operations/
-│   ├── amont.html                  Pôle 01 · Exploration & Production
-│   ├── intermediaire.html          Pôle 02 · Pipeline Doba–Kribi
-│   ├── aval.html                   Pôle 03 · Raffinage & distribution
-│   └── services.html               Pôle 04 · Oilfield services
+site-v2/
+├── index.html                    # Hub principal (premium long-form)
+├── pourquoi/                     # Univers 1 — Conviction & Narratif
+│   ├── manifeste.html
+│   ├── positionnement.html
+│   ├── trajectoire.html
+│   └── equipe.html
+├── solutions/                    # Univers 2 — Catalogue & Solutions
+│   └── index.html               # 10 services × 6 pôles
+├── operateurs/                   # Univers 3 — 5 opérateurs cibles (services différenciés)
+│   ├── index.html
+│   ├── cnpcic.html              # Bongor — E&P + EOR + SCADA + HSE
+│   ├── perenco.html             # Doba — E&P + EOR + ILI + Maintenance
+│   ├── sht.html                 # NOC — ESG + DDT + PSC + Académie
+│   ├── cotco-totco.html         # Pipeline — ILI + SCADA + Cyber + Sécurité IA
+│   └── srn.html                 # Raffinerie — ICS/OT + Sécurité IA + Blending + Maintenance
+├── data/                         # Univers 4 — Preuves & Performance
+│   ├── index.html               # Hub data
+│   ├── atlas.html
+│   ├── observatoire.html
+│   ├── oleoduc-3d.html
+│   └── dashboard.html
+├── engagement/                   # Univers 5 — Conformité & Conversation
+│   ├── investisseurs.html       # Tour 8-12 M USD
+│   ├── transparence.html        # 8 engagements publics
+│   ├── presse.html
+│   └── contact.html
+├── legal/
+│   ├── mentions-legales.html
+│   ├── confidentialite.html
+│   └── cookies.html
 ├── assets/
-│   ├── css/main.css                Design system (46 KB)
-│   ├── js/main.js                  Animations + carte + compteurs
-│   └── img/
-│       ├── og-cover.png            1200×630 — Open Graph / social preview
-│       ├── apple-touch-icon.png    512×512 — iOS home screen
-│       └── favicon-32.png          32×32 — fallback navigateur
-├── sitemap.xml                     11 URLs indexables
-├── robots.txt                      User-agent rules + sitemap
-├── netlify.toml                    Config Netlify (redirects, headers, cache)
-├── _headers                        Security + cache headers (fallback)
-├── _redirects                      Legacy URL + clean URL rewrites
-└── README.md
+│   ├── css/enertchad.css        # SINGLE source of truth (259 lignes vs 10 fichiers)
+│   ├── js/enertchad.js          # Single JS file
+│   ├── images/                  # 8 photos webp + jpg fallback
+│   └── fonts/                   # (Google Fonts CDN utilisé)
+├── 404.html · 500.html · offline.html
+├── sitemap.xml                  # 24 URLs
+├── robots.txt
+├── vercel.json                  # 20 redirects + 4 headers blocs
+├── manifest.webmanifest
+└── .vercelignore
 ```
 
-## Ouverture locale
+## Données canoniques utilisées
 
-```bash
-cd site
-python3 -m http.server 8000
-# → http://localhost:8000
-```
+- **Identité** : EnerTchad Groupe SA/CA · RCCM N'DJ/RC/2026-A-0001 · Capital 10 000 000 FCFA
+- **Slogan** : Unité · Innovation · Durabilité — Accès aux Énergies
+- **6 pôles** : Upstream · Midstream · Downstream · GreenTech · EnerTech · Gouvernance (couleurs accent canon)
+- **10 services** : S01-S10 répartis sur les pôles
+- **5 opérateurs cibles** : CNPCIC · Perenco · SHT · COTCO/TOTCO · SRN — services différenciés selon métier réel
+- **Tour 2026** : Seed/Pre-A 8-12 M USD · closing Q2 2026
+- **DG** : Bignéro Moïalbéi Le Madang · ex-ExxonMobil Doba project
+- **Trajectoire** : 3 phases 2026-2030 (Déploiement → Scale → Référence)
+- **Transparence** : 8 engagements (ITIE · OHADA · RGPD · ISO 37001 · LCD 75-90 % · Reporting · HSE · Indépendance Observatoire)
 
-Ou simple double-clic sur `index.html` (certaines fonctionnalités limitées en file://).
+## Comparaison avec ancien site (Enertchad Web Solutions)
+
+| Critère | Ancien | Nouveau v2 |
+|---------|--------|-----------|
+| Pages HTML | 29 | 23 (consolidées) |
+| Fichiers CSS | 10 (env. 340 KB) | 1 (env. 9 KB) |
+| Architecture | Plate (pages au même niveau) | 5 univers thématiques |
+| Cas opérateurs | Services dupliqués | Services différenciés |
+| Doublons dashboard | dashboard + dashboard-executif | 1 seule page |
+| Maillage interne | Faible | Footer "Voir aussi" cross-page |
+| SEO | meta description longue | meta keywords + OG dédiés |
 
 ## Déploiement
 
-### Netlify — drag-drop
-Glissez-déposez le dossier `site/` sur https://app.netlify.com/drop. En ligne en 30 s. `netlify.toml` active automatiquement : redirects legacy, clean URLs, headers sécurité, cache CDN.
-
-### Netlify — CLI
 ```bash
-cd site
-netlify deploy --prod --dir=.
+# Vercel CLI
+vercel --prod
+
+# Ou via Git push (si repo connecté)
+git add . && git commit -m "v2.0.0 site rebuild" && git push origin main
 ```
 
-### Vercel
-```bash
-cd site && npx vercel --prod
-```
+## Sources
 
-### Hébergeur classique (Apache / nginx / OVH / IONOS)
-Upload du contenu de `site/` à la racine. `_headers` et `_redirects` ignorés — reproduire les règles équivalentes dans `.htaccess` ou la config nginx si nécessaire.
-
-## SEO & social
-
-- 11 URLs dans `sitemap.xml` avec priorités et changefreq
-- `<title>` + `<meta description>` dédiés par page
-- Open Graph + Twitter Card complets (image 1200×630, locale fr_FR)
-- Canonical URL sur chaque page
-- Apple touch icon + favicon SVG inline
-- `robots.txt` propre avec référence sitemap
-
-## Sécurité
-
-`netlify.toml` et `_headers` appliquent :
-
-| Header | Valeur |
-|---|---|
-| `X-Frame-Options` | SAMEORIGIN |
-| `X-Content-Type-Options` | nosniff |
-| `Referrer-Policy` | strict-origin-when-cross-origin |
-| `Permissions-Policy` | geolocation=(), camera=(), microphone=(), payment=() |
-| `Strict-Transport-Security` | max-age=31536000; includeSubDomains; preload |
-| `Content-Security-Policy` | default-src 'self'; styles + fonts Google autorisés |
-
-Cache long (1 an immutable) sur `/assets/*`, cache court (10 min must-revalidate) sur HTML.
-
-## Palette & typographie
-
-| Usage | Valeur |
-|---|---|
-| Or accent | `#D9A84F` |
-| Or clair / profond | `#E8C36A` / `#B8892E` |
-| Marine fond | `#080E1A` · `#0B1424` |
-| Crème fond clair | `#F7F6F1` |
-| Amont (bleu) | `#2C7AE0` |
-| Intermédiaire (vert) | `#10B981` |
-| Aval (orange) | `#F59E0B` |
-| Services (violet) | `#8B5CF6` |
-
-**Typographie** : Space Grotesk (display) + Inter (corps) via Google Fonts.
-
-## Navigation
-
-```
-Accueil · Groupe · Opérations▾ · Investisseurs · Durabilité · Talents · Actualités · Contact
-                    ├ Amont
-                    ├ Intermédiaire
-                    ├ Aval
-                    └ Services
-```
-
-Dropdown CSS (`:hover` / `:focus-within`) sur desktop, liste plate mobile.
-
-## Fonctionnalités interactives
-
-- Scroll reveal (IntersectionObserver, respect `prefers-reduced-motion`)
-- Compteurs animés (cubic ease-out, séparateur français `\u202F`)
-- Carte interactive du Tchad (5 bassins cliquables)
-- Pipeline SVG animé (dash-offset) sur Doba–Kribi
-- Bar charts CSS avec animation à l'apparition
-- Formulaire contact avec toast success/failure
-- Nav sticky + backdrop-blur
-- Responsive mobile-first (560 / 900 / 960 px)
-- WCAG AA : contrastes validés, focus visible, tabindex sur éléments interactifs
-
-## Données intégrées
-
-Données issues du staging `enertchad-groupe.vercel.app` + enrichissement IR/ESG :
-
-- Production : 144 000 b/j (Amont) · 139 200 b/j (brut traité, IR)
-- CA 2025 : 1 184 Md XAF · EBITDA 612 Md XAF (51.7 % marge)
-- D/EBITDA : 0.8× · Dividende : +22 % YoY
-- Effectif : 1 240 collaborateurs (85 % tchadiens, 42 % femmes en maîtrise)
-- Pipeline Doba–Kribi : 1 070 km · Raffinerie Djarmaya : 20 000 b/j
-- Stations-service : 45 dans 6 villes principales
-- Bassins opérés : 5 (Doba, Bongor, Madiago, Doseo, Lac Tchad)
-- Contrats ITIE publiés : 53 · Paiements État 2025 : 374.2 Md XAF
-- Émissions scope 1&2 : 28.4 → 17.6 tCO₂e/kboe (trajectoire 14.2 en 2030)
-- Notation Bloomfield : AA-
-- DG : Bignéro Moïalbéi Le Madang
-
-## Prochaines itérations recommandées
-
-1. **Photographie propriétaire** (hero, portraits Comex, sites industriels) à substituer aux dégradés SVG actuels
-2. **Version anglaise** (hreflang FR/EN) — sélecteur de langue déjà présent
-3. **CMS headless** (Sanity / Contentful) pour la section actualités
-4. **Schema.org LD+JSON** : Organization sur home, NewsArticle sur actualités, JobPosting sur talents
-5. **Analytics + Tag Manager** : snippet à coller dans `<head>` ou juste avant `</body>`
-6. **Formulaire contact** : connecter à Netlify Forms en ajoutant `netlify` + `netlify-honeypot` sur `<form>`
-7. **Espace investisseurs** : rapports PDF réels à héberger dans `/assets/docs/`
-8. **Photos campus + Centre de formation énergétique** (page Talents)
-
-## Écosystème EnerTchad
-
-Ce hub est le site corporate du holding. Les 5 pôles opérationnels ont chacun leur repo + site déployé :
-
-| Pôle | Repository | Site déployé | Statut GitHub |
-|---|---|---|---|
-| 01 · Amont | [enertchad-amont.vercel.app](https://github.com/bmlemad/enertchad-amont.vercel.app) | https://enertchad-amont-vercel-app.vercel.app | actif |
-| 02 · Intermédiaire | [enertchad-Midstream](https://github.com/bmlemad/enertchad-Midstream) | https://enertchad-midstream.vercel.app | actif |
-| 03 · Aval | [enertchad-aval.vercel.app](https://github.com/bmlemad/enertchad-aval.vercel.app) | https://enertchad-aval-vercel-app.vercel.app | actif |
-| 05 · Énergies | [Enertchad-energies](https://github.com/bmlemad/Enertchad-energies) | https://enertchad-energies.vercel.app | **archivé** |
-| 06 · Technologies | [Enertchad-technologies](https://github.com/bmlemad/Enertchad-technologies) | https://enertchad-technologies.vercel.app | **archivé** |
-
-Le pôle 04 · Services est actuellement intégré à l'Amont (pas de repo dédié).
-
-> **Documentation des pôles consolidée** : tant que les repos `Enertchad-energies` et `Enertchad-technologies` restent archivés (read-only), leur documentation de référence est maintenue ici dans [`poles/`](./poles/) — source vivante, mirroire des READMEs des 3 autres pôles pour symétrie.
-
-La source unique de vérité pour les données consolidées (production, stations, effectifs, capital, certifications, etc.) est le fichier [`DATA_MASTER.yml`](./DATA_MASTER.yml) — à consulter avant toute publication externe.
-
-Le référentiel design partagé par les 6 sites est documenté dans [`DESIGN_SYSTEM.md`](./DESIGN_SYSTEM.md).
-
-## Contact
-
-- **Groupe** : contact@enertchad.td · +235 99 29 86 96
-- **Technique** : digital@enertchad.td (boîte à créer)
-- **Direction Générale** : Bignéro Moïalbéi Le Madang
-- **Président du Conseil d'Administration** : Théophile Gag Pinabei
-
-Siège : Radisson, Block D, Bureau 23, Sabangali, N'Djamena, République du Tchad.
+- Doc 36 (Ultra Analyse Page-par-Page) — taxonomie 5 univers
+- Doc 5 (Classification Sujets/Thèmes/Métiers) — 6 pôles canon
+- Doc 23 (Ultra Audit Transversal) — KPIs et chiffres canon
+- Doc 24 (Inspiration Majors Roadmap) — patterns ExxonMobil/TotalEnergies/Equinor
 
 ---
 
-© 2026 EnerTchad Groupe SA/CA · Propriété exclusive.
+© 2026 EnerTchad Groupe SA/CA · RCCM N'DJ/RC/2026-A-0001 · Capital 10 000 000 FCFA

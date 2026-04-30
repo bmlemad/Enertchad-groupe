@@ -1,0 +1,9 @@
+README.md
+CHANGELOG.md
+DATA_MASTER.md
+.git
+.github
+_sources
+backups
+*.draft.html
+_original/

@@ -3,59 +3,176 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
-    { "source": "/amont",              "destination": "/operations/amont.html",         "permanent": true },
-    { "source": "/intermediaire",      "destination": "/operations/intermediaire.html", "permanent": true },
-    { "source": "/aval",               "destination": "/operations/aval.html",          "permanent": true },
-    { "source": "/services",           "destination": "/operations/services.html",      "permanent": true },
-    { "source": "/investors",          "destination": "/investisseurs.html",            "permanent": true },
-    { "source": "/sustainability",     "destination": "/durabilite.html",               "permanent": true },
-    { "source": "/careers",            "destination": "/talents.html",                  "permanent": true },
-    { "source": "/news",               "destination": "/actualites.html",               "permanent": true },
-    { "source": "/legal",              "destination": "/mentions-legales.html",         "permanent": true },
-    { "source": "/privacy",            "destination": "/confidentialite.html",          "permanent": true },
-    { "source": "/energies",           "destination": "/energies/",                     "permanent": true },
-    { "source": "/technologies",       "destination": "/technologies/",                 "permanent": true },
-    { "source": "/enertech",           "destination": "/technologies/",                 "permanent": true },
-    { "source": "/greentech",          "destination": "/energies/",                     "permanent": true }
-  ],
-  "rewrites": [
-    { "source": "/groupe",        "destination": "/groupe.html" },
-    { "source": "/investisseurs", "destination": "/investisseurs.html" },
-    { "source": "/durabilite",    "destination": "/durabilite.html" },
-    { "source": "/talents",       "destination": "/talents.html" },
-    { "source": "/actualites",    "destination": "/actualites.html" },
-    { "source": "/contact",       "destination": "/contact.html" },
-    { "source": "/maps",          "destination": "/maps.html" },
-    { "source": "/newsletter",    "destination": "/newsletter.html" }
+    {
+      "source": "/services",
+      "destination": "/solutions/",
+      "permanent": true
+    },
+    {
+      "source": "/explore",
+      "destination": "/solutions/",
+      "permanent": true
+    },
+    {
+      "source": "/manifeste",
+      "destination": "/pourquoi/manifeste.html",
+      "permanent": true
+    },
+    {
+      "source": "/positionnement",
+      "destination": "/pourquoi/positionnement.html",
+      "permanent": true
+    },
+    {
+      "source": "/trajectoire",
+      "destination": "/pourquoi/trajectoire.html",
+      "permanent": true
+    },
+    {
+      "source": "/equipe",
+      "destination": "/pourquoi/equipe.html",
+      "permanent": true
+    },
+    {
+      "source": "/atlas",
+      "destination": "/data/atlas.html",
+      "permanent": true
+    },
+    {
+      "source": "/observatoire",
+      "destination": "/data/observatoire.html",
+      "permanent": true
+    },
+    {
+      "source": "/oleoduc-3d",
+      "destination": "/data/oleoduc-3d.html",
+      "permanent": true
+    },
+    {
+      "source": "/dashboard",
+      "destination": "/data/dashboard.html",
+      "permanent": true
+    },
+    {
+      "source": "/dashboard-executif",
+      "destination": "/data/dashboard.html",
+      "permanent": true
+    },
+    {
+      "source": "/investisseurs",
+      "destination": "/engagement/investisseurs.html",
+      "permanent": true
+    },
+    {
+      "source": "/transparence",
+      "destination": "/engagement/transparence.html",
+      "permanent": true
+    },
+    {
+      "source": "/presse",
+      "destination": "/engagement/presse.html",
+      "permanent": true
+    },
+    {
+      "source": "/contact",
+      "destination": "/engagement/contact.html",
+      "permanent": true
+    },
+    {
+      "source": "/cas-cnpcic",
+      "destination": "/operateurs/cnpcic.html",
+      "permanent": true
+    },
+    {
+      "source": "/cas-perenco",
+      "destination": "/operateurs/perenco.html",
+      "permanent": true
+    },
+    {
+      "source": "/cas-sht",
+      "destination": "/operateurs/sht.html",
+      "permanent": true
+    },
+    {
+      "source": "/cas-cotco-totco",
+      "destination": "/operateurs/cotco-totco.html",
+      "permanent": true
+    },
+    {
+      "source": "/cas-srn",
+      "destination": "/operateurs/srn.html",
+      "permanent": true
+    },
+    {
+      "source": "/en",
+      "destination": "/en/",
+      "permanent": true
+    },
+    {
+      "source": "/upstream",
+      "destination": "/amont/",
+      "permanent": true
+    },
+    {
+      "source": "/upstream/(.*)",
+      "destination": "/amont/$1",
+      "permanent": true
+    },
+    {
+      "source": "/midstream",
+      "destination": "/intermediaire/",
+      "permanent": true
+    },
+    {
+      "source": "/midstream/(.*)",
+      "destination": "/intermediaire/$1",
+      "permanent": true
+    },
+    {
+      "source": "/downstream",
+      "destination": "/aval/",
+      "permanent": true
+    },
+    {
+      "source": "/downstream/(.*)",
+      "destination": "/aval/$1",
+      "permanent": true
+    },
+    {
+      "source": "/operators",
+      "destination": "/operateurs/",
+      "permanent": true
+    }
   ],
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Frame-Options",        "value": "SAMEORIGIN" },
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "Referrer-Policy",        "value": "strict-origin-when-cross-origin" },
-        { "key": "Permissions-Policy",     "value": "geolocation=(), microphone=(), camera=(), payment=(), usb=()" },
-        { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" },
-        { "key": "Content-Security-Policy", "value": "default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https:; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; connect-src 'self' https://plausible.io; frame-ancestors 'self'; base-uri 'self'; form-action 'self'" }
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "geolocation=(), microphone=(), camera=()"
+        }
       ]
     },
     {
       "source": "/assets/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
-      ]
-    },
-    {
-      "source": "/sw.js",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
-      ]
-    },
-    {
-      "source": "/(.*\\.html)",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     }
   ]

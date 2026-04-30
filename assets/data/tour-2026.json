@@ -1,0 +1,110 @@
+{
+  "tour": {
+    "name": "Seed/Pre-A 2026",
+    "target_min": 8,
+    "target_max": 12,
+    "raised": 3.8,
+    "currency": "M USD",
+    "closing_date": "2026-09-30",
+    "status": "open",
+    "last_updated": "2026-04-28T18:00:00+01:00"
+  },
+  "seats": {
+    "total": 8,
+    "confirmed": 3,
+    "in_term_sheet": 1,
+    "available": 4
+  },
+  "funnel": [
+    {
+      "stage": "Outreach lancé",
+      "count": 8,
+      "label": "Investisseurs contactés (vague 1)"
+    },
+    {
+      "stage": "Replied",
+      "count": 4,
+      "label": "Engagés en discussion"
+    },
+    {
+      "stage": "NDA signé",
+      "count": 4,
+      "label": "Accès dataroom autorisé"
+    },
+    {
+      "stage": "Term Sheet",
+      "count": 4,
+      "label": "TS signés ou en cours"
+    },
+    {
+      "stage": "Closed",
+      "count": 3,
+      "label": "Fonds wirés"
+    }
+  ],
+  "events": [
+    {
+      "date": "2026-04-27",
+      "type": "close",
+      "label": "Lead DFI Tier 1 confirmé · 4 M USD"
+    },
+    {
+      "date": "2026-04-25",
+      "type": "ts",
+      "label": "TS signé avec VC O&G Africa · 2 M USD"
+    },
+    {
+      "date": "2026-04-22",
+      "type": "nda",
+      "label": "NDA Family Office Golfe (en TS)"
+    },
+    {
+      "date": "2026-04-18",
+      "type": "meeting",
+      "label": "Pitch DFI européen Tier 1"
+    },
+    {
+      "date": "2026-04-15",
+      "type": "outreach",
+      "label": "Vague 1 outreach lancée · 50 investisseurs"
+    },
+    {
+      "date": "2026-04-29",
+      "title": "Vague RESTRUCTURE-ULTRA",
+      "summary": "4 pages clés restructurées avec sections numérotées 01→0N · homepage 8 sections · amont/intermédiaire 7 sections · aval consolidé 15→9 sections · Doc 72 publié."
+    },
+    {
+      "date": "2026-04-30",
+      "title": "Vague DEPLOYMENT + REORG-SOLUTIONS + FINAL appliquées",
+      "summary": "6 pages modernisées (3 FR + 3 EN) déployées · solutions/ réorganisé canon (388→189 lignes) · 17 kickers numérotés sur 7 pages · CSS cleanup duplicate mega-panel · canon CLEAN"
+    }
+  ],
+  "milestones": [
+    {
+      "date": "2026-05-15",
+      "label": "Closing partial 6 M USD",
+      "status": "upcoming"
+    },
+    {
+      "date": "2026-07-30",
+      "label": "Closing total 8-12 M USD",
+      "status": "upcoming"
+    },
+    {
+      "date": "2026-09-01",
+      "label": "Phase 1 deployment lance",
+      "status": "upcoming"
+    },
+    {
+      "date": "2026-12-15",
+      "label": "Premiers contrats opérateurs signés",
+      "status": "upcoming"
+    }
+  ],
+  "co_investor_profile": {
+    "lead_target": "DFI africain · ticket 4-5 M USD",
+    "co_invest_target": "VC oil&gas Tier 1 · 1-2 M USD",
+    "family_offices": "MENA · 0,5-1,5 M USD"
+  },
+  "last_updated": "2026-04-30T18:50:00+01:00"
+}

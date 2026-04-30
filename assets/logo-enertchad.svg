@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="EnerTchad Groupe — logo officiel 4 pétales">
+  <title>EnerTchad Groupe SA/CA</title>
+  <desc>Logo officiel : ring gold + 4 pétales (or, vert, crème, bleu) sur fond navy</desc>
+  <circle cx="100" cy="100" r="92" fill="#080E1A"/>
+  <circle cx="100" cy="100" r="86" fill="none" stroke="#D9A84F" stroke-width="5"/>
+  <g transform="translate(100 100)">
+    <!-- Petal pattern: drop-shaped, 4 cardinals -->
+    <!-- Top · gold -->
+    <path d="M0 -8 C-22 -28 -22 -68 0 -68 C22 -68 22 -28 0 -8 Z" fill="#D9A84F"/>
+    <!-- Right · green -->
+    <path d="M8 0 C28 -22 68 -22 68 0 C68 22 28 22 8 0 Z" fill="#15803D"/>
+    <!-- Bottom · cream -->
+    <path d="M0 8 C-22 28 -22 68 0 68 C22 68 22 28 0 8 Z" fill="#F6F1E6"/>
+    <!-- Left · blue -->
+    <path d="M-8 0 C-28 -22 -68 -22 -68 0 C-68 22 -28 22 -8 0 Z" fill="#1E3A8A"/>
+    <!-- Center small accent dot -->
+    <circle r="3" fill="#080E1A" stroke="#D9A84F" stroke-width="1"/>
+  </g>
+</svg>

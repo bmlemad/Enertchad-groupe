@@ -1,81 +1,79 @@
-/* EnerTchad Groupe — Service Worker
- * Stratégie : stale-while-revalidate pour HTML, cache-first pour /assets/*
- * Fallback offline sur offline.html
+/**
+ * EnerTchad Groupe SA/CA · Service Worker v1.1
+ * Enriched cache strategy : navigated pages auto-cached, offline fallback complet
  */
-
-const CACHE_VERSION = 'enertchad-v1.3.5';
-const STATIC_CACHE = `${CACHE_VERSION}-static`;
-const RUNTIME_CACHE = `${CACHE_VERSION}-runtime`;
-
-// Précache critique : shell + offline fallback
-const PRECACHE_URLS = [
+const VERSION = 'enertchad-v2.1.7-z';
+const STATIC = [
   '/',
-  '/index.html',
+  '/assets/css/enertchad.css',
+  '/assets/js/enertchad.js',
+  '/assets/favicon.svg',
+  '/assets/logo-enertchad.svg',
   '/offline.html',
   '/404.html',
-  '/assets/css/main.css',
-  '/assets/js/main.js',
-  '/assets/img/favicon-32.png',
-  '/assets/img/apple-touch-icon.png',
-  '/assets/img/og-cover.png',
-  '/manifest.json'
 ];
+const PAGE_CACHE = 'enertchad-pages-v2.1.7';
+const ASSET_CACHE = 'enertchad-assets-v2.1.7';
 
-self.addEventListener('install', event => {
-  event.waitUntil(
-    caches.open(STATIC_CACHE)
-      .then(cache => cache.addAll(PRECACHE_URLS))
-      .then(() => self.skipWaiting())
+self.addEventListener('install', (e) => {
+  e.waitUntil(
+    caches.open(VERSION).then(c => c.addAll(STATIC)).then(() => self.skipWaiting())
   );
 });
 
-self.addEventListener('activate', event => {
-  event.waitUntil(
-    caches.keys().then(keys => Promise.all(
-      keys.filter(key => !key.startsWith(CACHE_VERSION)).map(key => caches.delete(key))
-    )).then(() => self.clients.claim())
+self.addEventListener('activate', (e) => {
+  e.waitUntil(
+    caches.keys().then(keys => 
+      Promise.all(
+        keys.filter(k => ![VERSION, PAGE_CACHE, ASSET_CACHE].includes(k))
+            .map(k => caches.delete(k))
+      )
+    ).then(() => self.clients.claim())
   );
 });
 
-self.addEventListener('fetch', event => {
-  const req = event.request;
-
-  // Only GET requests
+self.addEventListener('fetch', (e) => {
+  const req = e.request;
   if (req.method !== 'GET') return;
-
+  
   const url = new URL(req.url);
-
-  // Skip cross-origin (Google Fonts etc.)
-  if (url.origin !== self.location.origin) return;
-
-  // Assets — cache-first (immutable with 1y cache anyway)
-  if (url.pathname.startsWith('/assets/')) {
-    event.respondWith(
-      caches.match(req).then(cached => cached || fetch(req).then(res => {
-        const clone = res.clone();
-        caches.open(RUNTIME_CACHE).then(c => c.put(req, clone));
-        return res;
-      }))
-    );
-    return;
-  }
-
-  // HTML — network-first with offline fallback
-  if (req.headers.get('accept')?.includes('text/html')) {
-    event.respondWith(
+  
+  // Network-first for HTML pages — cache successful navigations
+  if (req.mode === 'navigate' || req.headers.get('accept')?.includes('text/html')) {
+    e.respondWith(
       fetch(req).then(res => {
-        const clone = res.clone();
-        caches.open(RUNTIME_CACHE).then(c => c.put(req, clone));
+        if (res.ok) {
+          const copy = res.clone();
+          caches.open(PAGE_CACHE).then(c => c.put(req, copy));
+        }
         return res;
-      }).catch(() =>
-        caches.match(req).then(cached => cached || caches.match('/offline.html'))
+      }).catch(() => 
+        caches.match(req).then(c => c || caches.match('/offline.html'))
       )
     );
     return;
   }
+  
+  // Stale-while-revalidate for assets
+  if (url.pathname.startsWith('/assets/')) {
+    e.respondWith(
+      caches.match(req).then(cached => {
+        const fetchPromise = fetch(req).then(res => {
+          if (res.ok) {
+            caches.open(ASSET_CACHE).then(c => c.put(req, res.clone()));
+          }
+          return res;
+        }).catch(() => cached);
+        return cached || fetchPromise;
+      })
+    );
+    return;
+  }
+  
+  // Network-only for everything else (analytics, fonts CDN, etc.)
+});
 
-  // Default : network-first
-  event.respondWith(
-    fetch(req).catch(() => caches.match(req))
-  );
+// Listen for skipWaiting message from page (forced refresh)
+self.addEventListener('message', (e) => {
+  if (e.data === 'skipWaiting') self.skipWaiting();
 });
