@@ -84,11 +84,11 @@
           <a href="${rel('solutions/calculateur.html')}">Calculateur ROI</a>
           <h4>Opérateurs</h4>
           <a href="${rel('operateurs/')}">5 opérateurs cibles</a>
-          <a href="${rel('operateurs/cnpcic.html')}">CNPCIC · Bongor</a>
-          <a href="${rel('operateurs/perenco.html')}">Perenco · Doba</a>
-          <a href="${rel('operateurs/sht.html')}">SHT · État</a>
-          <a href="${rel('operateurs/cotco-totco.html')}">COTCO/TOTCO · Pipeline</a>
-          <a href="${rel('operateurs/srn.html')}">SRN · Raffinerie</a>
+          <a href="${rel('operateurs/cnpcic.html')}">Opérateur Bongor</a>
+          <a href="${rel('operateurs/perenco.html')}">Opérateur Doba</a>
+          <a href="${rel('operateurs/sht.html')}">opérateur national · État</a>
+          <a href="${rel('operateurs/cotco-totco.html')}">opérateurs pipeline · Pipeline</a>
+          <a href="${rel('operateurs/srn.html')}">Raffinerie nationale · Raffinerie</a>
           <h4>Data</h4>
           <a href="${rel('data/')}">Hub Data</a>
           <a href="${rel('data/atlas.html')}">Atlas</a>
@@ -133,17 +133,17 @@
   /* ─── 5. ⌘K Command palette ──────────────────────────── */
   const PAGES = [
     { cat: 'Pourquoi', title: 'Manifeste DG', desc: 'Vision fondatrice par Bignéro Le Madang', href: 'pourquoi/manifeste.html' },
-    { cat: 'Pourquoi', title: 'Positionnement vs Majors', desc: 'Comparaison Aramco, TotalEnergies, Shell', href: 'pourquoi/positionnement.html' },
+    { cat: 'Pourquoi', title: 'Positionnement vs Majors', desc: 'Comparaison major O&G, major O&G, Shell', href: 'pourquoi/positionnement.html' },
     { cat: 'Pourquoi', title: 'Trajectoire 2026-2030', desc: 'Roadmap publique 3 phases · jalons trimestriels', href: 'pourquoi/trajectoire.html' },
     { cat: 'Pourquoi', title: 'Équipe & Leadership', desc: 'Profil DG · Advisory Board · 25 fiches Phase 1', href: 'pourquoi/equipe.html' },
     { cat: 'Solutions', title: '10 services techniques', desc: 'Catalogue par 6 pôles métier', href: 'solutions/' },
     { cat: 'Solutions', title: 'Configurateur 3 questions', desc: 'Trouvez votre package en 30 secondes', href: 'solutions/configurateur.html' },
     { cat: 'Solutions', title: 'Calculateur ROI', desc: 'Simulateur économie services local', href: 'solutions/calculateur.html' },
-    { cat: 'Opérateurs', title: 'CNPCIC · Bongor', desc: '~30 kb/j · E&P + EOR + SCADA + HSE', href: 'operateurs/cnpcic.html' },
-    { cat: 'Opérateurs', title: 'Perenco · Doba', desc: '~70 kb/j · E&P + EOR + ILI + Maintenance', href: 'operateurs/perenco.html' },
-    { cat: 'Opérateurs', title: 'SHT · NOC souveraine', desc: 'ESG/ITIE + DDT + PSC + EnerAcademy', href: 'operateurs/sht.html' },
-    { cat: 'Opérateurs', title: 'COTCO/TOTCO · Pipeline', desc: '1067 km · ILI + SCADA + Cyber + Sécurité IA', href: 'operateurs/cotco-totco.html' },
-    { cat: 'Opérateurs', title: 'SRN · Raffinerie Djermaya', desc: 'ICS/OT + Sécurité IA + Blending + Maintenance', href: 'operateurs/srn.html' },
+    { cat: 'Opérateurs', title: 'Opérateur Bongor', desc: '~30 kb/j · E&P + EOR + SCADA + HSE', href: 'operateurs/cnpcic.html' },
+    { cat: 'Opérateurs', title: 'Opérateur Doba', desc: '~70 kb/j · E&P + EOR + ILI + Maintenance', href: 'operateurs/perenco.html' },
+    { cat: 'Opérateurs', title: 'opérateur national · NOC souveraine', desc: 'ESG/ITIE + DDT + PSC + EnerAcademy', href: 'operateurs/sht.html' },
+    { cat: 'Opérateurs', title: 'opérateurs pipeline · Pipeline', desc: '1067 km · ILI + SCADA + Cyber + Sécurité IA', href: 'operateurs/cotco-totco.html' },
+    { cat: 'Opérateurs', title: 'Raffinerie nationale · Raffinerie Djermaya', desc: 'ICS/OT + Sécurité IA + Blending + Maintenance', href: 'operateurs/srn.html' },
     { cat: 'Data', title: 'Atlas opérationnel', desc: '12 actifs O&G du Tchad', href: 'data/atlas.html' },
     { cat: 'Data', title: 'Observatoire live', desc: 'Indicateurs marché · refresh quotidien', href: 'data/observatoire.html' },
     { cat: 'Data', title: 'Pipeline 3D', desc: 'Doba-Kribi · 1067 km en 3D', href: 'data/oleoduc-3d.html' },
@@ -167,7 +167,7 @@
     modal.setAttribute('aria-label', 'Recherche rapide');
     modal.innerHTML = `
       <div class="cmdk-panel">
-        <input class="cmdk-input" type="text" placeholder="Rechercher dans le site… (essayez 'investisseurs', 'CNPCIC', 'manifeste')" aria-label="Recherche" />
+        <input class="cmdk-input" type="text" placeholder="Rechercher dans le site… (essayez 'investisseurs', 'opérateur amont 1', 'manifeste')" aria-label="Recherche" />
         <div class="cmdk-results"></div>
         <div class="cmdk-footer">
           <span><kbd>↑</kbd><kbd>↓</kbd> naviguer</span>
@@ -315,7 +315,7 @@
     banner.setAttribute('aria-label', 'Préférences cookies');
     banner.innerHTML = `
       <div class="cookie-banner-text">
-        <strong>Transparence cookies.</strong> Notre site n'utilise <strong>aucun cookie de traçage</strong>. Analytics via Plausible self-hosted (sans cookies, données agrégées). 
+        <strong>Transparence cookies.</strong> Notre site n'utilise <strong>aucun cookie de traçage</strong>. Analytics via analytics RGPD self-hosted (sans cookies, données agrégées). 
         <a href="/legal/cookies.html">En savoir plus</a>
       </div>
       <div class="cookie-banner-actions">
@@ -336,7 +336,7 @@
     });
   }
 
-  /* ─── 12. Plausible custom events on CTAs ────────────── */
+  /* ─── 12. analytics RGPD custom events on CTAs ────────────── */
   function initAnalytics(){
     if (typeof window.plausible !== 'function') return;
     document.querySelectorAll('[data-track]').forEach(el => {
@@ -528,9 +528,9 @@
             title: 'Opérateurs cibles · Amont',
             count: '3',
             links: [
-              { href: '/operateurs/cnpcic.html', strong: 'CNPCIC · Bongor', small: '60% production · Permis Ronier', icon: '🇨🇳', pole: 'amont' },
-              { href: '/operateurs/perenco.html', strong: 'Perenco · Doba', small: 'Reprise actifs Esso · Mangara/Badila', icon: '🛢', pole: 'amont' },
-              { href: '/operateurs/sht.html', strong: 'SHT · NOC', small: 'Société Hydrocarbures Tchad', icon: '🏛', pole: 'amont' },
+              { href: '/operateurs/cnpcic.html', strong: 'Opérateur Bongor', small: '60% production · Permis Ronier', icon: '🇨🇳', pole: 'amont' },
+              { href: '/operateurs/perenco.html', strong: 'Opérateur Doba', small: 'Cluster historique · Mangara/Badila', icon: '🛢', pole: 'amont' },
+              { href: '/operateurs/sht.html', strong: 'opérateur national · NOC', small: 'Société Hydrocarbures Tchad', icon: '🏛', pole: 'amont' },
             ]
           }
         ],
@@ -545,7 +545,7 @@
             count: '3',
             links: [
               { href: '/solutions/?pole=intermediaire', strong: 'S04 · Inspection ILI', small: 'Pigging instrumenté MFL/UT · API 1163', icon: '🔍', pole: 'intermediaire' },
-              { href: '/solutions/?pole=intermediaire', strong: 'S05 · SCADA Pipeline', small: 'Yokogawa/Emerson · leak detection · API 1130', icon: '📊', pole: 'intermediaire' },
+              { href: '/solutions/?pole=intermediaire', strong: 'S05 · SCADA Pipeline', small: 'SCADA majors-grade · leak detection · API 1130', icon: '📊', pole: 'intermediaire' },
               { href: '/solutions/?pole=intermediaire', strong: 'S06 · Métrologie fiscale', small: 'LACT units · audit pertes · API MPMS', icon: '⚖', pole: 'intermediaire' },
             ]
           },
@@ -553,12 +553,12 @@
             title: 'Opérateurs · Pipeline & FSO',
             count: '2',
             links: [
-              { href: '/operateurs/cotco-totco.html', strong: 'COTCO/TOTCO', small: 'Pipeline Doba-Kribi 1 070 km · 6 stations', icon: '🔗', pole: 'intermediaire' },
+              { href: '/operateurs/cotco-totco.html', strong: 'opérateurs pipeline', small: 'Pipeline Doba-Kribi 1 070 km · 6 stations', icon: '🔗', pole: 'intermediaire' },
               { href: '/data/oleoduc-3d.html', strong: 'Pipeline 3D', small: 'Visualisation 6 stations pompage · FSO KK1', icon: '📍', pole: 'intermediaire' },
             ]
           }
         ],
-        featured: { title: 'Pipeline Integrity 360°', desc: 'IA leak detection · MoU Perenco en discussion', cta: 'En savoir plus →', href: '/solutions/', thumb: '🔗', badgeLive: false }
+        featured: { title: 'Pipeline Integrity 360°', desc: 'IA leak detection · MoU opérateur amont 2 en discussion', cta: 'En savoir plus →', href: '/solutions/', thumb: '🔗', badgeLive: false }
       },
       'aval': {
         intro: { icon: '🟡', label: 'Pôle Aval · Downstream', desc: 'Raffinage · Distribution · IRVE 50', stat: '16M', statLabel: 'USD 2030' },
@@ -576,7 +576,7 @@
             title: 'Opérateurs · Raffinerie & Distribution',
             count: '1',
             links: [
-              { href: '/operateurs/srn.html', strong: 'SRN · Djermaya', small: 'Raffinerie · JV CNPC 60% / SHT 40%', icon: '🏭', pole: 'aval' },
+              { href: '/operateurs/srn.html', strong: 'Raffinerie nationale', small: 'Raffinerie · JV opérateurs (~60/40)', icon: '🏭', pole: 'aval' },
             ]
           }
         ],
@@ -592,7 +592,7 @@
             links: [
               { href: '/technologies/', strong: 'IA & Machine Learning', small: 'Maintenance prédictive · digital twin réservoirs · 30% downtime', icon: '🧠', pole: 'intermediaire' },
               { href: '/technologies/', strong: 'IoT industriel', small: 'Capteurs LoRa · télémétrie 24/7 sites isolés', icon: '📡', pole: 'intermediaire' },
-              { href: '/technologies/', strong: 'Digital twin', small: 'Jumeau numérique 3D temps-réel · Doba/Bongor/SRN', icon: '🔮', pole: 'intermediaire' },
+              { href: '/technologies/', strong: 'Digital twin', small: 'Jumeau numérique 3D temps-réel · Doba/Bongor/raffinerie nationale', icon: '🔮', pole: 'intermediaire' },
               { href: '/technologies/', strong: 'Drones surveillance', small: 'Inspection ROW pipeline 1 070 km · IA détection corrosion', icon: '🚁', pole: 'intermediaire' },
             ]
           },
@@ -600,14 +600,14 @@
             title: 'Services & Solutions umbrella',
             count: '4',
             links: [
-              { href: '/solutions/', strong: 'S07 · Cyber-OT MSSP', small: 'SOC 24/7 · IDS Claroty/Nozomi · IEC 62443-3-3 · Purdue', icon: '🛡', pole: 'intermediaire' },
+              { href: '/solutions/', strong: 'S07 · Cyber-OT MSSP', small: 'SOC 24/7 · IDS OT majors · IEC 62443-3-3 · Purdue', icon: '🛡', pole: 'intermediaire' },
               { href: '/solutions/', strong: 'S08 · Sécurité Physique IA', small: 'Caméras 4K + IA · drones ROW · périmétrie biométrique ATEX', icon: '🎥', pole: 'intermediaire' },
-              { href: '/solutions/', strong: 'U03 Cyber-OT MSSP', small: 'Solution umbrella packagée 24/7 OT · cible SRN/COTCO/CNPCIC', icon: '🔒', pole: 'intermediaire' },
+              { href: '/solutions/', strong: 'U03 Cyber-OT MSSP', small: 'Solution umbrella packagée 24/7 OT · cible opérateurs aval/midstream/amont', icon: '🔒', pole: 'intermediaire' },
               { href: '/solutions/', strong: 'U04 Sécurité Périmétrique', small: 'Solution umbrella drones+biométrie+AR/VR formation HSE', icon: '🏛', pole: 'intermediaire' },
             ]
           }
         ],
-        featured: { title: 'Voir le pôle Technologies', desc: 'Stack complète · IEC 62443 · ISO 27001 · Claroty · Nozomi', cta: 'Explorer →', href: '/technologies/', thumb: '⚙', badgeLive: false }
+        featured: { title: 'Voir le pôle Technologies', desc: 'Stack complète · IEC 62443 · ISO 27001 · IDS OT leaders', cta: 'Explorer →', href: '/technologies/', thumb: '⚙', badgeLive: false }
       },
       'energies': {
         intro: { icon: '🌱', label: 'Axe Énergies · 3 horizons', desc: 'IRVE · BESS · H2 vert · 30% renouvelables', stat: '125', statLabel: 'MW 2030' },
@@ -628,14 +628,14 @@
             links: [
               { href: '/energies/', strong: 'U05 · Renouvelables Hybrides', small: 'Solaire + BESS + Gas-to-power · sites isolés · mini-grids communautés', icon: '☀', pole: 'amont' },
               { href: '/energies/', strong: 'Anti-flaring zéro routine', small: 'Récupération gaz associé · GHG -45% vs majors · 12 kg CO2/baril 2030', icon: '🔥', pole: 'amont' },
-              { href: '/energies/', strong: 'REDD+ carbone biodiversité', small: 'Crédits carbone WWF Cameroun · biodiversité Doba', icon: '🌳', pole: 'amont' },
+              { href: '/energies/', strong: 'REDD+ carbone biodiversité', small: 'Crédits carbone partenaire ONG biodiversité régional · biodiversité Doba', icon: '🌳', pole: 'amont' },
             ]
           }
         ],
         featured: { title: 'Voir le pôle Énergies', desc: 'IRVE first-mover CEMAC · 50 stations 50 kW CCS2/CHAdeMO', cta: 'Explorer →', href: '/energies/', thumb: '🌱', badgeLive: false }
       },
       'atlas': {
-        intro: { icon: '🗺', label: 'Atlas marché Tchad', desc: 'Note: pas d assets EnerTchad · OFS → E&P 2030+', stat: 'ℹ', statLabel: 'note' },
+        intro: { icon: '🗺', label: 'Atlas marché Tchad', desc: 'Note: pas d assets EnerTchad · OFS Tchad (E&P = projet futur)', stat: 'ℹ', statLabel: 'note' },
         pole: 'atlas',
         sections: [
           {
@@ -643,7 +643,7 @@
             count: '2',
             links: [
               { href: '/data/atlas.html', strong: 'Atlas O&G Tchad', small: 'Marché : 5 bassins · pipeline 1 070 km · 1 raffinerie · 3 pôles canon', icon: '🗺', pole: 'intermediaire' },
-              { href: '/data/oleoduc-3d.html', strong: 'Pipeline 1 070 km', small: 'COTCO/TOTCO · Doba-Kribi · 6 stations pompage', icon: '📍', pole: 'intermediaire' },
+              { href: '/data/oleoduc-3d.html', strong: 'Pipeline 1 070 km', small: 'opérateurs pipeline · Doba-Kribi · 6 stations pompage', icon: '📍', pole: 'intermediaire' },
             ]
           },
           {
@@ -655,7 +655,7 @@
             ]
           }
         ],
-        featured: { title: 'Note · EnerTchad nouveau OFS', desc: 'Ambition progressive OFS → E&P 2030+. Atlas présente le marché Tchad, pas un portefeuille EnerTchad.', cta: 'Comprendre →', href: '/pourquoi/trajectoire.html', thumb: 'ℹ', badgeLive: false }
+        featured: { title: 'Note · EnerTchad · OFS Tchad', desc: 'Ambition progressive OFS Tchad (E&P = projet futur). Atlas présente le marché Tchad, pas un portefeuille EnerTchad.', cta: 'Comprendre →', href: '/pourquoi/trajectoire.html', thumb: 'ℹ', badgeLive: false }
       },
       'engagement': {
         intro: { icon: '💼', label: 'Engagement · Pourquoi · Tour 2026', desc: 'Vision · Investisseurs · ESG/RSE/HSE · Presse', stat: '8-12', statLabel: 'M USD Tour' },
@@ -666,8 +666,8 @@
             count: '4',
             links: [
               { href: '/pourquoi/manifeste.html', strong: 'Manifeste DG', small: 'Vision fondatrice par Bignéro Le Madang', icon: '📜', badge: null },
-              { href: '/pourquoi/positionnement.html', strong: 'Positionnement', small: 'EnerTchad vs Aramco · TotalEnergies · Shell', icon: '🎯', badge: null },
-              { href: '/pourquoi/trajectoire.html', strong: 'Trajectoire 2026-2030', small: 'Roadmap OFS → E&P · 3 phases', icon: '🗺', badge: 'NEW' },
+              { href: '/pourquoi/positionnement.html', strong: 'Positionnement', small: 'EnerTchad · positionnement marché Tchad', icon: '🎯', badge: null },
+              { href: '/pourquoi/trajectoire.html', strong: 'Trajectoire 2026-2030', small: 'Roadmap OFS · expansion catalogue', icon: '🗺', badge: 'NEW' },
               { href: '/pourquoi/equipe.html', strong: 'Équipe & Leadership', small: 'Profil DG · Advisory Board · 25 ETP Phase 1', icon: '👥', badge: null },
             ]
           },
@@ -676,7 +676,7 @@
             count: '4',
             links: [
               { href: '/engagement/investisseurs.html', strong: 'Tour 2026 · Investisseurs', small: '8-12 M USD · OHADA · DD package · War Room live', icon: '💼', badge: 'TOUR' },
-              { href: '/engagement/transparence.html', strong: 'ESG · RSE · HSE', small: '3 piliers · 6 KPIs · UNHCR/WWF · ITIE · GRI · TCFD', icon: '🌍', badge: 'NEW' },
+              { href: '/engagement/transparence.html', strong: 'ESG · RSE · HSE', small: '3 piliers · 6 KPIs · agence ONU réfugiés/ONG biodiversité internationale · ITIE · GRI Standards reporting · TCFD', icon: '🌍', badge: 'NEW' },
               { href: '/engagement/presse.html', strong: 'Presse', small: 'Communiqués · médias · DG quotes', icon: '📰', badge: null },
               { href: '/engagement/contact.html', strong: 'Contact', small: 'N\'Djamena · cal.com · LinkedIn', icon: '✉', badge: null },
             ]
@@ -706,9 +706,9 @@
             title: 'Target Operators · Upstream',
             count: '3',
             links: [
-              { href: '/en/operateurs/cnpcic.html', strong: 'CNPCIC · Bongor', small: '60% production · Ronier permit', icon: '🇨🇳', pole: 'amont' },
-              { href: '/en/operateurs/perenco.html', strong: 'Perenco · Doba', small: 'Took over Esso · Mangara/Badila', icon: '🛢', pole: 'amont' },
-              { href: '/en/operateurs/sht.html', strong: 'SHT · NOC', small: 'National Oil Company of Chad', icon: '🏛', pole: 'amont' },
+              { href: '/en/operateurs/cnpcic.html', strong: 'Opérateur Bongor', small: '60% production · Ronier permit', icon: '🇨🇳', pole: 'amont' },
+              { href: '/en/operateurs/perenco.html', strong: 'Opérateur Doba', small: 'Historic cluster · Mangara/Badila', icon: '🛢', pole: 'amont' },
+              { href: '/en/operateurs/sht.html', strong: 'opérateur national · NOC', small: 'National Oil Company of Chad', icon: '🏛', pole: 'amont' },
             ]
           }
         ],
@@ -723,7 +723,7 @@
             count: '3',
             links: [
               { href: '/en/solutions/?pole=intermediaire', strong: 'S04 · ILI Inspection', small: 'Instrumented pigging MFL/UT · API 1163', icon: '🔍', pole: 'intermediaire' },
-              { href: '/en/solutions/?pole=intermediaire', strong: 'S05 · Pipeline SCADA', small: 'Yokogawa/Emerson · leak detection · API 1130', icon: '📊', pole: 'intermediaire' },
+              { href: '/en/solutions/?pole=intermediaire', strong: 'S05 · Pipeline SCADA', small: 'SCADA majors-grade · leak detection · API 1130', icon: '📊', pole: 'intermediaire' },
               { href: '/en/solutions/?pole=intermediaire', strong: 'S06 · Fiscal Metering', small: 'LACT units · loss audit · API MPMS', icon: '⚖', pole: 'intermediaire' },
             ]
           },
@@ -731,12 +731,12 @@
             title: 'Operators · Pipeline & FSO',
             count: '2',
             links: [
-              { href: '/en/operateurs/cnpcic.html', strong: 'COTCO/TOTCO', small: 'Doba-Kribi pipeline 1,070 km · 6 stations', icon: '🔗', pole: 'intermediaire' },
+              { href: '/en/operateurs/cnpcic.html', strong: 'opérateurs pipeline', small: 'Doba-Kribi pipeline 1,070 km · 6 stations', icon: '🔗', pole: 'intermediaire' },
               { href: '/en/data/atlas.html', strong: 'Pipeline 3D', small: '6 pumping stations visualization · FSO KK1', icon: '📍', pole: 'intermediaire' },
             ]
           }
         ],
-        featured: { title: 'Pipeline Integrity 360°', desc: 'AI leak detection · Perenco MoU in discussion', cta: 'Learn more →', href: '/en/solutions/', thumb: '🔗', badgeLive: false }
+        featured: { title: 'Pipeline Integrity 360°', desc: 'AI leak detection · opérateur amont 2 MoU in discussion', cta: 'Learn more →', href: '/en/solutions/', thumb: '🔗', badgeLive: false }
       },
       'aval': {
         intro: { icon: '🟡', label: 'Downstream Division', desc: 'Refining · Distribution · 50 EVCS', stat: '16M', statLabel: 'USD 2030' },
@@ -754,7 +754,7 @@
             title: 'Operators · Refinery & Distribution',
             count: '1',
             links: [
-              { href: '/en/operateurs/sht.html', strong: 'SRN · Djermaya', small: 'Refinery · JV CNPC 60% / SHT 40%', icon: '🏭', pole: 'aval' },
+              { href: '/en/operateurs/sht.html', strong: 'Raffinerie nationale', small: 'Refinery · JV opérateurs (~60/40)', icon: '🏭', pole: 'aval' },
             ]
           }
         ],
@@ -770,7 +770,7 @@
             links: [
               { href: '/en/technologies/', strong: 'AI & Machine Learning', small: 'Predictive maintenance · reservoir digital twin · 30% downtime reduction', icon: '🧠', pole: 'intermediaire' },
               { href: '/en/technologies/', strong: 'Industrial IoT', small: 'LoRa sensors · 24/7 telemetry remote sites', icon: '📡', pole: 'intermediaire' },
-              { href: '/en/technologies/', strong: 'Digital twin', small: '3D real-time digital twin · Doba/Bongor/SRN', icon: '🔮', pole: 'intermediaire' },
+              { href: '/en/technologies/', strong: 'Digital twin', small: '3D real-time digital twin · Doba/Bongor/raffinerie nationale', icon: '🔮', pole: 'intermediaire' },
               { href: '/en/technologies/', strong: 'Surveillance drones', small: 'ROW pipeline 1,070 km inspection · AI corrosion detection', icon: '🚁', pole: 'intermediaire' },
             ]
           },
@@ -778,14 +778,14 @@
             title: 'Services & Umbrella Solutions',
             count: '4',
             links: [
-              { href: '/en/solutions/', strong: 'S07 · Cyber-OT MSSP', small: 'SOC 24/7 · IDS Claroty/Nozomi · IEC 62443-3-3 · Purdue', icon: '🛡', pole: 'intermediaire' },
+              { href: '/en/solutions/', strong: 'S07 · Cyber-OT MSSP', small: 'SOC 24/7 · IDS OT majors · IEC 62443-3-3 · Purdue', icon: '🛡', pole: 'intermediaire' },
               { href: '/en/solutions/', strong: 'S08 · AI Physical Security', small: '4K cameras + AI · ROW drones · ATEX biometric perimeter', icon: '🎥', pole: 'intermediaire' },
-              { href: '/en/solutions/', strong: 'U03 Cyber-OT MSSP', small: 'Packaged 24/7 OT umbrella · target SRN/COTCO/CNPCIC', icon: '🔒', pole: 'intermediaire' },
+              { href: '/en/solutions/', strong: 'U03 Cyber-OT MSSP', small: 'Packaged 24/7 OT umbrella · target opérateurs aval/midstream/amont', icon: '🔒', pole: 'intermediaire' },
               { href: '/en/solutions/', strong: 'U04 Perimeter Security', small: 'Drones+biometrics+AR/VR HSE training umbrella', icon: '🏛', pole: 'intermediaire' },
             ]
           }
         ],
-        featured: { title: 'See Technologies Pillar', desc: 'Full stack · IEC 62443 · ISO 27001 · Claroty · Nozomi', cta: 'Explore →', href: '/en/technologies/', thumb: '⚙', badgeLive: false }
+        featured: { title: 'See Technologies Pillar', desc: 'Full stack · IEC 62443 · ISO 27001 · IDS OT leaders', cta: 'Explore →', href: '/en/technologies/', thumb: '⚙', badgeLive: false }
       },
       'energies': {
         intro: { icon: '🌱', label: 'Energies Axis · 3 horizons', desc: 'EVCS · BESS · Green H2 · 30% renewables', stat: '125', statLabel: 'MW 2030' },
@@ -806,14 +806,14 @@
             links: [
               { href: '/en/energies/', strong: 'U05 · Hybrid Renewables', small: 'Solar + BESS + Gas-to-power · isolated sites · community mini-grids', icon: '☀', pole: 'amont' },
               { href: '/en/energies/', strong: 'Anti-flaring zero routine', small: 'Associated gas recovery · GHG -45% vs majors · 12 kg CO2/barrel 2030', icon: '🔥', pole: 'amont' },
-              { href: '/en/energies/', strong: 'REDD+ carbon biodiversity', small: 'WWF Cameroon carbon credits · Doba biodiversity', icon: '🌳', pole: 'amont' },
+              { href: '/en/energies/', strong: 'REDD+ carbon biodiversity', small: 'ONG biodiversité internationale Cameroon carbon credits · Doba biodiversity', icon: '🌳', pole: 'amont' },
             ]
           }
         ],
         featured: { title: 'See Energies Pillar', desc: 'CEMAC EVCS first-mover · 50 stations 50 kW CCS2/CHAdeMO', cta: 'Explore →', href: '/en/energies/', thumb: '🌱', badgeLive: false }
       },
       'atlas': {
-        intro: { icon: '🗺', label: 'Chad Market Atlas', desc: 'Note: no EnerTchad assets · OFS → E&P 2030+', stat: 'ℹ', statLabel: 'note' },
+        intro: { icon: '🗺', label: 'Chad Market Atlas', desc: 'Note: no EnerTchad assets · OFS Tchad (E&P = projet futur)', stat: 'ℹ', statLabel: 'note' },
         pole: 'atlas',
         sections: [
           {
@@ -821,11 +821,11 @@
             count: '2',
             links: [
               { href: '/en/data/atlas.html', strong: 'Chad O&G Atlas', small: 'Market: 5 basins · 1,070 km pipeline · 1 refinery · 3 canon pillars', icon: '🗺', pole: 'intermediaire' },
-              { href: '/en/data/atlas.html', strong: 'Pipeline 1,070 km', small: 'COTCO/TOTCO · Doba-Kribi · 6 pumping stations', icon: '📍', pole: 'intermediaire' },
+              { href: '/en/data/atlas.html', strong: 'Pipeline 1,070 km', small: 'opérateurs pipeline · Doba-Kribi · 6 pumping stations', icon: '📍', pole: 'intermediaire' },
             ]
           }
         ],
-        featured: { title: 'Note · EnerTchad new OFS', desc: 'Progressive OFS → E&P ambition by 2030+. Atlas presents the Chad market, not an EnerTchad portfolio.', cta: 'Understand →', href: '/en/pourquoi/manifeste.html', thumb: 'ℹ', badgeLive: false }
+        featured: { title: 'Note · EnerTchad new OFS', desc: 'Progressive OFS · Tchad ambition by 2030+. Atlas presents the Chad market, not an EnerTchad portfolio.', cta: 'Understand →', href: '/en/pourquoi/manifeste.html', thumb: 'ℹ', badgeLive: false }
       },
       'engagement': {
         intro: { icon: '💼', label: 'Engagement · Why · 2026 Round', desc: 'Vision · Investors · ESG/CSR/HSE · Press', stat: '8-12', statLabel: 'M USD Round' },
@@ -836,8 +836,8 @@
             count: '4',
             links: [
               { href: '/en/pourquoi/manifeste.html', strong: 'CEO Manifesto', small: 'Founding vision by Bignéro Le Madang', icon: '📜', badge: null },
-              { href: '/en/pourquoi/manifeste.html', strong: 'Positioning', small: 'EnerTchad vs Aramco · TotalEnergies · Shell', icon: '🎯', badge: null },
-              { href: '/en/pourquoi/manifeste.html', strong: '2026-2030 Trajectory', small: 'Roadmap OFS → E&P · 3 phases', icon: '🗺', badge: 'NEW' },
+              { href: '/en/pourquoi/manifeste.html', strong: 'Positioning', small: 'EnerTchad · positionnement marché Tchad', icon: '🎯', badge: null },
+              { href: '/en/pourquoi/manifeste.html', strong: '2026-2030 Trajectory', small: 'Roadmap OFS · expansion catalogue', icon: '🗺', badge: 'NEW' },
               { href: '/en/pourquoi/manifeste.html', strong: 'Team & Leadership', small: 'CEO profile · Advisory Board · 25 FTE Phase 1', icon: '👥', badge: null },
             ]
           },
@@ -846,7 +846,7 @@
             count: '3',
             links: [
               { href: '/en/engagement/investisseurs.html', strong: '2026 Round · Investors', small: 'USD 8-12M · OHADA · DD package · live War Room', icon: '💼', badge: 'ROUND' },
-              { href: '/en/engagement/transparence.html', strong: 'ESG · CSR · HSE', small: '3 pillars · 6 KPIs · UNHCR/WWF · EITI · GRI · TCFD', icon: '🌍', badge: 'NEW' },
+              { href: '/en/engagement/transparence.html', strong: 'ESG · CSR · HSE', small: '3 pillars · 6 KPIs · agence ONU réfugiés/ONG biodiversité internationale · EITI · GRI Standards reporting · TCFD', icon: '🌍', badge: 'NEW' },
               { href: 'mailto:contact@enertchad.td', strong: 'Contact', small: "N'Djamena · cal.com · LinkedIn", icon: '✉', badge: null },
             ]
           }
@@ -1167,11 +1167,11 @@
       { href: '/data/observatoire.html', name: 'Observatoire', section: 'Atlas' },
       { href: '/data/oleoduc-3d.html', name: 'Pipeline 3D', section: 'Atlas' },
       { href: '/operateurs/', name: '5 Opérateurs cibles', section: 'Opérateurs' },
-      { href: '/operateurs/cnpcic.html', name: 'CNPCIC · Bongor', section: 'Opérateurs' },
-      { href: '/operateurs/perenco.html', name: 'Perenco · Doba', section: 'Opérateurs' },
-      { href: '/operateurs/sht.html', name: 'SHT · NOC', section: 'Opérateurs' },
-      { href: '/operateurs/cotco-totco.html', name: 'COTCO/TOTCO', section: 'Opérateurs' },
-      { href: '/operateurs/srn.html', name: 'SRN · Djermaya', section: 'Opérateurs' },
+      { href: '/operateurs/cnpcic.html', name: 'Opérateur Bongor', section: 'Opérateurs' },
+      { href: '/operateurs/perenco.html', name: 'Opérateur Doba', section: 'Opérateurs' },
+      { href: '/operateurs/sht.html', name: 'opérateur national · NOC', section: 'Opérateurs' },
+      { href: '/operateurs/cotco-totco.html', name: 'opérateurs pipeline', section: 'Opérateurs' },
+      { href: '/operateurs/srn.html', name: 'Raffinerie nationale', section: 'Opérateurs' },
       { href: '/solutions/', name: '10 services + 6 umbrella', section: 'Solutions' },
       { href: '/solutions/configurateur.html', name: 'Configurateur', section: 'Solutions' },
       { href: '/solutions/calculateur.html', name: 'Calculateur ROI', section: 'Solutions' },

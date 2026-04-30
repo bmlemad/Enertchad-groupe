@@ -23,7 +23,7 @@
 <style>
 /* === MAJORS-INSPIRED enhancements === */
 
-/* Reading progress bar (Shell · BP) */
+/* Reading progress bar (major O&G · major O&G) */
 .scroll-progress {
   position: fixed; top: 0; left: 0; right: 0;
   height: 3px;
@@ -37,7 +37,7 @@
   transition: width 100ms linear;
 }
 
-/* Investor ticker (BP · Aramco style) */
+/* Investor ticker (major O&G · major O&G style) */
 .investor-ticker {
   background: var(--navy);
   color: var(--cream);
@@ -197,7 +197,7 @@
 }
 .btn-premium-outline:hover { background: rgba(246,241,230,0.08); border-color: rgba(246,241,230,0.4); color: var(--cream); }
 
-/* BIG NUMBERS section (Aramco · Eni style) */
+/* BIG NUMBERS section (major O&G · major O&G style) */
 .big-numbers {
   background: linear-gradient(180deg, var(--cream) 0%, #fff 100%);
   padding: var(--sp-8) 0;
@@ -255,7 +255,7 @@
   max-width: 260px;
 }
 
-/* STORY ALTERNATING sections (Total · BP style) */
+/* STORY ALTERNATING sections (Total · major O&G style) */
 .story-block {
   padding: var(--sp-8) 0;
 }
@@ -361,7 +361,7 @@
   margin: 0;
 }
 
-/* CEO QUOTE section (Equinor · CEO message) */
+/* CEO QUOTE section (major O&G · CEO message) */
 .ceo-quote {
   background: var(--navy);
   color: var(--cream);
@@ -432,7 +432,7 @@
   margin-top: 4px;
 }
 
-/* INSIGHTS / NEWS magazine cards (Shell style) */
+/* INSIGHTS / NEWS magazine cards (major O&G style) */
 .insights-grid {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
@@ -586,10 +586,10 @@
 <body>
 <a class="skip-link" href="#main">Aller au contenu</a>
 
-<!-- Reading progress bar (Shell style) -->
+<!-- Reading progress bar (major O&G style) -->
 <div class="scroll-progress" aria-hidden="true"><div class="scroll-progress-bar" id="scrollProgressBar"></div></div>
 
-<!-- Investor ticker (BP / Aramco style) -->
+<!-- Investor ticker (major O&G / major O&G style) -->
 <div class="investor-ticker" role="region" aria-label="Tour Seed/Pre-A 2026 ticker">
   <div class="investor-ticker-track">
     <span><span class="dot"></span>TOUR SEED/PRE-A 2026 · <strong>8-12 M USD</strong> · OHADA · closing T3 2026</span>
@@ -597,33 +597,32 @@
     <span><span class="dot"></span>50 STATIONS IRVE CEMAC 2030 · <strong>First-mover</strong> · CCS2/CHAdeMO 50 kW</span>
     <span><span class="dot"></span>5 MARQUES™ OAPI Q3 2026 · Mobile Station™ · EnerClub™ · NRJ+™ · Water-to-Value™ · EnerAcademy™</span>
     <span><span class="dot"></span>3 PÔLES CANON · Amont · Intermédiaire · Aval · 10 services techniques</span>
-    <span><span class="dot"></span>5 OPÉRATEURS CIBLES · CNPCIC · Perenco · SHT · COTCO/TOTCO · SRN</span>
+    <span><span class="dot"></span>5 OPÉRATEURS CIBLES · Opérateur Bongor · Opérateur Doba · opérateur national · opérateurs pipeline · raffinerie nationale</span>
     <!-- Duplicate for seamless loop -->
     <span><span class="dot"></span>TOUR SEED/PRE-A 2026 · <strong>8-12 M USD</strong> · OHADA · closing T3 2026</span>
     <span><span class="dot"></span>50 INVESTISSEURS CIBLES · DFI · VC · Family Office · Impact</span>
     <span><span class="dot"></span>50 STATIONS IRVE CEMAC 2030 · <strong>First-mover</strong> · CCS2/CHAdeMO 50 kW</span>
     <span><span class="dot"></span>5 MARQUES™ OAPI Q3 2026 · Mobile Station™ · EnerClub™ · NRJ+™ · Water-to-Value™ · EnerAcademy™</span>
     <span><span class="dot"></span>3 PÔLES CANON · Amont · Intermédiaire · Aval · 10 services techniques</span>
-    <span><span class="dot"></span>5 OPÉRATEURS CIBLES · CNPCIC · Perenco · SHT · COTCO/TOTCO · SRN</span>
+    <span><span class="dot"></span>5 OPÉRATEURS CIBLES · Opérateur Bongor · Opérateur Doba · opérateur national · opérateurs pipeline · raffinerie nationale</span>
   </div>
 </div>
 
-<!-- TOPBAR -->
-<div class="nav-topbar" role="complementary" aria-label="Informations de contact et certifications">
+<!-- TOPBAR · OFS major-style cleaned -->
+<div class="nav-topbar" role="complementary" aria-label="Informations de contact">
   <div class="nav-topbar-inner">
     <div class="topbar-left">
-      <a class="tb-item" href="tel:+23599298696">+235 99 29 86 96</a>
-      <a class="tb-item" href="mailto:contact@enertchad.td">contact@enertchad.td</a>
+      <a class="tb-item" href="tel:+23599298696" aria-label="Téléphone">📞 +235 99 29 86 96</a>
       <span class="tb-divider" aria-hidden="true"></span>
-      <span class="tb-badges">
-        <span class="tb-badge">ITIE</span>
-        <span class="tb-badge">OHADA</span>
-        <span class="tb-badge">ISO 9001 · 14001 · 45001</span>
-      </span>
+      <a class="tb-item" href="mailto:contact@enertchad.td" aria-label="Email">✉ contact@enertchad.td</a>
+      <span class="tb-divider" aria-hidden="true"></span>
+      <span class="tb-positioning">OFS · marché tchadien</span>
     </div>
     <div class="topbar-right">
-      <a class="tb-social" href="https://linkedin.com/company/enertchad-groupe" target="_blank" rel="noopener">LI</a>
-      <span class="tb-countdown" data-tour-cd></span><span class="tb-divider" aria-hidden="true"></span><span class="tb-divider" aria-hidden="true"></span>
+      <span class="tb-countdown" data-tour-cd></span>
+      <span class="tb-divider" aria-hidden="true"></span>
+      <a class="tb-social" href="https://linkedin.com/company/enertchad-groupe" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+      <span class="tb-divider" aria-hidden="true"></span>
       <a class="lang-switch-tb" href="/en/">EN</a>
     </div>
   </div>
@@ -647,6 +646,13 @@
 </header>
 
 <main id="main" tabindex="-1">
+  <div class="positioning-banner">
+    <div class="container">
+      <strong>📌 Positionnement</strong>
+      EnerTchad est aujourd'hui une société <strong>OFS</strong> (Oil Field Services) focalisée sur le marché tchadien. <strong>Devenir une société E&amp;P à part entière reste un projet d'avenir exploratoire</strong> — non encore engagé.
+    </div>
+  </div>
+
 
   <!-- HERO MAJORS -->
   <section class="hero-majors" aria-labelledby="hero-h1">
@@ -683,7 +689,7 @@
     </div>
   </section>
 
-  <!-- BIG NUMBERS (Aramco / Eni style) -->
+  <!-- BIG NUMBERS (major O&G / major O&G style) -->
   <section class="big-numbers">
     <div class="container">
       <span class="section-badge-majors">Le contenu local · au standard des majors</span>
@@ -694,7 +700,7 @@
         <div class="big-number-tile">
           <div class="big-number-num">10</div>
           <div class="big-number-lbl">Services techniques</div>
-          <p class="big-number-desc">S01-S06 (Amont · Intermédiaire) · S09 + U06 (Aval) · Maintenance SRN. Catalogue 3 pôles canon end-to-end.</p>
+          <p class="big-number-desc">S01-S06 (Amont · Intermédiaire) · S09 + U06 (Aval) · Maintenance raffinerie. Catalogue 3 pôles canon end-to-end.</p>
         </div>
         <div class="big-number-tile">
           <div class="big-number-num">5</div>
@@ -710,7 +716,7 @@
     </div>
   </section>
 
-  <!-- STORY ALTERNATING (Total · BP style) -->
+  <!-- STORY ALTERNATING (Total · major O&G style) -->
   <section class="story-block">
     <div class="container">
       <span class="section-badge-majors">Trois pôles canon Oil &amp; Gas</span>
@@ -721,7 +727,7 @@
         <div>
           <span class="story-tag">01 · AMONT · Upstream</span>
           <h3 class="story-h3">E&amp;P · EOR Local · <em>HSE</em></h3>
-          <p class="story-p">Caractérisation réservoir 2D/3D · Programme EOR Local "Ressources Tchadiennes" (5 ressources brevet OAPI Q3 2026) · process safety API RP 75. Cibles : CNPCIC Bongor (60% production) · Perenco Doba (cluster historique post-Esso).</p>
+          <p class="story-p">Caractérisation réservoir 2D/3D · Programme EOR Local "Ressources Tchadiennes" (5 ressources brevet OAPI Q3 2026) · process safety API RP 75. Cibles : opérateur amont 1 Bongor (60% production) · opérateur amont 2 Doba (cluster historique post-cluster historique).</p>
           <a class="story-link" href="/amont/">Explorer le pôle Amont →</a>
         </div>
         <div class="story-visual">
@@ -735,7 +741,7 @@
         <div>
           <span class="story-tag">02 · INTERMÉDIAIRE · Midstream</span>
           <h3 class="story-h3">Pipeline 1 070 km · <em>SCADA · Métrologie</em></h3>
-          <p class="story-p">Inspection ILI MFL/UT · modernisation SCADA Yokogawa/Emerson · métrologie fiscale LACT · cyber-OT IEC 62443. Cible : COTCO/TOTCO opérateur du pipeline export Doba-Kribi (250 kb/j capacité).</p>
+          <p class="story-p">Inspection ILI MFL/UT · modernisation SCADA SCADA majors-grade · métrologie fiscale LACT · cyber-OT IEC 62443. Cible : opérateurs pipeline opérateur du pipeline export Doba-Kribi (250 kb/j capacité).</p>
           <a class="story-link" href="/intermediaire/">Explorer le pôle Intermédiaire →</a>
         </div>
         <div class="story-visual">
@@ -749,7 +755,7 @@
         <div>
           <span class="story-tag">03 · AVAL · Downstream</span>
           <h3 class="story-h3">Raffinerie · Mobile Station™ · <em>IRVE CEMAC</em></h3>
-          <p class="story-p">Maintenance SRN raffinerie 20 kb/j · blending lubrifiants S09 (substitution import 30%) · Premier réseau IRVE CEMAC 50 stations 50 kW 2030 · Mobile Station™ S/M/L brevet OAPI modèle utilité.</p>
+          <p class="story-p">Maintenance raffinerie raffinerie 20 kb/j · blending lubrifiants S09 (substitution import 30%) · Premier réseau IRVE CEMAC 50 stations 50 kW 2030 · Mobile Station™ S/M/L brevet OAPI modèle utilité.</p>
           <a class="story-link" href="/aval/">Explorer le pôle Aval →</a>
         </div>
         <div class="story-visual">
@@ -761,7 +767,7 @@
     </div>
   </section>
 
-  <!-- CEO QUOTE (Equinor style) -->
+  <!-- CEO QUOTE (major O&G style) -->
   <section class="ceo-quote">
     <div class="container">
       <div class="ceo-quote-grid">
@@ -769,13 +775,13 @@
         <div>
           <div class="ceo-quote-mark">«</div>
           <p class="ceo-quote-text">EnerTchad ne reproduit pas les majors — elle <em>traduit leur langage technique</em> en exécution locale OHADA, avec des brevets OAPI qui valoriseront durablement les ressources tchadiennes.</p>
-          <div class="ceo-quote-author">Bignéro Moïalbéi Le Madang<small>Directeur Général · ex-ExxonMobil 12 ans (Tchad/Cameroun)</small></div>
+          <div class="ceo-quote-author">Bignéro Moïalbéi Le Madang<small>Directeur Général · ex-major O&G internationale 12 ans (Tchad/Cameroun)</small></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- INSIGHTS / NEWS magazine cards (Shell style) -->
+  <!-- INSIGHTS / NEWS magazine cards (major O&G style) -->
   <section class="section">
     <div class="container">
       <span class="section-badge-majors">Insights &amp; perspectives</span>
@@ -807,9 +813,9 @@
         <a class="insight-card" href="/intermediaire/">
           <div>
             <div class="insight-card-tag">Pipeline Integrity 360°</div>
-            <h3 class="insight-card-h3">MoU Perenco · 1 070 km · ILI + SCADA + cyber-OT.</h3>
+            <h3 class="insight-card-h3">MoU Opérateur Doba · 1 070 km · ILI + SCADA + cyber-OT.</h3>
           </div>
-          <div class="insight-card-meta">COTCO/TOTCO · IEC 62443 →</div>
+          <div class="insight-card-meta">opérateurs pipeline · IEC 62443 →</div>
         </a>
         <a class="insight-card" href="/engagement/transparence.html">
           <div>
@@ -844,25 +850,77 @@
 
 </main>
 
-<footer class="site-footer" role="contentinfo">
+<footer class="site-footer site-footer-v2" role="contentinfo">
   <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
+    <div class="footer-grid-v2">
+      <div class="footer-brand-v2">
         <strong>EnerTchad Groupe SA/CA</strong>
-        <small>Pour les opérateurs du Tchad — un partenaire services local OHADA. Unité · Innovation · Durabilité — Accès aux Énergies.<br><strong style="color:var(--gold);font-weight:600">DG : Bignéro Moïalbéi Le Madang · PCA : Théophile Gag Pinabei</strong><br><span style="font-size:.78em;opacity:.85">Cœur de métier : 3 pôles canon Oil &amp; Gas · Amont · Intermédiaire · Aval</span><br><span style="font-size:.78em;opacity:.7">5 marques™ : Mobile Station™ · EnerClub™ · NRJ+™ · Water-to-Value™ · EnerAcademy™ (à déclarer OAPI)</span></small>
+        <p class="footer-tagline">Société OFS focalisée sur le marché tchadien · OHADA</p>
+        <p class="footer-positioning">L'E&amp;P à part entière reste un projet d'avenir exploratoire. Activité actuelle : services Oil Field Services pour les opérateurs du marché tchadien.</p>
+        <div class="footer-leadership"><strong>DG</strong> Bignéro Moïalbéi Le Madang · <strong>PCA</strong> Théophile Gag Pinabei</div>
       </div>
-      <div class="footer-col"><h4>Pourquoi</h4><ul><li><a href="/pourquoi/manifeste.html">Manifeste DG</a></li><li><a href="/pourquoi/positionnement.html">Positionnement</a></li><li><a href="/pourquoi/trajectoire.html">Trajectoire 2026-2030</a></li></ul></div>
-      <div class="footer-col footer-col-poles"><h4>3 pôles canon</h4><ul><li class="pole-dot pole-amont"><a href="/amont/">Amont · Upstream</a></li><li class="pole-dot pole-intermediaire"><a href="/intermediaire/">Intermédiaire · Midstream</a></li><li class="pole-dot pole-aval"><a href="/aval/">Aval · Downstream</a></li></ul></div>
-      <div class="footer-col"><h4>Engagement</h4><ul><li><a href="/pourquoi/manifeste.html">Manifeste DG</a></li><li><a href="/engagement/investisseurs.html">Tour 2026</a></li><li><a href="/engagement/transparence.html">ESG · RSE · HSE</a></li><li><a href="/glossaire.html">Glossaire</a></li><li><a href="/legal/mentions-legales.html">Mentions légales</a></li></ul></div>
+
+      <div class="footer-col-v2">
+        <h4>Catalogue</h4>
+        <ul>
+          <li><a href="/amont/">Pôle Amont · Upstream</a></li>
+          <li><a href="/intermediaire/">Pôle Intermédiaire</a></li>
+          <li><a href="/aval/">Pôle Aval · Downstream</a></li>
+          <li><a href="/technologies/">Axe Technologies</a></li>
+          <li><a href="/energies/">Axe Énergies</a></li>
+          <li><a href="/solutions/">Catalogue services 18+</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col-v2">
+        <h4>Engagement</h4>
+        <ul>
+          <li><a href="/engagement/investisseurs.html">Tour Seed/Pre-A 2026</a></li>
+          <li><a href="/engagement/transparence.html">ESG · CSR · HSE</a></li>
+          <li><a href="/pourquoi/manifeste.html">Manifeste DG</a></li>
+          <li><a href="/engagement/presse.html">Presse</a></li>
+          <li><a href="/engagement/contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col-v2">
+        <h4>Newsletter Tour 2026</h4>
+        <p class="footer-newsletter-desc">Recevez les actualités investisseurs et avancées catalogue OFS.</p>
+        <form action="https://formspree.io/f/enertchad-newsletter" method="POST" class="footer-newsletter-v2" novalidate>
+          <input type="email" name="email" placeholder="email@exemple.com" required aria-label="Adresse email">
+          <button type="submit">S&rsquo;inscrire ↗</button>
+        </form>
+        <small>RGPD · désinscription 1-clic · données EU-West chiffrées</small>
+      </div>
     </div>
-    <div class="footer-meta">
-      <span>© <span data-year>2026</span> EnerTchad Groupe SA/CA · RCCM N&rsquo;DJ/RC/2026-A-0001 · Tour Seed/Pre-A 2026 · 8&ndash;12 M USD · OHADA</span>
+
+    <div class="footer-meta-v2">
+      <div class="footer-badges-v2">
+        <span class="fbadge">ITIE</span>
+        <span class="fbadge">OHADA</span>
+        <span class="fbadge">ISO 9001 · 14001 · 45001</span>
+        <span class="fbadge">OAPI 2026</span>
+      </div>
+      <div class="footer-legal-v2">
+        <span>© <span data-year>2026</span> EnerTchad Groupe SA/CA</span>
+        <span>·</span>
+        <span>RCCM N&rsquo;DJ/RC/2026-A-0001</span>
+        <span>·</span>
+        <span>Capital 10 000 000 FCFA</span>
+        <span>·</span>
+        <a href="/legal/mentions-legales.html">Mentions légales</a>
+        <span>·</span>
+        <a href="/legal/confidentialite.html">Confidentialité</a>
+        <span>·</span>
+        <a href="/legal/cookies.html">Cookies</a>
+      </div>
+      <div class="footer-lang-v2"><a href="/" hreflang="fr">FR</a><span>·</span><a href="/en/" hreflang="en">EN</a></div>
     </div>
   </div>
 </footer>
 
 <script>
-// Reading progress bar (Shell style)
+// Reading progress bar (major O&G style)
 (function() {
   var bar = document.getElementById('scrollProgressBar');
   if (!bar) return;
