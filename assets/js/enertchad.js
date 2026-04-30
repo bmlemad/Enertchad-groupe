@@ -508,7 +508,7 @@
     // Detect current page for is-current highlighting
     const currentPath = location.pathname.replace(/\/$/, '') || '/';
 
-    const PANELS = {
+    const PANELS_FR = {
 
       'amont': {
         intro: { icon: '🟢', label: 'Pôle Amont · Upstream', desc: 'Exploration · Production · EOR · 5 bassins', stat: '22M', statLabel: 'USD 2030' },
@@ -521,6 +521,7 @@
               { href: '/solutions/?pole=amont', strong: 'S01 · E&P Géosciences', small: 'Caractérisation réservoir · sismique · modélisation 2D/3D', icon: '🛢', pole: 'amont' },
               { href: '/solutions/?pole=amont', strong: 'S02 · EOR Polymères', small: 'HPAM · anti-scale · démulsifiants · récupération assistée', icon: '🧪', pole: 'amont' },
               { href: '/solutions/?pole=amont', strong: 'S03 · HSE industriel', small: 'Process safety · ISO 45001 · API RP 75', icon: '🛡', pole: 'amont' },
+              { href: '/amont/#12', strong: 'S11-S18 · Roadmap 2027-2030', small: 'Drilling fluids · wireline · workover · P&A · AIM · 8 nouveaux services', icon: '🚀', pole: 'amont', badge: 'NEW' },
             ]
           },
           {
@@ -684,7 +685,180 @@
         featured: { title: 'Closing T3 2026', desc: 'Sièges Tour Seed/Pre-A · DFI lead', cta: 'Term sheet →', href: '/engagement/investisseurs.html', thumb: '🎯', badgeLive: true }
       }
     };
-    
+
+    const PANELS_EN = {
+
+      'amont': {
+        intro: { icon: '🟢', label: 'Upstream Division', desc: 'Exploration · Production · EOR · 5 basins', stat: '22M', statLabel: 'USD 2030' },
+        pole: 'amont',
+        sections: [
+          {
+            title: 'Upstream Services',
+            count: '3',
+            links: [
+              { href: '/en/solutions/?pole=amont', strong: 'S01 · E&P Geosciences', small: 'Reservoir characterization · seismic · 2D/3D modeling', icon: '🛢', pole: 'amont' },
+              { href: '/en/solutions/?pole=amont', strong: 'S02 · EOR Polymers', small: 'HPAM · anti-scale · demulsifiers · enhanced recovery', icon: '🧪', pole: 'amont' },
+              { href: '/en/solutions/?pole=amont', strong: 'S03 · Industrial HSE', small: 'Process safety · ISO 45001 · API RP 75', icon: '🛡', pole: 'amont' },
+              { href: '/en/amont/', strong: 'S11-S18 · Roadmap 2027-2030', small: 'Drilling fluids · wireline · workover · P&A · AIM · 8 new services', icon: '🚀', pole: 'amont', badge: 'NEW' },
+            ]
+          },
+          {
+            title: 'Target Operators · Upstream',
+            count: '3',
+            links: [
+              { href: '/en/operateurs/cnpcic.html', strong: 'CNPCIC · Bongor', small: '60% production · Ronier permit', icon: '🇨🇳', pole: 'amont' },
+              { href: '/en/operateurs/perenco.html', strong: 'Perenco · Doba', small: 'Took over Esso · Mangara/Badila', icon: '🛢', pole: 'amont' },
+              { href: '/en/operateurs/sht.html', strong: 'SHT · NOC', small: 'National Oil Company of Chad', icon: '🏛', pole: 'amont' },
+            ]
+          }
+        ],
+        featured: { title: 'Local EOR Program', desc: '5 Chadian resources · OAPI patent Q3 2026', cta: 'Discover →', href: '/en/solutions/', thumb: '🌿', badgeLive: false }
+      },
+      'intermediaire': {
+        intro: { icon: '🔵', label: 'Midstream Division', desc: 'Pipeline · Storage · Metering', stat: '12M', statLabel: 'USD 2030' },
+        pole: 'intermediaire',
+        sections: [
+          {
+            title: 'Midstream Services',
+            count: '3',
+            links: [
+              { href: '/en/solutions/?pole=intermediaire', strong: 'S04 · ILI Inspection', small: 'Instrumented pigging MFL/UT · API 1163', icon: '🔍', pole: 'intermediaire' },
+              { href: '/en/solutions/?pole=intermediaire', strong: 'S05 · Pipeline SCADA', small: 'Yokogawa/Emerson · leak detection · API 1130', icon: '📊', pole: 'intermediaire' },
+              { href: '/en/solutions/?pole=intermediaire', strong: 'S06 · Fiscal Metering', small: 'LACT units · loss audit · API MPMS', icon: '⚖', pole: 'intermediaire' },
+            ]
+          },
+          {
+            title: 'Operators · Pipeline & FSO',
+            count: '2',
+            links: [
+              { href: '/en/operateurs/cnpcic.html', strong: 'COTCO/TOTCO', small: 'Doba-Kribi pipeline 1,070 km · 6 stations', icon: '🔗', pole: 'intermediaire' },
+              { href: '/en/data/atlas.html', strong: 'Pipeline 3D', small: '6 pumping stations visualization · FSO KK1', icon: '📍', pole: 'intermediaire' },
+            ]
+          }
+        ],
+        featured: { title: 'Pipeline Integrity 360°', desc: 'AI leak detection · Perenco MoU in discussion', cta: 'Learn more →', href: '/en/solutions/', thumb: '🔗', badgeLive: false }
+      },
+      'aval': {
+        intro: { icon: '🟡', label: 'Downstream Division', desc: 'Refining · Distribution · 50 EVCS', stat: '16M', statLabel: 'USD 2030' },
+        pole: 'aval',
+        sections: [
+          {
+            title: 'Downstream Services',
+            count: '2',
+            links: [
+              { href: '/en/solutions/?pole=aval', strong: 'S09 · Lubricants Blending', small: '15W-40 · 5W-30 · ISO VG · API SN/SP', icon: '⚗', pole: 'aval' },
+              { href: '/en/solutions/?pole=aval', strong: 'U06 · Mobile Distribution', small: 'Mobile Station™ · 50 EVCS stations CEMAC', icon: '⛽', pole: 'aval' },
+            ]
+          },
+          {
+            title: 'Operators · Refinery & Distribution',
+            count: '1',
+            links: [
+              { href: '/en/operateurs/sht.html', strong: 'SRN · Djermaya', small: 'Refinery · JV CNPC 60% / SHT 40%', icon: '🏭', pole: 'aval' },
+            ]
+          }
+        ],
+        featured: { title: 'CEMAC First EVCS', desc: 'Mobile Station™ · 50 kW CCS2/CHAdeMO · OAPI patent', cta: 'Discover →', href: '/en/solutions/', thumb: '⚡', badgeLive: false }
+      },
+      'technologies': {
+        intro: { icon: '⚙', label: 'Technologies Axis', desc: 'AI · Cyber-OT · IoT · Digital twin', stat: '8', statLabel: 'pillars' },
+        pole: 'technologies',
+        sections: [
+          {
+            title: 'Cross-cutting Tech Stack',
+            count: '4',
+            links: [
+              { href: '/en/technologies/', strong: 'AI & Machine Learning', small: 'Predictive maintenance · reservoir digital twin · 30% downtime reduction', icon: '🧠', pole: 'intermediaire' },
+              { href: '/en/technologies/', strong: 'Industrial IoT', small: 'LoRa sensors · 24/7 telemetry remote sites', icon: '📡', pole: 'intermediaire' },
+              { href: '/en/technologies/', strong: 'Digital twin', small: '3D real-time digital twin · Doba/Bongor/SRN', icon: '🔮', pole: 'intermediaire' },
+              { href: '/en/technologies/', strong: 'Surveillance drones', small: 'ROW pipeline 1,070 km inspection · AI corrosion detection', icon: '🚁', pole: 'intermediaire' },
+            ]
+          },
+          {
+            title: 'Services & Umbrella Solutions',
+            count: '4',
+            links: [
+              { href: '/en/solutions/', strong: 'S07 · Cyber-OT MSSP', small: 'SOC 24/7 · IDS Claroty/Nozomi · IEC 62443-3-3 · Purdue', icon: '🛡', pole: 'intermediaire' },
+              { href: '/en/solutions/', strong: 'S08 · AI Physical Security', small: '4K cameras + AI · ROW drones · ATEX biometric perimeter', icon: '🎥', pole: 'intermediaire' },
+              { href: '/en/solutions/', strong: 'U03 Cyber-OT MSSP', small: 'Packaged 24/7 OT umbrella · target SRN/COTCO/CNPCIC', icon: '🔒', pole: 'intermediaire' },
+              { href: '/en/solutions/', strong: 'U04 Perimeter Security', small: 'Drones+biometrics+AR/VR HSE training umbrella', icon: '🏛', pole: 'intermediaire' },
+            ]
+          }
+        ],
+        featured: { title: 'See Technologies Pillar', desc: 'Full stack · IEC 62443 · ISO 27001 · Claroty · Nozomi', cta: 'Explore →', href: '/en/technologies/', thumb: '⚙', badgeLive: false }
+      },
+      'energies': {
+        intro: { icon: '🌱', label: 'Energies Axis · 3 horizons', desc: 'EVCS · BESS · Green H2 · 30% renewables', stat: '125', statLabel: 'MW 2030' },
+        pole: 'energies',
+        sections: [
+          {
+            title: '3-horizon Strategy · Transition',
+            count: '3',
+            links: [
+              { href: '/en/energies/', strong: 'Horizon 1 · 2026-2030', small: 'Conventional cash cow · 125 MW Chad · Local EOR', icon: '🛢', pole: 'amont' },
+              { href: '/en/energies/', strong: 'Horizon 2 · 2030-2035', small: 'Gas/EVCS transition · 30% renewables · BESS · 50 CEMAC stations', icon: '⚡', pole: 'aval' },
+              { href: '/en/energies/', strong: 'Horizon 3 · 2035+', small: 'Green hydrogen · electrolysis · R&D pilot 2027', icon: '🌱', pole: 'amont' },
+            ]
+          },
+          {
+            title: 'Initiatives & U05',
+            count: '3',
+            links: [
+              { href: '/en/energies/', strong: 'U05 · Hybrid Renewables', small: 'Solar + BESS + Gas-to-power · isolated sites · community mini-grids', icon: '☀', pole: 'amont' },
+              { href: '/en/energies/', strong: 'Anti-flaring zero routine', small: 'Associated gas recovery · GHG -45% vs majors · 12 kg CO2/barrel 2030', icon: '🔥', pole: 'amont' },
+              { href: '/en/energies/', strong: 'REDD+ carbon biodiversity', small: 'WWF Cameroon carbon credits · Doba biodiversity', icon: '🌳', pole: 'amont' },
+            ]
+          }
+        ],
+        featured: { title: 'See Energies Pillar', desc: 'CEMAC EVCS first-mover · 50 stations 50 kW CCS2/CHAdeMO', cta: 'Explore →', href: '/en/energies/', thumb: '🌱', badgeLive: false }
+      },
+      'atlas': {
+        intro: { icon: '🗺', label: 'Chad Market Atlas', desc: 'Note: no EnerTchad assets · OFS → E&P 2030+', stat: 'ℹ', statLabel: 'note' },
+        pole: 'atlas',
+        sections: [
+          {
+            title: 'Chad Market Atlas (third-party operator assets)',
+            count: '2',
+            links: [
+              { href: '/en/data/atlas.html', strong: 'Chad O&G Atlas', small: 'Market: 5 basins · 1,070 km pipeline · 1 refinery · 3 canon pillars', icon: '🗺', pole: 'intermediaire' },
+              { href: '/en/data/atlas.html', strong: 'Pipeline 1,070 km', small: 'COTCO/TOTCO · Doba-Kribi · 6 pumping stations', icon: '📍', pole: 'intermediaire' },
+            ]
+          }
+        ],
+        featured: { title: 'Note · EnerTchad new OFS', desc: 'Progressive OFS → E&P ambition by 2030+. Atlas presents the Chad market, not an EnerTchad portfolio.', cta: 'Understand →', href: '/en/pourquoi/manifeste.html', thumb: 'ℹ', badgeLive: false }
+      },
+      'engagement': {
+        intro: { icon: '💼', label: 'Engagement · Why · 2026 Round', desc: 'Vision · Investors · ESG/CSR/HSE · Press', stat: '8-12', statLabel: 'M USD Round' },
+        pole: 'engagement',
+        sections: [
+          {
+            title: 'Why · Vision & Strategy',
+            count: '4',
+            links: [
+              { href: '/en/pourquoi/manifeste.html', strong: 'CEO Manifesto', small: 'Founding vision by Bignéro Le Madang', icon: '📜', badge: null },
+              { href: '/en/pourquoi/manifeste.html', strong: 'Positioning', small: 'EnerTchad vs Aramco · TotalEnergies · Shell', icon: '🎯', badge: null },
+              { href: '/en/pourquoi/manifeste.html', strong: '2026-2030 Trajectory', small: 'Roadmap OFS → E&P · 3 phases', icon: '🗺', badge: 'NEW' },
+              { href: '/en/pourquoi/manifeste.html', strong: 'Team & Leadership', small: 'CEO profile · Advisory Board · 25 FTE Phase 1', icon: '👥', badge: null },
+            ]
+          },
+          {
+            title: 'Investment & Engagements',
+            count: '3',
+            links: [
+              { href: '/en/engagement/investisseurs.html', strong: '2026 Round · Investors', small: 'USD 8-12M · OHADA · DD package · live War Room', icon: '💼', badge: 'ROUND' },
+              { href: '/en/engagement/transparence.html', strong: 'ESG · CSR · HSE', small: '3 pillars · 6 KPIs · UNHCR/WWF · EITI · GRI · TCFD', icon: '🌍', badge: 'NEW' },
+              { href: 'mailto:contact@enertchad.td', strong: 'Contact', small: "N'Djamena · cal.com · LinkedIn", icon: '✉', badge: null },
+            ]
+          }
+        ],
+        featured: { title: 'Q3 2026 Closing', desc: 'Seed/Pre-A Round seats · DFI lead', cta: 'Term sheet →', href: '/en/engagement/investisseurs.html', thumb: '🎯', badgeLive: true }
+      }
+    };
+
+    // i18n: detect page language
+    const __lang = document.documentElement.lang || 'fr';
+    const PANELS = (__lang === 'en' && typeof PANELS_EN !== 'undefined') ? PANELS_EN : PANELS_FR;
+
     navLinks.forEach(link => {
       const txt = link.textContent.trim().toLowerCase();
       // Match by data-pole or by text content
@@ -1053,6 +1227,27 @@
     }
   }
 
+  
+
+  /* ─── D.5 · Tour 2026 J-XX countdown topbar ─────────── */
+  function initTourCountdown(){
+    const target = document.querySelector('.tb-countdown');
+    if (!target) return;
+    const closingDate = new Date('2026-09-30T23:59:59Z');
+    function update() {
+      const now = new Date();
+      const diffMs = closingDate - now;
+      const days = Math.max(0, Math.ceil(diffMs / (1000*60*60*24)));
+      const lang = document.documentElement.lang || 'fr';
+      const liveLabel = lang === 'en' ? 'LIVE' : 'LIVE';
+      const tourLabel = lang === 'en' ? '2026 Round' : 'Tour 2026';
+      const dayLabel = lang === 'en' ? 'days' : 'j';
+      target.innerHTML = '<span class="tb-cd-pulse">' + liveLabel + '</span> · ' + tourLabel + ' · J-' + days + ' ' + dayLabel;
+    }
+    update();
+    setInterval(update, 60*1000);
+  }
+
   function init(){
     try {
       initScrollProgress();
@@ -1076,6 +1271,7 @@
     initVisibleSearch();
     initQuickActions();
     initWarRoom();
+    initTourCountdown();
     trackRecentlyViewed();
     initPageNav();
       document.body.classList.add('et-loaded');

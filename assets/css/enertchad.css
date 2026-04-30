@@ -1564,3 +1564,37 @@ body.scrolled .persona-bar { display: none; }
 @media (max-width: 900px) {
   .nav-topbar { display: none; }
 }
+
+/* === Tour 2026 J-XX countdown topbar (D.5) === */
+.tb-countdown {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gold);
+  letter-spacing: 0.02em;
+  font-family: var(--font-display);
+  padding: 2px 10px;
+  border: 1px solid rgba(217, 168, 79, 0.30);
+  border-radius: 4px;
+  background: rgba(217, 168, 79, 0.06);
+}
+.tb-cd-pulse {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  color: #fff;
+  background: #d63838;
+  padding: 1px 5px;
+  border-radius: 3px;
+  letter-spacing: 0.06em;
+  animation: tbCdPulse 1.6s ease-in-out infinite;
+}
+@keyframes tbCdPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.55; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tb-cd-pulse { animation: none; }
+}
