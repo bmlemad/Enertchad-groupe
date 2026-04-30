@@ -1234,7 +1234,7 @@
 
   /* ─── D.5 · Tour 2026 J-XX countdown topbar ─────────── */
   function initTourCountdown(){
-    const target = document.querySelector('.tb-countdown');
+    const target = document.querySelector('.tb-countdown, .header-countdown');
     if (!target) return;
     const closingDate = new Date('2026-09-30T23:59:59Z');
     function update() {
