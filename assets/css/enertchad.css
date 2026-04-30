@@ -194,7 +194,6 @@ body[data-pole="aval"] .site-header { border-bottom-color: rgba(217,168,79,0.25)
   .cta-btn.cta-tour-2026::after { animation: none; }
 }
 /* Tour status sub-label below CTA */
-.tour-status { display: inline-flex; align-items: center; gap: 6px; font-size: 10px; color: var(--gold); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 4px; opacity: 0.85; }
 .tour-status::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #4ADE80; box-shadow: 0 0 6px rgba(74,222,128,0.6); }
 
 
@@ -305,16 +304,10 @@ th { font-family: var(--font-display); font-weight: 600; color: var(--gold-deep)
 .scroll-progress { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, var(--gold), var(--gold-deep)); z-index: 9999; transition: width 100ms linear; }
 
 /* === 11. Utilities ========================================= */
-.text-gold { color: var(--gold); }
-.text-deep { color: var(--gold-deep); }
-.text-cream { color: var(--cream); }
 .bg-cream { background: var(--cream); }
-.bg-navy { background: var(--navy); color: var(--cream); }
-.mt-0 { margin-top: 0; }
 .mt-4 { margin-top: var(--sp-4); }
 .mt-5 { margin-top: var(--sp-5); }
 .mt-7 { margin-top: var(--sp-7); }
-.mb-0 { margin-bottom: 0; }
 .mb-4 { margin-bottom: var(--sp-4); }
 .mb-5 { margin-bottom: var(--sp-5); }
 .text-center { text-align: center; }
@@ -573,13 +566,6 @@ th { font-family: var(--font-display); font-weight: 600; color: var(--gold-deep)
 /* hero-inner consolidé : z-index: 2 dans règle principale */
 
 /* === 14.8 Reading progress on long pages ===================== */
-.reading-progress {
-  position: fixed; top: 0; left: 0;
-  height: 3px; background: linear-gradient(90deg, var(--gold), var(--gold-deep));
-  z-index: 9998;
-  width: 0%;
-  transition: width 80ms linear;
-}
 
 
 /* G · Sub-nav filtre 3 pôles canon (Vague Q) */
@@ -714,7 +700,6 @@ body.scrolled .subnav-poles { top: 53px; }
 .card-pole[data-pole="technologies"] { --accent: var(--pole-technologies-canon); }
 
 /* Footer brand-mark with canonical logo */
-.sf-brand-mark { display: grid; place-items: center; width: 56px; height: 56px; border-radius: 50%; background: var(--navy) url('/assets/logo-enertchad.svg') center/contain no-repeat; color: transparent; font-size: 0; flex-shrink: 0; }
 
 /* === 14.13 Animations subtiles micro-interactions ============ */
 @keyframes fadeInUp {
@@ -1427,14 +1412,6 @@ body.scrolled .persona-bar { display: none; }
 }
 
 /* Quick keyboard shortcut hint */
-.mega-panel-shortcut {
-  display: inline-flex; align-items: center; gap: 4px;
-  font-family: ui-monospace, "SF Mono", monospace;
-  font-size: 9px; color: rgba(246,241,230,0.4);
-  background: rgba(246,241,230,0.06);
-  padding: 1px 5px; border-radius: 3px;
-  margin-left: 8px;
-}
 
 /* Section sub-divider improved */
 .mega-panel-section h5 {
