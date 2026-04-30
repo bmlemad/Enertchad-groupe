@@ -515,22 +515,23 @@
         pole: 'amont',
         sections: [
           {
-            title: 'Services Amont (Upstream)',
-            count: '3',
+            title: '🟤 Brown · Champs matures',
+            count: '3+',
             links: [
-              { href: '/solutions/?pole=amont', strong: 'S01 · E&P Géosciences', small: 'Caractérisation réservoir · sismique · modélisation 2D/3D', icon: '🛢', pole: 'amont' },
-              { href: '/solutions/?pole=amont', strong: 'S02 · EOR Polymères', small: 'HPAM · anti-scale · démulsifiants · récupération assistée', icon: '🧪', pole: 'amont' },
-              { href: '/solutions/?pole=amont', strong: 'S03 · HSE industriel', small: 'Process safety · ISO 45001 · API RP 75', icon: '🛡', pole: 'amont' },
-              { href: '/amont/#12', strong: 'S11-S18 · Roadmap 2027-2030', small: 'Drilling fluids · wireline · workover · P&A · AIM · 8 nouveaux services', icon: '🚀', pole: 'amont', badge: 'NEW' },
+              { href: '/amont/#brown-services', strong: 'S02 · EOR Local', small: '+6-17% OOIP · 5 ressources tchadiennes · OAPI Q3 2026', icon: '🧪', pole: 'amont' },
+              { href: '/amont/#brown-services', strong: 'S03 · HSE industriel', small: 'Process safety · ISO 45001 · API RP 75', icon: '🛡', pole: 'amont' },
+              { href: '/amont/#brown-services', strong: 'S16 · Workover (2029)', small: '30+ puits matures · 1 rig acquis ou loué', icon: '⚙', pole: 'amont', badge: 'NEW' },
+              { href: '/amont/#brown-services', strong: 'S17 · P&A (2030)', small: 'Plug & Abandonment · gisements épuisés', icon: '🔒', pole: 'amont' },
             ]
           },
           {
-            title: 'Opérateurs cibles · Amont',
-            count: '3',
+            title: '🟢 Green · Champs neufs',
+            count: '3+',
             links: [
-              { href: '/operateurs/cnpcic.html', strong: 'Opérateur Bongor', small: '60% production · Permis Ronier', icon: '🇨🇳', pole: 'amont' },
-              { href: '/operateurs/perenco.html', strong: 'Opérateur Doba', small: 'Cluster historique · Mangara/Badila', icon: '🛢', pole: 'amont' },
-              { href: '/operateurs/sht.html', strong: 'opérateur national · NOC', small: 'Société Hydrocarbures Tchad', icon: '🏛', pole: 'amont' },
+              { href: '/amont/#green-services', strong: 'S01 · E&P Géosciences', small: 'Sismique 2D/3D · modélisation · FDP', icon: '🛢', pole: 'amont' },
+              { href: '/amont/#green-services', strong: 'S11 · Drilling Fluids (2027)', small: 'Mud engineering · MWD/LWD support', icon: '⚗', pole: 'amont', badge: 'NEW' },
+              { href: '/amont/#green-services', strong: 'S12 · Wellsite Sup (2027)', small: 'Company man pool · day-rate', icon: '👷', pole: 'amont', badge: 'NEW' },
+              { href: '/amont/#green-services', strong: 'S13 · Cementing (2028)', small: '1 cement unit · pas d\'acteur local', icon: '🧱', pole: 'amont' },
             ]
           }
         ],
@@ -541,20 +542,22 @@
         pole: 'intermediaire',
         sections: [
           {
-            title: 'Services Intermédiaire (Midstream)',
-            count: '3',
+            title: '🟤 Brown · Pipelines matures',
+            count: '3+',
             links: [
-              { href: '/solutions/?pole=intermediaire', strong: 'S04 · Inspection ILI', small: 'Pigging instrumenté MFL/UT · API 1163', icon: '🔍', pole: 'intermediaire' },
-              { href: '/solutions/?pole=intermediaire', strong: 'S05 · SCADA Pipeline', small: 'SCADA majors-grade · leak detection · API 1130', icon: '📊', pole: 'intermediaire' },
-              { href: '/solutions/?pole=intermediaire', strong: 'S06 · Métrologie fiscale', small: 'LACT units · audit pertes · API MPMS', icon: '⚖', pole: 'intermediaire' },
+              { href: '/intermediaire/', strong: 'S04 · Inspection ILI', small: 'Pigging MFL/UT · API 1163', icon: '🔍', pole: 'intermediaire' },
+              { href: '/intermediaire/', strong: 'S05 · SCADA modernisation', small: 'Leak detection · API 1130 · 6 stations', icon: '📊', pole: 'intermediaire' },
+              { href: '/intermediaire/', strong: 'S06 · Métrologie fiscale', small: 'LACT · audit pertes · API MPMS', icon: '⚖', pole: 'intermediaire' },
+              { href: '/intermediaire/', strong: '★ Pipeline Integrity 360°', small: 'Bundle S04+S05+S06 + IA corrosion', icon: '🛡', pole: 'intermediaire', badge: 'TOUR' },
             ]
           },
           {
-            title: 'Opérateurs · Pipeline & FSO',
-            count: '2',
+            title: '🟢 Green · Infrastructures neuves',
+            count: '3',
             links: [
-              { href: '/operateurs/cotco-totco.html', strong: 'opérateurs pipeline', small: 'Pipeline Doba-Kribi 1 070 km · 6 stations', icon: '🔗', pole: 'intermediaire' },
-              { href: '/data/oleoduc-3d.html', strong: 'Pipeline 3D', small: 'Visualisation 6 stations pompage · FSO KK1', icon: '📍', pole: 'intermediaire' },
+              { href: '/intermediaire/', strong: 'FEED · pre-FEED', small: 'Concept selection · CAPEX classe 3-2', icon: '📐', pole: 'intermediaire' },
+              { href: '/intermediaire/', strong: 'Construction supervision', small: 'Cathodic protection · welding inspection', icon: '🔧', pole: 'intermediaire' },
+              { href: '/intermediaire/', strong: 'SCADA greenfield', small: 'Conception + déploiement + commissioning', icon: '🆕', pole: 'intermediaire' },
             ]
           }
         ],
