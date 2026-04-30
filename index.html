@@ -7,35 +7,70 @@
 <meta name="theme-color" content="#080E1A" />
 <title>EnerTchad Groupe SA/CA · 3 pôles Oil &amp; Gas Tchad</title>
 <meta name="description" content="EnerTchad Groupe SA/CA — Prestataire services Oil &amp; Gas OHADA · 3 pôles canon Amont · Intermédiaire · Aval · Tour Seed/Pre-A 2026 · 8-12 M USD · closing T3 2026."/>
-<meta name="keywords" content="EnerTchad Groupe, services pétroliers Tchad, OFS Tchad, OHADA, CNPCIC Bongor, Perenco Doba, SHT, COTCO TOTCO pipeline, SRN Djermaya raffinerie, EOR polymères, cybersécurité OT IEC 62443, contenu local pétrole, Mobile Station, IRVE CEMAC, 5 marques OAPI" />
 <link rel="canonical" href="https://www.enertchad.td/" />
 <link rel="alternate" hreflang="fr" href="https://www.enertchad.td/" />
 <link rel="alternate" hreflang="en" href="https://www.enertchad.td/en/" />
-<link rel="alternate" hreflang="x-default" href="https://www.enertchad.td/" />
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
-
-<!-- Fonts · pre-connect for faster LCP -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap">
-
-<!-- OG -->
 <meta property="og:type" content="website" />
-<meta property="og:site_name" content="EnerTchad Groupe SA/CA" />
-<meta property="og:locale" content="fr_FR" />
-<meta property="og:url" content="https://www.enertchad.td/" />
 <meta property="og:title" content="EnerTchad Groupe SA/CA · OFS pour les opérateurs du Tchad" />
-<meta property="og:description" content="3 pôles canon Oil &amp; Gas · 5 marques™ OAPI · Tour Seed/Pre-A 2026 · 8-12 M USD · OHADA · closing T3 2026." />
+<meta property="og:description" content="3 pôles canon Oil &amp; Gas · 5 marques™ OAPI · Tour Seed/Pre-A 2026 · 8-12 M USD." />
 <meta property="og:image" content="/assets/images/enertchad-accueil-hero-01.jpg" />
-<meta name="twitter:card" content="summary_large_image" />
-
 <link rel="stylesheet" href="/assets/css/enertchad.css" />
 
 <style>
-/* Ultra-Premium overrides — homepage exclusive */
-.hero-ultra {
+/* === MAJORS-INSPIRED enhancements === */
+
+/* Reading progress bar (Shell · BP) */
+.scroll-progress {
+  position: fixed; top: 0; left: 0; right: 0;
+  height: 3px;
+  background: rgba(217,168,79,0.10);
+  z-index: 9998;
+}
+.scroll-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--gold) 0%, #F4D88A 100%);
+  width: 0%;
+  transition: width 100ms linear;
+}
+
+/* Investor ticker (BP · Aramco style) */
+.investor-ticker {
+  background: var(--navy);
+  color: var(--cream);
+  padding: 9px 0;
+  border-bottom: 1px solid rgba(217,168,79,0.18);
+  overflow: hidden;
   position: relative;
-  min-height: 92vh;
+}
+.investor-ticker-track {
+  display: flex;
+  gap: 48px;
+  white-space: nowrap;
+  animation: ticker-scroll 60s linear infinite;
+  font-family: var(--font-display);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+}
+.investor-ticker-track span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.investor-ticker-track strong { color: var(--gold); font-weight: 600; }
+.investor-ticker-track .dot { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; }
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* HERO MAJORS · full-screen with vignette + grid + radial */
+.hero-majors {
+  position: relative;
+  min-height: 96vh;
   display: flex;
   align-items: center;
   background: var(--navy);
@@ -43,40 +78,48 @@
   overflow: hidden;
   isolation: isolate;
 }
-.hero-ultra::before {
+.hero-majors::before {
   content: '';
   position: absolute; inset: 0;
   background:
-    radial-gradient(ellipse 60% 80% at 12% 28%, rgba(217,168,79,0.14), transparent 60%),
-    radial-gradient(ellipse 50% 60% at 88% 78%, rgba(30,58,138,0.32), transparent 60%),
-    radial-gradient(ellipse 40% 40% at 50% 100%, rgba(202,138,4,0.18), transparent 70%),
+    radial-gradient(ellipse 70% 80% at 18% 30%, rgba(217,168,79,0.20), transparent 60%),
+    radial-gradient(ellipse 50% 65% at 85% 75%, rgba(30,58,138,0.40), transparent 55%),
+    radial-gradient(ellipse 60% 50% at 50% 110%, rgba(202,138,4,0.22), transparent 65%),
     linear-gradient(180deg, var(--navy) 0%, #050811 100%);
   z-index: -2;
 }
-.hero-ultra::after {
+.hero-majors::after {
   content: '';
   position: absolute; inset: 0;
   background-image:
-    linear-gradient(rgba(217,168,79,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(217,168,79,0.04) 1px, transparent 1px);
-  background-size: 64px 64px;
-  mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black, transparent 80%);
-  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black, transparent 80%);
+    linear-gradient(rgba(217,168,79,0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(217,168,79,0.045) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black, transparent 85%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black, transparent 85%);
   z-index: -1;
 }
-.hero-ultra-inner { padding: var(--sp-8) 0 var(--sp-7); width: 100%; }
-.hero-ultra-eyebrow {
+.hero-majors-inner { padding: var(--sp-7) 0 var(--sp-6); width: 100%; }
+.hero-majors-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: var(--sp-6);
+  align-items: end;
+}
+@media (max-width: 1024px) { .hero-majors-grid { grid-template-columns: 1fr; } }
+
+.hero-majors-eyebrow {
   display: inline-flex; align-items: center; gap: 14px;
-  padding: 8px 16px;
+  padding: 9px 18px;
   background: rgba(217,168,79,0.10);
   border: 1px solid rgba(217,168,79,0.32);
   border-radius: 999px;
   font-family: var(--font-display); font-size: 12px; font-weight: 600;
   letter-spacing: 0.14em; color: var(--gold);
   text-transform: uppercase;
-  margin-bottom: var(--sp-5);
+  margin-bottom: var(--sp-4);
 }
-.hero-ultra-eyebrow .pulse {
+.hero-majors-eyebrow .pulse {
   width: 8px; height: 8px; border-radius: 50%; background: var(--gold);
   box-shadow: 0 0 0 0 rgba(217,168,79,0.7);
   animation: pulse-ring 2s infinite;
@@ -86,30 +129,47 @@
   70% { box-shadow: 0 0 0 14px rgba(217,168,79,0); }
   100% { box-shadow: 0 0 0 0 rgba(217,168,79,0); }
 }
-.hero-ultra-h1 {
-  font-size: clamp(40px, 7.2vw, 96px);
-  line-height: 1.02;
-  letter-spacing: -0.025em;
+.hero-majors-h1 {
+  font-size: clamp(46px, 8vw, 110px);
+  line-height: 0.98;
+  letter-spacing: -0.028em;
   font-weight: 600;
-  margin: 0 0 var(--sp-5);
-  max-width: 1100px;
+  margin: 0 0 var(--sp-4);
 }
-.hero-ultra-h1 em {
+.hero-majors-h1 em {
   font-style: normal;
   background: linear-gradient(135deg, var(--gold) 0%, #F4D88A 50%, var(--gold) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
+  -webkit-background-clip: text; background-clip: text;
   color: transparent;
-  display: inline-block;
 }
-.hero-ultra-lead {
-  font-size: clamp(18px, 1.6vw, 22px);
+.hero-majors-lead {
+  font-size: clamp(17px, 1.4vw, 20px);
   line-height: 1.55;
   color: rgba(246,241,230,0.78);
-  max-width: 720px;
-  margin: 0 0 var(--sp-6);
+  max-width: 580px;
+  margin: 0 0 var(--sp-5);
 }
-.hero-ultra-cta-row { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: var(--sp-7); }
+.hero-majors-cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 0; }
+
+.hero-majors-meta {
+  border-left: 2px solid rgba(217,168,79,0.32);
+  padding: var(--sp-2) 0 var(--sp-2) var(--sp-4);
+}
+.hero-majors-meta-item { margin-bottom: var(--sp-3); }
+.hero-majors-meta-item:last-child { margin-bottom: 0; }
+.hero-majors-meta-lbl {
+  font-family: var(--font-display); font-size: 11px;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: rgba(246,241,230,0.5);
+  margin-bottom: 4px;
+}
+.hero-majors-meta-val {
+  font-family: var(--font-display); font-size: 16px;
+  font-weight: 600; color: var(--cream);
+}
+.hero-majors-meta-val em { font-style: normal; color: var(--gold); }
+
+/* Premium buttons (already defined) — keeping consistent */
 .btn-premium {
   display: inline-flex; align-items: center; gap: 10px;
   padding: 16px 28px;
@@ -119,332 +179,378 @@
   letter-spacing: 0.02em;
   border-radius: 12px;
   text-decoration: none;
-  border: none;
-  position: relative;
   transition: transform var(--dur-2) var(--ease), box-shadow var(--dur-2) var(--ease);
   box-shadow: 0 8px 24px rgba(217,168,79,0.28), 0 1px 0 rgba(255,255,255,0.15) inset;
 }
-.btn-premium:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 16px 40px rgba(217,168,79,0.4), 0 1px 0 rgba(255,255,255,0.2) inset;
-}
+.btn-premium:hover { transform: translateY(-2px); box-shadow: 0 16px 40px rgba(217,168,79,0.4); color: var(--navy); }
 .btn-premium-outline {
   display: inline-flex; align-items: center; gap: 10px;
   padding: 16px 28px;
   background: rgba(246,241,230,0.04);
   color: var(--cream);
   font-family: var(--font-display); font-weight: 600; font-size: 15px;
-  letter-spacing: 0.02em;
   border-radius: 12px;
   text-decoration: none;
   border: 1px solid rgba(246,241,230,0.20);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
   transition: all var(--dur-2) var(--ease);
 }
-.btn-premium-outline:hover {
-  background: rgba(246,241,230,0.08);
-  border-color: rgba(246,241,230,0.4);
-  color: var(--cream);
-}
+.btn-premium-outline:hover { background: rgba(246,241,230,0.08); border-color: rgba(246,241,230,0.4); color: var(--cream); }
 
-/* KPI strip */
-.hero-kpis {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 4px;
-  border-top: 1px solid rgba(217,168,79,0.18);
-  border-bottom: 1px solid rgba(217,168,79,0.18);
-  padding: var(--sp-4) 0;
-  margin-top: var(--sp-6);
+/* BIG NUMBERS section (Aramco · Eni style) */
+.big-numbers {
+  background: linear-gradient(180deg, var(--cream) 0%, #fff 100%);
+  padding: var(--sp-8) 0;
 }
-.hero-kpi {
-  padding: 0 var(--sp-3);
-  border-right: 1px solid rgba(217,168,79,0.10);
-}
-.hero-kpi:last-child { border-right: none; }
-.hero-kpi-num {
-  font-family: var(--font-display);
-  font-size: clamp(28px, 3.6vw, 44px);
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  color: var(--gold);
-  line-height: 1;
-  margin-bottom: 6px;
-}
-.hero-kpi-lbl {
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: rgba(246,241,230,0.62);
-}
-@media (max-width: 720px) {
-  .hero-kpis { grid-template-columns: repeat(2, 1fr); gap: 0; }
-  .hero-kpi { padding: var(--sp-2) var(--sp-2); border-bottom: 1px solid rgba(217,168,79,0.10); }
-}
-
-/* Section premium · pôles canon */
-.poles-grid-premium {
+.big-numbers-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 0;
   margin-top: var(--sp-5);
+  border-top: 1px solid var(--cream-2);
+  border-bottom: 1px solid var(--cream-2);
 }
-@media (max-width: 900px) { .poles-grid-premium { grid-template-columns: 1fr; } }
-.pole-premium {
+@media (max-width: 768px) { .big-numbers-grid { grid-template-columns: 1fr; } }
+.big-number-tile {
+  padding: var(--sp-6) var(--sp-5);
+  border-right: 1px solid var(--cream-2);
   position: relative;
-  display: block;
-  padding: var(--sp-5);
-  background: white;
-  border: 1px solid var(--cream-2);
-  border-radius: 18px;
-  text-decoration: none;
-  color: inherit;
-  overflow: hidden;
-  transition: transform var(--dur-2) var(--ease), box-shadow var(--dur-2) var(--ease), border-color var(--dur-2) var(--ease);
-  isolation: isolate;
 }
-.pole-premium::before {
-  content: '';
-  position: absolute; inset: 0;
-  background: var(--pole-color, var(--gold));
-  opacity: 0;
-  z-index: -1;
-  transition: opacity var(--dur-2) var(--ease);
+.big-number-tile:last-child { border-right: none; }
+@media (max-width: 768px) {
+  .big-number-tile { border-right: none; border-bottom: 1px solid var(--cream-2); }
+  .big-number-tile:last-child { border-bottom: none; }
 }
-.pole-premium:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 24px 48px rgba(8,14,26,0.14);
-  border-color: var(--pole-color, var(--gold));
-}
-.pole-premium-num {
+.big-number-num {
   font-family: var(--font-display);
-  font-size: 13px;
+  font-size: clamp(56px, 8vw, 96px);
   font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--pole-color, var(--gold));
-  margin-bottom: var(--sp-3);
-}
-.pole-premium-h3 {
-  font-family: var(--font-display);
-  font-size: 28px;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  margin: 0 0 var(--sp-2);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
   color: var(--navy);
-}
-.pole-premium-h3 em { font-style: normal; color: var(--pole-color, var(--gold)); }
-.pole-premium-desc {
-  font-size: 14px;
-  line-height: 1.65;
-  color: var(--ink);
-  margin: 0 0 var(--sp-4);
-}
-.pole-premium-services {
-  display: flex; flex-wrap: wrap; gap: 6px;
-  margin-bottom: var(--sp-3);
-}
-.pole-premium-service-chip {
-  padding: 4px 10px;
-  background: rgba(8,14,26,0.04);
-  border-radius: 999px;
-  font-size: 11px;
-  font-family: var(--font-display);
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  color: var(--ink);
-}
-.pole-premium-arrow {
-  display: inline-flex; align-items: center; gap: 6px;
-  font-family: var(--font-display);
-  font-size: 13px; font-weight: 600;
-  color: var(--pole-color, var(--gold));
-  letter-spacing: 0.04em;
-}
-.pole-premium[data-pole="amont"] { --pole-color: #047857; }
-.pole-premium[data-pole="intermediaire"] { --pole-color: #1E3A8A; }
-.pole-premium[data-pole="aval"] { --pole-color: #D9A84F; }
-
-/* 5 marques mosaic */
-.marques-mosaic {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 14px;
-  margin-top: var(--sp-5);
-  min-height: 480px;
-}
-@media (max-width: 900px) { .marques-mosaic { grid-template-columns: 1fr; grid-template-rows: auto; min-height: auto; } }
-.marque-tile {
-  position: relative;
-  padding: var(--sp-5);
-  background: linear-gradient(135deg, rgba(217,168,79,0.08) 0%, rgba(217,168,79,0.02) 100%);
-  border: 1px solid rgba(217,168,79,0.18);
-  border-radius: 18px;
-  overflow: hidden;
-  transition: all var(--dur-2) var(--ease);
-}
-.marque-tile:hover {
-  background: linear-gradient(135deg, rgba(217,168,79,0.14) 0%, rgba(217,168,79,0.06) 100%);
-  border-color: rgba(217,168,79,0.4);
-  transform: translateY(-2px);
-}
-.marque-tile-1 { grid-column: 1; grid-row: 1 / span 2; padding: var(--sp-6); }
-.marque-tile-name {
-  font-family: var(--font-display);
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--gold);
   margin-bottom: var(--sp-2);
 }
-.marque-tile-h3 {
-  font-family: var(--font-display);
-  font-size: 26px;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  margin: 0 0 var(--sp-3);
-  color: var(--cream);
-}
-.marque-tile-1 .marque-tile-h3 { font-size: 38px; line-height: 1.05; }
-.marque-tile-desc {
-  font-size: 14px;
-  line-height: 1.6;
-  color: rgba(246,241,230,0.74);
-}
-.marque-tile-1 .marque-tile-desc { font-size: 16px; max-width: 95%; }
-.marque-tile-badge {
-  position: absolute;
-  top: 16px; right: 16px;
-  padding: 4px 10px;
-  background: rgba(217,168,79,0.18);
-  border: 1px solid rgba(217,168,79,0.3);
-  border-radius: 999px;
-  font-size: 10px;
-  font-family: var(--font-display);
-  font-weight: 600;
-  letter-spacing: 0.08em;
+.big-number-num em {
+  font-style: normal;
   color: var(--gold);
-  text-transform: uppercase;
+  font-size: 0.5em;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  vertical-align: top;
+  margin-left: 4px;
 }
-
-/* Trajectory phases · timeline */
-.trajectory-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 4px;
-  margin-top: var(--sp-5);
-  position: relative;
-}
-@media (max-width: 900px) { .trajectory-grid { grid-template-columns: 1fr; } }
-.phase-tile {
-  position: relative;
-  padding: var(--sp-5);
-  background: white;
-  border: 1px solid var(--cream-2);
-  border-radius: 16px;
-}
-.phase-tile-num {
-  position: absolute;
-  top: -16px; left: 24px;
-  padding: 6px 14px;
-  background: var(--navy);
-  color: var(--gold);
+.big-number-lbl {
   font-family: var(--font-display);
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.06em;
-  border-radius: 8px;
-}
-.phase-tile-period {
-  font-family: var(--font-display);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--ink-2);
   margin-bottom: var(--sp-2);
 }
-.phase-tile-h3 {
-  font-family: var(--font-display);
-  font-size: 22px;
-  font-weight: 600;
-  margin: 0 0 var(--sp-2);
-  color: var(--navy);
-}
-.phase-tile-bullets {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.phase-tile-bullets li {
-  padding: 6px 0 6px 22px;
-  position: relative;
+.big-number-desc {
   font-size: 14px;
   line-height: 1.5;
   color: var(--ink);
-  border-bottom: 1px solid rgba(8,14,26,0.06);
-}
-.phase-tile-bullets li:last-child { border-bottom: none; }
-.phase-tile-bullets li::before {
-  content: '';
-  position: absolute; left: 0; top: 14px;
-  width: 12px; height: 1px;
-  background: var(--gold);
+  max-width: 260px;
 }
 
-/* Section badge */
-.section-badge {
+/* STORY ALTERNATING sections (Total · BP style) */
+.story-block {
+  padding: var(--sp-8) 0;
+}
+.story-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-7);
+  align-items: center;
+  margin-bottom: var(--sp-7);
+}
+.story-row:last-child { margin-bottom: 0; }
+.story-row-reverse { direction: rtl; }
+.story-row-reverse > * { direction: ltr; }
+@media (max-width: 900px) {
+  .story-row, .story-row-reverse { grid-template-columns: 1fr; direction: ltr; }
+}
+.story-tag {
+  font-family: var(--font-display); font-size: 12px; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--gold-deep);
+  margin-bottom: var(--sp-3);
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.story-tag::before { content: ''; width: 24px; height: 1px; background: var(--gold); }
+.story-h3 {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 3vw, 42px);
+  line-height: 1.1;
+  letter-spacing: -0.022em;
+  font-weight: 600;
+  margin: 0 0 var(--sp-3);
+  color: var(--navy);
+}
+.story-h3 em { font-style: normal; color: var(--gold); }
+.story-p {
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--ink);
+  margin: 0 0 var(--sp-4);
+}
+.story-link {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  color: var(--gold-deep);
+  text-decoration: none;
+  border-bottom: 2px solid var(--gold);
+  padding-bottom: 4px;
+  transition: gap var(--dur-2) var(--ease);
+}
+.story-link:hover { gap: 14px; color: var(--navy); }
+
+.story-visual {
+  position: relative;
+  aspect-ratio: 4/3;
+  border-radius: 18px;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-3) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: var(--sp-5);
+  isolation: isolate;
+}
+.story-visual::before {
+  content: '';
+  position: absolute; inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse 60% 70% at 80% 30%, rgba(217,168,79,0.32), transparent 60%),
+    radial-gradient(ellipse 50% 60% at 20% 80%, rgba(30,58,138,0.40), transparent 55%);
+}
+.story-visual-num {
+  font-family: var(--font-display);
+  font-size: clamp(80px, 12vw, 140px);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 0.9;
+  color: rgba(217,168,79,0.20);
+  position: absolute;
+  top: var(--sp-3); right: var(--sp-4);
+  z-index: 0;
+}
+.story-visual-tag {
+  display: inline-block;
+  padding: 6px 14px;
+  background: rgba(217,168,79,0.18);
+  border: 1px solid rgba(217,168,79,0.32);
+  border-radius: 999px;
+  font-family: var(--font-display); font-size: 11px;
+  font-weight: 600; letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: var(--sp-2);
+  width: fit-content;
+}
+.story-visual-h4 {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--cream);
+  margin: 0;
+}
+
+/* CEO QUOTE section (Equinor · CEO message) */
+.ceo-quote {
+  background: var(--navy);
+  color: var(--cream);
+  padding: var(--sp-8) 0;
+  position: relative;
+  isolation: isolate;
+}
+.ceo-quote::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 50% 70% at 30% 50%, rgba(217,168,79,0.16), transparent 60%);
+  z-index: -1;
+}
+.ceo-quote-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: var(--sp-6);
+  align-items: center;
+}
+@media (max-width: 900px) { .ceo-quote-grid { grid-template-columns: 1fr; } }
+.ceo-quote-portrait {
+  aspect-ratio: 3/4;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--navy-3) 0%, var(--navy) 100%);
+  position: relative;
+  overflow: hidden;
+}
+.ceo-quote-portrait::before {
+  content: 'BMLM';
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display);
+  font-size: clamp(60px, 8vw, 96px);
+  font-weight: 600;
+  color: rgba(217,168,79,0.32);
+  letter-spacing: -0.02em;
+}
+.ceo-quote-mark {
+  font-family: var(--font-display);
+  font-size: clamp(96px, 12vw, 140px);
+  line-height: 0.6;
+  color: var(--gold);
+  margin-bottom: var(--sp-3);
+}
+.ceo-quote-text {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2.4vw, 32px);
+  line-height: 1.35;
+  letter-spacing: -0.012em;
+  font-weight: 500;
+  color: var(--cream);
+  margin: 0 0 var(--sp-4);
+}
+.ceo-quote-text em { color: var(--gold); font-style: normal; }
+.ceo-quote-author {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--cream);
+}
+.ceo-quote-author small {
+  display: block;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: rgba(246,241,230,0.62);
+  margin-top: 4px;
+}
+
+/* INSIGHTS / NEWS magazine cards (Shell style) */
+.insights-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 16px;
+  margin-top: var(--sp-5);
+  min-height: 540px;
+}
+@media (max-width: 900px) { .insights-grid { grid-template-columns: 1fr; grid-template-rows: auto; min-height: auto; } }
+.insight-card {
+  position: relative;
+  background: white;
+  border: 1px solid var(--cream-2);
+  border-radius: 16px;
+  padding: var(--sp-5);
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  transition: transform var(--dur-2) var(--ease), box-shadow var(--dur-2) var(--ease), border-color var(--dur-2) var(--ease);
+}
+.insight-card-hero {
+  grid-column: 1; grid-row: 1 / span 2;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-3) 100%);
+  color: var(--cream);
+  isolation: isolate;
+  border: none;
+  padding: var(--sp-6);
+}
+.insight-card-hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 60% 60% at 80% 30%, rgba(217,168,79,0.30), transparent 60%);
+  z-index: -1;
+}
+.insight-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(8,14,26,0.10);
+  border-color: var(--gold);
+}
+.insight-card-tag {
+  font-family: var(--font-display); font-size: 11px;
+  font-weight: 600; letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  margin-bottom: var(--sp-3);
+}
+.insight-card-hero .insight-card-tag { color: var(--gold); }
+.insight-card-h3 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.018em;
+  line-height: 1.2;
+  margin: 0 0 var(--sp-2);
+  color: var(--navy);
+}
+.insight-card-hero .insight-card-h3 { color: var(--cream); font-size: 30px; line-height: 1.1; }
+.insight-card-desc {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ink);
+  margin: 0 0 var(--sp-3);
+}
+.insight-card-hero .insight-card-desc { color: rgba(246,241,230,0.75); font-size: 16px; }
+.insight-card-meta {
+  font-family: var(--font-display); font-size: 12px;
+  font-weight: 600; letter-spacing: 0.04em;
+  color: var(--ink-2);
+}
+.insight-card-hero .insight-card-meta { color: var(--gold); }
+
+/* Section badges + h2-display (kept) */
+.section-badge-majors {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 6px 12px;
+  padding: 6px 14px;
   background: rgba(217,168,79,0.12);
   border: 1px solid rgba(217,168,79,0.32);
   border-radius: 999px;
   font-family: var(--font-display);
   font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
   color: var(--gold-deep);
   text-transform: uppercase;
   margin-bottom: var(--sp-4);
 }
-.section-dark .section-badge { color: var(--gold); background: rgba(217,168,79,0.10); }
-
-/* Big H2 */
-.h2-display {
-  font-size: clamp(32px, 5vw, 56px);
-  line-height: 1.05;
-  letter-spacing: -0.025em;
+.section-dark .section-badge-majors { color: var(--gold); }
+.h2-majors {
+  font-size: clamp(36px, 5.5vw, 64px);
+  line-height: 1.02;
+  letter-spacing: -0.028em;
   font-weight: 600;
-  margin: 0 0 var(--sp-4);
-  max-width: 900px;
+  margin: 0 0 var(--sp-3);
+  max-width: 920px;
 }
-.h2-display em {
-  font-style: normal;
-  color: var(--gold);
-}
-.section-dark .h2-display { color: var(--cream); }
+.h2-majors em { font-style: normal; color: var(--gold); }
+.section-dark .h2-majors { color: var(--cream); }
 
-/* Section CTA Tour 2026 */
+/* CTA TOUR band (kept from previous) */
 .cta-tour-band {
   position: relative;
-  padding: var(--sp-7) var(--sp-6);
+  padding: var(--sp-8) var(--sp-7);
   background: linear-gradient(135deg, var(--navy) 0%, var(--navy-3) 100%);
   border-radius: 24px;
   overflow: hidden;
   isolation: isolate;
-  margin-top: var(--sp-6);
 }
 .cta-tour-band::before {
   content: '';
   position: absolute; inset: 0;
   background:
-    radial-gradient(ellipse 50% 70% at 90% 50%, rgba(217,168,79,0.18), transparent 60%);
+    radial-gradient(ellipse 50% 70% at 90% 50%, rgba(217,168,79,0.18), transparent 60%),
+    radial-gradient(ellipse 40% 60% at 10% 100%, rgba(30,58,138,0.32), transparent 60%);
   z-index: -1;
 }
 .cta-tour-band-grid {
@@ -456,23 +562,22 @@
 @media (max-width: 900px) { .cta-tour-band-grid { grid-template-columns: 1fr; } }
 .cta-tour-h3 {
   font-family: var(--font-display);
-  font-size: clamp(24px, 3vw, 38px);
+  font-size: clamp(26px, 3.5vw, 44px);
   font-weight: 600;
   color: var(--cream);
-  letter-spacing: -0.02em;
-  line-height: 1.15;
-  margin: 0 0 var(--sp-2);
+  letter-spacing: -0.022em;
+  line-height: 1.1;
+  margin: 0 0 var(--sp-3);
 }
 .cta-tour-p {
   font-size: 16px;
   line-height: 1.55;
-  color: rgba(246,241,230,0.74);
+  color: rgba(246,241,230,0.78);
   margin: 0;
 }
 .cta-tour-action { display: flex; flex-direction: column; gap: 12px; }
 </style>
 
-<!-- JSON-LD -->
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Organization","name":"EnerTchad Groupe SA/CA","alternateName":"EnerTchad","url":"https://www.enertchad.td/","logo":"https://www.enertchad.td/assets/images/logo.svg","slogan":"Unité · Innovation · Durabilité — Accès aux Énergies","description":"Prestataire services pétroliers et énergétiques OHADA pour les opérateurs au Tchad","foundingDate":"2026","founder":{"@type":"Person","name":"Bignéro Moïalbéi Le Madang","jobTitle":"Directeur Général"},"address":{"@type":"PostalAddress","addressLocality":"N'Djamena","addressCountry":"TD"},"identifier":"RCCM N'DJ/RC/2026-A-0001","sameAs":["https://linkedin.com/company/enertchad-groupe"]}
 </script>
@@ -481,23 +586,45 @@
 <body>
 <a class="skip-link" href="#main">Aller au contenu</a>
 
-<!-- TOPBAR PROFESSIONNEL -->
+<!-- Reading progress bar (Shell style) -->
+<div class="scroll-progress" aria-hidden="true"><div class="scroll-progress-bar" id="scrollProgressBar"></div></div>
+
+<!-- Investor ticker (BP / Aramco style) -->
+<div class="investor-ticker" role="region" aria-label="Tour Seed/Pre-A 2026 ticker">
+  <div class="investor-ticker-track">
+    <span><span class="dot"></span>TOUR SEED/PRE-A 2026 · <strong>8-12 M USD</strong> · OHADA · closing T3 2026</span>
+    <span><span class="dot"></span>50 INVESTISSEURS CIBLES · DFI · VC · Family Office · Impact</span>
+    <span><span class="dot"></span>50 STATIONS IRVE CEMAC 2030 · <strong>First-mover</strong> · CCS2/CHAdeMO 50 kW</span>
+    <span><span class="dot"></span>5 MARQUES™ OAPI Q3 2026 · Mobile Station™ · EnerClub™ · NRJ+™ · Water-to-Value™ · EnerAcademy™</span>
+    <span><span class="dot"></span>3 PÔLES CANON · Amont · Intermédiaire · Aval · 10 services techniques</span>
+    <span><span class="dot"></span>5 OPÉRATEURS CIBLES · CNPCIC · Perenco · SHT · COTCO/TOTCO · SRN</span>
+    <!-- Duplicate for seamless loop -->
+    <span><span class="dot"></span>TOUR SEED/PRE-A 2026 · <strong>8-12 M USD</strong> · OHADA · closing T3 2026</span>
+    <span><span class="dot"></span>50 INVESTISSEURS CIBLES · DFI · VC · Family Office · Impact</span>
+    <span><span class="dot"></span>50 STATIONS IRVE CEMAC 2030 · <strong>First-mover</strong> · CCS2/CHAdeMO 50 kW</span>
+    <span><span class="dot"></span>5 MARQUES™ OAPI Q3 2026 · Mobile Station™ · EnerClub™ · NRJ+™ · Water-to-Value™ · EnerAcademy™</span>
+    <span><span class="dot"></span>3 PÔLES CANON · Amont · Intermédiaire · Aval · 10 services techniques</span>
+    <span><span class="dot"></span>5 OPÉRATEURS CIBLES · CNPCIC · Perenco · SHT · COTCO/TOTCO · SRN</span>
+  </div>
+</div>
+
+<!-- TOPBAR -->
 <div class="nav-topbar" role="complementary" aria-label="Informations de contact et certifications">
   <div class="nav-topbar-inner">
     <div class="topbar-left">
-      <a class="tb-item" href="tel:+23599298696" aria-label="Téléphone">+235 99 29 86 96</a>
-      <a class="tb-item" href="mailto:contact@enertchad.td" aria-label="Email">contact@enertchad.td</a>
+      <a class="tb-item" href="tel:+23599298696">+235 99 29 86 96</a>
+      <a class="tb-item" href="mailto:contact@enertchad.td">contact@enertchad.td</a>
       <span class="tb-divider" aria-hidden="true"></span>
       <span class="tb-badges">
-        <span class="tb-badge" title="Initiative Transparence Industries Extractives">ITIE</span>
-        <span class="tb-badge" title="OHADA">OHADA</span>
-        <span class="tb-badge" title="ISO 9001 · 14001 · 45001">ISO 9001 · 14001 · 45001</span>
+        <span class="tb-badge">ITIE</span>
+        <span class="tb-badge">OHADA</span>
+        <span class="tb-badge">ISO 9001 · 14001 · 45001</span>
       </span>
     </div>
     <div class="topbar-right">
-      <a class="tb-social" href="https://linkedin.com/company/enertchad-groupe" target="_blank" rel="noopener" aria-label="LinkedIn">LI</a>
+      <a class="tb-social" href="https://linkedin.com/company/enertchad-groupe" target="_blank" rel="noopener">LI</a>
       <span class="tb-divider" aria-hidden="true"></span>
-      <a class="lang-switch-tb" href="/en/" aria-label="English">EN</a>
+      <a class="lang-switch-tb" href="/en/">EN</a>
     </div>
   </div>
 </div>
@@ -521,211 +648,194 @@
 
 <main id="main" tabindex="-1">
 
-  <!-- HERO ULTRA-PREMIUM -->
-  <section class="hero-ultra" aria-labelledby="hero-h1">
-    <div class="container hero-ultra-inner">
-      <span class="hero-ultra-eyebrow"><span class="pulse" aria-hidden="true"></span>OFS · Tour Seed/Pre-A 2026 en cours</span>
-      <h1 class="hero-ultra-h1" id="hero-h1">Pour les opérateurs du Tchad,<br><em>un partenaire services local</em><br>qui parle le langage technique des majors.</h1>
-      <p class="hero-ultra-lead">3 pôles canon Oil &amp; Gas · 10 services techniques · 5 marques™ déposées OAPI · Premier réseau IRVE CEMAC. OFS sans assets propres · ambition E&amp;P 2030+. OHADA · 8-12 M USD · closing T3 2026.</p>
-      <div class="hero-ultra-cta-row">
-        <a class="btn-premium" href="/engagement/investisseurs.html">Découvrir le Tour 2026 →</a>
-        <a class="btn-premium-outline" href="/solutions/">Explorer les services</a>
-      </div>
-
-      <div class="hero-kpis" aria-label="KPIs canon EnerTchad">
-        <div class="hero-kpi">
-          <div class="hero-kpi-num">10</div>
-          <div class="hero-kpi-lbl">Services techniques · 3 pôles canon</div>
+  <!-- HERO MAJORS -->
+  <section class="hero-majors" aria-labelledby="hero-h1">
+    <div class="container hero-majors-inner">
+      <div class="hero-majors-grid">
+        <div>
+          <span class="hero-majors-eyebrow"><span class="pulse" aria-hidden="true"></span>OFS · Tour Seed/Pre-A 2026 en cours</span>
+          <h1 class="hero-majors-h1" id="hero-h1">Pour les opérateurs du Tchad,<br><em>un partenaire services local</em><br>qui parle le langage des majors.</h1>
+          <p class="hero-majors-lead">3 pôles canon Oil &amp; Gas. 10 services techniques. 5 marques™ déposées OAPI. Premier réseau IRVE CEMAC. OFS sans assets propres · ambition E&amp;P 2030+. OHADA · 8-12 M USD · closing T3 2026.</p>
+          <div class="hero-majors-cta-row">
+            <a class="btn-premium" href="/engagement/investisseurs.html">Découvrir le Tour 2026 →</a>
+            <a class="btn-premium-outline" href="/solutions/">Explorer les services</a>
+          </div>
         </div>
-        <div class="hero-kpi">
-          <div class="hero-kpi-num">5</div>
-          <div class="hero-kpi-lbl">Opérateurs cibles 2026</div>
-        </div>
-        <div class="hero-kpi">
-          <div class="hero-kpi-num">50</div>
-          <div class="hero-kpi-lbl">Stations IRVE CEMAC 2030</div>
-        </div>
-        <div class="hero-kpi">
-          <div class="hero-kpi-num">8-12<sup style="font-size:0.4em">M$</sup></div>
-          <div class="hero-kpi-lbl">Tour Seed/Pre-A · OHADA</div>
+        <div class="hero-majors-meta">
+          <div class="hero-majors-meta-item">
+            <div class="hero-majors-meta-lbl">Identité</div>
+            <div class="hero-majors-meta-val">EnerTchad <em>Groupe SA/CA</em></div>
+          </div>
+          <div class="hero-majors-meta-item">
+            <div class="hero-majors-meta-lbl">RCCM</div>
+            <div class="hero-majors-meta-val">N&rsquo;DJ/RC/<em>2026-A-0001</em></div>
+          </div>
+          <div class="hero-majors-meta-item">
+            <div class="hero-majors-meta-lbl">Direction</div>
+            <div class="hero-majors-meta-val">Bignéro M. Le Madang</div>
+          </div>
+          <div class="hero-majors-meta-item">
+            <div class="hero-majors-meta-lbl">Closing cible</div>
+            <div class="hero-majors-meta-val"><em>T3 2026</em> · OHADA</div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 01 · QUI SOMMES-NOUS · POSITIONNEMENT -->
+  <!-- BIG NUMBERS (Aramco / Eni style) -->
+  <section class="big-numbers">
+    <div class="container">
+      <span class="section-badge-majors">Le contenu local · au standard des majors</span>
+      <h2 class="h2-majors">Trois pôles. Dix services. <em>Cinq marques™.</em></h2>
+      <p style="font-size:18px;color:var(--ink);max-width:680px;line-height:1.55">EnerTchad combine la rigueur technique des majors (API · IEC · ISO) avec une exécution locale OHADA et un Programme EOR Local breveté OAPI. La promesse : faire monter le contenu local au niveau international, sans compromis sur la qualité.</p>
+
+      <div class="big-numbers-grid">
+        <div class="big-number-tile">
+          <div class="big-number-num">10</div>
+          <div class="big-number-lbl">Services techniques</div>
+          <p class="big-number-desc">S01-S06 (Amont · Intermédiaire) · S09 + U06 (Aval) · Maintenance SRN. Catalogue 3 pôles canon end-to-end.</p>
+        </div>
+        <div class="big-number-tile">
+          <div class="big-number-num">5</div>
+          <div class="big-number-lbl">Marques<sup>™</sup> OAPI</div>
+          <p class="big-number-desc">Mobile Station™ · EnerClub™ · NRJ+™ · Water-to-Value™ · EnerAcademy™. Dépôt OAPI Q3 2026.</p>
+        </div>
+        <div class="big-number-tile">
+          <div class="big-number-num">50<em>kW</em></div>
+          <div class="big-number-lbl">Premier IRVE CEMAC</div>
+          <p class="big-number-desc">50 stations CCS2 · CHAdeMO interopérables · 2030. First-mover absolu sur l'Afrique centrale (CEMAC).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY ALTERNATING (Total · BP style) -->
+  <section class="story-block">
+    <div class="container">
+      <span class="section-badge-majors">Trois pôles canon Oil &amp; Gas</span>
+      <h2 class="h2-majors">De la roche-mère <em>à la pompe.</em></h2>
+      <p style="font-size:17px;color:var(--ink);max-width:620px;line-height:1.55;margin-bottom:var(--sp-7)">Trois pôles canon · une logique end-to-end alignée sur la chaîne de valeur pétrolière du Tchad. Chaque pôle est servi par un sous-ensemble de services techniques aligné sur les opérateurs cibles.</p>
+
+      <div class="story-row">
+        <div>
+          <span class="story-tag">01 · AMONT · Upstream</span>
+          <h3 class="story-h3">E&amp;P · EOR Local · <em>HSE</em></h3>
+          <p class="story-p">Caractérisation réservoir 2D/3D · Programme EOR Local "Ressources Tchadiennes" (5 ressources brevet OAPI Q3 2026) · process safety API RP 75. Cibles : CNPCIC Bongor (60% production) · Perenco Doba (cluster historique post-Esso).</p>
+          <a class="story-link" href="/amont/">Explorer le pôle Amont →</a>
+        </div>
+        <div class="story-visual">
+          <div class="story-visual-num">01</div>
+          <span class="story-visual-tag">5 bassins</span>
+          <h4 class="story-visual-h4">Bongor · Doba · Lac · Doseo · Borkou</h4>
+        </div>
+      </div>
+
+      <div class="story-row story-row-reverse">
+        <div>
+          <span class="story-tag">02 · INTERMÉDIAIRE · Midstream</span>
+          <h3 class="story-h3">Pipeline 1 070 km · <em>SCADA · Métrologie</em></h3>
+          <p class="story-p">Inspection ILI MFL/UT · modernisation SCADA Yokogawa/Emerson · métrologie fiscale LACT · cyber-OT IEC 62443. Cible : COTCO/TOTCO opérateur du pipeline export Doba-Kribi (250 kb/j capacité).</p>
+          <a class="story-link" href="/intermediaire/">Explorer le pôle Intermédiaire →</a>
+        </div>
+        <div class="story-visual">
+          <div class="story-visual-num">02</div>
+          <span class="story-visual-tag">1 070 km</span>
+          <h4 class="story-visual-h4">Pipeline Ronier-Komé-Kribi · 6 stations + FSO</h4>
+        </div>
+      </div>
+
+      <div class="story-row">
+        <div>
+          <span class="story-tag">03 · AVAL · Downstream</span>
+          <h3 class="story-h3">Raffinerie · Mobile Station™ · <em>IRVE CEMAC</em></h3>
+          <p class="story-p">Maintenance SRN raffinerie 20 kb/j · blending lubrifiants S09 (substitution import 30%) · Premier réseau IRVE CEMAC 50 stations 50 kW 2030 · Mobile Station™ S/M/L brevet OAPI modèle utilité.</p>
+          <a class="story-link" href="/aval/">Explorer le pôle Aval →</a>
+        </div>
+        <div class="story-visual">
+          <div class="story-visual-num">03</div>
+          <span class="story-visual-tag">~850 M USD/an</span>
+          <h4 class="story-visual-h4">Marché aval Tchad · 50 stations IRVE first-mover</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CEO QUOTE (Equinor style) -->
+  <section class="ceo-quote">
+    <div class="container">
+      <div class="ceo-quote-grid">
+        <div class="ceo-quote-portrait" aria-label="Portrait DG Bignéro Moïalbéi Le Madang"></div>
+        <div>
+          <div class="ceo-quote-mark">«</div>
+          <p class="ceo-quote-text">EnerTchad ne reproduit pas les majors — elle <em>traduit leur langage technique</em> en exécution locale OHADA, avec des brevets OAPI qui valoriseront durablement les ressources tchadiennes.</p>
+          <div class="ceo-quote-author">Bignéro Moïalbéi Le Madang<small>Directeur Général · ex-ExxonMobil 12 ans (Tchad/Cameroun)</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSIGHTS / NEWS magazine cards (Shell style) -->
   <section class="section">
     <div class="container">
-      <span class="section-badge">01 · Positionnement</span>
-      <h2 class="h2-display">Le contenu local, <em>au standard des majors.</em></h2>
-      <p style="max-width:780px;font-size:18px;line-height:1.65;color:var(--ink)">EnerTchad Groupe SA/CA est un <strong>OFS (Oil Field Services) sans assets propres</strong>, créé en 2026, qui propose aux opérateurs du Tchad — CNPCIC · Perenco · SHT · COTCO/TOTCO · SRN — un catalogue de services techniques alignés sur les standards internationaux (API · IEC · ISO), avec une exécution locale OHADA et une ambition progressive vers l'E&amp;P 2030+ via licences exploration ciblées.</p>
-    </div>
-  </section>
+      <span class="section-badge-majors">Insights &amp; perspectives</span>
+      <h2 class="h2-majors">Ce qu'il faut <em>retenir.</em></h2>
 
-  <!-- 02 · 3 PÔLES CANON OIL & GAS -->
-  <section class="section" style="background:linear-gradient(180deg,var(--cream) 0%,#fff 100%)">
-    <div class="container">
-      <span class="section-badge">02 · 3 pôles canon Oil &amp; Gas</span>
-      <h2 class="h2-display">De la roche-mère à la pompe.</h2>
-      <p style="max-width:680px;font-size:17px;color:var(--ink)">Trois pôles canon · dix services techniques · une logique end-to-end alignée sur la chaîne de valeur pétrolière du Tchad.</p>
-
-      <div class="poles-grid-premium">
-        <a class="pole-premium" href="/amont/" data-pole="amont">
-          <div class="pole-premium-num">01 · AMONT · Upstream</div>
-          <h3 class="pole-premium-h3">E&amp;P · EOR · <em>HSE</em></h3>
-          <p class="pole-premium-desc">Caractérisation réservoir · Programme EOR Local "Ressources Tchadiennes" (5 ressources brevet OAPI Q3 2026) · process safety API RP 75. Cibles : CNPCIC Bongor · Perenco Doba.</p>
-          <div class="pole-premium-services">
-            <span class="pole-premium-service-chip">S01 Géosciences</span>
-            <span class="pole-premium-service-chip">S02 EOR Local</span>
-            <span class="pole-premium-service-chip">S03 HSE</span>
+      <div class="insights-grid">
+        <a class="insight-card insight-card-hero" href="/engagement/investisseurs.html">
+          <div>
+            <div class="insight-card-tag">Tour Seed/Pre-A 2026</div>
+            <h3 class="insight-card-h3">8-12 M USD · OHADA · closing T3 2026 · multiplicateur valuation ×3 cible Series B 2028.</h3>
+            <p class="insight-card-desc">Lead investor 4-6 M USD (DFI ou VC large) · co-investors 1-2 M USD (3-5 tickets). 50 investisseurs cibles · DFI · VC · Family Office · Impact.</p>
           </div>
-          <div class="pole-premium-arrow">Explorer le pôle Amont →</div>
+          <div class="insight-card-meta">Tour Seed/Pre-A · 12 livrables prêts →</div>
         </a>
-
-        <a class="pole-premium" href="/intermediaire/" data-pole="intermediaire">
-          <div class="pole-premium-num">02 · INTERMÉDIAIRE · Midstream</div>
-          <h3 class="pole-premium-h3">Pipeline · SCADA · <em>Métrologie</em></h3>
-          <p class="pole-premium-desc">Inspection ILI · modernisation SCADA Yokogawa/Emerson · métrologie fiscale LACT · cyber-OT IEC 62443. Cible : COTCO/TOTCO pipeline 1 070 km · 250 kb/j.</p>
-          <div class="pole-premium-services">
-            <span class="pole-premium-service-chip">S04 ILI</span>
-            <span class="pole-premium-service-chip">S05 SCADA</span>
-            <span class="pole-premium-service-chip">S06 Métrologie</span>
+        <a class="insight-card" href="/amont/">
+          <div>
+            <div class="insight-card-tag">Programme EOR Local</div>
+            <h3 class="insight-card-h3">5 ressources tchadiennes brevet OAPI Q3 2026.</h3>
           </div>
-          <div class="pole-premium-arrow">Explorer le pôle Intermédiaire →</div>
+          <div class="insight-card-meta">Natron · Gomme arabique · +6-17% OOIP →</div>
         </a>
-
-        <a class="pole-premium" href="/aval/" data-pole="aval">
-          <div class="pole-premium-num">03 · AVAL · Downstream</div>
-          <h3 class="pole-premium-h3">Raffinerie · Mobile Station™ · <em>IRVE CEMAC</em></h3>
-          <p class="pole-premium-desc">Maintenance SRN raffinerie 20 kb/j · blending lubrifiants S09 · Premier réseau IRVE CEMAC 50 stations 50 kW 2030 · Mobile Station™ S/M/L brevet OAPI.</p>
-          <div class="pole-premium-services">
-            <span class="pole-premium-service-chip">S09 Blending</span>
-            <span class="pole-premium-service-chip">U06 Distribution</span>
-            <span class="pole-premium-service-chip">SRN Maintenance</span>
+        <a class="insight-card" href="/aval/">
+          <div>
+            <div class="insight-card-tag">Premier IRVE CEMAC</div>
+            <h3 class="insight-card-h3">50 stations 50 kW first-mover Afrique centrale 2030.</h3>
           </div>
-          <div class="pole-premium-arrow">Explorer le pôle Aval →</div>
+          <div class="insight-card-meta">Mobile Station™ S/M/L · CCS2/CHAdeMO →</div>
+        </a>
+        <a class="insight-card" href="/intermediaire/">
+          <div>
+            <div class="insight-card-tag">Pipeline Integrity 360°</div>
+            <h3 class="insight-card-h3">MoU Perenco · 1 070 km · ILI + SCADA + cyber-OT.</h3>
+          </div>
+          <div class="insight-card-meta">COTCO/TOTCO · IEC 62443 →</div>
+        </a>
+        <a class="insight-card" href="/engagement/transparence.html">
+          <div>
+            <div class="insight-card-tag">ESG · RSE · HSE</div>
+            <h3 class="insight-card-h3">ITIE · OHADA · ISO 9001/14001/45001 conformité.</h3>
+          </div>
+          <div class="insight-card-meta">8 engagements publics →</div>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- 03 · 5 MARQUES™ ÉCOSYSTÈME -->
-  <section class="section section-dark">
-    <div class="container">
-      <span class="section-badge">03 · 5 marques™ écosystème · OAPI Q3 2026</span>
-      <h2 class="h2-display">Cinq marques propriétaires, <em>une expérience client</em>.</h2>
-      <p style="max-width:680px;font-size:17px;color:rgba(246,241,230,0.74)">Cinq marques déposées OAPI au Q3 2026 forment l'écosystème commercial EnerTchad — du brevet modèle utilité Mobile Station™ jusqu'à la formation EnerAcademy™.</p>
-
-      <div class="marques-mosaic">
-        <div class="marque-tile marque-tile-1">
-          <span class="marque-tile-badge">Brevet OAPI</span>
-          <div class="marque-tile-name">Marque 1</div>
-          <h3 class="marque-tile-h3">Mobile Station™</h3>
-          <p class="marque-tile-desc">Stations-services modulaires brevetées. 3 tailles S/M/L · ATEX Zone 1 · déploiement 4h · solaire 12 kWc + BESS 80 kWh · IRVE 50-100 kW intégré. Brevet modèle utilité OAPI Q3 2026 — le seul format station mobile breveté en Afrique CEMAC.</p>
-        </div>
-        <div class="marque-tile">
-          <div class="marque-tile-name">Marque 2</div>
-          <h3 class="marque-tile-h3">EnerClub™</h3>
-          <p class="marque-tile-desc">Programme fidélité 4 paliers · Apps mobile · paiement Airtel/Moov.</p>
-        </div>
-        <div class="marque-tile">
-          <div class="marque-tile-name">Marque 3</div>
-          <h3 class="marque-tile-h3">NRJ+™</h3>
-          <p class="marque-tile-desc">Carburants premium · gasoil 50 ppm · super RON95 · Phase II SRN.</p>
-        </div>
-        <div class="marque-tile">
-          <div class="marque-tile-name">Marque 4</div>
-          <h3 class="marque-tile-h3">Water-to-Value™</h3>
-          <p class="marque-tile-desc">Valorisation eaux produites raffinerie · partenariat communautés.</p>
-        </div>
-        <div class="marque-tile">
-          <div class="marque-tile-name">Marque 5</div>
-          <h3 class="marque-tile-h3">EnerAcademy™</h3>
-          <p class="marque-tile-desc">50 ingénieurs/an formés · 80% talent tchadien · N'Djamena Chagoua.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 04 · OPÉRATEURS CIBLES -->
-  <section class="section">
-    <div class="container">
-      <span class="section-badge">04 · Opérateurs cibles 2026</span>
-      <h2 class="h2-display">Cinq opérateurs · <em>cinq plans services</em>.</h2>
-      <p style="max-width:680px;font-size:17px;color:var(--ink)">Cinq cibles commerciales prioritaires couvrent 100% de la chaîne O&amp;G du Tchad. Chaque opérateur est servi par le sous-ensemble de services techniques aligné sur sa stratégie.</p>
-
-      <div class="grid grid-3 mt-5" style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px">
-        <a class="card card-pole" data-pole="amont" href="/operateurs/cnpcic.html"><div class="card-num" style="color:#047857">CNPCIC · Bongor</div><h3>60% production · MES 2011</h3><p>Permis Ronier · Mimosa · partenaire dominant Amont.</p></a>
-        <a class="card card-pole" data-pole="amont" href="/operateurs/perenco.html"><div class="card-num" style="color:#047857">Perenco · Doba</div><h3>Reprise actifs Esso post-2014</h3><p>Cluster historique Mangara/Badila · Pipeline Doba-Kribi.</p></a>
-        <a class="card card-pole" data-pole="amont" href="/operateurs/sht.html"><div class="card-num" style="color:#047857">SHT · NOC Tchad</div><h3>Société des Hydrocarbures du Tchad</h3><p>40% SRN · partenaire stratégique étatique distribution.</p></a>
-        <a class="card card-pole" data-pole="intermediaire" href="/operateurs/cotco-totco.html"><div class="card-num" style="color:#1E3A8A">COTCO/TOTCO</div><h3>Pipeline 1 070 km · 250 kb/j</h3><p>Opérateur pipeline export Doba-Kribi.</p></a>
-        <a class="card card-pole" data-pole="aval" href="/operateurs/srn.html"><div class="card-num" style="color:#D9A84F">SRN · Djermaya</div><h3>Raffinerie · 20 kb/j</h3><p>JV CNPC 60% / SHT 40% · Phase II craquage naphta envisagée.</p></a>
-        <a class="card" href="/operateurs/" style="background:rgba(217,168,79,0.06);border-color:rgba(217,168,79,0.32);display:flex;align-items:center;justify-content:center;text-align:center"><div><div class="card-num" style="color:var(--gold-deep)">Hub central</div><h3>Voir les 5 cas opérateurs →</h3></div></a>
-      </div>
-    </div>
-  </section>
-
-  <!-- 05 · TRAJECTOIRE 3 PHASES -->
-  <section class="section" style="background:linear-gradient(180deg,#fff 0%,var(--cream) 100%)">
-    <div class="container">
-      <span class="section-badge">05 · Trajectoire · 3 phases 2026-2030+</span>
-      <h2 class="h2-display">De OFS local · <em>à acteur intégré régional</em>.</h2>
-
-      <div class="trajectory-grid">
-        <div class="phase-tile">
-          <span class="phase-tile-num">PHASE 1</span>
-          <div class="phase-tile-period">2026 — 2027</div>
-          <h3 class="phase-tile-h3">Setup &amp; pilotes</h3>
-          <ul class="phase-tile-bullets">
-            <li>Tour Seed/Pre-A · 8-12 M USD · OHADA</li>
-            <li>Brevets OAPI · 5 marques™ · Q3 2026</li>
-            <li>1ère Mobile Station™ + IRVE pilote</li>
-            <li>4 MoUs opérateurs (CNPCIC · Perenco · COTCO · SRN)</li>
-            <li>25 ETP cible · cabinet juridique OHADA</li>
-          </ul>
-        </div>
-        <div class="phase-tile">
-          <span class="phase-tile-num">PHASE 2</span>
-          <div class="phase-tile-period">2028 — 2029</div>
-          <h3 class="phase-tile-h3">Scaling &amp; revenus</h3>
-          <ul class="phase-tile-bullets">
-            <li>10 stations IRVE déployées</li>
-            <li>S09 Blending lubrifiants opérationnel SRN</li>
-            <li>Phase II SRN · craquage naphta 2,5 Mt/an</li>
-            <li>50 ETP · revenus 2-22 M USD</li>
-            <li>Pre-B 2028 · 12-25 M USD · valuation pre ×3</li>
-          </ul>
-        </div>
-        <div class="phase-tile">
-          <span class="phase-tile-num">PHASE 3</span>
-          <div class="phase-tile-period">2030+</div>
-          <h3 class="phase-tile-h3">Acteur intégré</h3>
-          <ul class="phase-tile-bullets">
-            <li>50 stations IRVE certifiées CEMAC</li>
-            <li>9 mini-grids solaires actifs</li>
-            <li>50 villages électrifiés cible · UNHCR · BAD</li>
-            <li>Revenus 50 M USD · 22% EBITDA</li>
-            <li>Licence E&amp;P · feasibility H2 vert</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 06 · CTA TOUR 2026 ULTRA-VISIBLE -->
+  <!-- CTA TOUR 2026 BAND -->
   <section class="section">
     <div class="container">
       <div class="cta-tour-band">
         <div class="cta-tour-band-grid">
           <div>
-            <span class="section-badge">Tour Seed/Pre-A 2026</span>
-            <h3 class="cta-tour-h3">Investir maintenant<br>= entrer pre-money 25-35 M USD.</h3>
-            <p class="cta-tour-p">Tour 8-12 M USD · OHADA · closing T3 2026 · 50 investisseurs cibles (DFI · VC · Family Office · Impact). Lead 4-6 M USD · co-investors 1-2 M USD. Multiplicateur valuation Series B 2028 ×3 cible · Series C 2030 ×8-10.</p>
+            <span class="section-badge-majors">Tour Seed/Pre-A 2026</span>
+            <h3 class="cta-tour-h3">Investir maintenant<br>= entrer pre-money <em>25-35 M USD.</em></h3>
+            <p class="cta-tour-p">Tour 8-12 M USD · OHADA · closing T3 2026 · 50 investisseurs cibles. Lead 4-6 M USD · co-investors 1-2 M USD. Multiplicateur valuation Series B 2028 ×3 cible · Series C 2030 ×8-10. Process closing OHADA en 30 jours · NDA Mutuelle DocuSign 1 clic.</p>
           </div>
           <div class="cta-tour-action">
             <a class="btn-premium" href="/engagement/investisseurs.html">Accéder au Tour 2026 ↗</a>
             <a class="btn-premium-outline" href="mailto:contact@enertchad.td?subject=NDA%20%26%20Dataroom%20Request">Demander NDA + dataroom</a>
-            <p style="font-size:13px;color:rgba(246,241,230,0.6);margin:0;letter-spacing:0.04em">DG direct · contact@enertchad.td · +235 99 29 86 96</p>
+            <p style="font-size:13px;color:rgba(246,241,230,0.6);margin:0;letter-spacing:0.04em">DG direct · contact@enertchad.td · +235 99 29 86 96 · cal.com/enertchad-groupe/30min</p>
           </div>
         </div>
       </div>
@@ -750,5 +860,22 @@
     </div>
   </div>
 </footer>
+
+<script>
+// Reading progress bar (Shell style)
+(function() {
+  var bar = document.getElementById('scrollProgressBar');
+  if (!bar) return;
+  function update() {
+    var st = window.scrollY || document.documentElement.scrollTop;
+    var h = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var pct = h > 0 ? (st / h) * 100 : 0;
+    bar.style.width = pct + '%';
+  }
+  window.addEventListener('scroll', update, {passive: true});
+  window.addEventListener('resize', update, {passive: true});
+  update();
+})();
+</script>
 <script src="/assets/js/enertchad.js" defer></script>
 </body></html>
