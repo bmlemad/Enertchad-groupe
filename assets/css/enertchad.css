@@ -2110,3 +2110,13 @@ body.scrolled .persona-bar { display: none; }
 .nav-topbar { display: none !important; }
 /* Site header polish without topbar */
 .site-header { padding: 14px 0 !important; }
+
+/* === Pôle Pétrochimie === */
+[data-pole="petrochimie"] {
+  --pole-color: #9b59b6;
+}
+.pole-dot.pole-petrochimie::before { background: #9b59b6; }
+.card-pole[data-pole="petrochimie"] { border-left: 3px solid #9b59b6; }
+.card-pole[data-pole="petrochimie"] .card-num { color: #9b59b6; }
+.nav a[data-pole="petrochimie"]:hover { color: #b777d2; }
+.nav a[data-pole="petrochimie"]::before { background: #9b59b6; }

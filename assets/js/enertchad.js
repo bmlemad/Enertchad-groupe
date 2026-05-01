@@ -585,6 +585,32 @@
         ],
         featured: { title: 'Premier IRVE CEMAC', desc: 'Mobile Station™ · 50 kW CCS2/CHAdeMO · brevet OAPI', cta: 'Découvrir →', href: '/solutions/', thumb: '⚡', badgeLive: false }
       },
+      'petrochimie': {
+        intro: { icon: '🟣', label: 'Pôle Pétrochimie · Petrochemicals', desc: 'Engrais · méthanol · polymères · gaz associé', stat: 'P01-P08', statLabel: 'services' },
+        pole: 'petrochimie',
+        sections: [
+          {
+            title: '🟤 Brown · Optimisation existant',
+            count: '3',
+            links: [
+              { href: '/petrochimie/', strong: 'P04 · HSE Process Safety', small: 'PHA · HAZOP · LOPA · API RP 14C · IEC 61511', icon: '🛡', pole: 'petrochimie' },
+              { href: '/petrochimie/', strong: 'P05 · Inspection NDT', small: 'API 510 · 570 · 653 · ASME VIII', icon: '🔍', pole: 'petrochimie' },
+              { href: '/petrochimie/', strong: 'P06 · Maintenance turnaround', small: 'TAR · catalyst change · contractor mgmt', icon: '🔧', pole: 'petrochimie' },
+            ]
+          },
+          {
+            title: '🟢 Green · Nouvelles unités 2028+',
+            count: '5',
+            links: [
+              { href: '/petrochimie/', strong: 'P01 · Engrais N (urée/ammoniac)', small: 'FEED unité 50 kt/an · agriculture Tchad', icon: '🌾', pole: 'petrochimie', badge: 'NEW' },
+              { href: '/petrochimie/', strong: 'P02 · Méthanol GTL', small: 'Anti-flaring routine · marché CEMAC', icon: '⚗', pole: 'petrochimie', badge: 'NEW' },
+              { href: '/petrochimie/', strong: 'P03 · Polymères basiques', small: 'PEHD/PP small-scale · substitution import', icon: '🧬', pole: 'petrochimie' },
+              { href: '/petrochimie/', strong: 'P07 · EnerFert™ marque', small: 'Marque OAPI 2027 · distribution agriculteurs', icon: '🌱', pole: 'petrochimie', badge: 'NEW' },
+            ]
+          }
+        ],
+        featured: { title: 'Anti-flaring + EnerFert™', desc: 'Valoriser 100% gaz associé Tchad · double impact ESG + revenus', cta: 'Découvrir →', href: '/petrochimie/', thumb: '🟣', badgeLive: false }
+      },
       'technologies': {
         intro: { icon: '⚙', label: 'Axe Technologies', desc: 'IA · Cyber-OT · IoT · Digital twin', stat: '8', statLabel: 'piliers' },
         pole: 'technologies',
@@ -762,6 +788,32 @@
           }
         ],
         featured: { title: 'CEMAC First EVCS', desc: 'Mobile Station™ · 50 kW CCS2/CHAdeMO · OAPI patent', cta: 'Discover →', href: '/en/solutions/', thumb: '⚡', badgeLive: false }
+      },
+      'petrochimie': {
+        intro: { icon: '🟣', label: 'Petrochemicals Division', desc: 'Fertilizers · methanol · polymers · associated gas', stat: 'P01-P08', statLabel: 'services' },
+        pole: 'petrochimie',
+        sections: [
+          {
+            title: '🟤 Brown · Existing units optimization',
+            count: '3',
+            links: [
+              { href: '/en/petrochimie/', strong: 'P04 · HSE Process Safety', small: 'PHA · HAZOP · LOPA · API RP 14C · IEC 61511', icon: '🛡', pole: 'petrochimie' },
+              { href: '/en/petrochimie/', strong: 'P05 · Inspection NDT', small: 'API 510 · 570 · 653 · ASME VIII', icon: '🔍', pole: 'petrochimie' },
+              { href: '/en/petrochimie/', strong: 'P06 · Turnaround maintenance', small: 'TAR · catalyst change · contractor mgmt', icon: '🔧', pole: 'petrochimie' },
+            ]
+          },
+          {
+            title: '🟢 Green · New units 2028+',
+            count: '5',
+            links: [
+              { href: '/en/petrochimie/', strong: 'P01 · N Fertilizers', small: 'FEED 50 kt/yr · Chad agriculture', icon: '🌾', pole: 'petrochimie', badge: 'NEW' },
+              { href: '/en/petrochimie/', strong: 'P02 · Methanol GTL', small: 'Anti-flaring routine · CEMAC market', icon: '⚗', pole: 'petrochimie', badge: 'NEW' },
+              { href: '/en/petrochimie/', strong: 'P03 · Basic polymers', small: 'HDPE/PP small-scale · import substitution', icon: '🧬', pole: 'petrochimie' },
+              { href: '/en/petrochimie/', strong: 'P07 · EnerFert™ brand', small: 'OAPI brand 2027 · farmer distribution', icon: '🌱', pole: 'petrochimie', badge: 'NEW' },
+            ]
+          }
+        ],
+        featured: { title: 'Anti-flaring + EnerFert™', desc: '100% associated gas valorization · double ESG + revenue impact', cta: 'Discover →', href: '/en/petrochimie/', thumb: '🟣', badgeLive: false }
       },
       'technologies': {
         intro: { icon: '⚙', label: 'Technologies Axis', desc: 'AI · Cyber-OT · IoT · Digital twin', stat: '8', statLabel: 'pillars' },
