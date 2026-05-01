@@ -511,7 +511,7 @@
     const PANELS_FR = {
 
       'amont': {
-        intro: { icon: '🟢', label: 'Pôle Amont · Upstream', desc: 'Exploration · Production · EOR · 5 bassins', stat: '22M', statLabel: 'USD 2030' },
+        intro: { icon: '🟢', label: 'Services Amont · Upstream', desc: 'Services E&P · EOR · HSE pour opérateurs amont', stat: '22M', statLabel: 'USD 2030' },
         pole: 'amont',
         sections: [
           {
@@ -538,7 +538,7 @@
         featured: { title: 'Programme EOR Local', desc: '5 ressources tchadiennes · brevet OAPI Q3 2026', cta: 'Découvrir →', href: '/solutions/', thumb: '🌿', badgeLive: false }
       },
       'intermediaire': {
-        intro: { icon: '🔵', label: 'Pôle Intermédiaire · Midstream', desc: 'Pipeline · Stockage · Métrologie', stat: '12M', statLabel: 'USD 2030' },
+        intro: { icon: '🔵', label: 'Services Intermédiaire · Midstream', desc: 'Services intégrité pipeline · SCADA · métrologie', stat: '12M', statLabel: 'USD 2030' },
         pole: 'intermediaire',
         sections: [
           {
@@ -564,7 +564,7 @@
         featured: { title: 'Pipeline Integrity 360°', desc: 'IA leak detection · MoU opérateur amont 2 en discussion', cta: 'En savoir plus →', href: '/solutions/', thumb: '🔗', badgeLive: false }
       },
       'aval': {
-        intro: { icon: '🟡', label: 'Pôle Aval · Downstream', desc: 'Raffinage · Distribution · IRVE 50', stat: '16M', statLabel: 'USD 2030' },
+        intro: { icon: '🟡', label: 'Services Aval · Downstream', desc: 'Services distribution · lubrifiants · IRVE', stat: '16M', statLabel: 'USD 2030' },
         pole: 'aval',
         sections: [
           {
@@ -586,7 +586,7 @@
         featured: { title: 'Premier IRVE CEMAC', desc: 'Mobile Station™ · 50 kW CCS2/CHAdeMO · brevet OAPI', cta: 'Découvrir →', href: '/solutions/', thumb: '⚡', badgeLive: false }
       },
       'petrochimie': {
-        intro: { icon: '🟣', label: 'Pôle Pétrochimie · Petrochemicals', desc: 'Engrais · méthanol · polymères · gaz associé', stat: 'P01-P08', statLabel: 'services' },
+        intro: { icon: '🟣', label: 'Services Pétrochimie', desc: 'Services HSE · inspection · maintenance unités petchem', stat: 'P01-P08', statLabel: 'services' },
         pole: 'petrochimie',
         sections: [
           {
@@ -718,7 +718,7 @@
     const PANELS_EN = {
 
       'amont': {
-        intro: { icon: '🟢', label: 'Upstream Division', desc: 'Exploration · Production · EOR · 5 basins', stat: '22M', statLabel: 'USD 2030' },
+        intro: { icon: '🟢', label: 'Upstream Services', desc: 'E&P · EOR · HSE services to upstream operators', stat: '22M', statLabel: 'USD 2030' },
         pole: 'amont',
         sections: [
           {
@@ -744,7 +744,7 @@
         featured: { title: 'Local EOR Program', desc: '5 Chadian resources · OAPI patent Q3 2026', cta: 'Discover →', href: '/en/solutions/', thumb: '🌿', badgeLive: false }
       },
       'intermediaire': {
-        intro: { icon: '🔵', label: 'Midstream Division', desc: 'Pipeline · Storage · Metering', stat: '12M', statLabel: 'USD 2030' },
+        intro: { icon: '🔵', label: 'Midstream Services', desc: 'Pipeline integrity · SCADA · metering services', stat: '12M', statLabel: 'USD 2030' },
         pole: 'intermediaire',
         sections: [
           {
@@ -768,7 +768,7 @@
         featured: { title: 'Pipeline Integrity 360°', desc: 'AI leak detection · opérateur amont 2 MoU in discussion', cta: 'Learn more →', href: '/en/solutions/', thumb: '🔗', badgeLive: false }
       },
       'aval': {
-        intro: { icon: '🟡', label: 'Downstream Division', desc: 'Refining · Distribution · 50 EVCS', stat: '16M', statLabel: 'USD 2030' },
+        intro: { icon: '🟡', label: 'Downstream Services', desc: 'Distribution · lubricants · EVCS services', stat: '16M', statLabel: 'USD 2030' },
         pole: 'aval',
         sections: [
           {
@@ -790,7 +790,7 @@
         featured: { title: 'CEMAC First EVCS', desc: 'Mobile Station™ · 50 kW CCS2/CHAdeMO · OAPI patent', cta: 'Discover →', href: '/en/solutions/', thumb: '⚡', badgeLive: false }
       },
       'petrochimie': {
-        intro: { icon: '🟣', label: 'Petrochemicals Division', desc: 'Fertilizers · methanol · polymers · associated gas', stat: 'P01-P08', statLabel: 'services' },
+        intro: { icon: '🟣', label: 'Petrochemicals Services', desc: 'HSE · inspection · maintenance services to petchem industry', stat: 'P01-P08', statLabel: 'services' },
         pole: 'petrochimie',
         sections: [
           {
