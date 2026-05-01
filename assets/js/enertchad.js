@@ -1303,6 +1303,45 @@
     setInterval(update, 60*1000);
   }
 
+  
+
+  /* === ULTRA PREMIUM · View Transitions API (last-gen) === */
+  function initViewTransitions() {
+    if (!document.startViewTransition) return; // not supported
+    document.querySelectorAll('a').forEach(a => {
+      const href = a.getAttribute('href');
+      if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) return;
+      if (a.target === '_blank') return;
+      try {
+        const url = new URL(a.href, location.href);
+        if (url.origin !== location.origin) return; // external
+      } catch(e) { return; }
+      a.addEventListener('click', (e) => {
+        if (e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey) return;
+        e.preventDefault();
+        document.startViewTransition(() => {
+          location.href = a.href;
+        });
+      });
+    });
+  }
+
+  /* === Reading progress (premium fallback) === */
+  function initScrollProgressPremium() {
+    if (CSS.supports('animation-timeline: scroll()')) return; // native CSS handles it
+    const bar = document.createElement('div');
+    bar.className = 'scroll-progress-premium';
+    bar.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(bar);
+    function update() {
+      const h = document.documentElement;
+      const p = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+      bar.style.width = Math.min(100, Math.max(0, p)) + '%';
+    }
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  }
+
   function init(){
     try {
       initScrollProgress();
@@ -1326,6 +1365,8 @@
     initVisibleSearch();
     initQuickActions();
     initWarRoom();
+    initViewTransitions();
+    initScrollProgressPremium();
     initTourCountdown();
     trackRecentlyViewed();
     initPageNav();

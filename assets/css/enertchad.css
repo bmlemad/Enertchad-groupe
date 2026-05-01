@@ -2120,3 +2120,213 @@ body.scrolled .persona-bar { display: none; }
 .card-pole[data-pole="petrochimie"] .card-num { color: #9b59b6; }
 .nav a[data-pole="petrochimie"]:hover { color: #b777d2; }
 .nav a[data-pole="petrochimie"]::before { background: #9b59b6; }
+
+/* ==========================================================
+   ULTRA PREMIUM LAST-GEN · 2026 web standards
+   ========================================================== */
+/* === ULTRA PREMIUM LAST-GEN === */
+
+/* CSS Cascade Layers (priority order) */
+@layer reset, tokens, base, layout, components, utilities, premium;
+
+/* OKLCH colors for wider gamut + perceptual uniformity */
+@supports (color: oklch(0.7 0.15 30)) {
+  :root {
+    --gold-oklch: oklch(0.78 0.12 80);
+    --emerald-oklch: oklch(0.65 0.15 155);
+    --navy-oklch: oklch(0.18 0.04 240);
+    --cream-oklch: oklch(0.95 0.02 80);
+  }
+}
+
+/* color-mix() for subtle hover blends */
+@supports (background: color-mix(in oklch, white, black)) {
+  .service-pill:hover {
+    background: color-mix(in oklch, var(--gold) 90%, transparent) !important;
+  }
+  .card-pole:hover {
+    box-shadow: 0 16px 40px -12px color-mix(in oklch, var(--navy-900, #080E1A) 25%, transparent);
+  }
+}
+
+/* Container queries for responsive components */
+@container (min-width: 720px) {
+  .hero-services-row { gap: 24px; }
+}
+.hero-services-row {
+  container-type: inline-size;
+}
+
+/* Scroll-driven animations (last-gen) */
+@supports (animation-timeline: scroll()) {
+  @keyframes fadeInScroll {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .reveal {
+    animation: fadeInScroll 1ms linear both;
+    animation-timeline: view();
+    animation-range: entry 5% cover 30%;
+  }
+}
+
+/* :has() selector — context-aware styling */
+.site-header:has(.drawer-toggle[aria-expanded="true"]) {
+  background: var(--navy-900, #080E1A);
+}
+
+/* prefers-contrast: high · WCAG AAA enhancement */
+@media (prefers-contrast: more) {
+  :root {
+    --gold: #ffd700;
+    --cream: #ffffff;
+  }
+  .nav a { font-weight: 700; }
+  .service-pill { border-width: 2px !important; }
+}
+
+/* prefers-color-scheme aware fine-tuning */
+@media (prefers-color-scheme: dark) {
+  /* Already dark by default · no change needed */
+}
+
+/* View Transitions API support */
+@supports (view-transition-name: auto) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 0.4s;
+  }
+  .brand { view-transition-name: site-brand; }
+  .site-header { view-transition-name: site-header; }
+}
+
+/* Subtle film grain overlay for premium texture */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+}
+@media (prefers-reduced-motion: reduce) {
+  .grain-overlay { display: none; }
+}
+
+/* Premium card hover · 3D tilt simulation */
+.card-pole {
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1),
+              box-shadow 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.card-pole:hover {
+  transform: translateY(-4px) scale(1.01);
+}
+@media (prefers-reduced-motion: reduce) {
+  .card-pole { transition: none; }
+  .card-pole:hover { transform: none; }
+}
+
+/* Better focus rings (accessibility + premium) */
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 4px;
+  transition: outline-offset 0.15s;
+}
+button:focus-visible,
+a:focus-visible {
+  box-shadow: 0 0 0 4px color-mix(in oklch, var(--gold) 25%, transparent);
+}
+
+/* Smooth scroll behavior */
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+/* Premium typography refinements */
+.hero-h1, .hero-majors-h1 {
+  text-wrap: balance;
+  font-feature-settings: 'ss01' on, 'cv01' on, 'liga' on;
+}
+.lead, p.lead {
+  text-wrap: pretty;
+  hyphens: auto;
+}
+
+/* CSS @scope-like via :has() */
+section:has(.kicker) {
+  scroll-margin-top: 80px; /* anchor offset for sticky header */
+}
+
+/* Premium image decoding optimization */
+img { content-visibility: auto; }
+
+/* Container query unit (cqw) for fluid spacing */
+@supports (width: 1cqw) {
+  .container { padding: 0 max(24px, 2cqw); }
+}
+
+/* Logical properties for i18n future-proof */
+.section { padding-block: var(--sp-5, 64px); }
+.container { padding-inline: 24px; }
+
+/* Backdrop blur with fallback */
+@supports (backdrop-filter: blur(16px)) {
+  .site-header { backdrop-filter: blur(16px) saturate(180%); }
+}
+@supports not (backdrop-filter: blur(16px)) {
+  .site-header { background: rgba(8, 14, 26, 0.97); }
+}
+
+/* Gradient mesh background option for hero */
+.hero-mesh-bg {
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(217, 168, 79, 0.18), transparent),
+    radial-gradient(ellipse 60% 50% at 100% 100%, rgba(155, 89, 182, 0.10), transparent),
+    radial-gradient(ellipse 60% 50% at 0% 100%, rgba(46, 184, 92, 0.10), transparent),
+    var(--navy-900, #080E1A);
+}
+
+/* Scroll progress bar (refined premium) */
+.scroll-progress-premium {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), color-mix(in oklch, var(--gold), white 30%));
+  z-index: 10000;
+  width: 0%;
+  transition: width 60ms ease;
+  box-shadow: 0 0 10px var(--gold);
+}
+@supports (animation-timeline: scroll(root)) {
+  .scroll-progress-premium {
+    width: 100%;
+    transform-origin: left;
+    transform: scaleX(0);
+    animation: progressGrow linear;
+    animation-timeline: scroll(root);
+    transition: none;
+  }
+  @keyframes progressGrow {
+    to { transform: scaleX(1); }
+  }
+}
+
+/* Lazy reveal with intersection observer fallback */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.is-visible,
+body.et-loaded .reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+@supports (animation-timeline: scroll()) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* End ULTRA PREMIUM */
