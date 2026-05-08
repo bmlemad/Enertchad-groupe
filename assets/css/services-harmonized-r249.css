@@ -1,0 +1,97 @@
+/* ============================================================
+ R249 · Harmonisation services Amont · présentation améliorée
+ Wave R249 · 2026-05-04 · DG mandate post-R248
+ Couvre : services-overview · services-section-header · data-tier
+ ============================================================ */
+
+/* ---- Services overview · stats summary bar ---- */
+.services-overview {
+ transition: background 240ms ease, border-color 240ms ease;
+}
+.services-overview:hover {
+ background: linear-gradient(135deg, rgba(201,181,123,0.12) 0%, rgba(139,90,43,0.07) 100%) !important;
+}
+
+/* ---- Section headers Brown / Green ---- */
+.services-section-header {
+ align-items: baseline;
+ padding: 14px 0 10px;
+ margin: 28px 0 0;
+}
+
+@media (max-width: 640px) {
+ .services-section-header {
+  flex-wrap: wrap;
+  gap: 10px !important;
+ }
+ .services-section-header > span:last-child {
+  font-size: 0.72rem !important;
+  width: 100%;
+  margin-left: 0 !important;
+ }
+}
+
+/* ---- Card tier styling ---- */
+.card-pole[data-tier="1"] {
+ border-left: 3px solid var(--gold);
+}
+.card-pole[data-tier="2"] {
+ border-left: 3px solid rgba(217,168,79,0.50);
+}
+.card-pole[data-tier="3"] {
+ border-left: 3px solid rgba(217,168,79,0.25);
+}
+.card-pole[data-tier="cross"],
+.card-pole[data-tier="umbrella"] {
+ border-left: 3px solid var(--gold);
+ box-shadow: 0 1px 3px rgba(217,168,79,0.10);
+}
+
+/* ---- Card hover state ---- */
+.card-pole {
+ transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+}
+.card-pole:hover {
+ transform: translateY(-2px);
+ box-shadow: 0 8px 24px rgba(8,14,26,0.08);
+ border-color: var(--gold);
+}
+
+/* ---- Card-num flex layout (label + tier badge) ---- */
+.card-num[style*="display:flex"] {
+ margin-bottom: 12px;
+}
+
+/* ---- Tier badge consistent sizing ---- */
+.card-num span[style*="background:var(--gold)"],
+.card-num span[style*="background:rgba"] {
+ white-space: nowrap;
+ line-height: 1.4;
+}
+
+/* ---- Responsive grid ---- */
+@media (max-width: 880px) {
+ #brown-services,
+ #green-services {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+ }
+}
+
+@media (max-width: 540px) {
+ .services-overview {
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 10px !important;
+ }
+}
+
+/* ---- Print friendly ---- */
+@media print {
+ .services-overview,
+ .services-section-header {
+  background: none !important;
+  border-color: #000 !important;
+ }
+ .card-pole {
+  break-inside: avoid;
+ }
+}

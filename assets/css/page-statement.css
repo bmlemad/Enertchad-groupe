@@ -1,0 +1,172 @@
+/* ============================================================
+   PAGE STATEMENT · Brutalist Editorial · R108 · 2026-05-02
+   Pure typography · zero visual decoration · style Linear/Browser Co
+   Scoped sous .page-statement · zero conflict
+   ============================================================ */
+
+/* === R113 · Kill widgets injectés JS (orphelins post-strips) === */
+.quick-actions,
+.persona-bar,
+.persona-tabs,
+.skip-to-main,
+.skip-link,
+.floating-cta,
+.scroll-progress-tracer,
+.bottom-nav-mobile {
+  display: none !important;
+}
+
+/* === R113 · Footer grid width fix · 2col centered === */
+.footer-grid-v2.footer-grid-2col {
+  grid-template-columns: 1.2fr 1fr !important;
+  max-width: 920px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page-statement {
+  --ps-navy: var(--navy, var(--navy));
+  --ps-cream: var(--cream, var(--cream));
+  --ps-gold: var(--gold, #C9B57B);
+  --ps-stone: rgba(246, 241, 230, 0.55);
+  --ps-font-d: "Space Grotesk", "Inter", system-ui, sans-serif;
+  --ps-font-b: "Inter", system-ui, sans-serif;
+  --ps-font-s: "Crimson Pro", Georgia, serif;
+
+  background: var(--ps-navy);
+  color: var(--ps-cream);
+  padding: clamp(96px, 14vh, 200px) clamp(24px, 5vw, 64px) clamp(48px, 8vh, 100px);
+  font-family: var(--ps-font-b);
+  border-bottom: 1px solid rgba(217, 168, 79, 0.14);
+}
+
+.page-statement-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* === META ROW · timestamp + edition number · brutalist === */
+.page-statement-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-top: 1px solid rgba(217, 168, 79, 0.18);
+  padding-top: 14px;
+  margin-bottom: clamp(48px, 8vh, 96px);
+  font-family: var(--ps-font-d);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ps-stone);
+}
+.page-statement-meta strong {
+  color: var(--ps-gold);
+  font-weight: 600;
+}
+
+/* === H1 MONUMENTAL · brutalist typographic statement === */
+.page-statement-h1 {
+  font-family: var(--ps-font-d);
+  font-weight: 500;
+  font-size: clamp(2.2rem, 7vw, 5.5rem);
+  line-height: 0.96;
+  letter-spacing: -0.045em;
+  color: var(--ps-cream);
+  margin: 0 0 clamp(36px, 6vh, 72px);
+  max-width: 17ch;
+}
+.page-statement-h1 em {
+  font-family: var(--ps-font-s);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--ps-gold);
+  letter-spacing: -0.025em;
+}
+.page-statement-h1 .strike {
+  text-decoration: line-through;
+  text-decoration-color: rgba(217, 168, 79, 0.45);
+  text-decoration-thickness: 2px;
+  color: var(--ps-stone);
+}
+
+/* === BODY editorial · large lead, asymmetric === */
+.page-statement-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(32px, 5vw, 80px);
+  max-width: 920px;
+  margin-left: auto;
+}
+@media (max-width: 720px) {
+  .page-statement-body { grid-template-columns: 1fr; gap: 28px; max-width: 100%; margin: 0; }
+}
+
+.page-statement-lede {
+  font-family: var(--ps-font-b);
+  font-size: clamp(1.05rem, 1.6vw, 1.32rem);
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--ps-cream);
+  margin: 0;
+}
+.page-statement-lede strong {
+  color: var(--ps-gold);
+  font-weight: 600;
+}
+
+.page-statement-aside {
+  font-family: var(--ps-font-b);
+  font-size: clamp(0.9rem, 1.2vw, 1rem);
+  line-height: 1.65;
+  color: var(--ps-stone);
+  margin: 0;
+}
+
+/* === LINKS row · brutalist underline · no buttons === */
+.page-statement-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(20px, 3vw, 36px);
+  margin-top: clamp(48px, 8vh, 96px);
+  padding-top: clamp(24px, 4vh, 36px);
+  border-top: 1px solid rgba(217, 168, 79, 0.18);
+}
+.page-statement-link {
+  font-family: var(--ps-font-d);
+  font-size: clamp(0.95rem, 1.25vw, 1.1rem);
+  font-weight: 500;
+  color: var(--ps-cream);
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 4px;
+  letter-spacing: -0.005em;
+  transition: color 220ms ease;
+}
+.page-statement-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: var(--ps-cream);
+  transform-origin: left;
+  transition: background 220ms ease;
+}
+.page-statement-link::before {
+  content: '↗';
+  display: inline-block;
+  margin-right: 8px;
+  color: var(--ps-gold);
+  transition: transform 220ms ease;
+}
+.page-statement-link:hover {
+  color: var(--ps-gold);
+}
+.page-statement-link:hover::after {
+  background: var(--ps-gold);
+}
+.page-statement-link:hover::before {
+  transform: translate(2px, -2px);
+}

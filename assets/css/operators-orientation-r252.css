@@ -1,0 +1,55 @@
+/* ============================================================
+ R252 · Orientation services aux opérateurs · canon
+ Section "Pour les opérateurs" · Amont + Intermédiaire
+ Wave R252 · 2026-05-04 · DG mandate operator-facing
+ ============================================================ */
+
+.operators-orientation .r252-grid{
+ display: grid;
+ grid-template-columns: 1fr 1.3fr;
+ gap: 48px;
+ align-items: start;
+}
+
+@media (max-width: 880px){
+ .operators-orientation .r252-grid{
+  grid-template-columns: 1fr !important;
+  gap: 24px !important;
+ }
+}
+
+@media (max-width: 540px){
+ .operators-orientation .r252-grid > div:last-child > div:first-child{
+  grid-template-columns: 1fr !important;
+ }
+}
+
+/* Hover on engagement model cards */
+.operators-orientation [style*="border-left:3px solid"]{
+ transition: transform 200ms ease, box-shadow 200ms ease;
+}
+.operators-orientation [style*="border-left:3px solid"]:hover{
+ transform: translateY(-2px);
+ box-shadow: 0 6px 16px rgba(8,14,26,0.06);
+}
+
+/* CTA buttons hover */
+.operators-orientation .btn-primary:hover{
+ background: #b89d63 !important;
+}
+.operators-orientation .btn-secondary:hover{
+ background: rgba(139,90,43,0.08) !important;
+}
+.operators-orientation .btn-secondary[style*="#4F8FD9"]:hover{
+ background: rgba(79,143,217,0.08) !important;
+}
+
+/* Print */
+@media print{
+ .operators-orientation .btn-primary,
+ .operators-orientation .btn-secondary{
+  border: 1px solid #000 !important;
+  background: none !important;
+  color: #000 !important;
+ }
+}

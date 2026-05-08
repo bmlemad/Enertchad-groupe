@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img" aria-label="Champs matures Brown vs Champs neufs Green · comparaison services Amont">
+ <title>Brown vs Green · Amont services comparaison</title>
+ <desc>Diagramme split Brown (champs matures · priorité 2026-2027) versus Green (champs neufs · post-2027) avec catalogue services associés.</desc>
+
+ <rect width="800" height="400" fill="#080E1A"/>
+
+ <!-- Title -->
+ <text x="40" y="50" fill="#F6F1E6" font-family="'Space Grotesk',sans-serif" font-size="22" font-weight="600">Brown · Green · deux marchés. Une stratégie.</text>
+ <text x="40" y="74" fill="#C9B57B" font-family="'Space Grotesk',sans-serif" font-size="12" letter-spacing="1.5">CHAMPS MATURES (2026-2027) + CHAMPS NEUFS (POST-2027)</text>
+
+ <!-- BROWN side -->
+ <g transform="translate(40,110)">
+  <rect width="350" height="240" fill="#1a1410" stroke="#8B5A2B" stroke-width="2"/>
+  <text x="20" y="32" fill="#8B5A2B" font-family="'Space Grotesk',sans-serif" font-size="14" letter-spacing="2">CHAMPS MATURES · BROWN</text>
+  <text x="20" y="58" fill="#F6F1E6" font-family="'Space Grotesk',sans-serif" font-size="20" font-weight="600">Priorité Phase 1</text>
+  <text x="20" y="78" fill="#F6F1E6" font-family="'Space Grotesk',sans-serif" font-size="11" opacity="0.7">2026-2027 · Doba bassin · 30+ puits</text>
+
+  <g font-family="'Space Grotesk',sans-serif" font-size="11" fill="#F6F1E6">
+   <text x="20" y="115">▸ S02 EOR Polymers + EOR Local</text>
+   <text x="20" y="135">▸ S03 HSE industriel · Process Safety</text>
+   <text x="20" y="155">▸ S07 Workover &amp; Well Intervention</text>
+   <text x="20" y="175">▸ S14 Coiled Tubing &amp; Stimulation</text>
+   <text x="20" y="195">▸ S15 Wireline &amp; Slickline</text>
+   <text x="20" y="215">▸ S16 Plug &amp; Abandonment (P&amp;A)</text>
+  </g>
+
+  <text x="20" y="225" fill="#8B5A2B" font-family="'Space Grotesk',sans-serif" font-size="9" opacity="0.7">7 services flagship</text>
+ </g>
+
+ <!-- GREEN side -->
+ <g transform="translate(410,110)">
+  <rect width="350" height="240" fill="#0a1f1a" stroke="#10B981" stroke-width="2"/>
+  <text x="20" y="32" fill="#10B981" font-family="'Space Grotesk',sans-serif" font-size="14" letter-spacing="2">CHAMPS NEUFS · GREEN</text>
+  <text x="20" y="58" fill="#F6F1E6" font-family="'Space Grotesk',sans-serif" font-size="20" font-weight="600">Roadmap Phase 2-3</text>
+  <text x="20" y="78" fill="#F6F1E6" font-family="'Space Grotesk',sans-serif" font-size="11" opacity="0.7">Post-2027 · découvertes · pre-FEED</text>
+
+  <g font-family="'Space Grotesk',sans-serif" font-size="11" fill="#F6F1E6">
+   <text x="20" y="115">▸ S01 E&amp;P Géosciences · Exploration</text>
+   <text x="20" y="135">▸ S11 Drilling Fluids · Mud Engineering</text>
+   <text x="20" y="155">▸ S12 Wellsite Supervision · Company Man</text>
+   <text x="20" y="175">▸ S13 Cementing Services</text>
+   <text x="20" y="195">▸ U07-U10 AIM · DaaS · Roadmap</text>
+   <text x="20" y="215">▸ Drilling-as-a-Service nouveau</text>
+  </g>
+
+  <text x="20" y="225" fill="#10B981" font-family="'Space Grotesk',sans-serif" font-size="9" opacity="0.7">6 services + 4 en roadmap</text>
+ </g>
+
+ <!-- Footer note -->
+ <text x="400" y="380" fill="#F6F1E6" font-family="'Space Grotesk',sans-serif" font-size="10" opacity="0.6" text-anchor="middle">EnerTchad SA · Pôle 01 Amont · 13+ services · catalogue OFS Tchad</text>
+
+</svg>

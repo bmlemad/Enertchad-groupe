@@ -1,0 +1,98 @@
+/* R146 · UX P1 · breadcrumb + back-to-top · 2026-05-03 */
+
+/* === BREADCRUMB === */
+.bc-r146 {
+  background: var(--navy);
+  color: var(--cream);
+  padding: clamp(14px, 1.6vh, 20px) clamp(20px, 4vw, 48px);
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.78rem;
+  border-bottom: 1px solid rgba(217, 168, 79, 0.12);
+}
+.bc-r146 ol {
+  max-width: 1480px;
+  margin: 0 auto;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  color: rgba(246, 241, 230, 0.55);
+  letter-spacing: 0.01em;
+}
+.bc-r146 li {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.bc-r146 li + li::before {
+  content: '/';
+  color: rgba(201, 181, 123, 0.45);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-style: italic;
+  font-size: 0.85rem;
+}
+.bc-r146 a {
+  color: rgba(246, 241, 230, 0.65);
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+.bc-r146 a:hover,
+.bc-r146 a:focus-visible {
+  color: var(--gold);
+  outline: none;
+}
+.bc-r146 [aria-current="page"] {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+/* === BACK-TO-TOP === */
+.btt-r146 {
+  position: fixed;
+  right: clamp(16px, 3vw, 28px);
+  bottom: clamp(16px, 3vw, 28px);
+  z-index: 90;
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(8, 14, 26, 0.86);
+  border: 1px solid rgba(201, 181, 123, 0.42);
+  border-radius: 50%;
+  color: var(--gold);
+  cursor: pointer;
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  backdrop-filter: blur(18px) saturate(140%);
+  box-shadow: 0 8px 28px -10px rgba(0, 0, 0, 0.55);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity 240ms ease, visibility 240ms, transform 240ms ease, border-color 180ms ease, background 180ms ease;
+  padding: 0;
+}
+.btt-r146.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.btt-r146:hover,
+.btt-r146:focus-visible {
+  border-color: var(--gold);
+  background: rgba(11, 26, 51, 0.96);
+  outline: none;
+  box-shadow: 0 12px 36px -10px rgba(0, 0, 0, 0.65), 0 0 0 4px rgba(201, 181, 123, 0.16);
+}
+.btt-r146 svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+}
+@media (prefers-reduced-motion: reduce) {
+  .btt-r146 { transition: none; transform: none; }
+}
+@media print {
+  .btt-r146, .bc-r146 { display: none; }
+}

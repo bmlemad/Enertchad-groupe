@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Pôle 01 · Amont · derrick de forage">
+  <title>Pôle Amont · Upstream</title>
+  <g transform="translate(100 30)" stroke="#C9B57B" fill="none" stroke-linecap="round">
+    <!-- Derrick frame -->
+    <line x1="0" y1="0" x2="-30" y2="140" stroke-width="2.5"/>
+    <line x1="0" y1="0" x2="30" y2="140" stroke-width="2.5"/>
+    <line x1="-30" y1="140" x2="30" y2="140" stroke-width="3"/>
+    <!-- Cross braces -->
+    <line x1="-12" y1="40" x2="12" y2="40" stroke-width="1.5"/>
+    <line x1="-18" y1="70" x2="18" y2="70" stroke-width="1.5"/>
+    <line x1="-24" y1="100" x2="24" y2="100" stroke-width="1.5"/>
+    <line x1="-12" y1="40" x2="-18" y2="70" stroke-width="1"/>
+    <line x1="12" y1="40" x2="18" y2="70" stroke-width="1"/>
+    <line x1="-18" y1="70" x2="-24" y2="100" stroke-width="1"/>
+    <line x1="18" y1="70" x2="24" y2="100" stroke-width="1"/>
+    <!-- Top crown block -->
+    <rect x="-8" y="-5" width="16" height="8" stroke-width="1.5" fill="#C9B57B" fill-opacity="0.12"/>
+    <!-- Drill pipe -->
+    <line x1="0" y1="3" x2="0" y2="155" stroke-width="1.5"/>
+    <!-- Ground -->
+    <line x1="-50" y1="155" x2="50" y2="155" stroke-width="1.5"/>
+    <line x1="-55" y1="160" x2="55" y2="160" stroke-width="0.5" opacity="0.5"/>
+  </g>
+  <!-- Pôle number badge -->
+  <text x="100" y="195" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="11" font-weight="700" fill="#C9B57B" letter-spacing="3">PÔLE 01 · AMONT</text>
+</svg>

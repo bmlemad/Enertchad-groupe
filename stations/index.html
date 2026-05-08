@@ -1,0 +1,884 @@
+<!doctype html>
+<html lang="fr"><head>
+ <meta name="view-transition" content="same-origin">
+ <!-- V11 perf · resource hints -->
+ <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link rel="dns-prefetch" href="https://plausible.io">
+ <link rel="preload" as="style" href="/assets/css/enertchad.css?v=r305">
+<meta charset="utf-8">
+<title>Carte stations · disponibilités — EnerTchad SA</title>
+<meta name="description" content="Carte interactive des stations Mobile Station™ EnerTchad · 50 sites CEMAC 2030 · indicateurs disponibilité temps réel hydrocarbures et produits dérivés…" />
+<link rel="canonical" href="https://enertchad-groupe.pages.dev/stations/" />
+<link rel="alternate" hreflang="fr" href="https://enertchad.td/stations/" />
+<link rel="alternate" hreflang="en" href="https://enertchad.td/en/stations/" />
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080E1A">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Inter:wght@100..900&display=swap">
+<link rel="stylesheet" href="/assets/css/page-statement.css?v=r305" />
+<link rel="stylesheet" href="/assets/css/ux-r146.css?v=r305" />
+<link rel="stylesheet" href="/assets/css/megamenu-r154.css?v=r305" />
+<link rel="stylesheet" href="/assets/css/header-ultra.css?v=r238" />
+<link rel="stylesheet" href="/assets/css/enertchad.css?v=r305">
+<meta property="og:title" content="Carte interactive stations Mobile Station™ — EnerTchad" />
+<meta property="og:description" content="50 stations CEMAC 2030 · disponibilités produits temps réel · D01-D08 · IRVE · interactive." />
+<meta property="og:image" content="https://enertchad.td/assets/images/enertchad-accueil-hero-01.webp" />
+<meta name="twitter:card" content="summary_large_image" />
+<script defer data-domain="enertchad.td" src="https://plausible.io/js/script.js"></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"Carte interactive stations services EnerTchad","url":"https://enertchad.td/stations/","description":"Carte temps réel des Mobile Station™ avec indicateurs de disponibilité produits pétroliers et dérivés."}
+</script>
+
+<style>
+/* Stations Map · interactive · canon design */
+.stations-app { display:grid; grid-template-columns: 1fr 360px; gap:18px; min-height:700px; margin-top:24px }
+@media (max-width: 980px) { .stations-app { grid-template-columns: 1fr; } }
+
+.stations-map-wrap {
+ background:linear-gradient(135deg,#0a1220 0%,#0d1628 100%);
+ border:1px solid rgba(217,168,79,0.20);
+ border-radius:14px;
+ padding:18px;
+ position:relative;
+}
+.stations-map-svg { width:100%; height:auto; max-height:700px; display:block; cursor:grab }
+.stations-map-svg:active { cursor:grabbing }
+.station-marker { cursor:pointer; transition: r 0.2s ease, opacity 0.2s ease }
+.station-marker:hover { r:14 !important }
+.station-marker.is-active { stroke:#fff; stroke-width:3 }
+
+/* Status colors canon */
+.status-ok { fill: #10b981 }
+.status-low { fill: #f59e0b }
+.status-out { fill: #dc2626 }
+.status-pending { fill: #6b7280 }
+
+.stations-panel {
+ background:#fff;
+ border:1px solid rgba(8,14,26,0.08);
+ border-radius:14px;
+ padding:20px;
+ box-shadow: var(--sh-2);
+ display:flex;
+ flex-direction:column;
+ gap:16px;
+ max-height:700px;
+ overflow-y:auto;
+}
+.stations-panel h3 { font-family: var(--font-display); font-size:18px; margin:0 0 4px }
+
+/* KPIs bar */
+.stations-kpis {
+ display:grid;
+ grid-template-columns: repeat(4, 1fr);
+ gap:10px;
+ margin:18px 0;
+}
+.stations-kpi {
+ padding:12px 14px;
+ background:rgba(217,168,79,0.06);
+ border:1px solid rgba(217,168,79,0.18);
+ border-radius:8px;
+ text-align:center;
+}
+.stations-kpi strong {
+ display:block;
+ font-family:var(--font-display);
+ font-size:22px;
+ color:var(--gold-deep);
+ font-feature-settings: 'tnum' on, 'lnum' on;
+}
+.stations-kpi span {
+ display:block;
+ font-size:10px;
+ letter-spacing:0.06em;
+ text-transform:uppercase;
+ color:var(--bistre);
+ margin-top:2px;
+}
+
+/* Filters */
+.stations-filters { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:14px }
+.station-filter {
+ padding:6px 12px; background:#fff; border:1px solid rgba(8,14,26,0.12); border-radius:999px;
+ font-family:var(--font-display); font-size:11px; font-weight:600; cursor:pointer;
+ transition: all 0.18s ease; color:var(--ink);
+}
+.station-filter:hover { border-color:var(--gold); color:var(--gold-deep) }
+.station-filter.is-active { background:var(--navy,#080E1A); color:#fff; border-color:var(--navy,#080E1A) }
+
+/* Product status badges */
+.product-row {
+ display:flex; align-items:center; justify-content:space-between;
+ padding:8px 10px; margin:6px 0;
+ background: rgba(217,168,79,0.04);
+ border-radius:6px; font-size:12px;
+}
+.product-row .product-name { font-family:var(--font-display); font-weight:600 }
+.product-row .product-price { font-family:var(--font-display); font-weight:700; color:var(--gold-deep) }
+.product-status {
+ display:inline-flex; align-items:center; gap:4px;
+ padding:2px 8px; border-radius:999px; font-size:10px; font-weight:700;
+}
+.product-status.s-ok { background:rgba(16,185,129,0.14); color:#059669 }
+.product-status.s-low { background:rgba(245,158,11,0.14); color:#d97706 }
+.product-status.s-out { background:rgba(220,38,38,0.14); color:#b91c1c }
+.product-status::before {
+ content:''; width:6px; height:6px; border-radius:50%;
+}
+.product-status.s-ok::before { background:#10b981 }
+.product-status.s-low::before { background:#f59e0b }
+.product-status.s-out::before { background:#dc2626 }
+
+.station-detail-stats {
+ display:grid; grid-template-columns: 1fr 1fr; gap:8px;
+ margin: 12px 0; padding:10px 12px;
+ background: rgba(217,168,79,0.06); border-radius: 8px;
+ font-size:11px;
+}
+.station-detail-stats div strong {
+ display:block; font-family: var(--font-display); font-size:13px; color:var(--navy);
+}
+
+.last-update {
+ display:flex; align-items:center; gap:6px; font-size:11px; color:var(--bistre);
+ margin-top:auto; padding-top:12px; border-top:1px dashed rgba(8,14,26,0.12);
+}
+.live-dot {
+ width:8px; height:8px; border-radius:50%; background:#10b981;
+ animation: pulseLive 2s infinite;
+}
+@keyframes pulseLive {
+ 0%, 100% { opacity: 1 }
+ 50% { opacity: 0.4 }
+}
+</style>
+ <!-- Speculation Rules API · prerender top-priority pages (Chrome 121+) -->
+ <script type="speculationrules">
+ {
+ "prerender": [{
+ "where": {
+ "or": [
+ { "href_matches": "/engagement/investisseurs.html" },
+ { "href_matches": "/dataroom/" },
+ { "href_matches": "/amont/" },
+ { "href_matches": "/data/atlas.html" }
+ ]
+ },
+ "eagerness": "moderate"
+ }],
+ "prefetch": [{
+ "where": {
+ "and": [
+ { "href_matches": "/*" },
+ { "not": { "href_matches": "/en/*" } }
+ ]
+ },
+ "eagerness": "conservative"
+ }]
+ }
+ </script>
+
+ <meta property="og:url" content="https://enertchad-groupe.pages.dev/stations/" />
+ <meta property="og:type" content="website" />
+ <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://www.enertchad.td/"},{"@type":"ListItem","position":2,"name":"Transition","item":"https://www.enertchad.td/sitemap.html#transition"},{"@type":"ListItem","position":3,"name":"Stations","item":"https://www.enertchad.td/stations"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"EnerTchad SA","alternateName":"EnerTchad","url":"https://www.enertchad.td/","logo":"https://www.enertchad.td/assets/images/logo.svg","slogan":"Unité · Innovation · Durabilité","description":"Société parapétrolière (OFS) 100% services techniques · marché tchadien · OHADA","foundingDate":"2026","founder":{"@type":"Person","name":"Bignéro Moïalbéi Le Madang","jobTitle":"Directeur Général"},"address":{"@type":"PostalAddress","addressLocality":"N'Djamena","addressCountry":"TD"},"identifier":"RCCM N'DJ/RC/2026-A-0001"}</script>
+</head>
+<body data-page="stations">
+<!-- R140 · ULTRA PREMIUM Header · FR -->
+<header class="hu-header" role="banner" data-r140="ultra">
+ <div class="hu-inner">
+ <a class="hu-brand" href="/" aria-label="EnerTchad SA · accueil">
+ <img class="hu-logo" src="/assets/images/logo.svg" alt="" width="44" height="44" loading="eager" decoding="async" />
+ <span class="hu-brand-text">EnerTchad <em>SA</em><span class="hu-brand-tag">Société parapétrolière · OFS</span></span>
+ </a>
+ <nav class="hu-nav" aria-label="Navigation principale">
+ <a class="hu-nav-link" data-mm="mission" href="/sitemap.html#mission">Mission</a>
+ <a class="hu-nav-link" data-mm="activites" href="/sitemap.html#activites">Activités</a>
+ <a class="hu-nav-link" data-mm="transition" href="/sitemap.html#transition">Transition</a>
+ <a class="hu-nav-link" data-mm="technologies" href="/sitemap.html#technologies">Technologies</a>
+ <a class="hu-nav-link" data-mm="engagements" href="/sitemap.html#engagements">Engagements</a>
+ <a class="hu-nav-link" data-mm="investisseurs" href="/sitemap.html#investisseurs">Investisseurs</a>
+ </nav>
+ <div class="hu-right">
+ <span class="hu-lang" aria-label="Langue">
+ <a href="/" hreflang="fr" aria-current="true">FR</a>
+ <span aria-hidden="true">·</span>
+ <a href="/en/" hreflang="en">EN</a>
+ </span>
+ <a class="hu-cta" href="/engagement/investisseurs.html">Tour 2026 <span class="hu-cta-arrow">↗</span></a>
+ <button class="hu-burger" type="button" aria-label="Menu" aria-expanded="false">
+ <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true">
+ <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+ </svg>
+ </button>
+ </div>
+ </div>
+</header>
+
+ <!-- R146 · Breadcrumb -->
+ <nav class="bc-r146" aria-label="Fil d'ariane">
+ <ol>
+ <li><a href="/">Accueil</a></li>
+ <li><a href="/sitemap.html#transition">Transition</a></li>
+ <li aria-current="page">Stations</li>
+ </ol>
+ </nav>
+
+<aside class="hu-drawer" aria-hidden="true">
+ <button class="hu-drawer-close" aria-label="Fermer">×</button>
+ <a href="/sitemap.html#mission">01 Mission</a>
+ <a href="/sitemap.html#activites">02 Activités</a>
+ <a href="/sitemap.html#transition">03 Transition énergétique</a>
+ <a href="/sitemap.html#technologies">04 Technologies</a>
+ <a href="/sitemap.html#engagements">05 Engagements</a>
+ <a href="/sitemap.html#investisseurs">06 Investisseurs</a>
+ <a href="/sitemap.html">Plan du site</a>
+ <a href="/en/" hreflang="en" style="color:var(--gold)">EN · English ↗</a>
+</aside>
+<div class="hu-backdrop" aria-hidden="true"></div>
+
+<a class="skip-link" href="#main">Aller au contenu</a>
+
+<main id="main" tabindex="-1">
+ <!-- PAGE STATEMENT · brutalist editorial · R118 propagation -->
+ <section class="page-statement" aria-labelledby="ps-h1">
+ <div class="page-statement-inner">
+ <div class="page-statement-meta">
+ <span>Stations-service · Réseau aval</span>
+ <span>EnerTchad SA <strong>·</strong> 2026</span>
+ </div>
+ <h1 class="page-statement-h1" id="ps-h1">
+ <em>200 stations.</em><br>13 villes Tchad.<br>50 IRVE 2030.
+ </h1>
+ <div class="page-statement-body">
+ <p class="page-statement-lede">Réseau aval Mobile Station&trade; · 200 stations cibles dans 13 villes du Tchad. Premier réseau IRVE CEMAC : 50 stations 50 kW d'ici 2030. Carte interactive disponibilités carburant en temps réel.</p>
+ <p class="page-statement-aside">Cadre B2C aval premium · partenariat raffinerie Djermaya 20 kbpd · projets micro-grids solaires sur sites isolés.</p>
+ </div>
+ <div class="page-statement-links">
+ <a class="page-statement-link" href="/aval/">Pôle Aval</a>
+ <a class="page-statement-link" href="/marques/">Mobile Station&trade;</a>
+ <a class="page-statement-link" href="/energies/">IRVE 50</a>
+ <a class="page-statement-link" href="/atlas/">Réseau</a>
+ </div>
+ </div>
+ </section>
+
+ 
+
+ <section class="section">
+ <div class="container">
+ <span class="kicker" style="color:var(--gold)"><span class="live-dot" style="display:inline-block"></span> LIVE · Réseau Mobile Station™</span>
+ <h1 class="h-display" style="font-size:var(--fs-4xl);max-width:800px">Carte interactive stations · <em>disponibilités temps réel</em>.</h1>
+ <p class="lead" style="max-width:780px">Visualisez en temps réel le statut des stations Mobile Station™ EnerTchad et la disponibilité produit-par-produit (D01 carburants · D02 LPG · D04 lubrifiants · D08 EnerFert™ · IRVE). Cliquez sur une station pour voir le détail · filtres par région et par produit. <strong>Mode démonstration Phase 1</strong> · données indicatives à titre illustratif (système live opérationnel à partir de 2027).</p>
+
+ <!-- KPIs bar -->
+ <div class="stations-kpis">
+ <div class="stations-kpi"><strong id="kpi-total">35</strong><span>Stations actives</span></div>
+ <div class="stations-kpi"><strong id="kpi-ok" style="color:#059669">28</strong><span>Disponibilité OK</span></div>
+ <div class="stations-kpi"><strong id="kpi-low" style="color:#d97706">5</strong><span>Stock faible</span></div>
+ <div class="stations-kpi"><strong id="kpi-out" style="color:#b91c1c">2</strong><span>Rupture(s)</span></div>
+ </div>
+
+ <!-- Filters -->
+ <div class="stations-filters" role="tablist" aria-label="Filtres carte stations">
+ <button class="station-filter is-active" data-region="all" type="button">Toutes régions</button>
+ <button class="station-filter" data-region="ndjamena" type="button">N'Djamena</button>
+ <button class="station-filter" data-region="moundou" type="button">Moundou</button>
+ <button class="station-filter" data-region="sarh" type="button">Sarh</button>
+ <button class="station-filter" data-region="abeche" type="button">Abéché</button>
+ <button class="station-filter" data-region="doba" type="button">Doba</button>
+ <button class="station-filter" data-region="rural" type="button">Rural / S</button>
+ </div>
+
+ <!-- Interactive map + panel -->
+ <div class="stations-app">
+ <div class="stations-map-wrap">
+ <svg class="stations-map-svg" id="stations-map" viewBox="0 0 800 700" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Carte interactive stations Tchad">
+ <!-- Background grid -->
+ <defs>
+ <pattern id="gridStations" width="40" height="40" patternUnits="userSpaceOnUse">
+ <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(217,168,79,0.05)" stroke-width="0.5"/>
+ </pattern>
+ </defs>
+ <rect width="800" height="700" fill="url(#gridStations)"/>
+ 
+ <!-- Tchad outline -->
+ <path d="M 220 110 L 320 90 L 420 100 L 530 105 L 600 130 L 640 175 L 660 240 L 670 320 L 685 400 L 670 470 L 640 540 L 590 590 L 530 615 L 470 620 L 400 615 L 340 600 L 280 580 L 230 540 L 195 480 L 175 410 L 165 330 L 175 250 L 195 175 L 220 110 Z" 
+ fill="rgba(217,168,79,0.04)" 
+ stroke="rgba(217,168,79,0.42)" 
+ stroke-width="1.5"/>
+ 
+ <!-- Cities labels -->
+ <text x="285" y="382" font-family="Space Grotesk" font-size="11" font-weight="700" fill="rgba(255,255,255,0.85)">N'Djamena</text>
+ <text x="395" y="555" font-family="Space Grotesk" font-size="10" font-weight="700" fill="rgba(255,255,255,0.7)">Moundou</text>
+ <text x="465" y="525" font-family="Space Grotesk" font-size="10" font-weight="700" fill="rgba(255,255,255,0.7)">Sarh</text>
+ <text x="555" y="310" font-family="Space Grotesk" font-size="10" font-weight="700" fill="rgba(255,255,255,0.7)">Abéché</text>
+ <text x="510" y="555" font-family="Inter" font-size="9" fill="rgba(255,255,255,0.5)">Doba</text>
+ 
+ <!-- Stations markers will be injected via JS -->
+ <g id="stations-markers"></g>
+ 
+ <!-- Légende -->
+ <g transform="translate(20,20)">
+ <rect width="190" height="106" fill="rgba(8,14,26,0.85)" stroke="rgba(217,168,79,0.32)" stroke-width="1" rx="6"/>
+ <text x="14" y="20" font-family="Space Grotesk" font-size="10" font-weight="700" fill="#d4af37" letter-spacing="1.4">STATUT STATIONS</text>
+ <circle cx="22" cy="40" r="6" fill="#10b981" stroke="#fff" stroke-width="1"/>
+ <text x="36" y="44" font-family="Inter" font-size="10" fill="#fff">Disponibilité OK</text>
+ <circle cx="22" cy="60" r="6" fill="#f59e0b" stroke="#fff" stroke-width="1"/>
+ <text x="36" y="64" font-family="Inter" font-size="10" fill="#fff">Stock faible</text>
+ <circle cx="22" cy="80" r="6" fill="#dc2626" stroke="#fff" stroke-width="1"/>
+ <text x="36" y="84" font-family="Inter" font-size="10" fill="#fff">Rupture produit</text>
+ <circle cx="22" cy="100" r="6" fill="#6b7280" stroke="#fff" stroke-width="1"/>
+ <text x="36" y="104" font-family="Inter" font-size="10" fill="#fff">Phase 2 (2028+)</text>
+ </g>
+ </svg>
+ </div>
+
+ <!-- Detail Panel -->
+ <aside class="stations-panel" id="station-detail">
+ <div id="panel-empty">
+ <span class="kicker">Sélection</span>
+ <h3 style="margin-top:4px">Cliquez une station sur la carte</h3>
+ <p style="font-size:13px;color:var(--bistre);line-height:1.5">Visualisez la disponibilité produit par produit · stock estimé · prochain réapprovisionnement · canaux de commercialisation actifs.</p>
+ <div style="margin-top:14px;padding:12px;background:rgba(217,168,79,0.06);border-radius:8px;font-size:12px">
+ <strong style="color:var(--gold-deep)">Top 3 stations performance</strong>
+ <ol style="margin:6px 0 0;padding-left:18px;color:var(--bistre);line-height:1.5">
+ <li>N'Djamena Centre L01 · 100% dispo</li>
+ <li>Moundou L01 · 100% dispo</li>
+ <li>N'Djamena Aéroport L02 · 100% dispo</li>
+ </ol>
+ </div>
+ </div>
+ </aside>
+ </div>
+
+ <p class="last-update" style="font-size:12px;margin-top:18px"><span class="live-dot"></span><strong>Dernière mise à jour :</strong> <span id="last-update-time">il y a quelques secondes</span> · refresh auto toutes les 60s · système de démonstration Phase 1.</p>
+ </div>
+ </section>
+
+ <section class="see-also">
+ <div class="container">
+ <span class="see-also-kicker">Voir aussi</span>
+ <div class="see-also-grid">
+ <a class="see-also-card" href="/aval/"><div class="see-also-card-cat">Pôle</div><h4>Aval · D&amp;C</h4><p>Catalogue 8 D01-D08 + 4 canaux C01-C04</p></a>
+ <a class="see-also-card" href="/boutique/"><div class="see-also-card-cat">Boutique</div><h4>Catalogue produits</h4><p>RFQ 24h · prix indicatifs · MoQ</p></a>
+ <a class="see-also-card" href="/energies/"><div class="see-also-card-cat">Axe</div><h4>Énergies · IRVE 50</h4><p>Premier réseau IRVE CEMAC 2030</p></a>
+ </div>
+ </div>
+ </section>
+
+ <!-- R141 · 3-tier services canon · 2026-05-03 -->
+ 
+ <!-- R174 · SVG hero composition stations services -->
+ <section class="section" aria-labelledby="r174-svg-h" style="padding:clamp(48px,6vh,72px) 0;background:var(--navy)">
+  <div class="container" style="max-width:960px;margin:0 auto;padding:0 24px">
+   <h2 id="r174-svg-h" class="visually-hidden" style="position:absolute;left:-9999px">Stations services next-gen · illustration canon</h2>
+   <img src="/assets/images/illustrations/station-06-hero-composition.svg?v=r173" alt="EnerTchad SA · Stations services next-gen panoramique · A·B·C + IRVE + Solar" style="width:100%;height:auto;display:block;border:1px solid rgba(201,181,123,0.18);" loading="lazy" decoding="async" />
+   <p style="text-align:center;margin-top:18px;font-family:'Space Grotesk',sans-serif;font-size:0.78rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(246,241,230,0.55)">A · CARBURANTS &nbsp;·&nbsp; B · ANNEXES &nbsp;·&nbsp; C · CONNEXES &nbsp;+&nbsp; IRVE 50 &nbsp;+&nbsp; SOLAR</p>
+  </div>
+ </section>
+ <section class="section" id="r141-services-canon" style="background:var(--navy);color:var(--cream);padding:clamp(64px,8vh,96px) 0">
+ <div class="container">
+ <span class="kicker" style="font-family:'Space Grotesk',sans-serif;font-size:0.72rem;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:rgba(246,241,230,0.55);display:block;margin-bottom:14px">R141 · taxonomie canon · 18 services structurés</span>
+ <h2 class="h-display reveal" style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:clamp(1.6rem,3.8vw,2.6rem);line-height:1.05;letter-spacing:-0.025em;color:var(--cream);margin:0 0 clamp(36px,5vh,56px);max-width:24ch">
+ 3 cercles de <em style="font-family:'Crimson Pro',Georgia,serif;font-style:italic;font-weight:400;color:var(--gold)">valeur.</em><br>
+ Carburants. Annexes. Connexes.
+ </h2>
+ <p class="lead" style="font-size:1.05rem;line-height:1.6;max-width:62ch;margin:0 0 clamp(48px,6vh,72px);color:rgba(246,241,230,0.78)">
+ La station Mobile Station&trade; opère selon <strong style="color:var(--gold)">3 cercles de valeur</strong>. Le carburant fait le volume · les annexes captent le client · les connexes étendent le LTV. Mix 60/22/18 → <strong style="color:var(--gold)">EBITDA marge 14%</strong> vs 6% pure carburant.
+ </p>
+
+ <div class="r141-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(28px,3vw,40px)">
+
+ <!-- A · Carburants & énergies -->
+ <div style="border:1px solid rgba(217,168,79,0.22);border-radius:8px;padding:32px 28px;background:rgba(11,26,51,0.45)">
+ <div style="font-family:'Space Grotesk',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:8px">Cercle A · Cœur métier</div>
+ <div style="margin:14px 0 14px;border:1px solid rgba(201,181,123,0.18);background:var(--navy);border-radius:6px">
+  <img src="/assets/images/illustrations/station-02-carburants.svg?v=r173" alt="A · Carburants A1-A6 · pompes" style="width:100%;height:auto;display:block" loading="lazy" decoding="async" />
+ </div>
+ <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:1.55rem;letter-spacing:-0.015em;margin:0 0 6px">Carburants &amp; énergies</h3>
+ <p style="font-size:0.84rem;color:rgba(246,241,230,0.65);margin:0 0 18px;font-family:'Crimson Pro',Georgia,serif;font-style:italic">6 codes A1-A6 · revenus volume · marge fine</p>
+ <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;font-size:0.92rem">
+ <li><strong style="color:var(--gold);font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:0.78rem;letter-spacing:0.06em">A1</strong> &nbsp; Essence sans plomb (SP91 · SP95 · SP98)</li>
+ <li><strong style="color:var(--gold);font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:0.78rem;letter-spacing:0.06em">A2</strong> &nbsp; Gazole / Diesel</li>
+ <li><strong style="color:var(--gold);font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:0.78rem;letter-spacing:0.06em">A3</strong> &nbsp; GPL carburant + bouteilles cuisson</li>
+ <li><strong style="color:var(--gold);font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:0.78rem;letter-spacing:0.06em">A4</strong> &nbsp; GNV / CNG (gaz naturel véhicule)</li>
+ <li><strong style="color:var(--gold);font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:0.78rem;letter-spacing:0.06em">A5</strong> &nbsp; <strong>IRVE 50 kW</strong> CCS2 + CHAdeMO · 1<sup>er</sup> CEMAC</li>
+ <li><strong style="color:var(--gold);font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:0.78rem;letter-spacing:0.06em">A6</strong> &nbsp; Lubrifiants moteur · transmission · hydrauliques</li>
+ </ul>
+ <div style="margin-top:24px;padding-top:18px;border-top:1px dashed rgba(217,168,79,0.2);font-size:0.82rem;color:rgba(246,241,230,0.65)">
+ <strong style="color:var(--cream)">Mix CA station M</strong> : 60% · marge 4-6% nette
+ </div>
+ </div>
+
+ <!-- B · Services annexes -->
+ <div style="border:1px solid rgba(217,168,79,0.22);border-radius:8px;padding:32px 28px;background:rgba(11,26,51,0.45)">
+ <div style="font-family:'Space Grotesk',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:8px">Cercle B · Sur le site</div>
+ <div style="margin:14px 0 14px;border:1px solid rgba(201,181,123,0.18);background:var(--navy);border-radius:6px">
+  <img src="/assets/images/illustrations/station-03-annexes.svg?v=r173" alt="B · Annexes B1-B6 · boutique café" style="width:100%;height:auto;display:block" loading="lazy" decoding="async" />
+ </div>
+ <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:1.55rem;letter-spacing:-0.015em;margin:0 0 6px">Services annexes</h3>
+ <p style="font-size:0.84rem;color:rgba(246,241,230,0.65);margin:0 0 18px;font-family:'Crimson Pro',Georgia,serif;font-style:italic">6 codes B1-B6 · captive captif · non-fuel margin</p>
+ <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;font-size:0.92rem">
+ <li><strong style="color:var(--gold);font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:0.78rem;letter-spacing:0.06em">B1</strong> &nbsp; Boutique convenience (essentials voyage)</li>
+ <li><strong style="color:var(--gold);font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:0.78rem;letter-spacing:0.06em">B2</strong> &nbsp; Restauration · café · snacking (NRJ+ Café)</li>
+ <li><strong style="color:var(--gold);font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:0.78rem;letter-spacing:0.06em">B3</strong> &nbsp; Sanitaires + douches poids-lourds</li>
+ <li><strong style="color:var(--gold);font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:0.78rem;letter-spacing:0.06em">B4</strong> &nbsp; ATM + Mobile money agency</li>
+ <li><strong style="color:var(--gold);font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:0.78rem;letter-spacing:0.06em">B5</strong> &nbsp; WiFi gratuit + zone repos climatisée</li>
+ <li><strong style="color:var(--gold);font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:0.78rem;letter-spacing:0.06em">B6</strong> &nbsp; Espace enfants / aire de jeux</li>
+ </ul>
+ <div style="margin-top:24px;padding-top:18px;border-top:1px dashed rgba(217,168,79,0.2);font-size:0.82rem;color:rgba(246,241,230,0.65)">
+ <strong style="color:var(--cream)">Mix CA station M</strong> : 22% · marge 25-35% nette
+ </div>
+ </div>
+
+ <!-- C · Services connexes -->
+ <div style="border:1px solid rgba(217,168,79,0.22);border-radius:8px;padding:32px 28px;background:rgba(11,26,51,0.45)">
+ <div style="font-family:'Space Grotesk',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:8px">Cercle C · Autour du véhicule</div>
+ <div style="margin:14px 0 14px;border:1px solid rgba(201,181,123,0.18);background:var(--navy);border-radius:6px">
+  <img src="/assets/images/illustrations/station-04-connexes.svg?v=r173" alt="C · Connexes C1-C6 · lavage IRVE" style="width:100%;height:auto;display:block" loading="lazy" decoding="async" />
+ </div>
+ <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:1.55rem;letter-spacing:-0.015em;margin:0 0 6px">Services connexes</h3>
+ <p style="font-size:0.84rem;color:rgba(246,241,230,0.65);margin:0 0 18px;font-family:'Crimson Pro',Georgia,serif;font-style:italic">6 codes C1-C6 · LTV client · fidélisation B2C/B2B</p>
+ <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;font-size:0.92rem">
+ <li><strong style="color:var(--gold);font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:0.78rem;letter-spacing:0.06em">C1</strong> &nbsp; Lavage auto manuel + automatique</li>
+ <li><strong style="color:var(--gold);font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:0.78rem;letter-spacing:0.06em">C2</strong> &nbsp; Mécanique rapide · vidange · plaquettes</li>
+ <li><strong style="color:var(--gold);font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:0.78rem;letter-spacing:0.06em">C3</strong> &nbsp; Pneumatique · montage · parallélisme</li>
+ <li><strong style="color:var(--gold);font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:0.78rem;letter-spacing:0.06em">C4</strong> &nbsp; Contrôle technique léger (visuels · niveaux)</li>
+ <li><strong style="color:var(--gold);font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:0.78rem;letter-spacing:0.06em">C5</strong> &nbsp; Assistance dépannage 24/7 · remorquage</li>
+ <li><strong style="color:var(--gold);font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:0.78rem;letter-spacing:0.06em">C6</strong> &nbsp; Carte fidélité B2C + Fleet Card B2B</li>
+ </ul>
+ <div style="margin-top:24px;padding-top:18px;border-top:1px dashed rgba(217,168,79,0.2);font-size:0.82rem;color:rgba(246,241,230,0.65)">
+ <strong style="color:var(--cream)">Mix CA station M</strong> : 18% · marge 35-45% nette
+ </div>
+ </div>
+
+ </div>
+
+ <!-- Insight EBITDA -->
+ <div style="margin-top:clamp(48px,6vh,64px);padding:32px clamp(28px,3vw,40px);background:rgba(201,181,123,0.08);border-left:3px solid #C9B57B;border-radius:0 6px 6px 0">
+ <p style="font-family:'Crimson Pro',Georgia,serif;font-size:1.18rem;line-height:1.55;color:var(--cream);margin:0;font-style:italic">
+ La rentabilité d&rsquo;une station <strong style="color:var(--gold);font-style:normal">ne vient pas du carburant</strong>. Elle vient du <strong style="color:var(--gold);font-style:normal">mix B+C qui génère 40% du CA mais 70% de l&rsquo;EBITDA</strong>. Le carburant attire la voiture · les annexes captent le client · les connexes le fidélisent.
+ </p>
+ </div>
+
+ <!-- 3 formats × 18 services -->
+ <div style="margin-top:clamp(48px,6vh,64px)">
+ <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:1.4rem;letter-spacing:-0.01em;margin:0 0 24px">3 formats Mobile Station&trade; · 50 stations 2030</h3>
+ <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px">
+ <div style="padding:22px 24px;border:1px solid rgba(246,241,230,0.12);border-radius:6px">
+ <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.7rem;letter-spacing:0.14em;color:rgba(246,241,230,0.55);text-transform:uppercase;margin-bottom:8px">30 stations · corridor / rural</div>
+ <strong style="font-size:1.2rem;font-family:'Space Grotesk',sans-serif">Mobile Station&trade; <span style="color:var(--gold)">S</span></strong>
+ <div style="font-size:0.8rem;color:rgba(246,241,230,0.6);margin-top:6px">800-1 200 m² · A1·A2·A3·A6 + B1·B3 + C5</div>
+ </div>
+ <div style="padding:22px 24px;border:1px solid rgba(246,241,230,0.12);border-radius:6px">
+ <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.7rem;letter-spacing:0.14em;color:rgba(246,241,230,0.55);text-transform:uppercase;margin-bottom:8px">15 stations · urbain standard</div>
+ <strong style="font-size:1.2rem;font-family:'Space Grotesk',sans-serif">Mobile Station&trade; <span style="color:var(--gold)">M</span></strong>
+ <div style="font-size:0.8rem;color:rgba(246,241,230,0.6);margin-top:6px">1 800-2 500 m² · A1-A6 + IRVE + B1·B2·B4·B5 + C1·C2·C5·C6</div>
+ </div>
+ <div style="padding:22px 24px;border:1px solid rgba(217,168,79,0.42);border-radius:6px;background:rgba(201,181,123,0.06)">
+ <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.7rem;letter-spacing:0.14em;color:var(--gold);text-transform:uppercase;margin-bottom:8px">5 stations · L premium NRJ+</div>
+ <strong style="font-size:1.2rem;font-family:'Space Grotesk',sans-serif">Mobile Station&trade; <span style="color:var(--gold)">L</span></strong>
+ <div style="font-size:0.8rem;color:rgba(246,241,230,0.6);margin-top:6px">3 500-5 000 m² · A1-A6 + IRVE×4 + <strong style="color:var(--cream)">tout B1-B6</strong> + <strong style="color:var(--cream)">tout C1-C6</strong></div>
+ </div>
+ </div>
+ </div>
+
+ </div>
+ </section>
+
+
+ <!-- R142 · Next-gen ultra-premium specs · 2026-05-03 -->
+ <section class="section" id="r142-next-gen" style="background:linear-gradient(180deg,#080E1A 0%,#0B1A33 100%);color:var(--cream);padding:clamp(64px,8vh,96px) 0;border-top:1px solid rgba(217,168,79,0.18)">
+ <div class="container">
+ <span class="kicker" style="font-family:'Space Grotesk',sans-serif;font-size:0.72rem;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:14px">R142 · dernière génération · ultra-premium</span>
+ <h2 class="h-display reveal" style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:clamp(1.6rem,3.8vw,2.6rem);line-height:1.05;letter-spacing:-0.025em;color:var(--cream);margin:0 0 clamp(36px,5vh,56px);max-width:24ch">
+ Stations <em style="font-family:'Crimson Pro',Georgia,serif;font-style:italic;font-weight:400;color:var(--gold)">dernière génération.</em><br>
+ Pas une copie. Un standard.
+ </h2>
+ <p class="lead" style="font-size:1.05rem;line-height:1.6;max-width:62ch;margin:0 0 clamp(48px,6vh,72px);color:rgba(246,241,230,0.78)">
+ Mobile Station&trade; n&rsquo;est pas un clone Total Energies / Vivo / OilLibya. C&rsquo;est un <strong style="color:var(--gold)">format ultra-premium dernière génération</strong> conçu pour le marché tchadien à 5 ans · benchmark major NOC Moyen-Orient-grade · architecture Total Wonder · UX major NOC Moyen-Orient.
+ </p>
+
+ <!-- 8 piliers next-gen -->
+ <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(24px,2.5vw,32px);margin-bottom:clamp(48px,6vh,72px)">
+
+ <!-- 1. Solar canopy -->
+ <div style="padding:28px 26px;background:rgba(11,26,51,0.55);border:1px solid rgba(217,168,79,0.22);border-radius:8px">
+ <div style="font-family:'Space Grotesk',sans-serif;font-size:0.62rem;font-weight:700;letter-spacing:0.16em;color:var(--gold);text-transform:uppercase;margin-bottom:12px">01 · Énergie auto-suffisante</div>
+ <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:1.18rem;margin:0 0 8px">Toit solaire photovoltaïque</h3>
+ <p style="font-size:0.88rem;line-height:1.55;color:rgba(246,241,230,0.7);margin:0">Auvent station 80-150 kWc · self-powered · revente surplus réseau SHT. <strong style="color:var(--cream)">-100% empreinte carbone Scope 2.</strong></p>
+ </div>
+
+ <!-- 2. IRVE Ultra-fast -->
+ <div style="padding:28px 26px;background:rgba(11,26,51,0.55);border:1px solid rgba(217,168,79,0.22);border-radius:8px">
+ <div style="font-family:'Space Grotesk',sans-serif;font-size:0.62rem;font-weight:700;letter-spacing:0.16em;color:var(--gold);text-transform:uppercase;margin-bottom:12px">02 · Charge ultra-rapide</div>
+ <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:1.18rem;margin:0 0 8px">IRVE 50-350 kW</h3>
+ <p style="font-size:0.88rem;line-height:1.55;color:rgba(246,241,230,0.7);margin:0">CCS2 + CHAdeMO + Type 2 · jusqu&rsquo;à <strong style="color:var(--cream)">350 kW pour camions BEV</strong>. 1<sup>er</sup> réseau CEMAC · 50 stations 2030.</p>
+ </div>
+
+ <!-- 3. Cashless / contactless -->
+ <div style="padding:28px 26px;background:rgba(11,26,51,0.55);border:1px solid rgba(217,168,79,0.22);border-radius:8px">
+ <div style="font-family:'Space Grotesk',sans-serif;font-size:0.62rem;font-weight:700;letter-spacing:0.16em;color:var(--gold);text-transform:uppercase;margin-bottom:12px">03 · Paiement sans contact</div>
+ <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:1.18rem;margin:0 0 8px">Cashless 100%</h3>
+ <p style="font-size:0.88rem;line-height:1.55;color:rgba(246,241,230,0.7);margin:0">Carte CB · NFC · QR code · mobile money <strong style="color:var(--cream)">Airtel · Moov · Orange</strong> · pré-paiement app · <strong style="color:var(--cream)">B2B fleet card API ERP</strong>.</p>
+ </div>
+
+ <!-- 4. AI/IoT -->
+ <div style="padding:28px 26px;background:rgba(11,26,51,0.55);border:1px solid rgba(217,168,79,0.22);border-radius:8px">
+ <div style="font-family:'Space Grotesk',sans-serif;font-size:0.62rem;font-weight:700;letter-spacing:0.16em;color:var(--gold);text-transform:uppercase;margin-bottom:12px">04 · Intelligence opérationnelle</div>
+ <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:1.18rem;margin:0 0 8px">IoT + IA temps réel</h3>
+ <p style="font-size:0.88rem;line-height:1.55;color:rgba(246,241,230,0.7);margin:0">Télémétrie pompes · maintenance prédictive · forecasting demande · <strong style="color:var(--cream)">tarification dynamique</strong> selon brent/cours · OT cybersécurité IEC 62443.</p>
+ </div>
+
+ <!-- 5. ESG zero-water lavage -->
+ <div style="padding:28px 26px;background:rgba(11,26,51,0.55);border:1px solid rgba(217,168,79,0.22);border-radius:8px">
+ <div style="font-family:'Space Grotesk',sans-serif;font-size:0.62rem;font-weight:700;letter-spacing:0.16em;color:var(--gold);text-transform:uppercase;margin-bottom:12px">05 · ESG-grade water</div>
+ <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:1.18rem;margin:0 0 8px">Lavage <em>zéro eau</em></h3>
+ <p style="font-size:0.88rem;line-height:1.55;color:rgba(246,241,230,0.7);margin:0">Recyclage circuit fermé <strong style="color:var(--cream)">95%</strong> · capture eaux pluies · technologie Water-to-Value&trade;. Aligné <strong style="color:var(--cream)">ITIE · GRI · TCFD</strong>.</p>
+ </div>
+
+ <!-- 6. Architecture brand -->
+ <div style="padding:28px 26px;background:rgba(11,26,51,0.55);border:1px solid rgba(217,168,79,0.22);border-radius:8px">
+ <div style="font-family:'Space Grotesk',sans-serif;font-size:0.62rem;font-weight:700;letter-spacing:0.16em;color:var(--gold);text-transform:uppercase;margin-bottom:12px">06 · Architecture iconique</div>
+ <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:1.18rem;margin:0 0 8px">Brand experience signature</h3>
+ <p style="font-size:0.88rem;line-height:1.55;color:rgba(246,241,230,0.7);margin:0">Béton brut + métal brossé navy + signage Crimson Pro gold · WiFi 6 · 5G · <strong style="color:var(--cream)">video walls dynamiques</strong> · audio brand identity NRJ+&trade;.</p>
+ </div>
+
+ <!-- 7. Driver lounge TIR -->
+ <div style="padding:28px 26px;background:rgba(11,26,51,0.55);border:1px solid rgba(217,168,79,0.22);border-radius:8px">
+ <div style="font-family:'Space Grotesk',sans-serif;font-size:0.62rem;font-weight:700;letter-spacing:0.16em;color:var(--gold);text-transform:uppercase;margin-bottom:12px">07 · Confort chauffeurs TIR</div>
+ <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:1.18rem;margin:0 0 8px">Driver lounge premium</h3>
+ <p style="font-size:0.88rem;line-height:1.55;color:rgba(246,241,230,0.7);margin:0">Stations corridor : douches ergo climatisées · repas 24/7 · zones sommeil · charge USB · <strong style="color:var(--cream)">parking sécurisé caméras</strong>. Pacte avec ASTRO/transporteurs.</p>
+ </div>
+
+ <!-- 8. Drone dock -->
+ <div style="padding:28px 26px;background:rgba(11,26,51,0.55);border:1px solid rgba(217,168,79,0.22);border-radius:8px">
+ <div style="font-family:'Space Grotesk',sans-serif;font-size:0.62rem;font-weight:700;letter-spacing:0.16em;color:var(--gold);text-transform:uppercase;margin-bottom:12px">08 · Logistique aérienne</div>
+ <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:1.18rem;margin:0 0 8px">Drone dock corridor</h3>
+ <p style="font-size:0.88rem;line-height:1.55;color:rgba(246,241,230,0.7);margin:0">Pad drone Phase 2 (2028) · livraison <strong style="color:var(--cream)">médicaments urgents · pièces détachées</strong> sur axes Doba · pilote partenariat ZIPLINE Tchad.</p>
+ </div>
+
+ </div>
+
+ <!-- Insight benchmark -->
+ <div style="padding:36px clamp(28px,3vw,40px);background:rgba(201,181,123,0.06);border-left:3px solid #C9B57B;border-radius:0 6px 6px 0;margin-bottom:clamp(48px,6vh,64px)">
+ <div style="font-family:'Space Grotesk',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:14px">Benchmark international · ce que l&rsquo;on délivre</div>
+ <p style="font-family:'Crimson Pro',Georgia,serif;font-size:1.18rem;line-height:1.6;color:var(--cream);margin:0;font-style:italic">
+ On ne reproduit pas Total Energies / Vivo / OilLibya. <strong style="color:var(--gold);font-style:normal">On construit le standard que les majors mettront 10 ans à atteindre au Tchad</strong>. Architecture major NOC Moyen-Orient-grade · UX major NOC Moyen-Orient · ESG TotalWonder · Tech Tesla Supercharger · Brand Apple Store. <strong style="color:var(--gold);font-style:normal">Made in Chad · Patent OAPI · Format réplicable CEMAC + ECOWAS.</strong>
+ </p>
+ </div>
+
+ <!-- KPIs ultra-premium -->
+ <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:24px;padding-top:clamp(36px,4vh,48px);border-top:1px solid rgba(217,168,79,0.18)">
+ <div>
+ <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:2.4rem;color:var(--gold);letter-spacing:-0.02em">100%</div>
+ <div style="font-size:0.78rem;color:rgba(246,241,230,0.6);text-transform:uppercase;letter-spacing:0.08em;margin-top:4px">Cashless paiement</div>
+ </div>
+ <div>
+ <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:2.4rem;color:var(--gold);letter-spacing:-0.02em">350 kW</div>
+ <div style="font-size:0.78rem;color:rgba(246,241,230,0.6);text-transform:uppercase;letter-spacing:0.08em;margin-top:4px">IRVE ultra-fast camions</div>
+ </div>
+ <div>
+ <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:2.4rem;color:var(--gold);letter-spacing:-0.02em">95%</div>
+ <div style="font-size:0.78rem;color:rgba(246,241,230,0.6);text-transform:uppercase;letter-spacing:0.08em;margin-top:4px">Eau recyclée lavage</div>
+ </div>
+ <div>
+ <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:2.4rem;color:var(--gold);letter-spacing:-0.02em">150 kWc</div>
+ <div style="font-size:0.78rem;color:rgba(246,241,230,0.6);text-transform:uppercase;letter-spacing:0.08em;margin-top:4px">Toit solaire / station</div>
+ </div>
+ <div>
+ <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:2.4rem;color:var(--gold);letter-spacing:-0.02em">24/7</div>
+ <div style="font-size:0.78rem;color:rgba(246,241,230,0.6);text-transform:uppercase;letter-spacing:0.08em;margin-top:4px">Dépannage + driver lounge</div>
+ </div>
+ <div>
+ <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:2.4rem;color:var(--gold);letter-spacing:-0.02em">5G</div>
+ <div style="font-size:0.78rem;color:rgba(246,241,230,0.6);text-transform:uppercase;letter-spacing:0.08em;margin-top:4px">WiFi 6 + connectivité</div>
+ </div>
+ </div>
+
+ </div>
+ </section>
+
+
+ <!-- R200 · Phase 1 launch · 4 stations N'Djamena + environs -->
+ <section class="section" id="r200-phase1-launch" style="background:linear-gradient(180deg,var(--cream) 0%,#fff 100%);padding:clamp(56px,7vh,80px) 0;border-top:1px solid rgba(217,168,79,0.22)">
+  <div class="container">
+   <span class="kicker" style="color:var(--gold)">Phase 1 · Launch 2026-2027</span>
+   <h2 class="h-display reveal" style="font-size:var(--fs-3xl);margin-top:var(--sp-2)">Phase 1 · <em>4 stations ultra-premium N&rsquo;Djamena + environs</em>.</h2>
+   <p class="lead reveal" style="max-width:780px">Notre rollout Mobile Station™ démarre par <strong>4 stations ultra-premium</strong> à N&rsquo;Djamena et ses environs immédiats (corridors urbains premium · sortie ville · zones haut trafic). Validation modèle ultra-premium avant scale-up Phase 2 vers les grandes villes du Tchad.</p>
+   <div class="grid grid-2 reveal mt-4" style="gap:24px">
+    <article class="card card-pole" data-pole="aval" style="background:rgba(8,14,26,0.05);border:1px solid rgba(217,168,79,0.18);padding:28px 26px;border-radius:8px">
+     <h4 style="color:var(--gold);font-size:1.1rem">Pilotes ultra-premium · Format L</h4>
+     <p style="font-size:0.92rem;line-height:1.55;color:var(--bistre,#4a4031)"><strong>1 800-2 500 m²</strong> chaque · A1-A6 carburants complets (essence/diesel/GPL/GNV/IRVE/lubrifiants) + B1-B6 annexes (boutique · café NRJ+ · sanitaires + douches PL · ATM mobile money · WiFi · espace enfants) + C1-C6 connexes (lavage · mécanique · pneus · contrôle technique léger · assistance 24/7 · fleet card B2B).</p>
+    </article>
+    <article class="card card-pole" data-pole="aval" style="background:rgba(8,14,26,0.05);border:1px solid rgba(217,168,79,0.18);padding:28px 26px;border-radius:8px">
+     <h4 style="color:var(--gold);font-size:1.1rem">Localisations cibles · N&rsquo;Djamena + environs</h4>
+     <p style="font-size:0.92rem;line-height:1.55;color:var(--bistre,#4a4031)">4 sites stratégiques en cours de qualification : axes principaux N&rsquo;Djamena (corridor central · sortie sud Doba · sortie nord Massaguet · zone aéroport). Validation foncière + permis Q3-Q4 2026 · construction 2027 · ouverture progressive 2027-2028.</p>
+    </article>
+   </div>
+
+   <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.2rem;font-weight:600;margin-top:36px;color:var(--navy)">Phase 2 · expansion progressive grandes villes (2028-2029)</h3>
+   <p class="reveal" style="max-width:780px;margin-top:8px">Validation Phase 1 réussie → rollout Phase 2 sur les <strong>grandes villes du Tchad</strong> :</p>
+   <div class="grid grid-3 reveal mt-3" style="gap:14px">
+    <div class="card" style="padding:16px 18px"><h4 style="color:var(--gold);font-size:0.95rem">Moundou</h4><p style="font-size:0.82rem">2e ville · sud · Logone</p></div>
+    <div class="card" style="padding:16px 18px"><h4 style="color:var(--gold);font-size:0.95rem">Sarh</h4><p style="font-size:0.82rem">3e ville · Moyen-Chari</p></div>
+    <div class="card" style="padding:16px 18px"><h4 style="color:var(--gold);font-size:0.95rem">Abéché</h4><p style="font-size:0.82rem">Est · cap régional</p></div>
+    <div class="card" style="padding:16px 18px"><h4 style="color:var(--gold);font-size:0.95rem">Doba</h4><p style="font-size:0.82rem">Sud · zone pétrolière</p></div>
+    <div class="card" style="padding:16px 18px"><h4 style="color:var(--gold);font-size:0.95rem">Bongor</h4><p style="font-size:0.82rem">Mayo-Kebbi · sud-ouest</p></div>
+    <div class="card" style="padding:16px 18px"><h4 style="color:var(--gold);font-size:0.95rem">Mongo</h4><p style="font-size:0.82rem">Guéra · carrefour Centre</p></div>
+    <div class="card" style="padding:16px 18px"><h4 style="color:var(--gold);font-size:0.95rem">+ corridors</h4><p style="font-size:0.82rem">Massaguet · Bol · Kélo · etc.</p></div>
+   </div>
+   <p class="reveal" style="max-width:780px;margin-top:24px;font-size:0.9rem;color:rgba(8,14,26,0.65);font-style:italic;font-family:'Crimson Pro',Georgia,serif">Cible Phase 2 cumul : ~25 stations (mix S+M+L formats). Phase 3 (2030+) : <strong>50 stations cible long-terme</strong> · scale-up pan-CEMAC potential.</p>
+  </div>
+ </section>
+</main>
+
+<script>
+(function(){
+ // Stations data — illustratives Phase 1
+ const STATIONS = [
+ // N'Djamena (8 L · capitale)
+ {id:'NDJ-L01', name:"N'Djamena Centre", region:'ndjamena', x:280, y:360, format:'L', status:'ok', stock:{D01:'ok',D02:'ok',D04:'ok',D05:'low',D08:'ok',IRVE:'ok'}},
+ {id:'NDJ-L02', name:"N'Djamena Aéroport", region:'ndjamena', x:285, y:380, format:'L', status:'ok', stock:{D01:'ok',D02:'ok',D04:'ok',D05:'ok',D08:'ok',IRVE:'ok'}},
+ {id:'NDJ-L03', name:"N'Djamena Sabangali", region:'ndjamena', x:265, y:345, format:'L', status:'ok', stock:{D01:'ok',D02:'low',D04:'ok',D05:'ok',D08:'ok',IRVE:'ok'}},
+ {id:'NDJ-L04', name:"N'Djamena Toukra", region:'ndjamena', x:295, y:355, format:'L', status:'ok', stock:{D01:'ok',D02:'ok',D04:'ok',D05:'ok',D08:'ok',IRVE:'ok'}},
+ {id:'NDJ-L05', name:"N'Djamena Diguel", region:'ndjamena', x:275, y:335, format:'L', status:'ok', stock:{D01:'ok',D02:'ok',D04:'ok',D05:'ok',D08:'low',IRVE:'ok'}},
+ {id:'NDJ-L06', name:"N'Djamena Chagoua", region:'ndjamena', x:300, y:370, format:'L', status:'low', stock:{D01:'low',D02:'ok',D04:'ok',D05:'ok',D08:'ok',IRVE:'ok'}},
+ {id:'NDJ-L07', name:"N'Djamena Moursal", region:'ndjamena', x:255, y:380, format:'L', status:'ok', stock:{D01:'ok',D02:'ok',D04:'ok',D05:'ok',D08:'ok',IRVE:'ok'}},
+ {id:'NDJ-L08', name:"N'Djamena Atrone", region:'ndjamena', x:265, y:395, format:'L', status:'ok', stock:{D01:'ok',D02:'ok',D04:'ok',D05:'ok',D08:'ok',IRVE:'ok'}},
+ 
+ // Moundou (3 L)
+ {id:'MOU-L01', name:'Moundou Centre', region:'moundou', x:400, y:510, format:'L', status:'ok', stock:{D01:'ok',D02:'ok',D04:'ok',D05:'ok',D08:'ok',IRVE:'ok'}},
+ {id:'MOU-L02', name:'Moundou Industriel', region:'moundou', x:415, y:520, format:'L', status:'ok', stock:{D01:'ok',D02:'ok',D04:'ok',D05:'low',D08:'ok',IRVE:'ok'}},
+ {id:'MOU-L03', name:'Moundou Sortie Sud', region:'moundou', x:385, y:530, format:'L', status:'low', stock:{D01:'ok',D02:'ok',D04:'ok',D05:'ok',D08:'low',IRVE:'low'}},
+ 
+ // Sarh (2 L)
+ {id:'SAR-L01', name:'Sarh Centre', region:'sarh', x:475, y:500, format:'L', status:'ok', stock:{D01:'ok',D02:'ok',D04:'ok',D05:'ok',D08:'ok',IRVE:'ok'}},
+ {id:'SAR-L02', name:'Sarh Industriel', region:'sarh', x:485, y:510, format:'L', status:'out', stock:{D01:'ok',D02:'out',D04:'ok',D05:'ok',D08:'ok',IRVE:'ok'}},
+ 
+ // Abéché (2 L)
+ {id:'ABE-L01', name:'Abéché Centre', region:'abeche', x:555, y:290, format:'L', status:'ok', stock:{D01:'ok',D02:'ok',D04:'ok',D05:'ok',D08:'ok',IRVE:'ok'}},
+ {id:'ABE-L02', name:'Abéché Sortie Est', region:'abeche', x:565, y:300, format:'L', status:'out', stock:{D01:'out',D02:'ok',D04:'low',D05:'ok',D08:'ok',IRVE:'ok'}},
+ 
+ // M corridor stations
+ {id:'COR-M01', name:'Corridor M N\'Djamena→Moundou 1', region:'rural', x:320, y:395, format:'M', status:'ok', stock:{D01:'ok',D02:'ok',D04:'ok',D05:'low',D08:'low',IRVE:'ok'}},
+ {id:'COR-M02', name:'Corridor M N\'Djamena→Moundou 2', region:'rural', x:345, y:425, format:'M', status:'ok', stock:{D01:'ok',D02:'ok',D04:'ok',D05:'ok',D08:'ok',IRVE:'ok'}},
+ {id:'COR-M03', name:'Corridor M N\'Djamena→Moundou 3', region:'rural', x:370, y:455, format:'M', status:'ok', stock:{D01:'ok',D02:'ok',D04:'ok',D05:'ok',D08:'ok',IRVE:'ok'}},
+ {id:'COR-M04', name:'Corridor M Mongo', region:'rural', x:385, y:485, format:'M', status:'low', stock:{D01:'low',D02:'ok',D04:'ok',D05:'ok',D08:'ok',IRVE:'ok'}},
+ {id:'COR-M05', name:'Corridor M N\'Djamena→Abéché 1', region:'rural', x:340, y:350, format:'M', status:'ok', stock:{D01:'ok',D02:'ok',D04:'ok',D05:'ok',D08:'ok',IRVE:'ok'}},
+ {id:'COR-M06', name:'Corridor M N\'Djamena→Abéché 2', region:'rural', x:400, y:335, format:'M', status:'ok', stock:{D01:'ok',D02:'ok',D04:'ok',D05:'ok',D08:'ok',IRVE:'ok'}},
+ {id:'COR-M07', name:'Corridor M N\'Djamena→Abéché 3', region:'rural', x:460, y:320, format:'M', status:'ok', stock:{D01:'ok',D02:'ok',D04:'ok',D05:'ok',D08:'ok',IRVE:'ok'}},
+ {id:'COR-M08', name:'Corridor M Mongo', region:'rural', x:430, y:350, format:'M', status:'low', stock:{D01:'ok',D02:'low',D04:'ok',D05:'ok',D08:'ok',IRVE:'ok'}},
+ {id:'COR-M09', name:'Corridor M N\'Djamena→Sarh 1', region:'rural', x:340, y:410, format:'M', status:'ok', stock:{D01:'ok',D02:'ok',D04:'ok',D05:'ok',D08:'ok',IRVE:'ok'}},
+ {id:'COR-M10', name:'Corridor M N\'Djamena→Sarh 2', region:'rural', x:395, y:445, format:'M', status:'ok', stock:{D01:'ok',D02:'ok',D04:'ok',D05:'ok',D08:'ok',IRVE:'ok'}},
+ {id:'DOB-M01', name:'Doba Pôle', region:'doba', x:490, y:525, format:'M', status:'ok', stock:{D01:'ok',D02:'ok',D04:'ok',D05:'ok',D08:'ok',IRVE:'ok'}},
+ 
+ // S Stations rurales (Phase 2 — pending)
+ {id:'S01', name:'S Mao', region:'rural', x:265, y:290, format:'S', status:'pending', stock:{}},
+ {id:'S02', name:'S Bol', region:'rural', x:225, y:320, format:'S', status:'pending', stock:{}},
+ {id:'S03', name:'S Faya-Largeau', region:'rural', x:380, y:200, format:'S', status:'pending', stock:{}},
+ {id:'S04', name:'S Biltine', region:'rural', x:520, y:220, format:'S', status:'pending', stock:{}},
+ {id:'S05', name:'S Goz Beïda', region:'rural', x:600, y:370, format:'S', status:'pending', stock:{}},
+ {id:'S06', name:'S Am-Timan', region:'rural', x:555, y:445, format:'S', status:'pending', stock:{}},
+ {id:'S07', name:'S Pala', region:'rural', x:345, y:540, format:'S', status:'pending', stock:{}},
+ {id:'S08', name:'S Bongor', region:'rural', x:295, y:470, format:'S', status:'pending', stock:{}},
+ {id:'S09', name:'S Ati', region:'rural', x:380, y:285, format:'S', status:'pending', stock:{}}
+ ];
+ 
+ const PRODUCT_LABELS = {
+ D01: { name: 'Carburants (Essence/Gazole)', price: '595-700 FCFA/L' },
+ D02: { name: 'LPG Butane 12 kg', price: '8 500-10 000 FCFA' },
+ D04: { name: 'Lubrifiants', price: '8 000-15 000 FCFA/L' },
+ D05: { name: 'Bitumes routiers', price: 'contractuel' },
+ D08: { name: 'EnerFert™ urée 50 kg', price: '22 000-28 000 FCFA' },
+ IRVE: { name: 'IRVE CCS2/CHAdeMO', price: '120 FCFA/kWh' }
+ };
+ 
+ const STATUS_LABELS = { ok: 'Disponible', low: 'Stock faible', out: 'Rupture', pending: 'À venir' };
+ 
+ // Render markers
+ const markersGroup = document.getElementById('stations-markers');
+ STATIONS.forEach(st => {
+ const r = st.format === 'L' ? 9 : (st.format === 'M' ? 7 : 5);
+ const c = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+ c.setAttribute('class', `station-marker status-${st.status}`);
+ c.setAttribute('cx', st.x);
+ c.setAttribute('cy', st.y);
+ c.setAttribute('r', r);
+ c.setAttribute('stroke', '#fff');
+ c.setAttribute('stroke-width', st.format === 'L' ? '2' : '1.5');
+ c.setAttribute('data-station-id', st.id);
+ c.setAttribute('role', 'button');
+ c.setAttribute('tabindex', '0');
+ c.setAttribute('aria-label', `${st.name} · format ${st.format} · ${STATUS_LABELS[st.status]}`);
+ markersGroup.appendChild(c);
+ });
+ 
+ // Click handler
+ function showStationDetail(stationId) {
+ const st = STATIONS.find(s => s.id === stationId);
+ if (!st) return;
+ const panel = document.getElementById('station-detail');
+ 
+ let productsHTML = '';
+ if (st.status === 'pending') {
+ productsHTML = `<div style="padding:14px;background:rgba(107,114,128,0.08);border-radius:8px;font-size:13px;color:var(--bistre);text-align:center">⏳ Station Phase 2 · activation 2028+</div>`;
+ } else {
+ productsHTML = Object.entries(st.stock).map(([prod, status]) => {
+ const label = PRODUCT_LABELS[prod];
+ return `<div class="product-row">
+ <div>
+ <div class="product-name">${prod} · ${label.name}</div>
+ <div style="font-size:11px;color:var(--bistre);margin-top:2px">${label.price}</div>
+ </div>
+ <span class="product-status s-${status}">${STATUS_LABELS[status]}</span>
+ </div>`;
+ }).join('');
+ }
+ 
+ panel.innerHTML = `
+ <div>
+ <span class="kicker" style="color:var(--gold)">Station ${st.format} · ${st.region.toUpperCase()}</span>
+ <h3 style="margin:4px 0 6px">${st.name}</h3>
+ <p style="font-size:12px;color:var(--bistre);margin:0">ID : ${st.id}</p>
+ </div>
+ <div class="station-detail-stats">
+ <div><strong>${st.format === 'L' ? '12 pompes' : (st.format === 'M' ? '8 pompes' : '4 pompes')}</strong><span style="color:var(--bistre)">Capacité</span></div>
+ <div><strong>${st.format === 'L' ? '4× 100 kW' : (st.format === 'M' ? '2× 50 kW' : '1× 50 kW')}</strong><span style="color:var(--bistre)">IRVE</span></div>
+ <div><strong>12 kWc</strong><span style="color:var(--bistre)">Solaire PV</span></div>
+ <div><strong>80 kWh</strong><span style="color:var(--bistre)">BESS</span></div>
+ </div>
+ <div>
+ <strong style="font-family:var(--font-display);font-size:13px;color:var(--gold-deep);letter-spacing:0.04em;text-transform:uppercase;display:block;margin-bottom:8px">Disponibilité produits</strong>
+ ${productsHTML}
+ </div>
+ <a href="/boutique/" class="cta-btn" style="text-align:center">Demander un devis ↗</a>
+ <div class="last-update"><span class="live-dot"></span>Mise à jour : il y a 1 min</div>
+ `;
+ 
+ document.querySelectorAll('.station-marker').forEach(m => m.classList.remove('is-active'));
+ document.querySelector(`[data-station-id="${stationId}"]`).classList.add('is-active');
+ 
+ if (window.plausible) window.plausible('Station Detail Open', { props: { station: stationId }});
+ }
+ 
+ document.querySelectorAll('.station-marker').forEach(m => {
+ m.addEventListener('click', () => showStationDetail(m.dataset.stationId));
+ m.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); showStationDetail(m.dataset.stationId); } });
+ });
+ 
+ // Filters
+ document.querySelectorAll('.station-filter').forEach(btn => {
+ btn.addEventListener('click', function() {
+ document.querySelectorAll('.station-filter').forEach(x => x.classList.remove('is-active'));
+ this.classList.add('is-active');
+ const region = this.dataset.region;
+ let visible = 0, ok = 0, low = 0, out = 0;
+ STATIONS.forEach(st => {
+ const show = (region === 'all' || st.region === region);
+ const marker = document.querySelector(`[data-station-id="${st.id}"]`);
+ if (marker) {
+ marker.style.opacity = show ? '1' : '0.15';
+ marker.style.pointerEvents = show ? 'auto' : 'none';
+ }
+ if (show && st.status !== 'pending') {
+ visible++;
+ if (st.status === 'ok') ok++;
+ else if (st.status === 'low') low++;
+ else if (st.status === 'out') out++;
+ }
+ });
+ document.getElementById('kpi-total').textContent = visible;
+ document.getElementById('kpi-ok').textContent = ok;
+ document.getElementById('kpi-low').textContent = low;
+ document.getElementById('kpi-out').textContent = out;
+ });
+ });
+ 
+ // Last update timestamp
+ function updateTime() {
+ const seconds = Math.floor(Math.random() * 60);
+ document.getElementById('last-update-time').textContent = `il y a ${seconds < 5 ? 'quelques secondes' : seconds + ' secondes'}`;
+ }
+ setInterval(updateTime, 30000);
+})();
+</script>
+
+<footer class="fu-footer" role="contentinfo" data-r140="ultra">
+ <div class="fu-inner">
+ <div class="fu-grid">
+ <div>
+ <p class="fu-brand-name">EnerTchad SA</p>
+ <p class="fu-slogan">Unité · Innovation · Durabilité</p>
+ <p class="fu-positioning">Société <em>parapétrolière</em> (OFS) <strong>100% services techniques</strong> · marché tchadien · OHADA. Aucun asset.</p>
+ <p class="fu-leadership"><strong>DG</strong> Bignéro Moïalbéi Le Madang<br><strong>PCA</strong> Théophile Gag Pinabei</p>
+ </div>
+ <div>
+ <p class="fu-col-h">Navigation · 6 axes</p>
+ <ul class="fu-list">
+ <li><a href="/sitemap.html#mission">01 Mission</a></li>
+ <li><a href="/sitemap.html#activites">02 Activités</a></li>
+ <li><a href="/sitemap.html#transition">03 Transition énergétique</a></li>
+ <li><a href="/sitemap.html#technologies">04 Technologies</a></li>
+ <li><a href="/sitemap.html#engagements">05 Engagements</a></li>
+ <li><a href="/sitemap.html#investisseurs">06 Investisseurs</a></li>
+ </ul>
+ </div>
+ <div>
+ <p class="fu-col-h">Tour 2026 · Pages clés</p>
+ <ul class="fu-list">
+ <li><a href="/engagement/investisseurs.html">Tour Seed/Pre-A</a></li>
+ <li><a href="/dataroom/">Dataroom · NDA</a></li>
+ <li><a href="/dg-office-hours/">DG Office Hours</a></li>
+ <li><a href="/ai-concierge/">AI Concierge</a></li>
+ <li><a href="/marques/">4 marques™ + 2 projets</a></li>
+ <li><a href="/data/atlas.html">Atlas marché</a></li>
+ </ul>
+ </div>
+ <div>
+ <p class="fu-col-h">Newsletter Tour 2026</p>
+ <p class="fu-newsletter-desc">Actualités investisseurs · avancées catalogue OFS · <span data-jn>J-150</span> closing.</p>
+ <form class="fu-newsletter-form" action="https://formspree.io/f/enertchad-newsletter" method="POST" novalidate>
+ <input type="email" name="email" placeholder="email@exemple.com" required aria-label="Adresse email">
+ <button type="submit">S&rsquo;inscrire ↗</button>
+ </form>
+ <p class="fu-newsletter-fineprint">RGPD · désinscription 1-clic · données EU-West chiffrées</p>
+ </div>
+ </div>
+ <div class="fu-meta">
+ <div class="fu-badges">
+ <span class="fu-badge">ITIE</span>
+ <span class="fu-badge">OHADA</span>
+ <span class="fu-badge">ISO 9001 · 14001 · 45001</span>
+ <span class="fu-badge">OAPI 2026</span>
+ </div>
+ <div class="fu-legal">
+ <span>© 2026 <strong>EnerTchad SA</strong></span>
+ <span class="fu-sep">·</span>
+ <span>RCCM N&rsquo;DJ/RC/2026-A-0001</span>
+ <span class="fu-sep">·</span>
+ <span>Capital 10 000 000 FCFA</span>
+ <span class="fu-sep">·</span>
+ <a href="/sitemap.html">Plan du site</a>
+ <span class="fu-sep">·</span>
+ <a href="/legal/mentions-legales.html">Mentions légales</a>
+ <span class="fu-sep">·</span>
+ <a href="/legal/confidentialite.html">Confidentialité</a>
+ <span class="fu-sep">·</span>
+ <a href="/legal/cookies.html">Cookies</a>
+ </div>
+ </div>
+ </div>
+</footer>
+<script defer src="/assets/js/enertchad.js"></script>
+<div class="grain-overlay" aria-hidden="true"></div>
+ <script defer src="/assets/js/jn-counter.js?v=r128"></script>
+ <script defer src="/assets/js/header-ultra.js?v=r140"></script>
+ <script defer src="/assets/js/ux-r146.js?v=r146"></script>
+ <script defer src="/assets/js/megamenu-r154.js?v=r154"></script>
+</body></html>

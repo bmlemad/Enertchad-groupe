@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- EnerTchad SA · Logo official 4-petal canon · R156 · 2026-05-03 -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="EnerTchad SA">
+  <title>EnerTchad SA</title>
+  <desc>Logo officiel · 4 pétales canon · Société parapétrolière (OFS) · couleurs canon navy + gold</desc>
+  <!-- 4 stylized petals (representing the 4 pôles canon: Amont · Intermédiaire · Aval · Pétrochimie) -->
+  <g transform="translate(32 32)">
+    <!-- Pétale Nord · Amont -->
+    <path d="M 0 -22 C 6 -18 9 -10 7 -2 C 4 -5 1 -12 0 -16 Z"
+          fill="#C9B57B" opacity="0.92" />
+    <!-- Pétale Est · Intermédiaire -->
+    <path d="M 22 0 C 18 6 10 9 2 7 C 5 4 12 1 16 0 Z"
+          fill="#C9B57B" opacity="0.78" />
+    <!-- Pétale Sud · Aval -->
+    <path d="M 0 22 C -6 18 -9 10 -7 2 C -4 5 -1 12 0 16 Z"
+          fill="#C9B57B" opacity="0.85" />
+    <!-- Pétale Ouest · Pétrochimie -->
+    <path d="M -22 0 C -18 -6 -10 -9 -2 -7 C -5 -4 -12 -1 -16 0 Z"
+          fill="#C9B57B" opacity="0.7" />
+    <!-- Centre · core gold filled circle = identité unifiée -->
+    <circle cx="0" cy="0" r="4.2" fill="#C9B57B" />
+    <!-- Centre inset · navy dot = signature subtle -->
+    <circle cx="0" cy="0" r="1.6" fill="#080E1A" />
+  </g>
+</svg>

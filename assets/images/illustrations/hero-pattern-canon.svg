@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- R163 · Hero abstract pattern · brutalist canon · 2026-05-03 -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Pattern abstrait géologique">
+  <title>EnerTchad SA · pattern hero abstrait</title>
+  <defs>
+    <linearGradient id="navySky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#080E1A"/>
+      <stop offset="60%" stop-color="#0B1A33"/>
+      <stop offset="100%" stop-color="#080E1A"/>
+    </linearGradient>
+    <radialGradient id="goldGlow" cx="80%" cy="20%" r="40%">
+      <stop offset="0%" stop-color="#C9B57B" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#C9B57B" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grain" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+      <circle cx="20" cy="20" r="0.5" fill="#C9B57B" opacity="0.05"/>
+      <circle cx="60" cy="40" r="0.4" fill="#C9B57B" opacity="0.04"/>
+      <circle cx="80" cy="80" r="0.6" fill="#C9B57B" opacity="0.06"/>
+      <circle cx="30" cy="70" r="0.3" fill="#F6F1E6" opacity="0.03"/>
+    </pattern>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#navySky)"/>
+  <rect width="1920" height="1080" fill="url(#goldGlow)"/>
+  <!-- Geological strata · Sahel-inspired horizontal bands -->
+  <g opacity="0.35">
+    <path d="M 0 720 Q 480 700 960 730 T 1920 700 L 1920 740 Q 960 760 480 745 T 0 770 Z" fill="#C9B57B" opacity="0.12"/>
+    <path d="M 0 820 Q 480 840 960 810 T 1920 830 L 1920 870 Q 960 880 480 855 T 0 890 Z" fill="#C9B57B" opacity="0.08"/>
+    <path d="M 0 920 Q 480 940 960 910 T 1920 930 L 1920 970 Q 960 980 480 955 T 0 990 Z" fill="#C9B57B" opacity="0.05"/>
+  </g>
+  <!-- Drilling rig silhouette · sahel horizon -->
+  <g transform="translate(1500 480)" opacity="0.42">
+    <line x1="0" y1="0" x2="0" y2="240" stroke="#C9B57B" stroke-width="2"/>
+    <line x1="-30" y1="240" x2="30" y2="240" stroke="#C9B57B" stroke-width="2"/>
+    <line x1="-15" y1="0" x2="15" y2="0" stroke="#C9B57B" stroke-width="2"/>
+    <line x1="-25" y1="60" x2="25" y2="60" stroke="#C9B57B" stroke-width="1"/>
+    <line x1="-30" y1="120" x2="30" y2="120" stroke="#C9B57B" stroke-width="1"/>
+    <line x1="-35" y1="180" x2="35" y2="180" stroke="#C9B57B" stroke-width="1"/>
+    <line x1="0" y1="0" x2="-30" y2="240" stroke="#C9B57B" stroke-width="1"/>
+    <line x1="0" y1="0" x2="30" y2="240" stroke="#C9B57B" stroke-width="1"/>
+  </g>
+  <!-- Pipeline horizontal · subtle line -->
+  <line x1="0" y1="780" x2="1920" y2="800" stroke="#C9B57B" stroke-width="1" opacity="0.18" stroke-dasharray="40 20"/>
+  <line x1="0" y1="800" x2="1920" y2="780" stroke="#C9B57B" stroke-width="0.5" opacity="0.10" stroke-dasharray="20 40"/>
+  <!-- Grain texture -->
+  <rect width="1920" height="1080" fill="url(#grain)" opacity="0.6"/>
+</svg>

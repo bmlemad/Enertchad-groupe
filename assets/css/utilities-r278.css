@@ -1,0 +1,54 @@
+/* ============================================================
+ R278 · Utility classes · CSS extraction post-Doc 254 audit
+ Wave R278 · 2026-05-05 · DG mandate refactor backlog P2
+ Replaces 94+ inline gold-light/medium backgrounds
+ ============================================================ */
+
+/* ---- Background utilities · gold soft + medium ---- */
+.bg-gold-soft{background:rgba(217,168,79,0.10)}
+.bg-gold-medium{background:rgba(217,168,79,0.18)}
+.bg-gold-strong{background:rgba(217,168,79,0.32)}
+.bg-gold-gradient{background:linear-gradient(135deg,rgba(217,168,79,0.10) 0%,rgba(217,168,79,0.04) 100%)}
+
+/* ---- Background utilities · pôle-specific ---- */
+.bg-brown-soft{background:rgba(139,90,43,0.10)}
+.bg-brown-medium{background:rgba(139,90,43,0.18)}
+.bg-emerald-soft{background:rgba(16,185,129,0.10)}
+.bg-emerald-medium{background:rgba(16,185,129,0.18)}
+.bg-pipeline-soft{background:rgba(79,143,217,0.10)}
+.bg-pipeline-medium{background:rgba(79,143,217,0.18)}
+.bg-petrochimie-soft{background:rgba(155,89,182,0.10)}
+.bg-petrochimie-medium{background:rgba(155,89,182,0.18)}
+.bg-hse-soft{background:rgba(220,38,38,0.10)}
+.bg-hse-medium{background:rgba(220,38,38,0.18)}
+
+/* ---- Border utilities ---- */
+.border-gold{border:1px solid var(--gold)}
+.border-gold-soft{border:1px solid rgba(217,168,79,0.20)}
+.border-gold-medium{border:1px solid rgba(217,168,79,0.32)}
+
+/* ---- Tier badge utilities (consistent sizing) ---- */
+.tier-badge{
+ font-family:'Space Grotesk',sans-serif;
+ font-size:0.62rem;
+ font-weight:700;
+ letter-spacing:0.08em;
+ padding:2px 8px;
+ border-radius:3px;
+ white-space:nowrap;
+}
+.tier-badge--1{background:var(--gold);color:var(--navy)}
+.tier-badge--2-brown{background:rgba(139,90,43,0.18);color:#8B5A2B}
+.tier-badge--2-green{background:rgba(16,185,129,0.18);color:var(--emerald)}
+.tier-badge--3-brown{background:rgba(139,90,43,0.10);color:#8B5A2B}
+.tier-badge--3-green{background:rgba(16,185,129,0.10);color:var(--emerald)}
+.tier-badge--cross{background:#9b59b6;color:#fff}
+.tier-badge--flagship{background:var(--gold);color:var(--navy);box-shadow:0 0 0 1px rgba(217,168,79,0.40)}
+
+/* ---- Card-num flex layout (tier badge alignment) ---- */
+.card-num--with-tier{
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ margin-bottom:12px;
+}

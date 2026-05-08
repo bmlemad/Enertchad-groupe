@@ -1,5 +1,5 @@
 /**
- * EnerTchad Groupe SA/CA · Service Worker v1.1
+ * EnerTchad SA · Service Worker v1.1
  * Enriched cache strategy : navigated pages auto-cached, offline fallback complet
  */
 const VERSION = 'enertchad-v2.1.7-z';

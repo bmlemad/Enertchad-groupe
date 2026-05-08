@@ -1,0 +1,594 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="view-transition" content="same-origin">
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preload" as="style" href="/assets/css/enertchad.css?v=r295">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI Concierge DFI · Assistant 24/7 — EnerTchad SA</title>
+<meta name="description" content="Premier OFS au monde avec AI Concierge DFI 24/7 · entraîné dataroom DD complète EnerTchad SA · Tour Seed/Pre-A 2026 · OHADA · réponses temps réel multi-langues.">
+<link rel="canonical" href="https://enertchad-groupe.pages.dev/ai-concierge/">
+<link rel="stylesheet" href="/assets/css/page-statement.css?v=r295" />
+<link rel="stylesheet" href="/assets/css/ux-r146.css?v=r295" />
+<link rel="stylesheet" href="/assets/css/megamenu-r154.css?v=r295" />
+<link rel="stylesheet" href="/assets/css/header-ultra.css?v=r238" />
+<link rel="stylesheet" href="/assets/css/enertchad.css?v=r295">
+<link rel="icon" href="/assets/favicon.svg">
+<meta property="og:title" content="AI Concierge DFI · Assistant 24/7 — EnerTchad SA" />
+<meta property="og:description" content="Premier OFS au monde avec AI Concierge DFI 24/7 · dataroom DD complète · multi-langues." />
+<meta property="og:image" content="https://enertchad.td/assets/images/enertchad-accueil-hero-01.webp" />
+<meta property="og:url" content="https://enertchad-groupe.pages.dev/ai-concierge/" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<style>
+ body[data-page="ai-concierge"] { background: linear-gradient(180deg, #050810 0%, #080E1A 100%); color: var(--cream, #F6F1E6); }
+ .aic-hero { padding: clamp(60px, 8vh, 100px) 0 clamp(30px, 4vw, 50px); text-align: center; }
+ .aic-kicker { display: inline-flex; align-items: center; gap: 10px; padding: 6px 16px; border-radius: 999px; border: 1px solid rgba(168, 85, 247, 0.35); background: rgba(168, 85, 247, 0.08); font-family: var(--font-display, 'Space Grotesk'); font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #c084fc; margin-bottom: 24px; }
+ .aic-pulse { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #c084fc; box-shadow: 0 0 0 0 rgba(168,85,247,0.7); animation: aic-pulse 2s ease-in-out infinite; }
+ @keyframes aic-pulse { 0%,100% { box-shadow: 0 0 0 0 rgba(168,85,247,0.7); } 50% { box-shadow: 0 0 0 10px rgba(168,85,247,0); } }
+ .aic-h1 { font-family: var(--font-display); font-size: clamp(48px, 8vw, 100px); font-weight: 700; letter-spacing: -0.035em; line-height: 0.92; margin: 0 auto 20px; max-width: 16ch; }
+ .aic-h1 em { font-style: normal; color: #c084fc; }
+ .aic-lead { font-size: clamp(15px, 1.4vw, 18px); line-height: 1.6; color: rgba(246,241,230,0.78); max-width: 720px; margin: 0 auto 16px; }
+ .aic-sublead { font-size: 12px; color: rgba(246,241,230,0.45); font-family: var(--font-display); letter-spacing: 0.08em; text-transform: uppercase; }
+
+ /* Chat container */
+ .aic-chat { max-width: 880px; margin: 50px auto; padding: 0 clamp(20px, 4vw, 60px); }
+ .aic-chat-window { background: rgba(255,255,255,0.02); border: 1px solid rgba(168,85,247,0.18); border-radius: 18px; overflow: hidden; box-shadow: 0 30px 60px -20px rgba(168,85,247,0.15); }
+ .aic-chat-header { display: flex; align-items: center; gap: 12px; padding: 18px 24px; border-bottom: 1px solid rgba(255,255,255,0.06); background: rgba(0,0,0,0.3); }
+ .aic-avatar { width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg, #c084fc, #7c3aed); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 16px; font-weight: 700; color: #050810; }
+ .aic-chat-h-meta { flex: 1; }
+ .aic-chat-h-name { font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--cream); }
+ .aic-chat-h-status { font-size: 11px; color: #10b981; display: flex; align-items: center; gap: 6px; }
+ .aic-chat-h-status::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #10b981; animation: aic-pulse-mini 1.5s ease-in-out infinite; }
+ @keyframes aic-pulse-mini { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+ .aic-chat-h-tag { font-family: var(--font-display); font-size: 9px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 3px 8px; border-radius: 999px; background: rgba(168,85,247,0.15); color: #c084fc; }
+
+ .aic-messages { padding: 24px; max-height: 540px; overflow-y: auto; display: flex; flex-direction: column; gap: 14px; }
+ .aic-msg { max-width: 85%; padding: 12px 16px; border-radius: 14px; font-size: 14px; line-height: 1.55; }
+ .aic-msg-bot { align-self: flex-start; background: rgba(168,85,247,0.06); border: 1px solid rgba(168,85,247,0.15); color: var(--cream); border-bottom-left-radius: 4px; }
+ .aic-msg-user { align-self: flex-end; background: rgba(217,168,79,0.1); border: 1px solid rgba(217,168,79,0.25); color: var(--cream); border-bottom-right-radius: 4px; }
+ .aic-msg strong { color: #c084fc; }
+ .aic-msg-bot small.cite { display: block; margin-top: 8px; font-size: 11px; color: rgba(246,241,230,0.5); border-top: 1px solid rgba(255,255,255,0.06); padding-top: 8px; }
+ .aic-msg-bot small.cite a { color: var(--gold, #C9B57B); }
+
+ /* Suggested questions */
+ .aic-suggestions { padding: 14px 24px 18px; border-top: 1px solid rgba(255,255,255,0.06); background: rgba(0,0,0,0.2); }
+ .aic-suggestions-h { font-family: var(--font-display); font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(246,241,230,0.5); margin: 0 0 8px; }
+ .aic-suggestions-list { display: flex; flex-wrap: wrap; gap: 6px; }
+ .aic-suggestions-list button { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); color: var(--cream); padding: 6px 12px; border-radius: 999px; font-size: 12px; font-family: var(--font-body, system-ui, sans-serif); cursor: pointer; transition: border-color 200ms, background 200ms; }
+ .aic-suggestions-list button:hover { border-color: #c084fc; background: rgba(168,85,247,0.08); }
+
+ /* Input */
+ .aic-input-row { display: flex; gap: 8px; padding: 14px 24px 18px; border-top: 1px solid rgba(255,255,255,0.06); }
+ .aic-input { flex: 1; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 12px 14px; color: var(--cream); font-family: var(--font-body, system-ui); font-size: 14px; }
+ .aic-input:focus-visible { outline: 2px solid #c084fc; outline-offset: 2px; }
+ .aic-send { background: linear-gradient(135deg, #c084fc, #7c3aed); color: #050810; border: 0; border-radius: 10px; padding: 0 18px; font-family: var(--font-display); font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; transition: transform 150ms; }
+ .aic-send:hover { transform: translateY(-1px); }
+ .aic-send:focus-visible { outline: 2px solid var(--cream); outline-offset: 2px; }
+
+ /* Capabilities grid */
+ .aic-caps { max-width: 1280px; margin: 80px auto; padding: 0 clamp(20px, 4vw, 60px); }
+ .aic-caps-h { font-family: var(--font-display); font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #c084fc; margin: 0 0 8px; }
+ .aic-caps-t { font-family: var(--font-display); font-size: clamp(28px, 4vw, 44px); font-weight: 700; letter-spacing: -0.02em; margin: 0 0 32px; max-width: 22ch; line-height: 1.05; color: var(--cream); }
+ .aic-caps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+ .aic-cap { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 14px; padding: 24px; }
+ .aic-cap-num { font-family: var(--font-display); font-size: 11px; font-weight: 700; letter-spacing: 0.18em; color: #c084fc; margin-bottom: 12px; }
+ .aic-cap-t { font-family: var(--font-display); font-size: 18px; font-weight: 700; color: var(--cream); margin: 0 0 8px; }
+ .aic-cap-d { font-size: 14px; line-height: 1.55; color: rgba(246,241,230,0.7); margin: 0; }
+
+ /* Disclaimer */
+ .aic-disclaimer { max-width: 1000px; margin: 60px auto; padding: 0 clamp(20px, 4vw, 60px); font-size: 11.5px; line-height: 1.6; color: rgba(246,241,230,0.4); text-align: center; }
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"AI Concierge DFI · EnerTchad SA","description":"Premier OFS au monde avec AI Concierge DFI 24/7 · entraîné dataroom DD complète · multi-langues","url":"https://enertchad-groupe.pages.dev/ai-concierge/","isPartOf":{"@type":"WebSite","name":"EnerTchad SA"},"inLanguage":"fr-FR","about":{"@type":"SoftwareApplication","name":"EnerTchad AI Concierge","applicationCategory":"InvestorRelations"}}
+</script>
+<link rel="alternate" hreflang="fr" href="https://www.enertchad.td/ai-concierge/" />
+<link rel="alternate" hreflang="en" href="https://www.enertchad.td/en/ai-concierge/" />
+<link rel="alternate" hreflang="x-default" href="https://www.enertchad.td/ai-concierge/" />
+ <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://www.enertchad.td/"},{"@type":"ListItem","position":2,"name":"Investisseurs","item":"https://www.enertchad.td/sitemap.html#investisseurs"},{"@type":"ListItem","position":3,"name":"AI Concierge","item":"https://www.enertchad.td/ai-concierge"}]}</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Qu'est-ce qu'EnerTchad SA ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "EnerTchad SA est une société parapétrolière (Oil Field Services · OFS) 100% services techniques basée à N'Djamena, Tchad, sous régime OHADA. Nous accompagnons les opérateurs O&G du marché tchadien sur les 3 pôles canon current (Amont · Intermédiaire · Aval) + Pétrochimie projet 2028+ et 3 axes transversaux (Technologies · Énergies · Sécurité Intégrée OIMS-grade)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qu'est-ce que le Tour Seed/Pre-A 2026 ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "EnerTchad lève 8-12 M USD en Tour Seed/Pre-A · structure OHADA · closing T3 2026 (J-150). Use of funds : 25 ETP Phase 1, EnerAcademy 50 ingénieurs/an, 3 contrats pilotes opérateurs, certifications ISO 9001/14001/45001. 47% closed · 4.7M USD soft commits · 12 NDAs · 3 MoUs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quels opérateurs cibles EnerTchad ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Les 6 opérateurs canon du marché Tchad : CNPCIC (bassin Bongor 30 kbpd), Perenco (bassin Doba 70 kbpd), SHT (NOC souveraine), COTCO/TOTCO (pipeline Doba-Kribi 1 070 km), SRN (raffinerie Djermaya 20 kbpd), TPC (Tchad Petroleum Compagnie ex-Esso). Marché 1,8 Md USD TAM."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "EnerTchad possède-t-il des assets pétroliers ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non. EnerTchad est une société 100% parapétrolière (Oil Field Services · OFS) et ne possède aucun asset pétrolier. Nous délivrons exclusivement des prestations de services techniques aux opérateurs du marché. L'E&P à part entière reste un projet d'avenir exploratoire à arbitrer après 2030."
+      }
+    }
+  ]
+}
+</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"EnerTchad SA","alternateName":"EnerTchad","url":"https://www.enertchad.td/","logo":"https://www.enertchad.td/assets/images/logo.svg","slogan":"Unité · Innovation · Durabilité","description":"Société parapétrolière (OFS) 100% services techniques · marché tchadien · OHADA","foundingDate":"2026","founder":{"@type":"Person","name":"Bignéro Moïalbéi Le Madang","jobTitle":"Directeur Général"},"address":{"@type":"PostalAddress","addressLocality":"N'Djamena","addressCountry":"TD"},"identifier":"RCCM N'DJ/RC/2026-A-0001"}</script>
+<link rel="stylesheet" href="/assets/css/aic-demo-r217.css?v=r217" />
+</head>
+<body data-page="ai-concierge">
+<!-- R140 · ULTRA PREMIUM Header · FR -->
+<header class="hu-header" role="banner" data-r140="ultra">
+ <div class="hu-inner">
+ <a class="hu-brand" href="/" aria-label="EnerTchad SA · accueil">
+ <img class="hu-logo" src="/assets/images/logo.svg" alt="" width="44" height="44" loading="eager" decoding="async" />
+ <span class="hu-brand-text">EnerTchad <em>SA</em><span class="hu-brand-tag">Société parapétrolière · OFS</span></span>
+ </a>
+ <nav class="hu-nav" aria-label="Navigation principale">
+ <a class="hu-nav-link" data-mm="mission" href="/sitemap.html#mission">Mission</a>
+ <a class="hu-nav-link" data-mm="activites" href="/sitemap.html#activites">Activités</a>
+ <a class="hu-nav-link" data-mm="transition" href="/sitemap.html#transition">Transition</a>
+ <a class="hu-nav-link" data-mm="technologies" href="/sitemap.html#technologies">Technologies</a>
+ <a class="hu-nav-link" data-mm="engagements" href="/sitemap.html#engagements">Engagements</a>
+ <a class="hu-nav-link" data-mm="investisseurs" href="/sitemap.html#investisseurs">Investisseurs</a>
+ </nav>
+ <div class="hu-right">
+ <span class="hu-lang" aria-label="Langue">
+ <a href="/" hreflang="fr" aria-current="true">FR</a>
+ <span aria-hidden="true">·</span>
+ <a href="/en/" hreflang="en">EN</a>
+ </span>
+ <a class="hu-cta" href="/engagement/investisseurs.html">Tour 2026 <span class="hu-cta-arrow">↗</span></a>
+ <button class="hu-burger" type="button" aria-label="Menu" aria-expanded="false">
+ <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true">
+ <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+ </svg>
+ </button>
+ </div>
+ </div>
+</header>
+
+ <!-- R146 · Breadcrumb -->
+ <nav class="bc-r146" aria-label="Fil d'ariane">
+ <ol>
+ <li><a href="/">Accueil</a></li>
+ <li><a href="/sitemap.html#investisseurs">Investisseurs</a></li>
+ <li aria-current="page">AI Concierge</li>
+ </ol>
+ </nav>
+
+<aside class="hu-drawer" aria-hidden="true">
+ <button class="hu-drawer-close" aria-label="Fermer">×</button>
+ <a href="/sitemap.html#mission">01 Mission</a>
+ <a href="/sitemap.html#activites">02 Activités</a>
+ <a href="/sitemap.html#transition">03 Transition énergétique</a>
+ <a href="/sitemap.html#technologies">04 Technologies</a>
+ <a href="/sitemap.html#engagements">05 Engagements</a>
+ <a href="/sitemap.html#investisseurs">06 Investisseurs</a>
+ <a href="/sitemap.html">Plan du site</a>
+ <a href="/en/" hreflang="en" style="color:var(--gold)">EN · English ↗</a>
+</aside>
+<div class="hu-backdrop" aria-hidden="true"></div>
+
+<a class="skip-link" href="#main">Aller au contenu</a>
+
+<main id="main" tabindex="-1">
+ <!-- PAGE STATEMENT · brutalist editorial · R118 propagation -->
+ <section class="page-statement" aria-labelledby="ps-h1">
+ <div class="page-statement-inner">
+ <div class="page-statement-meta">
+ <span>AI Concierge · DFI 24/7</span>
+ <span>EnerTchad SA <strong>·</strong> 2026</span>
+ </div>
+ <h1 class="page-statement-h1" id="ps-h1">
+ <em>AI Concierge.</em><br>Claude API.<br>DFI questions.
+ </h1>
+ <div class="page-statement-body">
+ <p class="page-statement-lede">Assistant AI Concierge propulsé Claude API · réponses 24/7 aux questions DFI · IFC · Proparco · BAD · BIDC · investisseurs Family Office · journalistes. Multilingue FR/EN.</p>
+ <p class="page-statement-aside">Bypass calendrier · réponses techniques détaillées · brief Tour 2026 instantané · qualified leads routing vers DG.</p>
+ </div>
+ <div class="page-statement-links">
+ <a class="page-statement-link" href="/dataroom/">Dataroom NDA</a>
+ <a class="page-statement-link" href="/investisseurs/">Tour 2026</a>
+ <a class="page-statement-link" href="/engagement/contact.html">30 min DG</a>
+ <a class="page-statement-link" href="/sustainability/">Net Zero 2050</a>
+ </div>
+ </div>
+ </section>
+
+
+ <section class="aic-chat" aria-label="Démonstration AI Concierge">
+ <div class="aic-chat-window">
+ <div class="aic-chat-header">
+ <div class="aic-avatar" aria-hidden="true">AI</div>
+ <div class="aic-chat-h-meta">
+ <div class="aic-chat-h-name">EnerTchad AI Concierge</div>
+ <div class="aic-chat-h-status">En ligne · réponse moyenne 2.3 sec</div>
+ </div>
+ <span class="aic-chat-h-tag">Powered by Claude</span>
+ </div>
+
+ <div class="aic-messages" data-aic-messages>
+ <div class="aic-msg aic-msg-bot">
+ Bonjour. Je suis l'assistant IA EnerTchad SA, entraîné sur les <strong>12 catégories du dataroom DD</strong> et l'ensemble du site web. Je réponds 24/7 en <strong>FR · EN · arabe · espagnol · portugais</strong>. Posez-moi une question sur le Tour Seed/Pre-A 2026, les 3 pôles current + Pétrochimie projet 2028+, l'architecture financière OHADA, ou tout sujet d'investissement.
+ </div>
+
+ <div class="aic-msg aic-msg-user">
+ Quel est le ticket-cible et quand ferme le Tour ?
+ </div>
+
+ <div class="aic-msg aic-msg-bot">
+ Le Tour Seed/Pre-A 2026 EnerTchad SA cible <strong>8 à 12 millions USD</strong> · structure OHADA pacte d'actionnaires · closing prévu <strong>T3 2026</strong> (<span data-jn>J-151</span> actuel). Allocation primaire : Phase 1 déploiement opérationnel (25 ETP · CAPEX 1,5 M USD · OPEX 2 M USD année 1) + pré-FEED Pétrochimie + dépôts OAPI 4 marques™.
+ <small class="cite">Sources : <a href="/engagement/investisseurs.html">/engagement/investisseurs.html</a> · <a href="/tour-live/">/tour-live/</a> · DD Catégorie 02 Term Sheet</small>
+ </div>
+
+ <div class="aic-msg aic-msg-user">
+ Comment se positionne EnerTchad face à top OFS international et top OFS international ?
+ </div>
+
+ <div class="aic-msg aic-msg-bot">
+ EnerTchad SA <strong>complète les majors mondiaux, ne les concurrence pas</strong>. Sur le marché tchadien spécifiquement : EnerTchad apporte la <strong>souveraineté locale</strong> (75-90% LCD ingénieurs tchadiens) + <strong>expertise OFS</strong> (DG 17 ans major O&G internationale) + <strong>structure OHADA agile</strong>. top OFS international/top OFS international restent partenaires technologiques sur les projets d'envergure (transfer learning, IA edge, training).
+ <small class="cite">Sources : <a href="/pourquoi/positionnement.html">/pourquoi/positionnement.html</a> · <a href="/talents/">/talents/</a> · DD Catégorie 03 Vision stratégique</small>
+ </div>
+
+ <div class="aic-msg aic-msg-user">
+ Donne-moi les chiffres EOR Local Ressources Tchadiennes.
+ </div>
+
+ <div class="aic-msg aic-msg-bot">
+ Programme <strong>EOR Local</strong> EnerTchad SA · 4 techniques canoniques basées sur ressources tchadiennes : Polymères naturels (gomme arabique tchadienne) · Surfactants végétaux · CO₂-EOR (gaz associé Doba) · ASP optimisé. Cible : <strong>+15 à 25 % récupération</strong> sur champs matures CNPCIC + Perenco · réduction empreinte carbone 30 % vs EOR conventionnel · brevet en cours · partenariats CNPC + Perenco prospectés.
+ <small class="cite">Sources : <a href="/amont/">/amont/</a> · DD Catégorie 04 Brevets &amp; IP</small>
+ </div>
+ </div>
+
+ <div class="aic-suggestions">
+ <p class="aic-suggestions-h">Questions fréquentes DFI</p>
+ <div class="aic-suggestions-list" role="list">
+ <button data-q>Cap-table OHADA preview ?</button>
+ <button data-q>Use of proceeds détaillés ?</button>
+ <button data-q>Roadmap Series A 2027 ?</button>
+ <button data-q>Quels sont les KPIs ESG ?</button>
+ <button data-q>Comment se compare le ticket vs ses peers ?</button>
+ <button data-q>Conformité ITIE 2013 ?</button>
+ <button data-q>Quelles techniques EOR sont brevetables ?</button>
+ </div>
+ </div>
+
+ <form class="aic-input-row" data-aic-form>
+ <input type="text" class="aic-input" placeholder="Posez votre question DD…" aria-label="Posez votre question" required>
+ <button type="submit" class="aic-send">Envoyer</button>
+ </form>
+ </div>
+ </section>
+
+ <!-- Capabilities -->
+ <section class="aic-caps" aria-labelledby="aic-caps-t">
+ <p class="aic-caps-h">6 capacités clés</p>
+ <h2 class="aic-caps-t" id="aic-caps-t">Un assistant DD qui ne dort jamais.</h2>
+ <div class="aic-caps-grid">
+ <article class="aic-cap">
+ <div class="aic-cap-num">01 · TRAINED</div>
+ <h3 class="aic-cap-t">12 catégories DD complètes</h3>
+ <p class="aic-cap-d">Plan financier 5 ans · term sheet OHADA · pacte d'actionnaires · code conduite · brevets · ESG · gouvernance · roadmap. ~250 docs sourcés et indexés.</p>
+ </article>
+ <article class="aic-cap">
+ <div class="aic-cap-num">02 · CITED</div>
+ <h3 class="aic-cap-t">Citations + références traçables</h3>
+ <p class="aic-cap-d">Chaque réponse cite ses sources avec lien direct vers la page concernée. Aucun hallucination · refus argumenté si question hors-scope.</p>
+ </article>
+ <article class="aic-cap">
+ <div class="aic-cap-num">03 · MULTILINGUAL</div>
+ <h3 class="aic-cap-t">5 langues natives</h3>
+ <p class="aic-cap-d">FR · EN · arabe · espagnol · portugais. Auto-détection de la langue de la question. Cohérence terminologique OFS / parapétrolier.</p>
+ </article>
+ <article class="aic-cap">
+ <div class="aic-cap-num">04 · COMPARE</div>
+ <h3 class="aic-cap-t">Tables comparatives auto</h3>
+ <p class="aic-cap-d">Capable de générer comparaisons EnerTchad vs top OFS international / top OFS international / major NOC Moyen-Orient / Petrofac sur dimensions précises (ticket, LCD, EOR, ESG).</p>
+ </article>
+ <article class="aic-cap">
+ <div class="aic-cap-num">05 · ESCALATE</div>
+ <h3 class="aic-cap-t">Escalade DG si high-value</h3>
+ <p class="aic-cap-d">Détection automatique des leads high-value (DFI ticket >3 M USD). Proposition de réservation DG Office Hours direct.</p>
+ </article>
+ <article class="aic-cap">
+ <div class="aic-cap-num">06 · CONFIDENTIAL</div>
+ <h3 class="aic-cap-t">RGPD + OHADA + ITIE</h3>
+ <p class="aic-cap-d">Aucune donnée DFI stockée sans consentement. Conformité RGPD européen + Loi 007/PR/2015 Tchad + ITIE transparency norms.</p>
+ </article>
+ </div>
+ </section>
+
+ <!-- CTA -->
+ <section style="max-width:980px;margin:0 auto 80px;padding:clamp(40px,6vw,60px) clamp(28px,4vw,48px);background:linear-gradient(135deg,rgba(168,85,247,0.06),rgba(168,85,247,0.02));border:1px solid rgba(168,85,247,0.18);border-radius:18px;text-align:center">
+ <h3 style="font-family:var(--font-display);font-size:clamp(24px,3.5vw,36px);font-weight:700;letter-spacing:-0.02em;margin:0 0 12px;color:var(--cream)">Vous préférez un humain ?</h3>
+ <p style="font-size:15px;line-height:1.55;color:rgba(246,241,230,0.7);margin:0 auto 24px;max-width:580px">Si l'AI Concierge ne suffit pas, le DG est accessible directement par calendrier public — 30 min en visio · NDA OHADA pré-signé · brief 1-pager auto.</p>
+ <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:12px">
+ <a style="display:inline-block;padding:14px 28px;border-radius:10px;text-decoration:none;font-family:var(--font-display);font-weight:700;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;background:#c084fc;color:#050810" href="/dg-office-hours/">Réserver 30 min DG</a>
+ <a style="display:inline-block;padding:14px 28px;border-radius:10px;text-decoration:none;font-family:var(--font-display);font-weight:700;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;background:transparent;color:var(--cream);border:1.5px solid rgba(246,241,230,0.25)" href="/dataroom/">Accès dataroom NDA</a>
+ </div>
+ </section>
+
+ <p class="aic-disclaimer">
+ Démonstration prototype illustrative. La version production AI Concierge utilisera l'API Claude (Anthropic) avec retrieval-augmented generation (RAG) sur le dataroom DD EnerTchad SA. Déploiement Phase 1 post-Tour Seed/Pre-A 2026 closing T3. Conformité RGPD européen + Loi 007/PR/2015 Tchad + transparency norms ITIE 2013. Aucune donnée DFI n'est stockée sans consentement explicite. Chaque conversation est anonymisable sur demande.
+ </p>
+
+
+ <!-- R193 · /ai-concierge/ enrichment -->
+ <section class="section" id="r193-aic-enrich" style="padding:clamp(56px,7vh,80px) 0">
+  <div class="container">
+   <span class="kicker" style="color:var(--gold)">02 · Pourquoi un AI Concierge</span>
+   <h2 class="aic-caps-t">Premier OFS au monde · <em>AI Concierge live</em>.</h2>
+   <p class="lead reveal" style="max-width:780px">Aucun OFS international ne propose un assistant IA dédié 24/7 pour les Due Diligence DFI. Notre <strong>AI Concierge Claude API</strong> est une différenciation produit phare · cohérent avec ambition Made in Chad · technology-first · OAPI patents.</p>
+   <div class="grid grid-3 reveal mt-4" style="gap:18px">
+    <div class="card"><h4 style="color:var(--gold)">Save 50h/sem DG</h4><p style="font-size:0.86rem">Bypass calendrier DG · brief auto 1-pager · pre-screen DD intelligent.</p></div>
+    <div class="card"><h4 style="color:var(--gold)">Disponible 24/7</h4><p style="font-size:0.86rem">DFI fuseaux horaires · réponses techniques <2 min · citations sources tracées.</p></div>
+    <div class="card"><h4 style="color:var(--gold)">5 langues natives</h4><p style="font-size:0.86rem">FR · EN · AR · ES · PT · couvre 90% des DFI internationaux ciblés.</p></div>
+   </div>
+  </div>
+ </section>
+
+ <section class="section section-dark" style="background:var(--navy);color:var(--cream);padding:clamp(56px,7vh,80px) 0">
+  <div class="container">
+   <span class="kicker" style="color:var(--gold)">03 · Architecture technique</span>
+   <h2 class="aic-caps-t" style="color:var(--cream)">Architecture · <em style="color:var(--gold)">Claude API + RAG dataroom</em>.</h2>
+   <p class="lead reveal" style="max-width:780px;color:rgba(246,241,230,0.85)">Stack technique : <strong style="color:var(--gold)">Claude API</strong> (Sonnet/Opus) + <strong style="color:var(--gold)">RAG vector DB</strong> indexée sur dataroom NDA + <strong style="color:var(--gold)">guardrails JSON-LD</strong> validation citations. Hosted N'Djamena + EU edge · GDPR-compliant.</p>
+   <div class="grid grid-2 reveal mt-4" style="gap:18px">
+    <article class="card card-pole" data-pole="amont" style="background:rgba(11,26,51,0.45);border:1px solid rgba(217,168,79,0.22);padding:20px 22px;">
+     <h4 style="color:var(--gold)">Anti-hallucination</h4>
+     <p style="font-size:0.88rem;color:rgba(246,241,230,0.7)">Citations obligatoires · refuse to answer si pas de source dataroom validée · escalade DG si question high-value.</p>
+    </article>
+    <article class="card card-pole" data-pole="amont" style="background:rgba(11,26,51,0.45);border:1px solid rgba(217,168,79,0.22);padding:20px 22px;">
+     <h4 style="color:var(--gold)">Privacy + audit</h4>
+     <p style="font-size:0.88rem;color:rgba(246,241,230,0.7)">RGPD compliant · OHADA local hosting · ITIE transparency reporting · audit trails 100% conversations · SOC 2 Type II target Q4 2027.</p>
+    </article>
+   </div>
+  </div>
+ </section>
+
+ <section class="section" style="padding:clamp(56px,7vh,80px) 0">
+  <div class="container">
+   <span class="kicker" style="color:var(--gold)">04 · Roadmap deployment</span>
+   <h2 class="aic-caps-t">Roadmap · <em>Phase 2 GA · 2027</em>.</h2>
+   <p class="lead reveal" style="max-width:780px">AI Concierge actuellement <strong>placeholder pre-launch</strong>. Beta DFI sélectionnés Q3 2026 · GA public Phase 2 (2027) après dataroom RAG fully indexed + 12 mois training validation.</p>
+   <div class="grid grid-3 reveal mt-4" style="gap:18px">
+    <div class="card"><h4 style="color:var(--gold)">Q3 2026</h4><p style="font-size:0.86rem">Beta DFI 10 invités · NDA + closed beta · feedback loop training.</p></div>
+    <div class="card"><h4 style="color:var(--gold)">Q4 2026</h4><p style="font-size:0.86rem">Open beta DFI/VC · 50+ users · multilingue testing · refinement.</p></div>
+    <div class="card"><h4 style="color:var(--gold)">2027 Phase 2</h4><p style="font-size:0.86rem">GA public · widget embed dataroom · API public Phase 3 partenaires.</p></div>
+   </div>
+  </div>
+ </section>
+
+
+ <!-- R217 · AI Concierge chat demo widget -->
+ <section class="section" style="padding:clamp(56px,7vh,80px) 0;background:linear-gradient(180deg,var(--cream) 0%,#fff 100%)">
+  <div class="container">
+   <span class="kicker" style="color:var(--gold)">Démo interactive · beta preview</span>
+   <h2 class="h-display reveal" style="font-size:var(--fs-3xl);margin-top:var(--sp-2)">Démo · <em>AI Concierge en action</em>.</h2>
+   <p class="lead reveal" style="max-width:780px">Aperçu du fonctionnement · 5 questions DD pré-compilées · simulation Claude API. <strong>Beta DFI sélectionnés</strong> Q3 2026 · <strong>GA public</strong> 2027.</p>
+
+   <div id="aic-demo-r217" class="aic-demo">
+    <div class="aic-demo-header">
+     <div class="aic-demo-avatar">EC</div>
+     <div>
+      <p class="aic-demo-title">EnerTchad Concierge</p>
+      <div class="aic-demo-status">En ligne · 24/7 · Claude API</div>
+     </div>
+    </div>
+    <div class="aic-demo-body" aria-live="polite"></div>
+    <div class="aic-demo-suggestions" aria-label="Questions DD pré-compilées">
+     <button class="aic-suggestion" type="button">Capital social et structure?</button>
+     <button class="aic-suggestion" type="button">Use of funds Tour 2026?</button>
+     <button class="aic-suggestion" type="button">Quels opérateurs cibles?</button>
+     <button class="aic-suggestion" type="button">EOR Local OAPI · 5 brevets?</button>
+     <button class="aic-suggestion" type="button">Pétrochimie · timeline?</button>
+    </div>
+    <div class="aic-demo-input-row">
+     <input class="aic-demo-input" placeholder="Posez votre question DD · beta preview..." disabled>
+     <button class="aic-demo-send" disabled aria-label="Envoyer">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg>
+     </button>
+    </div>
+    <p class="aic-demo-disclaimer">Démo statique · simulation pré-compilée · Beta réelle Claude API · Q3 2026 DFI sélectionnés.</p>
+   </div>
+  </div>
+ </section>
+
+</main>
+
+<footer class="fu-footer" role="contentinfo" data-r140="ultra">
+ <div class="fu-inner">
+ <div class="fu-grid">
+ <div>
+ <p class="fu-brand-name">EnerTchad SA</p>
+ <p class="fu-slogan">Unité · Innovation · Durabilité</p>
+ <p class="fu-positioning">Société <em>parapétrolière</em> (OFS) <strong>100% services techniques</strong> · marché tchadien · OHADA. Aucun asset.</p>
+ <p class="fu-leadership"><strong>DG</strong> Bignéro Moïalbéi Le Madang<br><strong>PCA</strong> Théophile Gag Pinabei</p>
+ </div>
+ <div>
+ <p class="fu-col-h">Navigation · 6 axes</p>
+ <ul class="fu-list">
+ <li><a href="/sitemap.html#mission">01 Mission</a></li>
+ <li><a href="/sitemap.html#activites">02 Activités</a></li>
+ <li><a href="/sitemap.html#transition">03 Transition énergétique</a></li>
+ <li><a href="/sitemap.html#technologies">04 Technologies</a></li>
+ <li><a href="/sitemap.html#engagements">05 Engagements</a></li>
+ <li><a href="/sitemap.html#investisseurs">06 Investisseurs</a></li>
+ </ul>
+ </div>
+ <div>
+ <p class="fu-col-h">Tour 2026 · Pages clés</p>
+ <ul class="fu-list">
+ <li><a href="/engagement/investisseurs.html">Tour Seed/Pre-A</a></li>
+ <li><a href="/dataroom/">Dataroom · NDA</a></li>
+ <li><a href="/dg-office-hours/">DG Office Hours</a></li>
+ <li><a href="/ai-concierge/">AI Concierge</a></li>
+ <li><a href="/marques/">4 marques™ + 2 projets</a></li>
+ <li><a href="/data/atlas.html">Atlas marché</a></li>
+ </ul>
+ </div>
+ <div>
+ <p class="fu-col-h">Newsletter Tour 2026</p>
+ <p class="fu-newsletter-desc">Actualités investisseurs · avancées catalogue OFS · <span data-jn>J-150</span> closing.</p>
+ <form class="fu-newsletter-form" action="https://formspree.io/f/enertchad-newsletter" method="POST" novalidate>
+ <input type="email" name="email" placeholder="email@exemple.com" required aria-label="Adresse email">
+ <button type="submit">S&rsquo;inscrire ↗</button>
+ </form>
+ <p class="fu-newsletter-fineprint">RGPD · désinscription 1-clic · données EU-West chiffrées</p>
+ </div>
+ </div>
+ <div class="fu-meta">
+ <div class="fu-badges">
+ <span class="fu-badge">ITIE</span>
+ <span class="fu-badge">OHADA</span>
+ <span class="fu-badge">ISO 9001 · 14001 · 45001</span>
+ <span class="fu-badge">OAPI 2026</span>
+ </div>
+ <div class="fu-legal">
+ <span>© 2026 <strong>EnerTchad SA</strong></span>
+ <span class="fu-sep">·</span>
+ <span>RCCM N&rsquo;DJ/RC/2026-A-0001</span>
+ <span class="fu-sep">·</span>
+ <span>Capital 10 000 000 FCFA</span>
+ <span class="fu-sep">·</span>
+ <a href="/sitemap.html">Plan du site</a>
+ <span class="fu-sep">·</span>
+ <a href="/legal/mentions-legales.html">Mentions légales</a>
+ <span class="fu-sep">·</span>
+ <a href="/legal/confidentialite.html">Confidentialité</a>
+ <span class="fu-sep">·</span>
+ <a href="/legal/cookies.html">Cookies</a>
+ </div>
+ </div>
+ </div>
+</footer>
+
+
+<script defer src="/assets/js/enertchad.js"></script>
+<script>
+ // AI Concierge · R84 wiring ready Claude API · Cloudflare Workers backend
+ // Endpoint: POST /api/concierge { messages, context, lang } → { answer }
+ (function () {
+ 'use strict';
+ var input = document.querySelector('.aic-input');
+ var form = document.querySelector('[data-aic-form]');
+ var messages = document.querySelector('[data-aic-messages]');
+ var API_ENDPOINT = '/api/concierge';
+ var conversation = [];
+ var isStreaming = false;
+
+ // Knowledge-base fallback (graceful degradation if Worker offline)
+ var KB = {
+ 'cap-table': 'Cap-table OHADA preview (dataroom NDA-gated) · Founders 60% · ESOP 10% · Tour 2026 30% à 8-12 M USD · Series A 2027 (15-25 M USD) · Series B 2028 (50-80 M USD).',
+ 'use of proceeds': 'Use of proceeds 8-12 M USD · ~40% équipement OFS (drilling/EOR/integrity) · ~25% recrutement diaspora LCD (25 ETP Phase 1) · ~15% R&D brevets OAPI (5 dépôts) · ~10% sustainability + ESG framework · ~10% working capital.',
+ 'series a': 'Series A 2027 · 15-25 M USD · cible Q3 2027 · OHADA continuité · trigger : 6 contrats opérateurs signés + 1 brevet OAPI commercialisé + LCD ratio >60%.',
+ 'esg': 'KPIs ESG canon : Net Zero scope 1+2+3 2050 (Paris-aligned) · LCD 75-90% diaspora 2030 · ISO 14001/45001 cibles · ITIE-ready · MSCI ESG · 5 phases auditables.',
+ 'peers': 'Comparaison ticket vs peers OFS Africa : 8-12 M USD median sector West Africa. Petrofac Algeria ~25 M · Wood Group MENA ~50 M · OFS local Niger ~5 M. Notre ticket sized OFS pivot pure-play sans E&P.',
+ 'itie': 'Conformité ITIE 2013 · Tchad pays adhérent · publication contrats opérateurs et paiements gouvernementaux selon norme renforcée · pack ITIE-readiness inclus dans dataroom DFI.',
+ 'eor': 'Brevets OAPI EOR Local sur 5 ressources tchadiennes : coton · neem · gomme arabique · spiruline Lac Tchad · souches microbiennes. Tests labo +6 à +17% OOIP Doba mature fields. Coût domestique 30-40% inférieur additifs importés.',
+ 'roadmap': 'Roadmap 12 vagues V1-V12 master plan · phase courante = roadshow Tour 2026 <span data-jn>J-149</span>→J-67 · cadence weekly cold outreach + discovery calls + NDAs + term sheets.',
+ 'dataroom': 'Dataroom NDA-gated · 12 catégories DD : term sheet OHADA · pacte actionnaires · plan financier 5 ans · code conduite · brevets OAPI · ESG · gouvernance. Accès via /dataroom/.'
+ };
+
+ function findFallback(q) {
+ var lower = q.toLowerCase();
+ var hits = [];
+ Object.keys(KB).forEach(function (k) {
+ if (lower.indexOf(k) !== -1) hits.push(KB[k]);
+ });
+ return hits.length ? hits.join(' ') : null;
+ }
+
+ function escalateLink() {
+ return '<br><br><strong>Lead high-value ?</strong> Réservez DG direct → <a href="/dg-office-hours/" style="color:var(--gold)">Office Hours 30 min</a> · accès dataroom NDA → <a href="/dataroom/" style="color:var(--gold)">Dataroom</a>.';
+ }
+
+ function appendMessage(role, html) {
+ var msg = document.createElement('div');
+ msg.className = 'aic-msg aic-msg-' + (role === 'user' ? 'user' : 'bot');
+ if (role === 'user') msg.textContent = html;
+ else msg.innerHTML = html;
+ messages.appendChild(msg);
+ messages.scrollTop = messages.scrollHeight;
+ return msg;
+ }
+
+ document.querySelectorAll('[data-q]').forEach(function (btn) {
+ btn.addEventListener('click', function () {
+ if (input && !isStreaming) {
+ input.value = btn.textContent;
+ input.focus();
+ }
+ });
+ });
+
+ if (form) {
+ form.addEventListener('submit', function (e) {
+ e.preventDefault();
+ if (isStreaming) return;
+ var q = input.value.trim();
+ if (!q) return;
+
+ appendMessage('user', q);
+ conversation.push({ role: 'user', content: q });
+ input.value = '';
+ isStreaming = true;
+
+ var botMsg = appendMessage('bot', '<em>Réflexion en cours…</em>');
+
+ // Call Worker Claude API · graceful degradation to KB fallback if 404/network
+ fetch(API_ENDPOINT, {
+ method: 'POST',
+ headers: { 'Content-Type': 'application/json' },
+ body: JSON.stringify({
+ messages: conversation,
+ context: 'enertchad-dfi-2026',
+ lang: document.documentElement.lang || 'fr'
+ })
+ })
+ .then(function (r) {
+ if (!r.ok) throw new Error('API ' + r.status);
+ return r.json();
+ })
+ .then(function (data) {
+ var answer = (data && (data.answer || data.completion)) || '';
+ if (!answer) throw new Error('Empty response');
+ conversation.push({ role: 'assistant', content: answer });
+ botMsg.innerHTML = answer + escalateLink();
+ isStreaming = false;
+ })
+ .catch(function () {
+ var fb = findFallback(q);
+ if (fb) {
+ botMsg.innerHTML = fb + ' <em style="opacity:0.6;font-size:12px;display:block;margin-top:8px">— knowledge-base canon · API live activation Phase 2 post-Tour</em>' + escalateLink();
+ } else {
+ botMsg.innerHTML = '<em>Question hors knowledge-base canon actuel.</em> Pour réponse précise, écrivez DG via <a href="/dg-office-hours/" style="color:var(--gold)">Office Hours</a> ou explorez <a href="/dataroom/" style="color:var(--gold)">dataroom NDA</a>. <br><br><span style="opacity:0.5;font-size:12px">L\'API Claude live sera active Phase 2 (post-Tour close T3 2026).</span>';
+ }
+ isStreaming = false;
+ });
+ });
+ }
+ })();
+</script>
+
+ <script defer src="/assets/js/jn-counter.js?v=r128"></script>
+ <script defer src="/assets/js/header-ultra.js?v=r140"></script>
+ <script defer src="/assets/js/ux-r146.js?v=r146"></script>
+ <script defer src="/assets/js/megamenu-r154.js?v=r154"></script>
+<script defer src="/assets/js/aic-demo-r217.js?v=r217"></script>
+</body>
+</html>

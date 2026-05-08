@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- R137 · sitemap.xml SEO refreshed · priority weights aligned with Doc 159 R133 tier classification · 2026-05-03
+     This file replaces the legacy sitemap.xml (APFS-locked) for SEO indexation.
+     robots.txt should reference this file. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- P0 · Tour 2026 critical · priority 1.0 -->
+  <url><loc>https://www.enertchad.td/</loc><lastmod>2026-05-03</lastmod><changefreq>daily</changefreq><priority>1.0</priority><xhtml:link rel="alternate" hreflang="fr" href="https://www.enertchad.td/" /><xhtml:link rel="alternate" hreflang="en" href="https://www.enertchad.td/en/" /></url>
+  <url><loc>https://www.enertchad.td/engagement/investisseurs.html</loc><lastmod>2026-05-03</lastmod><changefreq>daily</changefreq><priority>1.0</priority><xhtml:link rel="alternate" hreflang="fr" href="https://www.enertchad.td/engagement/investisseurs.html" /><xhtml:link rel="alternate" hreflang="en" href="https://www.enertchad.td/en/engagement/investisseurs.html" /></url>
+  <url><loc>https://www.enertchad.td/investisseurs/</loc><lastmod>2026-05-03</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.enertchad.td/dataroom/</loc><lastmod>2026-05-03</lastmod><changefreq>weekly</changefreq><priority>1.0</priority><xhtml:link rel="alternate" hreflang="fr" href="https://www.enertchad.td/dataroom/" /><xhtml:link rel="alternate" hreflang="en" href="https://www.enertchad.td/en/dataroom/" /></url>
+  <url><loc>https://www.enertchad.td/ai-concierge/</loc><lastmod>2026-05-03</lastmod><changefreq>weekly</changefreq><priority>1.0</priority><xhtml:link rel="alternate" hreflang="fr" href="https://www.enertchad.td/ai-concierge/" /><xhtml:link rel="alternate" hreflang="en" href="https://www.enertchad.td/en/ai-concierge/" /></url>
+  <url><loc>https://www.enertchad.td/dg-office-hours/</loc><lastmod>2026-05-03</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.enertchad.td/tour-live/</loc><lastmod>2026-05-03</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.enertchad.td/tour-live/dashboard.html</loc><lastmod>2026-05-03</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.enertchad.td/marques/</loc><lastmod>2026-05-03</lastmod><changefreq>weekly</changefreq><priority>1.0</priority><xhtml:link rel="alternate" hreflang="fr" href="https://www.enertchad.td/marques/" /><xhtml:link rel="alternate" hreflang="en" href="https://www.enertchad.td/en/marques/" /></url>
+  <url><loc>https://www.enertchad.td/en/</loc><lastmod>2026-05-03</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.enertchad.td/en/engagement/investisseurs.html</loc><lastmod>2026-05-03</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.enertchad.td/en/dataroom/</loc><lastmod>2026-05-03</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.enertchad.td/en/ai-concierge/</loc><lastmod>2026-05-03</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.enertchad.td/en/marques/</loc><lastmod>2026-05-03</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+
+  <!-- P1 · Activities canon · priority 0.8 -->
+  <url><loc>https://www.enertchad.td/amont/</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority><xhtml:link rel="alternate" hreflang="fr" href="https://www.enertchad.td/amont/" /><xhtml:link rel="alternate" hreflang="en" href="https://www.enertchad.td/en/amont/" /></url>
+  <url><loc>https://www.enertchad.td/intermediaire/</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority><xhtml:link rel="alternate" hreflang="fr" href="https://www.enertchad.td/intermediaire/" /><xhtml:link rel="alternate" hreflang="en" href="https://www.enertchad.td/en/intermediaire/" /></url>
+  <url><loc>https://www.enertchad.td/intermediaire/pipeline-360-demo/</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.enertchad.td/aval/</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority><xhtml:link rel="alternate" hreflang="fr" href="https://www.enertchad.td/aval/" /><xhtml:link rel="alternate" hreflang="en" href="https://www.enertchad.td/en/aval/" /></url>
+  <url><loc>https://www.enertchad.td/petrochimie/</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority><xhtml:link rel="alternate" hreflang="fr" href="https://www.enertchad.td/petrochimie/" /><xhtml:link rel="alternate" hreflang="en" href="https://www.enertchad.td/en/petrochimie/" /></url>
+  <url><loc>https://www.enertchad.td/technologies/</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority><xhtml:link rel="alternate" hreflang="fr" href="https://www.enertchad.td/technologies/" /><xhtml:link rel="alternate" hreflang="en" href="https://www.enertchad.td/en/technologies/" /></url>
+  <url><loc>https://www.enertchad.td/energies/</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority><xhtml:link rel="alternate" hreflang="fr" href="https://www.enertchad.td/energies/" /><xhtml:link rel="alternate" hreflang="en" href="https://www.enertchad.td/en/energies/" /></url>
+  <url><loc>https://www.enertchad.td/hse/</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority><xhtml:link rel="alternate" hreflang="fr" href="https://www.enertchad.td/hse/" /><xhtml:link rel="alternate" hreflang="en" href="https://www.enertchad.td/en/hse/" /></url>
+  <url><loc>https://www.enertchad.td/solutions/</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority><xhtml:link rel="alternate" hreflang="fr" href="https://www.enertchad.td/solutions/" /><xhtml:link rel="alternate" hreflang="en" href="https://www.enertchad.td/en/solutions/" /></url>
+  <url><loc>https://www.enertchad.td/solutions/configurateur.html</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.enertchad.td/solutions/calculateur.html</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.enertchad.td/en/amont/</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.enertchad.td/en/intermediaire/</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.enertchad.td/en/aval/</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.enertchad.td/en/petrochimie/</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.enertchad.td/en/technologies/</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.enertchad.td/en/energies/</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.enertchad.td/en/hse/</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.enertchad.td/en/solutions/</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- P2 · Trust & identity · priority 0.6 -->
+  <url><loc>https://www.enertchad.td/a-propos/</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority><xhtml:link rel="alternate" hreflang="fr" href="https://www.enertchad.td/a-propos/" /><xhtml:link rel="alternate" hreflang="en" href="https://www.enertchad.td/en/about/" /></url>
+  <url><loc>https://www.enertchad.td/pourquoi/manifeste.html</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.enertchad.td/pourquoi/manifeste-immersif/</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.enertchad.td/pourquoi/positionnement.html</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.enertchad.td/pourquoi/trajectoire.html</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.enertchad.td/pourquoi/equipe.html</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.enertchad.td/mythos/</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.enertchad.td/sustainability/</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority><xhtml:link rel="alternate" hreflang="fr" href="https://www.enertchad.td/sustainability/" /><xhtml:link rel="alternate" hreflang="en" href="https://www.enertchad.td/en/sustainability/" /></url>
+  <url><loc>https://www.enertchad.td/talents/</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.enertchad.td/talents/diaspora-map/</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.enertchad.td/sourcing-africain/</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.enertchad.td/atlas/</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.enertchad.td/data/atlas.html</loc><lastmod>2026-05-03</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.enertchad.td/data/oleoduc-3d.html</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.enertchad.td/data/observatoire.html</loc><lastmod>2026-05-03</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.enertchad.td/data/dashboard.html</loc><lastmod>2026-05-03</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.enertchad.td/data/index.html</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.enertchad.td/en/about/</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.enertchad.td/en/sustainability/</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.enertchad.td/en/talents/</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.enertchad.td/en/sourcing-africain/</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.enertchad.td/en/mythos/</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.enertchad.td/en/data/atlas.html</loc><lastmod>2026-05-03</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.enertchad.td/en/pourquoi/manifeste.html</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
+  <!-- P3 · Operational · priority 0.4 -->
+  <url><loc>https://www.enertchad.td/operateurs/</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.enertchad.td/operateurs/cnpcic.html</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.enertchad.td/operateurs/perenco.html</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.enertchad.td/operateurs/sht.html</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.enertchad.td/operateurs/cotco-totco.html</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.enertchad.td/operateurs/srn.html</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.enertchad.td/stations/</loc><lastmod>2026-05-03</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.enertchad.td/activites/</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.enertchad.td/engagement/transparence.html</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.enertchad.td/engagement/contact.html</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.enertchad.td/engagement/presse.html</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.enertchad.td/glossaire.html</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.enertchad.td/boutique/</loc><lastmod>2026-05-03</lastmod><changefreq>weekly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.enertchad.td/en/operateurs/cnpcic.html</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.enertchad.td/en/stations/</loc><lastmod>2026-05-03</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.enertchad.td/en/boutique/</loc><lastmod>2026-05-03</lastmod><changefreq>weekly</changefreq><priority>0.4</priority></url>
+
+  <!-- P4 · Legal & utility · priority 0.2 -->
+  <url><loc>https://www.enertchad.td/legal/mentions-legales.html</loc><lastmod>2026-05-03</lastmod><changefreq>yearly</changefreq><priority>0.2</priority></url>
+  <url><loc>https://www.enertchad.td/legal/confidentialite.html</loc><lastmod>2026-05-03</lastmod><changefreq>yearly</changefreq><priority>0.2</priority></url>
+  <url><loc>https://www.enertchad.td/legal/cookies.html</loc><lastmod>2026-05-03</lastmod><changefreq>yearly</changefreq><priority>0.2</priority></url>
+  <url><loc>https://www.enertchad.td/sitemap.html</loc><lastmod>2026-05-03</lastmod><changefreq>weekly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://www.enertchad.td/en/sitemap.html</loc><lastmod>2026-05-03</lastmod><changefreq>weekly</changefreq><priority>0.3</priority></url>
+
+</urlset>

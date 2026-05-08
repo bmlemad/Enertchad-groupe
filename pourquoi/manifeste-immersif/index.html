@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+ <meta name="view-transition" content="same-origin">
+ <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link rel="preload" as="style" href="/assets/css/enertchad.css?v=r295">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Manifeste DG · expérience immersive · EnerTchad SA</title>
+<meta name="description" content="Manifeste du DG EnerTchad Bignéro Moïalbéi Le Madang · expérience immersive scroll-driven · 4 chapitres · 17 ans major O&G internationale · vision souveraineté…">
+<link rel="canonical" href="https://enertchad-groupe.pages.dev/pourquoi/manifeste-immersif/">
+<link rel="stylesheet" href="/assets/css/ux-r146.css?v=r295" />
+<link rel="stylesheet" href="/assets/css/megamenu-r154.css?v=r295" />
+<link rel="stylesheet" href="/assets/css/header-ultra.css?v=r238" />
+<link rel="stylesheet" href="/assets/css/enertchad.css?v=r295">
+<link rel="icon" href="/assets/favicon.svg">
+<style>
+ body[data-page="manifeste-immersif"] {
+ background: #050810;
+ color: var(--cream, #F6F1E6);
+ overflow-x: hidden;
+ }
+
+ /* Story progress · scroll bar gold (already in main CSS) */
+
+ /* Each chapter is a scroll-snap section */
+ .manifesto-chapter {
+ position: relative;
+ min-height: 100vh;
+ display: flex;
+ align-items: center;
+ padding: clamp(80px, 12vh, 140px) clamp(20px, 5vw, 80px);
+ scroll-snap-align: start;
+ }
+ .manifesto-chapter > .container {
+ max-width: 980px;
+ margin: 0 auto;
+ width: 100%;
+ }
+
+ /* Big chapter number (background) */
+ .chapter-num {
+ position: absolute;
+ right: clamp(20px, 6vw, 80px);
+ top: clamp(60px, 8vh, 100px);
+ font-family: var(--font-display, 'Space Grotesk', sans-serif);
+ font-size: clamp(120px, 22vw, 380px);
+ font-weight: 100;
+ line-height: 0.85;
+ color: rgba(217, 168, 79, 0.06);
+ pointer-events: none;
+ user-select: none;
+ z-index: 0;
+ }
+
+ .chapter-content { position: relative; z-index: 1; max-width: 720px; }
+
+ .chapter-kicker {
+ display: inline-flex;
+ align-items: center;
+ gap: 12px;
+ padding: 8px 20px;
+ border-radius: 999px;
+ border: 1px solid rgba(217, 168, 79, 0.35);
+ background: rgba(217, 168, 79, 0.06);
+ font-family: var(--font-display);
+ font-size: 11px;
+ font-weight: 700;
+ letter-spacing: 0.18em;
+ text-transform: uppercase;
+ color: var(--gold);
+ margin-bottom: 28px;
+ }
+
+ .chapter-h2 {
+ font-family: var(--font-display);
+ font-size: clamp(40px, 6vw, 88px);
+ font-weight: 700;
+ letter-spacing: -0.03em;
+ line-height: 0.98;
+ color: var(--cream);
+ margin: 0 0 32px;
+ }
+ .chapter-h2 em {
+ font-style: normal;
+ color: var(--gold);
+ }
+
+ .chapter-body {
+ font-size: clamp(17px, 1.4vw, 21px);
+ line-height: 1.55;
+ color: rgba(246, 241, 230, 0.82);
+ margin: 0 0 24px;
+ }
+ .chapter-body strong { color: var(--cream); font-weight: 600; }
+
+ /* Pull-quote inside chapter */
+ .chapter-quote {
+ margin: 40px 0;
+ padding: 28px 32px;
+ border-left: 3px solid var(--gold);
+ background: rgba(217, 168, 79, 0.04);
+ border-radius: 0 12px 12px 0;
+ font-family: var(--font-display);
+ font-size: clamp(20px, 2vw, 28px);
+ font-weight: 500;
+ line-height: 1.4;
+ color: var(--cream);
+ font-style: normal;
+ }
+ .chapter-quote::before {
+ content: '« ';
+ color: rgba(217, 168, 79, 0.5);
+ font-size: 1.5em;
+ line-height: 0.5;
+ }
+ .chapter-quote::after {
+ content: ' »';
+ color: rgba(217, 168, 79, 0.5);
+ }
+ .chapter-quote cite {
+ display: block;
+ margin-top: 16px;
+ font-size: 0.55em;
+ font-style: normal;
+ font-weight: 600;
+ letter-spacing: 0.12em;
+ text-transform: uppercase;
+ color: var(--gold);
+ }
+
+ /* Stats inline */
+ .chapter-stats {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+ gap: 32px;
+ margin-top: 48px;
+ padding-top: 32px;
+ border-top: 1px solid rgba(217, 168, 79, 0.2);
+ }
+ .chapter-stat strong {
+ display: block;
+ font-family: var(--font-display);
+ font-size: clamp(28px, 4vw, 44px);
+ font-weight: 700;
+ color: var(--gold);
+ line-height: 1;
+ margin-bottom: 8px;
+ font-variant-numeric: tabular-nums lining-nums;
+ }
+ .chapter-stat span {
+ font-family: var(--font-display);
+ font-size: 11px;
+ font-weight: 600;
+ letter-spacing: 0.1em;
+ text-transform: uppercase;
+ color: rgba(246, 241, 230, 0.55);
+ }
+
+ /* Chapter divider · subtle gradient line */
+ .manifesto-chapter:not(:last-child)::after {
+ content: '';
+ position: absolute;
+ bottom: 0;
+ left: 50%;
+ transform: translateX(-50%);
+ width: 80%;
+ height: 1px;
+ background: linear-gradient(90deg, transparent 0%, rgba(217, 168, 79, 0.3) 50%, transparent 100%);
+ }
+
+ /* Chapter 1 · navy gradient */
+ .ch-1 { background: linear-gradient(180deg, #050810 0%, #080E1A 100%); }
+ /* Chapter 2 · subtle emerald hint */
+ .ch-2 { background: linear-gradient(180deg, #080E1A 0%, #0A1620 100%); }
+ /* Chapter 3 · subtle gold hint */
+ .ch-3 { background: linear-gradient(180deg, #0A1620 0%, #0C141C 100%); }
+ /* Chapter 4 · CTA · gold halo */
+ .ch-4 {
+ background:
+ radial-gradient(ellipse at center, rgba(217, 168, 79, 0.10) 0%, transparent 60%),
+ linear-gradient(180deg, #0C141C 0%, #050810 100%);
+ }
+
+ /* Hero · chapter 0 */
+ .ch-0 {
+ text-align: center;
+ background: linear-gradient(180deg, #050810 0%, #060912 100%);
+ }
+ .ch-0 .chapter-h1 {
+ font-family: var(--font-display);
+ font-size: clamp(56px, 10vw, 160px);
+ font-weight: 700;
+ letter-spacing: -0.04em;
+ line-height: 0.92;
+ color: var(--cream);
+ margin: 0 0 32px;
+ }
+ .ch-0 .chapter-h1 em {
+ font-style: normal;
+ color: var(--gold);
+ }
+ .ch-0 .chapter-byline {
+ font-family: var(--font-display);
+ font-size: 14px;
+ font-weight: 600;
+ letter-spacing: 0.16em;
+ text-transform: uppercase;
+ color: rgba(246, 241, 230, 0.7);
+ margin-top: 48px;
+ }
+ .ch-0 .scroll-hint {
+ position: absolute;
+ bottom: 40px;
+ left: 50%;
+ transform: translateX(-50%);
+ font-family: var(--font-display);
+ font-size: 11px;
+ font-weight: 600;
+ letter-spacing: 0.16em;
+ text-transform: uppercase;
+ color: rgba(246, 241, 230, 0.4);
+ animation: scroll-hint-bounce 2s ease-in-out infinite;
+ }
+ @keyframes scroll-hint-bounce {
+ 0%, 100% { transform: translateX(-50%) translateY(0); opacity: 0.4; }
+ 50% { transform: translateX(-50%) translateY(8px); opacity: 0.8; }
+ }
+
+ /* Final CTA chapter */
+ .ch-4 .chapter-cta-row {
+ display: flex;
+ flex-wrap: wrap;
+ gap: 12px;
+ margin-top: 40px;
+ }
+ .ch-4 .cta-btn-primary {
+ display: inline-flex;
+ align-items: center;
+ gap: 8px;
+ padding: 16px 32px;
+ background: var(--gold);
+ color: var(--navy, #050810);
+ font-family: var(--font-display);
+ font-weight: 700;
+ font-size: 15px;
+ letter-spacing: 0.04em;
+ text-decoration: none;
+ border-radius: 999px;
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+ }
+ .ch-4 .cta-btn-primary:hover {
+ transform: translateY(-2px);
+ box-shadow: 0 12px 32px rgba(217, 168, 79, 0.4);
+ }
+ .ch-4 .cta-btn-secondary {
+ display: inline-flex;
+ align-items: center;
+ gap: 8px;
+ padding: 16px 32px;
+ background: transparent;
+ color: var(--cream);
+ border: 1px solid rgba(255, 255, 255, 0.18);
+ font-family: var(--font-display);
+ font-weight: 600;
+ font-size: 15px;
+ text-decoration: none;
+ border-radius: 999px;
+ }
+</style>
+
+ <meta property="og:image" content="https://enertchad.td/assets/images/enertchad-accueil-hero-01.webp" />
+ <meta property="og:url" content="https://enertchad-groupe.pages.dev/pourquoi/manifeste-immersif/" />
+ <meta property="og:type" content="website" />
+ <meta name="twitter:card" content="summary_large_image" />
+
+ <meta property="og:title" content="Manifeste DG · expérience immersive · EnerTchad SA" />
+ <meta property="og:description" content="Manifeste du DG EnerTchad Bignéro Moïalbéi Le Madang · expérience immersive scroll-driven · 4 chapitres · 17 ans major O&G internationale · vision souveraineté technique Tchad · Tour Seed/Pre-A 2026." />
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Bâtir la souveraineté technique du pétrole tchadien","author":{"@type":"Person","name":"Bignéro Moïalbéi Le Madang","jobTitle":"Directeur Général EnerTchad SA"},"publisher":{"@type":"Organization","name":"EnerTchad SA","logo":{"@type":"ImageObject","url":"https://enertchad-groupe.pages.dev/assets/favicon.svg"}},"datePublished":"2026-05-01","url":"https://enertchad-groupe.pages.dev/pourquoi/manifeste-immersif/","description":"Manifeste DG EnerTchad SA · 4 chapitres scroll-driven · 17 ans major O&G internationale · Local Content Development 75-90% · Tour Seed/Pre-A 2026 8-12 M USD · OHADA","inLanguage":"fr-FR"}</script>
+<link rel="alternate" hreflang="fr" href="https://www.enertchad.td/pourquoi/manifeste-immersif/" />
+<link rel="alternate" hreflang="x-default" href="https://www.enertchad.td/pourquoi/manifeste-immersif/" />
+ <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://www.enertchad.td/"},{"@type":"ListItem","position":2,"name":"Mission","item":"https://www.enertchad.td/sitemap.html#mission"},{"@type":"ListItem","position":3,"name":"Manifeste DG","item":"https://www.enertchad.td/pourquoi/manifeste.html"},{"@type":"ListItem","position":4,"name":"Vision immersive","item":"https://www.enertchad.td/pourquoi/manifeste-immersif"}]}</script>
+</head>
+<body data-page="manifeste-immersif">
+<!-- R140 · ULTRA PREMIUM Header · FR -->
+<header class="hu-header" role="banner" data-r140="ultra">
+ <div class="hu-inner">
+ <a class="hu-brand" href="/" aria-label="EnerTchad SA · accueil">
+ <img class="hu-logo" src="/assets/images/logo.svg" alt="" width="44" height="44" loading="eager" decoding="async" />
+ <span class="hu-brand-text">EnerTchad <em>SA</em><span class="hu-brand-tag">Société parapétrolière · OFS</span></span>
+ </a>
+ <nav class="hu-nav" aria-label="Navigation principale">
+ <a class="hu-nav-link" data-mm="mission" href="/sitemap.html#mission">Mission</a>
+ <a class="hu-nav-link" data-mm="activites" href="/sitemap.html#activites">Activités</a>
+ <a class="hu-nav-link" data-mm="transition" href="/sitemap.html#transition">Transition</a>
+ <a class="hu-nav-link" data-mm="technologies" href="/sitemap.html#technologies">Technologies</a>
+ <a class="hu-nav-link" data-mm="engagements" href="/sitemap.html#engagements">Engagements</a>
+ <a class="hu-nav-link" data-mm="investisseurs" href="/sitemap.html#investisseurs">Investisseurs</a>
+ </nav>
+ <div class="hu-right">
+ <span class="hu-lang" aria-label="Langue">
+ <a href="/" hreflang="fr" aria-current="true">FR</a>
+ <span aria-hidden="true">·</span>
+ <a href="/en/" hreflang="en">EN</a>
+ </span>
+ <a class="hu-cta" href="/engagement/investisseurs.html">Tour 2026 <span class="hu-cta-arrow">↗</span></a>
+ <button class="hu-burger" type="button" aria-label="Menu" aria-expanded="false">
+ <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true">
+ <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+ </svg>
+ </button>
+ </div>
+ </div>
+</header>
+
+ <!-- R146 · Breadcrumb -->
+ <nav class="bc-r146" aria-label="Fil d'ariane">
+ <ol>
+ <li><a href="/">Accueil</a></li>
+ <li><a href="/sitemap.html#mission">Mission</a></li>
+ <li><a href="/pourquoi/manifeste.html">Manifeste DG</a></li>
+ <li aria-current="page">Vision immersive</li>
+ </ol>
+ </nav>
+
+<aside class="hu-drawer" aria-hidden="true">
+ <button class="hu-drawer-close" aria-label="Fermer">×</button>
+ <a href="/sitemap.html#mission">01 Mission</a>
+ <a href="/sitemap.html#activites">02 Activités</a>
+ <a href="/sitemap.html#transition">03 Transition énergétique</a>
+ <a href="/sitemap.html#technologies">04 Technologies</a>
+ <a href="/sitemap.html#engagements">05 Engagements</a>
+ <a href="/sitemap.html#investisseurs">06 Investisseurs</a>
+ <a href="/sitemap.html">Plan du site</a>
+ <a href="/en/" hreflang="en" style="color:#C9B57B">EN · English ↗</a>
+</aside>
+<div class="hu-backdrop" aria-hidden="true"></div>
+
+<a class="skip-link" href="#main">Aller au contenu</a>
+
+
+<a class="skip-to-main" href="#main">Aller au contenu principal</a>
+
+<main id="main" tabindex="-1">
+
+ <!-- Chapitre 0 · Hero -->
+ <section class="manifesto-chapter ch-0" aria-labelledby="ch0-h1">
+ <div class="container">
+ <span class="chapter-kicker">Manifeste DG · expérience immersive · 4 chapitres</span>
+ <h1 class="chapter-h1" id="ch0-h1">
+ Bâtir la <em>souveraineté technique</em><br>
+ du pétrole tchadien.
+ </h1>
+ <p class="chapter-byline">Bignéro Moïalbéi Le Madang · DG · 17 ans major O&G internationale</p>
+ </div>
+ <div class="scroll-hint" aria-hidden="true">↓ Scroll · 4 chapitres</div>
+ </section>
+
+ <!-- Chapitre 1 · Mon parcours -->
+ <section class="manifesto-chapter ch-1" aria-labelledby="ch1-h2">
+ <span class="chapter-num" aria-hidden="true">01</span>
+ <div class="container">
+ <div class="chapter-content">
+ <span class="chapter-kicker">Chapitre 01 · Mon parcours</span>
+ <h2 class="chapter-h2" id="ch1-h2">
+ 17 ans chez <em>major O&G internationale</em>,<br>
+ du Tchad au monde, retour au Tchad.
+ </h2>
+ <p class="chapter-body">
+ J'ai consacré <strong>17 ans</strong> de ma carrière à l'un des plus grands majors O&G mondiaux. major O&G internationale m'a formé aux standards les plus exigeants : <strong>OIMS</strong> (Operations Integrity Management System) · API RP 75 SEMS · ISO 45001/14001/9001 · Process Safety Management · Asset Integrity. Pendant ces années, j'ai vu le Tchad de l'intérieur des opérations majors · les contrats de partage de production, les arbitrages stratégiques globaux, la chaîne de valeur upstream-midstream-downstream.
+ </p>
+ <p class="chapter-body">
+ J'y ai aussi vu une vérité dérangeante : <strong>le Tchad reste dépendant des compétences techniques étrangères</strong> · même avec 5 bassins explorés et 70+ kbpd produits. La souveraineté pétrolière passe par la souveraineté technique. C'est cette conviction qui me ramène aujourd'hui.
+ </p>
+
+ <blockquote class="chapter-quote">
+ La souveraineté technique n'est pas un slogan. C'est ce qui permet à un pays de négocier d'égal à égal avec les majors · de capter la valeur ajoutée locale · et de bâtir une industrie pérenne.
+ <cite>Bignéro M. Le Madang · DG EnerTchad</cite>
+ </blockquote>
+
+ <div class="chapter-stats">
+ <div class="chapter-stat"><strong>17</strong><span>Ans major O&G internationale</span></div>
+ <div class="chapter-stat"><strong>5</strong><span>Bassins Tchad</span></div>
+ <div class="chapter-stat"><strong>OIMS</strong><span>Framework canon</span></div>
+ <div class="chapter-stat"><strong>2026</strong><span>Retour fondateur</span></div>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- Chapitre 2 · Pourquoi le Tchad maintenant -->
+ <section class="manifesto-chapter ch-2" aria-labelledby="ch2-h2">
+ <span class="chapter-num" aria-hidden="true">02</span>
+ <div class="container">
+ <div class="chapter-content">
+ <span class="chapter-kicker">Chapitre 02 · Pourquoi le Tchad maintenant</span>
+ <h2 class="chapter-h2" id="ch2-h2">
+ Une <em>fenêtre unique</em> dans l'histoire pétrolière tchadienne.
+ </h2>
+ <p class="chapter-body">
+ Le marché tchadien O&G traverse un moment historique. <strong>6 opérateurs canon</strong> structurent désormais le marché : CNPCIC (Bongor 30 kbpd) · Perenco (Doba 70 kbpd) · SHT (NOC souveraine) · COTCO/TOTCO (pipeline 1 070 km Doba-Kribi) · SRN (raffinerie Djermaya) · TPC (Tchad Petroleum Compagnie · acquéreur ex-Esso). Ces 6 opérateurs représentent un <strong>marché OFS de 1,8 Md USD TAM</strong> à horizon 2030.
+ </p>
+ <p class="chapter-body">
+ Mais les majors mondiaux (top OFS internationaux) <strong>ne descendent pas en-dessous de 50-100 M USD par contrat</strong>. Ils ne servent que la couche supérieure. Le marché tchadien · avec ses 30+ puits matures à workover, ses 1 070 km de pipeline à inspecter, ses 5 raffineries à moderniser, est <strong>structurellement sous-servi</strong>.
+ </p>
+
+ <blockquote class="chapter-quote">
+ C'est exactement la fenêtre qu'a saisie major NOC Moyen-Orient en 1933 quand SoCal n'avait pas la patience d'attendre. Cette fois-ci, c'est le tour du Tchad.
+ <cite>Vision Cap 2030</cite>
+ </blockquote>
+
+ <div class="chapter-stats">
+ <div class="chapter-stat"><strong>1,8 Md $</strong><span>TAM 2030</span></div>
+ <div class="chapter-stat"><strong>6</strong><span>Opérateurs canon</span></div>
+ <div class="chapter-stat"><strong>1 070 km</strong><span>Pipeline Doba-Kribi</span></div>
+ <div class="chapter-stat"><strong>30+</strong><span>Puits workover</span></div>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- Chapitre 3 · Notre engagement souveraineté -->
+ <section class="manifesto-chapter ch-3" aria-labelledby="ch3-h2">
+ <span class="chapter-num" aria-hidden="true">03</span>
+ <div class="container">
+ <div class="chapter-content">
+ <span class="chapter-kicker">Chapitre 03 · Notre engagement souveraineté</span>
+ <h2 class="chapter-h2" id="ch3-h2">
+ <em>Local Content Development</em> · 75-90% talents tchadiens, 0 fatalities, EOR Local breveté.
+ </h2>
+ <p class="chapter-body">
+ EnerTchad ne sera pas un OFS comme les autres. Notre charte fondatrice s'appuie sur <strong>3 engagements non-négociables</strong> :
+ </p>
+ <p class="chapter-body">
+ <strong>1 · LCD ratio 75-90%</strong> · à terme 90% des ETP sont nationaux ou diaspora tchadienne. EnerAcademy™ forme <strong>50→200 ingénieurs/an</strong> aux standards OIMS-grade. Carte diaspora visualise 500+ talents activables (top OFS international London · top OFS international Houston · Total Paris · major NOC Moyen-Orient Dhahran · major NOC Moyen-Orient Abu Dhabi · Petronas KL · major nord-américaine Singapore).
+ </p>
+ <p class="chapter-body">
+ <strong>2 · 0 fatalities · LTIF &lt; 0,5 · TRIR &lt; 1,0</strong> · Système Sécurité Intégré à 16 services (PSM · HSE · WMS · OIM) inspiré framework major O&G internationale 11 éléments. Aucun OFS africain n'a ce cadre · différenciation absolue.
+ </p>
+ <p class="chapter-body">
+ <strong>3 · EOR Local breveté OAPI</strong> · Programme de récupération assistée à base de <strong>5 ressources tchadiennes</strong> · gain ciblé +6-17% OOIP sur 30+ puits matures Doba. Brevet OAPI en cours d'instruction Q3 2026 · inimitable par les majors mondiaux.
+ </p>
+
+ <div class="chapter-stats">
+ <div class="chapter-stat"><strong>75-90%</strong><span>LCD ratio cible</span></div>
+ <div class="chapter-stat"><strong>0</strong><span>Fatalities (commit 2030)</span></div>
+ <div class="chapter-stat"><strong>16</strong><span>Services Sécurité Intégrée</span></div>
+ <div class="chapter-stat"><strong>+6-17%</strong><span>OOIP gain EOR Local</span></div>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- Chapitre 4 · L'opportunité Tour 2026 -->
+ <section class="manifesto-chapter ch-4" aria-labelledby="ch4-h2">
+ <span class="chapter-num" aria-hidden="true">04</span>
+ <div class="container">
+ <div class="chapter-content">
+ <span class="chapter-kicker">Chapitre 04 · L'opportunité Tour 2026</span>
+ <h2 class="chapter-h2" id="ch4-h2">
+ Tour Seed/Pre-A · <em>8-12 M USD</em> · OHADA · closing T3 2026.
+ </h2>
+ <p class="chapter-body">
+ Nous ouvrons aujourd'hui un <strong>Tour Seed/Pre-A de 8-12 M USD</strong>, structure OHADA, closing T3 2026 (<span data-jn>J-151</span>). Ces fonds financent la <strong>Phase 1 · 2026-2027</strong> : siège opérationnel N'Djamena · 25 ETP · EnerAcademy 50 ingénieurs/an · 3 contrats pilotes opérateurs · certifications ISO 9001/14001/45001 · validation services-only model. Cible ARR fin 2027 · <strong>5 M USD</strong>.
+ </p>
+ <p class="chapter-body">
+ 50 investisseurs DFI/VC/Family Office prospectés. <strong>3 MoUs déjà signés · 5 soft commits · 12 NDA actifs · 47% closed</strong> en live tracker public. Premier OFS au monde à exposer sa levée publiquement.
+ </p>
+
+ <blockquote class="chapter-quote">
+ La souveraineté technique du pétrole tchadien · ce n'est pas un projet futur. C'est ce qu'on construit aujourd'hui · ensemble · avec les bons capitaux et les bonnes valeurs.
+ <cite>Cap 2030 · Vision DG EnerTchad</cite>
+ </blockquote>
+
+ <div class="chapter-cta-row">
+ <a class="cta-btn-primary" href="/tour-live/">Tour 2026 · Live tracker</a>
+ <a class="cta-btn-secondary" href="/dataroom/">Dataroom DD (NDA)</a>
+ <a class="cta-btn-secondary" href="/engagement/contact.html">30 min CEO direct</a>
+ </div>
+ </div>
+ </div>
+ </section>
+
+</main>
+
+<footer class="fu-footer" role="contentinfo" data-r140="ultra">
+ <div class="fu-inner">
+ <div class="fu-grid">
+ <div>
+ <p class="fu-brand-name">EnerTchad SA</p>
+ <p class="fu-slogan">Unité · Innovation · Durabilité</p>
+ <p class="fu-positioning">Société <em>parapétrolière</em> (OFS) <strong>100% services techniques</strong> · marché tchadien · OHADA. Aucun asset.</p>
+ <p class="fu-leadership"><strong>DG</strong> Bignéro Moïalbéi Le Madang<br><strong>PCA</strong> Théophile Gag Pinabei</p>
+ </div>
+ <div>
+ <p class="fu-col-h">Navigation · 6 axes</p>
+ <ul class="fu-list">
+ <li><a href="/sitemap.html#mission">01 Mission</a></li>
+ <li><a href="/sitemap.html#activites">02 Activités</a></li>
+ <li><a href="/sitemap.html#transition">03 Transition énergétique</a></li>
+ <li><a href="/sitemap.html#technologies">04 Technologies</a></li>
+ <li><a href="/sitemap.html#engagements">05 Engagements</a></li>
+ <li><a href="/sitemap.html#investisseurs">06 Investisseurs</a></li>
+ </ul>
+ </div>
+ <div>
+ <p class="fu-col-h">Tour 2026 · Pages clés</p>
+ <ul class="fu-list">
+ <li><a href="/engagement/investisseurs.html">Tour Seed/Pre-A</a></li>
+ <li><a href="/dataroom/">Dataroom · NDA</a></li>
+ <li><a href="/dg-office-hours/">DG Office Hours</a></li>
+ <li><a href="/ai-concierge/">AI Concierge</a></li>
+ <li><a href="/marques/">4 marques™ + 2 projets</a></li>
+ <li><a href="/data/atlas.html">Atlas marché</a></li>
+ </ul>
+ </div>
+ <div>
+ <p class="fu-col-h">Newsletter Tour 2026</p>
+ <p class="fu-newsletter-desc">Actualités investisseurs · avancées catalogue OFS · <span data-jn>J-150</span> closing.</p>
+ <form class="fu-newsletter-form" action="https://formspree.io/f/enertchad-newsletter" method="POST" novalidate>
+ <input type="email" name="email" placeholder="email@exemple.com" required aria-label="Adresse email">
+ <button type="submit">S&rsquo;inscrire ↗</button>
+ </form>
+ <p class="fu-newsletter-fineprint">RGPD · désinscription 1-clic · données EU-West chiffrées</p>
+ </div>
+ </div>
+ <div class="fu-meta">
+ <div class="fu-badges">
+ <span class="fu-badge">ITIE</span>
+ <span class="fu-badge">OHADA</span>
+ <span class="fu-badge">ISO 9001 · 14001 · 45001</span>
+ <span class="fu-badge">OAPI 2026</span>
+ </div>
+ <div class="fu-legal">
+ <span>© 2026 <strong>EnerTchad SA</strong></span>
+ <span class="fu-sep">·</span>
+ <span>RCCM N&rsquo;DJ/RC/2026-A-0001</span>
+ <span class="fu-sep">·</span>
+ <span>Capital 10 000 000 FCFA</span>
+ <span class="fu-sep">·</span>
+ <a href="/sitemap.html">Plan du site</a>
+ <span class="fu-sep">·</span>
+ <a href="/legal/mentions-legales.html">Mentions légales</a>
+ <span class="fu-sep">·</span>
+ <a href="/legal/confidentialite.html">Confidentialité</a>
+ <span class="fu-sep">·</span>
+ <a href="/legal/cookies.html">Cookies</a>
+ </div>
+ </div>
+ </div>
+</footer>
+
+
+<script defer src="/assets/js/enertchad.js"></script>
+
+ <script defer src="/assets/js/jn-counter.js?v=r128"></script>
+ <script defer src="/assets/js/header-ultra.js?v=r140"></script>
+ <script defer src="/assets/js/ux-r146.js?v=r146"></script>
+ <script defer src="/assets/js/megamenu-r154.js?v=r154"></script>
+</body>
+</html>

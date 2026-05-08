@@ -1,0 +1,1089 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+ <meta name="view-transition" content="same-origin">
+ <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link rel="preload" as="style" href="/assets/css/enertchad.css?v=r179">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pipeline 360° · Digital Twin Doba-Kribi — EnerTchad SA</title>
+<meta name="description" content="Démonstration live Pipeline Integrity 360° EnerTchad · digital twin Doba-Kribi 1 070 km · scrubber temporel · capteurs SCADA virtuels · IA leak detection…">
+<link rel="canonical" href="https://enertchad-groupe.pages.dev/intermediaire/pipeline-360-demo/">
+<link rel="stylesheet" href="/assets/css/ux-r146.css?v=r179" />
+<link rel="stylesheet" href="/assets/css/megamenu-r154.css?v=r179" />
+<link rel="stylesheet" href="/assets/css/header-ultra.css?v=r179" />
+<link rel="stylesheet" href="/assets/css/enertchad.css?v=r179">
+<link rel="icon" href="/assets/favicon.svg">
+<style>
+ body[data-page="pipeline-360-demo"] {
+ background: linear-gradient(180deg, #050810 0%, #080E1A 50%, #060912 100%);
+ color: var(--cream, #F6F1E6);
+ }
+
+ /* Hero */
+ .p360-hero {
+ padding: clamp(60px, 10vh, 100px) 0 clamp(30px, 5vw, 50px);
+ text-align: center;
+ }
+ .p360-kicker {
+ display: inline-flex;
+ align-items: center;
+ gap: 10px;
+ padding: 8px 18px;
+ border-radius: 999px;
+ border: 1px solid rgba(74, 144, 226, 0.35);
+ background: rgba(74, 144, 226, 0.08);
+ font-family: var(--font-display, 'Space Grotesk', sans-serif);
+ font-size: 11px;
+ font-weight: 700;
+ letter-spacing: 0.18em;
+ text-transform: uppercase;
+ color: #6BAEEC;
+ margin-bottom: 24px;
+ }
+ .p360-pulse {
+ display: inline-block;
+ width: 8px;
+ height: 8px;
+ border-radius: 50%;
+ background: #6BAEEC;
+ box-shadow: 0 0 0 0 rgba(107, 174, 236, 0.7);
+ animation: p360-pulse 2s ease-in-out infinite;
+ }
+ @keyframes p360-pulse {
+ 0%, 100% { box-shadow: 0 0 0 0 rgba(107, 174, 236, 0.7); }
+ 50% { box-shadow: 0 0 0 8px rgba(107, 174, 236, 0); }
+ }
+ .p360-h1 {
+ font-family: var(--font-display, 'Space Grotesk', sans-serif);
+ font-size: clamp(40px, 7vw, 96px);
+ font-weight: 700;
+ letter-spacing: -0.035em;
+ line-height: 0.95;
+ color: var(--cream);
+ margin: 0 auto 18px;
+ max-width: 18ch;
+ }
+ .p360-h1 em {
+ font-style: normal;
+ color: #6BAEEC;
+ }
+ .p360-lead {
+ font-size: clamp(15px, 1.4vw, 18px);
+ line-height: 1.6;
+ color: rgba(246, 241, 230, 0.78);
+ max-width: 740px;
+ margin: 0 auto 16px;
+ }
+ .p360-sublead {
+ font-size: 12px;
+ color: rgba(246, 241, 230, 0.45);
+ font-family: var(--font-display);
+ letter-spacing: 0.08em;
+ text-transform: uppercase;
+ }
+
+ /* Twin canvas */
+ .p360-canvas {
+ max-width: 1280px;
+ margin: 50px auto 0;
+ padding: 0 clamp(20px, 4vw, 60px);
+ }
+ .p360-twin {
+ background: rgba(255,255,255,0.02);
+ border: 1px solid rgba(74, 144, 226, 0.18);
+ border-radius: 18px;
+ padding: 32px;
+ position: relative;
+ overflow: hidden;
+ }
+ .p360-twin-h {
+ display: flex;
+ justify-content: space-between;
+ align-items: baseline;
+ flex-wrap: wrap;
+ gap: 20px;
+ margin-bottom: 24px;
+ }
+ .p360-twin-h-title {
+ font-family: var(--font-display);
+ font-size: 20px;
+ font-weight: 700;
+ color: var(--cream);
+ margin: 0;
+ }
+ .p360-twin-h-meta {
+ font-size: 12px;
+ color: rgba(246, 241, 230, 0.55);
+ font-family: var(--font-display);
+ letter-spacing: 0.06em;
+ }
+ .p360-twin-h-status {
+ display: inline-flex;
+ align-items: center;
+ gap: 6px;
+ padding: 4px 10px;
+ border-radius: 999px;
+ background: rgba(16, 185, 129, 0.1);
+ border: 1px solid rgba(16, 185, 129, 0.3);
+ color: #10b981;
+ font-family: var(--font-display);
+ font-size: 11px;
+ font-weight: 700;
+ letter-spacing: 0.1em;
+ text-transform: uppercase;
+ }
+ .p360-twin-h-status[data-state="alert"] {
+ background: rgba(239, 68, 68, 0.1);
+ border-color: rgba(239, 68, 68, 0.3);
+ color: #ef4444;
+ }
+ .p360-twin-h-dot {
+ width: 6px;
+ height: 6px;
+ border-radius: 50%;
+ background: currentColor;
+ animation: p360-pulse-mini 1.5s ease-in-out infinite;
+ }
+ @keyframes p360-pulse-mini {
+ 0%, 100% { opacity: 1; }
+ 50% { opacity: 0.3; }
+ }
+
+ /* SVG pipeline visualization */
+ .p360-svg-wrap {
+ width: 100%;
+ overflow: hidden;
+ border-radius: 12px;
+ background: linear-gradient(180deg, rgba(74, 144, 226, 0.04), rgba(74, 144, 226, 0.01));
+ padding: 16px 8px;
+ margin-bottom: 24px;
+ }
+ .p360-svg {
+ width: 100%;
+ height: auto;
+ display: block;
+ }
+ .p360-pipeline-track {
+ fill: none;
+ stroke: rgba(255,255,255,0.1);
+ stroke-width: 6;
+ stroke-linecap: round;
+ }
+ .p360-pipeline-flow {
+ fill: none;
+ stroke: url(#flowGradient);
+ stroke-width: 4;
+ stroke-linecap: round;
+ stroke-dasharray: 8 4;
+ animation: p360-flow 1.5s linear infinite;
+ }
+ @keyframes p360-flow {
+ 0% { stroke-dashoffset: 0; }
+ 100% { stroke-dashoffset: -24; }
+ }
+ .p360-pipeline-leak {
+ fill: #ef4444;
+ opacity: 0;
+ transform-origin: center;
+ }
+ .p360-pipeline-leak.is-detected {
+ opacity: 1;
+ animation: p360-blink 0.8s ease-in-out infinite;
+ }
+ @keyframes p360-blink {
+ 0%, 100% { transform: scale(1); opacity: 1; }
+ 50% { transform: scale(1.4); opacity: 0.6; }
+ }
+ .p360-pipeline-marker {
+ fill: var(--gold, #C9B57B);
+ stroke: #050810;
+ stroke-width: 2;
+ transition: cx 200ms ease-out;
+ }
+ .p360-station {
+ fill: rgba(255,255,255,0.6);
+ }
+ .p360-station-label {
+ fill: rgba(246, 241, 230, 0.6);
+ font-family: 'Space Grotesk', sans-serif;
+ font-size: 10px;
+ font-weight: 600;
+ letter-spacing: 0.05em;
+ }
+ .p360-axis-label {
+ fill: rgba(246, 241, 230, 0.4);
+ font-family: 'Space Grotesk', sans-serif;
+ font-size: 9px;
+ letter-spacing: 0.08em;
+ text-transform: uppercase;
+ }
+
+ /* Scrubber */
+ .p360-scrubber {
+ margin: 8px 0 24px;
+ }
+ .p360-scrubber-row {
+ display: flex;
+ align-items: center;
+ gap: 16px;
+ margin-bottom: 8px;
+ }
+ .p360-scrubber-input {
+ flex: 1;
+ -webkit-appearance: none;
+ appearance: none;
+ height: 6px;
+ background: rgba(255,255,255,0.08);
+ border-radius: 3px;
+ outline: none;
+ }
+ .p360-scrubber-input::-webkit-slider-thumb {
+ -webkit-appearance: none;
+ width: 18px;
+ height: 18px;
+ background: var(--gold, #C9B57B);
+ border: 3px solid #050810;
+ border-radius: 50%;
+ cursor: grab;
+ }
+ .p360-scrubber-input::-moz-range-thumb {
+ width: 18px;
+ height: 18px;
+ background: var(--gold, #C9B57B);
+ border: 3px solid #050810;
+ border-radius: 50%;
+ cursor: grab;
+ }
+ .p360-scrubber-input:focus-visible {
+ outline: 2px solid var(--gold);
+ outline-offset: 4px;
+ }
+ .p360-scrubber-readout {
+ font-family: var(--font-display);
+ font-size: 14px;
+ font-weight: 700;
+ color: var(--cream);
+ min-width: 110px;
+ text-align: right;
+ font-variant-numeric: tabular-nums;
+ }
+ .p360-scrubber-readout em {
+ color: var(--gold);
+ font-style: normal;
+ }
+ .p360-scrubber-axis {
+ display: flex;
+ justify-content: space-between;
+ font-family: var(--font-display);
+ font-size: 10px;
+ color: rgba(246, 241, 230, 0.4);
+ letter-spacing: 0.08em;
+ }
+
+ /* Sensors grid */
+ .p360-sensors {
+ display: grid;
+ grid-template-columns: repeat(4, 1fr);
+ gap: 14px;
+ }
+ @media (max-width: 768px) {
+ .p360-sensors {
+ grid-template-columns: 1fr 1fr;
+ }
+ }
+ .p360-sensor {
+ background: rgba(0,0,0,0.3);
+ border: 1px solid rgba(255,255,255,0.08);
+ border-radius: 12px;
+ padding: 18px;
+ transition: border-color 200ms;
+ }
+ .p360-sensor[data-anomaly="true"] {
+ border-color: rgba(239, 68, 68, 0.5);
+ background: rgba(239, 68, 68, 0.04);
+ }
+ .p360-sensor-label {
+ font-family: var(--font-display);
+ font-size: 10px;
+ font-weight: 700;
+ letter-spacing: 0.14em;
+ text-transform: uppercase;
+ color: rgba(246, 241, 230, 0.55);
+ margin-bottom: 8px;
+ display: flex;
+ align-items: center;
+ gap: 6px;
+ }
+ .p360-sensor-icon {
+ font-size: 14px;
+ opacity: 0.7;
+ }
+ .p360-sensor-value {
+ font-family: var(--font-display);
+ font-size: clamp(26px, 3vw, 36px);
+ font-weight: 700;
+ letter-spacing: -0.02em;
+ color: var(--cream);
+ line-height: 1;
+ font-variant-numeric: tabular-nums lining-nums;
+ transition: color 200ms;
+ }
+ .p360-sensor[data-anomaly="true"] .p360-sensor-value {
+ color: #ef4444;
+ }
+ .p360-sensor-unit {
+ font-size: 0.5em;
+ color: rgba(246, 241, 230, 0.5);
+ font-weight: 500;
+ margin-left: 4px;
+ }
+ .p360-sensor-trend {
+ margin-top: 8px;
+ font-size: 11px;
+ color: rgba(246, 241, 230, 0.5);
+ font-family: var(--font-display);
+ }
+ .p360-sensor-trend.up { color: #10b981; }
+ .p360-sensor-trend.down { color: #ef4444; }
+
+ /* Toggle AI */
+ .p360-ai-toggle {
+ margin: 32px auto;
+ max-width: 1280px;
+ padding: 0 clamp(20px, 4vw, 60px);
+ }
+ .p360-ai-card {
+ background: linear-gradient(135deg, rgba(74, 144, 226, 0.06), rgba(74, 144, 226, 0.02));
+ border: 1px solid rgba(74, 144, 226, 0.2);
+ border-radius: 16px;
+ padding: 32px;
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 32px;
+ }
+ @media (max-width: 768px) {
+ .p360-ai-card {
+ grid-template-columns: 1fr;
+ }
+ }
+ .p360-ai-side {
+ border-radius: 12px;
+ padding: 20px;
+ background: rgba(0,0,0,0.2);
+ border: 1px solid rgba(255,255,255,0.04);
+ transition: border-color 200ms, background 200ms;
+ }
+ .p360-ai-side.is-with {
+ border-color: rgba(16, 185, 129, 0.3);
+ }
+ .p360-ai-side.is-without {
+ border-color: rgba(239, 68, 68, 0.2);
+ }
+ .p360-ai-side-h {
+ display: flex;
+ align-items: center;
+ gap: 8px;
+ margin-bottom: 16px;
+ }
+ .p360-ai-side-tag {
+ font-family: var(--font-display);
+ font-size: 10px;
+ font-weight: 700;
+ letter-spacing: 0.14em;
+ text-transform: uppercase;
+ padding: 3px 8px;
+ border-radius: 4px;
+ }
+ .p360-ai-side.is-with .p360-ai-side-tag {
+ background: rgba(16, 185, 129, 0.15);
+ color: #10b981;
+ }
+ .p360-ai-side.is-without .p360-ai-side-tag {
+ background: rgba(239, 68, 68, 0.15);
+ color: #ef4444;
+ }
+ .p360-ai-side-h h3 {
+ font-family: var(--font-display);
+ font-size: 18px;
+ font-weight: 700;
+ color: var(--cream);
+ margin: 0;
+ }
+ .p360-ai-stats {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 12px;
+ }
+ .p360-ai-stat {
+ padding: 12px;
+ background: rgba(255,255,255,0.02);
+ border-radius: 8px;
+ }
+ .p360-ai-stat-value {
+ font-family: var(--font-display);
+ font-size: 22px;
+ font-weight: 700;
+ color: var(--cream);
+ letter-spacing: -0.01em;
+ line-height: 1;
+ margin-bottom: 4px;
+ font-variant-numeric: tabular-nums;
+ }
+ .p360-ai-side.is-with .p360-ai-stat-value { color: #10b981; }
+ .p360-ai-side.is-without .p360-ai-stat-value { color: #ef4444; }
+ .p360-ai-stat-label {
+ font-size: 11px;
+ color: rgba(246, 241, 230, 0.55);
+ line-height: 1.3;
+ }
+
+ /* How it works · 3 steps */
+ .p360-how {
+ max-width: 1280px;
+ margin: 80px auto 60px;
+ padding: 0 clamp(20px, 4vw, 60px);
+ }
+ .p360-how-h {
+ font-family: var(--font-display);
+ font-size: clamp(28px, 4vw, 44px);
+ font-weight: 700;
+ letter-spacing: -0.02em;
+ color: var(--cream);
+ margin: 0 0 32px;
+ max-width: 22ch;
+ line-height: 1.05;
+ }
+ .p360-how-h em {
+ color: #6BAEEC;
+ font-style: normal;
+ }
+ .p360-how-grid {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: 24px;
+ }
+ @media (max-width: 768px) {
+ .p360-how-grid {
+ grid-template-columns: 1fr;
+ }
+ }
+ .p360-how-card {
+ background: rgba(255,255,255,0.02);
+ border: 1px solid rgba(255,255,255,0.06);
+ border-radius: 14px;
+ padding: 24px;
+ transition: border-color 200ms;
+ }
+ .p360-how-card:hover {
+ border-color: rgba(74, 144, 226, 0.3);
+ }
+ .p360-how-num {
+ font-family: var(--font-display);
+ font-size: 12px;
+ font-weight: 700;
+ letter-spacing: 0.18em;
+ color: #6BAEEC;
+ margin-bottom: 12px;
+ }
+ .p360-how-h3 {
+ font-family: var(--font-display);
+ font-size: 18px;
+ font-weight: 700;
+ color: var(--cream);
+ margin: 0 0 8px;
+ }
+ .p360-how-p {
+ font-size: 14px;
+ line-height: 1.55;
+ color: rgba(246, 241, 230, 0.7);
+ margin: 0;
+ }
+
+ /* CTA */
+ .p360-cta {
+ max-width: 980px;
+ margin: 0 auto 80px;
+ padding: clamp(40px, 6vw, 60px) clamp(28px, 4vw, 48px);
+ background: linear-gradient(135deg, rgba(217, 168, 79, 0.06), rgba(74, 144, 226, 0.04));
+ border: 1px solid rgba(217, 168, 79, 0.18);
+ border-radius: 18px;
+ text-align: center;
+ }
+ .p360-cta h3 {
+ font-family: var(--font-display);
+ font-size: clamp(24px, 3.5vw, 36px);
+ font-weight: 700;
+ letter-spacing: -0.02em;
+ color: var(--cream);
+ margin: 0 0 12px;
+ }
+ .p360-cta p {
+ font-size: 15px;
+ line-height: 1.55;
+ color: rgba(246, 241, 230, 0.7);
+ margin: 0 auto 24px;
+ max-width: 580px;
+ }
+ .p360-cta-row {
+ display: flex;
+ justify-content: center;
+ flex-wrap: wrap;
+ gap: 12px;
+ }
+ .p360-cta-btn-primary,
+ .p360-cta-btn-secondary {
+ display: inline-block;
+ padding: 14px 28px;
+ border-radius: 10px;
+ text-decoration: none;
+ font-family: var(--font-display);
+ font-weight: 700;
+ font-size: 13px;
+ letter-spacing: 0.06em;
+ text-transform: uppercase;
+ transition: transform 150ms, filter 200ms;
+ }
+ .p360-cta-btn-primary {
+ background: var(--gold, #C9B57B);
+ color: #050810;
+ }
+ .p360-cta-btn-primary:hover {
+ transform: translateY(-1px);
+ filter: brightness(1.08);
+ }
+ .p360-cta-btn-secondary {
+ background: transparent;
+ color: var(--cream);
+ border: 1.5px solid rgba(246, 241, 230, 0.25);
+ }
+ .p360-cta-btn-secondary:hover {
+ border-color: var(--gold);
+ color: var(--gold);
+ }
+
+ /* Disclaimer */
+ .p360-disclaimer {
+ max-width: 1000px;
+ margin: 0 auto 80px;
+ padding: 0 clamp(20px, 4vw, 60px);
+ font-size: 11.5px;
+ line-height: 1.6;
+ color: rgba(246, 241, 230, 0.4);
+ text-align: center;
+ }
+</style>
+
+ <meta property="og:image" content="https://enertchad.td/assets/images/enertchad-intermediaire-pipeline-01.webp" />
+ <meta property="og:url" content="https://enertchad-groupe.pages.dev/intermediaire/pipeline-360-demo/" />
+ <meta property="og:type" content="website" />
+ <meta name="twitter:card" content="summary_large_image" />
+
+ <meta property="og:title" content="Pipeline 360° · Digital Twin Doba-Kribi — EnerTchad SA" />
+ <meta property="og:description" content="Démonstration live Pipeline Integrity 360° EnerTchad · digital twin Doba-Kribi 1 070 km · scrubber temporel · capteurs SCADA virtuels · IA leak detection · pression flow température · différentiel avec/sans IA." />
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Pipeline Integrity 360° · Digital Twin Doba-Kribi","serviceType":"Pipeline integrity monitoring + AI leak detection","provider":{"@type":"Organization","name":"EnerTchad SA"},"description":"Démonstration live digital twin pipeline Doba-Kribi 1 070 km · 247 capteurs SCADA virtuels · IA edge inference · détection fuite 8 sec vs 52 min sans IA · ±15 m précision localisation.","areaServed":{"@type":"Country","name":"Tchad"},"url":"https://enertchad-groupe.pages.dev/intermediaire/pipeline-360-demo/"}</script>
+<link rel="alternate" hreflang="fr" href="https://www.enertchad.td/intermediaire/pipeline-360-demo/" />
+<link rel="alternate" hreflang="x-default" href="https://www.enertchad.td/intermediaire/pipeline-360-demo/" />
+ <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://www.enertchad.td/"},{"@type":"ListItem","position":2,"name":"Activités","item":"https://www.enertchad.td/sitemap.html#activites"},{"@type":"ListItem","position":3,"name":"Intermédiaire","item":"https://www.enertchad.td/intermediaire/"},{"@type":"ListItem","position":4,"name":"Pipeline 360°","item":"https://www.enertchad.td/intermediaire/pipeline-360-demo"}]}</script>
+</head>
+<body data-page="pipeline-360-demo">
+<!-- R140 · ULTRA PREMIUM Header · FR -->
+<header class="hu-header" role="banner" data-r140="ultra">
+ <div class="hu-inner">
+ <a class="hu-brand" href="/" aria-label="EnerTchad SA · accueil">
+ <img class="hu-logo" src="/assets/images/logo.svg" alt="" width="44" height="44" loading="eager" decoding="async" />
+ <span class="hu-brand-text">EnerTchad <em>SA</em><span class="hu-brand-tag">Société parapétrolière · OFS</span></span>
+ </a>
+ <nav class="hu-nav" aria-label="Navigation principale">
+ <a class="hu-nav-link" data-mm="mission" href="/sitemap.html#mission">Mission</a>
+ <a class="hu-nav-link" data-mm="activites" href="/sitemap.html#activites">Activités</a>
+ <a class="hu-nav-link" data-mm="transition" href="/sitemap.html#transition">Transition</a>
+ <a class="hu-nav-link" data-mm="technologies" href="/sitemap.html#technologies">Technologies</a>
+ <a class="hu-nav-link" data-mm="engagements" href="/sitemap.html#engagements">Engagements</a>
+ <a class="hu-nav-link" data-mm="investisseurs" href="/sitemap.html#investisseurs">Investisseurs</a>
+ </nav>
+ <div class="hu-right">
+ <span class="hu-lang" aria-label="Langue">
+ <a href="/" hreflang="fr" aria-current="true">FR</a>
+ <span aria-hidden="true">·</span>
+ <a href="/en/" hreflang="en">EN</a>
+ </span>
+ <a class="hu-cta" href="/engagement/investisseurs.html">Tour 2026 <span class="hu-cta-arrow">↗</span></a>
+ <button class="hu-burger" type="button" aria-label="Menu" aria-expanded="false">
+ <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true">
+ <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+ </svg>
+ </button>
+ </div>
+ </div>
+</header>
+
+ <!-- R146 · Breadcrumb -->
+ <nav class="bc-r146" aria-label="Fil d'ariane">
+ <ol>
+ <li><a href="/">Accueil</a></li>
+ <li><a href="/sitemap.html#activites">Activités</a></li>
+ <li><a href="/intermediaire/">Intermédiaire</a></li>
+ <li aria-current="page">Pipeline 360°</li>
+ </ol>
+ </nav>
+
+<aside class="hu-drawer" aria-hidden="true">
+ <button class="hu-drawer-close" aria-label="Fermer">×</button>
+ <a href="/sitemap.html#mission">01 Mission</a>
+ <a href="/sitemap.html#activites">02 Activités</a>
+ <a href="/sitemap.html#transition">03 Transition énergétique</a>
+ <a href="/sitemap.html#technologies">04 Technologies</a>
+ <a href="/sitemap.html#engagements">05 Engagements</a>
+ <a href="/sitemap.html#investisseurs">06 Investisseurs</a>
+ <a href="/sitemap.html">Plan du site</a>
+ <a href="/en/" hreflang="en" style="color:#C9B57B">EN · English ↗</a>
+</aside>
+<div class="hu-backdrop" aria-hidden="true"></div>
+
+
+<a class="skip-link" href="#main">Aller au contenu principal</a>
+
+<main id="main" tabindex="-1">
+
+ <section class="p360-canvas">
+ <div class="p360-twin">
+
+ <div class="p360-twin-h">
+ <div>
+ <h2 class="p360-twin-h-title">Doba-Kribi · 1 070 km · digital twin</h2>
+ <p class="p360-twin-h-meta" style="margin:4px 0 0">8 stations de pompage · 247 capteurs SCADA · IA edge inference</p>
+ </div>
+ <div>
+ <span class="p360-twin-h-status" data-twin-status>
+ <span class="p360-twin-h-dot" aria-hidden="true"></span>
+ <span data-twin-status-label>Nominal</span>
+ </span>
+ </div>
+ </div>
+
+ <!-- SVG twin -->
+ <div class="p360-svg-wrap">
+ <svg class="p360-svg" viewBox="0 0 1100 220" role="img" aria-labelledby="twin-svg-title">
+ <title id="twin-svg-title">Schéma pipeline Doba-Kribi 1 070 km avec stations de pompage et marqueur de position</title>
+ <defs>
+ <linearGradient id="flowGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+ <stop offset="0%" stop-color="#6BAEEC" stop-opacity="0.4"/>
+ <stop offset="50%" stop-color="#6BAEEC" stop-opacity="1"/>
+ <stop offset="100%" stop-color="#6BAEEC" stop-opacity="0.4"/>
+ </linearGradient>
+ </defs>
+
+ <!-- Tchad / Cameroon labels -->
+ <text x="40" y="30" class="p360-axis-label">TCHAD</text>
+ <text x="980" y="30" class="p360-axis-label" text-anchor="end">CAMEROUN</text>
+
+ <!-- Pipeline track -->
+ <line class="p360-pipeline-track" x1="50" y1="110" x2="1050" y2="110"/>
+ <line class="p360-pipeline-flow" x1="50" y1="110" x2="1050" y2="110"/>
+
+ <!-- Stations (8 pumping stations along 1 070 km) -->
+ <g>
+ <circle class="p360-station" cx="50" cy="110" r="8"/>
+ <text class="p360-station-label" x="50" y="145" text-anchor="middle">DOBA · km 0</text>
+ </g>
+ <g>
+ <circle class="p360-station" cx="195" cy="110" r="6"/>
+ <text class="p360-station-label" x="195" y="142" text-anchor="middle">PS-1 · km 156</text>
+ </g>
+ <g>
+ <circle class="p360-station" cx="320" cy="110" r="6"/>
+ <text class="p360-station-label" x="320" y="142" text-anchor="middle">PS-2 · km 290</text>
+ </g>
+ <g>
+ <circle class="p360-station" cx="445" cy="110" r="6"/>
+ <text class="p360-station-label" x="445" y="142" text-anchor="middle">PS-3 · km 423</text>
+ </g>
+ <!-- Leak indicator at PS-3 (km 423) -->
+ <g transform="translate(445, 110)">
+ <circle class="p360-pipeline-leak" data-leak-marker r="14" cx="0" cy="0"/>
+ </g>
+ <g>
+ <circle class="p360-station" cx="575" cy="110" r="6"/>
+ <text class="p360-station-label" x="575" y="142" text-anchor="middle">PS-4 · km 562</text>
+ </g>
+ <g>
+ <circle class="p360-station" cx="700" cy="110" r="6"/>
+ <text class="p360-station-label" x="700" y="142" text-anchor="middle">PS-5 · km 698</text>
+ </g>
+ <g>
+ <circle class="p360-station" cx="830" cy="110" r="6"/>
+ <text class="p360-station-label" x="830" y="142" text-anchor="middle">PS-6 · km 835</text>
+ </g>
+ <g>
+ <circle class="p360-station" cx="955" cy="110" r="6"/>
+ <text class="p360-station-label" x="955" y="142" text-anchor="middle">PS-7 · km 970</text>
+ </g>
+ <g>
+ <circle class="p360-station" cx="1050" cy="110" r="8"/>
+ <text class="p360-station-label" x="1050" y="145" text-anchor="middle">KRIBI · km 1070</text>
+ </g>
+
+ <!-- Position marker -->
+ <g>
+ <circle class="p360-pipeline-marker" data-marker cx="50" cy="110" r="10"/>
+ </g>
+
+ <!-- Direction arrow -->
+ <text x="550" y="80" class="p360-axis-label" text-anchor="middle">→ flow direction · 240 000 bbl/j brut Doba</text>
+ </svg>
+ </div>
+
+ <!-- Scrubber -->
+ <div class="p360-scrubber">
+ <div class="p360-scrubber-row">
+ <input
+ type="range"
+ min="0"
+ max="1070"
+ value="0"
+ step="1"
+ class="p360-scrubber-input"
+ data-scrubber
+ aria-label="Position le long du pipeline en kilomètres"
+ />
+ <div class="p360-scrubber-readout">
+ Position · <em><span data-readout-km>0</span> km</em>
+ </div>
+ </div>
+ <div class="p360-scrubber-axis">
+ <span>Doba · km 0</span>
+ <span>PS-3 · 423</span>
+ <span>PS-5 · 698</span>
+ <span>Kribi · 1070</span>
+ </div>
+ </div>
+
+ <!-- Sensor cards -->
+ <div class="p360-sensors" data-sensors>
+ <div class="p360-sensor" data-sensor="pressure">
+ <div class="p360-sensor-label">
+ <span class="p360-sensor-icon" aria-hidden="true">⏱</span>Pression
+ </div>
+ <div class="p360-sensor-value">
+ <span data-sensor-pressure>89.2</span><span class="p360-sensor-unit">bar</span>
+ </div>
+ <div class="p360-sensor-trend" data-trend-pressure>nominal · 85-95 bar</div>
+ </div>
+
+ <div class="p360-sensor" data-sensor="flow">
+ <div class="p360-sensor-label">
+ <span class="p360-sensor-icon" aria-hidden="true"></span>Débit
+ </div>
+ <div class="p360-sensor-value">
+ <span data-sensor-flow>9 856</span><span class="p360-sensor-unit">m³/h</span>
+ </div>
+ <div class="p360-sensor-trend" data-trend-flow>nominal · ±2% target</div>
+ </div>
+
+ <div class="p360-sensor" data-sensor="temp">
+ <div class="p360-sensor-label">
+ <span class="p360-sensor-icon" aria-hidden="true">🌡</span>Température
+ </div>
+ <div class="p360-sensor-value">
+ <span data-sensor-temp>62.4</span><span class="p360-sensor-unit">°C</span>
+ </div>
+ <div class="p360-sensor-trend" data-trend-temp>nominal · 55-70 °C</div>
+ </div>
+
+ <div class="p360-sensor" data-sensor="vibration">
+ <div class="p360-sensor-label">
+ <span class="p360-sensor-icon" aria-hidden="true"></span>Vibration
+ </div>
+ <div class="p360-sensor-value">
+ <span data-sensor-vib>0.18</span><span class="p360-sensor-unit">mm/s</span>
+ </div>
+ <div class="p360-sensor-trend" data-trend-vib>nominal · ISO 10816</div>
+ </div>
+ </div>
+
+ </div>
+ </section>
+
+ <!-- AI vs no-AI comparison -->
+ <section class="p360-ai-toggle">
+ <div class="p360-ai-card">
+
+ <div class="p360-ai-side is-without">
+ <div class="p360-ai-side-h">
+ <span class="p360-ai-side-tag">Sans IA · état historique</span>
+ </div>
+ <h3 style="font-family:var(--font-display);font-size:18px;color:var(--cream);margin:0 0 16px">SCADA seul · seuils statiques</h3>
+ <div class="p360-ai-stats">
+ <div class="p360-ai-stat">
+ <div class="p360-ai-stat-value">52 min</div>
+ <div class="p360-ai-stat-label">Délai de détection moyen</div>
+ </div>
+ <div class="p360-ai-stat">
+ <div class="p360-ai-stat-value">~280 m³</div>
+ <div class="p360-ai-stat-label">Volume déversé / incident</div>
+ </div>
+ <div class="p360-ai-stat">
+ <div class="p360-ai-stat-value">±15 km</div>
+ <div class="p360-ai-stat-label">Précision localisation</div>
+ </div>
+ <div class="p360-ai-stat">
+ <div class="p360-ai-stat-value">2,1 M$</div>
+ <div class="p360-ai-stat-label">Coût moyen / incident</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="p360-ai-side is-with">
+ <div class="p360-ai-side-h">
+ <span class="p360-ai-side-tag">Avec IA EnerTchad · Pipeline 360°</span>
+ </div>
+ <h3 style="font-family:var(--font-display);font-size:18px;color:var(--cream);margin:0 0 16px">SCADA + IA edge + acoustique</h3>
+ <div class="p360-ai-stats">
+ <div class="p360-ai-stat">
+ <div class="p360-ai-stat-value">8 sec</div>
+ <div class="p360-ai-stat-label">Délai de détection moyen</div>
+ </div>
+ <div class="p360-ai-stat">
+ <div class="p360-ai-stat-value">~12 m³</div>
+ <div class="p360-ai-stat-label">Volume déversé / incident</div>
+ </div>
+ <div class="p360-ai-stat">
+ <div class="p360-ai-stat-value">±15 m</div>
+ <div class="p360-ai-stat-label">Précision localisation</div>
+ </div>
+ <div class="p360-ai-stat">
+ <div class="p360-ai-stat-value">82 K$</div>
+ <div class="p360-ai-stat-label">Coût moyen / incident</div>
+ </div>
+ </div>
+ </div>
+
+ </div>
+ </section>
+
+ <!-- How it works -->
+ <section class="p360-how" aria-labelledby="p360-how-h">
+ <h2 class="p360-how-h" id="p360-how-h">3 couches d'<em>intelligence</em>, une seule architecture.</h2>
+ <div class="p360-how-grid">
+ <article class="p360-how-card">
+ <div class="p360-how-num">01 · INSTRUMENTATION</div>
+ <h3 class="p360-how-h3">247 capteurs SCADA + acoustique</h3>
+ <p class="p360-how-p">Pression · débit · température · vibration · fibre optique distribuée (DAS) · drones acoustiques inspection trimestrielle. Couverture continue 1 070 km avec redondance N+1.</p>
+ </article>
+ <article class="p360-how-card">
+ <div class="p360-how-num">02 · IA EDGE</div>
+ <h3 class="p360-how-h3">Modèles edge déployés sur 8 stations</h3>
+ <p class="p360-how-p">Détection anomalies temps réel · pattern matching multi-capteur · réseaux neuronaux entraînés sur 5 ans datasets Doba-Kribi + transfer learning depuis pipelines majors. Inférence < 200 ms.</p>
+ </article>
+ <article class="p360-how-card">
+ <div class="p360-how-num">03 · OPS RESPONSE</div>
+ <h3 class="p360-how-h3">Alerte SOC + fermeture vannes auto</h3>
+ <p class="p360-how-p">Détection → SOC EnerTchad N'Djamena (24/7) → fermeture automatique vannes amont/aval en 12 sec → équipe terrain mobilisée GPS coords ±15 m. Conformité OIMS / API 1130.</p>
+ </article>
+ </div>
+ </section>
+
+ <!-- CTA -->
+ <section class="p360-cta">
+ <h3>Cette démo, en condition réelle, sur votre pipeline.</h3>
+ <p>Pipeline Integrity 360° est l'une de nos 6 solutions umbrella™. Brief technique 12 pages · cas d'usage Doba-Kribi · roadmap intégration 90 jours sur demande.</p>
+ <div class="p360-cta-row">
+ <a class="p360-cta-btn-primary" href="/intermediaire/">Voir Pôle Intermédiaire</a>
+ <a class="p360-cta-btn-secondary" href="/dg-office-hours/">Discuter avec le DG · 30 min</a>
+ </div>
+ </section>
+
+ <p class="p360-disclaimer">
+ Démonstration à des fins illustratives basée sur tracé Doba-Kribi public · 1 070 km. Capteurs SCADA virtuels · données fictives mais cohérentes avec ranges opérationnels API 1130 / OIMS. Le digital twin de production EnerTchad sera déployé en pilote post-Tour Seed/Pre-A 2026 sur partenariat opérateur cible (CNPCIC ou Perenco). Spécifications complètes dans dataroom · catégorie 04 · DD Technique.
+ </p>
+
+</main>
+
+<footer class="fu-footer" role="contentinfo" data-r140="ultra">
+ <div class="fu-inner">
+ <div class="fu-grid">
+ <div>
+ <p class="fu-brand-name">EnerTchad SA</p>
+ <p class="fu-slogan">Unité · Innovation · Durabilité</p>
+ <p class="fu-positioning">Société <em>parapétrolière</em> (OFS) <strong>100% services techniques</strong> · marché tchadien · OHADA. Aucun asset.</p>
+ <p class="fu-leadership"><strong>DG</strong> Bignéro Moïalbéi Le Madang<br><strong>PCA</strong> Théophile Gag Pinabei</p>
+ </div>
+ <div>
+ <p class="fu-col-h">Navigation · 6 axes</p>
+ <ul class="fu-list">
+ <li><a href="/sitemap.html#mission">01 Mission</a></li>
+ <li><a href="/sitemap.html#activites">02 Activités</a></li>
+ <li><a href="/sitemap.html#transition">03 Transition énergétique</a></li>
+ <li><a href="/sitemap.html#technologies">04 Technologies</a></li>
+ <li><a href="/sitemap.html#engagements">05 Engagements</a></li>
+ <li><a href="/sitemap.html#investisseurs">06 Investisseurs</a></li>
+ </ul>
+ </div>
+ <div>
+ <p class="fu-col-h">Tour 2026 · Pages clés</p>
+ <ul class="fu-list">
+ <li><a href="/engagement/investisseurs.html">Tour Seed/Pre-A</a></li>
+ <li><a href="/dataroom/">Dataroom · NDA</a></li>
+ <li><a href="/dg-office-hours/">DG Office Hours</a></li>
+ <li><a href="/ai-concierge/">AI Concierge</a></li>
+ <li><a href="/marques/">4 marques™ + 2 projets</a></li>
+ <li><a href="/data/atlas.html">Atlas marché</a></li>
+ </ul>
+ </div>
+ <div>
+ <p class="fu-col-h">Newsletter Tour 2026</p>
+ <p class="fu-newsletter-desc">Actualités investisseurs · avancées catalogue OFS · <span data-jn>J-150</span> closing.</p>
+ <form class="fu-newsletter-form" action="https://formspree.io/f/enertchad-newsletter" method="POST" novalidate>
+ <input type="email" name="email" placeholder="email@exemple.com" required aria-label="Adresse email">
+ <button type="submit">S&rsquo;inscrire ↗</button>
+ </form>
+ <p class="fu-newsletter-fineprint">RGPD · désinscription 1-clic · données EU-West chiffrées</p>
+ </div>
+ </div>
+ <div class="fu-meta">
+ <div class="fu-badges">
+ <span class="fu-badge">ITIE</span>
+ <span class="fu-badge">OHADA</span>
+ <span class="fu-badge">ISO 9001 · 14001 · 45001</span>
+ <span class="fu-badge">OAPI 2026</span>
+ </div>
+ <div class="fu-legal">
+ <span>© 2026 <strong>EnerTchad SA</strong></span>
+ <span class="fu-sep">·</span>
+ <span>RCCM N&rsquo;DJ/RC/2026-A-0001</span>
+ <span class="fu-sep">·</span>
+ <span>Capital 10 000 000 FCFA</span>
+ <span class="fu-sep">·</span>
+ <a href="/sitemap.html">Plan du site</a>
+ <span class="fu-sep">·</span>
+ <a href="/legal/mentions-legales.html">Mentions légales</a>
+ <span class="fu-sep">·</span>
+ <a href="/legal/confidentialite.html">Confidentialité</a>
+ <span class="fu-sep">·</span>
+ <a href="/legal/cookies.html">Cookies</a>
+ </div>
+ </div>
+ </div>
+</footer>
+
+
+<script defer src="/assets/js/enertchad.js"></script>
+<script>
+ // Pipeline 360° · live scrubber + sensor simulation
+ (function () {
+ var scrubber = document.querySelector('[data-scrubber]');
+ var readoutKm = document.querySelector('[data-readout-km]');
+ var marker = document.querySelector('[data-marker]');
+ var leakMarker = document.querySelector('[data-leak-marker]');
+ var statusBadge = document.querySelector('[data-twin-status]');
+ var statusLabel = document.querySelector('[data-twin-status-label]');
+
+ var sP = document.querySelector('[data-sensor-pressure]');
+ var sF = document.querySelector('[data-sensor-flow]');
+ var sT = document.querySelector('[data-sensor-temp]');
+ var sV = document.querySelector('[data-sensor-vib]');
+ var tP = document.querySelector('[data-trend-pressure]');
+ var tF = document.querySelector('[data-trend-flow]');
+ var tT = document.querySelector('[data-trend-temp]');
+ var tV = document.querySelector('[data-trend-vib]');
+
+ var sensorCards = {
+ pressure: document.querySelector('[data-sensor="pressure"]'),
+ flow: document.querySelector('[data-sensor="flow"]'),
+ temp: document.querySelector('[data-sensor="temp"]'),
+ vib: document.querySelector('[data-sensor="vibration"]')
+ };
+
+ if (!scrubber) return;
+
+ // Map km (0..1070) → SVG x (50..1050)
+ function kmToX(km) {
+ return 50 + (km / 1070) * 1000;
+ }
+
+ // Pseudo-random sensor values based on km position (deterministic for repeatability)
+ function update(km) {
+ var leakActive = (km >= 410 && km <= 436); // window around km 423
+
+ // Move marker
+ marker.setAttribute('cx', kmToX(km).toFixed(1));
+ readoutKm.textContent = km.toString();
+
+ // Leak indicator visibility · only the marker pulses (always visible) but only flagged when in window
+ if (leakActive) {
+ leakMarker.classList.add('is-detected');
+ statusBadge.setAttribute('data-state', 'alert');
+ statusLabel.textContent = 'Anomalie détectée · km 423';
+ } else {
+ leakMarker.classList.remove('is-detected');
+ statusBadge.removeAttribute('data-state');
+ statusLabel.textContent = 'Nominal';
+ }
+
+ // Variations stationnaires + perturbation au km 423
+ var basePressure = 89 + Math.sin(km / 60) * 4 - (km / 1070) * 7;
+ var baseFlow = 9856 - (km / 1070) * 240;
+ var baseTemp = 62 + Math.sin(km / 80) * 2.5 - (km / 1070) * 4;
+ var baseVib = 0.18 + Math.abs(Math.sin(km / 40)) * 0.04;
+
+ if (leakActive) {
+ // Leak signature · pressure drop, flow drop, temp spike, vib spike
+ basePressure -= 14;
+ baseFlow -= 850;
+ baseTemp += 6;
+ baseVib += 0.42;
+ }
+
+ sP.textContent = basePressure.toFixed(1);
+ sF.textContent = Math.round(baseFlow).toLocaleString('fr-FR');
+ sT.textContent = baseTemp.toFixed(1);
+ sV.textContent = baseVib.toFixed(2);
+
+ // Trend labels
+ tP.textContent = leakActive ? 'chute -14 bar · anomalie' : 'nominal · 85-95 bar';
+ tF.textContent = leakActive ? 'chute -8.6% · anomalie' : 'nominal · ±2% target';
+ tT.textContent = leakActive ? '+6°C · friction fuite' : 'nominal · 55-70 °C';
+ tV.textContent = leakActive ? '+0.42 mm/s · anomalie' : 'nominal · ISO 10816';
+
+ // Anomaly state on cards
+ Object.values(sensorCards).forEach(function (c) {
+ if (!c) return;
+ if (leakActive) c.setAttribute('data-anomaly', 'true');
+ else c.removeAttribute('data-anomaly');
+ });
+ }
+
+ scrubber.addEventListener('input', function (e) {
+ update(parseInt(e.target.value, 10));
+ });
+
+ // Init
+ update(0);
+
+ // Auto-demo · cycle slowly through pipeline if user idle
+ var lastInteract = Date.now();
+ scrubber.addEventListener('mousedown', function () { lastInteract = Date.now(); });
+ scrubber.addEventListener('touchstart', function () { lastInteract = Date.now(); });
+ scrubber.addEventListener('keydown', function () { lastInteract = Date.now(); });
+
+ var autoKm = 0, autoDir = 1;
+ setInterval(function () {
+ if (Date.now() - lastInteract < 4000) return;
+ autoKm += autoDir * 7;
+ if (autoKm >= 1070) { autoKm = 1070; autoDir = -1; }
+ if (autoKm <= 0) { autoKm = 0; autoDir = 1; }
+ scrubber.value = autoKm;
+ update(autoKm);
+ }, 220);
+ })();
+</script>
+
+ <script defer src="/assets/js/jn-counter.js?v=r128"></script>
+ <script defer src="/assets/js/header-ultra.js?v=r140"></script>
+ <script defer src="/assets/js/ux-r146.js?v=r146"></script>
+ <script defer src="/assets/js/megamenu-r154.js?v=r154"></script>
+</body>
+</html>

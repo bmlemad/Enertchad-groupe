@@ -1,0 +1,91 @@
+/* ============================================================
+ R288 · Container Queries · cards adaptives
+ Wave R288 · 2026-05-05 · DG mandate modernization
+ Standard 2026 (~95% browser support)
+ Cards/components adaptent au container, pas au viewport
+ ============================================================ */
+
+/* ---- Grid containers · enable container queries ---- */
+.grid,
+.grid-3,
+.editorial-grid,
+.services-overview,
+.r252-grid{
+ container-type: inline-size;
+ container-name: grid;
+}
+
+.section,
+section.page-statement,
+section.operators-orientation{
+ container-type: inline-size;
+ container-name: section;
+}
+
+/* ---- Cards adapt to container width ---- */
+@container grid (max-width: 600px){
+ .card,
+ .card-pole,
+ article.card-pole{
+  /* Stack vertically when container narrows */
+  flex-direction: column;
+  text-align: left;
+ }
+ .card-num{
+  margin-bottom: 8px;
+ }
+}
+
+@container grid (min-width: 800px){
+ /* Wide container · larger card padding */
+ .card,
+ .card-pole{
+  padding: 28px 32px;
+ }
+}
+
+/* ---- Section content adapts ---- */
+@container section (max-width: 480px){
+ .h-display{
+  font-size: clamp(1.4rem, 5vw, 2rem) !important;
+ }
+ .lead{
+  font-size: 0.95rem !important;
+ }
+}
+
+/* ---- Operators orientation grid · adaptive ---- */
+@container section (max-width: 700px){
+ .r252-grid{
+  grid-template-columns: 1fr !important;
+ }
+}
+
+/* ---- Services overview KPIs ---- */
+@container grid (max-width: 540px){
+ .services-overview{
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 10px !important;
+ }
+ .services-overview > div > div:first-child{
+  font-size: 1.3rem !important;
+ }
+}
+
+/* ---- Editorial features cards ---- */
+@container grid (max-width: 700px){
+ .editorial-grid{
+  grid-template-columns: 1fr !important;
+ }
+}
+
+/* ---- Style queries (future · CSS Houdini) ---- */
+/* @container style(--card-style: hero) { ... } */
+
+/* ---- Fallback for browsers without support ---- */
+@supports not (container-type: inline-size){
+ /* Existing media queries continue to apply */
+ @media (max-width: 600px){
+  .grid-3{ grid-template-columns: 1fr !important; }
+ }
+}

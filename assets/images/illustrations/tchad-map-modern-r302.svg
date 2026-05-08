@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Carte moderne Tchad · 5 bassins · 6 opérateurs · Pipeline Doba-Kribi · 4 stations N'Djamena Phase 1">
+ <title>Tchad · Atlas O&amp;G modern map</title>
+ <desc>Carte moderne du Tchad avec 5 bassins canon (Bongor · Doba · Lac · Doseo · Borkou) · pipeline Doba-Kribi 1 070 km · 6 opérateurs · 4 stations N'Djamena Phase 1.</desc>
+
+ <!-- Background gradient -->
+ <defs>
+  <radialGradient id="bgGrad" cx="50%" cy="50%" r="70%">
+   <stop offset="0%" stop-color="#0a1228"/>
+   <stop offset="100%" stop-color="#080E1A"/>
+  </radialGradient>
+  <linearGradient id="goldGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+   <stop offset="0%" stop-color="#C9B57B" stop-opacity="0.25"/>
+   <stop offset="100%" stop-color="#C9B57B" stop-opacity="0.05"/>
+  </linearGradient>
+ </defs>
+
+ <rect width="1200" height="800" fill="url(#bgGrad)"/>
+
+ <!-- Subtle grid -->
+ <g stroke="#C9B57B" stroke-width="0.5" opacity="0.06">
+  <line x1="0" y1="200" x2="1200" y2="200"/>
+  <line x1="0" y1="400" x2="1200" y2="400"/>
+  <line x1="0" y1="600" x2="1200" y2="600"/>
+  <line x1="300" y1="0" x2="300" y2="800"/>
+  <line x1="600" y1="0" x2="600" y2="800"/>
+  <line x1="900" y1="0" x2="900" y2="800"/>
+ </g>
+
+ <!-- Tchad national outline · simplified -->
+ <path d="M 380,180 L 720,160 L 850,200 L 920,360 L 870,580 L 750,680 L 580,720 L 420,680 L 350,540 L 320,380 Z"
+       fill="rgba(217,168,79,0.06)"
+       stroke="#C9B57B"
+       stroke-width="2"
+       stroke-dasharray="0"
+       opacity="0.85"/>
+
+ <!-- Title -->
+ <text x="40" y="50" fill="#C9B57B" font-family="'Space Grotesk',sans-serif" font-size="14" letter-spacing="3.5">ATLAS O&amp;G TCHAD · CARTE MODERNE</text>
+ <text x="40" y="84" fill="#F6F1E6" font-family="'Space Grotesk',sans-serif" font-size="28" font-weight="700">5 bassins · 1 070 km · 6 opérateurs</text>
+ <text x="40" y="108" fill="#F6F1E6" font-family="'Crimson Pro',Georgia,serif" font-style="italic" font-size="16" opacity="0.85">Souveraineté technique post-Esso · Phase 1 N'Djamena.</text>
+
+ <!-- N'Djamena · capital -->
+ <g transform="translate(530,520)">
+  <circle cx="0" cy="0" r="32" fill="rgba(217,168,79,0.12)" stroke="#C9B57B" stroke-width="1" stroke-dasharray="3,3"/>
+  <circle cx="0" cy="0" r="10" fill="#C9B57B" stroke="#080E1A" stroke-width="2"/>
+  <text x="0" y="-44" fill="#C9B57B" font-family="'Space Grotesk',sans-serif" font-size="13" font-weight="700" text-anchor="middle">N'DJAMENA</text>
+  <text x="0" y="-30" fill="#F6F1E6" font-family="'Space Grotesk',sans-serif" font-size="9" text-anchor="middle" opacity="0.7">Capital · 4 stations Phase 1</text>
+ </g>
+
+ <!-- 5 Bassins canon -->
+ <!-- Bongor -->
+ <g transform="translate(440,580)">
+  <ellipse cx="0" cy="0" rx="70" ry="35" fill="url(#goldGlow)" stroke="#C9B57B" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="0" y="6" fill="#F6F1E6" font-family="'Space Grotesk',sans-serif" font-size="12" font-weight="700" text-anchor="middle">BONGOR</text>
+  <text x="0" y="22" fill="#F6F1E6" font-family="'Space Grotesk',sans-serif" font-size="9" text-anchor="middle" opacity="0.7">Bassin sud-ouest</text>
+ </g>
+
+ <!-- Doba (highlighted FLAGSHIP) -->
+ <g transform="translate(620,640)">
+  <ellipse cx="0" cy="0" rx="80" ry="40" fill="rgba(217,168,79,0.22)" stroke="#C9B57B" stroke-width="2.5"/>
+  <text x="0" y="-5" fill="#C9B57B" font-family="'Space Grotesk',sans-serif" font-size="14" font-weight="700" text-anchor="middle">DOBA</text>
+  <text x="0" y="12" fill="#F6F1E6" font-family="'Space Grotesk',sans-serif" font-size="10" text-anchor="middle" opacity="0.85">30 puits matures</text>
+  <text x="0" y="26" fill="#F6F1E6" font-family="'Space Grotesk',sans-serif" font-size="9" text-anchor="middle" opacity="0.65">EOR Local cible</text>
+ </g>
+
+ <!-- Lac Tchad -->
+ <g transform="translate(420,300)">
+  <ellipse cx="0" cy="0" rx="80" ry="38" fill="url(#goldGlow)" stroke="#C9B57B" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="0" y="6" fill="#F6F1E6" font-family="'Space Grotesk',sans-serif" font-size="12" font-weight="700" text-anchor="middle">LAC TCHAD</text>
+  <text x="0" y="22" fill="#F6F1E6" font-family="'Space Grotesk',sans-serif" font-size="9" text-anchor="middle" opacity="0.7">Bassin nord-ouest</text>
+ </g>
+
+ <!-- Doseo -->
+ <g transform="translate(770,500)">
+  <ellipse cx="0" cy="0" rx="65" ry="32" fill="url(#goldGlow)" stroke="#C9B57B" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="0" y="6" fill="#F6F1E6" font-family="'Space Grotesk',sans-serif" font-size="12" font-weight="700" text-anchor="middle">DOSEO</text>
+  <text x="0" y="22" fill="#F6F1E6" font-family="'Space Grotesk',sans-serif" font-size="9" text-anchor="middle" opacity="0.7">Bassin sud-est</text>
+ </g>
+
+ <!-- Borkou -->
+ <g transform="translate(620,220)">
+  <ellipse cx="0" cy="0" rx="90" ry="40" fill="url(#goldGlow)" stroke="#C9B57B" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="0" y="6" fill="#F6F1E6" font-family="'Space Grotesk',sans-serif" font-size="12" font-weight="700" text-anchor="middle">BORKOU</text>
+  <text x="0" y="22" fill="#F6F1E6" font-family="'Space Grotesk',sans-serif" font-size="9" text-anchor="middle" opacity="0.7">Nord · Natron</text>
+ </g>
+
+ <!-- Pipeline Doba → Kribi -->
+ <g>
+  <!-- Pipeline animated path -->
+  <path d="M 620,640 L 720,690 L 850,720 L 990,740 L 1100,750"
+        fill="none"
+        stroke="#C9B57B"
+        stroke-width="3"
+        stroke-linecap="round"
+        opacity="0.7"/>
+  <path d="M 620,640 L 720,690 L 850,720 L 990,740 L 1100,750"
+        fill="none"
+        stroke="#F6F1E6"
+        stroke-width="1.5"
+        stroke-dasharray="6,4"
+        stroke-linecap="round"/>
+
+  <!-- Kribi terminal · outside Tchad -->
+  <g transform="translate(1100,750)">
+   <circle cx="0" cy="0" r="10" fill="#4F8FD9" stroke="#080E1A" stroke-width="2"/>
+   <text x="20" y="6" fill="#4F8FD9" font-family="'Space Grotesk',sans-serif" font-size="12" font-weight="700">KRIBI</text>
+   <text x="20" y="22" fill="#F6F1E6" font-family="'Space Grotesk',sans-serif" font-size="9" opacity="0.7">Cameroun · export</text>
+  </g>
+
+  <!-- Distance label -->
+  <text x="850" y="700" fill="#C9B57B" font-family="'Space Grotesk',sans-serif" font-size="11" letter-spacing="2" text-anchor="middle" font-weight="700">PIPELINE 1 070 KM · 22+ ANS · DEPUIS 2003</text>
+ </g>
+
+ <!-- Legend top-right -->
+ <g transform="translate(900,40)">
+  <rect width="260" height="180" fill="rgba(8,14,26,0.88)" stroke="rgba(201,181,123,0.30)" stroke-width="1" rx="8"/>
+  <text x="16" y="28" fill="#C9B57B" font-family="'Space Grotesk',sans-serif" font-size="10" font-weight="700" letter-spacing="2">LÉGENDE</text>
+
+  <circle cx="22" cy="50" r="6" fill="#C9B57B" stroke="#080E1A" stroke-width="1.5"/>
+  <text x="36" y="54" fill="#F6F1E6" font-family="'Space Grotesk',sans-serif" font-size="10">N'Djamena · capital · 4 stations</text>
+
+  <ellipse cx="22" cy="74" rx="10" ry="5" fill="rgba(217,168,79,0.22)" stroke="#C9B57B" stroke-width="1.5"/>
+  <text x="36" y="78" fill="#F6F1E6" font-family="'Space Grotesk',sans-serif" font-size="10">Bassin Doba (FLAGSHIP)</text>
+
+  <ellipse cx="22" cy="98" rx="10" ry="5" fill="url(#goldGlow)" stroke="#C9B57B" stroke-width="1" stroke-dasharray="2,1"/>
+  <text x="36" y="102" fill="#F6F1E6" font-family="'Space Grotesk',sans-serif" font-size="10">Autres bassins canon</text>
+
+  <line x1="14" y1="124" x2="32" y2="124" stroke="#C9B57B" stroke-width="2"/>
+  <line x1="14" y1="124" x2="32" y2="124" stroke="#F6F1E6" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="36" y="128" fill="#F6F1E6" font-family="'Space Grotesk',sans-serif" font-size="10">Pipeline Doba-Kribi</text>
+
+  <circle cx="22" cy="150" r="6" fill="#4F8FD9" stroke="#080E1A" stroke-width="1.5"/>
+  <text x="36" y="154" fill="#F6F1E6" font-family="'Space Grotesk',sans-serif" font-size="10">Terminal export Kribi</text>
+ </g>
+
+ <!-- Stats bar bottom -->
+ <g transform="translate(40,720)">
+  <rect width="1120" height="60" fill="rgba(26,32,48,0.85)" stroke="#C9B57B" stroke-width="1" rx="6"/>
+  <g font-family="'Space Grotesk',sans-serif">
+   <text x="20" y="22" fill="#C9B57B" font-size="9" letter-spacing="1.5">CHIFFRES CANON · ATLAS O&amp;G TCHAD</text>
+   <text x="40" y="48" fill="#F6F1E6" font-size="20" font-weight="700">5 bassins</text>
+   <text x="40" y="58" fill="#F6F1E6" font-size="8" opacity="0.7">62 000 km² couverts</text>
+   <text x="220" y="48" fill="#F6F1E6" font-size="20" font-weight="700">1 070 km</text>
+   <text x="220" y="58" fill="#F6F1E6" font-size="8" opacity="0.7">Pipeline Doba-Kribi</text>
+   <text x="400" y="48" fill="#F6F1E6" font-size="20" font-weight="700">6 opérateurs</text>
+   <text x="400" y="58" fill="#F6F1E6" font-size="8" opacity="0.7">CNPCIC · Perenco · SHT · COTCO · TPC · SRN</text>
+   <text x="700" y="48" fill="#F6F1E6" font-size="20" font-weight="700">~30 kb/j</text>
+   <text x="700" y="58" fill="#F6F1E6" font-size="8" opacity="0.7">Production actuelle</text>
+   <text x="900" y="48" fill="#F6F1E6" font-size="20" font-weight="700">~70 kb/j</text>
+   <text x="900" y="58" fill="#F6F1E6" font-size="8" opacity="0.7">Cible 2030</text>
+  </g>
+ </g>
+</svg>

@@ -1,0 +1,32 @@
+# R127 · Cleanup mandate · 2026-05-03
+
+# Build artifacts (locked APFS clones - excluded from production)
+_preview_build/
+_archive/
+
+# Stub legacy
+preview.html
+v3/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node
+node_modules/
+.cache/
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Logs
+*.log
+npm-debug.log*

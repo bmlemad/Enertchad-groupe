@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Programme EOR Local · 5 polymères tchadiens · brevet OAPI Q3 2026">
+ <title>Programme EOR Local · 5 polymères tchadiens</title>
+ <desc>Diagramme illustration 5 polymères naturels (Borkou Natron · Gomme Arabique · Cellulose · Neem-Karité · Spiruline) injectés dans réservoir Doba avec gain OOIP +6 à +17%.</desc>
+
+ <!-- Background -->
+ <rect width="800" height="500" fill="#080E1A"/>
+
+ <!-- Grid pattern brutalist -->
+ <g stroke="#C9B57B" stroke-width="0.5" opacity="0.1">
+  <line x1="0" y1="100" x2="800" y2="100"/>
+  <line x1="0" y1="200" x2="800" y2="200"/>
+  <line x1="0" y1="300" x2="800" y2="300"/>
+  <line x1="0" y1="400" x2="800" y2="400"/>
+  <line x1="200" y1="0" x2="200" y2="500"/>
+  <line x1="400" y1="0" x2="400" y2="500"/>
+  <line x1="600" y1="0" x2="600" y2="500"/>
+ </g>
+
+ <!-- Title -->
+ <text x="40" y="60" fill="#C9B57B" font-family="'Space Grotesk',sans-serif" font-size="14" letter-spacing="2">PROGRAMME EOR LOCAL · BREVET OAPI Q3 2026</text>
+ <text x="40" y="90" fill="#F6F1E6" font-family="'Space Grotesk',sans-serif" font-size="28" font-weight="600">5 ressources sahéliennes · 5 mécanismes EOR</text>
+
+ <!-- 5 polymer cards -->
+ <g font-family="'Space Grotesk',sans-serif">
+  <!-- P01 Natron -->
+  <g transform="translate(40,150)">
+   <rect width="140" height="180" fill="#1a2030" stroke="#C9B57B" stroke-width="1"/>
+   <text x="12" y="24" fill="#C9B57B" font-size="11" font-weight="600">P01 · NATRON</text>
+   <text x="12" y="48" fill="#F6F1E6" font-size="14" font-weight="600">Borkou</text>
+   <text x="12" y="64" fill="#F6F1E6" font-size="14" font-weight="600">Natron</text>
+   <text x="12" y="92" fill="#F6F1E6" font-size="10" opacity="0.7">Alkaline ASP</text>
+   <text x="12" y="108" fill="#F6F1E6" font-size="10" opacity="0.7">IFT × 1000</text>
+   <circle cx="70" cy="145" r="20" fill="none" stroke="#C9B57B" stroke-width="2"/>
+   <text x="70" y="151" fill="#C9B57B" font-size="14" text-anchor="middle">Na₂CO₃</text>
+  </g>
+
+  <!-- P02 Arabique -->
+  <g transform="translate(192,150)">
+   <rect width="140" height="180" fill="#1a2030" stroke="#C9B57B" stroke-width="1"/>
+   <text x="12" y="24" fill="#C9B57B" font-size="11" font-weight="600">P02 · ARABIQUE</text>
+   <text x="12" y="48" fill="#F6F1E6" font-size="14" font-weight="600">Gomme</text>
+   <text x="12" y="64" fill="#F6F1E6" font-size="14" font-weight="600">Arabique</text>
+   <text x="12" y="92" fill="#F6F1E6" font-size="10" opacity="0.7">Polymère naturel</text>
+   <text x="12" y="108" fill="#F6F1E6" font-size="10" opacity="0.7">vs HPAM</text>
+   <path d="M 50 130 Q 70 150 60 165 Q 80 175 90 155 Q 100 145 80 135" fill="none" stroke="#C9B57B" stroke-width="2"/>
+  </g>
+
+  <!-- P03 Cellulose -->
+  <g transform="translate(344,150)">
+   <rect width="140" height="180" fill="#1a2030" stroke="#C9B57B" stroke-width="1"/>
+   <text x="12" y="24" fill="#C9B57B" font-size="11" font-weight="600">P03 · CELLULOSE</text>
+   <text x="12" y="48" fill="#F6F1E6" font-size="14" font-weight="600">Cellulose</text>
+   <text x="12" y="64" fill="#F6F1E6" font-size="14" font-weight="600">secondaire</text>
+   <text x="12" y="92" fill="#F6F1E6" font-size="10" opacity="0.7">Conformance</text>
+   <text x="12" y="108" fill="#F6F1E6" font-size="10" opacity="0.7">Sweep efficiency</text>
+   <g stroke="#C9B57B" stroke-width="1" fill="none">
+    <line x1="50" y1="135" x2="90" y2="135"/>
+    <line x1="50" y1="145" x2="90" y2="145"/>
+    <line x1="50" y1="155" x2="90" y2="155"/>
+    <line x1="50" y1="165" x2="90" y2="165"/>
+   </g>
+  </g>
+
+  <!-- P04 Neem-Karité -->
+  <g transform="translate(496,150)">
+   <rect width="140" height="180" fill="#1a2030" stroke="#C9B57B" stroke-width="1"/>
+   <text x="12" y="24" fill="#C9B57B" font-size="11" font-weight="600">P04 · NEEM-KARITÉ</text>
+   <text x="12" y="48" fill="#F6F1E6" font-size="14" font-weight="600">Biosurfactant</text>
+   <text x="12" y="64" fill="#F6F1E6" font-size="14" font-weight="600">naturel</text>
+   <text x="12" y="92" fill="#F6F1E6" font-size="10" opacity="0.7">Anti-paraffine</text>
+   <text x="12" y="108" fill="#F6F1E6" font-size="10" opacity="0.7">Bio-based</text>
+   <g fill="none" stroke="#C9B57B" stroke-width="1.5">
+    <circle cx="60" cy="150" r="8"/>
+    <circle cx="78" cy="160" r="6"/>
+    <circle cx="92" cy="148" r="7"/>
+   </g>
+  </g>
+
+  <!-- P05 Spiruline -->
+  <g transform="translate(648,150)">
+   <rect width="140" height="180" fill="#1a2030" stroke="#C9B57B" stroke-width="1"/>
+   <text x="12" y="24" fill="#C9B57B" font-size="11" font-weight="600">P05 · SPIRULINE</text>
+   <text x="12" y="48" fill="#F6F1E6" font-size="14" font-weight="600">MEOR</text>
+   <text x="12" y="64" fill="#F6F1E6" font-size="14" font-weight="600">microbien</text>
+   <text x="12" y="92" fill="#F6F1E6" font-size="10" opacity="0.7">Tertiaire</text>
+   <text x="12" y="108" fill="#F6F1E6" font-size="10" opacity="0.7">Lac Tchad</text>
+   <g fill="#C9B57B">
+    <circle cx="55" cy="155" r="2"/>
+    <circle cx="65" cy="148" r="2"/>
+    <circle cx="75" cy="160" r="2"/>
+    <circle cx="85" cy="152" r="2"/>
+    <circle cx="95" cy="158" r="2"/>
+    <circle cx="100" cy="148" r="2"/>
+   </g>
+  </g>
+ </g>
+
+ <!-- Bottom KPI bar -->
+ <g transform="translate(40,380)">
+  <rect width="720" height="80" fill="#1a2030" stroke="#C9B57B" stroke-width="1"/>
+  <text x="20" y="30" fill="#C9B57B" font-family="'Space Grotesk',sans-serif" font-size="11" letter-spacing="1.5">RÉSULTATS CIBLES · BASSIN DOBA · 30 PUITS MATURES</text>
+  <g font-family="'Space Grotesk',sans-serif">
+   <text x="40" y="62" fill="#F6F1E6" font-size="22" font-weight="700">+6 à +17%</text>
+   <text x="40" y="76" fill="#F6F1E6" font-size="9" opacity="0.7">OOIP additionnel</text>
+
+   <text x="220" y="62" fill="#F6F1E6" font-size="22" font-weight="700">22 M USD</text>
+   <text x="220" y="76" fill="#F6F1E6" font-size="9" opacity="0.7">CAPEX Phase 1</text>
+
+   <text x="400" y="62" fill="#F6F1E6" font-size="22" font-weight="700">38%</text>
+   <text x="400" y="76" fill="#F6F1E6" font-size="9" opacity="0.7">IRR central</text>
+
+   <text x="540" y="62" fill="#F6F1E6" font-size="22" font-weight="700">14 mois</text>
+   <text x="540" y="76" fill="#F6F1E6" font-size="9" opacity="0.7">Payback central</text>
+  </g>
+ </g>
+
+</svg>

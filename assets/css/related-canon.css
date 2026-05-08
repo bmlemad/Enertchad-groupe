@@ -1,0 +1,58 @@
+/* R128 · Cross-links canon · pôles ↔ marques ↔ opérateurs ↔ axes
+ * Brutalist editorial style aligned with .page-statement (R108) */
+.related-canon {
+  margin: clamp(2.5rem, 5vw, 4.5rem) auto clamp(2rem, 4vw, 3.5rem);
+  max-width: min(1240px, 92vw);
+  padding: clamp(1.25rem, 2.5vw, 2rem) 0;
+  border-top: 1px solid rgba(11, 26, 51, 0.12);
+  border-bottom: 1px solid rgba(11, 26, 51, 0.12);
+  font-family: 'Inter', system-ui, sans-serif;
+}
+.related-canon .rc-title {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--navy-900, #0B1A33);
+  margin: 0 0 1rem;
+  opacity: 0.78;
+}
+.related-canon .rc-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.6rem 1rem;
+  padding: 0.55rem 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+.related-canon .rc-row + .rc-row {
+  border-top: 1px dashed rgba(11, 26, 51, 0.08);
+}
+.related-canon .rc-label {
+  flex: 0 0 auto;
+  min-width: 110px;
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gold, var(--gold));
+}
+.related-canon .rc-row a {
+  color: var(--navy-900, #0B1A33);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(201, 181, 123, 0.4);
+  padding-bottom: 1px;
+  transition: border-color 160ms ease, color 160ms ease;
+}
+.related-canon .rc-row a:hover,
+.related-canon .rc-row a:focus-visible {
+  border-bottom-color: var(--gold, var(--gold));
+  color: var(--gold, var(--gold));
+  outline: none;
+}
+@media (max-width: 640px) {
+  .related-canon .rc-label { min-width: 100%; margin-bottom: -0.25rem; }
+}

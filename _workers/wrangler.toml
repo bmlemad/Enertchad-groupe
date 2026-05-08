@@ -1,0 +1,19 @@
+# Cloudflare Workers config · EnerTchad SA AI Concierge
+# Deploy: wrangler deploy
+# Setup secret: wrangler secret put ANTHROPIC_API_KEY (paste sk-ant-... when prompted)
+
+name = "enertchad-concierge"
+main = "concierge.js"
+compatibility_date = "2026-01-01"
+workers_dev = true
+
+# Bind to your Cloudflare Pages project so /api/concierge routes here
+# In Cloudflare Dashboard: Pages project → Functions tab → bind this Worker
+# OR: configure routes if using standalone Workers
+
+[vars]
+SITE_NAME = "EnerTchad SA"
+SITE_DOMAIN = "enertchad.td"
+
+# Secrets (set via: wrangler secret put ANTHROPIC_API_KEY)
+# ANTHROPIC_API_KEY = sk-ant-...

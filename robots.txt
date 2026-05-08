@@ -1,6 +1,31 @@
+# robots.txt · EnerTchad SA · R137 · 2026-05-03
+# Permissive — production site DFI investor-facing
 User-agent: *
 Allow: /
-Disallow: /_sources/
-Disallow: /backups/
 
+# Block internal/build artifacts
+Disallow: /_archive/
+Disallow: /_preview_build/
+Disallow: /_scripts/
+Disallow: /_workers/
+Disallow: /v3/
+
+# Block stub/utility
+Disallow: /preview.html
+Disallow: /header-v11-comparison.html
+Disallow: /header-v11-preview.html
+Disallow: /offline.html
+
+# AI training opt-in (Claude/AI Concierge dataroom transparent)
+User-agent: GPTBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: anthropic-ai
+Allow: /
+User-agent: Google-Extended
+Allow: /
+
+# Sitemap
+Sitemap: https://www.enertchad.td/sitemap-r137.xml
 Sitemap: https://www.enertchad.td/sitemap.xml

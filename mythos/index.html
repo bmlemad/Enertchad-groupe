@@ -1,0 +1,587 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#080E1A" />
+<title>Mythos · Récit fondateur · EnerTchad SA</title>
+<meta name="description" content="EnerTchad SA · récit fondateur en 7 chapitres · pourquoi le Tchad maintenant · DG ex-major 12 ans · vision Cap 2030 · destinée OFS Africa-first." />
+<link rel="canonical" href="https://www.enertchad.td/mythos/" />
+<link rel="alternate" hreflang="fr" href="https://www.enertchad.td/mythos/" />
+<link rel="alternate" hreflang="en" href="https://www.enertchad.td/en/mythos/" />
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Inter:wght@100..900&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap">
+<link rel="stylesheet" href="/assets/css/page-statement.css?v=r314" />
+<link rel="stylesheet" href="/assets/css/ux-r146.css?v=r314" />
+<link rel="stylesheet" href="/assets/css/megamenu-r154.css?v=r314" />
+<link rel="stylesheet" href="/assets/css/header-ultra.css?v=r314" />
+<link rel="stylesheet" href="/assets/css/enertchad.css?v=r314" />
+<meta property="og:title" content="EnerTchad SA · Mythos · Récit fondateur" />
+<meta property="og:description" content="7 chapitres cinématographiques · pourquoi le Tchad · pourquoi maintenant · vision Cap 2030." />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="https://enertchad.td/assets/images/enertchad-accueil-hero-01.webp" />
+
+<style>
+:root {
+ --serif: 'Crimson Pro', Georgia, serif;
+}
+
+/* Hero · cinematic full-bleed */
+.mythos-hero {
+ min-height: 100vh;
+ display: grid;
+ place-items: center;
+ background: linear-gradient(180deg, rgba(8,14,26,0.94) 0%, rgba(5,8,16,1) 100%),
+ radial-gradient(ellipse at 50% 30%, rgba(217,168,79,0.22) 0%, transparent 60%),
+ linear-gradient(135deg, #0a1424 0%, #0f1929 100%);
+ position: relative;
+ overflow: hidden;
+ text-align: center;
+ padding: 80px 24px;
+}
+.mythos-hero::before {
+ content: '';
+ position: absolute; inset: 0;
+ background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 800'><defs><pattern id='dust' width='80' height='80' patternUnits='userSpaceOnUse'><circle cx='40' cy='40' r='0.7' fill='%23C9B57B' fill-opacity='0.18'/></pattern></defs><rect width='800' height='800' fill='url(%23dust)'/></svg>");
+ opacity: 0.5;
+ pointer-events: none;
+}
+.mythos-hero-inner {
+ position: relative; z-index: 2;
+ max-width: 880px;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ gap: 36px;
+}
+.mythos-glyph {
+ width: 88px; height: 88px;
+ border: 1.5px solid rgba(217,168,79,0.42);
+ border-radius: 50%;
+ display: grid; place-items: center;
+ background: radial-gradient(circle at center, rgba(217,168,79,0.16), transparent 70%);
+ font-family: var(--serif);
+ font-style: italic;
+ font-weight: 600;
+ font-size: 38px;
+ color: var(--gold);
+ letter-spacing: -0.04em;
+ position: relative;
+}
+.mythos-glyph::after {
+ content: '';
+ position: absolute;
+ inset: -8px;
+ border: 1px solid rgba(217,168,79,0.20);
+ border-radius: 50%;
+ animation: orbit 6s linear infinite;
+}
+@keyframes orbit { from { transform: rotate(0); } to { transform: rotate(360deg); } }
+.mythos-kicker {
+ font-family: var(--font-display);
+ font-size: 11px;
+ letter-spacing: 0.36em;
+ text-transform: uppercase;
+ color: var(--gold);
+ font-weight: 600;
+ display: inline-flex;
+ align-items: center;
+ gap: 14px;
+}
+.mythos-kicker::before, .mythos-kicker::after {
+ content: '';
+ width: 32px; height: 1px;
+ background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+.mythos-h1 {
+ font-family: var(--serif);
+ font-style: italic;
+ font-weight: 400;
+ font-size: clamp(2.6rem, 7vw, 6.5rem);
+ line-height: 1.05;
+ letter-spacing: -0.025em;
+ color: var(--cream);
+ margin: 0;
+ max-width: 18ch;
+}
+.mythos-h1 strong {
+ font-style: normal;
+ font-weight: 600;
+ color: var(--gold);
+ display: block;
+}
+.mythos-lead {
+ font-family: var(--serif);
+ font-size: clamp(1.15rem, 1.6vw, 1.45rem);
+ line-height: 1.55;
+ color: var(--cream-2);
+ max-width: 60ch;
+ margin: 0;
+}
+.mythos-lead em { color: var(--gold); font-style: italic; }
+.mythos-scroll {
+ margin-top: 24px;
+ font-family: var(--font-display);
+ font-size: 10.5px;
+ letter-spacing: 0.32em;
+ text-transform: uppercase;
+ color: rgba(246,241,230,0.5);
+ font-weight: 500;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ gap: 10px;
+}
+.mythos-scroll-arrow {
+ width: 1px; height: 36px;
+ background: linear-gradient(180deg, var(--gold), transparent);
+ animation: scroll-pulse 1.8s ease-in-out infinite;
+}
+@keyframes scroll-pulse {
+ 0%, 100% { opacity: 0.3; transform: scaleY(1); }
+ 50% { opacity: 1; transform: scaleY(1.4); }
+}
+
+/* Chapter sections · alternating storytelling */
+.mythos-chapter {
+ padding: clamp(80px, 14vw, 180px) 24px;
+ border-top: 1px solid rgba(217,168,79,0.10);
+ position: relative;
+ overflow: hidden;
+}
+.mythos-chapter:nth-child(even) {
+ background: linear-gradient(180deg, rgba(8,14,26,0.97) 0%, rgba(5,8,16,1) 100%);
+}
+.mythos-chapter:nth-child(odd) {
+ background: linear-gradient(180deg, rgba(5,8,16,1) 0%, rgba(8,14,26,0.97) 100%);
+}
+.mythos-chapter-inner {
+ max-width: 920px;
+ margin: 0 auto;
+ display: grid;
+ grid-template-columns: 120px 1fr;
+ gap: clamp(28px, 6vw, 80px);
+ align-items: start;
+}
+.mythos-chapter-num {
+ font-family: var(--serif);
+ font-style: italic;
+ font-weight: 400;
+ font-size: clamp(3rem, 6vw, 5rem);
+ color: var(--gold);
+ line-height: 1;
+ letter-spacing: -0.04em;
+ position: sticky;
+ top: 100px;
+ text-align: right;
+}
+.mythos-chapter-num small {
+ display: block;
+ font-style: normal;
+ font-family: var(--font-display);
+ font-size: 9px;
+ letter-spacing: 0.36em;
+ text-transform: uppercase;
+ color: rgba(217,168,79,0.6);
+ font-weight: 600;
+ margin-top: 12px;
+ text-align: right;
+}
+.mythos-chapter-content h2 {
+ font-family: var(--serif);
+ font-style: italic;
+ font-weight: 400;
+ font-size: clamp(1.8rem, 3.6vw, 2.8rem);
+ line-height: 1.15;
+ letter-spacing: -0.02em;
+ color: var(--cream);
+ margin: 0 0 28px;
+ max-width: 22ch;
+}
+.mythos-chapter-content h2 strong {
+ font-style: normal;
+ color: var(--gold);
+ font-weight: 600;
+}
+.mythos-chapter-content p {
+ font-family: var(--serif);
+ font-size: clamp(1.05rem, 1.3vw, 1.18rem);
+ line-height: 1.75;
+ color: var(--cream-2);
+ margin: 0 0 18px;
+ max-width: 60ch;
+}
+.mythos-chapter-content p:first-of-type::first-letter {
+ font-family: var(--serif);
+ font-style: italic;
+ font-weight: 600;
+ font-size: 4.4em;
+ color: var(--gold);
+ float: left;
+ line-height: 0.92;
+ margin: 6px 12px 0 0;
+}
+.mythos-chapter-content em { color: var(--gold); font-style: italic; }
+.mythos-chapter-content strong { color: var(--cream); font-weight: 600; }
+.mythos-chapter-quote {
+ margin: 36px 0 24px;
+ padding: 24px 28px;
+ border-left: 3px solid var(--gold);
+ background: rgba(217,168,79,0.04);
+ font-family: var(--serif);
+ font-style: italic;
+ font-size: clamp(1.1rem, 1.4vw, 1.25rem);
+ line-height: 1.6;
+ color: var(--cream);
+ max-width: 56ch;
+}
+.mythos-chapter-quote-author {
+ display: block;
+ margin-top: 12px;
+ font-family: var(--font-display);
+ font-style: normal;
+ font-size: 11px;
+ letter-spacing: 0.18em;
+ text-transform: uppercase;
+ color: var(--gold);
+ font-weight: 600;
+}
+
+@media (max-width: 720px) {
+ .mythos-chapter-inner { grid-template-columns: 1fr; gap: 18px; }
+ .mythos-chapter-num { position: static; text-align: left; font-size: 2.5rem; }
+ .mythos-chapter-num small { text-align: left; }
+}
+
+/* Final · destiny call */
+.mythos-destiny {
+ padding: clamp(80px, 12vw, 160px) 24px;
+ background: linear-gradient(135deg, rgba(217,168,79,0.14) 0%, rgba(8,14,26,0.96) 100%);
+ border-top: 1px solid rgba(217,168,79,0.32);
+ border-bottom: 1px solid rgba(217,168,79,0.32);
+ text-align: center;
+}
+.mythos-destiny-inner {
+ max-width: 760px;
+ margin: 0 auto;
+ display: flex;
+ flex-direction: column;
+ gap: 28px;
+ align-items: center;
+}
+.mythos-destiny h2 {
+ font-family: var(--serif);
+ font-style: italic;
+ font-weight: 400;
+ font-size: clamp(2rem, 4.5vw, 3.4rem);
+ line-height: 1.15;
+ color: var(--cream);
+ margin: 0;
+ letter-spacing: -0.025em;
+ max-width: 22ch;
+}
+.mythos-destiny h2 strong { color: var(--gold); font-weight: 600; font-style: normal; }
+.mythos-destiny p {
+ font-family: var(--serif);
+ font-size: 1.15rem;
+ line-height: 1.6;
+ color: var(--cream-2);
+ margin: 0;
+ max-width: 56ch;
+}
+.mythos-cta-row {
+ display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; margin-top: 12px;
+}
+</style>
+ <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://www.enertchad.td/"},{"@type":"ListItem","position":2,"name":"Mission","item":"https://www.enertchad.td/sitemap.html#mission"},{"@type":"ListItem","position":3,"name":"Mythos","item":"https://www.enertchad.td/mythos"}]}</script>
+</head>
+<body data-page="mythos">
+<!-- R140 · ULTRA PREMIUM Header · FR -->
+<header class="hu-header" role="banner" data-r140="ultra">
+ <div class="hu-inner">
+ <a class="hu-brand" href="/" aria-label="EnerTchad SA · accueil">
+ <img class="hu-logo" src="/assets/images/logo.svg" alt="" width="44" height="44" loading="eager" decoding="async" />
+ <span class="hu-brand-text">EnerTchad <em>SA</em><span class="hu-brand-tag">Société parapétrolière · OFS</span></span>
+ </a>
+ <nav class="hu-nav" aria-label="Navigation principale">
+ <a class="hu-nav-link" data-mm="mission" href="/sitemap.html#mission">Mission</a>
+ <a class="hu-nav-link" data-mm="activites" href="/sitemap.html#activites">Activités</a>
+ <a class="hu-nav-link" data-mm="transition" href="/sitemap.html#transition">Transition</a>
+ <a class="hu-nav-link" data-mm="technologies" href="/sitemap.html#technologies">Technologies</a>
+ <a class="hu-nav-link" data-mm="engagements" href="/sitemap.html#engagements">Engagements</a>
+ <a class="hu-nav-link" data-mm="investisseurs" href="/sitemap.html#investisseurs">Investisseurs</a>
+ </nav>
+ <div class="hu-right">
+ <span class="hu-lang" aria-label="Langue">
+ <a href="/" hreflang="fr" aria-current="true">FR</a>
+ <span aria-hidden="true">·</span>
+ <a href="/en/" hreflang="en">EN</a>
+ </span>
+ <a class="hu-cta" href="/engagement/investisseurs.html">Tour 2026 <span class="hu-cta-arrow">↗</span></a>
+ <button class="hu-burger" type="button" aria-label="Menu" aria-expanded="false">
+ <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true">
+ <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+ </svg>
+ </button>
+ </div>
+ </div>
+</header>
+
+ <!-- R146 · Breadcrumb -->
+ <nav class="bc-r146" aria-label="Fil d'ariane">
+ <ol>
+ <li><a href="/">Accueil</a></li>
+ <li><a href="/sitemap.html#mission">Mission</a></li>
+ <li aria-current="page">Mythos</li>
+ </ol>
+ </nav>
+
+<aside class="hu-drawer" aria-hidden="true">
+ <button class="hu-drawer-close" aria-label="Fermer">×</button>
+ <a href="/sitemap.html#mission">01 Mission</a>
+ <a href="/sitemap.html#activites">02 Activités</a>
+ <a href="/sitemap.html#transition">03 Transition énergétique</a>
+ <a href="/sitemap.html#technologies">04 Technologies</a>
+ <a href="/sitemap.html#engagements">05 Engagements</a>
+ <a href="/sitemap.html#investisseurs">06 Investisseurs</a>
+ <a href="/sitemap.html">Plan du site</a>
+ <a href="/en/" hreflang="en" style="color:#C9B57B">EN · English ↗</a>
+</aside>
+<div class="hu-backdrop" aria-hidden="true"></div>
+
+
+<a class="skip-link" href="#main">Aller au contenu</a>
+
+<main id="main" tabindex="-1">
+ <!-- PAGE STATEMENT · brutalist editorial · R118 propagation -->
+ <section class="page-statement" aria-labelledby="ps-h1">
+ <div class="page-statement-inner">
+ <div class="page-statement-meta">
+ <span>Mythos · Récit fondateur</span>
+ <span>EnerTchad SA <strong>·</strong> 2026</span>
+ </div>
+ <h1 class="page-statement-h1" id="ps-h1">
+ <em>Mythos</em>.<br>7 chapitres.<br>Récit fondateur.
+ </h1>
+ <div class="page-statement-body">
+ <p class="page-statement-lede">Récit fondateur EnerTchad SA · 7 chapitres cinématographiques. De la genèse souveraineté technique tchadienne à la trajectoire Net Zero CEMAC 2050. Lecture éditoriale DFI-grade.</p>
+ <p class="page-statement-aside">Style World Oil / Bloomberg / NYT · scroll-driven storytelling · adapté presse internationale et investisseurs DFI.</p>
+ </div>
+ <div class="page-statement-links">
+ <a class="page-statement-link" href="/pourquoi/manifeste.html">Manifeste DG</a>
+ <a class="page-statement-link" href="/marques/">4 marques&trade; + 2 projets</a>
+ <a class="page-statement-link" href="/sustainability/">Trajectoire</a>
+ <a class="page-statement-link" href="/investisseurs/">Tour 2026</a>
+ </div>
+ </div>
+ </section>
+
+
+ <!-- HERO MYTHOS -->
+ <!-- CHAPITRE 01 · La terre -->
+ <section class="mythos-chapter" id="chapter-1">
+ <div class="mythos-chapter-inner">
+ <div class="mythos-chapter-num">I<small>La Terre</small></div>
+ <div class="mythos-chapter-content">
+ <h2>Le Tchad porte son <strong>or noir</strong> depuis 1973.</h2>
+ <p>Le bassin de Doba s'éveille en 2003 sous le forage de major nord-américaine-major O&G internationale. Un milliard de barils de réserves prouvées dorment sous le sable du Logone. Pendant deux décennies, les majors étrangères extraient, raffinent, exportent. Le pétrole tchadien voyage sur 1 070 km de pipeline jusqu'à Kribi, au Cameroun. Il alimente les marchés mondiaux. Il contribue à 35 % des recettes publiques de l'État. Il dessine la silhouette financière du pays.</p>
+ <p>Mais une vérité demeure, gravée dans le grès du Crétacé : <em>le pétrole tchadien a toujours été extrait par d'autres</em>. Les services techniques — drilling, completion, EOR, intégrité pipeline, raffinerie, distribution — ont été pilotés depuis Houston, Pékin, Paris, Calgary. Les ingénieurs tchadiens formés ont migré vers les majors mondiales. Le savoir-faire est resté à l'extérieur.</p>
+ <blockquote class="mythos-chapter-quote">
+ Le pétrole sort de notre sol. Les services qui le font sortir, eux, n'en sortent pas.
+ <span class="mythos-chapter-quote-author">— Observation 2024 · diaspora tchadienne, secteur OFS</span>
+ </blockquote>
+ </div>
+ </div>
+ </section>
+
+ <!-- CHAPITRE 02 · Le départ -->
+ <section class="mythos-chapter" id="chapter-2">
+ <div class="mythos-chapter-inner">
+ <div class="mythos-chapter-num">II<small>Le Départ</small></div>
+ <div class="mythos-chapter-content">
+ <h2>En 2024, major O&G internationale <strong>se retire</strong>.</h2>
+ <p>L'événement n'est pas un communiqué. C'est une bascule. Esso Exploration & Production Chad transfère ses assets à Tchad Petroleum Compagnie (TPC), nouvel opérateur national. CNPCIC, Perenco, SHT, COTCO, SRN restent. Mais la chaîne des prestataires techniques se redessine du jour au lendemain. Le marché demande des opérateurs OFS locaux capables d'absorber des contrats que les majors externes ne signent plus.</p>
+ <p>Au même moment, à N'Djamena, Bignéro Moïalbéi Le Madang termine douze années passées dans une major internationale au Tchad et au Cameroun. Il a vu de l'intérieur comment fonctionne un service intégré — les standards OIMS, les procédures HSE niveau major O&G internationale, les pipelines IEC 62443. Il sait ce qui manque au marché tchadien : <strong>une société tchadienne capable de servir techniquement les opérateurs avec des standards majors</strong>.</p>
+ <p>EnerTchad SA naît en 2026, dans cette fenêtre de transition. Ni avant — il aurait fallu déloger les majors. Ni après — TPC et CNPCIC auraient déjà trouvé des prestataires d'ailleurs. <em>Maintenant</em>.</p>
+ </div>
+ </div>
+ </section>
+
+ <!-- CHAPITRE 03 · La vocation -->
+ <section class="mythos-chapter" id="chapter-3">
+ <div class="mythos-chapter-inner">
+ <div class="mythos-chapter-num">III<small>La Vocation</small></div>
+ <div class="mythos-chapter-content">
+ <h2>Nous sommes des <strong>parapétroliers</strong>, pas des explorateurs.</h2>
+ <p>Le choix initial est tranchant. EnerTchad SA <em>ne possèdera aucun asset E&amp;P en propre</em>. Pas de bloc d'exploration. Pas de licence pétrolière. Pas d'acquisition de champ mature. La société est <strong>100% parapétrolière</strong> (Oil Field Services / OFS) — vocation technique pure au service des opérateurs du marché.</p>
+ <p>Ce choix n'est pas un repli. C'est une discipline. La capitalisation requise pour un E&amp;P serait de plusieurs dizaines de millions USD juste pour le foncier et la sismique. Le retour sur capital serait étalé sur quinze ans. Le Tour Seed/Pre-A 2026 vise <strong>8-12 M USD</strong> — un montant adapté au pivot OFS, où chaque dollar finance directement de l'équipement, des contrats, du personnel formé, et des brevets OAPI.</p>
+ <p>Le pivot OFS permet aussi <em>l'honnêteté narrative</em> : nous ne vendons pas un greenwashing « Eldorado pétrolier africain ». Nous vendons un <strong>catalogue de 40+ services techniques</strong> structuré par codes (S/D/C/U/P/T/E/H), 3 pôles current + Pétrochimie projet 2028+, 3 axes transversaux, et 4 marques™ déposées à l'OAPI. Tout est mesurable, contractualisable, OHADA-compliant.</p>
+ </div>
+ </div>
+ </section>
+
+ <!-- CHAPITRE 04 · Le retour -->
+ <section class="mythos-chapter" id="chapter-4">
+ <div class="mythos-chapter-inner">
+ <div class="mythos-chapter-num">IV<small>Le Retour</small></div>
+ <div class="mythos-chapter-content">
+ <h2>La diaspora tchadienne <strong>rentre</strong>.</h2>
+ <p>Nous comptons plusieurs centaines d'ingénieurs, techniciens, managers tchadiens formés chez top OFS international, major O&G internationale, major européenne, top OFS international, top OFS international — répartis entre Houston, Calgary, Aberdeen, Paris, Doha, Luanda. Ce <em>capital humain en exil</em> représente la ressource stratégique la plus précieuse pour EnerTchad SA.</p>
+ <p>L'engagement Local Content Development est radical : <strong>75 à 90 %</strong> de talents tchadiens diaspora d'ici 2030. Pas un slogan ESG cosmétique — une cible chiffrée auditable. EnerAcademy™ — notre marque OAPI dédiée à la formation — vise 200 ETP/an formés à partir de 2030, en standards IADC RIG PASS · IWCF · IOGP Life-Saving Rules.</p>
+ <blockquote class="mythos-chapter-quote">
+ Quand un ingénieur diaspora rentre opérer à Doba, ce n'est pas un acte de patriotisme. C'est un calcul économique : il devient l'un des techniciens les mieux payés du Sahel pour des standards qu'il maîtrise déjà.
+ <span class="mythos-chapter-quote-author">— Logique LCD · vision EnerAcademy 2030</span>
+ </blockquote>
+ </div>
+ </div>
+ </section>
+
+ <!-- CHAPITRE 05 · Les ressources -->
+ <section class="mythos-chapter" id="chapter-5">
+ <div class="mythos-chapter-inner">
+ <div class="mythos-chapter-num">V<small>Les Ressources</small></div>
+ <div class="mythos-chapter-content">
+ <h2>Cinq ressources tchadiennes deviennent <strong>des brevets OAPI</strong>.</h2>
+ <p>Le Programme EOR Local d'EnerTchad SA est notre signature R&amp;D. Nous identifions cinq ressources naturelles ou agricoles tchadiennes — coton, neem, gomme arabique, spiruline du Lac Tchad, souches microbiennes locales — et nous les transformons en formulations brevetées pour la récupération assistée des hydrocarbures (Enhanced Oil Recovery).</p>
+ <p>Chacun de ces brevets, déposés à l'OAPI (Organisation Africaine de la Propriété Intellectuelle · 17 États membres), est valable 50 ans renouvelables. Les premiers tests laboratoire montrent des gains <strong>+6 à +17 % d'OOIP</strong> sur les champs matures de Doba — performance comparable aux additifs chimiques importés, à un coût domestique 30-40 % inférieur.</p>
+ <p>Le pari est simple : si l'or noir tchadien est extrait avec des additifs tchadiens, alors une partie significative de la chaîne de valeur ne quitte plus le pays. Le Tchad cesse d'être un producteur de matière première brute. Il devient un <em>territoire d'innovation pétrolière Africa-first</em>.</p>
+ </div>
+ </div>
+ </section>
+
+ <!-- CHAPITRE 06 · Le seuil -->
+ <section class="mythos-chapter" id="chapter-6">
+ <div class="mythos-chapter-inner">
+ <div class="mythos-chapter-num">VI<small>Le Seuil</small></div>
+ <div class="mythos-chapter-content">
+ <h2>2026 est notre <strong>seuil</strong>. 2050 est notre <strong>cap</strong>.</h2>
+ <p>Le Tour Seed/Pre-A 2026 ferme le 30 septembre 2026. Huit à douze millions USD seront levés selon la structure OHADA. Le calendrier est public : 47% closed à mai 2026 (4.7M USD soft committed), 12 NDAs signés, 3 MoUs opérateurs signés. Series A 15-25 M USD est projetée pour 2027. Series B 50-80 M USD pour 2028. Series C pour 2030.</p>
+ <p>Au-delà de la trajectoire financière, nous nous engageons sur une <em>destinée climatique</em>. EnerTchad SA atteindra le <strong>Net Zero scope 1+2+3 en 2050</strong>, alignée sur l'Accord de Paris et le scénario IEA NZE. Trajectoire en 5 phases : Foundation (2026-27) → Reduction (2027-30) → Transition (2030-35) → Acceleration (2035-45) → Net Zero (2045-50). Chaque phase a ses jalons publics, ses indicateurs auditables, ses certifications cibles (ISO 14001, 45001, ITIE, MSCI ESG).</p>
+ <p>Le pari de la durabilité radicale est aussi un calcul économique : à l'horizon 2030, les DFI internationaux refuseront de financer toute société pétrolière sans trajectoire Net Zero crédible. EnerTchad SA prend l'engagement <em>maintenant</em>, parce que c'est <strong>plus facile maintenant</strong> qu'après cinq ans d'opération sans cadre ESG structuré.</p>
+ </div>
+ </div>
+ </section>
+
+ <!-- CHAPITRE 07 · L'horizon -->
+ <section class="mythos-chapter" id="chapter-7">
+ <div class="mythos-chapter-inner">
+ <div class="mythos-chapter-num">VII<small>L'Horizon</small></div>
+ <div class="mythos-chapter-content">
+ <h2>Une <strong>parapétrolière</strong> qui devient une <strong>plateforme énergétique africaine</strong>.</h2>
+ <p>À l'horizon 2030, EnerTchad SA aura déployé 50 stations IRVE en zone CEMAC — premier opérateur multi-énergies de l'Afrique centrale. Mobile Station™ S/M/L proposera essence, diesel, électricité (CCS2/CHAdeMO 50 kW), bientôt hydrogène. NRJ+™ aura captées 8 à 12 % du marché des carburants premium au Tchad. EnerFert™ aura industrialisé les fertilisants spécialisés à partir de la pétrochimie de Djermaya.</p>
+ <p>À l'horizon 2050, la trajectoire est plus radicale encore. Nous serons devenus une plateforme de <em>services techniques décarbonés</em> opérant dans plusieurs États OHADA. Nos brevets OAPI couvriront les prochaines générations d'EOR microbien. EnerAcademy™ aura formé plusieurs milliers de techniciens panafricains. La société aura potentiellement absorbé des actifs énergétiques décarbonés (CCUS, hydrogène vert, biodiversité Lac Tchad).</p>
+ <p>Mais le récit est plus simple que la stratégie. <strong>Nous sommes nés du sol tchadien. Nous restons fidèles au sol tchadien. Nous transformerons la richesse extraite de ce sol en compétences durables qui n'en sortiront plus jamais.</strong></p>
+ <blockquote class="mythos-chapter-quote">
+ Le Tchad ne sera pas le futur Eldorado pétrolier africain. Le Tchad sera le premier pays africain à avoir construit une OFS qui dépasse les majors externes — sur le terrain, à standards majors, en restant chez elle.
+ <span class="mythos-chapter-quote-author">— Vision Cap 2030 · DG Bignéro Moïalbéi Le Madang</span>
+ </blockquote>
+ </div>
+ </div>
+ </section>
+
+ <!-- DESTINY · Final CTA -->
+ <section class="mythos-destiny">
+ <div class="mythos-destiny-inner">
+ <span class="mythos-kicker">Tour Seed/Pre-A 2026 · 8-12 M USD · OHADA</span>
+ <h2>Ce récit vous appelle ?<br><strong>Devenez l'un de nos investisseurs fondateurs.</strong></h2>
+ <p>Le tour ferme le 30 septembre 2026. Quinze tickets restants. Investisseurs DFI, fonds verts, family offices, impact VC alignés sur la trajectoire Net Zero CEMAC sont prioritaires.</p>
+ <div class="mythos-cta-row">
+ <a class="btn-premium" href="/investisseurs/">Tour 2026 · investir ↗</a>
+ <a class="btn-premium-outline" href="/dg-office-hours/">Rencontrer le DG · 30 min</a>
+ </div>
+ </div>
+ </section>
+
+</main>
+
+<footer class="fu-footer" role="contentinfo" data-r140="ultra">
+ <div class="fu-inner">
+ <div class="fu-grid">
+ <div>
+ <p class="fu-brand-name">EnerTchad SA</p>
+ <p class="fu-slogan">Unité · Innovation · Durabilité</p>
+ <p class="fu-positioning">Société <em>parapétrolière</em> (OFS) <strong>100% services techniques</strong> · marché tchadien · OHADA. Aucun asset.</p>
+ <p class="fu-leadership"><strong>DG</strong> Bignéro Moïalbéi Le Madang<br><strong>PCA</strong> Théophile Gag Pinabei</p>
+ </div>
+ <div>
+ <p class="fu-col-h">Navigation · 3 pôles</p>
+ <ul class="fu-list">
+ <li><a href="/sitemap.html#mission">01 Mission</a></li>
+ <li><a href="/sitemap.html#activites">02 Activités</a></li>
+ <li><a href="/sitemap.html#transition">03 Transition énergétique</a></li>
+ <li><a href="/sitemap.html#technologies">04 Technologies</a></li>
+ <li><a href="/sitemap.html#engagements">05 Engagements</a></li>
+ <li><a href="/sitemap.html#investisseurs">06 Investisseurs</a></li>
+ </ul>
+ </div>
+ <div>
+ <p class="fu-col-h">Tour 2026 · Pages clés</p>
+ <ul class="fu-list">
+ <li><a href="/engagement/investisseurs.html">Tour Seed/Pre-A</a></li>
+ <li><a href="/dataroom/">Dataroom · NDA</a></li>
+ <li><a href="/dg-office-hours/">DG Office Hours</a></li>
+ <li><a href="/ai-concierge/">AI Concierge</a></li>
+ <li><a href="/marques/">4 marques™ + 2 projets</a></li>
+ <li><a href="/data/atlas.html">Atlas marché</a></li>
+ </ul>
+ </div>
+ <div>
+ <p class="fu-col-h">Newsletter Tour 2026</p>
+ <p class="fu-newsletter-desc">Actualités investisseurs · avancées catalogue OFS · <span data-jn>J-150</span> closing.</p>
+ <form class="fu-newsletter-form" action="https://formspree.io/f/enertchad-newsletter" method="POST" novalidate>
+ <input type="email" name="email" placeholder="email@exemple.com" required aria-label="Adresse email">
+ <button type="submit">S&rsquo;inscrire ↗</button>
+ </form>
+ <p class="fu-newsletter-fineprint">RGPD · désinscription 1-clic · données EU-West chiffrées</p>
+ </div>
+ </div>
+ <div class="fu-meta">
+ <div class="fu-badges">
+ <span class="fu-badge">ITIE</span>
+ <span class="fu-badge">OHADA</span>
+ <span class="fu-badge">ISO 9001 · 14001 · 45001</span>
+ <span class="fu-badge">OAPI 2026</span>
+ </div>
+ <div class="fu-legal">
+ <span>© 2026 <strong>EnerTchad SA</strong></span>
+ <span class="fu-sep">·</span>
+ <span>RCCM N&rsquo;DJ/RC/2026-A-0001</span>
+ <span class="fu-sep">·</span>
+ <span>Capital 10 000 000 FCFA</span>
+ <span class="fu-sep">·</span>
+ <a href="/sitemap.html">Plan du site</a>
+ <span class="fu-sep">·</span>
+ <a href="/legal/mentions-legales.html">Mentions légales</a>
+ <span class="fu-sep">·</span>
+ <a href="/legal/confidentialite.html">Confidentialité</a>
+ <span class="fu-sep">·</span>
+ <a href="/legal/cookies.html">Cookies</a>
+ </div>
+ </div>
+ </div>
+</footer>
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Article",
+ "headline": "Mythos · Récit fondateur EnerTchad SA",
+ "description": "Récit fondateur en 7 chapitres · pourquoi le Tchad maintenant · DG ex-major 12 ans · vision Cap 2030 · destinée OFS Africa-first.",
+ "author": {"@type":"Person","name":"Bignéro Moïalbéi Le Madang","jobTitle":"DG · Founder"},
+ "publisher": {"@type":"Organization","name":"EnerTchad SA"},
+ "datePublished": "2026-05-02",
+ "url": "https://www.enertchad.td/mythos/",
+ "inLanguage": "fr"
+}
+</script>
+
+<script src="/assets/js/enertchad.js?v=r314" defer></script>
+
+ <script defer src="/assets/js/jn-counter.js?v=r314"></script>
+ <script defer src="/assets/js/header-ultra.js?v=r314"></script>
+ <script defer src="/assets/js/ux-r146.js?v=r314"></script>
+ <script defer src="/assets/js/megamenu-r154.js?v=r314"></script>
+</body>
+</html>

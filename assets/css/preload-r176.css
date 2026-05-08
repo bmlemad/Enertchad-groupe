@@ -1,0 +1,192 @@
+/* ============================================================
+   R176 · Preload page · brutalist canon EnerTchad SA
+   Navy var(--navy) + gold #C9B57B + cream var(--cream)
+   ============================================================ */
+
+#preload-r176 {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: var(--navy);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(28px, 5vh, 56px);
+  padding: 40px 24px;
+  pointer-events: auto;
+  transition: opacity 600ms cubic-bezier(0.65, 0, 0.35, 1),
+              visibility 0s linear 600ms;
+}
+
+#preload-r176[data-state="hidden"] {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Top corner brand mark · letterhead style */
+.pl-corner {
+  position: absolute;
+  top: clamp(24px, 4vh, 40px);
+  left: clamp(24px, 4vw, 56px);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(201, 181, 123, 0.7);
+}
+
+.pl-corner-r {
+  left: auto;
+  right: clamp(24px, 4vw, 56px);
+  text-align: right;
+  color: rgba(246, 241, 230, 0.5);
+}
+
+/* Logo SVG · 4 pétales drawn with stroke-dashoffset */
+.pl-logo {
+  width: clamp(80px, 12vw, 120px);
+  height: clamp(80px, 12vw, 120px);
+  display: block;
+}
+.pl-logo path,
+.pl-logo circle {
+  stroke: #C9B57B;
+  fill: none;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  animation: pl-draw 1400ms cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+.pl-logo path:nth-child(2) { animation-delay: 120ms; }
+.pl-logo path:nth-child(3) { animation-delay: 240ms; }
+.pl-logo path:nth-child(4) { animation-delay: 360ms; }
+.pl-logo circle { animation-delay: 480ms; stroke-dasharray: 80; stroke-dashoffset: 80; }
+
+@keyframes pl-draw {
+  to { stroke-dashoffset: 0; }
+}
+
+/* Wordmark + slogan stack */
+.pl-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.pl-wordmark {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: var(--cream);
+  margin: 0;
+  opacity: 0;
+  animation: pl-fade 600ms cubic-bezier(0.65, 0, 0.35, 1) 600ms forwards;
+}
+.pl-wordmark em {
+  font-family: "Crimson Pro", Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  color: #C9B57B;
+}
+
+.pl-slogan {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: rgba(246, 241, 230, 0.55);
+  margin: 0;
+  opacity: 0;
+  animation: pl-fade 600ms cubic-bezier(0.65, 0, 0.35, 1) 800ms forwards;
+}
+
+@keyframes pl-fade {
+  to { opacity: 1; }
+}
+
+/* Counter + progress bar · bottom band */
+.pl-bottom {
+  position: absolute;
+  bottom: clamp(24px, 4vh, 40px);
+  left: clamp(24px, 4vw, 56px);
+  right: clamp(24px, 4vw, 56px);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  opacity: 0;
+  animation: pl-fade 600ms cubic-bezier(0.65, 0, 0.35, 1) 1000ms forwards;
+}
+
+.pl-counter-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.pl-counter {
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 0.95;
+  color: #C9B57B;
+  font-variant-numeric: tabular-nums;
+}
+.pl-counter::after {
+  content: "%";
+  font-size: 0.5em;
+  vertical-align: top;
+  margin-left: 4px;
+  color: rgba(201, 181, 123, 0.6);
+}
+
+.pl-counter-meta {
+  font-size: 0.7rem;
+  color: rgba(246, 241, 230, 0.45);
+  text-align: right;
+}
+.pl-counter-meta strong {
+  color: rgba(246, 241, 230, 0.8);
+  font-weight: 700;
+}
+
+.pl-progress {
+  height: 1px;
+  background: rgba(201, 181, 123, 0.18);
+  position: relative;
+  overflow: hidden;
+}
+.pl-progress-fill {
+  position: absolute;
+  inset: 0 100% 0 0;
+  background: #C9B57B;
+  transition: right 240ms cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+/* Reduced-motion · disable animations · simple fade-out only */
+@media (prefers-reduced-motion: reduce) {
+  .pl-logo path, .pl-logo circle,
+  .pl-wordmark, .pl-slogan, .pl-bottom {
+    animation: none !important;
+    stroke-dashoffset: 0 !important;
+    opacity: 1 !important;
+  }
+  .pl-progress-fill { transition: none; }
+}
+
+/* Print · hide entirely */
+@media print {
+  #preload-r176 { display: none !important; }
+}

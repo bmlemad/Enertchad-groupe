@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Bassin Doba · 30 puits matures cibles Programme EOR Local Phase 1">
+ <title>Doba bassin · 30 puits matures · cibles EOR Local</title>
+ <desc>Carte schématique bassin Doba (sud Tchad) avec 30+ puits matures cibles pour pilote Programme EOR Local Phase 1.</desc>
+
+ <rect width="800" height="450" fill="#080E1A"/>
+
+ <!-- Title -->
+ <text x="40" y="50" fill="#C9B57B" font-family="'Space Grotesk',sans-serif" font-size="12" letter-spacing="2">PHASE 1 · PILOTE EOR LOCAL · 18 MOIS</text>
+ <text x="40" y="78" fill="#F6F1E6" font-family="'Space Grotesk',sans-serif" font-size="26" font-weight="600">Bassin Doba · 30+ puits matures</text>
+
+ <!-- Bassin Doba ellipse outline -->
+ <g transform="translate(400,260)">
+  <ellipse cx="0" cy="0" rx="280" ry="120" fill="none" stroke="#C9B57B" stroke-width="1.5" stroke-dasharray="4,4" opacity="0.6"/>
+  <text x="0" y="-130" fill="#C9B57B" font-family="'Space Grotesk',sans-serif" font-size="11" text-anchor="middle" opacity="0.8">BASSIN DOBA · sud Tchad · 25 000 km²</text>
+ </g>
+
+ <!-- 30 wells dots (5 selected for pilot in gold, others in cream) -->
+ <g font-family="'Space Grotesk',sans-serif">
+  <!-- Pilot 5 wells (gold filled) -->
+  <g fill="#C9B57B">
+   <circle cx="320" cy="220" r="6"/>
+   <circle cx="380" cy="240" r="6"/>
+   <circle cx="430" cy="220" r="6"/>
+   <circle cx="470" cy="260" r="6"/>
+   <circle cx="350" cy="280" r="6"/>
+  </g>
+  <!-- Numbering pilot 5 -->
+  <g fill="#080E1A" font-size="9" font-weight="600" text-anchor="middle">
+   <text x="320" y="223">1</text>
+   <text x="380" y="243">2</text>
+   <text x="430" y="223">3</text>
+   <text x="470" y="263">4</text>
+   <text x="350" y="283">5</text>
+  </g>
+
+  <!-- Other 25 wells (cream outline only) -->
+  <g fill="none" stroke="#F6F1E6" stroke-width="1" opacity="0.5">
+   <circle cx="250" cy="200" r="4"/>
+   <circle cx="280" cy="240" r="4"/>
+   <circle cx="290" cy="280" r="4"/>
+   <circle cx="310" cy="320" r="4"/>
+   <circle cx="350" cy="320" r="4"/>
+   <circle cx="400" cy="180" r="4"/>
+   <circle cx="450" cy="200" r="4"/>
+   <circle cx="500" cy="220" r="4"/>
+   <circle cx="520" cy="260" r="4"/>
+   <circle cx="540" cy="290" r="4"/>
+   <circle cx="490" cy="310" r="4"/>
+   <circle cx="440" cy="320" r="4"/>
+   <circle cx="380" cy="200" r="4"/>
+   <circle cx="290" cy="200" r="4"/>
+   <circle cx="240" cy="260" r="4"/>
+   <circle cx="270" cy="320" r="4"/>
+   <circle cx="330" cy="180" r="4"/>
+   <circle cx="370" cy="180" r="4"/>
+   <circle cx="410" cy="180" r="4"/>
+   <circle cx="450" cy="180" r="4"/>
+   <circle cx="490" cy="180" r="4"/>
+   <circle cx="510" cy="200" r="4"/>
+   <circle cx="540" cy="220" r="4"/>
+   <circle cx="560" cy="250" r="4"/>
+   <circle cx="500" cy="280" r="4"/>
+  </g>
+ </g>
+
+ <!-- Legend -->
+ <g transform="translate(40,380)" font-family="'Space Grotesk',sans-serif" font-size="11" fill="#F6F1E6">
+  <circle cx="10" cy="0" r="6" fill="#C9B57B"/>
+  <text x="24" y="4">5 puits pilote · injection EOR Local 18 mois</text>
+  <circle cx="350" cy="0" r="4" fill="none" stroke="#F6F1E6" opacity="0.5"/>
+  <text x="364" y="4" opacity="0.7">25 puits matures · candidats Phase 2</text>
+ </g>
+
+ <!-- Compass -->
+ <g transform="translate(720,400)" fill="#C9B57B">
+  <circle cx="0" cy="0" r="20" fill="none" stroke="#C9B57B" stroke-width="1"/>
+  <text x="0" y="-12" font-family="'Space Grotesk',sans-serif" font-size="10" text-anchor="middle">N</text>
+  <line x1="0" y1="-8" x2="0" y2="8" stroke="#C9B57B" stroke-width="1.5"/>
+  <polygon points="-3,-5 0,-12 3,-5" fill="#C9B57B"/>
+ </g>
+
+</svg>

@@ -1,0 +1,125 @@
+/* ============================================================
+ R284 · Dark mode theme · canon EnerTchad SA
+ Wave R284 · 2026-05-05 · DG mandate modernization
+ Strategy : navy ↔ cream swap, gold preserved as accent
+ ============================================================ */
+
+/* ---- Light theme (default · explicit for clarity) ---- */
+:root,
+:root[data-theme="light"]{
+ --th-bg-primary: #F6F1E6;       /* cream · main bg */
+ --th-bg-secondary: #ffffff;
+ --th-bg-tertiary: rgba(8,14,26,0.04);
+ --th-text-primary: #080E1A;     /* navy · main text */
+ --th-text-secondary: #4a4031;   /* bistre */
+ --th-text-tertiary: rgba(8,14,26,0.55);
+ --th-border: rgba(8,14,26,0.10);
+ --th-border-gold: rgba(217,168,79,0.22);
+ --th-card-bg: #ffffff;
+ --th-card-shadow: 0 1px 3px rgba(8,14,26,0.06);
+ --th-shadow-hover: 0 8px 24px rgba(8,14,26,0.08);
+}
+
+/* ---- Dark theme · auto via prefers + manual via data-theme="dark" ---- */
+@media (prefers-color-scheme: dark){
+ :root:not([data-theme="light"]){
+  --th-bg-primary: #080E1A;       /* navy */
+  --th-bg-secondary: #0d1525;
+  --th-bg-tertiary: rgba(246,241,230,0.04);
+  --th-text-primary: #F6F1E6;     /* cream */
+  --th-text-secondary: rgba(246,241,230,0.85);
+  --th-text-tertiary: rgba(246,241,230,0.55);
+  --th-border: rgba(246,241,230,0.10);
+  --th-border-gold: rgba(217,168,79,0.32);
+  --th-card-bg: #0d1525;
+  --th-card-shadow: 0 1px 3px rgba(0,0,0,0.40);
+  --th-shadow-hover: 0 8px 24px rgba(0,0,0,0.50);
+ }
+}
+
+:root[data-theme="dark"]{
+ --th-bg-primary: #080E1A;
+ --th-bg-secondary: #0d1525;
+ --th-bg-tertiary: rgba(246,241,230,0.04);
+ --th-text-primary: #F6F1E6;
+ --th-text-secondary: rgba(246,241,230,0.85);
+ --th-text-tertiary: rgba(246,241,230,0.55);
+ --th-border: rgba(246,241,230,0.10);
+ --th-border-gold: rgba(217,168,79,0.32);
+ --th-card-bg: #0d1525;
+ --th-card-shadow: 0 1px 3px rgba(0,0,0,0.40);
+ --th-shadow-hover: 0 8px 24px rgba(0,0,0,0.50);
+}
+
+/* ---- Smooth transitions on theme switch ---- */
+*,
+*::before,
+*::after{
+ transition: background-color 240ms ease, color 240ms ease, border-color 240ms ease;
+}
+
+/* ---- Theme toggle button ---- */
+.theme-toggle{
+ position: fixed;
+ bottom: 24px;
+ right: 90px;
+ z-index: 9999;
+ width: 48px;
+ height: 48px;
+ border-radius: 50%;
+ background: var(--gold);
+ color: var(--navy);
+ border: none;
+ cursor: pointer;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ box-shadow: 0 4px 12px rgba(8,14,26,0.20);
+ transition: transform 200ms ease, box-shadow 200ms ease;
+ font-size: 20px;
+}
+.theme-toggle:hover{
+ transform: scale(1.08);
+ box-shadow: 0 6px 18px rgba(8,14,26,0.30);
+}
+.theme-toggle:focus-visible{
+ outline: 2px solid var(--gold);
+ outline-offset: 4px;
+}
+@media (max-width: 640px){
+ .theme-toggle{
+  bottom: 88px;
+  right: 16px;
+  width: 44px;
+  height: 44px;
+ }
+}
+
+/* Sun icon shown in dark mode (toggle to light) */
+:root[data-theme="dark"] .theme-toggle::before,
+.theme-toggle[data-mode="dark"]::before{ content: "☀"; }
+/* Moon icon shown in light mode (toggle to dark) */
+:root[data-theme="light"] .theme-toggle::before,
+:root:not([data-theme]) .theme-toggle::before,
+.theme-toggle[data-mode="light"]::before{ content: "☾"; }
+@media (prefers-color-scheme: dark){
+ :root:not([data-theme]) .theme-toggle::before{ content: "☀"; }
+}
+
+/* ---- Reduced motion · disable transitions ---- */
+@media (prefers-reduced-motion: reduce){
+ *,
+ *::before,
+ *::after{
+  transition: none !important;
+ }
+}
+
+/* ---- Print: force light ---- */
+@media print{
+ :root{
+  --th-bg-primary: #ffffff !important;
+  --th-text-primary: #000000 !important;
+ }
+ .theme-toggle{ display: none !important; }
+}

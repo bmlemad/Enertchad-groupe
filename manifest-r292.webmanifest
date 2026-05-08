@@ -1,0 +1,24 @@
+{
+ "name": "EnerTchad SA · OFS Tchad · Tour Seed/Pre-A 2026",
+ "short_name": "EnerTchad",
+ "description": "Société parapétrolière (OFS) 100% services techniques · marché tchadien · OHADA · Tour Seed/Pre-A 8-12 M USD T3 2026.",
+ "start_url": "/",
+ "scope": "/",
+ "display": "standalone",
+ "orientation": "portrait-primary",
+ "background_color": "#080E1A",
+ "theme_color": "#080E1A",
+ "lang": "fr",
+ "dir": "ltr",
+ "categories": ["business", "finance", "industrial"],
+ "icons": [
+  {"src": "/assets/images/logo.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any"},
+  {"src": "/assets/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any"}
+ ],
+ "shortcuts": [
+  {"name": "Catalogue 96 services", "short_name": "Services", "url": "/services/"},
+  {"name": "Innovation Lab", "short_name": "Innovation", "url": "/projets/#innovation"},
+  {"name": "DG Office Hours", "short_name": "DG 30 min", "url": "/dg-office-hours/"},
+  {"name": "Dataroom DFI", "short_name": "Dataroom", "url": "/dataroom/"}
+ ]
+}

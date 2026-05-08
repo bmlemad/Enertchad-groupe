@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 220" role="img" aria-label="EnerTchad SA · Stations services next-gen · panoramique brutalist canon">
+  <title>EnerTchad SA · Stations services next-gen · A6+B6+C6 + IRVE + solaire</title>
+  <rect width="480" height="220" fill="#080E1A"/>
+  <!-- Sky · subtle stars -->
+  <g fill="#C9B57B" opacity="0.18">
+    <circle cx="60" cy="22" r="0.8"/>
+    <circle cx="140" cy="15" r="1"/>
+    <circle cx="240" cy="25" r="0.7"/>
+    <circle cx="340" cy="18" r="1"/>
+    <circle cx="430" cy="22" r="0.8"/>
+    <circle cx="80" cy="40" r="0.6"/>
+    <circle cx="380" cy="38" r="0.6"/>
+  </g>
+  <!-- Crescent moon (subtle gold) -->
+  <g transform="translate(420 35)">
+    <path d="M0 0 A8 8 0 1 0 5 -7 A6 6 0 1 1 0 0" fill="#C9B57B" opacity="0.6"/>
+  </g>
+
+  <g stroke="#C9B57B" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Left building · Boutique annexes B -->
+    <rect x="20" y="105" width="80" height="65" stroke-width="2" fill="#C9B57B" fill-opacity="0.06"/>
+    <line x1="18" y1="105" x2="102" y2="105" stroke-width="2.5"/>
+    <text x="60" y="100" text-anchor="middle" font-family="Space Grotesk" font-size="6" font-weight="700" fill="#C9B57B" letter-spacing="2">B · ANNEXES</text>
+    <!-- B windows -->
+    <g stroke-width="1">
+      <rect x="32" y="115" width="14" height="18"/>
+      <line x1="39" y1="115" x2="39" y2="133" stroke-width="0.5" opacity="0.5"/>
+      <line x1="32" y1="124" x2="46" y2="124" stroke-width="0.5" opacity="0.5"/>
+      <rect x="54" y="115" width="14" height="18"/>
+      <line x1="61" y1="115" x2="61" y2="133" stroke-width="0.5" opacity="0.5"/>
+      <rect x="76" y="115" width="14" height="18"/>
+      <line x1="83" y1="115" x2="83" y2="133" stroke-width="0.5" opacity="0.5"/>
+    </g>
+    <!-- B door -->
+    <rect x="42" y="148" width="14" height="22" stroke-width="1.4" fill="#C9B57B" fill-opacity="0.32"/>
+
+    <!-- Center · Mobile Station canopy + 3 pumps + IRVE -->
+    <line x1="120" y1="78" x2="360" y2="78" stroke-width="3.5"/>
+    <line x1="120" y1="84" x2="360" y2="84" stroke-width="0.5" opacity="0.5"/>
+    <!-- Solar panels on canopy -->
+    <g stroke-width="0.7" opacity="0.7">
+      <line x1="135" y1="68" x2="170" y2="68"/>
+      <line x1="135" y1="72" x2="170" y2="72"/>
+      <line x1="180" y1="68" x2="220" y2="68"/>
+      <line x1="180" y1="72" x2="220" y2="72"/>
+      <line x1="230" y1="68" x2="270" y2="68"/>
+      <line x1="230" y1="72" x2="270" y2="72"/>
+      <line x1="280" y1="68" x2="320" y2="68"/>
+      <line x1="280" y1="72" x2="320" y2="72"/>
+      <line x1="330" y1="68" x2="358" y2="68"/>
+      <line x1="330" y1="72" x2="358" y2="72"/>
+    </g>
+    <!-- Pillars -->
+    <line x1="135" y1="78" x2="135" y2="155" stroke-width="2.4"/>
+    <line x1="345" y1="78" x2="345" y2="155" stroke-width="2.4"/>
+    <line x1="240" y1="78" x2="240" y2="155" stroke-width="1.6" opacity="0.55"/>
+    <!-- Brand label -->
+    <text x="240" y="62" text-anchor="middle" font-family="Space Grotesk" font-size="11" font-weight="700" fill="#C9B57B" letter-spacing="3">MOBILE STATION™ · EnerTchad SA</text>
+    <!-- Pump A1 essence -->
+    <g transform="translate(170 130)">
+      <rect x="-10" y="0" width="20" height="32" stroke-width="1.8" fill="#C9B57B" fill-opacity="0.10"/>
+      <rect x="-8" y="4" width="16" height="9" stroke-width="0.8" fill="#080E1A"/>
+      <text x="0" y="11" text-anchor="middle" font-family="Space Grotesk" font-size="5.5" font-weight="700" fill="#C9B57B">A1·95</text>
+      <line x1="-6" y1="0" x2="-6" y2="-8" stroke-width="1.3"/>
+      <line x1="-6" y1="-8" x2="-12" y2="-13" stroke-width="1.3"/>
+      <circle cx="-12" cy="-13" r="1.5" fill="#C9B57B"/>
+    </g>
+    <!-- Pump A2 diesel -->
+    <g transform="translate(210 130)">
+      <rect x="-10" y="0" width="20" height="32" stroke-width="1.8" fill="#C9B57B" fill-opacity="0.10"/>
+      <rect x="-8" y="4" width="16" height="9" stroke-width="0.8" fill="#080E1A"/>
+      <text x="0" y="11" text-anchor="middle" font-family="Space Grotesk" font-size="5.5" font-weight="700" fill="#C9B57B">A2·DI</text>
+      <line x1="0" y1="0" x2="0" y2="-8" stroke-width="1.3"/>
+      <line x1="0" y1="-8" x2="-7" y2="-13" stroke-width="1.3"/>
+      <circle cx="-7" cy="-13" r="1.5" fill="#C9B57B"/>
+    </g>
+    <!-- IRVE center · gold filled -->
+    <g transform="translate(255 130)">
+      <rect x="-11" y="0" width="22" height="32" stroke-width="2" fill="#C9B57B" fill-opacity="0.32"/>
+      <rect x="-9" y="4" width="18" height="9" stroke-width="0.8" fill="#080E1A"/>
+      <text x="0" y="11" text-anchor="middle" font-family="Space Grotesk" font-size="5.5" font-weight="700" fill="#C9B57B">IRVE</text>
+      <path d="M-3 17 L1 17 L-2 22 L2 22 L-1 28" stroke="#080E1A" stroke-width="0.9" fill="none"/>
+    </g>
+    <!-- Pump A3 keros -->
+    <g transform="translate(298 130)">
+      <rect x="-10" y="0" width="20" height="32" stroke-width="1.8" fill="#C9B57B" fill-opacity="0.10"/>
+      <rect x="-8" y="4" width="16" height="9" stroke-width="0.8" fill="#080E1A"/>
+      <text x="0" y="11" text-anchor="middle" font-family="Space Grotesk" font-size="5.5" font-weight="700" fill="#C9B57B">A3·KE</text>
+      <line x1="6" y1="0" x2="6" y2="-8" stroke-width="1.3"/>
+      <line x1="6" y1="-8" x2="12" y2="-13" stroke-width="1.3"/>
+      <circle cx="12" cy="-13" r="1.5" fill="#C9B57B"/>
+    </g>
+    <!-- A4 GPL -->
+    <g transform="translate(335 130)">
+      <rect x="-9" y="0" width="18" height="32" stroke-width="1.8" fill="#C9B57B" fill-opacity="0.10"/>
+      <rect x="-7" y="4" width="14" height="9" stroke-width="0.8" fill="#080E1A"/>
+      <text x="0" y="11" text-anchor="middle" font-family="Space Grotesk" font-size="5.5" font-weight="700" fill="#C9B57B">A4·LP</text>
+    </g>
+
+    <!-- Right · service bay C connexes -->
+    <line x1="378" y1="100" x2="465" y2="100" stroke-width="2.5"/>
+    <line x1="385" y1="100" x2="385" y2="170" stroke-width="2"/>
+    <line x1="460" y1="100" x2="460" y2="170" stroke-width="2"/>
+    <text x="423" y="95" text-anchor="middle" font-family="Space Grotesk" font-size="6" font-weight="700" fill="#C9B57B" letter-spacing="2">C · CONNEXES</text>
+    <!-- car silhouette -->
+    <g transform="translate(423 145)">
+      <line x1="-18" y1="0" x2="18" y2="0" stroke-width="1.4"/>
+      <line x1="-15" y1="0" x2="-9" y2="-9" stroke-width="1.4"/>
+      <line x1="-9" y1="-9" x2="9" y2="-9" stroke-width="1.4"/>
+      <line x1="9" y1="-9" x2="15" y2="0" stroke-width="1.4"/>
+      <circle cx="-10" cy="2.5" r="2.5" stroke-width="1.2" fill="#C9B57B" fill-opacity="0.2"/>
+      <circle cx="10" cy="2.5" r="2.5" stroke-width="1.2" fill="#C9B57B" fill-opacity="0.2"/>
+      <!-- water dots -->
+      <g fill="#C9B57B" stroke="none" opacity="0.6">
+        <circle cx="-15" cy="-13" r="0.5"/>
+        <circle cx="-7" cy="-15" r="0.5"/>
+        <circle cx="3" cy="-14" r="0.5"/>
+        <circle cx="11" cy="-15" r="0.5"/>
+      </g>
+    </g>
+
+    <!-- Ground · double line full width -->
+    <line x1="10" y1="180" x2="470" y2="180" stroke-width="1.6"/>
+    <line x1="10" y1="186" x2="470" y2="186" stroke-width="0.5" opacity="0.5"/>
+    <!-- Ground texture -->
+    <g fill="#C9B57B" stroke="none" opacity="0.4">
+      <circle cx="40" cy="195" r="0.6"/>
+      <circle cx="160" cy="200" r="0.6"/>
+      <circle cx="280" cy="195" r="0.6"/>
+      <circle cx="400" cy="200" r="0.6"/>
+    </g>
+  </g>
+
+  <!-- Bottom canon label -->
+  <text x="240" y="213" text-anchor="middle" font-family="Space Grotesk" font-size="9" font-weight="700" fill="#C9B57B" letter-spacing="4">A · CARBURANTS    B · ANNEXES    C · CONNEXES    +    IRVE 50    +    SOLAR</text>
+</svg>

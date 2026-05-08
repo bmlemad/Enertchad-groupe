@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Pôle Amont · Upstream · 13+ services brutalist canon">
+ <title>Pôle Amont · Upstream · catalogue services flagship</title>
+ <desc>Visualisation brutalist du pôle Amont avec 5 bassins du Tchad · 30+ puits matures Doba · 5 polymères EOR Local brevetés OAPI · catalogue services S01-S18.</desc>
+
+ <!-- Background navy -->
+ <rect width="800" height="500" fill="#080E1A"/>
+
+ <!-- Brutalist grid -->
+ <g stroke="#C9B57B" stroke-width="0.5" opacity="0.08">
+  <line x1="0" y1="100" x2="800" y2="100"/>
+  <line x1="0" y1="200" x2="800" y2="200"/>
+  <line x1="0" y1="300" x2="800" y2="300"/>
+  <line x1="0" y1="400" x2="800" y2="400"/>
+  <line x1="200" y1="0" x2="200" y2="500"/>
+  <line x1="400" y1="0" x2="400" y2="500"/>
+  <line x1="600" y1="0" x2="600" y2="500"/>
+ </g>
+
+ <!-- Title -->
+ <text x="40" y="55" fill="#C9B57B" font-family="'Space Grotesk',sans-serif" font-size="14" letter-spacing="3.5">PÔLE 01 · AMONT · UPSTREAM</text>
+ <text x="40" y="92" fill="#F6F1E6" font-family="'Space Grotesk',sans-serif" font-size="32" font-weight="700">13+ services flagship</text>
+ <text x="40" y="118" fill="#F6F1E6" font-family="'Crimson Pro',Georgia,serif" font-style="italic" font-size="18" opacity="0.85">5 bassins · 30 puits matures · 5 polymères brevetés.</text>
+
+ <!-- 5 Bassins map (left side) -->
+ <g transform="translate(40,160)">
+  <text x="0" y="0" fill="#C9B57B" font-family="'Space Grotesk',sans-serif" font-size="10" letter-spacing="2">5 BASSINS · 62 000 KM²</text>
+  <!-- Bongor -->
+  <ellipse cx="40" cy="40" rx="35" ry="20" fill="none" stroke="#C9B57B" stroke-width="1.2" stroke-dasharray="3,2" opacity="0.6"/>
+  <text x="40" y="45" fill="#F6F1E6" font-family="'Space Grotesk',sans-serif" font-size="9" text-anchor="middle">Bongor</text>
+  <!-- Doba (highlighted gold) -->
+  <ellipse cx="130" cy="55" rx="42" ry="22" fill="rgba(201,181,123,0.18)" stroke="#C9B57B" stroke-width="2"/>
+  <text x="130" y="60" fill="#C9B57B" font-family="'Space Grotesk',sans-serif" font-size="10" text-anchor="middle" font-weight="700">DOBA</text>
+  <text x="130" y="72" fill="#F6F1E6" font-family="'Space Grotesk',sans-serif" font-size="7" text-anchor="middle" opacity="0.7">30 puits matures</text>
+  <!-- Lac -->
+  <ellipse cx="220" cy="35" rx="30" ry="15" fill="none" stroke="#C9B57B" stroke-width="1.2" stroke-dasharray="3,2" opacity="0.6"/>
+  <text x="220" y="40" fill="#F6F1E6" font-family="'Space Grotesk',sans-serif" font-size="9" text-anchor="middle">Lac</text>
+  <!-- Doseo -->
+  <ellipse cx="80" cy="100" rx="32" ry="16" fill="none" stroke="#C9B57B" stroke-width="1.2" stroke-dasharray="3,2" opacity="0.6"/>
+  <text x="80" y="105" fill="#F6F1E6" font-family="'Space Grotesk',sans-serif" font-size="9" text-anchor="middle">Doseo</text>
+  <!-- Borkou -->
+  <ellipse cx="200" cy="105" rx="35" ry="17" fill="none" stroke="#C9B57B" stroke-width="1.2" stroke-dasharray="3,2" opacity="0.6"/>
+  <text x="200" y="110" fill="#F6F1E6" font-family="'Space Grotesk',sans-serif" font-size="9" text-anchor="middle">Borkou</text>
+ </g>
+
+ <!-- Service codes column (center-right) -->
+ <g transform="translate(320,160)">
+  <text x="0" y="0" fill="#C9B57B" font-family="'Space Grotesk',sans-serif" font-size="10" letter-spacing="2">SERVICES · S01-S18 + U07</text>
+  <!-- Brown column -->
+  <rect x="0" y="14" width="160" height="120" fill="rgba(139,90,43,0.10)" stroke="#8B5A2B" stroke-width="1.5"/>
+  <text x="14" y="32" fill="#8B5A2B" font-family="'Space Grotesk',sans-serif" font-size="10" letter-spacing="2">⚐ BROWN · MATURES</text>
+  <g fill="#F6F1E6" font-family="'Space Grotesk',sans-serif" font-size="9">
+   <text x="14" y="50">S02 EOR Local · brevet OAPI</text>
+   <text x="14" y="65">S03 HSE Process Safety</text>
+   <text x="14" y="80">S07 Workover</text>
+   <text x="14" y="95">S14 Coiled Tubing</text>
+   <text x="14" y="110">S15 Wireline</text>
+   <text x="14" y="125">S16 P&amp;A</text>
+  </g>
+  <!-- Green column -->
+  <rect x="170" y="14" width="160" height="120" fill="rgba(16,185,129,0.10)" stroke="#10B981" stroke-width="1.5"/>
+  <text x="184" y="32" fill="#10B981" font-family="'Space Grotesk',sans-serif" font-size="10" letter-spacing="2">⚐ GREEN · NEUFS</text>
+  <g fill="#F6F1E6" font-family="'Space Grotesk',sans-serif" font-size="9">
+   <text x="184" y="50">S01 E&amp;P Géosciences</text>
+   <text x="184" y="65">S11 Drilling Fluids</text>
+   <text x="184" y="80">S12 Wellsite Supervision</text>
+   <text x="184" y="95">S13 Cementing</text>
+   <text x="184" y="110">U07 DaaS umbrella</text>
+   <text x="184" y="125">+S18 cross Brown+Green</text>
+  </g>
+ </g>
+
+ <!-- 5 Polymères column (right) -->
+ <g transform="translate(680,160)">
+  <text x="0" y="0" fill="#C9B57B" font-family="'Space Grotesk',sans-serif" font-size="10" letter-spacing="2">5 POLYMÈRES · BREVET OAPI Q3 2026</text>
+  <!-- Polymer dots -->
+  <g font-family="'Space Grotesk',sans-serif" fill="#F6F1E6" font-size="10">
+   <circle cx="5" cy="30" r="5" fill="#C9B57B"/>
+   <text x="20" y="34">P01 Borkou Natron</text>
+   <circle cx="5" cy="50" r="5" fill="#C9B57B"/>
+   <text x="20" y="54">P02 Gomme Arabique</text>
+   <circle cx="5" cy="70" r="5" fill="#C9B57B"/>
+   <text x="20" y="74">P03 Cellulose</text>
+   <circle cx="5" cy="90" r="5" fill="#C9B57B"/>
+   <text x="20" y="94">P04 Neem-Karité</text>
+   <circle cx="5" cy="110" r="5" fill="#C9B57B"/>
+   <text x="20" y="114">P05 Spiruline</text>
+  </g>
+ </g>
+
+ <!-- KPI bar bottom -->
+ <g transform="translate(40,420)">
+  <rect width="720" height="60" fill="#1a2030" stroke="#C9B57B" stroke-width="1"/>
+  <g font-family="'Space Grotesk',sans-serif">
+   <text x="20" y="22" fill="#C9B57B" font-size="9" letter-spacing="1.5">RÉSULTATS CIBLES PHASE 1 · 2026-2027</text>
+   <text x="40" y="48" fill="#F6F1E6" font-size="20" font-weight="700">+6 à +17%</text>
+   <text x="40" y="58" fill="#F6F1E6" font-size="8" opacity="0.7">OOIP additionnel</text>
+   <text x="220" y="48" fill="#F6F1E6" font-size="20" font-weight="700">22 M USD</text>
+   <text x="220" y="58" fill="#F6F1E6" font-size="8" opacity="0.7">CAPEX Phase 1</text>
+   <text x="400" y="48" fill="#F6F1E6" font-size="20" font-weight="700">38%</text>
+   <text x="400" y="58" fill="#F6F1E6" font-size="8" opacity="0.7">IRR central</text>
+   <text x="540" y="48" fill="#F6F1E6" font-size="20" font-weight="700">3 opérateurs</text>
+   <text x="540" y="58" fill="#F6F1E6" font-size="8" opacity="0.7">CNPCIC · Perenco · TPC</text>
+  </g>
+ </g>
+</svg>

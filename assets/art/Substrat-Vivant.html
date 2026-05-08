@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+ <meta name="view-transition" content="same-origin">
+ <!-- V11 perf · resource hints -->
+ <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link rel="dns-prefetch" href="https://plausible.io">
+ <link rel="preload" as="style" href="/assets/css/enertchad.css?v=r179">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Substrat Vivant · Algorithmic Art</title>
+<link rel="canonical" href="https://www.enertchad.td/assets/art/Substrat-Vivant.html" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Lora:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root {
-  --anthropic-dark:#141413; --anthropic-light:#faf9f5; --anthropic-mid-gray:#b0aea5;
-  --anthropic-light-gray:#e8e6dc; --anthropic-orange:#d97757; --anthropic-blue:#6a9bcc; --anthropic-green:#788c5d;
+ --anthropic-dark:#141413; --anthropic-light:#faf9f5; --anthropic-mid-gray:#b0aea5;
+ --anthropic-light-gray:#e8e6dc; --anthropic-orange:#d97757; --anthropic-blue:#6a9bcc; --anthropic-green:#788c5d;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Poppins',sans-serif;background:linear-gradient(135deg,var(--anthropic-light) 0%,#f5f3ee 100%);min-height:100vh;color:var(--anthropic-dark)}
@@ -61,12 +68,46 @@ body{font-family:'Poppins',sans-serif;background:linear-gradient(135deg,var(--an
 .family-legend>div:nth-child(5)::before{background:var(--c5)}
 @media(max-width:600px){.container{flex-direction:column}.sidebar{width:100%}.canvas-area{padding:20px}}
 </style>
-<meta property="og:image" content="https://enertchad-groupe.vercel.app/assets/images/enertchad-accueil-hero-01.webp" />
+<meta property="og:image" content="https://enertchad.td/assets/images/enertchad-accueil-hero-01.webp" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@EnerTchad" />
-<meta name="twitter:image" content="https://enertchad-groupe.vercel.app/assets/images/enertchad-accueil-hero-01.webp" />
+<meta name="twitter:image" content="https://enertchad.td/assets/images/enertchad-accueil-hero-01.webp" />
+ <!-- Speculation Rules API · prerender top-priority pages (Chrome 121+) -->
+ <script type="speculationrules">
+ {
+ "prerender": [{
+ "where": {
+ "or": [
+ { "href_matches": "/engagement/investisseurs.html" },
+ { "href_matches": "/dataroom/" },
+ { "href_matches": "/amont/" },
+ { "href_matches": "/data/atlas.html" }
+ ]
+ },
+ "eagerness": "moderate"
+ }],
+ "prefetch": [{
+ "where": {
+ "and": [
+ { "href_matches": "/*" },
+ { "not": { "href_matches": "/en/*" } }
+ ]
+ },
+ "eagerness": "conservative"
+ }]
+ }
+ </script>
+
+ <meta property="og:url" content="https://enertchad-groupe.pages.dev/" />
+ <meta property="og:type" content="website" />
+
+ <meta property="og:title" content="Substrat Vivant · Algorithmic Art" />
+ <meta property="og:description" content="EnerTchad SA · société parapétrolière (OFS) Tchad · Tour Seed/Pre-A 2026." />
+<link rel="alternate" hreflang="fr" href="https://www.enertchad.td/assets/art/Substrat-Vivant.html" />
+<link rel="alternate" hreflang="x-default" href="https://www.enertchad.td/assets/art/Substrat-Vivant.html" />
+   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"EnerTchad SA","alternateName":"EnerTchad","url":"https://www.enertchad.td/","logo":"https://www.enertchad.td/assets/images/logo.svg","slogan":"Unité · Innovation · Durabilité","description":"Société parapétrolière (OFS) 100% services techniques · marché tchadien · OHADA","foundingDate":"2026","founder":{"@type":"Person","name":"Bignéro Moïalbéi Le Madang","jobTitle":"Directeur Général"},"address":{"@type":"PostalAddress","addressLocality":"N'Djamena","addressCountry":"TD"},"identifier":"RCCM N'DJ/RC/2026-A-0001"}</script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -188,13 +229,13 @@ body{font-family:'Poppins',sans-serif;background:linear-gradient(135deg,var(--an
 
 <script>
 let params = {
-  seed: 2026,
-  particles: 2400,
-  noiseScale: 0.0035,
-  speed: 1.0,
-  alpha: 14,
-  duration: 420,
-  colors: ['#e8e6dc','#c19a5b','#a0522d','#788c5d','#3a5c5a']
+ seed: 2026,
+ particles: 2400,
+ noiseScale: 0.0035,
+ speed: 1.0,
+ alpha: 14,
+ duration: 420,
+ colors: ['#e8e6dc','#c19a5b','#a0522d','#788c5d','#3a5c5a']
 };
 let defaultParams = JSON.parse(JSON.stringify(params));
 let particles = [];
@@ -202,223 +243,223 @@ let frameCounter = 0;
 let bgColor;
 
 const FAMILIES = [
-  { name: 'natron', viscosity: 0.92, curvatureBias: 0.0,  patternFn: 'crystal',  size: 1.4, octaveBlend: [0.7, 0.3, 0.0] },
-  { name: 'gomme', viscosity: 0.78, curvatureBias: -0.05, patternFn: 'chain',    size: 1.0, octaveBlend: [0.4, 0.5, 0.1] },
-  { name: 'cellul', viscosity: 0.85, curvatureBias: 0.18, patternFn: 'branch',   size: 1.2, octaveBlend: [0.5, 0.3, 0.2] },
-  { name: 'neem', viscosity: 0.70, curvatureBias: 0.32,  patternFn: 'spiral',   size: 1.6, octaveBlend: [0.3, 0.4, 0.3] },
-  { name: 'spirul', viscosity: 0.55, curvatureBias: 0.10, patternFn: 'cloud',    size: 2.2, octaveBlend: [0.2, 0.3, 0.5] }
+ { name: 'natron', viscosity: 0.92, curvatureBias: 0.0, patternFn: 'crystal', size: 1.4, octaveBlend: [0.7, 0.3, 0.0] },
+ { name: 'gomme', viscosity: 0.78, curvatureBias: -0.05, patternFn: 'chain', size: 1.0, octaveBlend: [0.4, 0.5, 0.1] },
+ { name: 'cellul', viscosity: 0.85, curvatureBias: 0.18, patternFn: 'branch', size: 1.2, octaveBlend: [0.5, 0.3, 0.2] },
+ { name: 'neem', viscosity: 0.70, curvatureBias: 0.32, patternFn: 'spiral', size: 1.6, octaveBlend: [0.3, 0.4, 0.3] },
+ { name: 'spirul', viscosity: 0.55, curvatureBias: 0.10, patternFn: 'cloud', size: 2.2, octaveBlend: [0.2, 0.3, 0.5] }
 ];
 
 function setup() {
-  let c = createCanvas(1200, 1200);
-  c.parent('canvas-container');
-  document.querySelector('.loading').style.display = 'none';
-  initializeSystem();
+ let c = createCanvas(1200, 1200);
+ c.parent('canvas-container');
+ document.querySelector('.loading').style.display = 'none';
+ initializeSystem();
 }
 
 function initializeSystem() {
-  randomSeed(params.seed);
-  noiseSeed(params.seed);
-  frameCounter = 0;
-  bgColor = color(252, 250, 244);
-  background(bgColor);
-  
-  // Subtle paper texture
-  noStroke();
-  for (let i = 0; i < 1800; i++) {
-    fill(220 + random(-12, 12), 215 + random(-12, 12), 200 + random(-12, 12), 14);
-    let r = random(0.6, 2.4);
-    ellipse(random(width), random(height), r, r);
-  }
-  
-  particles = [];
-  for (let i = 0; i < params.particles; i++) {
-    particles.push(new Particle(i % 5));
-  }
+ randomSeed(params.seed);
+ noiseSeed(params.seed);
+ frameCounter = 0;
+ bgColor = color(252, 250, 244);
+ background(bgColor);
+ 
+ // Subtle paper texture
+ noStroke();
+ for (let i = 0; i < 1800; i++) {
+ fill(220 + random(-12, 12), 215 + random(-12, 12), 200 + random(-12, 12), 14);
+ let r = random(0.6, 2.4);
+ ellipse(random(width), random(height), r, r);
+ }
+ 
+ particles = [];
+ for (let i = 0; i < params.particles; i++) {
+ particles.push(new Particle(i % 5));
+ }
 }
 
 function draw() {
-  if (frameCounter >= params.duration) {
-    finalizeRender();
-    noLoop();
-    return;
-  }
-  
-  for (let p of particles) {
-    p.update();
-    p.render();
-  }
-  frameCounter++;
+ if (frameCounter >= params.duration) {
+ finalizeRender();
+ noLoop();
+ return;
+ }
+ 
+ for (let p of particles) {
+ p.update();
+ p.render();
+ }
+ frameCounter++;
 }
 
 function finalizeRender() {
-  // Final pass: subtle vignette
-  push();
-  for (let i = 0; i < 60; i++) {
-    noFill();
-    stroke(20, 20, 19, 1.5);
-    strokeWeight(1);
-    rect(i, i, width - i*2, height - i*2);
-  }
-  pop();
+ // Final pass: subtle vignette
+ push();
+ for (let i = 0; i < 60; i++) {
+ noFill();
+ stroke(20, 20, 19, 1.5);
+ strokeWeight(1);
+ rect(i, i, width - i*2, height - i*2);
+ }
+ pop();
 }
 
 class Particle {
-  constructor(familyIdx) {
-    this.fam = FAMILIES[familyIdx];
-    this.col = color(params.colors[familyIdx]);
-    this.x = random(width);
-    this.y = random(height);
-    this.vx = 0;
-    this.vy = 0;
-    this.life = 0;
-    this.maxLife = floor(random(80, 240));
-    this.phase = random(TWO_PI);
-    this.spinDir = random() < 0.5 ? -1 : 1;
-    this.idx = familyIdx;
-  }
-  
-  update() {
-    // Multi-octave noise field — porous rock simulation
-    let nx = this.x * params.noiseScale;
-    let ny = this.y * params.noiseScale;
-    let blend = this.fam.octaveBlend;
-    
-    let n = noise(nx, ny) * blend[0] +
-            noise(nx * 2 + 100, ny * 2 + 100) * blend[1] +
-            noise(nx * 4 + 200, ny * 4 + 200) * blend[2];
-    
-    let angle = n * TWO_PI * 2 + this.fam.curvatureBias * frameCount * 0.01;
-    
-    // Pattern-specific deviation
-    let dx = cos(angle);
-    let dy = sin(angle);
-    
-    if (this.fam.patternFn === 'crystal') {
-      // Snap to hexagonal lattice angles
-      angle = round(angle / (PI/3)) * (PI/3);
-      dx = cos(angle);
-      dy = sin(angle);
-    } else if (this.fam.patternFn === 'chain') {
-      // Almost straight, mild curve
-      angle += sin(this.life * 0.04) * 0.08;
-      dx = cos(angle);
-      dy = sin(angle);
-    } else if (this.fam.patternFn === 'branch') {
-      // Periodic right-angle branches
-      if (this.life > 20 && this.life % 35 === 0 && random() < 0.4) {
-        angle += (random() < 0.5 ? PI/2 : -PI/2);
-      }
-      dx = cos(angle);
-      dy = sin(angle);
-    } else if (this.fam.patternFn === 'spiral') {
-      // Add spiral component
-      let r = this.life * 0.12;
-      let spiralAngle = this.phase + this.life * 0.08 * this.spinDir;
-      dx = cos(angle) * 0.5 + cos(spiralAngle) * 0.5;
-      dy = sin(angle) * 0.5 + sin(spiralAngle) * 0.5;
-    } else if (this.fam.patternFn === 'cloud') {
-      // Brownian-ish jitter
-      dx = cos(angle) * 0.7 + random(-0.4, 0.4);
-      dy = sin(angle) * 0.7 + random(-0.4, 0.4);
-    }
-    
-    let viscosity = this.fam.viscosity;
-    this.vx = this.vx * viscosity + dx * params.speed * (1 - viscosity);
-    this.vy = this.vy * viscosity + dy * params.speed * (1 - viscosity);
-    
-    this.x += this.vx;
-    this.y += this.vy;
-    this.life++;
-    
-    // Particle reset on edge or end-of-life
-    if (this.x < 0 || this.x > width || this.y < 0 || this.y > height || this.life > this.maxLife) {
-      this.respawn();
-    }
-  }
-  
-  respawn() {
-    // Spawn from edges with bias toward where particles are sparse
-    let edge = floor(random(4));
-    if (edge === 0) { this.x = random(width); this.y = -10; }
-    else if (edge === 1) { this.x = width + 10; this.y = random(height); }
-    else if (edge === 2) { this.x = random(width); this.y = height + 10; }
-    else { this.x = -10; this.y = random(height); }
-    
-    this.vx = 0; this.vy = 0;
-    this.life = 0;
-    this.maxLife = floor(random(80, 240));
-    this.phase = random(TWO_PI);
-  }
-  
-  render() {
-    noStroke();
-    let c = this.col;
-    fill(red(c), green(c), blue(c), params.alpha);
-    
-    let s = this.fam.size;
-    if (this.fam.patternFn === 'crystal') {
-      // Hexagonal stamp
-      push();
-      translate(this.x, this.y);
-      rotate(this.phase);
-      beginShape();
-      for (let i = 0; i < 6; i++) {
-        let a = i * PI / 3;
-        vertex(cos(a) * s * 1.3, sin(a) * s * 1.3);
-      }
-      endShape(CLOSE);
-      pop();
-    } else if (this.fam.patternFn === 'cloud') {
-      // Soft halo
-      ellipse(this.x, this.y, s * 1.6, s * 1.6);
-      fill(red(c), green(c), blue(c), params.alpha * 0.3);
-      ellipse(this.x, this.y, s * 3.5, s * 3.5);
-    } else if (this.fam.patternFn === 'spiral') {
-      // Tight spiral mark
-      ellipse(this.x, this.y, s, s);
-    } else if (this.fam.patternFn === 'branch') {
-      rect(this.x - s/2, this.y - s/2, s, s);
-    } else {
-      ellipse(this.x, this.y, s, s);
-    }
-  }
+ constructor(familyIdx) {
+ this.fam = FAMILIES[familyIdx];
+ this.col = color(params.colors[familyIdx]);
+ this.x = random(width);
+ this.y = random(height);
+ this.vx = 0;
+ this.vy = 0;
+ this.life = 0;
+ this.maxLife = floor(random(80, 240));
+ this.phase = random(TWO_PI);
+ this.spinDir = random() < 0.5 ? -1 : 1;
+ this.idx = familyIdx;
+ }
+ 
+ update() {
+ // Multi-octave noise field — porous rock simulation
+ let nx = this.x * params.noiseScale;
+ let ny = this.y * params.noiseScale;
+ let blend = this.fam.octaveBlend;
+ 
+ let n = noise(nx, ny) * blend[0] +
+ noise(nx * 2 + 100, ny * 2 + 100) * blend[1] +
+ noise(nx * 4 + 200, ny * 4 + 200) * blend[2];
+ 
+ let angle = n * TWO_PI * 2 + this.fam.curvatureBias * frameCount * 0.01;
+ 
+ // Pattern-specific deviation
+ let dx = cos(angle);
+ let dy = sin(angle);
+ 
+ if (this.fam.patternFn === 'crystal') {
+ // Snap to hexagonal lattice angles
+ angle = round(angle / (PI/3)) * (PI/3);
+ dx = cos(angle);
+ dy = sin(angle);
+ } else if (this.fam.patternFn === 'chain') {
+ // Almost straight, mild curve
+ angle += sin(this.life * 0.04) * 0.08;
+ dx = cos(angle);
+ dy = sin(angle);
+ } else if (this.fam.patternFn === 'branch') {
+ // Periodic right-angle branches
+ if (this.life > 20 && this.life % 35 === 0 && random() < 0.4) {
+ angle += (random() < 0.5 ? PI/2 : -PI/2);
+ }
+ dx = cos(angle);
+ dy = sin(angle);
+ } else if (this.fam.patternFn === 'spiral') {
+ // Add spiral component
+ let r = this.life * 0.12;
+ let spiralAngle = this.phase + this.life * 0.08 * this.spinDir;
+ dx = cos(angle) * 0.5 + cos(spiralAngle) * 0.5;
+ dy = sin(angle) * 0.5 + sin(spiralAngle) * 0.5;
+ } else if (this.fam.patternFn === 'cloud') {
+ // Brownian-ish jitter
+ dx = cos(angle) * 0.7 + random(-0.4, 0.4);
+ dy = sin(angle) * 0.7 + random(-0.4, 0.4);
+ }
+ 
+ let viscosity = this.fam.viscosity;
+ this.vx = this.vx * viscosity + dx * params.speed * (1 - viscosity);
+ this.vy = this.vy * viscosity + dy * params.speed * (1 - viscosity);
+ 
+ this.x += this.vx;
+ this.y += this.vy;
+ this.life++;
+ 
+ // Particle reset on edge or end-of-life
+ if (this.x < 0 || this.x > width || this.y < 0 || this.y > height || this.life > this.maxLife) {
+ this.respawn();
+ }
+ }
+ 
+ respawn() {
+ // Spawn from edges with bias toward where particles are sparse
+ let edge = floor(random(4));
+ if (edge === 0) { this.x = random(width); this.y = -10; }
+ else if (edge === 1) { this.x = width + 10; this.y = random(height); }
+ else if (edge === 2) { this.x = random(width); this.y = height + 10; }
+ else { this.x = -10; this.y = random(height); }
+ 
+ this.vx = 0; this.vy = 0;
+ this.life = 0;
+ this.maxLife = floor(random(80, 240));
+ this.phase = random(TWO_PI);
+ }
+ 
+ render() {
+ noStroke();
+ let c = this.col;
+ fill(red(c), green(c), blue(c), params.alpha);
+ 
+ let s = this.fam.size;
+ if (this.fam.patternFn === 'crystal') {
+ // Hexagonal stamp
+ push();
+ translate(this.x, this.y);
+ rotate(this.phase);
+ beginShape();
+ for (let i = 0; i < 6; i++) {
+ let a = i * PI / 3;
+ vertex(cos(a) * s * 1.3, sin(a) * s * 1.3);
+ }
+ endShape(CLOSE);
+ pop();
+ } else if (this.fam.patternFn === 'cloud') {
+ // Soft halo
+ ellipse(this.x, this.y, s * 1.6, s * 1.6);
+ fill(red(c), green(c), blue(c), params.alpha * 0.3);
+ ellipse(this.x, this.y, s * 3.5, s * 3.5);
+ } else if (this.fam.patternFn === 'spiral') {
+ // Tight spiral mark
+ ellipse(this.x, this.y, s, s);
+ } else if (this.fam.patternFn === 'branch') {
+ rect(this.x - s/2, this.y - s/2, s, s);
+ } else {
+ ellipse(this.x, this.y, s, s);
+ }
+ }
 }
 
 function updateParam(name, value) {
-  let v = parseFloat(value);
-  document.getElementById(name + '-value').textContent = (name === 'noiseScale' || name === 'speed') ? v.toFixed(name === 'noiseScale' ? 4 : 1) : v;
-  if (name === 'particles') {
-    params.particles = v;
-    initializeSystem();
-    loop();
-  } else {
-    params[name] = v;
-    if (name === 'duration') {
-      // do not restart, let it continue
-      loop();
-    }
-  }
+ let v = parseFloat(value);
+ document.getElementById(name + '-value').textContent = (name === 'noiseScale' || name === 'speed') ? v.toFixed(name === 'noiseScale' ? 4 : 1) : v;
+ if (name === 'particles') {
+ params.particles = v;
+ initializeSystem();
+ loop();
+ } else {
+ params[name] = v;
+ if (name === 'duration') {
+ // do not restart, let it continue
+ loop();
+ }
+ }
 }
 
 function updateColor(idx, value) {
-  params.colors[idx] = value;
-  document.getElementById('c' + (idx+1) + '-value').textContent = value;
-  // Update CSS legend variable
-  document.documentElement.style.setProperty('--c' + (idx+1), value);
-  // Don't restart — re-render existing particles will update
-  for (let p of particles) {
-    if (p.idx === idx) p.col = color(value);
-  }
+ params.colors[idx] = value;
+ document.getElementById('c' + (idx+1) + '-value').textContent = value;
+ // Update CSS legend variable
+ document.documentElement.style.setProperty('--c' + (idx+1), value);
+ // Don't restart — re-render existing particles will update
+ for (let p of particles) {
+ if (p.idx === idx) p.col = color(value);
+ }
 }
 
 function updateSeed() {
-  let v = parseInt(document.getElementById('seed-input').value);
-  if (v && v > 0) {
-    params.seed = v;
-    initializeSystem();
-    loop();
-  }
+ let v = parseInt(document.getElementById('seed-input').value);
+ if (v && v > 0) {
+ params.seed = v;
+ initializeSystem();
+ loop();
+ }
 }
 function updateSeedDisplay(){ document.getElementById('seed-input').value = params.seed; }
 function previousSeed(){ params.seed = Math.max(1, params.seed - 1); updateSeedDisplay(); initializeSystem(); loop(); }
@@ -426,39 +467,40 @@ function nextSeed(){ params.seed = params.seed + 1; updateSeedDisplay(); initial
 function randomSeedAndUpdate(){ params.seed = Math.floor(Math.random() * 999999) + 1; updateSeedDisplay(); initializeSystem(); loop(); }
 
 function downloadPNG() {
-  saveCanvas('substrat-vivant-seed' + params.seed, 'png');
+ saveCanvas('substrat-vivant-seed' + params.seed, 'png');
 }
 
 function resetParameters() {
-  params = JSON.parse(JSON.stringify(defaultParams));
-  document.getElementById('particles').value = params.particles;
-  document.getElementById('particles-value').textContent = params.particles;
-  document.getElementById('noiseScale').value = params.noiseScale;
-  document.getElementById('noiseScale-value').textContent = params.noiseScale.toFixed(4);
-  document.getElementById('speed').value = params.speed;
-  document.getElementById('speed-value').textContent = params.speed.toFixed(1);
-  document.getElementById('alpha').value = params.alpha;
-  document.getElementById('alpha-value').textContent = params.alpha;
-  document.getElementById('duration').value = params.duration;
-  document.getElementById('duration-value').textContent = params.duration;
-  for (let i = 0; i < 5; i++) {
-    document.getElementById('c' + (i+1)).value = params.colors[i];
-    document.getElementById('c' + (i+1) + '-value').textContent = params.colors[i];
-    document.documentElement.style.setProperty('--c' + (i+1), params.colors[i]);
-  }
-  updateSeedDisplay();
-  initializeSystem();
-  loop();
+ params = JSON.parse(JSON.stringify(defaultParams));
+ document.getElementById('particles').value = params.particles;
+ document.getElementById('particles-value').textContent = params.particles;
+ document.getElementById('noiseScale').value = params.noiseScale;
+ document.getElementById('noiseScale-value').textContent = params.noiseScale.toFixed(4);
+ document.getElementById('speed').value = params.speed;
+ document.getElementById('speed-value').textContent = params.speed.toFixed(1);
+ document.getElementById('alpha').value = params.alpha;
+ document.getElementById('alpha-value').textContent = params.alpha;
+ document.getElementById('duration').value = params.duration;
+ document.getElementById('duration-value').textContent = params.duration;
+ for (let i = 0; i < 5; i++) {
+ document.getElementById('c' + (i+1)).value = params.colors[i];
+ document.getElementById('c' + (i+1) + '-value').textContent = params.colors[i];
+ document.documentElement.style.setProperty('--c' + (i+1), params.colors[i]);
+ }
+ updateSeedDisplay();
+ initializeSystem();
+ loop();
 }
 
 window.addEventListener('load', function() {
-  updateSeedDisplay();
-  for (let i = 0; i < 5; i++) {
-    document.documentElement.style.setProperty('--c' + (i+1), params.colors[i]);
-  }
+ updateSeedDisplay();
+ for (let i = 0; i < 5; i++) {
+ document.documentElement.style.setProperty('--c' + (i+1), params.colors[i]);
+ }
 });
 </script>
 </main>
 <div class="grain-overlay" aria-hidden="true"></div>
+ <script defer src="/assets/js/jn-counter.js?v=r128"></script>
 </body>
 </html>

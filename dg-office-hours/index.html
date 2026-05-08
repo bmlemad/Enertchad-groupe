@@ -1,0 +1,980 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+ <meta name="view-transition" content="same-origin">
+ <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link rel="dns-prefetch" href="https://cal.com">
+ <link rel="preload" as="style" href="/assets/css/enertchad.css?v=r295">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DG Office Hours · 30 min direct avec le DG · EnerTchad SA</title>
+<meta name="description" content="Office Hours DG EnerTchad Bignéro Moïalbéi Le Madang · réservation directe 30 min · DFI uniquement · qualification automatique · accès dataroom NDA · Tour…">
+<link rel="canonical" href="https://enertchad-groupe.pages.dev/dg-office-hours/">
+<link rel="stylesheet" href="/assets/css/ux-r146.css?v=r295" />
+<link rel="stylesheet" href="/assets/css/megamenu-r154.css?v=r295" />
+<link rel="stylesheet" href="/assets/css/header-ultra.css?v=r238" />
+<link rel="stylesheet" href="/assets/css/enertchad.css?v=r295">
+<link rel="icon" href="/assets/favicon.svg">
+<style>
+ body[data-page="dg-office-hours"] {
+ background: linear-gradient(180deg, #050810 0%, #080E1A 50%, #060912 100%);
+ color: var(--cream, #F6F1E6);
+ }
+
+ /* Hero */
+ .doh-hero {
+ padding: clamp(80px, 12vh, 140px) 0 clamp(40px, 6vw, 60px);
+ text-align: center;
+ position: relative;
+ }
+ .doh-kicker {
+ display: inline-flex;
+ align-items: center;
+ gap: 10px;
+ padding: 8px 18px;
+ border-radius: 999px;
+ border: 1px solid rgba(217, 168, 79, 0.35);
+ background: rgba(217, 168, 79, 0.08);
+ font-family: var(--font-display, 'Space Grotesk', sans-serif);
+ font-size: 11px;
+ font-weight: 700;
+ letter-spacing: 0.18em;
+ text-transform: uppercase;
+ color: var(--gold, #C9B57B);
+ margin-bottom: 24px;
+ }
+ .doh-pulse {
+ display: inline-block;
+ width: 8px;
+ height: 8px;
+ border-radius: 50%;
+ background: #10b981;
+ box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+ animation: doh-pulse 2s ease-in-out infinite;
+ }
+ @keyframes doh-pulse {
+ 0%, 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+ 50% { box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+ }
+ .doh-h1 {
+ font-family: var(--font-display, 'Space Grotesk', sans-serif);
+ font-size: clamp(48px, 8vw, 110px);
+ font-weight: 700;
+ letter-spacing: -0.035em;
+ line-height: 0.92;
+ color: var(--cream);
+ margin: 0 auto 24px;
+ max-width: 14ch;
+ }
+ .doh-h1 em {
+ font-style: normal;
+ color: var(--gold, #C9B57B);
+ }
+ .doh-lead {
+ font-size: clamp(16px, 1.5vw, 19px);
+ line-height: 1.55;
+ color: rgba(246, 241, 230, 0.78);
+ max-width: 720px;
+ margin: 0 auto 16px;
+ }
+ .doh-sublead {
+ font-size: 13px;
+ color: rgba(246, 241, 230, 0.55);
+ max-width: 600px;
+ margin: 0 auto;
+ font-family: var(--font-display);
+ letter-spacing: 0.06em;
+ }
+
+ /* Two columns: DG card + booking widget */
+ .doh-two-col {
+ display: grid;
+ grid-template-columns: 380px 1fr;
+ gap: 48px;
+ max-width: 1280px;
+ margin: 60px auto 0;
+ padding: 0 clamp(20px, 4vw, 60px);
+ }
+ @media (max-width: 920px) {
+ .doh-two-col {
+ grid-template-columns: 1fr;
+ gap: 32px;
+ }
+ }
+
+ /* Left column · DG card */
+ .doh-dg-card {
+ position: sticky;
+ top: 100px;
+ background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+ border: 1px solid rgba(217, 168, 79, 0.2);
+ border-radius: 18px;
+ padding: 32px;
+ align-self: start;
+ }
+ .doh-dg-avatar {
+ width: 88px;
+ height: 88px;
+ border-radius: 50%;
+ background: linear-gradient(135deg, #C9B57B, #8b6f3a);
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ font-family: var(--font-display);
+ font-size: 28px;
+ font-weight: 700;
+ color: #050810;
+ margin-bottom: 20px;
+ box-shadow: 0 0 0 4px rgba(217, 168, 79, 0.12);
+ }
+ .doh-dg-name {
+ font-family: var(--font-display);
+ font-size: 22px;
+ font-weight: 700;
+ line-height: 1.15;
+ color: var(--cream);
+ margin: 0 0 4px;
+ }
+ .doh-dg-title {
+ font-size: 13px;
+ color: rgba(246, 241, 230, 0.7);
+ margin: 0 0 16px;
+ line-height: 1.4;
+ }
+ .doh-dg-pills {
+ display: flex;
+ flex-wrap: wrap;
+ gap: 6px;
+ margin-bottom: 20px;
+ }
+ .doh-dg-pill {
+ font-family: var(--font-display);
+ font-size: 10px;
+ font-weight: 700;
+ letter-spacing: 0.1em;
+ text-transform: uppercase;
+ padding: 4px 10px;
+ border-radius: 999px;
+ background: rgba(217, 168, 79, 0.1);
+ color: var(--gold);
+ border: 1px solid rgba(217, 168, 79, 0.2);
+ }
+ .doh-dg-bio {
+ font-size: 14px;
+ line-height: 1.55;
+ color: rgba(246, 241, 230, 0.72);
+ margin: 0 0 20px;
+ border-top: 1px solid rgba(255,255,255,0.06);
+ padding-top: 20px;
+ }
+ .doh-dg-stats {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 14px;
+ margin-bottom: 20px;
+ }
+ .doh-dg-stat {
+ background: rgba(255,255,255,0.02);
+ border: 1px solid rgba(255,255,255,0.06);
+ border-radius: 10px;
+ padding: 12px;
+ }
+ .doh-dg-stat-value {
+ font-family: var(--font-display);
+ font-size: 22px;
+ font-weight: 700;
+ color: var(--gold);
+ letter-spacing: -0.01em;
+ font-variant-numeric: tabular-nums;
+ line-height: 1;
+ margin-bottom: 4px;
+ }
+ .doh-dg-stat-label {
+ font-size: 11px;
+ color: rgba(246, 241, 230, 0.55);
+ line-height: 1.3;
+ }
+ .doh-dg-meta {
+ border-top: 1px solid rgba(255,255,255,0.06);
+ padding-top: 16px;
+ font-size: 12px;
+ color: rgba(246, 241, 230, 0.6);
+ line-height: 1.65;
+ }
+ .doh-dg-meta strong {
+ color: var(--cream);
+ font-weight: 600;
+ }
+ .doh-dg-meta-row {
+ display: flex;
+ align-items: baseline;
+ gap: 8px;
+ margin-bottom: 6px;
+ }
+ .doh-dg-meta-icon {
+ width: 14px;
+ flex-shrink: 0;
+ opacity: 0.6;
+ }
+
+ /* Right column · booking widget */
+ .doh-booking {
+ background: rgba(255,255,255,0.02);
+ border: 1px solid rgba(255,255,255,0.08);
+ border-radius: 18px;
+ padding: clamp(24px, 3vw, 40px);
+ }
+ .doh-booking-tabs {
+ display: flex;
+ gap: 4px;
+ margin-bottom: 28px;
+ border-bottom: 1px solid rgba(255,255,255,0.06);
+ padding-bottom: 4px;
+ }
+ .doh-booking-tab {
+ flex: 1;
+ padding: 12px 8px;
+ background: transparent;
+ border: 0;
+ color: rgba(246, 241, 230, 0.5);
+ font-family: var(--font-display);
+ font-size: 12px;
+ font-weight: 700;
+ letter-spacing: 0.1em;
+ text-transform: uppercase;
+ cursor: pointer;
+ border-bottom: 2px solid transparent;
+ margin-bottom: -1px;
+ transition: color 200ms, border-color 200ms;
+ }
+ .doh-booking-tab[aria-selected="true"] {
+ color: var(--gold);
+ border-bottom-color: var(--gold);
+ }
+ .doh-booking-tab:hover {
+ color: var(--cream);
+ }
+ .doh-booking-tab-icon {
+ margin-right: 6px;
+ }
+
+ .doh-slot-block {
+ margin-bottom: 24px;
+ }
+ .doh-slot-block-h {
+ font-family: var(--font-display);
+ font-size: 12px;
+ font-weight: 700;
+ letter-spacing: 0.12em;
+ text-transform: uppercase;
+ color: rgba(246, 241, 230, 0.7);
+ margin: 0 0 14px;
+ }
+ .doh-slot-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+ gap: 10px;
+ }
+ .doh-slot {
+ background: rgba(217, 168, 79, 0.06);
+ border: 1px solid rgba(217, 168, 79, 0.2);
+ border-radius: 10px;
+ padding: 14px 8px;
+ color: var(--cream);
+ font-family: var(--font-display);
+ font-size: 14px;
+ font-weight: 600;
+ cursor: pointer;
+ text-align: center;
+ transition: background 200ms, border-color 200ms, transform 150ms;
+ font-variant-numeric: tabular-nums;
+ }
+ .doh-slot:hover {
+ background: rgba(217, 168, 79, 0.15);
+ border-color: var(--gold);
+ transform: translateY(-1px);
+ }
+ .doh-slot[data-status="booked"] {
+ background: rgba(255,255,255,0.02);
+ border-color: rgba(255,255,255,0.06);
+ color: rgba(246, 241, 230, 0.3);
+ cursor: not-allowed;
+ text-decoration: line-through;
+ pointer-events: none;
+ }
+ .doh-slot-day {
+ display: block;
+ font-size: 10px;
+ font-weight: 500;
+ letter-spacing: 0.1em;
+ text-transform: uppercase;
+ color: rgba(246, 241, 230, 0.5);
+ margin-bottom: 4px;
+ }
+
+ .doh-tz {
+ margin-top: 16px;
+ font-size: 12px;
+ color: rgba(246, 241, 230, 0.5);
+ display: flex;
+ align-items: center;
+ gap: 8px;
+ }
+ .doh-tz-dot {
+ display: inline-block;
+ width: 6px;
+ height: 6px;
+ border-radius: 50%;
+ background: #10b981;
+ }
+
+ /* Qualification form */
+ .doh-form {
+ margin-top: 32px;
+ padding-top: 32px;
+ border-top: 1px solid rgba(255,255,255,0.06);
+ }
+ .doh-form-h {
+ font-family: var(--font-display);
+ font-size: 16px;
+ font-weight: 700;
+ color: var(--cream);
+ margin: 0 0 6px;
+ }
+ .doh-form-sub {
+ font-size: 13px;
+ color: rgba(246, 241, 230, 0.6);
+ margin: 0 0 20px;
+ }
+ .doh-form-row {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 14px;
+ margin-bottom: 14px;
+ }
+ @media (max-width: 600px) {
+ .doh-form-row {
+ grid-template-columns: 1fr;
+ }
+ }
+ .doh-field {
+ display: flex;
+ flex-direction: column;
+ gap: 6px;
+ }
+ .doh-field-label {
+ font-family: var(--font-display);
+ font-size: 11px;
+ font-weight: 700;
+ letter-spacing: 0.1em;
+ text-transform: uppercase;
+ color: rgba(246, 241, 230, 0.7);
+ }
+ .doh-field-input,
+ .doh-field-select {
+ background: rgba(0,0,0,0.3);
+ border: 1px solid rgba(255,255,255,0.1);
+ border-radius: 8px;
+ padding: 12px 14px;
+ color: var(--cream);
+ font-family: var(--font-body, Inter, system-ui, sans-serif);
+ font-size: 14px;
+ transition: border-color 200ms, background 200ms;
+ }
+ .doh-field-input:focus,
+ .doh-field-select:focus {
+ outline: 2px solid var(--gold);
+ outline-offset: 2px;
+ border-color: var(--gold);
+ background: rgba(0,0,0,0.5);
+ }
+ .doh-cta {
+ margin-top: 24px;
+ width: 100%;
+ padding: 16px;
+ background: linear-gradient(180deg, var(--gold, #C9B57B), #b59a5c);
+ color: #050810;
+ border: 0;
+ border-radius: 10px;
+ font-family: var(--font-display);
+ font-size: 14px;
+ font-weight: 700;
+ letter-spacing: 0.05em;
+ text-transform: uppercase;
+ cursor: pointer;
+ transition: transform 150ms, filter 200ms;
+ }
+ .doh-cta:hover {
+ transform: translateY(-1px);
+ filter: brightness(1.08);
+ }
+ .doh-cta:focus-visible {
+ outline: 2px solid var(--cream);
+ outline-offset: 3px;
+ }
+
+ /* Trust strip */
+ .doh-trust {
+ margin: 60px auto 0;
+ max-width: 1280px;
+ padding: 32px clamp(20px, 4vw, 60px);
+ border-top: 1px solid rgba(255,255,255,0.06);
+ display: grid;
+ grid-template-columns: repeat(4, 1fr);
+ gap: 24px;
+ }
+ @media (max-width: 768px) {
+ .doh-trust {
+ grid-template-columns: 1fr 1fr;
+ }
+ }
+ .doh-trust-item {
+ text-align: center;
+ }
+ .doh-trust-icon {
+ font-size: 24px;
+ margin-bottom: 8px;
+ opacity: 0.7;
+ }
+ .doh-trust-h {
+ font-family: var(--font-display);
+ font-size: 13px;
+ font-weight: 700;
+ color: var(--cream);
+ margin: 0 0 4px;
+ }
+ .doh-trust-p {
+ font-size: 12px;
+ color: rgba(246, 241, 230, 0.5);
+ margin: 0;
+ line-height: 1.4;
+ }
+
+ /* What to expect */
+ .doh-expect {
+ max-width: 1280px;
+ margin: 80px auto;
+ padding: 0 clamp(20px, 4vw, 60px);
+ }
+ .doh-expect-h {
+ font-family: var(--font-display);
+ font-size: clamp(28px, 4vw, 44px);
+ font-weight: 700;
+ letter-spacing: -0.02em;
+ color: var(--cream);
+ margin: 0 0 32px;
+ max-width: 20ch;
+ line-height: 1.05;
+ }
+ .doh-expect-grid {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: 24px;
+ }
+ @media (max-width: 768px) {
+ .doh-expect-grid {
+ grid-template-columns: 1fr;
+ }
+ }
+ .doh-expect-card {
+ background: rgba(255,255,255,0.02);
+ border: 1px solid rgba(255,255,255,0.06);
+ border-radius: 14px;
+ padding: 24px;
+ transition: border-color 200ms, background 200ms;
+ }
+ .doh-expect-card:hover {
+ border-color: rgba(217, 168, 79, 0.3);
+ background: rgba(217, 168, 79, 0.03);
+ }
+ .doh-expect-num {
+ font-family: var(--font-display);
+ font-size: 12px;
+ font-weight: 700;
+ letter-spacing: 0.18em;
+ color: var(--gold);
+ margin-bottom: 12px;
+ }
+ .doh-expect-h3 {
+ font-family: var(--font-display);
+ font-size: 18px;
+ font-weight: 700;
+ color: var(--cream);
+ margin: 0 0 8px;
+ }
+ .doh-expect-p {
+ font-size: 14px;
+ line-height: 1.55;
+ color: rgba(246, 241, 230, 0.7);
+ margin: 0;
+ }
+
+ /* Disclaimer */
+ .doh-disclaimer {
+ max-width: 1000px;
+ margin: 60px auto 80px;
+ padding: 0 clamp(20px, 4vw, 60px);
+ font-size: 11.5px;
+ line-height: 1.6;
+ color: rgba(246, 241, 230, 0.4);
+ text-align: center;
+ }
+</style>
+
+ <meta property="og:image" content="https://enertchad.td/assets/images/enertchad-accueil-hero-01.webp" />
+ <meta property="og:url" content="https://enertchad-groupe.pages.dev/dg-office-hours/" />
+ <meta property="og:type" content="website" />
+ <meta name="twitter:card" content="summary_large_image" />
+
+ <meta property="og:title" content="DG Office Hours · 30 min direct avec le DG · EnerTchad SA" />
+ <meta property="og:description" content="Office Hours DG EnerTchad Bignéro Moïalbéi Le Madang · réservation directe 30 min · DFI uniquement · qualification automatique · accès dataroom NDA · Tour Seed/Pre-A 2026." />
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"DG Office Hours · 30 minutes direct avec le DG","provider":{"@type":"Person","name":"Bignéro Moïalbéi Le Madang","jobTitle":"Directeur Général","worksFor":{"@type":"Organization","name":"EnerTchad SA"}},"description":"Réservation directe 30 minutes avec le DG EnerTchad SA · DFI uniquement · Cal.com · NDA OHADA pré-signé · brief 1-pager auto","areaServed":{"@type":"Country","name":"Worldwide"},"audience":{"@type":"BusinessAudience","audienceType":"DFI · VC impact · Family Office · Investisseur stratégique OFS"},"url":"https://enertchad-groupe.pages.dev/dg-office-hours/"}</script>
+<link rel="alternate" hreflang="fr" href="https://www.enertchad.td/dg-office-hours/" />
+<link rel="alternate" hreflang="x-default" href="https://www.enertchad.td/dg-office-hours/" />
+ <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://www.enertchad.td/"},{"@type":"ListItem","position":2,"name":"Investisseurs","item":"https://www.enertchad.td/sitemap.html#investisseurs"},{"@type":"ListItem","position":3,"name":"DG Office Hours","item":"https://www.enertchad.td/dg-office-hours"}]}</script>
+<link rel="stylesheet" href="/assets/css/whatsapp-cta-r215.css?v=r215" />
+</head>
+<body data-page="dg-office-hours">
+<!-- R140 · ULTRA PREMIUM Header · FR -->
+<header class="hu-header" role="banner" data-r140="ultra">
+ <div class="hu-inner">
+ <a class="hu-brand" href="/" aria-label="EnerTchad SA · accueil">
+ <img class="hu-logo" src="/assets/images/logo.svg" alt="" width="44" height="44" loading="eager" decoding="async" />
+ <span class="hu-brand-text">EnerTchad <em>SA</em><span class="hu-brand-tag">Société parapétrolière · OFS</span></span>
+ </a>
+ <nav class="hu-nav" aria-label="Navigation principale">
+ <a class="hu-nav-link" data-mm="mission" href="/sitemap.html#mission">Mission</a>
+ <a class="hu-nav-link" data-mm="activites" href="/sitemap.html#activites">Activités</a>
+ <a class="hu-nav-link" data-mm="transition" href="/sitemap.html#transition">Transition</a>
+ <a class="hu-nav-link" data-mm="technologies" href="/sitemap.html#technologies">Technologies</a>
+ <a class="hu-nav-link" data-mm="engagements" href="/sitemap.html#engagements">Engagements</a>
+ <a class="hu-nav-link" data-mm="investisseurs" href="/sitemap.html#investisseurs">Investisseurs</a>
+ </nav>
+ <div class="hu-right">
+ <span class="hu-lang" aria-label="Langue">
+ <a href="/" hreflang="fr" aria-current="true">FR</a>
+ <span aria-hidden="true">·</span>
+ <a href="/en/" hreflang="en">EN</a>
+ </span>
+ <a class="hu-cta" href="/engagement/investisseurs.html">Tour 2026 <span class="hu-cta-arrow">↗</span></a>
+ <button class="hu-burger" type="button" aria-label="Menu" aria-expanded="false">
+ <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true">
+ <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+ </svg>
+ </button>
+ </div>
+ </div>
+</header>
+
+ <!-- R146 · Breadcrumb -->
+ <nav class="bc-r146" aria-label="Fil d'ariane">
+ <ol>
+ <li><a href="/">Accueil</a></li>
+ <li><a href="/sitemap.html#investisseurs">Investisseurs</a></li>
+ <li aria-current="page">DG Office Hours</li>
+ </ol>
+ </nav>
+
+<aside class="hu-drawer" aria-hidden="true">
+ <button class="hu-drawer-close" aria-label="Fermer">×</button>
+ <a href="/sitemap.html#mission">01 Mission</a>
+ <a href="/sitemap.html#activites">02 Activités</a>
+ <a href="/sitemap.html#transition">03 Transition énergétique</a>
+ <a href="/sitemap.html#technologies">04 Technologies</a>
+ <a href="/sitemap.html#engagements">05 Engagements</a>
+ <a href="/sitemap.html#investisseurs">06 Investisseurs</a>
+ <a href="/sitemap.html">Plan du site</a>
+ <a href="/en/" hreflang="en" style="color:#C9B57B">EN · English ↗</a>
+</aside>
+<div class="hu-backdrop" aria-hidden="true"></div>
+
+
+<a class="skip-link" href="#main">Aller au contenu principal</a>
+
+<main id="main" tabindex="-1">
+
+ <section class="doh-two-col">
+
+ <!-- Left · DG profile card -->
+ <aside class="doh-dg-card" aria-labelledby="dg-name">
+ <div class="doh-dg-avatar" aria-hidden="true">BL</div>
+ <h2 class="doh-dg-name" id="dg-name">Bignéro Moïalbéi Le Madang</h2>
+ <p class="doh-dg-title">Président–Directeur Général · EnerTchad SA</p>
+
+ <div class="doh-dg-pills">
+ <span class="doh-dg-pill">17 ans major O&G internationale</span>
+ <span class="doh-dg-pill">Tchad</span>
+ <span class="doh-dg-pill">OFS</span>
+ <span class="doh-dg-pill">OHADA</span>
+ </div>
+
+ <p class="doh-dg-bio">
+ Ancien d'major O&G internationale (Doba, Paris, Houston, Singapore). Fondateur EnerTchad 2025. Mandat : bâtir le 1<sup>er</sup> OFS souverain du Tchad · 3 pôles current + Pétrochimie projet 2028+ · 4 marques™ + 2 projets · 75-90% LCD ingénieurs tchadiens.
+ </p>
+
+ <div class="doh-dg-stats">
+ <div class="doh-dg-stat">
+ <div class="doh-dg-stat-value">17</div>
+ <div class="doh-dg-stat-label">Années major O&G internationale</div>
+ </div>
+ <div class="doh-dg-stat">
+ <div class="doh-dg-stat-value">4</div>
+ <div class="doh-dg-stat-label">Pôles canon Oil &amp; Gas</div>
+ </div>
+ <div class="doh-dg-stat">
+ <div class="doh-dg-stat-value">6</div>
+ <div class="doh-dg-stat-label">Marques™ OAPI</div>
+ </div>
+ <div class="doh-dg-stat">
+ <div class="doh-dg-stat-value">12 M</div>
+ <div class="doh-dg-stat-label">USD Tour ceiling</div>
+ </div>
+ </div>
+
+ <div class="doh-dg-meta">
+ <div class="doh-dg-meta-row">
+ <span class="doh-dg-meta-icon"></span>
+ <span><strong>N'Djamena Sabangali</strong> · Tchad · CEMAC</span>
+ </div>
+ <div class="doh-dg-meta-row">
+ <span class="doh-dg-meta-icon"></span>
+ <span>FR · EN · arabe · espagnol</span>
+ </div>
+ <div class="doh-dg-meta-row">
+ <span class="doh-dg-meta-icon">⏱</span>
+ <span>30 min visio · Cal.com · Zoom/Teams/Meet</span>
+ </div>
+ <div class="doh-dg-meta-row">
+ <span class="doh-dg-meta-icon"></span>
+ <span>NDA OHADA pré-signé · brief 1-pager auto</span>
+ </div>
+ </div>
+ </aside>
+
+ <!-- Right · Booking widget -->
+ <div class="doh-booking">
+
+ <div class="doh-booking-tabs" role="tablist" aria-label="Type de rendez-vous">
+ <button class="doh-booking-tab" role="tab" aria-selected="true" data-tab="discovery">
+ <span class="doh-booking-tab-icon" aria-hidden="true"></span>Discovery 30 min
+ </button>
+ <button class="doh-booking-tab" role="tab" aria-selected="false" data-tab="dd">
+ <span class="doh-booking-tab-icon" aria-hidden="true"></span>DD Deep-dive 60 min
+ </button>
+ <button class="doh-booking-tab" role="tab" aria-selected="false" data-tab="closing">
+ <span class="doh-booking-tab-icon" aria-hidden="true">✍︎</span>Closing 90 min
+ </button>
+ </div>
+
+ <!-- Slot grid · semaine en cours -->
+ <div class="doh-slot-block">
+ <h3 class="doh-slot-block-h">Cette semaine · 4-10 mai 2026</h3>
+ <div class="doh-slot-grid">
+ <button class="doh-slot" data-status="booked" disabled>
+ <span class="doh-slot-day">Mar 5</span>10:00
+ </button>
+ <button class="doh-slot" data-status="open">
+ <span class="doh-slot-day">Mer 6</span>14:00
+ </button>
+ <button class="doh-slot" data-status="open">
+ <span class="doh-slot-day">Mer 6</span>16:30
+ </button>
+ <button class="doh-slot" data-status="booked" disabled>
+ <span class="doh-slot-day">Jeu 7</span>09:00
+ </button>
+ <button class="doh-slot" data-status="open">
+ <span class="doh-slot-day">Jeu 7</span>15:00
+ </button>
+ <button class="doh-slot" data-status="open">
+ <span class="doh-slot-day">Ven 8</span>11:00
+ </button>
+ </div>
+ </div>
+
+ <!-- Slot grid · semaine prochaine -->
+ <div class="doh-slot-block">
+ <h3 class="doh-slot-block-h">Semaine prochaine · 11-17 mai 2026</h3>
+ <div class="doh-slot-grid">
+ <button class="doh-slot" data-status="open">
+ <span class="doh-slot-day">Lun 11</span>09:30
+ </button>
+ <button class="doh-slot" data-status="open">
+ <span class="doh-slot-day">Lun 11</span>16:00
+ </button>
+ <button class="doh-slot" data-status="open">
+ <span class="doh-slot-day">Mar 12</span>10:00
+ </button>
+ <button class="doh-slot" data-status="open">
+ <span class="doh-slot-day">Mar 12</span>14:30
+ </button>
+ <button class="doh-slot" data-status="booked" disabled>
+ <span class="doh-slot-day">Mer 13</span>11:00
+ </button>
+ <button class="doh-slot" data-status="open">
+ <span class="doh-slot-day">Mer 13</span>15:30
+ </button>
+ <button class="doh-slot" data-status="open">
+ <span class="doh-slot-day">Jeu 14</span>09:00
+ </button>
+ <button class="doh-slot" data-status="open">
+ <span class="doh-slot-day">Ven 15</span>10:00
+ </button>
+ </div>
+ </div>
+
+ <p class="doh-tz">
+ <span class="doh-tz-dot" aria-hidden="true"></span>
+ Fuseau détecté · <strong style="color:var(--cream);font-weight:600;">Africa/Ndjamena (UTC+1)</strong> · auto-converti à votre fuseau au moment de la réservation
+ </p>
+
+ <!-- Qualification form -->
+ <form class="doh-form" data-doh-form>
+ <h3 class="doh-form-h">Qualification rapide</h3>
+ <p class="doh-form-sub">Pour préserver les créneaux DG, merci de qualifier brièvement votre profil. Le brief 1-pager EnerTchad sera envoyé automatiquement post-réservation.</p>
+
+ <div class="doh-form-row">
+ <label class="doh-field">
+ <span class="doh-field-label">Nom complet</span>
+ <input class="doh-field-input" type="text" name="name" required autocomplete="name">
+ </label>
+ <label class="doh-field">
+ <span class="doh-field-label">Email professionnel</span>
+ <input class="doh-field-input" type="email" name="email" required autocomplete="email">
+ </label>
+ </div>
+
+ <div class="doh-form-row">
+ <label class="doh-field">
+ <span class="doh-field-label">Organisation</span>
+ <input class="doh-field-input" type="text" name="org" required autocomplete="organization">
+ </label>
+ <label class="doh-field">
+ <span class="doh-field-label">Profil</span>
+ <select class="doh-field-select" name="profile" required>
+ <option value="">Sélectionnez…</option>
+ <option value="dfi">DFI · IFC · FMO · Proparco · BII · Norfund</option>
+ <option value="impact">VC impact · ESG · climate</option>
+ <option value="family">Family office · africain ou international</option>
+ <option value="strategic">Investisseur stratégique · OFS / E&amp;P</option>
+ <option value="press">Presse / analyste sectoriel</option>
+ <option value="other">Autre (à qualifier)</option>
+ </select>
+ </label>
+ </div>
+
+ <div class="doh-form-row">
+ <label class="doh-field">
+ <span class="doh-field-label">Ticket envisagé</span>
+ <select class="doh-field-select" name="ticket">
+ <option value="">À discuter</option>
+ <option value="500k-1m">500 K – 1 M USD</option>
+ <option value="1-3m">1 – 3 M USD</option>
+ <option value="3-5m">3 – 5 M USD</option>
+ <option value="5m+">5 M USD +</option>
+ </select>
+ </label>
+ <label class="doh-field">
+ <span class="doh-field-label">Stade</span>
+ <select class="doh-field-select" name="stage">
+ <option value="">Sélectionnez…</option>
+ <option value="discovery">Discovery · 1ère prise de contact</option>
+ <option value="evaluating">Évaluation · DD initiée</option>
+ <option value="commit">Soft commit · MoU envisagé</option>
+ <option value="closing">Closing · pacte d'actionnaires</option>
+ </select>
+ </label>
+ </div>
+
+ <button class="doh-cta" type="submit">
+ Réserver le créneau · NDA inclus
+ </button>
+ </form>
+
+ </div>
+ </section>
+
+ <!-- Trust strip -->
+ <section class="doh-trust" aria-label="Garanties Office Hours">
+ <div class="doh-trust-item">
+ <div class="doh-trust-icon" aria-hidden="true"></div>
+ <h3 class="doh-trust-h">NDA OHADA pré-signé</h3>
+ <p class="doh-trust-p">Confidentialité contractuelle automatique post-confirmation</p>
+ </div>
+ <div class="doh-trust-item">
+ <div class="doh-trust-icon" aria-hidden="true"></div>
+ <h3 class="doh-trust-h">Brief 1-pager auto</h3>
+ <p class="doh-trust-p">Snapshot Tour 2026 + 3 pôles + Pétrochimie projet + KPIs envoyé immédiatement</p>
+ </div>
+ <div class="doh-trust-item">
+ <div class="doh-trust-icon" aria-hidden="true"></div>
+ <h3 class="doh-trust-h">5 fuseaux supportés</h3>
+ <p class="doh-trust-p">CEMAC · Europe · Americas · Gulf · APAC auto-conversion</p>
+ </div>
+ <div class="doh-trust-item">
+ <div class="doh-trust-icon" aria-hidden="true">📞</div>
+ <h3 class="doh-trust-h">Visio ou téléphone</h3>
+ <p class="doh-trust-p">Zoom · Teams · Meet · ou ligne directe N'Djamena</p>
+ </div>
+ </section>
+
+ <!-- What to expect -->
+ <section class="doh-expect" aria-labelledby="doh-expect-h">
+ <h2 class="doh-expect-h" id="doh-expect-h">Ce que vous obtiendrez en 30 min.</h2>
+ <div class="doh-expect-grid">
+ <article class="doh-expect-card">
+ <div class="doh-expect-num">01 · CONTEXT</div>
+ <h3 class="doh-expect-h3">Vision EnerTchad sans filtre</h3>
+ <p class="doh-expect-p">Trajectoire fondateur · 17 ans major O&G internationale · pourquoi le Tchad maintenant · positionnement OFS souverain face aux majors mondiaux.</p>
+ </article>
+ <article class="doh-expect-card">
+ <div class="doh-expect-num">02 · NUMBERS</div>
+ <h3 class="doh-expect-h3">KPIs Tour 2026 actualisés</h3>
+ <p class="doh-expect-p">% closed · MoUs signés · cap-table preview OHADA · use of proceeds · roadmap closing T3 2026 · Series A 2027 projetée 15-25 M USD.</p>
+ </article>
+ <article class="doh-expect-card">
+ <div class="doh-expect-num">03 · NEXT STEP</div>
+ <h3 class="doh-expect-h3">Décision claire en sortie</h3>
+ <p class="doh-expect-p">Soit accès dataroom DD complet (12 catégories) · soit pass courtois si misfit. Pas de zombie process · pas de relances asynchrones inutiles.</p>
+ </article>
+ </div>
+ </section>
+
+ <p class="doh-disclaimer">
+ Office Hours réservés exclusivement aux investisseurs qualifiés (DFI · family offices · VC impact · investisseurs stratégiques OFS). Les demandes presse / commerciales / fournisseurs sont redirigées via <a href="/engagement/contact.html" style="color:var(--gold);">/engagement/contact.html</a>. Cap : 2 créneaux DG par semaine · pas de double-booking · pas de no-show toléré (cap revoyé après 1 absence). EnerTchad SA · RCCM N'Djamena · OHADA · siège social Sabangali, N'Djamena · Tchad.
+ </p>
+
+</main>
+
+<footer class="fu-footer" role="contentinfo" data-r140="ultra">
+ <div class="fu-inner">
+ <div class="fu-grid">
+ <div>
+ <p class="fu-brand-name">EnerTchad SA</p>
+ <p class="fu-slogan">Unité · Innovation · Durabilité</p>
+ <p class="fu-positioning">Société <em>parapétrolière</em> (OFS) <strong>100% services techniques</strong> · marché tchadien · OHADA. Aucun asset.</p>
+ <p class="fu-leadership"><strong>DG</strong> Bignéro Moïalbéi Le Madang<br><strong>PCA</strong> Théophile Gag Pinabei</p>
+ </div>
+ <div>
+ <p class="fu-col-h">Navigation · 6 axes</p>
+ <ul class="fu-list">
+ <li><a href="/sitemap.html#mission">01 Mission</a></li>
+ <li><a href="/sitemap.html#activites">02 Activités</a></li>
+ <li><a href="/sitemap.html#transition">03 Transition énergétique</a></li>
+ <li><a href="/sitemap.html#technologies">04 Technologies</a></li>
+ <li><a href="/sitemap.html#engagements">05 Engagements</a></li>
+ <li><a href="/sitemap.html#investisseurs">06 Investisseurs</a></li>
+ </ul>
+ </div>
+ <div>
+ <p class="fu-col-h">Tour 2026 · Pages clés</p>
+ <ul class="fu-list">
+ <li><a href="/engagement/investisseurs.html">Tour Seed/Pre-A</a></li>
+ <li><a href="/dataroom/">Dataroom · NDA</a></li>
+ <li><a href="/dg-office-hours/">DG Office Hours</a></li>
+ <li><a href="/ai-concierge/">AI Concierge</a></li>
+ <li><a href="/marques/">4 marques™ + 2 projets</a></li>
+ <li><a href="/data/atlas.html">Atlas marché</a></li>
+ </ul>
+ </div>
+ <div>
+ <p class="fu-col-h">Newsletter Tour 2026</p>
+ <p class="fu-newsletter-desc">Actualités investisseurs · avancées catalogue OFS · <span data-jn>J-150</span> closing.</p>
+ <form class="fu-newsletter-form" action="https://formspree.io/f/enertchad-newsletter" method="POST" novalidate>
+ <input type="email" name="email" placeholder="email@exemple.com" required aria-label="Adresse email">
+ <button type="submit">S&rsquo;inscrire ↗</button>
+ </form>
+ <p class="fu-newsletter-fineprint">RGPD · désinscription 1-clic · données EU-West chiffrées</p>
+ </div>
+ </div>
+ <div class="fu-meta">
+ <div class="fu-badges">
+ <span class="fu-badge">ITIE</span>
+ <span class="fu-badge">OHADA</span>
+ <span class="fu-badge">ISO 9001 · 14001 · 45001</span>
+ <span class="fu-badge">OAPI 2026</span>
+ </div>
+ <div class="fu-legal">
+ <span>© 2026 <strong>EnerTchad SA</strong></span>
+ <span class="fu-sep">·</span>
+ <span>RCCM N&rsquo;DJ/RC/2026-A-0001</span>
+ <span class="fu-sep">·</span>
+ <span>Capital 10 000 000 FCFA</span>
+ <span class="fu-sep">·</span>
+ <a href="/sitemap.html">Plan du site</a>
+ <span class="fu-sep">·</span>
+ <a href="/legal/mentions-legales.html">Mentions légales</a>
+ <span class="fu-sep">·</span>
+ <a href="/legal/confidentialite.html">Confidentialité</a>
+ <span class="fu-sep">·</span>
+ <a href="/legal/cookies.html">Cookies</a>
+ </div>
+ </div>
+ </div>
+</footer>
+
+
+<script defer src="/assets/js/enertchad.js"></script>
+<script>
+ // Lightweight tab handler · no framework
+ (function () {
+ var tabs = document.querySelectorAll('[data-tab]');
+ tabs.forEach(function (t) {
+ t.addEventListener('click', function () {
+ tabs.forEach(function (other) { other.setAttribute('aria-selected', 'false'); });
+ t.setAttribute('aria-selected', 'true');
+ });
+ });
+
+ // Slot click · simulate booking flow
+ document.querySelectorAll('.doh-slot[data-status="open"]').forEach(function (slot) {
+ slot.addEventListener('click', function () {
+ document.querySelectorAll('.doh-slot[data-selected]').forEach(function (s) {
+ s.removeAttribute('data-selected');
+ s.style.background = '';
+ s.style.borderColor = '';
+ });
+ slot.setAttribute('data-selected', 'true');
+ slot.style.background = 'rgba(217, 168, 79, 0.25)';
+ slot.style.borderColor = 'var(--gold, #C9B57B)';
+ // Scroll form into view
+ var form = document.querySelector('[data-doh-form]');
+ if (form) form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+ });
+ });
+
+ // Form intercept · prototype mode
+ var form = document.querySelector('[data-doh-form]');
+ if (form) {
+ form.addEventListener('submit', function (e) {
+ e.preventDefault();
+ var btn = form.querySelector('.doh-cta');
+ var selected = document.querySelector('.doh-slot[data-selected]');
+ if (!selected) {
+ alert('Sélectionnez d\'abord un créneau ci-dessus.');
+ return;
+ }
+ btn.textContent = 'Demande envoyée · confirmation par email';
+ btn.style.background = 'linear-gradient(180deg, #10b981, #0d9668)';
+ btn.style.color = '#fff';
+ btn.disabled = true;
+ // Production · POST to Cal.com API + SendGrid for brief 1-pager
+ });
+ }
+ })();
+</script>
+
+ <script defer src="/assets/js/jn-counter.js?v=r128"></script>
+ <script defer src="/assets/js/header-ultra.js?v=r140"></script>
+ <script defer src="/assets/js/ux-r146.js?v=r146"></script>
+ <script defer src="/assets/js/megamenu-r154.js?v=r154"></script>
+<!-- R215 · WhatsApp Business floating CTA -->
+<a class="wa-cta-r215" href="https://wa.me/235992986?text=Bonjour%20EnerTchad%20SA%20%C2%B7%20Demande%20d'information%20Tour%202026" target="_blank" rel="noopener noreferrer" aria-label="Contacter EnerTchad SA via WhatsApp Business">
+ <span class="wa-cta-r215-pulse" aria-hidden="true"></span>
+ <svg class="wa-cta-r215-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.96 11.96 0 0 0 12 0C5.37 0 .03 5.34.03 11.97c0 2.11.55 4.16 1.6 5.97L0 24l6.18-1.62a11.95 11.95 0 0 0 5.82 1.48h.01c6.62 0 11.97-5.34 11.97-11.97 0-3.2-1.25-6.21-3.46-8.41zM12 21.78h-.01a9.9 9.9 0 0 1-5.05-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.9 9.9 0 0 1-1.52-5.27c0-5.49 4.46-9.95 9.94-9.95a9.9 9.9 0 0 1 7.04 2.92 9.91 9.91 0 0 1 2.92 7.05c0 5.48-4.46 9.94-9.95 9.94zm5.46-7.45c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.21-.24-.58-.49-.5-.67-.51-.17-.01-.37-.01-.57-.01-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.06 2.87 1.21 3.07.15.2 2.09 3.2 5.07 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35z"/></svg>
+ <span class="wa-cta-r215-text">WhatsApp DG</span>
+</a>
+
+</body>
+</html>

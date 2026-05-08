@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Pôle Intermédiaire · Pipeline 360°™ · Doba-Kribi 1 070 km">
+ <title>Pôle Intermédiaire · Midstream · Pipeline 360°™</title>
+ <desc>Visualisation brutalist du pôle Intermédiaire avec pipeline Doba-Kribi 1 070 km · 6 stations pompage · bundle umbrella Pipeline 360° (S04+S05+S06+IA).</desc>
+
+ <rect width="800" height="500" fill="#080E1A"/>
+
+ <!-- Brutalist grid -->
+ <g stroke="#4F8FD9" stroke-width="0.5" opacity="0.08">
+  <line x1="0" y1="100" x2="800" y2="100"/>
+  <line x1="0" y1="200" x2="800" y2="200"/>
+  <line x1="0" y1="300" x2="800" y2="300"/>
+  <line x1="0" y1="400" x2="800" y2="400"/>
+  <line x1="200" y1="0" x2="200" y2="500"/>
+  <line x1="400" y1="0" x2="400" y2="500"/>
+  <line x1="600" y1="0" x2="600" y2="500"/>
+ </g>
+
+ <!-- Title -->
+ <text x="40" y="55" fill="#4F8FD9" font-family="'Space Grotesk',sans-serif" font-size="14" letter-spacing="3.5">PÔLE 02 · INTERMÉDIAIRE · MIDSTREAM</text>
+ <text x="40" y="92" fill="#F6F1E6" font-family="'Space Grotesk',sans-serif" font-size="32" font-weight="700">Pipeline 360°™ flagship</text>
+ <text x="40" y="118" fill="#F6F1E6" font-family="'Crimson Pro',Georgia,serif" font-style="italic" font-size="18" opacity="0.85">1 070 km · 6 stations · API 1130 + 1163 + MPMS.</text>
+
+ <!-- Pipeline schematic Doba → Kribi -->
+ <g transform="translate(40,170)">
+  <!-- Pipeline line -->
+  <line x1="0" y1="60" x2="720" y2="60" stroke="#4F8FD9" stroke-width="3"/>
+  <line x1="0" y1="60" x2="720" y2="60" stroke="#C9B57B" stroke-width="1" stroke-dasharray="6,4"/>
+
+  <!-- 6 pumping stations -->
+  <g fill="#4F8FD9" stroke="#F6F1E6" stroke-width="1.5">
+   <!-- Station 1 · Komé (origin · gold) -->
+   <circle cx="20" cy="60" r="14" fill="#C9B57B"/>
+   <!-- Station 2-5 · Cameroun (cream) -->
+   <circle cx="160" cy="60" r="11"/>
+   <circle cx="300" cy="60" r="11"/>
+   <circle cx="440" cy="60" r="11"/>
+   <circle cx="580" cy="60" r="11"/>
+   <!-- Station 6 · Kribi terminal (gold) -->
+   <circle cx="700" cy="60" r="14" fill="#C9B57B"/>
+  </g>
+
+  <g fill="#080E1A" font-family="'Space Grotesk',sans-serif" font-size="9" font-weight="700" text-anchor="middle">
+   <text x="20" y="64">PS01</text>
+   <text x="160" y="64">PS02</text>
+   <text x="300" y="64">PS03</text>
+   <text x="440" y="64">PS04</text>
+   <text x="580" y="64">PS05</text>
+   <text x="700" y="64">PS06</text>
+  </g>
+
+  <g fill="#F6F1E6" font-family="'Space Grotesk',sans-serif" font-size="9" text-anchor="middle" opacity="0.8">
+   <text x="20" y="90">Komé · TD</text>
+   <text x="160" y="90">Bélabo · CM</text>
+   <text x="300" y="90">Méïganga · CM</text>
+   <text x="440" y="90">Dompta · CM</text>
+   <text x="580" y="90">Bélabo · CM</text>
+   <text x="700" y="90">Kribi · CM</text>
+  </g>
+
+  <!-- Distance labels -->
+  <text x="0" y="40" fill="#4F8FD9" font-family="'Space Grotesk',sans-serif" font-size="10" font-weight="700">↓ ORIGINE TCHAD</text>
+  <text x="720" y="40" fill="#4F8FD9" font-family="'Space Grotesk',sans-serif" font-size="10" font-weight="700" text-anchor="end">EXPORT CAMEROUN ↑</text>
+  <text x="360" y="20" fill="#C9B57B" font-family="'Space Grotesk',sans-serif" font-size="11" letter-spacing="2" text-anchor="middle" font-weight="700">1 070 KM · 22+ ANS · DEPUIS 2003</text>
+ </g>
+
+ <!-- Bundle services 3+1 -->
+ <g transform="translate(40,310)">
+  <text x="0" y="0" fill="#C9B57B" font-family="'Space Grotesk',sans-serif" font-size="10" letter-spacing="2">BUNDLE PIPELINE 360°™ · 3 + 1</text>
+
+  <rect x="0" y="12" width="170" height="60" fill="rgba(79,143,217,0.10)" stroke="#4F8FD9" stroke-width="1"/>
+  <text x="12" y="30" fill="#4F8FD9" font-family="'Space Grotesk',sans-serif" font-size="10" font-weight="700">S04 · ILI</text>
+  <text x="12" y="50" fill="#F6F1E6" font-family="'Space Grotesk',sans-serif" font-size="9">Pigging MFL/UT</text>
+  <text x="12" y="64" fill="#F6F1E6" font-family="'Space Grotesk',sans-serif" font-size="8" opacity="0.7">API 1163</text>
+
+  <rect x="180" y="12" width="170" height="60" fill="rgba(79,143,217,0.10)" stroke="#4F8FD9" stroke-width="1"/>
+  <text x="192" y="30" fill="#4F8FD9" font-family="'Space Grotesk',sans-serif" font-size="10" font-weight="700">S05 · SCADA</text>
+  <text x="192" y="50" fill="#F6F1E6" font-family="'Space Grotesk',sans-serif" font-size="9">Leak detection</text>
+  <text x="192" y="64" fill="#F6F1E6" font-family="'Space Grotesk',sans-serif" font-size="8" opacity="0.7">API 1130 · SIL 2</text>
+
+  <rect x="360" y="12" width="170" height="60" fill="rgba(79,143,217,0.10)" stroke="#4F8FD9" stroke-width="1"/>
+  <text x="372" y="30" fill="#4F8FD9" font-family="'Space Grotesk',sans-serif" font-size="10" font-weight="700">S06 · LACT</text>
+  <text x="372" y="50" fill="#F6F1E6" font-family="'Space Grotesk',sans-serif" font-size="9">Métrologie fiscale</text>
+  <text x="372" y="64" fill="#F6F1E6" font-family="'Space Grotesk',sans-serif" font-size="8" opacity="0.7">API MPMS · ISO 17025</text>
+
+  <rect x="540" y="12" width="170" height="60" fill="rgba(217,168,79,0.18)" stroke="#C9B57B" stroke-width="2"/>
+  <text x="552" y="30" fill="#C9B57B" font-family="'Space Grotesk',sans-serif" font-size="10" font-weight="700">+1 · IA PRÉDICTIVE</text>
+  <text x="552" y="50" fill="#F6F1E6" font-family="'Space Grotesk',sans-serif" font-size="9">Modèle 10 ans data</text>
+  <text x="552" y="64" fill="#F6F1E6" font-family="'Space Grotesk',sans-serif" font-size="8" opacity="0.7">Corrosion + leak ML</text>
+ </g>
+
+ <!-- KPI bar -->
+ <g transform="translate(40,420)">
+  <rect width="720" height="60" fill="#1a2030" stroke="#4F8FD9" stroke-width="1"/>
+  <g font-family="'Space Grotesk',sans-serif">
+   <text x="20" y="22" fill="#4F8FD9" font-size="9" letter-spacing="1.5">BUSINESS CASE · 5 ANS · DOBA-KRIBI</text>
+   <text x="40" y="48" fill="#F6F1E6" font-size="20" font-weight="700">3.5 M USD</text>
+   <text x="40" y="58" fill="#F6F1E6" font-size="8" opacity="0.7">Tarif retainer/an</text>
+   <text x="220" y="48" fill="#F6F1E6" font-size="20" font-weight="700">1.4x</text>
+   <text x="220" y="58" fill="#F6F1E6" font-size="8" opacity="0.7">ROI client</text>
+   <text x="400" y="48" fill="#F6F1E6" font-size="20" font-weight="700">32%</text>
+   <text x="400" y="58" fill="#F6F1E6" font-size="8" opacity="0.7">Marge EBITDA</text>
+   <text x="540" y="48" fill="#F6F1E6" font-size="20" font-weight="700">COTCO</text>
+   <text x="540" y="58" fill="#F6F1E6" font-size="8" opacity="0.7">Cible MoU 2027</text>
+  </g>
+ </g>
+</svg>

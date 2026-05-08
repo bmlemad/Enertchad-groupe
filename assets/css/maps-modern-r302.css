@@ -1,0 +1,243 @@
+/* ============================================================
+ R302 · Maps modernization · 2D + 3D · 2026 standards
+ Wave R302 · 2026-05-06 · DG mandate moderniser maps + design
+ Features : interactive SVG maps · CSS 3D transforms · scroll-driven
+ ============================================================ */
+
+/* ---- Modern map container ---- */
+.map-r302 {
+ position: relative;
+ width: 100%;
+ max-width: 1200px;
+ margin: 0 auto;
+ background: #080E1A;
+ border: 1px solid rgba(201,181,123,0.18);
+ border-radius: 12px;
+ overflow: hidden;
+ isolation: isolate;
+}
+
+.map-r302-canvas {
+ position: relative;
+ width: 100%;
+ aspect-ratio: 16 / 9;
+ background:
+  radial-gradient(circle at 30% 50%, rgba(217,168,79,0.12) 0%, transparent 50%),
+  radial-gradient(circle at 70% 30%, rgba(79,143,217,0.08) 0%, transparent 45%),
+  #0a1228;
+}
+
+.map-r302-grid {
+ position: absolute;
+ inset: 0;
+ background-image:
+  linear-gradient(rgba(201,181,123,0.06) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(201,181,123,0.06) 1px, transparent 1px);
+ background-size: 60px 60px;
+ mask-image: radial-gradient(ellipse at center, black 60%, transparent 100%);
+ -webkit-mask-image: radial-gradient(ellipse at center, black 60%, transparent 100%);
+}
+
+/* ---- Map points · interactive hover ---- */
+.map-r302-point {
+ position: absolute;
+ transform: translate(-50%, -50%);
+ cursor: pointer;
+ transition: transform 240ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.map-r302-point::before {
+ content: '';
+ position: absolute;
+ inset: 0;
+ background: rgba(217,168,79,0.40);
+ border-radius: 50%;
+ animation: pointPulse 2.4s ease-in-out infinite;
+}
+.map-r302-point-dot {
+ position: relative;
+ width: 12px;
+ height: 12px;
+ background: #C9B57B;
+ border: 2px solid #080E1A;
+ border-radius: 50%;
+ box-shadow: 0 0 0 0 rgba(201,181,123,0.40);
+}
+.map-r302-point:hover {
+ transform: translate(-50%, -50%) scale(1.4);
+ z-index: 10;
+}
+.map-r302-point:hover .map-r302-point-dot {
+ box-shadow: 0 0 0 8px rgba(201,181,123,0.20);
+}
+@keyframes pointPulse {
+ 0%, 100% { transform: scale(1); opacity: 0.6; }
+ 50% { transform: scale(2.5); opacity: 0; }
+}
+
+/* ---- Tooltip on hover ---- */
+.map-r302-tooltip {
+ position: absolute;
+ bottom: calc(100% + 12px);
+ left: 50%;
+ transform: translateX(-50%) translateY(6px);
+ background: rgba(8,14,26,0.95);
+ backdrop-filter: blur(12px);
+ -webkit-backdrop-filter: blur(12px);
+ color: #F6F1E6;
+ padding: 8px 14px;
+ border: 1px solid rgba(201,181,123,0.30);
+ border-radius: 6px;
+ font-family: 'Space Grotesk', sans-serif;
+ font-size: 0.78rem;
+ white-space: nowrap;
+ opacity: 0;
+ pointer-events: none;
+ transition: opacity 200ms ease, transform 200ms ease;
+}
+.map-r302-tooltip::after {
+ content: '';
+ position: absolute;
+ top: 100%;
+ left: 50%;
+ transform: translateX(-50%);
+ border: 6px solid transparent;
+ border-top-color: rgba(8,14,26,0.95);
+}
+.map-r302-point:hover .map-r302-tooltip {
+ opacity: 1;
+ transform: translateX(-50%) translateY(0);
+}
+
+/* ---- Pipeline path · animated draw ---- */
+.map-r302-path {
+ fill: none;
+ stroke: #C9B57B;
+ stroke-width: 2;
+ stroke-dasharray: 6 4;
+ animation: pathFlow 8s linear infinite;
+}
+@keyframes pathFlow {
+ to { stroke-dashoffset: -100; }
+}
+
+/* ---- 3D card transforms ---- */
+.card-3d-r302 {
+ transform-style: preserve-3d;
+ transition: transform 480ms cubic-bezier(0.4, 0, 0.2, 1);
+ perspective: 1200px;
+}
+.card-3d-r302:hover {
+ transform: rotateY(2deg) rotateX(-1deg) translateZ(8px);
+}
+.card-3d-r302-shine {
+ position: absolute;
+ inset: 0;
+ background: linear-gradient(
+  120deg,
+  transparent 30%,
+  rgba(217,168,79,0.10) 50%,
+  transparent 70%
+ );
+ background-size: 200% 100%;
+ background-position: 100% 0;
+ transition: background-position 480ms ease;
+ pointer-events: none;
+ border-radius: inherit;
+}
+.card-3d-r302:hover .card-3d-r302-shine {
+ background-position: -100% 0;
+}
+
+/* ---- Legend modern ---- */
+.map-r302-legend {
+ position: absolute;
+ top: 16px;
+ left: 16px;
+ background: rgba(8,14,26,0.85);
+ backdrop-filter: blur(20px);
+ -webkit-backdrop-filter: blur(20px);
+ border: 1px solid rgba(201,181,123,0.22);
+ border-radius: 8px;
+ padding: 14px 18px;
+ font-family: 'Space Grotesk', sans-serif;
+ font-size: 0.82rem;
+ color: #F6F1E6;
+ max-width: 260px;
+}
+.map-r302-legend-title {
+ font-size: 0.7rem;
+ font-weight: 700;
+ letter-spacing: 0.16em;
+ text-transform: uppercase;
+ color: #C9B57B;
+ margin-bottom: 10px;
+}
+.map-r302-legend-item {
+ display: flex;
+ align-items: center;
+ gap: 10px;
+ padding: 4px 0;
+ font-size: 0.78rem;
+}
+.map-r302-legend-dot {
+ width: 10px;
+ height: 10px;
+ border-radius: 50%;
+ flex-shrink: 0;
+}
+
+/* ---- Status badge bottom-right ---- */
+.map-r302-status {
+ position: absolute;
+ bottom: 16px;
+ right: 16px;
+ display: flex;
+ align-items: center;
+ gap: 8px;
+ padding: 8px 14px;
+ background: rgba(8,14,26,0.85);
+ backdrop-filter: blur(20px);
+ -webkit-backdrop-filter: blur(20px);
+ border: 1px solid rgba(16,185,129,0.30);
+ border-radius: 999px;
+ font-family: 'Space Grotesk', sans-serif;
+ font-size: 0.74rem;
+ color: rgba(246,241,230,0.85);
+}
+.map-r302-status-dot {
+ width: 8px;
+ height: 8px;
+ border-radius: 50%;
+ background: #10B981;
+ animation: statusPulse 1.5s ease-in-out infinite;
+}
+@keyframes statusPulse {
+ 0%, 100% { box-shadow: 0 0 0 0 rgba(16,185,129,0.6); }
+ 70% { box-shadow: 0 0 0 8px rgba(16,185,129,0); }
+}
+
+/* ---- Reduced motion ---- */
+@media (prefers-reduced-motion: reduce) {
+ .map-r302-point::before,
+ .map-r302-status-dot,
+ .map-r302-path {
+  animation: none !important;
+ }
+ .card-3d-r302:hover {
+  transform: none !important;
+ }
+}
+
+/* ---- Mobile responsive ---- */
+@media (max-width: 640px) {
+ .map-r302-legend {
+  position: static;
+  margin: 14px;
+  max-width: none;
+ }
+ .map-r302-status {
+  position: static;
+  display: inline-flex;
+  margin: 14px;
+ }
+}

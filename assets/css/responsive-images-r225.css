@@ -1,0 +1,170 @@
+/* ============================================================
+ R225 · Responsive images via image-set() · canon
+ Sert WebP variantes 640w / 1024w / 1920w selon DPR + viewport
+ Override R14 (single-resolution) → responsive multi-DPR
+ Wave R225 · 2026-05-04 · brutalist editorial canon
+ ============================================================ */
+
+/* ---- 1. Editorial cards homepage · canon data-img keys (eor-acacia · pipeline · accueil) ---- */
+
+/* Carte 01 · Amont · EOR Acacia */
+.editorial-card-visual-img[data-img="eor-acacia"]{
+ background-image:
+  linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(16,185,129,0.35) 100%),
+  -webkit-image-set(
+   url('/assets/images/enertchad-eor-acacia-01-640.webp') 1x,
+   url('/assets/images/enertchad-eor-acacia-01-1024.webp') 2x
+  ),
+  image-set(
+   url('/assets/images/enertchad-eor-acacia-01-640.webp') 1x,
+   url('/assets/images/enertchad-eor-acacia-01-1024.webp') 2x
+  ),
+  url('/assets/images/enertchad-eor-acacia-01-1024.webp');
+ background-size: cover;
+ background-position: center;
+}
+
+/* Carte 02 · Intermédiaire · Pipeline 360° */
+.editorial-card-visual-img[data-img="pipeline"]{
+ background-image:
+  linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(79,143,217,0.35) 100%),
+  -webkit-image-set(
+   url('/assets/images/enertchad-intermediaire-pipeline-01-640.webp') 1x,
+   url('/assets/images/enertchad-intermediaire-pipeline-01-1024.webp') 2x
+  ),
+  image-set(
+   url('/assets/images/enertchad-intermediaire-pipeline-01-640.webp') 1x,
+   url('/assets/images/enertchad-intermediaire-pipeline-01-1024.webp') 2x
+  ),
+  url('/assets/images/enertchad-intermediaire-pipeline-01-1024.webp');
+ background-size: cover;
+ background-position: center;
+}
+
+/* Carte 03 · Investor · Tour 2026 (hero accueil) */
+.editorial-card-visual-img[data-img="accueil"]{
+ background-image:
+  linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(217,168,79,0.40) 100%),
+  -webkit-image-set(
+   url('/assets/images/enertchad-accueil-hero-01-640.webp') 1x,
+   url('/assets/images/enertchad-accueil-hero-01-1024.webp') 2x
+  ),
+  image-set(
+   url('/assets/images/enertchad-accueil-hero-01-640.webp') 1x,
+   url('/assets/images/enertchad-accueil-hero-01-1024.webp') 2x
+  ),
+  url('/assets/images/enertchad-accueil-hero-01-1024.webp');
+ background-size: cover;
+ background-position: center;
+}
+
+/* ---- 2. Hero responsive backgrounds (utility classes pour pôles) ---- */
+.hero-bg-amont{
+ background-image:
+  -webkit-image-set(
+   url('/assets/images/enertchad-amont-hero-01-640.webp') 1x,
+   url('/assets/images/enertchad-amont-hero-01-1024.webp') 2x
+  ),
+  image-set(
+   url('/assets/images/enertchad-amont-hero-01-640.webp') 1x,
+   url('/assets/images/enertchad-amont-hero-01-1024.webp') 2x
+  ),
+  url('/assets/images/enertchad-amont-hero-01-1024.webp');
+ background-size: cover;
+ background-position: center;
+}
+
+.hero-bg-aval{
+ background-image:
+  -webkit-image-set(
+   url('/assets/images/enertchad-aval-hero-01-640.webp') 1x,
+   url('/assets/images/enertchad-aval-hero-01-1024.webp') 2x
+  ),
+  image-set(
+   url('/assets/images/enertchad-aval-hero-01-640.webp') 1x,
+   url('/assets/images/enertchad-aval-hero-01-1024.webp') 2x
+  ),
+  url('/assets/images/enertchad-aval-hero-01-1024.webp');
+ background-size: cover;
+ background-position: center;
+}
+
+.hero-bg-intermediaire{
+ background-image:
+  -webkit-image-set(
+   url('/assets/images/enertchad-intermediaire-pipeline-01-640.webp') 1x,
+   url('/assets/images/enertchad-intermediaire-pipeline-01-1024.webp') 2x
+  ),
+  image-set(
+   url('/assets/images/enertchad-intermediaire-pipeline-01-640.webp') 1x,
+   url('/assets/images/enertchad-intermediaire-pipeline-01-1024.webp') 2x
+  ),
+  url('/assets/images/enertchad-intermediaire-pipeline-01-1024.webp');
+ background-size: cover;
+ background-position: center;
+}
+
+.hero-bg-energies{
+ background-image:
+  -webkit-image-set(
+   url('/assets/images/enertchad-energies-eolien-01-640.webp') 1x,
+   url('/assets/images/enertchad-energies-eolien-01-1024.webp') 2x
+  ),
+  image-set(
+   url('/assets/images/enertchad-energies-eolien-01-640.webp') 1x,
+   url('/assets/images/enertchad-energies-eolien-01-1024.webp') 2x
+  ),
+  url('/assets/images/enertchad-energies-eolien-01-1024.webp');
+ background-size: cover;
+ background-position: center;
+}
+
+.hero-bg-durabilite{
+ background-image:
+  -webkit-image-set(
+   url('/assets/images/enertchad-durabilite-acacia-01-640.webp') 1x,
+   url('/assets/images/enertchad-durabilite-acacia-01-1024.webp') 2x
+  ),
+  image-set(
+   url('/assets/images/enertchad-durabilite-acacia-01-640.webp') 1x,
+   url('/assets/images/enertchad-durabilite-acacia-01-1024.webp') 2x
+  ),
+  url('/assets/images/enertchad-durabilite-acacia-01-1024.webp');
+ background-size: cover;
+ background-position: center;
+}
+
+.hero-bg-talents{
+ background-image:
+  -webkit-image-set(
+   url('/assets/images/enertchad-talents-engineer-01-640.webp') 1x,
+   url('/assets/images/enertchad-talents-engineer-01-1024.webp') 2x
+  ),
+  image-set(
+   url('/assets/images/enertchad-talents-engineer-01-640.webp') 1x,
+   url('/assets/images/enertchad-talents-engineer-01-1024.webp') 2x
+  ),
+  url('/assets/images/enertchad-talents-engineer-01-1024.webp');
+ background-size: cover;
+ background-position: center;
+}
+
+/* ---- 3. Performance hints ---- */
+img.responsive-fluid{
+ max-width: 100%;
+ height: auto;
+ contain: layout paint;
+}
+
+/* ---- 4. Slow-network optimization · réduire palette quand pas de connexion idéale ---- */
+@media (prefers-reduced-data: reduce){
+ .editorial-card-visual-img[data-img]{
+  background-image: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(217,168,79,0.40) 100%) !important;
+  background-color: var(--navy, #080E1A);
+ }
+ .hero-bg-amont, .hero-bg-aval, .hero-bg-intermediaire,
+ .hero-bg-energies, .hero-bg-durabilite, .hero-bg-talents{
+  background-image: none !important;
+  background-color: var(--navy, #080E1A);
+ }
+}

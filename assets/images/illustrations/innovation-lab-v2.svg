@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Innovation Lab · 6 projets brevetés OAPI · Phase 2-3 (2028+)">
+ <title>Innovation Lab · 6 projets brevetés EnerTchad SA</title>
+ <desc>Visualisation brutalist Innovation Lab · 6 projets Phase 2-3 · brevets OAPI 17 États · EOR Local · Pipeline 360°™ · AI Concierge · EnerFert™ · Water-to-Value™ · EnerAcademy R&amp;D.</desc>
+ <rect width="800" height="500" fill="#080E1A"/>
+ <g stroke="#C9B57B" stroke-width="0.5" opacity="0.08">
+  <line x1="0" y1="100" x2="800" y2="100"/>
+  <line x1="0" y1="200" x2="800" y2="200"/>
+  <line x1="0" y1="300" x2="800" y2="300"/>
+  <line x1="0" y1="400" x2="800" y2="400"/>
+  <line x1="200" y1="0" x2="200" y2="500"/>
+  <line x1="400" y1="0" x2="400" y2="500"/>
+  <line x1="600" y1="0" x2="600" y2="500"/>
+ </g>
+ <text x="40" y="55" fill="#C9B57B" font-family="'Space Grotesk',sans-serif" font-size="14" letter-spacing="3.5">INNOVATION LAB · 6 PROJETS BREVETÉS</text>
+ <text x="40" y="92" fill="#F6F1E6" font-family="'Space Grotesk',sans-serif" font-size="32" font-weight="700">Notre R&amp;D. Brevetée. Africaine.</text>
+ <text x="40" y="118" fill="#F6F1E6" font-family="'Crimson Pro',Georgia,serif" font-style="italic" font-size="18" opacity="0.85">OAPI · 17 États · roadmap chiffrée Phase 2-3.</text>
+
+ <!-- 6 projets cards 3x2 grid -->
+ <g transform="translate(40,160)">
+  <!-- Row 1 -->
+  <g transform="translate(0,0)">
+   <rect width="240" height="100" fill="rgba(139,90,43,0.12)" stroke="#8B5A2B" stroke-width="1.5"/>
+   <text x="14" y="22" fill="#8B5A2B" font-family="'Space Grotesk',sans-serif" font-size="10" font-weight="700">⚐ 01 · AMONT</text>
+   <text x="14" y="44" fill="#F6F1E6" font-family="'Space Grotesk',sans-serif" font-size="13" font-weight="600">Programme EOR Local</text>
+   <text x="14" y="62" fill="#F6F1E6" font-family="'Space Grotesk',sans-serif" font-size="9" opacity="0.75">5 polymères tchadiens</text>
+   <text x="14" y="80" fill="#F6F1E6" font-family="'Space Grotesk',sans-serif" font-size="9" opacity="0.75">+6-17% OOIP</text>
+   <text x="14" y="94" fill="#C9B57B" font-family="'Space Grotesk',sans-serif" font-size="9" font-weight="700">BREVET Q3 2026</text>
+  </g>
+
+  <g transform="translate(250,0)">
+   <rect width="240" height="100" fill="rgba(79,143,217,0.12)" stroke="#4F8FD9" stroke-width="1.5"/>
+   <text x="14" y="22" fill="#4F8FD9" font-family="'Space Grotesk',sans-serif" font-size="10" font-weight="700">⚐ 02 · INTERMÉDIAIRE</text>
+   <text x="14" y="44" fill="#F6F1E6" font-family="'Space Grotesk',sans-serif" font-size="13" font-weight="600">Pipeline 360°™</text>
+   <text x="14" y="62" fill="#F6F1E6" font-family="'Space Grotesk',sans-serif" font-size="9" opacity="0.75">IA leak detection</text>
+   <text x="14" y="80" fill="#F6F1E6" font-family="'Space Grotesk',sans-serif" font-size="9" opacity="0.75">1 070 km Doba-Kribi</text>
+   <text x="14" y="94" fill="#4F8FD9" font-family="'Space Grotesk',sans-serif" font-size="9" font-weight="700">MoU 2027 COTCO</text>
+  </g>
+
+  <g transform="translate(500,0)">
+   <rect width="240" height="100" fill="rgba(155,89,182,0.12)" stroke="#9b59b6" stroke-width="1.5"/>
+   <text x="14" y="22" fill="#9b59b6" font-family="'Space Grotesk',sans-serif" font-size="10" font-weight="700">⚐ 03 · TECHNOLOGIES</text>
+   <text x="14" y="44" fill="#F6F1E6" font-family="'Space Grotesk',sans-serif" font-size="13" font-weight="600">AI Concierge</text>
+   <text x="14" y="62" fill="#F6F1E6" font-family="'Space Grotesk',sans-serif" font-size="9" opacity="0.75">Claude API + RAG</text>
+   <text x="14" y="80" fill="#F6F1E6" font-family="'Space Grotesk',sans-serif" font-size="9" opacity="0.75">Dataroom 24/7 DFI</text>
+   <text x="14" y="94" fill="#9b59b6" font-family="'Space Grotesk',sans-serif" font-size="9" font-weight="700">DEMO · GA Q1 2027</text>
+  </g>
+
+  <!-- Row 2 -->
+  <g transform="translate(0,110)">
+   <rect width="240" height="100" fill="rgba(155,89,182,0.12)" stroke="#9b59b6" stroke-width="1.5"/>
+   <text x="14" y="22" fill="#9b59b6" font-family="'Space Grotesk',sans-serif" font-size="10" font-weight="700">⚐ 04 · PÉTROCHIMIE</text>
+   <text x="14" y="44" fill="#F6F1E6" font-family="'Space Grotesk',sans-serif" font-size="13" font-weight="600">EnerFert™</text>
+   <text x="14" y="62" fill="#F6F1E6" font-family="'Space Grotesk',sans-serif" font-size="9" opacity="0.75">Gas-to-Fertilizers</text>
+   <text x="14" y="80" fill="#F6F1E6" font-family="'Space Grotesk',sans-serif" font-size="9" opacity="0.75">250 kt/an urée+DAP</text>
+   <text x="14" y="94" fill="#9b59b6" font-family="'Space Grotesk',sans-serif" font-size="9" font-weight="700">PHASE 2 · 2028+</text>
+  </g>
+
+  <g transform="translate(250,110)">
+   <rect width="240" height="100" fill="rgba(79,143,217,0.12)" stroke="#4F8FD9" stroke-width="1.5"/>
+   <text x="14" y="22" fill="#4F8FD9" font-family="'Space Grotesk',sans-serif" font-size="10" font-weight="700">⚐ 05 · ÉNERGIES</text>
+   <text x="14" y="44" fill="#F6F1E6" font-family="'Space Grotesk',sans-serif" font-size="13" font-weight="600">Water-to-Value™</text>
+   <text x="14" y="62" fill="#F6F1E6" font-family="'Space Grotesk',sans-serif" font-size="9" opacity="0.75">Water Management OFS</text>
+   <text x="14" y="80" fill="#F6F1E6" font-family="'Space Grotesk',sans-serif" font-size="9" opacity="0.75">Recyclage 75% · zero-discharge</text>
+   <text x="14" y="94" fill="#4F8FD9" font-family="'Space Grotesk',sans-serif" font-size="9" font-weight="700">PHASE 2-3 · 2028+</text>
+  </g>
+
+  <g transform="translate(500,110)">
+   <rect width="240" height="100" fill="rgba(217,168,79,0.18)" stroke="#C9B57B" stroke-width="2"/>
+   <text x="14" y="22" fill="#C9B57B" font-family="'Space Grotesk',sans-serif" font-size="10" font-weight="700">⚐ 06 · TALENTS R&amp;D</text>
+   <text x="14" y="44" fill="#F6F1E6" font-family="'Space Grotesk',sans-serif" font-size="13" font-weight="600">EnerAcademy R&amp;D</text>
+   <text x="14" y="62" fill="#F6F1E6" font-family="'Space Grotesk',sans-serif" font-size="9" opacity="0.75">Capital humain breveté</text>
+   <text x="14" y="80" fill="#F6F1E6" font-family="'Space Grotesk',sans-serif" font-size="9" opacity="0.75">200 ETP/an formés</text>
+   <text x="14" y="94" fill="#C9B57B" font-family="'Space Grotesk',sans-serif" font-size="9" font-weight="700">PHASE 1+2 · 2026+</text>
+  </g>
+ </g>
+
+ <!-- KPI bar bottom -->
+ <g transform="translate(40,400)">
+  <rect width="720" height="80" fill="#1a2030" stroke="#C9B57B" stroke-width="1"/>
+  <g font-family="'Space Grotesk',sans-serif">
+   <text x="20" y="22" fill="#C9B57B" font-size="9" letter-spacing="1.5">PORTEFEUILLE INNOVATION · ROADMAP CHIFFRÉE PHASE 2-3</text>
+   <text x="40" y="50" fill="#F6F1E6" font-size="20" font-weight="700">6 brevets</text>
+   <text x="40" y="62" fill="#F6F1E6" font-size="8" opacity="0.7">OAPI en instruction</text>
+   <text x="220" y="50" fill="#F6F1E6" font-size="20" font-weight="700">17 États</text>
+   <text x="220" y="62" fill="#F6F1E6" font-size="8" opacity="0.7">Couverture Afrique francophone</text>
+   <text x="400" y="50" fill="#F6F1E6" font-size="20" font-weight="700">2028+</text>
+   <text x="400" y="62" fill="#F6F1E6" font-size="8" opacity="0.7">Phase 2 activation</text>
+   <text x="540" y="50" fill="#F6F1E6" font-size="20" font-weight="700">20 ans</text>
+   <text x="540" y="62" fill="#F6F1E6" font-size="8" opacity="0.7">Protection IP standard</text>
+  </g>
+ </g>
+</svg>

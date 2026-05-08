@@ -1,4 +1,4 @@
-# EnerTchad Groupe SA/CA — Site v2.0 (rebuild)
+# EnerTchad SA — Site v2.0 (rebuild)
 
 **Date** : 2026-04-28
 **Auteur** : DG · Bignéro Moïalbéi Le Madang
@@ -53,7 +53,7 @@ site-v2/
 
 ## Données canoniques utilisées
 
-- **Identité** : EnerTchad Groupe SA/CA · RCCM N'DJ/RC/2026-A-0001 · Capital 10 000 000 FCFA
+- **Identité** : EnerTchad SA · RCCM N'DJ/RC/2026-A-0001 · Capital 10 000 000 FCFA
 - **Slogan** : Unité · Innovation · Durabilité — Accès aux Énergies
 - **6 pôles** : Upstream · Midstream · Downstream · GreenTech · EnerTech · Gouvernance (couleurs accent canon)
 - **10 services** : S01-S10 répartis sur les pôles
@@ -94,4 +94,4 @@ git add . && git commit -m "v2.0.0 site rebuild" && git push origin main
 
 ---
 
-© 2026 EnerTchad Groupe SA/CA · RCCM N'DJ/RC/2026-A-0001 · Capital 10 000 000 FCFA
+© 2026 EnerTchad SA · RCCM N'DJ/RC/2026-A-0001 · Capital 10 000 000 FCFA

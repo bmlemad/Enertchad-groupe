@@ -1,15 +1,61 @@
-<!doctype html><html lang="fr"><head><meta charset="utf-8">
-<meta name="description" content="Connexion indisponible — EnerTchad Groupe SA/CA · les pages déjà visitées restent accessibles via Service Worker PWA." /><title>Hors ligne — EnerTchad Groupe SA/CA</title>
-<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" /><link rel="stylesheet" href="/assets/css/enertchad.css"><meta name="viewport" content="width=device-width,initial-scale=1"><script defer data-domain="enertchad.td" src="https://plausible.io/js/script.js"></script>
-<meta property="og:image" content="https://enertchad-groupe.vercel.app/assets/images/enertchad-accueil-hero-01.webp" />
-<meta name="twitter:image" content="https://enertchad-groupe.vercel.app/assets/images/enertchad-accueil-hero-01.webp" />
+<!doctype html><html lang="fr"><head>
+ <meta name="view-transition" content="same-origin">
+ <!-- V11 perf · resource hints -->
+ <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link rel="dns-prefetch" href="https://plausible.io">
+ <link rel="preload" as="style" href="/assets/css/enertchad.css?v=r179"><meta charset="utf-8">
+<meta name="description" content="Connexion indisponible — EnerTchad SA · les pages déjà visitées restent accessibles via Service Worker PWA." /><title>Hors ligne — EnerTchad SA</title>
+<link rel="canonical" href="https://www.enertchad.td/offline.html" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Inter:wght@100..900&display=swap">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" /><link rel="stylesheet" href="/assets/css/enertchad.css?v=r179"><meta name="viewport" content="width=device-width,initial-scale=1"><script defer data-domain="enertchad.td" src="https://plausible.io/js/script.js"></script>
+<meta property="og:image" content="https://enertchad.td/assets/images/enertchad-accueil-hero-01.webp" />
+<meta name="twitter:image" content="https://enertchad.td/assets/images/enertchad-accueil-hero-01.webp" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@EnerTchad" />
 <link rel="preconnect" href="https://plausible.io" crossorigin>
 <link rel="dns-prefetch" href="https://plausible.io">
 <link rel="preload" as="image" href="/assets/favicon.svg" type="image/svg+xml">
+ <!-- Speculation Rules API · prerender top-priority pages (Chrome 121+) -->
+ <script type="speculationrules">
+ {
+ "prerender": [{
+ "where": {
+ "or": [
+ { "href_matches": "/engagement/investisseurs.html" },
+ { "href_matches": "/dataroom/" },
+ { "href_matches": "/amont/" },
+ { "href_matches": "/data/atlas.html" }
+ ]
+ },
+ "eagerness": "moderate"
+ }],
+ "prefetch": [{
+ "where": {
+ "and": [
+ { "href_matches": "/*" },
+ { "not": { "href_matches": "/en/*" } }
+ ]
+ },
+ "eagerness": "conservative"
+ }]
+ }
+ </script>
+
+ <meta property="og:url" content="https://enertchad-groupe.pages.dev/" />
+ <meta property="og:type" content="website" />
+
+ <meta property="og:title" content="Hors ligne — EnerTchad SA" />
+ <meta property="og:description" content="Connexion indisponible — EnerTchad SA · les pages déjà visitées restent accessibles via Service Worker PWA." />
+<link rel="alternate" hreflang="fr" href="https://www.enertchad.td/offline.html" />
+<link rel="alternate" hreflang="x-default" href="https://www.enertchad.td/offline.html" />
+   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"EnerTchad SA","alternateName":"EnerTchad","url":"https://www.enertchad.td/","logo":"https://www.enertchad.td/assets/images/logo.svg","slogan":"Unité · Innovation · Durabilité","description":"Société parapétrolière (OFS) 100% services techniques · marché tchadien · OHADA","foundingDate":"2026","founder":{"@type":"Person","name":"Bignéro Moïalbéi Le Madang","jobTitle":"Directeur Général"},"address":{"@type":"PostalAddress","addressLocality":"N'Djamena","addressCountry":"TD"},"identifier":"RCCM N'DJ/RC/2026-A-0001"}</script>
 </head>
 <body>
 <a class="skip-link" href="#main">Aller au contenu</a>
+
 <main id="main" tabindex="-1" class="section section-dark" style="min-height:80vh;display:grid;place-items:center"><div class="container text-center"><span class="kicker">Hors ligne</span><h1 class="h-display">Connexion indisponible.</h1><p class="lead">Les pages déjà consultées restent accessibles via le cache hors ligne.</p></div></main><div class="grain-overlay" aria-hidden="true"></div>
+ <script defer src="/assets/js/jn-counter.js?v=r128"></script>
 </body></html>

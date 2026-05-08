@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Axe Technologies · 12 services T01-T12 · digital twin · AI · IoT · cyber-OT">
+ <title>Axe Technologies · cyber &amp; data O&amp;G</title>
+ <desc>Visualisation brutalist axe Technologies · 12 services T01-T12 · digital twin · AI Concierge · IoT · OT cyber Purdue model · IEC 62443.</desc>
+ <rect width="800" height="500" fill="#080E1A"/>
+ <g stroke="#9b59b6" stroke-width="0.5" opacity="0.08">
+  <line x1="0" y1="100" x2="800" y2="100"/>
+  <line x1="0" y1="200" x2="800" y2="200"/>
+  <line x1="0" y1="300" x2="800" y2="300"/>
+  <line x1="0" y1="400" x2="800" y2="400"/>
+  <line x1="200" y1="0" x2="200" y2="500"/>
+  <line x1="400" y1="0" x2="400" y2="500"/>
+  <line x1="600" y1="0" x2="600" y2="500"/>
+ </g>
+ <text x="40" y="55" fill="#9b59b6" font-family="'Space Grotesk',sans-serif" font-size="14" letter-spacing="3.5">AXE 01 · TECHNOLOGIES · CYBER &amp; DATA</text>
+ <text x="40" y="92" fill="#F6F1E6" font-family="'Space Grotesk',sans-serif" font-size="32" font-weight="700">12 services T01-T12</text>
+ <text x="40" y="118" fill="#F6F1E6" font-family="'Crimson Pro',Georgia,serif" font-style="italic" font-size="18" opacity="0.85">Digital twin · AI · IoT · OT cyber.</text>
+
+ <!-- 12 service cells grid -->
+ <g transform="translate(40,160)">
+  <text x="0" y="0" fill="#9b59b6" font-family="'Space Grotesk',sans-serif" font-size="10" letter-spacing="2">CATALOGUE T01-T12 · TIER 1·2·3</text>
+  <g font-family="'Space Grotesk',sans-serif">
+   <!-- T01 SCADA modernization -->
+   <rect x="0" y="14" width="170" height="58" fill="rgba(155,89,182,0.10)" stroke="#9b59b6" stroke-width="1"/>
+   <text x="10" y="32" fill="#9b59b6" font-size="10" font-weight="700">T01 · TIER 1</text>
+   <text x="10" y="48" fill="#F6F1E6" font-size="10">SCADA modernization</text>
+   <text x="10" y="62" fill="#F6F1E6" font-size="8" opacity="0.6">Majors-grade · 2026</text>
+
+   <rect x="180" y="14" width="170" height="58" fill="rgba(155,89,182,0.10)" stroke="#9b59b6" stroke-width="1"/>
+   <text x="190" y="32" fill="#9b59b6" font-size="10" font-weight="700">T02 · TIER 1</text>
+   <text x="190" y="48" fill="#F6F1E6" font-size="10">Cyber-OT MSSP</text>
+   <text x="190" y="62" fill="#F6F1E6" font-size="8" opacity="0.6">IEC 62443 · 2026</text>
+
+   <rect x="360" y="14" width="170" height="58" fill="rgba(155,89,182,0.10)" stroke="#9b59b6" stroke-width="1"/>
+   <text x="370" y="32" fill="#9b59b6" font-size="10" font-weight="700">T03 · TIER 1</text>
+   <text x="370" y="48" fill="#F6F1E6" font-size="10">IoT sensors fleet</text>
+   <text x="370" y="62" fill="#F6F1E6" font-size="8" opacity="0.6">5G · LoRa · 2026</text>
+
+   <rect x="540" y="14" width="170" height="58" fill="rgba(217,168,79,0.18)" stroke="#C9B57B" stroke-width="2"/>
+   <text x="550" y="32" fill="#C9B57B" font-size="10" font-weight="700">T04 · FLAGSHIP</text>
+   <text x="550" y="48" fill="#F6F1E6" font-size="10">AI Concierge Claude</text>
+   <text x="550" y="62" fill="#F6F1E6" font-size="8" opacity="0.6">GA Q1 2027</text>
+
+   <rect x="0" y="84" width="170" height="58" fill="rgba(155,89,182,0.07)" stroke="rgba(155,89,182,0.50)" stroke-width="1"/>
+   <text x="10" y="102" fill="rgba(155,89,182,0.85)" font-size="10" font-weight="700">T05-T08 · TIER 2</text>
+   <text x="10" y="118" fill="#F6F1E6" font-size="10">Data lake · ETL · BI</text>
+   <text x="10" y="132" fill="#F6F1E6" font-size="8" opacity="0.6">Snowflake · 2027</text>
+
+   <rect x="180" y="84" width="170" height="58" fill="rgba(155,89,182,0.07)" stroke="rgba(155,89,182,0.50)" stroke-width="1"/>
+   <text x="190" y="102" fill="rgba(155,89,182,0.85)" font-size="10" font-weight="700">T09-T11 · TIER 2</text>
+   <text x="190" y="118" fill="#F6F1E6" font-size="10">Digital twin Doba</text>
+   <text x="190" y="132" fill="#F6F1E6" font-size="8" opacity="0.6">Unity · 2027-28</text>
+
+   <rect x="360" y="84" width="350" height="58" fill="rgba(155,89,182,0.04)" stroke="rgba(155,89,182,0.30)" stroke-width="1"/>
+   <text x="370" y="102" fill="rgba(155,89,182,0.65)" font-size="10" font-weight="700">T12 · TIER 3</text>
+   <text x="370" y="118" fill="#F6F1E6" font-size="10">Quantum-ready research · post-2030 frontier</text>
+   <text x="370" y="132" fill="#F6F1E6" font-size="8" opacity="0.6">EnerAcademy R&amp;D · 2030+</text>
+  </g>
+ </g>
+
+ <!-- KPI bar -->
+ <g transform="translate(40,420)">
+  <rect width="720" height="60" fill="#1a2030" stroke="#9b59b6" stroke-width="1"/>
+  <g font-family="'Space Grotesk',sans-serif">
+   <text x="20" y="22" fill="#9b59b6" font-size="9" letter-spacing="1.5">RESULTATS PHASE 1 · TECHNOLOGIES</text>
+   <text x="40" y="48" fill="#F6F1E6" font-size="20" font-weight="700">12 services</text>
+   <text x="40" y="58" fill="#F6F1E6" font-size="8" opacity="0.7">T01-T12 catalogue</text>
+   <text x="220" y="48" fill="#F6F1E6" font-size="20" font-weight="700">5 Tier 1</text>
+   <text x="220" y="58" fill="#F6F1E6" font-size="8" opacity="0.7">activables 2026</text>
+   <text x="400" y="48" fill="#F6F1E6" font-size="20" font-weight="700">AI</text>
+   <text x="400" y="58" fill="#F6F1E6" font-size="8" opacity="0.7">Concierge Q1 2027</text>
+   <text x="540" y="48" fill="#F6F1E6" font-size="20" font-weight="700">10 ans data</text>
+   <text x="540" y="58" fill="#F6F1E6" font-size="8" opacity="0.7">Pipeline ML proprietary</text>
+  </g>
+ </g>
+</svg>
