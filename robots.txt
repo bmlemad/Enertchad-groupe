@@ -5,4 +5,4 @@ Disallow: /api/
 Disallow: /_sources/
 Disallow: /poles/
 
-Sitemap: https://www.enertchad.td/sitemap.xml
+Sitemap: https://enertchad.com/sitemap.xml

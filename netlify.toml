@@ -20,32 +20,32 @@
 # Legacy path redirects (anciennes URLs → nouvelles)
 [[redirects]]
   from = "/about"
-  to = "/groupe.html"
+  to = "/#hero"
   status = 301
 
 [[redirects]]
   from = "/about.html"
-  to = "/groupe.html"
+  to = "/#hero"
   status = 301
 
 [[redirects]]
   from = "/investors"
-  to = "/investisseurs.html"
+  to = "/#investisseurs-cta"
   status = 301
 
 [[redirects]]
   from = "/careers"
-  to = "/talents.html"
+  to = "/#talents-academy"
   status = 301
 
 [[redirects]]
   from = "/sustainability"
-  to = "/durabilite.html"
+  to = "/#durabilite-inline"
   status = 301
 
 [[redirects]]
   from = "/news"
-  to = "/actualites.html"
+  to = "/#actualites-preview"
   status = 301
 
 [[redirects]]
@@ -60,17 +60,17 @@
 
 [[redirects]]
   from = "/upstream"
-  to = "/operations/amont.html"
+  to = "/#operations"
   status = 301
 
 [[redirects]]
   from = "/midstream"
-  to = "/operations/intermediaire.html"
+  to = "/#operations"
   status = 301
 
 [[redirects]]
   from = "/downstream"
-  to = "/operations/aval.html"
+  to = "/#operations"
   status = 301
 
 # NOTE v1.1.0 : redirection `/services → /operations/services.html` retirée
@@ -191,10 +191,6 @@
   status = 301
 
 # Clean URL rewrites (optionnel — .html masqué)
-[[redirects]]
-  from = "/services"
-  to = "/services.html"
-  status = 200
 
 [[redirects]]
   from = "/dashboard"
@@ -214,12 +210,12 @@
 # Pôles intégrés (ex-sous-domaines Vercel)
 [[redirects]]
   from = "/enertech"
-  to = "/technologies/"
+  to = "/#services-catalogue"
   status = 301
 
 [[redirects]]
   from = "/greentech"
-  to = "/energies/"
+  to = "/#section-energies"
   status = 301
 
 # Security + performance headers — all pages
@@ -406,6 +402,26 @@
   for = "/*.html"
   [headers.values]
     Cache-Control = "public, max-age=600, must-revalidate"
+
+[[redirects]]
+  from = "/explore"
+  to = "/explore.html"
+  status = 200
+
+[[redirects]]
+  from = "/mentions-legales"
+  to = "/mentions-legales.html"
+  status = 200
+
+[[redirects]]
+  from = "/confidentialite"
+  to = "/confidentialite.html"
+  status = 200
+
+[[redirects]]
+  from = "/cookies"
+  to = "/cookies.html"
+  status = 200
 
 # Custom 404 (fallback global, DOIT rester en dernier)
 [[redirects]]

@@ -3,7 +3,7 @@
  * Fallback offline sur offline.html
  */
 
-const CACHE_VERSION = 'enertchad-v1.2.0-monopage';
+const CACHE_VERSION = 'enertchad-v1.2.5-domain-com';
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const RUNTIME_CACHE = `${CACHE_VERSION}-runtime`;
 

@@ -87,8 +87,8 @@
 # --- Pôles intégrés (ex-sous-domaines Vercel) ---
 
 
-/enertech         /technologies/           301
-/greentech        /energies/               301
+/enertech /#services-catalogue 301
+/greentech /#section-energies 301
 
 # --- Dossiers source internes (anti-leak, cf. audit 2026-04-22 — P1-7/P2-1) ---
 /_sources/*       /404.html                                            404
@@ -98,10 +98,10 @@
 # --- Anchors cross-pages ajoutés en v1.6.0 — redirections de confort ---
 # Ces URLs courtes peuvent apparaître dans documents externes / emails ;
 # on les renvoie vers l'ancre canonique.
-/eor              /operations/amont#eor                                301
-/petrochimie      /operations/aval#petrochimie                         301
-/pole-petrochimie /operations/aval#petrochimie                         301
-/ccus             /operations/amont#eor                                301
+/eor /#section-eor 301
+/petrochimie /#section-petrochimie 301
+/pole-petrochimie /#section-petrochimie 301
+/ccus /#section-eor 301
 
 # --- Custom 404 (fallback global, DOIT rester en dernier) ---
 /*    /404.html   404
