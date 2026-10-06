@@ -193,7 +193,7 @@ Modifier `DATA_MASTER.yml` puis régénérer. **Ne jamais éditer les sections m
 ## Liens utiles
 
 - **Site live** : https://enertchad-groupe.pages.dev (dès auto-deploy activé)
-- **Custom domain** : https://www.enertchad.td (après DNS)
+- **Custom domain** : https://enertchad.com (après DNS)
 - **Repo GitHub** : https://github.com/bmlemad/Enertchad-groupe
 - **Direction Générale** : bignero@gmail.com
 - **Contact** : contact@enertchad.td · +235 99 29 86 96 · wa.me/23599298696
